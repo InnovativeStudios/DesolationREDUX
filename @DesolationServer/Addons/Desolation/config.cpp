@@ -163,6 +163,7 @@ class CfgFunctions
 			file = "Desolation\Client\Interface";
 			isclient = 1;
 			class onEscape {};
+			class initHud {};
 		};
 		class Client {
 			file = "Desolation\Client";
