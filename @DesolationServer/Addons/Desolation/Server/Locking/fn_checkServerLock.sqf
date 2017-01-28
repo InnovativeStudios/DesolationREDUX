@@ -28,7 +28,7 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		// prevent new players from connecting
 		_password serverCommand "#lock";
 		{
-			_password serverCommand ("#kick " + (owner _x));
+			_password serverCommand ("#kick " + str(owner _x));
 		} forEach allPlayers;
 		uiSleep 10; // wait for all disconnects to process
 		_password serverCommand "#shutdown";
