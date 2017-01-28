@@ -6698,7 +6698,7 @@ class CfgBuildables {
 		};
 	};
 };
-class CfgCraftables {
+/*class CfgCraftables {
 	class Materials {
 		condition = "true"; 
 		preview = "\SM_Zombz\Survivors_icon.paa"; 
@@ -6825,5 +6825,5 @@ class CfgCraftables {
 			};
 		};
 	};
-};
+};*/
 
