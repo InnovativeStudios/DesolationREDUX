@@ -249,6 +249,9 @@ switch(_type)do{
 		if(str(_repaircargo) find "-1" == 0) then {
 			_repaircargo = 0;
 		};
+		
+		
+		
 		_items = [];  //todo
 		_magazines = [];  //todo
 		_weapons = []; // todo
@@ -318,7 +321,9 @@ switch(_type)do{
 		if(str(_repaircargo) find "-1" == 0) then {
 			_repaircargo = 0;
 		};
-		_items = [];  //todo
+		
+		//TODO: use DS_fnc_getLoot to save loot
+		_items = ([_vehicle] call DS_fnc_getLoot);
 		_magazines = [];  //todo
 		_weapons = []; // todo
 		_backpacks = []; // todo

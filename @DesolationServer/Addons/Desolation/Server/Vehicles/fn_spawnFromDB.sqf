@@ -11,7 +11,6 @@
 
 params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazines","_weapons","_backpacks","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_friendslist"];
 
-
 _returnData = [];
 if(_visible == 1) then {
 	_position = [_positionx,_positiony,_positionz];
@@ -46,6 +45,8 @@ if(_visible == 1) then {
 		_object lock true;
 	};
 	
+	
+	[_object,_items] call DS_fnc_setLoot;
 	
 	_object setDir _direction;
 	if(_positiontype == 1) then {
