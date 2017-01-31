@@ -252,6 +252,8 @@ class CfgFunctions
 			isserver = 1;
 			class lootManager {};
 			class spawnLoot {};
+			class setLoot {};
+			class getLoot {};
 			class despawnLoot {};
 		};
 		class Server_Audio {
