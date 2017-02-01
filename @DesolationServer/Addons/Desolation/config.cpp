@@ -88,11 +88,17 @@ class CfgFunctions
 			class removePart {};
 			class repairPart {};
 		};
+		class Client_Crafting {
+			file = "Desolation\Client\Crafting";
+			isclient = 1;
+			class initCraftUI {};
+			class onCraftClick {};
+		};
 		class Client_Building {
 			file = "Desolation\Client\Building";
 			isclient = 1;
-			class openJournal {};
 			class initBuilding {};
+			class initBuildUI {};
 			class onBuildClick {};
 			class registerBuildable {};
 			class onCrateFilled {};
@@ -164,6 +170,7 @@ class CfgFunctions
 			isclient = 1;
 			class onEscape {};
 			class initHud {};
+			class openJournal {};
 		};
 		class Client {
 			file = "Desolation\Client";
@@ -277,6 +284,11 @@ class CfgFunctions
 			class spawnFromDB {};
 			class vehicleMonitor {};
 			class simManager {};
+		};
+		class Server_Crafting {
+			file = "Desolation\Server\Crafting";
+			isserver = 1;
+			class initCraftingSys {};
 		};
 		class Server_Building {
 			file = "Desolation\Server\Building";
@@ -6700,7 +6712,7 @@ class CfgBuildables {
 		};
 	};
 };
-/*class CfgCraftables {
+class CfgCraftables {
 	class Materials {
 		condition = "true"; 
 		preview = "\SM_Zombz\Survivors_icon.paa"; 
@@ -6715,17 +6727,14 @@ class CfgBuildables {
 					{"dsr_item_lumber",1},
 					{"dsr_item_saw",1}
 				};
-				
-				needsWorkbench = 0;
-				needsFire = 0;
-				needsAnvil = 0;
+				requiredBuildings[] = {};
 				
 				name = "Lumber";
 				description = "General Purpose Lumber.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
-			class Lumber {
+			class Plyewood {
 				input[] = {
 					{"dsr_item_lumber",4},
 					{"dsr_item_saw",1},
@@ -6736,13 +6745,10 @@ class CfgBuildables {
 					{"dsr_item_saw",1},
 					{"dsr_item_toolbox",1}
 				};
+				requiredBuildings[] = {"TODO_WORKBENCH_HERE"};
 				
-				needsWorkbench = 1;
-				needsFire = 0;
-				needsAnvil = 0;
-				
-				name = "Lumber";
-				description = "General Purpose Lumber.";
+				name = "Plyewood";
+				description = "General Purpose Plyewood.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
@@ -6761,10 +6767,7 @@ class CfgBuildables {
 				output[] = {
 					{"dsr_fishingrod_fixed",1}
 				};
-				
-				needsWorkbench = 0;
-				needsFire = 0;
-				needsAnvil = 0;
+				requiredBuildings[] = {};
 				
 				name = "Fishing Rod";
 				description = "Great for catching small fishies.";
@@ -6815,10 +6818,7 @@ class CfgBuildables {
 					{"dsr_item_hammer",1},
 					{"dsr_item_spanner_wrench",1}
 				};
-				
-				needsWorkbench = 1;
-				needsFire = 1;
-				needsAnvil = 1;
+				requiredBuildings[] = {"TODO_WORKBENCH_HERE","TODO_FIREPLACE_HERE","TODO_ANVIL_HERE"};
 				
 				name = "Lumber";
 				description = "General Purpose Lumber.";
@@ -6827,5 +6827,5 @@ class CfgBuildables {
 			};
 		};
 	};
-};*/
+};
 

@@ -35,8 +35,9 @@ call DS_fnc_initLock;
 // start item spawns
 [] spawn DS_fnc_lootManager;
 
-// start the building system
+// start the building & crafting systems
 [] spawn DS_fnc_initBuildingSys;
+[] spawn DS_fnc_initCraftingSys;
 
 
 

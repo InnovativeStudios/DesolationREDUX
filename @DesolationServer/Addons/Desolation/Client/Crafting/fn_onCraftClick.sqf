@@ -8,15 +8,12 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-createDialog "DS_Journal_Index";
 
-[] spawn {
-	disableserialization;
-	waitUntil{!isNull (findDisplay 4001) || isNull (findDisplay 4002)};
-	if(!isNull (findDisplay 4001)) then {
-		// set build button event
-		_btn = (findDisplay 4001) displayCtrl 7;
-		_btn buttonSetAction "call DS_fnc_onBuildClick";
-	};
-};
+ // on craft button click
+ // check requirements
+ // close dialog
+ // play stopable crafting animation
+ // remove requirements
+ // add item
 
+ 
