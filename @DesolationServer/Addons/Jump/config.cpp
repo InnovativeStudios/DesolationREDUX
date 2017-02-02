@@ -7,7 +7,7 @@ class Plugins
 {
 	class Jump
 	{
-		name = "Ear Plugs";
+		name = "Jump";
 		desc = "Allows players to jump while sprinting";
 		tag = "JMP";
 	};
