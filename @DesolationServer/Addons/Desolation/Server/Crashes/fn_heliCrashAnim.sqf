@@ -20,7 +20,7 @@ _heli  setHit ["tail_rotor_hit", 1];
 uiSleep 3;
 _heli  setHit ["main_rotor_hit", 1];
 _heli  setHit ["engine_hit", 1];
-[_heli,_smokesize,_smokeModelPos,false] spawn DS_fnc_crashSmoke;
+[_heli,_smokesize,_smokeModelPos,false] remoteExecCall ["DS_fnc_crashSmoke",-2];
 waitUntil {isTouchingGround _heli};
 _heli setdamage 1;
 _wreckPos = getpos _heli;
@@ -41,6 +41,6 @@ _wreck setDir _wreckDir;
 _wreck setVectorUp _wreckUp;
 
 if (_wreckSmoke > 0) then {
-	[_wreck,7,[0,0,0],true] call DS_fnc_crashSmoke;
+	[_wreck,7,[0,0,0],true] remoteExecCall ["DS_fnc_crashSmoke",-2];
 };
 _wreckPos
