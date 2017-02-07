@@ -8,13 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
- params ["_obj","_size","_smokePos","_isWreck"]
- 
- 
-[_obj,_size,_smokePos,_isWreck] spawn {
-
 private ["_obj","_Smoke","_smoke2"];
-params ["_obj","_size","_smokePos","_isWreck"];
+ params ["_obj","_size","_smokePos","_isWreck"]
+
 
 _smoke = "#particlesource" createVehicleLocal getpos _obj;
 _smoke attachto [_obj, _smokePos];
@@ -26,4 +22,3 @@ if (_isWreck) exitWith {};
 waitUntil {!alive _obj};
 deleteVehicle _smoke;
 true
-};
