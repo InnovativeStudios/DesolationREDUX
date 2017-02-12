@@ -6570,11 +6570,26 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",30},
 					{"dsr_item_plywood",7},
+					("dsr_item_hardware",5),
 					{"dsr_item_logs",15}
 				};
-				name = "Small Shack";
+				name = "Level 1 Player House V1";
 				model = "DSR_objects_House_lv1";
 				crateObject = "dsr_objects_house_lv1_preview";
+				description = "The small shack is small... and a shack... a good starting house for losers.";
+				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				condition = "true";
+			};
+			class HouseLvl1v2 {
+				parts[] = {
+					{"dsr_item_lumber",30},
+					{"dsr_item_plywood",7},
+					("dsr_item_hardware",5),
+					{"dsr_item_logs",15}
+				};
+				name = "Level 1 Player House V2";
+				model = "DSR_objects_House_lv1_2";
+				crateObject = "dsr_objects_house_lv1_2_preview";
 				description = "The small shack is small... and a shack... a good starting house for losers.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
@@ -6583,12 +6598,28 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",60},
 					{"dsr_item_plywood",14},
+					("dsr_item_hardware",10),
 					{"dsr_item_logs",45}
 				};
-				name = "Large Shack";
+				name = "Level 2 Player House V1";
 				model = "DSR_objects_House_lv2";
 				crateObject = "dsr_objects_house_lv2_preview";
-				description = "This is for testing, it should not be buildable.";
+				description = "Large wood shack.";
+				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				condition = "false";
+			};
+			class HouseLvl3 {
+				parts[] = {
+					{"dsr_item_lumber",120},
+					{"dsr_item_plywood",34},
+					("dsr_item_hardware",20),
+					("dsr_items_scrapmetal",2),
+					{"dsr_item_logs",85}
+				};
+				name = "Level 3 Player House V1";
+				model = "DSR_objects_House_lv3";
+				crateObject = "dsr_objects_house_lv3_preview";
+				description = "A small Wood Cabin.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "false";
 			};
@@ -6608,6 +6639,19 @@ class CfgBuildables {
 				model = "dsr_objects_stockade_wall";
 				description = "Basic stockade wall piece";
 				crateObject = "dsr_objects_stockade_wall_preview";
+				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				condition = "true";
+			};
+			class StockadeWallWindow {
+				parts[] = {
+					{"dsr_item_lumber",23},
+					{"dsr_item_hardware",6},
+					("dsr_item_scrapmetal",1)
+				};
+				name = "Base Stockade Wall w/ Window";
+				model = "dsr_objects_stockade_wall_window";
+				description = "Basic stockade wall piece";
+				crateObject = "dsr_objects_stockade_wall_window_preview";
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
 				condition = "true";
 			};
