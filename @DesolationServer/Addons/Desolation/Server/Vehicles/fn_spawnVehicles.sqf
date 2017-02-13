@@ -120,14 +120,15 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 			_directions = _hData select 1;
 			_vehicles = _hData select 2;
 
-			if(_bikeLimit == 0) then {_vehicles = _vehicles - ["MMT_Civ"];}; //---vehicles is case sensitive
+			if(_bikeLimit == 0) then {_vehicles = _vehicles - ["DSR_Bike_Green_F","DSR_Bike_White_F"];}; //---vehicles is case sensitive
 
 			_lIndex = floor(random(count(_locations))); //--- get location index
 
 			_v = _vehicles select floor(random(count(_vehicles))); //--- get vehicle type we are spawning
 			if(!isNil {_v}) then {
 
-				if(toLower(_v) == "mmt_civ") then {_bikeLimit = _bikeLimit - 1;};
+				if(toLower(_v) == "dsr_bike_white_f") then {_bikeLimit = _bikeLimit - 1;};
+				if(toLower(_v) == "dsr_bike_green_f") then {_bikeLimit = _bikeLimit - 1;};
 
 				_location = _locations select _lIndex; //--- get offset of the spawn position
 				_direction = _directions select _lIndex; //--- get vehicle direction additive

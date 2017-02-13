@@ -6537,10 +6537,15 @@ class CfgVehicleSpawns {
 		};
 
 		//--- bikes
-		class DSR_bike_F {
+		/*
+		class DSR_Bike_White_F {
 			buildings[] = {"Land_Airport_02_terminal_F","Land_Warehouse_03_F","Land_Shop_City_07_F","Land_Shop_City_05_F","Land_MultistoryBuilding_04_F","Land_Shop_City_06_F","Land_Shop_City_01_F","Land_Shop_City_02_F","Land_Shop_City_03_F","Land_MultistoryBuilding_03_F","Land_Hotel_01_F","Land_Addon_04_F","Land_Addon_03_F","Land_House_Small_04_F","Land_House_Small_05_F","Land_School_01_F","Land_House_Small_06_F"};
 		};
 
+		class DSR_Bike_Green_F {
+			buildings[] = {"Land_Airport_02_terminal_F","Land_Warehouse_03_F","Land_Shop_City_07_F","Land_Shop_City_05_F","Land_MultistoryBuilding_04_F","Land_Shop_City_06_F","Land_Shop_City_01_F","Land_Shop_City_02_F","Land_Shop_City_03_F","Land_MultistoryBuilding_03_F","Land_Hotel_01_F","Land_Addon_04_F","Land_Addon_03_F","Land_House_Small_04_F","Land_House_Small_05_F","Land_School_01_F","Land_House_Small_06_F"};
+		};
+		*/
 		//--- plans
 		class C_Plane_Civil_01_F {
 			buildings[] = {"Land_Airport_02_hangar_left_F","Land_Airport_02_hangar_right_F","Land_Airport_01_hangar_F"};
