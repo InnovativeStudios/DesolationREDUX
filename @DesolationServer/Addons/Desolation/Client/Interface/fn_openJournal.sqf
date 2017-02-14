@@ -12,12 +12,15 @@ createDialog "DS_Journal_Index";
 
 [] spawn {
 	disableserialization;
-	waitUntil{!isNull (findDisplay 4001) || isNull (findDisplay 4002) || !isNull (findDisplay 4003)};
+	waitUntil{!isNull (findDisplay 4001) || isNull (findDisplay 4002)};
 	if(!isNull (findDisplay 4001)) then {
-		call DS_fnc_initBuildUI;
-	};
-	if(!isNull (findDisplay 4003)) then {
-		call DS_fnc_initCraftUI;
+		_btn = (findDisplay 4001) displayCtrl 7;
+		_btn buttonSetAction "
+			if(DS_var_PageType == 0) then {
+				call DS_fnc_onCraftClick;
+			} else {
+				call DS_fnc_onBuildClick;
+			};";
 	};
 };
 

@@ -91,14 +91,12 @@ class CfgFunctions
 		class Client_Crafting {
 			file = "Desolation\Client\Crafting";
 			isclient = 1;
-			class initCraftUI {};
 			class onCraftClick {};
 		};
 		class Client_Building {
 			file = "Desolation\Client\Building";
 			isclient = 1;
 			class initBuilding {};
-			class initBuildUI {};
 			class onBuildClick {};
 			class registerBuildable {};
 			class onCrateFilled {};
@@ -6575,7 +6573,7 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",30},
 					{"dsr_item_plywood",7},
-					("dsr_item_hardware",5),
+					{"dsr_item_hardware",5},
 					{"dsr_item_logs",15}
 				};
 				name = "Level 1 Player House V1";
@@ -6589,7 +6587,7 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",30},
 					{"dsr_item_plywood",7},
-					("dsr_item_hardware",5),
+					{"dsr_item_hardware",5},
 					{"dsr_item_logs",15}
 				};
 				name = "Level 1 Player House V2";
@@ -6603,7 +6601,7 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",60},
 					{"dsr_item_plywood",14},
-					("dsr_item_hardware",10),
+					{"dsr_item_hardware",10},
 					{"dsr_item_logs",45}
 				};
 				name = "Level 2 Player House V1";
@@ -6617,8 +6615,8 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",120},
 					{"dsr_item_plywood",34},
-					("dsr_item_hardware",20),
-					("dsr_items_scrapmetal",2),
+					{"dsr_item_hardware",20},
+					{"dsr_items_scrapmetal",2},
 					{"dsr_item_logs",85}
 				};
 				name = "Level 3 Player House V1";
@@ -6651,7 +6649,7 @@ class CfgBuildables {
 				parts[] = {
 					{"dsr_item_lumber",23},
 					{"dsr_item_hardware",6},
-					("dsr_item_scrapmetal",1)
+					{"dsr_item_scrapmetal",1}
 				};
 				name = "Base Stockade Wall w/ Window";
 				model = "dsr_objects_stockade_wall_window";
@@ -6854,7 +6852,7 @@ class CfgCraftables {
 		preview = "\SM_Zombz\Survivors_icon.paa";
 		name = "Medical"; 
 		class Craftables {
-			class Lumber {
+			class Splint {
 				input[] = {
 					{"dsr_item_weapons_parts",1},
 					{"dsr_item_hardware",2},
@@ -6869,8 +6867,8 @@ class CfgCraftables {
 				};
 				requiredBuildings[] = {"TODO_WORKBENCH_HERE","TODO_FIREPLACE_HERE","TODO_ANVIL_HERE"};
 				
-				name = "Lumber";
-				description = "General Purpose Lumber.";
+				name = "Splint";
+				description = "LAST CRAFTABLE ITEM.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
