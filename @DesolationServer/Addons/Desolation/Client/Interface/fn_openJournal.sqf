@@ -8,19 +8,5 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+ 
 createDialog "DS_Journal_Index";
-
-[] spawn {
-	disableserialization;
-	waitUntil{!isNull (findDisplay 4001) || isNull (findDisplay 4002)};
-	if(!isNull (findDisplay 4001)) then {
-		_btn = (findDisplay 4001) displayCtrl 7;
-		_btn buttonSetAction "
-			if(DS_var_PageType == 0) then {
-				call DS_fnc_onCraftClick;
-			} else {
-				call DS_fnc_onBuildClick;
-			};";
-	};
-};
-
