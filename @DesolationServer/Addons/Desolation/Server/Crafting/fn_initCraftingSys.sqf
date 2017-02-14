@@ -28,10 +28,10 @@ for "_i" from 0 to count(_config)-1 do {
 			_preview
 		];
 		_cDataGroup = [];
-		_buildableData = _groupEntry >> "Buildables";
-		for "_j" from 0 to count(_buildableData)-1 do {
+		_craftableData = _groupEntry >> "Craftables";
+		for "_j" from 0 to count(_craftableData)-1 do {
 			
-			_craftable = _buildableData select _j;
+			_craftable = _craftableData select _j;
 			if(isClass _craftable) then {
 				
 				_cInput = getArray(_craftable >> "input");
