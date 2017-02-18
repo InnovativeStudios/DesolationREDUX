@@ -9,19 +9,16 @@
  * https://www.bistudio.com/monetization/
  */
 
-#define BUTTON_W 0.2
+_BUTTON_W = 0.25;
  
 disableSerialization;
 params["_params"];
 call ds_fnc_closebuttons;
 _display = findDisplay 602;
 if(isNull _display) exitWith {systemchat "ERROR: displayNull";};
-_ctrl = _display displayCtrl 1020;
-if(isNull _ctrl) exitWith {systemchat "ERROR: ctrlNull";};
-_pos = ctrlPosition _ctrl;
 
-_buttonY = _pos select 1;
-_buttonX = (_pos select 0) + (_pos select 2) + 0.005;
+_buttonY = safeZoneY + (safeZoneH/2) - (385*pixelH);
+_buttonX = safeZoneX + (safeZoneW/2) + (395*pixelW);
 
 _ctrl = _params select 0;
 _item = _params select 1;
@@ -61,7 +58,7 @@ if(isClass _actions) then {
 			if(call compile _condition) then {
 				_bY = _buttonY + (0.042*_bIndex);
 				_bH = 0.04;
-				_bW = BUTTON_W;
+				_bW = _BUTTON_W;
 				_bX = _buttonX;
 				_bIndex = _bIndex + 1;
 				_ctrl = _display ctrlCreate ["RscButton",-1];
@@ -77,7 +74,7 @@ if(isClass _actions) then {
 };
 _bY = _buttonY + (0.042*_bIndex);
 _bH = 0.04;
-_bW = BUTTON_W;
+_bW = _BUTTON_W;
 _bX = _buttonX;
 _bIndex = _bIndex + 1;
 _ctrl = _display ctrlCreate ["RscButton",-1];

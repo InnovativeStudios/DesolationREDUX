@@ -20,7 +20,7 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 	_password spawn {
 		params["_password"];
 		
-		uiSleep (60*10);//(3600*4)-(60*5); // temp removed to test shutdown
+		uiSleep (3600*4)-(60*5); // temp removed to test shutdown
 		"Server restarting in 5 minutes. Please log out soon" remoteExecCall ["systemchat",allPlayers];
 		uiSleep 60*4;
 		"Server restarting in 60 seconds. Please log out now" remoteExecCall ["systemchat",allPlayers];
