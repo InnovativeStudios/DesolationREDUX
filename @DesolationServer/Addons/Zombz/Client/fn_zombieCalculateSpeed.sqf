@@ -15,24 +15,25 @@
 	Description: SM_Zombz desolation redux edition.
 */
 
+// Let's disable the zombie speed.
+if (true) exitWith { true };
+
 params [["_zombieAgent", objNull],["_zombieDefaultSpeed", 0],"_building","_zombieIsInBuilding","_zombieisFaster","_buildingBox","_box0","_box1","_xm","_ym","_zm","_xmm","_ymm","_zmm","_zombiePos","_zmx","_zmy","_zmz"];
 _building = nearestBuilding _zombieAgent;
 _zombieIsInBuilding = false;
 if !(isNull _building) then
 {
 	_buildingBox = boundingBoxReal _building;
+
 	_box0 = _building modelToWorld (_buildingBox select 0);
 	_box1 = _building modelToWorld (_buildingBox select 1);
-	_xm = _box0 select 0;
-	_ym = _box0 select 1;
-	_zm = _box0 select 2;
-	_xmm = _box1 select 0;
-	_ymm = _box1 select 1;
-	_zmm = _box1 select 2;
+
+	_box0 params ["_xm","_ym","_zm"];
+	_box1 params ["_xmm","_ymm","_zmm"];
+
 	_zombiePos = getPos _zombieAgent;
-	_zmx = _zombiePos select 0;
-	_zmy = _zombiePos select 1;
-	_zmz = _zombiePos select 2;
+	_zombiePos params ["_zmx","_zmy","_zmz"];
+
 	if (((_zmx > _xm) && (_zmx < _xmm)) && ((_zmy > _ym) && (_zmy < _ymm)) && ((_zmz > _zm) && (_zmz < _zmm))) then
 	{
 		_zombieIsInBuilding = true;

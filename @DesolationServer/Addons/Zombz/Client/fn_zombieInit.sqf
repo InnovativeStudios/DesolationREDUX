@@ -72,14 +72,7 @@ if (_zombies isEqualTo []) exitWith {};
 				{
 					if ((netId _zombieAgent) in SM_IdleZombies) then
 					{
-						_index = [SM_IdleZombies, (netId _zombieAgent)] call SM_fnc_findIndex;
-
-						// This should not return -1, due to we know it's in it.... via the check above...
-						// You never know with arma, so error checking is almost always needed!
-						if (_index != -1) then
-						{
-							SM_IdleZombies deleteAt _index;
-						};
+						SM_IdleZombies = SM_IdleZombies - [(netId _zombieAgent)];
 					};
 				};
 			}

@@ -49,7 +49,10 @@ if (count(_blackListObjects) != 0) then
 }
 else
 {
-	_canSee = true;
+	if ((count _objects) == 0) then
+	{
+		_canSee = true;
+	};
 };
 
 _canSee

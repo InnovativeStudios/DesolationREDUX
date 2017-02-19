@@ -38,7 +38,6 @@ class CfgFunctions
 			class screenAddBlood {};
 			class screenRemoveBlood {};
 			class zombieFindFiredNear {};
-			class findIndex {};
 			class zombieCalculateSpeed {};
 			class zombieFindPositionWander {};
 			class zombieHandleDamage {};
