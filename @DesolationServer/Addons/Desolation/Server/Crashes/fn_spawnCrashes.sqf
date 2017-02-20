@@ -18,7 +18,7 @@ for "_i" from 1 to _numberOfCrashes do
 {
 	_crashType = selectRandom DS_HeliCrash_CrashTypes;
 	_heliType = getText (configFile >> "CfgHeliCrashes" >> "CrashTypes">> _crashType >> "HeliClass");
-	if (_heliType isEqualTo "") exitWith {diag_log "Crashes> Error no heliType defined!"};
+	if (_heliType isEqualTo "") exitWith {diag_log "DS_Crashes: Error no heliType defined!"};
 	_wreckClass = getText (configFile >> "CfgHeliCrashes" >> "CrashTypes">> _crashType >> "WreckClass");
 	_smokepos = getArray (configFile >> "CfgHeliCrashes" >> "CrashTypes">> _crashType >> "SmokePos");
 	_smokeSize = getnumber (configFile >> "CfgHeliCrashes" >> "CrashTypes">> _crashType >> "SmokeSize");

@@ -10,6 +10,7 @@
  */
 
 _heli = _this select 0;
+_pilot = driver _heli;
 _heliwreckModel = _this select 1;
 _smokesize = _this select 2;
 _smokeModelPos = _this select 3;
@@ -17,22 +18,32 @@ _wreckSmoke = _this select 4;
 
 
 _heli  setHit ["tail_rotor_hit", 1];
+[_heli,_smokesize,_smokeModelPos,false] remoteExec ["DS_fnc_crashSmoke",-2];
+
+
+
+_listeners = [];
+{
+	if("ItemRadio" in (assignedItems _x)) then {
+		_listeners pushBack _x;
+	};
+} forEach allPlayers;
+
+_callsignList = ["Charle 1-1","Misfit 1-1","Burglar 1-1","Foxhound 1-1"];
+_callsign = SelectRandom _callsigns;
+_gridRef = map posWorldToScreen [(getPos _heli)select 0,(getPos _heli)select 1];
+[netID _pilot,_callsign,"Mayday Mayday "+ _callsign + " is hit! We have lost engine power and are going down at GRID "+ _gridRef +" Requesting Immediate Assistance! Over"] remoteExec ["DS_fnc_receiveTransmition",_listeners];
+
+
+
 uiSleep 3;
 _heli  setHit ["main_rotor_hit", 1];
 _heli  setHit ["engine_hit", 1];
-[_heli,_smokesize,_smokeModelPos,false] remoteExec ["DS_fnc_crashSmoke",-2];
 waitUntil {isTouchingGround _heli};
 _heli setdamage 1;
 _wreckPos = getpos _heli;
 _wreckDir = getDir _heli;
 _wreckUp = VectorUp _heli;
-
-//remove origional helicrew from vehicle
-{
-	deleteVehicle _x
-} forEach crew _heli;
-
-//TODO Spawn new helicrew with custom weapons. (use set velocity random to fling crew hidden members, unhide after impact!)
 
 uiSleep 0.5;
 deletevehicle _heli;

@@ -20,7 +20,7 @@ if(_type == "MUSIC") then {
 	} forEach allPlayers;
 
 	if !(_send isEqualTo []) then {
-		"DropTheLoad" remoteExec["playMusic",_send];
+		_parameter remoteExec["playMusic",_send];
 	};
 };
 if(_type == "OGG") then {
