@@ -114,11 +114,9 @@ try
 	// Because why not?
 	_zombieAgent setDir (random 360);
 
-	// Fixes zombies just standing in one place, even though they are being controlled and being told to move.
-	// This may not be an issue anymore.
-	// This will stop the really fast derp zombies??
-	/*_zombieAgent setHitIndex [10, 0];
-	_zombieAgent setHitPointDamage ["hitLegs", 0];*/
+	//Makes it so zombies can run.
+	_zombieAgent setHitIndex [10, 0];
+	_zombieAgent setHitPointDamage ["hitLegs", 0];
 
 	// Give the zombies a hat, if they have one (mostly arma 2 zombies)
 	_headGear = getText (configFile >> "CfgVehicles" >> _class >> "headgear");
