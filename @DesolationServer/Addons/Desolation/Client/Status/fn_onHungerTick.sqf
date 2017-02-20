@@ -26,7 +26,7 @@ if(DS_var_lastAte > 5400) then { // 1.5 hour grace
 		DS_var_isStarving = false;
 	};
 };
-if(_iconAnim == 0 && DS_var_Hunger == 100) then {
+if(_iconAnim == 0 && DS_var_Hunger < 100) then {
 	_iconAnim = 2;
 };
 

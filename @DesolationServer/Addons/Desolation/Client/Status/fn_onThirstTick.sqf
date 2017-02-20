@@ -27,7 +27,7 @@ if(DS_var_lastDrank > 3600) then { // 1 hour grace period
 		DS_var_isDehydrating = false;
 	};
 };
-if(_iconAnim == 0 && DS_var_Thirst == 100) then {
+if(_iconAnim == 0 && DS_var_Thirst < 100) then {
 	_iconAnim = 2;
 };
 
