@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 private ["_obj","_Smoke","_smoke2"];
- params ["_obj","_size","_smokePos","_isWreck"]
+params ["_obj","_size","_smokePos","_isWreck"];
 
 
 _smoke = "#particlesource" createVehicleLocal getpos _obj;
