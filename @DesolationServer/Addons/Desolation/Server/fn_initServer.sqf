@@ -50,6 +50,20 @@ call DS_fnc_initLock;
 //--- start subsystems
 [] spawn DS_fnc_simManager;
 
+//--- TEMP (group system manager)
+[] spawn {
+	while{true} do {
+		{ 
+			if ((count units _x) == 0) then 
+			{
+				deleteGroup _x;
+			};
+		} forEach allGroups;
+		uiSleep 20;
+	};
+};
+
+
 //--- DEBUG (monitor thread counts)
 [] spawn {
 	while{true} do {

@@ -140,7 +140,7 @@ while{true} do {
 				_x setVariable ["SavedLoot",[]];
 				_x setVariable ["IsSpawnedLoot",true];
 				
-				[_x,_MinPiles,_buildingTypes,_Config_Options,[]]  call DS_fnc_spawnLoot; //remoteExecCall ["DS_fnc_spawnLoot",2]; //temp: we need to get DS_fnc_spawnLoot into a non-schedueled environment
+				[_x,_MinPiles,_buildingTypes,_Config_Options,[]]  call DS_fnc_spawnLoot; //remoteExecCall ["DS_fnc_spawnLoot",2];
 			} else {
 				if(!_isSpawned) then {
 					[_x,_MinPiles,_buildingTypes,_Config_Options,_savedLoot] call DS_fnc_spawnLoot;//remoteExecCall ["DS_fnc_spawnLoot",2];
