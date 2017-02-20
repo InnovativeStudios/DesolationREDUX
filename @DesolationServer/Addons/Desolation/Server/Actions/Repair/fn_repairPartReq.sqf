@@ -48,18 +48,6 @@ if ((count _missingItems) != 0) exitWith
 	};
 } count _required;
 
-_object setOwner 2;
-if !(local _object) then
-{
-	while {!local _object} do
-	{
-		_object setOwner 2;
-		if !(isNull(driver _object)) then
-		{
-			(driver _object) action ["Eject", _object];
-		};
-	};
-};
-_object setHitPointDamage [_hitPoint, 0];
+[_object, [_hitPoint, 0]] remoteExecCall ["setHitPointDamage", 0];
 
 true
