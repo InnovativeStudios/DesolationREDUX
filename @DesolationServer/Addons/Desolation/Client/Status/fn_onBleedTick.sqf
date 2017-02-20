@@ -36,7 +36,10 @@ if(DS_var_Blood != 27500) then {
 		
 		DS_var_bEffectSaturation = 1;
 	};
-	if(_iconAnim == 0) then {_iconAnim = 2;};
+	
+	if(DS_var_Blood < 25000) then {
+		if(_iconAnim == 0) then {_iconAnim = 2;};
+	};
 	
 	_newSaturation = DS_var_Blood / 27500;
 	if(DS_var_bEffectSaturation != _newSaturation) then {

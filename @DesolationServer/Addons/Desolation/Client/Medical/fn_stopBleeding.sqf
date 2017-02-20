@@ -13,4 +13,5 @@
 {
 	[player,_x] remoteExec ["DS_fnc_removeBleedSource",-2];
 } forEach (player getVariable "DS_var_BleedSources");
+player setVariable ["BLEED_SOURCES",[]]; //temp fix for bleeding after banadge and reload in
 // TODO: Toggle bleeding off

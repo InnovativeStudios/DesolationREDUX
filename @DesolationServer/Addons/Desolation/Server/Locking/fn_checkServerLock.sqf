@@ -51,9 +51,17 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		params["_password"];
 		
 		uiSleep (3600*4)-(60*5); // temp removed to test shutdown
-		"Server restarting in 5 minutes. Please log out soon" remoteExecCall ["systemchat",allPlayers];
+		[
+			[
+				["SERVER SHUTTING DOWN, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
+			], 0, 0, true
+		] remoteExec  ["BIS_fnc_typeText2", -2];
 		uiSleep 60*4;
-		"Server restarting in 60 seconds. Please log out now" remoteExecCall ["systemchat",allPlayers];
+		[
+			[
+				["SERVER SHUTTING DOWN NOW, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
+			], 0, 0, true
+		] remoteExec  ["BIS_fnc_typeText2", -2];
 		uiSleep 60;
 		
 		// prevent new players from connecting

@@ -8,8 +8,8 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-params["_reason"];
-
-
-[parseText ("You have been kicked<br/>Reason: " + _reason), "Desolation Redux", true, false] call BIS_fnc_guiMessage;
-(findDisplay 46) closeDisplay 0; 
+_this spawn {
+	params["_reason"];
+	[parseText ("You have been kicked<br/>Reason: " + _reason), "Desolation Redux", true, false] call BIS_fnc_guiMessage;
+	(findDisplay 46) closeDisplay 0; 
+};

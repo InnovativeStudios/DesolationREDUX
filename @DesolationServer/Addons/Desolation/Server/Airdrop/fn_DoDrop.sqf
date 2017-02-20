@@ -60,5 +60,8 @@ _pos = _pos vectorAdd [0,0,-10];
 [_pos,_cItems] spawn DS_fnc_SpawnCrate;
 _group move _finishPos;
 waitUntil{hintSilent str((_plane distance2D _finishPos)); (_plane distance2D _finishPos) < 500};
+{
+	deleteVehicle _x;
+} forEach (crew _plane);
 deleteVehicle _plane;
 deleteGroup _group;

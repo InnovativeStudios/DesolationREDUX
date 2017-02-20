@@ -62,6 +62,24 @@ call DS_fnc_initLock;
 		uiSleep 20;
 	};
 };
+//--- TEMP: move this to its own function
+DeleteEmptyHolder = 
+{
+    // This file does not need to be optimized, it's litreally just doing something very basic.
+    // Security
+    params["_netIdConatiner","_netIdPlayer"];
+    private _container = objectFromNetId _netIdConatiner;
+    private _player = objectFromNetId _netIdPlayer;
+    if !(isNull _container) then
+    {
+        // Also secuirty
+        if ((typeOf _container) == "LootWeaponHolder") then
+        {
+            deleteVehicle _container;
+        };
+    };
+    true
+};
 
 
 //--- DEBUG (monitor thread counts)

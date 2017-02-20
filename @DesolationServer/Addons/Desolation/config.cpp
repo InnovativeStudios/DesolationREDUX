@@ -122,6 +122,7 @@ class CfgFunctions
 			isclient = 1;
 			class infoText {};
 			class notWhitelisted {};
+			class crashSmoke {};
 			class receiveTransmition {};
 			class calcGrayscale {};
 			class getCfgValue {};
@@ -270,7 +271,6 @@ class CfgFunctions
 			file = "Desolation\Server\Crashes";
 			isserver = 1;
 			class spawnCrashes {};
-			class crashSmoke {};
 			class spawnCrashLoot {};
 			class initHeliCrashes {};
 			class heliCrashAnim {};

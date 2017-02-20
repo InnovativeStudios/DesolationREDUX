@@ -32,7 +32,7 @@ for "_i" from 1 to _numberOfCrashes do
 	_timeout = diag_ticktime + 20;
 	
 	
-	
+	diag_log "<HELI CRASHES>: Spawning heli crash.";
 
 	_heli = _heliType createVehicle [0,0,0];
 

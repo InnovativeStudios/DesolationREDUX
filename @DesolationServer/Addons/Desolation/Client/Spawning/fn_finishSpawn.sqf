@@ -46,6 +46,28 @@ if(!isNil "RSM_fnc_initRealism") then {
 
 player addRating 5e5;
 
+
+
+//--- TODO: move this to its own event
+player addEventHandler ["InventoryClosed", { 
+	params [["_player", objNull],["_container", objNull]];
+	if ((typeOf _container) == "LootWeaponHolder") then
+	{
+		_inv = [];
+		_inv append ((getMagazineCargo _container) select 0);
+		_inv append ((getItemCargo _container) select 0);
+		_inv append ((getWeaponCargo _container) select 0);
+		_inv append ((getBackpackCargo _container) select 0);
+		if ((count _inv) == 0) then
+		{
+			[(netId _container), (netId _player)] remoteExecCall ["DeleteEmptyHolder", 2];
+			//systemChat "deleted";
+		};
+	};
+}];
+
+
+
 //--- TEMP
 addMissionEventHandler ["EachFrame",{
 	_text = "";

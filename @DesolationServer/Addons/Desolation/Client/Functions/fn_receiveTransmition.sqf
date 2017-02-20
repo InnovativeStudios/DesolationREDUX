@@ -11,7 +11,14 @@
 
 params["_objectID","_objectName","_messages"];
 _object = objectFromNetID _objectID;
-_object setName _objectName;
-{
-	_object commandChat _x;
-} forEach _messages;
+if(!isNull _object) then {
+	_object setName _objectName;
+	{
+		_object commandChat _x;
+	} forEach _messages;
+} else {
+	systemchat "THIS IS AN ERROR: REPORT TO DEVS";
+	{
+		systemchat ("RADIO - " + _objectName + ": " + _x);
+	} forEach _messages;
+};

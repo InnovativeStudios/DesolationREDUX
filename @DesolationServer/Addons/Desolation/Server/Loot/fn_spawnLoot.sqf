@@ -54,7 +54,7 @@ if(_savedLoot isEqualTo []) then {
 
 		{
 			_pos = ASLtoATL(AGLtoASL(_building modelToWorld _x));
-			_object = "LootWeaponHolder" createVehicle _pos;
+			_object = "LootWeaponHolder" createVehicle [0,0,0];
 			_object setposATL _pos;
 			_object setDir random(360);
 			
