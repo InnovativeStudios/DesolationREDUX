@@ -15,11 +15,11 @@
 	Description: SM_Zombz desolation redux edition.
 */
 
-params ["_zombie", "_unit"];
+params ["_zombieAgent", "_unit"];
 
 _objects = [];
 {
-	_objs = lineIntersectsObjs [eyePos _unit, eyePos _zombie, objNull, objNull, false, _x];
+	_objs = lineIntersectsObjs [eyePos _unit, eyePos _zombieAgent, _unit, _zombieAgent, false, _x];
 	if (count(_objs) != 0) then
 	{
 		_objects append _objs;
