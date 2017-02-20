@@ -44,6 +44,8 @@ if(!isNil "RSM_fnc_initRealism") then {
 	[player] call RSM_fnc_initRealism;
 };
 
+player addRating 5e5;
+
 //--- TEMP
 addMissionEventHandler ["EachFrame",{
 	_text = "";
