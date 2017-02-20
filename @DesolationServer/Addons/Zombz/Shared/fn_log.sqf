@@ -15,7 +15,11 @@
 	Description: SM_Zombz desolation redux edition.
 */
 
-private _version = getText(configFile >> "CfgPatches" >> "DSR_Zombz_code" >> "version");
-diag_log format["SM_Zombz %1: %2", _version, _this];
+_debug = ["debug","SM"] call SM_fnc_getCfgValue;
+if (_debug) then
+{
+	private _version = getText(configFile >> "CfgPatches" >> "DSR_Zombz_code" >> "version");
+	diag_log format["SM_Zombz %1: %2", _version, _this];
+};
 
 true
