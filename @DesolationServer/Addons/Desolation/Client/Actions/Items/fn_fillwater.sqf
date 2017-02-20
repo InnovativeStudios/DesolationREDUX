@@ -11,7 +11,7 @@
 
 params["_classname"];
 
-if !(_classname find "_empty") exitWith {};
+if (_classname find "_empty" == -1) exitWith {};
 _data = (toLower(_classname) splitString "_");
 _data deleteAt (count(_data)-1);
 _data pushBack "dirty";
