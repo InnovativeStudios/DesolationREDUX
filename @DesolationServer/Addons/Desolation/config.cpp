@@ -413,7 +413,7 @@ class CfgAirdropSpawns {
 			
 		};
 		magazines[] = {
-			"dsr_item_log",
+			"dsr_item_logs",
 			"dsr_item_portablegenerator",
 			"dsr_item_campinglight",
 			"dsr_item_campingchair",
@@ -1195,19 +1195,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
@@ -2054,19 +2054,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
@@ -2913,19 +2913,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
@@ -3772,19 +3772,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
@@ -4631,19 +4631,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
@@ -5490,19 +5490,19 @@ class CfgItemSpawns {
             //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semirare[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 average[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 semicommon[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
                 common[] = {
-                    {"dsr_item_log",1}
+                    {"dsr_item_logs",1}
                 };
             };
             class Attachment {
