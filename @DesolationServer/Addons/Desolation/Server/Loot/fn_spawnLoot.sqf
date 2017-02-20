@@ -43,8 +43,10 @@ if(_savedLoot isEqualTo []) then {
 		};
 		while{count(_positions) > 0} do {
 			_pos = _positions deleteAt floor(random(count(_positions)));
-			if(random(100) < _sChance) then {
-				_spawn_positions pushBack _pos;
+			if(count(_pos nearObjects ["LootWeaponHolder",0.2]) == 0) then {
+				if(random(100) < _sChance) then {
+					_spawn_positions pushBack _pos;
+				};
 			};
 		};
 
