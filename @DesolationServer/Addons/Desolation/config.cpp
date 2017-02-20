@@ -514,7 +514,9 @@ class CfgItemSpawns {
                     {"DSR_arifle_MXC",13},
                     {"DSR_arifle_MXC_Black",12},
                     {"DSR_arifle_MX",11},
-                    {"DSR_arifle_MX_Black",10}
+                    {"DSR_arifle_MX_Black",10},
+					{"dsr_cz805_a2",20},
+					{"dsr_m4a3",20}
                 };
                 semicommon[] = {
                     {"DSR_arifle_Katiba",37},
@@ -548,8 +550,9 @@ class CfgItemSpawns {
                     {"DSR_hgun_ACPC2",75}
                 };
                 common[] = {
-                    {"DSR_hgun_Pistol_Signal",45},
-                    {"DSR_hgun_ACPC2",55}
+                    {"DSR_hgun_Pistol_Signal",40},
+                    {"DSR_hgun_ACPC2",30},
+					{"dsr_44magnum",30}
                 };
             };
 			class Magazine {
@@ -625,6 +628,10 @@ class CfgItemSpawns {
                 };
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
+					{"30Rnd_556x45_Stanag",5},
+					{"30Rnd_556x45_Stanag_green",5},
+					{"30Rnd_556x45_Stanag_red",5},
+					{"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
