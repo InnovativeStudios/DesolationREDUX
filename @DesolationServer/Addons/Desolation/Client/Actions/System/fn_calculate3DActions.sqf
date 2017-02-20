@@ -44,6 +44,7 @@ while {DS_var_3DActionsEnabled} do
 
 		if ((_obj isKindOf "landVehicle") || (_obj isKindOf "air") || (_obj isKindOf "ship")) exitWith
 		{
+			if ((_obj isKindOf "House") || (_obj isKindOf "Building")) exitWith { DS_var_valid3DActions = []; }; 
 			_hitpoints = "true" configClasses (configFile >> "CfgVehicles" >> typeOf _obj >> "Hitpoints");
 
 			if ((count _hitpoints) == 0) exitWith { false };
