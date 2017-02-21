@@ -87,6 +87,7 @@ class CfgFunctions
 			isclient = 1;
 			class removePart {};
 			class repairPart {};
+			class refuelVehicle {};
 		};
 		class Client_Crafting {
 			file = "Desolation\Client\Crafting";
@@ -221,6 +222,7 @@ class CfgFunctions
 			isserver = 1;
 			class removePartReq {};
 			class repairPartReq {};
+			class refeulReq {};
 		};
 		class Server_Database {
 			file = "Desolation\Server\Database";
