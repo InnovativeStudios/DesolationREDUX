@@ -467,7 +467,7 @@ class CfgItemSpawns {
 	buildingTypes[] = {"Military","Civilian","Industrial","Commercial","Medical","Mechanical"};
 	lootRarity[] = {"rare","semirare","average","semicommon","common"};
 	lootTypes[] = {"Weapon","Handgun","Magazine","Food","Drink","Medical","Junk","Backpack","Uniform","Vest","Helmet","Cosmetic","GeneralItem","Construction","Book","Electronic","CarPart","Attachment"};
-
+	
 	class Loot {
         class Military {
             class Weapon {
@@ -767,14 +767,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -852,20 +857,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
@@ -1571,14 +1573,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -1612,26 +1619,26 @@ class CfgItemSpawns {
             };
             class Uniform {
                 rare[] = {
-                    {"U_B_CombatUniform_mcam_tshirt",1},
-                    {"U_B_CombatUniform_mcam",1},
-                    {"U_I_CombatUniform",1},                //Green or Independant
-                    {"U_O_CombatUniform_ocamo",1},          //Hex
-                    {"U_O_CombatUniform_oucamo",1},         //Winter
-                    {"U_B_CTRG_1",1},
-                    {"U_B_CTRG_3",1},
-                    {"U_B_FullGhillie_ard",1},
-                    {"U_B_FullGhillie_lsh",1},
-                    {"U_B_FullGhillie_sard",1},
-                    {"U_B_GhillieSuit",1},
-                    {"U_B_CombatUniform_mcam_vest",1},
-                    {"U_B_Wetsuit",1},                      //Black
-                    {"U_I_Wetsuit",1},                      //Green
-                    {"U_O_Wetsuit",1},                      //Digital
-                    {"U_I_G_resistanceLeader_F",1},         //Tattoo'd Guy
-                    {"U_I_OfficerUniform",1},
-                    {"U_I_CombatUniform_shortsleeve",1},
-                    {"U_I_CombatUniform_tshirt",1},
-                    {"U_O_OfficerUniform_ocamo",1}
+                    {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam",5},
+                    {"U_I_CombatUniform",5},                //Green or Independant
+                    {"U_O_CombatUniform_ocamo",5},          //Hex
+                    {"U_O_CombatUniform_oucamo",5},         //Winter
+                    {"U_B_CTRG_1",5},
+                    {"U_B_CTRG_3",5},
+                    {"U_B_FullGhillie_ard",5},
+                    {"U_B_FullGhillie_lsh",5},
+                    {"U_B_FullGhillie_sard",5},
+                    {"U_B_GhillieSuit",5},
+                    {"U_B_CombatUniform_mcam_vest",5},
+                    {"U_B_Wetsuit",5},                      //Black
+                    {"U_I_Wetsuit",5},                      //Green
+                    {"U_O_Wetsuit",5},                      //Digital
+                    {"U_I_G_resistanceLeader_F",5},         //Tattoo'd Guy
+                    {"U_I_OfficerUniform",5},
+                    {"U_I_CombatUniform_shortsleeve",5},
+                    {"U_I_CombatUniform_tshirt",5},
+                    {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
                     {"U_B_survival_uniform",5},
@@ -1656,20 +1663,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
@@ -2375,14 +2379,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -2416,26 +2425,26 @@ class CfgItemSpawns {
             };
             class Uniform {
                 rare[] = {
-                    {"U_B_CombatUniform_mcam_tshirt",1},
-                    {"U_B_CombatUniform_mcam",1},
-                    {"U_I_CombatUniform",1},                //Green or Independant
-                    {"U_O_CombatUniform_ocamo",1},          //Hex
-                    {"U_O_CombatUniform_oucamo",1},         //Winter
-                    {"U_B_CTRG_1",1},
-                    {"U_B_CTRG_3",1},
-                    {"U_B_FullGhillie_ard",1},
-                    {"U_B_FullGhillie_lsh",1},
-                    {"U_B_FullGhillie_sard",1},
-                    {"U_B_GhillieSuit",1},
-                    {"U_B_CombatUniform_mcam_vest",1},
-                    {"U_B_Wetsuit",1},                      //Black
-                    {"U_I_Wetsuit",1},                      //Green
-                    {"U_O_Wetsuit",1},                      //Digital
-                    {"U_I_G_resistanceLeader_F",1},         //Tattoo'd Guy
-                    {"U_I_OfficerUniform",1},
-                    {"U_I_CombatUniform_shortsleeve",1},
-                    {"U_I_CombatUniform_tshirt",1},
-                    {"U_O_OfficerUniform_ocamo",1}
+                    {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam",5},
+                    {"U_I_CombatUniform",5},                //Green or Independant
+                    {"U_O_CombatUniform_ocamo",5},          //Hex
+                    {"U_O_CombatUniform_oucamo",5},         //Winter
+                    {"U_B_CTRG_1",5},
+                    {"U_B_CTRG_3",5},
+                    {"U_B_FullGhillie_ard",5},
+                    {"U_B_FullGhillie_lsh",5},
+                    {"U_B_FullGhillie_sard",5},
+                    {"U_B_GhillieSuit",5},
+                    {"U_B_CombatUniform_mcam_vest",5},
+                    {"U_B_Wetsuit",5},                      //Black
+                    {"U_I_Wetsuit",5},                      //Green
+                    {"U_O_Wetsuit",5},                      //Digital
+                    {"U_I_G_resistanceLeader_F",5},         //Tattoo'd Guy
+                    {"U_I_OfficerUniform",5},
+                    {"U_I_CombatUniform_shortsleeve",5},
+                    {"U_I_CombatUniform_tshirt",5},
+                    {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
                     {"U_B_survival_uniform",5},
@@ -2460,20 +2469,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
@@ -3179,14 +3185,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -3220,26 +3231,26 @@ class CfgItemSpawns {
             };
             class Uniform {
                 rare[] = {
-                    {"U_B_CombatUniform_mcam_tshirt",1},
-                    {"U_B_CombatUniform_mcam",1},
-                    {"U_I_CombatUniform",1},                //Green or Independant
-                    {"U_O_CombatUniform_ocamo",1},          //Hex
-                    {"U_O_CombatUniform_oucamo",1},         //Winter
-                    {"U_B_CTRG_1",1},
-                    {"U_B_CTRG_3",1},
-                    {"U_B_FullGhillie_ard",1},
-                    {"U_B_FullGhillie_lsh",1},
-                    {"U_B_FullGhillie_sard",1},
-                    {"U_B_GhillieSuit",1},
-                    {"U_B_CombatUniform_mcam_vest",1},
-                    {"U_B_Wetsuit",1},                      //Black
-                    {"U_I_Wetsuit",1},                      //Green
-                    {"U_O_Wetsuit",1},                      //Digital
-                    {"U_I_G_resistanceLeader_F",1},         //Tattoo'd Guy
-                    {"U_I_OfficerUniform",1},
-                    {"U_I_CombatUniform_shortsleeve",1},
-                    {"U_I_CombatUniform_tshirt",1},
-                    {"U_O_OfficerUniform_ocamo",1}
+                    {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam",5},
+                    {"U_I_CombatUniform",5},                //Green or Independant
+                    {"U_O_CombatUniform_ocamo",5},          //Hex
+                    {"U_O_CombatUniform_oucamo",5},         //Winter
+                    {"U_B_CTRG_1",5},
+                    {"U_B_CTRG_3",5},
+                    {"U_B_FullGhillie_ard",5},
+                    {"U_B_FullGhillie_lsh",5},
+                    {"U_B_FullGhillie_sard",5},
+                    {"U_B_GhillieSuit",5},
+                    {"U_B_CombatUniform_mcam_vest",5},
+                    {"U_B_Wetsuit",5},                      //Black
+                    {"U_I_Wetsuit",5},                      //Green
+                    {"U_O_Wetsuit",5},                      //Digital
+                    {"U_I_G_resistanceLeader_F",5},         //Tattoo'd Guy
+                    {"U_I_OfficerUniform",5},
+                    {"U_I_CombatUniform_shortsleeve",5},
+                    {"U_I_CombatUniform_tshirt",5},
+                    {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
                     {"U_B_survival_uniform",5},
@@ -3264,20 +3275,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
@@ -3983,14 +3991,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -4024,26 +4037,26 @@ class CfgItemSpawns {
             };
             class Uniform {
                 rare[] = {
-                    {"U_B_CombatUniform_mcam_tshirt",1},
-                    {"U_B_CombatUniform_mcam",1},
-                    {"U_I_CombatUniform",1},                //Green or Independant
-                    {"U_O_CombatUniform_ocamo",1},          //Hex
-                    {"U_O_CombatUniform_oucamo",1},         //Winter
-                    {"U_B_CTRG_1",1},
-                    {"U_B_CTRG_3",1},
-                    {"U_B_FullGhillie_ard",1},
-                    {"U_B_FullGhillie_lsh",1},
-                    {"U_B_FullGhillie_sard",1},
-                    {"U_B_GhillieSuit",1},
-                    {"U_B_CombatUniform_mcam_vest",1},
-                    {"U_B_Wetsuit",1},                      //Black
-                    {"U_I_Wetsuit",1},                      //Green
-                    {"U_O_Wetsuit",1},                      //Digital
-                    {"U_I_G_resistanceLeader_F",1},         //Tattoo'd Guy
-                    {"U_I_OfficerUniform",1},
-                    {"U_I_CombatUniform_shortsleeve",1},
-                    {"U_I_CombatUniform_tshirt",1},
-                    {"U_O_OfficerUniform_ocamo",1}
+                    {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam",5},
+                    {"U_I_CombatUniform",5},                //Green or Independant
+                    {"U_O_CombatUniform_ocamo",5},          //Hex
+                    {"U_O_CombatUniform_oucamo",5},         //Winter
+                    {"U_B_CTRG_1",5},
+                    {"U_B_CTRG_3",5},
+                    {"U_B_FullGhillie_ard",5},
+                    {"U_B_FullGhillie_lsh",5},
+                    {"U_B_FullGhillie_sard",5},
+                    {"U_B_GhillieSuit",5},
+                    {"U_B_CombatUniform_mcam_vest",5},
+                    {"U_B_Wetsuit",5},                      //Black
+                    {"U_I_Wetsuit",5},                      //Green
+                    {"U_O_Wetsuit",5},                      //Digital
+                    {"U_I_G_resistanceLeader_F",5},         //Tattoo'd Guy
+                    {"U_I_OfficerUniform",5},
+                    {"U_I_CombatUniform_shortsleeve",5},
+                    {"U_I_CombatUniform_tshirt",5},
+                    {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
                     {"U_B_survival_uniform",5},
@@ -4068,20 +4081,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
@@ -4787,14 +4797,19 @@ class CfgItemSpawns {
             };
             class Backpack {
                 rare[] = {
-                    {"B_Carryall_oucamo",20},
-                    {"B_Carryall_ocamo",16},
-                    {"B_Carryall_khk",12},
-                    {"B_Carryall_oli",20},
-                    {"B_Carryall_cbr",10},
-                    {"B_Carryall_mcamo",10},
+                    {"DSR_Carryall_Blue",11},
+                    {"DSR_Carryall_HunterF",5},
+                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_WHiker",7},
+                    {"DSR_Carryall_MHiker",7},
+                    {"DSR_Carryall_Hunter",5},
+                    {"DSR_Carryall_HKitty",2},
+                    {"DSR_Carryall_Orange",11},
+                    {"DSR_Carryall_Purple",11},
+                    {"DSR_Carryall_Red",11},
+                    {"DSR_Carryall_Yellow",11},
                     //Special Need to Test (Some might spawn with gear in them)
-                    {"B_Parachute",12}
+                    {"B_Parachute",8}
                 };
                 semirare[] = {
                     {"B_Kitbag_sgg",65},
@@ -4828,26 +4843,26 @@ class CfgItemSpawns {
             };
             class Uniform {
                 rare[] = {
-                    {"U_B_CombatUniform_mcam_tshirt",1},
-                    {"U_B_CombatUniform_mcam",1},
-                    {"U_I_CombatUniform",1},                //Green or Independant
-                    {"U_O_CombatUniform_ocamo",1},          //Hex
-                    {"U_O_CombatUniform_oucamo",1},         //Winter
-                    {"U_B_CTRG_1",1},
-                    {"U_B_CTRG_3",1},
-                    {"U_B_FullGhillie_ard",1},
-                    {"U_B_FullGhillie_lsh",1},
-                    {"U_B_FullGhillie_sard",1},
-                    {"U_B_GhillieSuit",1},
-                    {"U_B_CombatUniform_mcam_vest",1},
-                    {"U_B_Wetsuit",1},                      //Black
-                    {"U_I_Wetsuit",1},                      //Green
-                    {"U_O_Wetsuit",1},                      //Digital
-                    {"U_I_G_resistanceLeader_F",1},         //Tattoo'd Guy
-                    {"U_I_OfficerUniform",1},
-                    {"U_I_CombatUniform_shortsleeve",1},
-                    {"U_I_CombatUniform_tshirt",1},
-                    {"U_O_OfficerUniform_ocamo",1}
+                    {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam",5},
+                    {"U_I_CombatUniform",5},                //Green or Independant
+                    {"U_O_CombatUniform_ocamo",5},          //Hex
+                    {"U_O_CombatUniform_oucamo",5},         //Winter
+                    {"U_B_CTRG_1",5},
+                    {"U_B_CTRG_3",5},
+                    {"U_B_FullGhillie_ard",5},
+                    {"U_B_FullGhillie_lsh",5},
+                    {"U_B_FullGhillie_sard",5},
+                    {"U_B_GhillieSuit",5},
+                    {"U_B_CombatUniform_mcam_vest",5},
+                    {"U_B_Wetsuit",5},                      //Black
+                    {"U_I_Wetsuit",5},                      //Green
+                    {"U_O_Wetsuit",5},                      //Digital
+                    {"U_I_G_resistanceLeader_F",5},         //Tattoo'd Guy
+                    {"U_I_OfficerUniform",5},
+                    {"U_I_CombatUniform_shortsleeve",5},
+                    {"U_I_CombatUniform_tshirt",5},
+                    {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
                     {"U_B_survival_uniform",5},
@@ -4872,20 +4887,17 @@ class CfgItemSpawns {
                     {"U_Marshal",20}
                 };
                 semicommon[] = {
-                    {"U_C_Commoner1_1",10},
-                    {"U_C_Commoner1_2",10},     
-                    {"U_C_Commoner1_3",10},
-                    {"U_C_Commoner2_1",10},
-                    {"U_C_Commoner2_2",10},
-                    {"U_C_Commoner2_3",10},
-                    {"U_C_Journalist",4},
-                    {"U_C_Poloshirt_stripped",5},
-                    {"U_C_Commoner_shorts",9},
-                    {"U_C_ShirtSurfer_shorts",5},
-                    {"U_C_TeeSurfer_shorts_1",5},
-                    {"U_C_TeeSurfer_shorts_2",5},
-                    {"U_C_WorkerCoveralls",4},
-                    {"U_C_HunterBody_grn",3}
+                    {"U_C_Commoner1_1",12},
+                    {"U_C_Commoner1_2",12},     
+                    {"U_C_Commoner1_3",12},
+                    {"U_C_Journalist",7},
+                    {"U_C_Poloshirt_stripped",8},
+                    {"U_C_Commoner_shorts",12},
+                    {"U_C_ShirtSurfer_shorts",8},
+                    {"U_C_TeeSurfer_shorts_1",8},
+                    {"U_C_TeeSurfer_shorts_2",8},
+                    {"U_C_WorkerCoveralls",8},
+                    {"U_C_HunterBody_grn",5}
                 };
                 common[] = {
                     {"U_C_Poor_1",25},
