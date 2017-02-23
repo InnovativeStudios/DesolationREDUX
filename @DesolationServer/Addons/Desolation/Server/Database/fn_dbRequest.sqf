@@ -86,9 +86,15 @@ switch(_type)do{
 			_loadout set[5,["",[]]];
 		};
 		
+		_anim = animationState _playerObj;
+		if(vehicle _playerObj != _playerObj) then {
+			_anim = "";
+		};
+		
+		
 		_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_CHAR,[
 			[PROTOCOL_DBCALL_ARGUMENT_CHARUUID,_charuuid],
-			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE,animationState _playerObj],
+			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE,_anim],
 			[PROTOCOL_DBCALL_ARGUMENT_DIRECTION, getdir _playerObj],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, 1],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX,_posATL select 0],
