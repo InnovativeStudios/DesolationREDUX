@@ -82,8 +82,16 @@ class CfgFunctions
 	class DS
 	{
 		//--- client functions
+		class Client_Weapon {
+			file = "Desolation\Client\Weapon";
+			isclient = 1;
+			class onAxeSwing {};
+			class onPickaxeSwing {};
+			class onFishingrodSwing {};
+			class swingEvent {};
+		};
 		class Client_Actions_Vehicle {
-			file = "Desolation\client\actions\repair";
+			file = "Desolation\Client\Actions\Repair";
 			isclient = 1;
 			class removePart {};
 			class repairPart {};

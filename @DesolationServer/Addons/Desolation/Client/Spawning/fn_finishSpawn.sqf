@@ -30,7 +30,10 @@ if(_goggles != "") then {
 [] spawn DS_fnc_showRegionNotification;
 //--- init subsystems
 
-	// starting health systems
+//--- setup melee weapons
+call DS_fnc_swingEvent;
+
+// starting health systems
 call ds_fnc_initHealthSys;
 [] spawn DS_fnc_initStatusSys;
 call DS_fnc_initBleedingSystem;
