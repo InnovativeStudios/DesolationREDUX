@@ -3,12 +3,19 @@
 	Source: http://killzonekid.com/arma-scripting-tutorials-how-to-override-lmb/
 */
 
+DSR_isSwinging = false;
+
 player addAction ["",{
-	player playMoveNow "dsr_AxeSlashGst";
-	[] spawn {
-		uiSleep 0.5;
-		player forceWeaponFire [weaponState player select 1, weaponState player select 2];
-		call DS_fnc_onAxeSwing;
+	if(!DSR_isSwinging) then {
+		DSR_isSwinging = true;
+		player playActionNow "dsr_AxeSlashGst";
+		[] spawn {
+			uiSleep 0.7;
+			player forceWeaponFire [weaponState player select 1, weaponState player select 2];
+			call DS_fnc_onAxeSwing;
+			uiSleep 0.3;
+			DSR_isSwinging = false;
+		};
 	};
 }, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Axe') || (currentWeapon player == 'DSR_Melee_Fire_Axe')"];
 
