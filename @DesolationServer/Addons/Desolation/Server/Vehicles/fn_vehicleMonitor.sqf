@@ -24,7 +24,14 @@ while{true} do {
 	_newArray2 = [];
 	{
 		_uuid = DS_var_VehicleUUIDS select _forEachIndex;
-		if (isNull _x || !(alive _x)) then {
+		
+		_cleanup = false;
+		_pos = getPosASL _x;
+		if((_x select 2) < 0) then {
+			_cleanup = true;
+		};
+		
+		if (isNull _x || !(alive _x) || _cleanup) then {
 			["destroyVehicle","",[_uuid,objNull]] call DS_fnc_dbRequest;
 			if(!isNull _x) then {
 				detach _x;
