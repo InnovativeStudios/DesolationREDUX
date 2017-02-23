@@ -36,7 +36,7 @@ if (isNull _tree) exitWith {
 					systemchat "Zombie Hit";
 					_closest setDamage ((damage _closest) + 0.25);
 				} else {
-					
+					systemchat "Random object hit";
 				};
 			};
 		};

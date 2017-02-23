@@ -12,7 +12,7 @@ player addAction ["",{
 		[] spawn { 
 			uiSleep 0.9; 
 			call DS_fnc_onAxeSwing; 
-			uiSleep 0.6
+			uiSleep 0.6;
 			DSR_isSwinging = false; 
 		}; 
 	};
