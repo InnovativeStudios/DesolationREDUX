@@ -23,6 +23,7 @@ if(isNull _display) exitWith {systemchat "ESCAPE DISPLAY NULL";};
 _ctrl = _display displayCtrl 103;
 _ctrl buttonSetAction "DS_var_Blood = -1000;";
 _ctrl ctrlSetText "Suicide";
+_ctrl ctrlEnable true;
 
 _ctrl = _display displayCtrl 1002;
 _ctrl ctrlEnable false;
