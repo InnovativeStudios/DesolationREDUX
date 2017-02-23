@@ -14,7 +14,34 @@ private _objects = lineIntersectsWith [eyePos player, AGLToASL (player modelToWo
 	false 
 } count [" t_"," bo_t_"," str_"," Smrk_"," les_"," brg_"];
 
-if (isNull _tree) exitWith {};
+if (isNull _tree) exitWith {
+	systemchat "No Tree";
+	
+	_closest = cursorTarget;
+	if(isNull _closest) exitWith {};
+	if(player distance _closest > 3) exitWith {};
+	
+	systemchat str(_closest);
+	if(alive _closest) then {
+		if(isPlayer _closest) then {
+			systemchat "Player Hit";
+			if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
+			[player] remoteExec ["DS_fnc_onMeleeHit",_closest];
+		} else {
+			if(_closest in vehicles) then {
+				systemchat "Vehicle Hit";
+				_closest setDamage ((damage _closest) + 0.005);
+			} else {
+				if(_closest isKindOf "Man") then {
+					systemchat "Zombie Hit";
+					_closest setDamage ((damage _closest) + 0.25);
+				} else {
+					
+				};
+			};
+		};
+	};
+};
 
 (boundingBoxReal _tree) params ["_min","_max"];
 private _height = abs((_max select 2) - (_min select 2));
@@ -24,6 +51,8 @@ private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", 
 missionNamespace setVariable [format["CurrentSwing_%1", _tree], (_currentSwing + 1)];
 
 private _origMtW = _tree modelToWorld [0,0,1];
+
+playSound3D ["dsr_music\Effects\axe.ogg", player,false,eyepos player,1,1,15];
 
 _tree setDamage _dCoef;
 

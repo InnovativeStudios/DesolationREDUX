@@ -6,16 +6,15 @@
 DSR_isSwinging = false;
 
 player addAction ["",{
-	if(!DSR_isSwinging) then {
-		DSR_isSwinging = true;
-		player playActionNow "dsr_AxeSlashGst";
-		[] spawn {
-			uiSleep 0.7;
-			player forceWeaponFire [weaponState player select 1, weaponState player select 2];
-			call DS_fnc_onAxeSwing;
-			uiSleep 0.3;
-			DSR_isSwinging = false;
-		};
+	if(!DSR_isSwinging) then { 
+		DSR_isSwinging = true; 
+		player playActionNow "dsr_AxeSlashGst"; 
+		[] spawn { 
+			uiSleep 0.9; 
+			call DS_fnc_onAxeSwing; 
+			uiSleep 0.6
+			DSR_isSwinging = false; 
+		}; 
 	};
 }, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Axe') || (currentWeapon player == 'DSR_Melee_Fire_Axe')"];
 

@@ -89,6 +89,7 @@ class CfgFunctions
 			class onPickaxeSwing {};
 			class onFishingrodSwing {};
 			class swingEvent {};
+			class onMeleeHit {};
 		};
 		class Client_Actions_Vehicle {
 			file = "Desolation\Client\Actions\Repair";
