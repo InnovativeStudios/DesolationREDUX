@@ -34,7 +34,6 @@ diag_log "Spawning DB objects";
 	if(_priority >= 10000) then {
 		_numVtoSpawn = _numVtoSpawn - 1;
 	};
-	diag_log ("Spawned object #" + str(_forEachIndex+1) + " of " + str(_len));
 } forEach _dbSpawnData;
 diag_log "DONE";
 if(_numVtoSpawn <= 0) exitWith {
