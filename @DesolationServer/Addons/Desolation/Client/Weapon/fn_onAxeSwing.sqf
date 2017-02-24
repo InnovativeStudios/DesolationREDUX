@@ -52,7 +52,7 @@ missionNamespace setVariable [format["CurrentSwing_%1", _tree], (_currentSwing +
 
 private _origMtW = _tree modelToWorld [0,0,1];
 
-playSound3D ["dsr_music\Effects\axe.ogg", player,false,eyepos player,1,1,15];
+playSound3D ["dsr_music\Effects\axe.ogg", player,false,eyepos player,2,1,15];
 
 _tree setDamage _dCoef;
 
