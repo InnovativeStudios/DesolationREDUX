@@ -175,7 +175,7 @@ if(_savedLoot isEqualTo []) then {
 		_pos = _x select 0;
 		_loot = _x select 1;
 
-		_object = "LootWeaponHolder" createVehicle _pos;
+		_object = "LootWeaponHolder" createVehicle [0,0,0];
 		_object setposATL _pos;
 		_object setDir random(360);
 		_bLootPiles pushBack _object;
