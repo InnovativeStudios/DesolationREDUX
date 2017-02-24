@@ -43,7 +43,7 @@ player addEventHandler ["HandleDamage",{
 				};
 			};
 		} else {
-			_bloodLoss = _damage * 13750;
+			_bloodLoss = _damage * 4250;
 			DS_var_Blood = DS_var_Blood - _bloodLoss;
 		};
 		if(_selectionName == "legs") then {
