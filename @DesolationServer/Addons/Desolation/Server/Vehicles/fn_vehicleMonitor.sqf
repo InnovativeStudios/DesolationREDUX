@@ -16,7 +16,8 @@ DS_var_savingVehicles = false;
 call DS_fnc_checkServerLock;
 
 while{true} do {
-	uiSleep (60*30);
+	_time = diag_tickTime + (60*30);
+	waitUntil{diag_tickTime >= _time || !DS_var_runVehicleMon};
 	if(!DS_var_runVehicleMon) exitWith {};
 	DS_var_savingVehicles = true;
 	diag_log  "Vehicle Monitor> Updating Database";
@@ -32,8 +33,8 @@ while{true} do {
 		};
 		
 		if (isNull _x || !(alive _x) || _cleanup) then {
-			["destroyVehicle","",[_uuid,objNull]] call DS_fnc_dbRequest;
 			if(!isNull _x) then {
+				["destroyVehicle","",[_uuid,objNull]] call DS_fnc_dbRequest;
 				detach _x;
 				deleteVehicle _x;
 			};
