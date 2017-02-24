@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 _success = {
-	Systemchat "TODO: Action";
+	call DS_fnc_onVitamin;
 };
 _failure = {
 	private["_type"];

@@ -28,6 +28,14 @@ call ds_fnc_onEffectTick;
 call ds_fnc_onUpdateTick;
 
 
+if((DS_var_LastVitaminTime + (15*60)) < diag_tickTime) then {
+	player enableFatigue false;
+} else {
+	player enableFatigue true;
+};
+
+
+
 if((player getHitPointDamage 'HitLegs') > 0) then {
 	//-- show bone icon
 	_ctrl = uiNamespace getVariable ["BONE_ICON",controlNull];
