@@ -303,6 +303,7 @@ class CfgFunctions
 			file = "Desolation\Server\Building";
 			isserver = 1;
 			class requestBuild {};
+			class buildingMonitor {};
 			class finishBuild {};
 			class initBuildingSys {};
 		};
