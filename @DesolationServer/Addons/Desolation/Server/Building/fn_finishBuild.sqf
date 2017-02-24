@@ -23,4 +23,8 @@ deleteVehicle _crate;
 _obj = _model createVehicle _pos;
 _obj setdir _dir;
 _obj setposatl _pos;
+["spawnBuilding","",[_obj]] call DS_fnc_dbRequest;
+_oUUID = _obj getVariable ["oUUID",""];
 
+DS_var_Buildings pushback _obj;
+DS_var_BuildingUUIDS pushback _oUUID;
