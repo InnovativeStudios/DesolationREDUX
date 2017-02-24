@@ -49,6 +49,7 @@ if(_numVtoSpawn <= 0) exitWith {
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
 	[] spawn DS_fnc_vehicleMonitor;
+	[] spawn DS_fnc_buildingMonitor;
 };
 diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
 
@@ -179,3 +180,4 @@ uiSleep 3;
 } forEach _tvs;
 diag_log "Done spawning vehicles";
 [] spawn DS_fnc_vehicleMonitor;
+[] spawn DS_fnc_buildingMonitor;
