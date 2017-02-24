@@ -109,6 +109,7 @@ class CfgFunctions
 			class initBuilding {};
 			class onBuildClick {};
 			class registerBuildable {};
+			class registerPlacable {};
 			class onCrateFilled {};
 		};
 		class Client_Spawning {
@@ -303,6 +304,7 @@ class CfgFunctions
 			file = "Desolation\Server\Building";
 			isserver = 1;
 			class requestBuild {};
+			class requestItemPlace {};
 			class buildingMonitor {};
 			class finishBuild {};
 			class initBuildingSys {};
