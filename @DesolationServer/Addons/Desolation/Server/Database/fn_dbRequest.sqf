@@ -439,7 +439,12 @@ switch(_type)do{
 		_variables = [vectorUp _building];
 		_position = getPosATL _building;
 		
+		_request = [PROTOCOL_DBCALL_FUNCTION_RETURN_UUID,[]] call DB_fnc_buildDBRequest;
+		_objectUUID = [_request] call DB_fnc_sendRequest;
+		_building setVariable ["oUUID",_objectUUID];
+		
 		_request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,[
+			[PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID,_objectUUID],
 			[PROTOCOL_DBCALL_ARGUMENT_CLASSNAME,_className],
 			[PROTOCOL_DBCALL_ARGUMENT_PRIORITY,_priority],
 			[PROTOCOL_DBCALL_ARGUMENT_VISIBLE,_visible],
@@ -469,9 +474,9 @@ switch(_type)do{
 	};
 	//--- used in building monitor thread
 	case "updateBuilding": {
-		_vehicle = _callbackParam select 0;
+		_building = _callbackParam select 0;
 		//--- request a locality switch from the owning client & transfer back upon completion? (maybe needed)
-		_object_uuid = _vehicle getVariable ["oUUID",""];
+		_object_uuid = _building getVariable ["oUUID",""];
 		
 		// unused params (DO NOT CHANGE)
 		_hitpoints = []; 
