@@ -23,21 +23,21 @@ if (isNull _tree) exitWith {
 	
 	systemchat str(_closest);
 	if(alive _closest) then {
-		if(isPlayer _closest) then {
-			systemchat "Player Hit";
-			if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
-			[player] remoteExec ["DS_fnc_onMeleeHit",_closest];
-		} else {
-			if(_closest in vehicles) then {
-				systemchat "Vehicle Hit";
-				_closest setDamage ((damage _closest) + 0.005);
+		if(cursorTarget isKindOf "Man") then {
+			if(isPlayer _closest) then {
+				systemchat "Player Hit";
+				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
+				[player] remoteExec ["DS_fnc_onMeleeHit",_closest];
 			} else {
-				if(_closest isKindOf "Man") then {
-					systemchat "Zombie Hit";
-					_closest setDamage ((damage _closest) + 0.25);
-				} else {
-					systemchat "Random object hit";
-				};
+				systemchat "Zombie Hit";
+				_closest setDamage ((damage _closest) + 0.25);
+			};
+		} else {
+			if(cursorTarget in vehicles) then {
+				systemchat "Vehicle Hit";
+			//	(vehicle _closest) setDamage ((damage _closest) + 0.005);
+			} else {
+				systemchat "Random object hit";
 			};
 		};
 	};
