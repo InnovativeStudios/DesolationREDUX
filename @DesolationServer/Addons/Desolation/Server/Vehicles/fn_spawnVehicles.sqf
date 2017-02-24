@@ -13,11 +13,12 @@ private["_types","_data","_config","_cfg","_locations","_directions","_type","_h
 DS_var_Vehicles = [];
 DS_var_VehicleUUIDS = [];
 
+DS_var_Buildings = [];
+DS_var_BuildingUUIDS = [];
 
 _dbSpawnData = ["getObjects"] call DS_fnc_dbRequest;
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
-_len = count(_dbSpawnData);
 
 _tvs = [];
 diag_log "Spawning DB objects";
@@ -28,11 +29,15 @@ diag_log "Spawning DB objects";
 	_priority = _data select 1;
 	_oUUID = _data select 2;
 	
-	DS_var_Vehicles pushback _object;
-	DS_var_VehicleUUIDS pushback _oUUID;
+	
 	
 	if(_priority >= 10000) then {
+		DS_var_Vehicles pushback _object;
+		DS_var_VehicleUUIDS pushback _oUUID;
 		_numVtoSpawn = _numVtoSpawn - 1;
+	} else {
+		DS_var_Buildings pushback _object;
+		DS_var_BuildingUUIDS pushback _oUUID;
 	};
 } forEach _dbSpawnData;
 diag_log "DONE";
