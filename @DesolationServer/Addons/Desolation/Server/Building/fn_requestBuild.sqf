@@ -10,7 +10,7 @@
  */
 params["_entry","_player"];
 
-_crate = (_entry select 6) createVehicle (position _player);
-_crate setPosAtl ((getposatl _player) vectorAdd [2,0,0]);
+_crate = (_entry select 6) createVehicle [0,0,0];
+_crate setPosAtl ((getposatl _player) vectorAdd [3*sin(getdir _player),3*cos(getdir _player),0]);
 _crate setVariable ["SVAR_buildParams",_entry,true];
 [_crate] remoteExec ["DS_fnc_registerBuildable",_player];
