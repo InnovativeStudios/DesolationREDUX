@@ -27,8 +27,11 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		} forEach allPlayers;
 		uiSleep 10; 
 		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-		waitUntil{!DS_var_savingVehicles};
 		DS_var_runVehicleMon = false;
+		waitUntil{!DS_var_savingVehicles};
+		diag_log  "Shutdown > Waiting for building monitor to exit";
+		DS_var_runBuildingMon = false;
+		waitUntil{!DS_var_savingBuildings};
 		diag_log  "Shutdown > Saving Vehicles";
 		_newArray1 = [];
 		_newArray2 = [];
@@ -79,25 +82,15 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		
 		// save vehicles
 		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-		waitUntil{!DS_var_savingVehicles};
 		DS_var_runVehicleMon = false;
-		diag_log  "Shutdown > Saving Vehicles";
-		_newArray1 = [];
-		_newArray2 = [];
-		{
-			_uuid = DS_var_VehicleUUIDS select _forEachIndex;
-			if (isNull _x || !(alive _x)) then {
-				["destroyVehicle","",[_uuid,objNull]] call DS_fnc_dbRequest;
-				if(!isNull _x) then {
-					detach _x;
-					deleteVehicle _x;
-				};
-			} else {
-				["updateVehicle","",[_x]] call DS_fnc_dbRequest;
-			};
-		} forEach (DS_var_Vehicles);
+		waitUntil{!DS_var_savingVehicles};
 		
-		// shutdown server
+		// save buildings
+		diag_log  "Shutdown > Saving buildings";
+		DS_var_runBuildingMon = false;
+		waitUntil{!DS_var_savingBuildings};
+		
+		
 		diag_log  "Shutdown > Done";
 		_password serverCommand "#shutdown";
 		

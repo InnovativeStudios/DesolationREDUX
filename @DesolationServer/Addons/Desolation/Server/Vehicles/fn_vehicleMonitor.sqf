@@ -12,14 +12,14 @@
 //TODO: this updates like every 5 minutes or some shit, why is it updating????
 DS_var_finishedVehicles = true;
 DS_var_runVehicleMon = true;
-DS_var_savingVehicles = false;
+DS_var_savingVehicles = true;
 call DS_fnc_checkServerLock;
 
 while{true} do {
 	_time = diag_tickTime + (60*30);
 	waitUntil{diag_tickTime >= _time || !DS_var_runVehicleMon};
-	if(!DS_var_runVehicleMon) exitWith {};
-	DS_var_savingVehicles = true;
+	
+	
 	diag_log  "Vehicle Monitor> Updating Database";
 	_newArray1 = [];
 	_newArray2 = [];
@@ -45,7 +45,9 @@ while{true} do {
 		};
 	} forEach (DS_var_Vehicles);
 	diag_log  "Vehicle Monitor> Done";
-	DS_var_savingVehicles = false;
 	DS_var_Vehicles = _newArray1;
 	DS_var_VehicleUUIDS = _newArray2;
+	
+	if(!DS_var_runVehicleMon) exitWith {};
 };
+DS_var_savingVehicles = false;
