@@ -11,6 +11,10 @@
 
 params["_object"];
 if !(local _object) then {[_object,player] remoteExecCall ["OM_fnc_serverLift",2]};
+_object spawn {
+	waitUntil{local _this};
+	player disableCollisionWith _this;
+};
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
 	_object addEventHandler ["EpeContact",{
