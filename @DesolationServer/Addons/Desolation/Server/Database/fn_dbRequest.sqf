@@ -34,7 +34,7 @@ switch(_type)do{
 		_kickable = _kickableData select 0;
 		_kickReason = _kickableData select 1;
 
-
+		//TODO: move this system? It was removed with Maverick-Apps server administration panel
 		if (_kickable) exitWith {
 			[_kickReason] remoteExecCall ["DS_fnc_notWhitelisted", _playerObj];
 		};
@@ -226,6 +226,7 @@ switch(_type)do{
 		_playerObj setVariable ["cUUID",_response];
 	};
 	
+	//--- used for vehicle / object spawning from DB
 	case "getObjects": {
 		_request = [PROTOCOL_DBCALL_FUNCTION_DUMP_OBJECTS,[]] call DB_fnc_buildDBRequest;
 		_return = [_request] call DB_fnc_sendRequest;
@@ -258,7 +259,7 @@ switch(_type)do{
 		
 		
 		
-		_items = [];  //todo
+		_items = ([_vehicle] call DS_fnc_getLoot);
 		_magazines = [];  //todo
 		_weapons = []; // todo
 		_backpacks = []; // todo
@@ -398,41 +399,45 @@ switch(_type)do{
 		[_request] call DB_fnc_sendRequest;
 	};
 	
-	// Building Databasing
-	//--- TODO
+	//--- used on building finished / item placement
 	case "spawnBuilding": {
 		_building = _callbackParam select 0;
 		
-		_className = typeof _vehicle;
+		// unused params (DO NOT CHANGE)
+		_hitpoints = []; 
+		_locked = 0;
 		_priority = 1001;
 		_visible = 1;
+		_fuel = 1;
+		_fuelcargo = 0;
+		_repaircargo = 0;
+		_magazines = []; 
+		_weapons = [];
+		_backpacks = []; 
+		_magazinesturrent = []; 
+		_positionType = 1;
+		
+		// type
+		_className = typeof _building;
+		
+		// owner and unlock code
 		_accesscode = "";
-		_locked = 0;
 		_player_uuid = "";
-		_hitpoints = getAllHitPointsDamage _vehicle;
-		_damage = damage _vehicle;
-		_fuel = fuel _vehicle;
-		_fuelcargo = getFuelCargo _vehicle;
-		if(isNil {_fuelcargo}) then {_fuelcargo = 0;};
-		if(str(_fuelcargo) find "-1" == 0) then {
-			_fuelcargo = 0;
-		};
-		_repaircargo = getRepairCargo _vehicle;
-		if(isNil {_repaircargo}) then {_repaircargo = 0;};
-		if(str(_repaircargo) find "-1" == 0) then {
-			_repaircargo = 0;
-		};
-		_items = [];  //todo
-		_magazines = [];  //todo
-		_weapons = []; // todo
-		_backpacks = []; // todo
-		_magazinesturrent = []; // todo
-		_variables = [vectorUp _vehicle];
+		
+		// damage
+		_damage = damage _building;
+		
+		// container items
+		_items = ([_building] call DS_fnc_getLoot);  // gets loot contained within object if it is a container
+		
+		// animations and textures
 		_animation_sources = [];
 		_textures = [];
-		_direction = getDir _vehicle;
-		_positionType = 1;
-		_position = getPosATL _vehicle;
+		
+		// position stuff
+		_direction = getDir _building;
+		_variables = [vectorUp _building];
+		_position = getPosATL _building;
 		
 		_request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,[
 			[PROTOCOL_DBCALL_ARGUMENT_CLASSNAME,_className],
@@ -459,6 +464,104 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+		]] call DB_fnc_buildDBRequest;
+		[_request] call DB_fnc_sendRequest;
+	};
+	//--- used in building monitor thread
+	case "updateBuilding": {
+		_vehicle = _callbackParam select 0;
+		//--- request a locality switch from the owning client & transfer back upon completion? (maybe needed)
+		_object_uuid = _vehicle getVariable ["oUUID",""];
+		
+		// unused params (DO NOT CHANGE)
+		_hitpoints = []; 
+		_locked = 0;
+		_priority = 1001;
+		_visible = 1;
+		_fuel = 1;
+		_fuelcargo = 0;
+		_repaircargo = 0;
+		_magazines = []; 
+		_weapons = [];
+		_backpacks = []; 
+		_magazinesturrent = []; 
+		_positionType = 1;
+		
+		// type
+		_className = typeof _building;
+		
+		// owner and unlock code
+		_accesscode = "";
+		_player_uuid = "";
+		
+		// damage
+		_damage = damage _building;
+		
+		// container items
+		_items = ([_building] call DS_fnc_getLoot);  // gets loot contained within object if it is a container
+		
+		// animations and textures
+		_animation_sources = [];
+		_textures = [];
+		
+		// position stuff
+		_direction = getDir _building;
+		_variables = [vectorUp _building];
+		_position = getPosATL _building;
+		
+		_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_OBJECT,[
+			[PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID,_object_uuid],
+			[PROTOCOL_DBCALL_ARGUMENT_CLASSNAME,_className],
+			[PROTOCOL_DBCALL_ARGUMENT_PRIORITY,_priority],
+			[PROTOCOL_DBCALL_ARGUMENT_VISIBLE,_visible],
+			[PROTOCOL_DBCALL_ARGUMENT_ACCESSCODE, _accesscode],
+			[PROTOCOL_DBCALL_ARGUMENT_LOCKED,_locked],
+			[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_player_uuid],
+			[PROTOCOL_DBCALL_ARGUMENT_HITPOINTS,_hitpoints],
+			[PROTOCOL_DBCALL_ARGUMENT_DAMAGE,_damage],
+			[PROTOCOL_DBCALL_ARGUMENT_FUEL,_fuel],
+			[PROTOCOL_DBCALL_ARGUMENT_FUELCARGO,_fuelcargo],
+			[PROTOCOL_DBCALL_ARGUMENT_REPAIRCARGO,_repaircargo],
+			[PROTOCOL_DBCALL_ARGUMENT_ITEMS,_items],
+			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINES,_magazines],
+			[PROTOCOL_DBCALL_ARGUMENT_WEAPONS, _weapons],
+			[PROTOCOL_DBCALL_ARGUMENT_BACKPACKS, _backpacks],
+			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINESTURRET, _magazinesturrent],
+			[PROTOCOL_DBCALL_ARGUMENT_VARIABLES, _variables],
+			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE, _animation_sources],
+			[PROTOCOL_DBCALL_ARGUMENT_TEXTURES, _textures],
+			[PROTOCOL_DBCALL_ARGUMENT_DIRECTION, _direction],
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, _positionType],
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+		]] call DB_fnc_buildDBRequest;
+		[_request] call DB_fnc_sendRequest;
+	};
+	//--- used when a building is destroyed
+	case "destroyBuilding": {
+		_object_uuid = _callbackParam select 0;	
+		_killerObj = _callbackParam select 1;
+		
+		_killerUUID = "";
+		_type = "Unknown";
+		_weapon = "";
+		_distance = 0;
+		
+		if(!isNull _killerObj && isPlayer _killerObj) then {
+			_killerUUID = _killerObj getVariable ["cUUID",""];
+			_weapon = "TODO: get weapon"; 
+			_distance = _killerObj distance _playerObj;
+			_type = "Killed";
+		};
+		
+		
+		_request = [PROTOCOL_DBCALL_FUNCTION_DECLARE_OBJECT_DEATH,[
+			[PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID,_object_uuid],
+			[PROTOCOL_DBCALL_ARGUMENT_ATTACKER,_killerUUID],
+			[PROTOCOL_DBCALL_ARGUMENT_TYPE,_type],
+			[PROTOCOL_DBCALL_ARGUMENT_WEAPON,_weapon],
+			[PROTOCOL_DBCALL_ARGUMENT_DISTANCE,_distance]
 		]] call DB_fnc_buildDBRequest;
 		[_request] call DB_fnc_sendRequest;
 	};
