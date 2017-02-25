@@ -20,7 +20,7 @@ _dir = getdir _crate;
 deleteVehicle _crate;
 
 
-_obj = _model createVehicle _pos;
+_obj = _model createVehicle [0,0,0];
 _obj setdir _dir;
 _obj setposatl _pos;
 ["spawnBuilding","",[_obj]] call DS_fnc_dbRequest;
