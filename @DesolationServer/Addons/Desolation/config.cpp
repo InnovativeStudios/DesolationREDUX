@@ -6237,9 +6237,23 @@ class CfgVehicleSpawns {
 			directions[] = {320.569};
 		};
 		class Land_PierWooden_03_F {
-			locations[] = {{-0.210693,13.5029,18.7532}
+			locations[] = {
+				{-0.210693,13.5029,18.7532}
 			};
 			directions[] = {322.913};
+		};
+		// for boats
+		class Land_PierWooden_02_barrel_F {
+			locations[] = {
+				{0.31543,1.93018,21.1919}
+			};
+			directions[] = {-94.5725};
+		};
+		class Land_PierConcrete_01_4m_ladders_F {
+			locations[] = {
+				{7.16699,-0.768555,10.8084}
+			};
+			directions[] = {-179.47};
 		};
 	};
 	class Vehicles {
@@ -6316,7 +6330,129 @@ class CfgVehicleSpawns {
 		class UH1H {
 			buildings[] = {};
 		};
-
+		
+		//--- boats
+		class DSR_FishingBoat_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class DSR_Dingy_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class DSR_Raft_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class DSR_RaftWM_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class C_Boat_Civil_01_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class C_Boat_Civil_01_police_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class C_Rubberboat {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class C_Boat_Transport_02_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class C_Scooter_Transport_01_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class O_Lifeboat {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
+		class I_Boat_Transport_01_F {
+			buildings[] = {
+				"Land_PierWooden_02_barrel_F",
+				"Land_PierConcrete_01_4m_ladders_F",
+				"Land_PierWooden_01_ladder_F",
+				"Land_PierWooden_02_ladder_F",
+				"Land_PierWooden_02_hut_F",
+				"Land_PierWooden_03_F",
+				"Land_PierWooden_01_dock_F"
+			};
+		};
 	};
 };
 
