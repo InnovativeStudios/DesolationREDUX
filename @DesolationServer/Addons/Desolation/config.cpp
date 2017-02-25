@@ -479,7 +479,7 @@ class CfgItemSpawns {
 	buildingTypes[] = {"Military","Civilian","Industrial","Commercial","Medical","Mechanical"};
 	lootRarity[] = {"rare","semirare","average","semicommon","common"};
 	lootTypes[] = {"Weapon","Handgun","Magazine","Food","Drink","Medical","Junk","Backpack","Uniform","Vest","Helmet","Cosmetic","GeneralItem","Construction","Book","Electronic","CarPart","Attachment"};
-	
+
 	class Loot {
         class Military {
             class Weapon {
@@ -498,7 +498,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -677,11 +678,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -723,12 +726,14 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
-                    {"dsr_item_painkillers",30},
-                    {"dsr_item_bloodbag_empty",45},
-                    {"dsr_item_splint",25}
+                    {"dsr_item_painkillers",25},
+                    {"dsr_item_bloodbag_empty",35},
+                    {"dsr_item_morphine",10},
+                    {"dsr_item_syringe",10},
+                    {"dsr_item_splint",20}
                 };
                 average[] = {
                     {"dsr_item_handwarmer",20},
@@ -1123,60 +1128,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
             class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -1227,10 +1245,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
@@ -1304,7 +1323,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -1483,11 +1503,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -1529,12 +1551,14 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
-                    {"dsr_item_painkillers",30},
-                    {"dsr_item_bloodbag_empty",45},
-                    {"dsr_item_splint",25}
+                    {"dsr_item_painkillers",25},
+                    {"dsr_item_bloodbag_empty",35},
+                    {"dsr_item_morphine",10},
+                    {"dsr_item_syringe",10},
+                    {"dsr_item_splint",20}
                 };
                 average[] = {
                     {"dsr_item_handwarmer",20},
@@ -1929,60 +1953,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
             class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -2033,10 +2070,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
@@ -2110,7 +2148,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -2289,11 +2328,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -2335,12 +2376,14 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
-                    {"dsr_item_painkillers",30},
-                    {"dsr_item_bloodbag_empty",45},
-                    {"dsr_item_splint",25}
+                    {"dsr_item_painkillers",25},
+                    {"dsr_item_bloodbag_empty",35},
+                    {"dsr_item_morphine",10},
+                    {"dsr_item_syringe",10},
+                    {"dsr_item_splint",20}
                 };
                 average[] = {
                     {"dsr_item_handwarmer",20},
@@ -2735,60 +2778,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
-             class Construction {
+            class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -2839,10 +2895,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
@@ -2916,7 +2973,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -3095,11 +3153,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -3141,12 +3201,14 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
-                    {"dsr_item_painkillers",30},
-                    {"dsr_item_bloodbag_empty",45},
-                    {"dsr_item_splint",25}
+                    {"dsr_item_painkillers",25},
+                    {"dsr_item_bloodbag_empty",35},
+                    {"dsr_item_morphine",10},
+                    {"dsr_item_syringe",10},
+                    {"dsr_item_splint",20}
                 };
                 average[] = {
                     {"dsr_item_handwarmer",20},
@@ -3541,60 +3603,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
             class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -3645,10 +3720,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
@@ -3722,7 +3798,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -3901,11 +3978,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -3947,7 +4026,7 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
                     {"dsr_item_painkillers",30},
@@ -4347,60 +4426,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
             class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -4451,10 +4543,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
@@ -4528,7 +4621,8 @@ class CfgItemSpawns {
                     {"DSR_srifle_DMR_05_hex",5},            //Cyrus
                     {"DSR_srifle_DMR_05_tan",5},            //Cyrus
                     {"DSR_srifle_EBR",7},
-                    {"dsr_srifle_dmr_old",1},
+                    {"dsr_srifle_dmr_old",0.99},
+                    {"dsr_smg_mp40",0.01},
                     {"DSR_srifle_LRR",2},
                     {"DSR_srifle_LRR_camo",2},
                     {"DSR_LMG_Zafir",7},
@@ -4707,11 +4801,13 @@ class CfgItemSpawns {
                     {"dsr_item_canchicken",25},
                     {"dsr_item_canclams",25},
                     {"dsr_item_tuna",25},
-                    {"dsr_item_mre",5}
+                    {"dsr_item_mre",4},
+                    {"dsr_item_ration",1}
                 };
                 semirare[] = {
-                    {"dsr_item_tuna",55},
-                    {"dsr_item_bag_rice",45}
+                    {"dsr_item_tuna",50},
+                    {"dsr_item_bag_rice",40},
+                    {"dsr_item_deviledham",10}
                 };
                 average[] = {
                     {"dsr_item_instantcoffee",30},
@@ -4753,7 +4849,7 @@ class CfgItemSpawns {
                     {"dsr_item_antibiotic",20},
                     {"dsr_item_bloodbag_full",25},
                     {"dsr_item_defibrillator",10},
-                    {"dsr_item_painmed",45}
+                    {"dsr_item_painkillers",45}
                 };
                 semirare[] = {
                     {"dsr_item_painkillers",30},
@@ -5153,60 +5249,73 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"dsr_item_sleepingbag",1}
+                    {"dsr_item_sleepingbag",75},
+                    {"dsr_item_fishingrod_broken",25}
                 };
                 semirare[] = {
-                    {"dsr_item_campingchair",1}
+                    {"dsr_item_campingchair",100}
                 };
                 average[] = {
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_sleepingmat",45},
+                    {"dsr_item_matches",40},
+                    {"dsr_item_wateringcan",15}
                 };
                 semicommon[] = {
-                    {"dsr_item_pillow",1},
-                    {"dsr_item_sleepingmat",1}
+                    {"dsr_item_pillow",55},
+                    {"dsr_item_sleepingmat",45}
                 };
                 common[] = {
-                    {"dsr_item_pillow",1}
+                    {"dsr_item_pillow",85},
+                    {"dsr_item_canopener",15}
                 };
             };
             class Construction {
                 rare[] = {
                     {"dsr_item_butane_full",25},
                     {"dsr_item_propane_full",25},
-                    {"dsr_item_metalwire",25},
-                    {"dsr_item_multimeter",25}
+                    {"dsr_item_metalwire",15},
+                    {"dsr_item_multimeter",15},
+                    {"dsr_item_gascan_large_full",5},
+                    {"dsr_item_electricalcomp",10},
+                    {"dsr_item_toolbox",5}
                 };
                 semirare[] = {
                     {"dsr_item_butanetorch",10},
-                    {"dsr_item_butane_empty",20},
+                    {"dsr_item_butane_empty",15},
                     {"dsr_item_propanecooker",10},
-                    {"dsr_item_drill",15},
+                    {"dsr_item_drill",10},
                     {"dsr_item_grinder",10},
                     {"dsr_item_tapemeasure",10},
-                    {"dsr_item_fuelcan_full",10},
-                    {"dsr_item_oilcan_full",15}
+                    {"dsr_item_oilcan_full",15},
+                    {"dsr_item_gascan_small_full",5},
+                    {"dsr_item_hardware",10},
+                    {"dsr_item_tarp",5}
                 };
                 average[] = {
-                    {"dsr_item_propane_empty",25},
-                    {"dsr_item_pliers",25},
-                    {"dsr_item_ducttape",25},
-                    {"dsr_item_saw",25}
+                    {"dsr_item_propane_empty",20},
+                    {"dsr_item_pliers",20},
+                    {"dsr_item_ducttape",15},
+                    {"dsr_item_saw",15},
+                    {"dsr_item_scrapmetal",10},
+                    {"dsr_item_spanner",5},
+                    {"dsr_item_gascan_large_empty",10},
+                    {"dsr_item_bricks",5}
                 };
                 semicommon[] = {
-                    {"dsr_item_canopener",20},
-                    {"dsr_item_matches",15},
                     {"dsr_item_hammer",15},
-                    {"dsr_item_fuelcan_empty",25},
-                    {"dsr_item_oilcan_empty",25}
-                };
-                common[] = {
-                    {"dsr_item_tincontainer",10},
+                    {"dsr_item_oilcan_empty",20},
+                    {"dsr_item_gascan_small_empty",15},
+                    {"dsr_item_plasticdrum",20},
                     {"dsr_item_nailfile",10},
                     {"dsr_item_screwdriver_flathead",10},
-                    {"dsr_item_screwdriver_phillips",10},
-                    {"dsr_item_bucket_empty",10},
-                    {"dsr_item_plasticjug",10},
-                    {"DSR_Melee_Axe",40}
+                    {"dsr_item_screwdriver_phillips",10}
+                };
+                common[] = {
+                    {"dsr_item_tincontainer",20},
+                    {"dsr_item_bucket_empty",25},
+                    {"dsr_item_plasticjug",15},
+                    {"dsr_melee_axe",25},
+                    {"dsr_item_seedpack",15}
                 };
             };
             class Book {
@@ -5257,10 +5366,11 @@ class CfgItemSpawns {
                     {"dsr_item_battery_dead",45}
                 };
             };
-            //Nothing Yet
             class CarPart {
                 rare[] = {
-                    {"dsr_item_engineblock",100}
+                    {"dsr_item_engineblock",50},
+                    {"dsr_item_mainrotor",15},
+                    {"dsr_item_tailrotor",35}
                 };
                 semirare[] = {
                     {"dsr_item_carbattery",100}
