@@ -7,25 +7,27 @@ item2[] = {"Next_Zombie",2,250,-184.105774,-52.918243,-94.105759,-2.918243,0.000
 item3[] = {"_zIndex_too_big",4,218,-184.767029,36.897369,-94.767029,86.897369,0.000000,"_zIndex" \n "too big"};
 item4[] = {"Reset__zIndex",2,250,-35.380951,35.765656,54.619064,85.765656,0.000000,"Reset" \n "_zIndex"};
 item5[] = {"_zIndex_good",4,218,-317.177490,-51.942123,-227.177490,-1.942123,0.000000,"_zIndex" \n "good"};
-item6[] = {"Select_Zombie",2,250,-465.431427,-49.678665,-375.431396,0.321350,0.000000,"Select Zombie"};
-item7[] = {"Not_local",4,218,-466.563202,111.024544,-376.563202,161.024536,0.000000,"Not" \n "local"};
+item6[] = {"Update_Zed_Global",2,250,-733.806030,-51.817093,-643.805969,-1.817078,0.000000,"Update Zed" \n "Global Pos"};
+item7[] = {"Zed_Not_local",4,218,-734.937744,108.886124,-644.937805,158.886108,0.000000,"Zed Not" \n "local"};
 item8[] = {"",7,210,129.283783,131.395447,137.283783,139.395447,0.000000,""};
 item9[] = {"Ignore",2,250,87.976341,-53.639679,177.976349,-3.639679,0.000000,"Ignore"};
-item10[] = {"Local",4,218,-621.041992,-49.112831,-531.041992,0.887169,0.000000,"Local"};
-item11[] = {"Get_Speed",2,250,-780.960083,-49.531467,-690.960083,0.468536,0.000000,"Get Speed"};
-item12[] = {"Is_Moving",4,218,-781.849487,181.581238,-691.849487,231.581238,0.000000,"Is Moving"};
-item13[] = {"Is_Not_Moving",4,218,-939.531677,-52.639969,-849.531677,-2.639969,0.000000,"Is Not" \n "Moving"};
-item14[] = {"Move_to_new_loca",2,250,-1099.300171,-50.872665,-1009.301086,-0.872665,0.000000,"Move to new" \n "location"};
+item10[] = {"Zed_Local",4,218,-889.416565,-51.251259,-799.416565,-1.251259,0.000000,"Zed Local"};
+item11[] = {"Get_Speed",2,250,-1049.334595,-51.669895,-959.334656,-1.669892,0.000000,"Get Speed"};
+item12[] = {"Is_Moving",4,218,-1050.223999,179.442810,-960.224060,229.442810,0.000000,"Is Moving"};
+item13[] = {"Is_Not_Moving",4,218,-1207.906128,-54.778397,-1117.906128,-4.778397,0.000000,"Is Not" \n "Moving"};
+item14[] = {"Move_to_new_loca",2,250,-1367.674683,-53.011093,-1277.675659,-3.011093,0.000000,"Move to new" \n "location"};
 item15[] = {"",7,210,129.079834,200.828461,137.079834,208.828461,0.000000,""};
-item16[] = {"Continue",8,218,-1099.198364,257.382324,-1009.198608,307.382324,0.000000,"Continue"};
+item16[] = {"Continue",8,218,-1367.572876,255.243896,-1277.573120,305.243896,0.000000,"Continue"};
 item17[] = {"",7,210,127.664490,271.313110,135.664490,279.313110,0.000000,""};
+item18[] = {"Select_Zombie",2,250,-450.261292,-51.748215,-360.261292,-1.748199,0.000000,"Select Zombie"};
+item19[] = {"Continue",8,218,-590.435425,-51.704041,-500.435425,-1.704041,0.000000,"Continue"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,5};
 link4[] = {3,4};
 link5[] = {4,1};
-link6[] = {5,6};
+link6[] = {5,18};
 link7[] = {6,7};
 link8[] = {6,10};
 link9[] = {7,8};
@@ -40,8 +42,10 @@ link17[] = {14,16};
 link18[] = {15,8};
 link19[] = {16,17};
 link20[] = {17,15};
-globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-710.457825,530.192322,488.273682,-292.876404,1404,884,1};
-window[] = {2,-1,-1,-1,-1,763,-8,1430,4,3,1422};
+link21[] = {18,19};
+link22[] = {19,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,28,6316128,1,-1210.114868,-225.186523,376.344055,-243.796066,1187,884,1};
+window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1205};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -128,17 +132,28 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
-                /*%FSM<STATE "Select_Zombie">*/
-                class Select_Zombie
+                /*%FSM<STATE "Update_Zed_Global">*/
+                class Update_Zed_Global
                 {
-                        name = "Select_Zombie";
+                        name = "Update_Zed_Global";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"_zed = DSZ_var_zUnits select _zIndex;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_index = _zed getVariable [""zdIndex"",-1];" \n
+                         "_globalData = bis_functions_mainscope getVariable [""DSZ_var_zData"",[]];" \n
+                         "if(_index > -1) then {" \n
+                         "	if(_index < count(_globalData)) then {" \n
+                         "		" \n
+                         "		_data = _globalData select _index;" \n
+                         "		_data set[1,getposatl _zed];" \n
+                         "		" \n
+                         "		_globalData set[_index,_data];" \n
+                         "		bis_functions_mainscope setVariable [""DSZ_var_zData"",_globalData,true];" \n
+                         "	};" \n
+                         "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "Local">*/
-                                class Local
+                                /*%FSM<LINK "Zed_Local">*/
+                                class Zed_Local
                                 {
                                         itemno = 10;
                                         priority = 0.000000;
@@ -148,8 +163,8 @@ class FSM
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
-                                /*%FSM<LINK "Not_local">*/
-                                class Not_local
+                                /*%FSM<LINK "Zed_Not_local">*/
+                                class Zed_Not_local
                                 {
                                         itemno = 7;
                                         priority = 0.000000;
@@ -246,6 +261,29 @@ class FSM
                                         itemno = 16;
                                         priority = 0.000000;
                                         to="Ignore";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Select_Zombie">*/
+                class Select_Zombie
+                {
+                        name = "Select_Zombie";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"_zed = DSZ_var_zUnits select _zIndex;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Continue">*/
+                                class Continue
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="Update_Zed_Global";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
