@@ -22,7 +22,13 @@ class CfgFunctions
 		{
 			file = "DSZombz\Client";
 			isclient = 1;
-			class SOMETHING_HERE {};
+			class initClient {};
+		};
+		class Client_Spawning
+		{
+			file = "DSZombz\Client\Spawning";
+			isclient = 1;
+			class simManager {};
 		};
 		// SERVER CODE
 		class Server 
@@ -31,6 +37,20 @@ class CfgFunctions
 			isserver = 1;
 			class initServer {};
 		};
+		class Server_Network
+		{
+			file = "DSZombz\Server\Network";
+			isserver = 1;
+			class simUpdateRequest {};
+		};
+		class Server_Spawning
+		{
+			file = "DSZombz\Server\Spawning";
+			isserver = 1;
+			class spawnZombie {};
+			class initRoaming {};
+			class despawnZombie {};
+		};
 		class Server_Locality
 		{
 			file = "DSZombz\Server\Locality";
@@ -38,9 +58,9 @@ class CfgFunctions
 			class fromClient {};
 			class toClient {};
 		};
-		class Server_Spawning
+		class Server_Init
 		{
-			file = "DSZombz\Server\Spawning";
+			file = "DSZombz\Server\Init";
 			isserver = 1;
 			class spawnZombieFromCfg {};
 			class readConfig {};
@@ -53,14 +73,14 @@ class CfgFunctions
 		{
 			file = "DSZombz\Both";
 			isclient = 1;
-			class SOMETHING_HERE {};
+		//	class SOMETHING_HERE {};
 		};
 	};
 };
 
 class CfgZombies 
 {
-	class SM_Zombz_walker1 {
+	class C_man_1 {
 		AgroMode = "FULL"; //agro mode
 	}; 
 };
