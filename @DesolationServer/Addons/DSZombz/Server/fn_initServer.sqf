@@ -17,5 +17,6 @@ _zData = [_config] call DSZ_fnc_selectLocations;
 				};
 			};
 		} forEach DSZ_var_zUnits;
+		DSZ_var_zUnits = DSZ_var_zUnits - [objNull];
 	};
 };
