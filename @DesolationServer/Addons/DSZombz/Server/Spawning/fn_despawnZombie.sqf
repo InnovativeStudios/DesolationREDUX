@@ -16,9 +16,14 @@ _zed = objNull;
 if(!isNull _zed) then {
 	_nearPlayers = {isPlayer _x && alive _x} count (_zed nearEntities ["Man",250]);
 	if(_nearPlayers == 0) then {
+		_zData set[1,getposatl _zed];
+		_zombieData set[_index,_zData];
+		bis_functions_mainscope setVariable ["DSZ_var_zData",_zombieData];
+	
 		_group = group _zed;
 		deleteVehicle _zed;
 		deleteGroup _group;
+		DSZ_var_zUnits = DSZ_var_zUnits - [objNull];
 	} else {
 		diag_log "NOT DELETING, TRANSFERING ZED #";
 		diag_log str(_x);
