@@ -28,7 +28,7 @@ while{true} do {
 		
 		_cleanup = false;
 		_pos = getPosASL _x;
-		if((_pos select 2) < 0) then {
+		if((_pos select 2) < 0 && !(_x isKindOf "Ship")) then {
 			_cleanup = true;
 		};
 		
