@@ -20,6 +20,13 @@ if(_priority > 10000) then {
 		_position = [_positionx,_positiony,_positionz];
 		
 		_object = _classname createVehicle _position;
+		
+		clearItemCargoGlobal _object;
+		clearMagazineCargoGlobal _object;
+		clearWeaponCargoGlobal _object;
+		clearBackpackCargoGlobal _object;
+		
+		
 		_object allowDamage false;
 		_object setVariable ["oUUID",_object_uuid];
 		{

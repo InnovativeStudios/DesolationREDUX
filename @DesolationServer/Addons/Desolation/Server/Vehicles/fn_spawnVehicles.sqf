@@ -144,7 +144,14 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 				_posasl = AGLtoASL _posagl;
 
 				_tv = _v createVehicle _posagl;
-				clearItemCargo _tv;
+				
+		
+				clearItemCargoGlobal _tv;
+				clearMagazineCargoGlobal _tv;
+				clearWeaponCargoGlobal _tv;
+				clearBackpackCargoGlobal _tv;
+				
+				
 				_hitpoints = (getAllHitPointsDamage _tv) select 0;
 				if(!isNil {_hitpoints}) then {
 					{

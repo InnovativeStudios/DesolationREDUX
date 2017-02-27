@@ -66,7 +66,7 @@ _alreadySpawnedContainers = [];
 		if((_x select 0) == _cType) then {
 			if !((_x select 1) in _alreadySpawnedContainers) then {
 				_alreadySpawnedContainers pushBack (_x select 1);
-				if(count(_cLoot) > 0) then { //this should never trigger tho...
+				if(count(_cLoot) > 0) then { //this should never trigger tho... (this does trigger when everyContainer is an empty [])
 					[_x select 1,_cLoot] call DS_fnc_setLoot;
 				} else {
 					systemchat "SET LOOT ERROR: empty container loot array, wtf?";

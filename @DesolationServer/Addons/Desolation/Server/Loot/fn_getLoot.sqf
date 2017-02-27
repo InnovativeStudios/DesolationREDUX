@@ -25,9 +25,28 @@ _data pushBack _iContainData;
 
 //--- Get non-container data
 
-_data pushback (magazinesAmmoCargo _container);
-_data pushBack (itemCargo _container);
-_data pushback (weaponsItemsCargo _container);
-_data pushBack (backpackCargo _container);
+_info = (magazinesAmmoCargo _container);
+if(isNil {_info}) then {
+	_info = [];
+};
+_data pushback _info;
+
+_info2 = (itemCargo _container);
+if(isNil {_info2}) then {
+	_info2 = [];
+};
+_data pushback _info2;
+
+_info3 = (weaponsItemsCargo _container);
+if(isNil {_info3}) then {
+	_info3 = [];
+};
+_data pushback _info3;
+
+_info4 = (backpackCargo _container);
+if(isNil {_info4}) then {
+	_info4 = [];
+};
+_data pushback _info4;
 
 _data;
