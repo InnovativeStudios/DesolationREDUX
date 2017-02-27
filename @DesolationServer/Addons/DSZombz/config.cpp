@@ -73,7 +73,8 @@ class CfgFunctions
 		{
 			file = "DSZombz\Both";
 			isclient = 1;
-		//	class SOMETHING_HERE {};
+			class getNearMen {};
+			class isPlayerNear {};
 		};
 	};
 };

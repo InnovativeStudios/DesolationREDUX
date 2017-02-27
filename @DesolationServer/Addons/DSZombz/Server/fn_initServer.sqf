@@ -11,9 +11,8 @@ _zData = [_config] call DSZ_fnc_selectLocations;
 		{
 			if(!isNull _x) then {
 				_zed = _x;
-				_nearPlayers = {isPlayer _x && alive _x} count (_zed nearEntities ["Man",250]);
-				if(_nearPlayers == 0) then {
-					[_zed getVariable ["zDataIndex",-1]] spawn DSZ_fnc_despawnZombie;
+				if([getpos _zed] call DSZ_fnc_isPlayerNear) then {
+					[_zed getVariable ["zDataIndex",-1]] call DSZ_fnc_despawnZombie;
 				};
 			};
 		} forEach DSZ_var_zUnits;

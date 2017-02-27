@@ -4,7 +4,7 @@
 
 while{true} do {
 	_plrPos = getpos (vehicle player);
-	waitUntil{(((getpos player) distance _plrPos) > 20)};
+	waitUntil{(((getpos (vehicle player)) distance _plrPos) > 20)};
 
 	systemchat "Requesting new data";
 	
