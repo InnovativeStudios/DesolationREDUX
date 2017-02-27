@@ -264,7 +264,7 @@ switch(_type)do{
 		_weapons = []; // todo
 		_backpacks = []; // todo
 		_magazinesturrent = []; // todo
-		_variables = [vectorUp _vehicle];
+		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
 		_animation_sources = [];
 		_textures = [];
 		_direction = getDir _vehicle;
@@ -335,7 +335,7 @@ switch(_type)do{
 		_weapons = []; // todo
 		_backpacks = []; // todo
 		_magazinesturrent = []; // todo
-		_variables = [vectorUp _vehicle];
+		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
 		_animation_sources = [];
 		_textures = [];
 		_direction = getDir _vehicle;
@@ -436,7 +436,7 @@ switch(_type)do{
 		
 		// position stuff
 		_direction = getDir _building;
-		_variables = [vectorUp _building];
+		_variables = [["DSR_vectorUp",vectorUp _building]];
 		_position = getPosATL _building;
 		
 		_request = [PROTOCOL_DBCALL_FUNCTION_RETURN_UUID,[]] call DB_fnc_buildDBRequest;
@@ -511,7 +511,7 @@ switch(_type)do{
 		
 		// position stuff
 		_direction = getDir _building;
-		_variables = [vectorUp _building];
+		_variables = [["DSR_vectorUp",vectorUp _building]];
 		_position = getPosATL _building;
 		
 		_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_OBJECT,[
