@@ -64,6 +64,9 @@ if(_priority > 10000) then {
 		{
 			_object setVariable _x;
 		} foreach _variables;
+		
+		
+		
 		_object setDir _direction;
 		if(_positiontype == 1) then {
 			_object setPosATL _position;
