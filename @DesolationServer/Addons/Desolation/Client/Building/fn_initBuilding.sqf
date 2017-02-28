@@ -1,5 +1,6 @@
-
+DS_var_playerBuildables = [];
 DS_Var_valid3DBuildIcons = [];
+ 
  
 addMissionEventHandler["Draw3D",{
 	{

@@ -67,6 +67,29 @@ player addEventHandler ["InventoryClosed", {
 			//systemChat "deleted";
 		};
 	};
+	
+	if(_container in DS_var_playerBuildables) then {
+		_data = _container getVariable "SVAR_buildParams";
+		_items = _data select 0;
+		_magData = getMagazineCargo _container;
+		_magItems = call compile tolower(str(_magData select 0));
+		_magCount = _magData select 1;
+		
+		_full = true;
+		{
+			_itemType = tolower(_x select 0);
+			_count = _x select 1;
+				
+			_index = _magItems find _itemType;
+			if(_index == -1) exitWith {_full = false;};
+			_mCount = _magCount select _index;
+			if(_mCount < _count) exitWith {_full = false;};
+		} forEach _items;
+		
+		if(_full) then {
+			[_container] call DS_fnc_onCrateFilled;
+		};
+	};
 }];
 
 
