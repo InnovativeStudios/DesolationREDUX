@@ -265,11 +265,6 @@ switch(_type)do{
 		_backpacks = []; // todo
 		_magazinesturrent = []; // todo
 		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
-		{
-			if(toLower(_x) find "svar_" == 0) then {
-				_variables pushback [_x,_vehicle getVariable [_x,""]];
-			};
-		} forEach (allVariables _vehicle);
 		_animation_sources = [];
 		_textures = [];
 		_direction = getDir _vehicle;
@@ -341,13 +336,6 @@ switch(_type)do{
 		_backpacks = []; // todo
 		_magazinesturrent = []; // todo
 		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
-		{
-			if(toLower(_x) find "svar_" == 0) then {
-				_variables pushback [_x,_vehicle getVariable [_x,""]];
-			};
-		} forEach (allVariables _vehicle);
-		
-		
 		_animation_sources = [];
 		_textures = [];
 		_direction = getDir _vehicle;
@@ -449,11 +437,6 @@ switch(_type)do{
 		// position stuff
 		_direction = getDir _building;
 		_variables = [["DSR_vectorUp",vectorUp _building]];
-		{
-			if(toLower(_x) find "svar_" == 0) then {
-				_variables pushback [_x,_building getVariable [_x,""]];
-			};
-		} forEach (allVariables _building);
 		_position = getPosATL _building;
 		
 		_request = [PROTOCOL_DBCALL_FUNCTION_RETURN_UUID,[]] call DB_fnc_buildDBRequest;
@@ -529,11 +512,6 @@ switch(_type)do{
 		// position stuff
 		_direction = getDir _building;
 		_variables = [["DSR_vectorUp",vectorUp _building]];
-		{
-			if(toLower(_x) find "svar_" == 0) then {
-				_variables pushback [_x,_building getVariable [_x,""]];
-			};
-		} forEach (allVariables _building);
 		_position = getPosATL _building;
 		
 		_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_OBJECT,[

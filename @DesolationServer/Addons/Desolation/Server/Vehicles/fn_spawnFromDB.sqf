@@ -60,11 +60,10 @@ if(_priority > 10000) then {
 		
 		[_object,_items] call DS_fnc_setLoot;
 		
+		_object setVectorUp ((_variables deleteAt 0) select 1);
 		{
 			_object setVariable _x;
 		} foreach _variables;
-		_object setVectorUp (_object getVariable ["DSR_vectorUp",[0,0,0]]);
-		
 		_object setDir _direction;
 		if(_positiontype == 1) then {
 			_object setPosATL _position;
@@ -107,12 +106,10 @@ if(_priority > 10000) then {
 		
 		[_object,_items] call DS_fnc_setLoot;
 		
+		_object setVectorUp ((_variables deleteAt 0) select 1);
 		{
 			_object setVariable _x;
 		} foreach _variables;
-		_object setVectorUp (_object getVariable ["DSR_vectorUp",[0,0,0]]);
-		
-		
 		_object setDir _direction;
 		if(_positiontype == 1) then {
 			_object setPosATL _position;
