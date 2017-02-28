@@ -28,10 +28,16 @@ if(isNull _group) exitWith {
 	"DSZOMBZ > FATAL ERROR: NOT ENOUGH GROUPS FOR ZOMBIES";
 };
 
-
+// make sure the group isnt having its side changed when this is run
 _zombie = _group createUnit [_class, _pos, [], 0, "NONE"];
 
 _zombie forceWalk true;
+
+_zombie addEventHandler ["Killed",{
+	params["_zed"];
+	_zDataIndex = _zed getVariable ["zDataIndex",-1];
+	[_zed,_zDataIndex] spawn DSZ_fnc_killZombie;
+}];
 
 [_locationpos,_roamDist,_group] call DSZ_fnc_initRoaming;
 

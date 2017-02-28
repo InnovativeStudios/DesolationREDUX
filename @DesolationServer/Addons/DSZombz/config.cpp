@@ -24,6 +24,16 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
+		class Client_Agro
+		{
+			file = "DSZombz\Client\Agro";
+			isclient = 1;
+			class agroCheck {};
+			class agroZombie {};
+			class deagroZombie {};
+			class zombieCanSee {};
+			class zombieCanSmell {};
+		};
 		class Client_Spawning
 		{
 			file = "DSZombz\Client\Spawning";
@@ -48,6 +58,7 @@ class CfgFunctions
 			file = "DSZombz\Server\Spawning";
 			isserver = 1;
 			class spawnZombie {};
+			class killZombie {};
 			class initRoaming {};
 			class despawnZombie {};
 		};
@@ -82,6 +93,6 @@ class CfgFunctions
 class CfgZombies 
 {
 	class C_man_1 {
-		AgroMode = "FULL"; //agro mode
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
 	}; 
 };

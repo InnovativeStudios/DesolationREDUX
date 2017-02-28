@@ -17,7 +17,7 @@ if(!isNull _zed) then {
 	if([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 		_zData set[1,getposatl _zed];
 		_zombieData set[_zDataIndex,_zData];
-		bis_functions_mainscope setVariable ["DSZ_var_zData",_zombieData];
+		bis_functions_mainscope setVariable ["DSZ_var_zData",_zombieData,true];
 	
 		_group = group _zed;
 		deleteVehicle _zed;
