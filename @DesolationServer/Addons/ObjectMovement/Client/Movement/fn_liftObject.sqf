@@ -48,13 +48,13 @@ if([_object] call OM_fnc_canLift) then {
 				
 				_wantedHeight = ((((1 - (_weaponPitch/ -0.985))) * _maxheight)-1) + _playerHeight;
 				
+				if(_wantedHeight < 0) then {_wantedHeight = 0;}; // prevent object from jittering when placing on the ground
+				
+				
 				_playerXVelocity = (velocity player) select 0;
 				_playerYVelocity = (velocity player) select 1;
 				_playerZVelocity = (velocity player) select 2;
 				
-				_objectZVelocityUp = _speedUp + _playerZVelocity;
-				_objectZVelocityDown = _speedDown + _playerZVelocity;
-				_objectFaceVector = [-((vectorDir _object)select 0), ((vectorDir _object)select 1),0];
 				_objectXVelocity = _playerXVelocity *_lagComp;
 				_objectYVelocity = _playerYVelocity *_lagComp;
 				_relativeDir = (player getDir _object);
