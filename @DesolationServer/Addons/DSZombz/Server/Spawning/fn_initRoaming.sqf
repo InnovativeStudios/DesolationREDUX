@@ -2,7 +2,7 @@ params["_locationpos","_roamDist","_group"];
 
 
 _waypoint = [];
-for "_i" from 1 to 4 do {
+for "_i" from 0 to 3 do {
 	_wPos = [0,0,0];
 	while{true} do {
 		_wPos = _locationpos vectorAdd [random(_roamDist*2)-_roamDist,random(_roamDist*2)-_roamDist,0];
