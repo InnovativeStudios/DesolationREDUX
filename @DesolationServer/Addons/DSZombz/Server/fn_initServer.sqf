@@ -11,7 +11,7 @@ _zData = [_config] call DSZ_fnc_selectLocations;
 		{
 			if(!isNull _x) then {
 				_zed = _x;
-				if([getpos _zed] call DSZ_fnc_isPlayerNear) then {
+				if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 					[_zed getVariable ["zDataIndex",-1]] call DSZ_fnc_despawnZombie;
 				};
 			};

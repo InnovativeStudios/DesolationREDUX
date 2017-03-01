@@ -3,6 +3,7 @@ params["_x"];
 _zombieData = bis_functions_mainscope getVariable ["DSZ_var_zData",[]];
 
 
+
 _zData = _zombieData select _x;
 _pos = _zData select 1;
 _zDataIndex = _x;
@@ -14,10 +15,12 @@ _zed = objNull;
 } forEach DSZ_var_zUnits;
 
 if(!isNull _zed) then {
-	if([getpos _zed] call DSZ_fnc_isPlayerNear) then {
+	if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 		_zData set[1,getposatl _zed];
 		_zombieData set[_zDataIndex,_zData];
 		bis_functions_mainscope setVariable ["DSZ_var_zData",_zombieData,true];
+	
+		[_x] call DSZ_fnc_fromClient;
 	
 		_group = group _zed;
 		deleteVehicle _zed;

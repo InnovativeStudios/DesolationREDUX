@@ -1,4 +1,4 @@
-params["_x"];
+params["_x","_owner"];
 
 _zombieData = bis_functions_mainscope getVariable ["DSZ_var_zData",[]];
 
@@ -40,8 +40,9 @@ _zombie addEventHandler ["Killed",{
 	[_zed,_zDataIndex] spawn DSZ_fnc_killZombie;
 }];
 
-[_locationpos,_roamDist,_group] call DSZ_fnc_initRoaming;
-
 _zombie setVariable ["zDataIndex",_x,true];
 _zombie setVariable ["zAgroType",_type,true];
 DSZ_var_zUnits pushback _zombie;
+
+[_owner,_zed] call DSZ_fnc_toClient;
+[_locationpos,_roamDist,_group] call DSZ_fnc_initRoaming;

@@ -9,5 +9,7 @@ if(_count > 0) exitWith {true};
 {
 	_count = {isPlayer _x && alive _x} count (crew _x);
 	if(_count > 0) exitWith {};
-} forEach (nearestObjects [_pos,["LandVehicle","Air","Ship"],250])
+} forEach (nearestObjects [_pos,["LandVehicle","Air","Ship"],250]);
 if(_count > 0) exitWith {true};
+
+false;

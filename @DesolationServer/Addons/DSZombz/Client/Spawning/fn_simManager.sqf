@@ -43,7 +43,7 @@ while{true} do {
 		systemchat str(count _spawnArray);
 		systemchat str(count _despawnArray);
 	
-		[_spawnArray,_despawnArray] remoteExec ["DSZ_fnc_simUpdateRequest",2];
+		[_spawnArray,_despawnArray,player] remoteExec ["DSZ_fnc_simUpdateRequest",2];
 	};
 };	
 
