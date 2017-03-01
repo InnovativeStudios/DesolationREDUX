@@ -15,8 +15,16 @@ _object spawn {
 	waitUntil{local _this};
 	player disableCollisionWith _this;
 };
+
+//store original object mass and set mass to low number to make collisions hurt less :)
+_origMass = getMass _object;
+_object setMass 5;
+
+
+
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
+	OM_var_liftedMass = _origMass;
 	_object addEventHandler ["EpeContact",{
 		OM_var_collisionForce = _this select 4;
 	}];
@@ -39,7 +47,7 @@ if([_object] call OM_fnc_canLift) then {
 		
 		if(!isNull _object) then {
 			if(OM_var_collisionForce < _maxCollisionForce) then {
-				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;};
+				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {_object setMass OM_var_liftedMass; call OM_fnc_dropObject;}; //drops object and resets mass
 				
 			
 				_playerHeight = (getPosATL player) select 2;
