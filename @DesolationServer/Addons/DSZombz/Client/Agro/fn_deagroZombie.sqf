@@ -4,10 +4,15 @@ params["_zed"];
 
 if(!alive _zed || isNull _zed) exitWith {};
 
+_zed enableCollisionWith player;
+
+
 _zed forceSpeed (_zed getSpeed "SLOW");
 _zed setVariable ["agroed",false,true];
 _zDataIndex = _zed getVariable ["zDataIndex",-1];
 
+systemchat "DEAGROING ZOMBIE #";
+systemchat str(_zDataIndex);
 
 if(_zDataIndex < 0) exitWith {diag_log "ERROR: wtf no data index?";};
 

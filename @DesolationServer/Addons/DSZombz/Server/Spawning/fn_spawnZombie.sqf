@@ -30,8 +30,15 @@ if(isNull _group) exitWith {
 
 _zombie = _group createUnit [_class, _pos, [], 0, "NONE"];
 
+_zombie disableAI "TARGET";
+_zombie disableAI "AUTOTARGET";
+_zombie disableAI "COVER";
+_zombie disableAI "AUTOCOMBAT";
+
 _zombie setBehaviour "CARELESS";
 _zombie forceSpeed (_zombie getSpeed "SLOW");
+
+
 
 _zombie addEventHandler ["MPKilled",{
 	params["_zed"];

@@ -16,4 +16,5 @@ while{(count (waypoints _group)) > 0} do {
 	deleteWaypoint ((waypoints _group) select 0);
 };
 
+_zed disableCollisionWith player;
 [_zed,player] execFSM "DSR_Zombz_Code\fsm\dszBrain.fsm";
