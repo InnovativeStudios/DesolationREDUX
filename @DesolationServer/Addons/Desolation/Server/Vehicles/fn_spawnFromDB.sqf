@@ -40,12 +40,13 @@ if(_priority > 10000) then {
 			_object setObjectTextureGlobal _x;
 		} forEach _textures;
 		
-		_names = _hitpoints select 0;
-		_values = _hitpoints select 2;
-		{
-			_object setHitPointDamage [_x,_values select _forEachIndex];
-		} forEach _names;
-		
+		if(count(_hitpoints >= 3)) then {
+			_names = _hitpoints select 0;
+			_values = _hitpoints select 2;
+			{
+				_object setHitPointDamage [_x,_values select _forEachIndex];
+			} forEach _names;
+		};
 		if(_player_uuid != "") then {
 			_object setVariable ["owner",_player_uuid];
 			_object setVariable ["friends",_friendslist];
