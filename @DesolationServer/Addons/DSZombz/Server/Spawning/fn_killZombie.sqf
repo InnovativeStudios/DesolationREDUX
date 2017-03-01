@@ -1,7 +1,10 @@
 params["_zed","_zDataIndex"];
 
-waitUntil{!(_zed getVariable ["agroed",false])};
+diag_log "ZOMBIE DIED #";
+diag_log str(_zDataIndex);
+
 if(!local (group _zed)) then {[_zed] call DSZ_fnc_fromClient};
+waitUntil{local (group _zed)};
 
 _zombieData = bis_functions_mainscope getVariable ["DSZ_var_zData",[]];
 _zData = _zombieData select _zDataIndex;

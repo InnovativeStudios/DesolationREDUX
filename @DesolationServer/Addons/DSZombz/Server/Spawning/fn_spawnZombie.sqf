@@ -28,21 +28,22 @@ if(isNull _group) exitWith {
 	"DSZOMBZ > FATAL ERROR: NOT ENOUGH GROUPS FOR ZOMBIES";
 };
 
-// make sure the group isnt having its side changed when this is run
 _zombie = _group createUnit [_class, _pos, [], 0, "NONE"];
 
 _zombie setBehaviour "CARELESS";
 _zombie forceSpeed (_zombie getSpeed "SLOW");
 
-_zombie addEventHandler ["Killed",{
+_zombie addEventHandler ["MPKilled",{
 	params["_zed"];
-	_zDataIndex = _zed getVariable ["zDataIndex",-1];
-	[_zed,_zDataIndex] spawn DSZ_fnc_killZombie;
+	if(isServer) then {
+		_zDataIndex = _zed getVariable ["zDataIndex",-1];
+		[_zed,_zDataIndex] spawn DSZ_fnc_killZombie;
+	};
 }];
 
 _zombie setVariable ["zDataIndex",_x,true];
 _zombie setVariable ["zAgroType",_type,true];
 DSZ_var_zUnits pushback _zombie;
 
-[_owner,_zed] call DSZ_fnc_toClient;
+[_owner,_zombie] call DSZ_fnc_toClient;
 [_locationpos,_roamDist,_group] call DSZ_fnc_initRoaming;

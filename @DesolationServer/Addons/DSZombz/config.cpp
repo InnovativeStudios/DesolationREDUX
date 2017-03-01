@@ -34,6 +34,12 @@ class CfgFunctions
 			class zombieCanSee {};
 			class zombieCanSmell {};
 		};
+		class Client_Damage
+		{
+			file = "DSZombz\Client\Damage";
+			isclient = 1;
+			class zombieAttack {};
+		};
 		class Client_Spawning
 		{
 			file = "DSZombz\Client\Spawning";

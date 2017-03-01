@@ -20,8 +20,9 @@ if(!isNull _zed) then {
 		_zombieData set[_zDataIndex,_zData];
 		bis_functions_mainscope setVariable ["DSZ_var_zData",_zombieData,true];
 	
-		[_x] call DSZ_fnc_fromClient;
-	
+		[_zed] call DSZ_fnc_fromClient;
+		diag_log "DESPAWNING ZOMBIE #";
+		diag_log str(_x);
 		_group = group _zed;
 		deleteVehicle _zed;
 		deleteGroup _group;
