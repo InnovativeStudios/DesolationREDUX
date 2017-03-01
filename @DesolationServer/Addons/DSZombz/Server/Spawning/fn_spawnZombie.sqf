@@ -31,7 +31,8 @@ if(isNull _group) exitWith {
 // make sure the group isnt having its side changed when this is run
 _zombie = _group createUnit [_class, _pos, [], 0, "NONE"];
 
-_zombie forceWalk true;
+_zombie setBehaviour "CARELESS";
+_zombie forceSpeed (_zombie getSpeed "SLOW");
 
 _zombie addEventHandler ["Killed",{
 	params["_zed"];

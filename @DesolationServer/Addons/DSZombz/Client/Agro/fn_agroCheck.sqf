@@ -1,4 +1,4 @@
-
+DSZ_allow_Agro = false;
 
 
 _maxVisionDistance = 100;
@@ -23,11 +23,13 @@ while{true} do {
 				
 				if([_x] call DSZ_fnc_zombieCanSmell) then {
 					// smell agro
+					systemchat "AGRO ZOMBIE: SMELL";
 					[_x] call DSZ_fnc_agroZombie;
 				
 				} else {
 					if([_x] call DSZ_fnc_zombieCanSee) then {
 						// visible agro
+						systemchat "AGRO ZOMBIE: VISION";
 						[_x] call DSZ_fnc_agroZombie;
 					};
 				};

@@ -1,6 +1,6 @@
 params["_zed"];
 
-
+_zombie forceSpeed (_zombie getSpeed "SLOW");
 
 _zed setVariable ["agroed",false,true];
 
