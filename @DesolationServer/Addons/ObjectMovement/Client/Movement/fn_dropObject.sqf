@@ -19,6 +19,9 @@ if !(isNil "OM_var_EachFrameEH") then
 OM_var_lifted removeAllEventHandlers "EpeContact";
 player enableCollisionWith OM_var_lifted;
 OM_var_collisionForce = 0;
+
+OM_var_lifted setMass (OM_var_lifted getVariable ["oMass",5]);
+
 OM_var_lifted = objNull;
 
 true;
