@@ -14,6 +14,7 @@ params["_crate"];
 waitUntil{!isNull OM_var_lifted};
 waitUntil{isNull OM_var_lifted};
 
+_crate setVectorUp [0,0,1];
 player reveal [_crate, 4];
 
 

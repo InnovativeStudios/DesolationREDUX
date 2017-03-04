@@ -23,6 +23,8 @@ deleteVehicle _crate;
 _obj = _model createVehicle [0,0,0];
 _obj setdir _dir;
 _obj setposatl _pos;
+_crate setVectorUp [0,0,1];
+
 ["spawnBuilding","",[_obj]] call DS_fnc_dbRequest;
 _oUUID = _obj getVariable ["oUUID",""];
 
