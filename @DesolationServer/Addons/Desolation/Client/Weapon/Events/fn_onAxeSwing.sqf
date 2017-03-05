@@ -27,7 +27,7 @@ if (isNull _tree) exitWith {
 			if(isPlayer _closest) then {
 				systemchat "Player Hit";
 				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
-				[player] remoteExec ["DS_fnc_onMeleeHit",_closest];
+				[player,1] remoteExec ["DS_fnc_onMeleeHit",_closest];
 			} else {
 				systemchat "Zombie Hit";
 				_closest setDamage ((damage _closest) + 0.25);

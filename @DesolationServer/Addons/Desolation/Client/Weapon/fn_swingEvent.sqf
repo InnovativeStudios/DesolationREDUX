@@ -5,45 +5,38 @@
 
 DSR_isSwinging = false;
 
+DSR_swingActions = [];
+DSR_swingWeapons = [];
+
 player addAction ["",{
+	
+	_weapon = currentWeapon player;
+	_index = DSR_swingWeapons find _weapon;
+	_data = DSR_swingActions select _index;
+	
+	_animation = _data select 0;
+	_function = _data select 1;
+	_delay1 = _data select 2;
+	_delay2 = _data select 3;
+	
+	
 	if(!DSR_isSwinging) then { 
 		DSR_isSwinging = true; 
-		player playActionNow "dsr_AxeSlashGst"; 
+		player playActionNow _animation; 
 		[] spawn { 
-			uiSleep 0.9; 
-			call DS_fnc_onAxeSwing; 
-			uiSleep 0.6;
+			uiSleep _delay1; 
+			call (missionNamespace getVariable [_function,{}]); 
+			uiSleep _delay2;
 			DSR_isSwinging = false; 
 		}; 
 	};
-}, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Axe') || (currentWeapon player == 'DSR_Melee_Fire_Axe')"];
+	
+}, "", -100, false, true, "DefaultAction", "currentWeapon player in DSR_swingWeapons"];
 
 
-//Todo eventually make this the pickaxe anim
-player addAction ["",{
-	player playMoveNow "dsr_AxeSlashGst";
-	[] spawn {
-		uiSleep 1;
-		player forceWeaponFire [weaponState player select 1, weaponState player select 2];
-		call DS_fnc_onAxeSwing;
-	};
-}, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Pickaxe')"];
-
-//Todo eventually make this the bat anim
-player addAction ["",{
-	player playMoveNow "dsr_AxeSlashGst";
-	[] spawn {
-		uiSleep 1;
-		player forceWeaponFire [weaponState player select 1, weaponState player select 2];
-	};
-}, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Bat')"];
-
-//Todo eventually make this the fishingrod anim
-player addAction ["",{
-	player playMoveNow "dsr_AxeSlashGst";
-	[] spawn {
-		uiSleep 1;
-		player forceWeaponFire [weaponState player select 1, weaponState player select 2];
-		call DS_fnc_onFishingrodSwing;
-	};
-}, "", -100, false, true, "DefaultAction", "(currentWeapon player == 'DSR_Melee_Fishingrod')"];
+["DSR_Melee_Axe","dsr_AxeSlashGst","DS_fnc_onAxeSwing"] call DS_fnc_registerMeleeAction;
+["DSR_Melee_Fire_Axe","dsr_AxeSlashGst","DS_fnc_onAxeSwing"] call DS_fnc_registerMeleeAction;
+["DSR_Melee_Katana","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;
+//todo
+["DSR_Melee_Bat","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;
+["DSR_Melee_Fishingrod","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;

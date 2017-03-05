@@ -85,10 +85,21 @@ class CfgFunctions
 		class Client_Weapon {
 			file = "Desolation\Client\Weapon";
 			isclient = 1;
+			class swingEvent {};
+			class registerMeleeAction {};
+		};
+		class Client_Weapon_Events {
+			file = "Desolation\Client\Weapon";
+			isclient = 1;
 			class onAxeSwing {};
+			class onBatSwing {};
+			class onKatanaSwing {};
 			class onPickaxeSwing {};
 			class onFishingrodSwing {};
-			class swingEvent {};
+		};
+		class Client_Weapon_Network {
+			file = "Desolation\Client\Weapon";
+			isclient = 1;
 			class onMeleeHit {};
 		};
 		class Client_Actions_Vehicle {
