@@ -797,46 +797,52 @@ class CfgItemSpawns {
                 rare[] = {
                     {"DSR_Carryall_Blue",11},
                     {"DSR_Carryall_HunterF",5},
-                    {"DSR_Carryall_Green",11},
+                    {"DSR_Carryall_Green",10},
                     {"DSR_Carryall_WHiker",7},
                     {"DSR_Carryall_MHiker",7},
                     {"DSR_Carryall_Hunter",5},
                     {"DSR_Carryall_HKitty",2},
-                    {"DSR_Carryall_Orange",11},
-                    {"DSR_Carryall_Purple",11},
-                    {"DSR_Carryall_Red",11},
-                    {"DSR_Carryall_Yellow",11},
+                    {"DSR_Carryall_Orange",10},
+                    {"DSR_Carryall_Purple",10},
+                    {"DSR_Carryall_Red",10},
+                    {"DSR_Carryall_Yellow",10},
+					{"DSR_Largegunbag",5},
                     //Special Need to Test (Some might spawn with gear in them)
                     {"B_Parachute",8}
                 };
                 semirare[] = {
-                    {"B_Kitbag_sgg",65},
+                    {"B_Kitbag_sgg",55},
                     {"B_Kitbag_cbr",25},
-                    {"B_Kitbag_mcamo",10}
+                    {"B_Kitbag_mcamo",10},
+					{"DSR_Coyote_Backpack",10}
                 };
                 average[] = {
-                    {"B_Bergen_blk",55},
+                    {"B_Bergen_blk",40},
                     {"B_Bergen_rgr",15},
                     {"B_Bergen_sgg",15},
-                    {"B_Bergen_mcamo",15}
+                    {"B_Bergen_mcamo",15},
+					{"DSR_Alice_Backpack",15}
                 };
                 semicommon[] = {
                     {"B_HuntingBackpack",5},
                     {"B_OutdoorPack_blk",8},
                     {"B_OutdoorPack_blu",6},
                     {"B_OutdoorPack_tan",6},
-                    {"B_FieldPack_blk",30},
+                    {"B_FieldPack_blk",10},
                     {"B_FieldPack_oucamo",15},
                     {"B_FieldPack_ocamo",15},
-                    {"B_FieldPack_cbr",15}
+                    {"B_FieldPack_cbr",15},
+					{"DSR_Czech_Camo",10},
+					{"DSR_Civil_Assault_Backpack",10}
                 };
                 common[] = {
-                    {"B_AssaultPack_blk",50},
+                    {"B_AssaultPack_blk",35},
                     {"B_AssaultPack_dgtl",10},
                     {"B_AssaultPack_khk",10},
                     {"B_AssaultPack_sgg",10},
                     {"B_AssaultPack_cbr",15},
-                    {"B_AssaultPack_mcamo",5}
+                    {"B_AssaultPack_mcamo",5},
+					{"DSR_Medical_Backpack",10}
                 };
             };
             class Uniform {
