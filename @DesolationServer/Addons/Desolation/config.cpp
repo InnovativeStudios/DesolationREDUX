@@ -6496,17 +6496,6 @@ class CfgVehicleSpawns {
 				"Land_PierWooden_01_dock_F"
 			};
 		};
-		class DSR_RaftWM_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
-			};
-		};
 		class C_Boat_Civil_01_F {
 			buildings[] = {
 				"Land_PierWooden_02_barrel_F",
