@@ -23,7 +23,8 @@ player addAction ["",{
 	if(!DSR_isSwinging) then { 
 		DSR_isSwinging = true; 
 		player playActionNow _animation; 
-		[] spawn { 
+		[_delay1,_function,_delay2] spawn { 
+			params["_delay1","_function","_delay2"];
 			uiSleep _delay1; 
 			call (missionNamespace getVariable [_function,{}]); 
 			uiSleep _delay2;
