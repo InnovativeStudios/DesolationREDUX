@@ -89,7 +89,7 @@ class CfgFunctions
 			class registerMeleeAction {};
 		};
 		class Client_Weapon_Events {
-			file = "Desolation\Client\Weapon";
+			file = "Desolation\Client\Weapon\Events";
 			isclient = 1;
 			class onAxeSwing {};
 			class onBatSwing {};
@@ -98,7 +98,7 @@ class CfgFunctions
 			class onFishingrodSwing {};
 		};
 		class Client_Weapon_Network {
-			file = "Desolation\Client\Weapon";
+			file = "Desolation\Client\Weapon\Network";
 			isclient = 1;
 			class onMeleeHit {};
 		};
@@ -6730,6 +6730,37 @@ class CfgBuildables {
 		preview = "\SM_Zombz\Survivors_icon.paa";  
 		name = "Miscellaneous";  
 		class Buildables {
+			
+			class Crate_Small {
+				parts[] = {
+					{"DSR_Item_Lumber",4},
+					{"DSR_Item_Hardware",1},
+					{"DSR_Item_Scrap_Metal",1}
+				};
+				name = "Small Crate";
+				model = "DSR_Object_Storage_Small";
+				description = "A small storage container";
+				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				
+				crateObject = "DSR_Object_Storage_Small_Preview";
+				
+				condition = "true";
+			};
+			class Crate_Large {
+				parts[] = {
+					{"DSR_Item_Lumber",6},
+					{"DSR_Item_Hardware",2},
+					{"DSR_Item_Scrap_Metal",2}
+				};
+				name = "Large Crate";
+				model = "DSR_Object_Storage_Large";
+				description = "A large storage container";
+				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				
+				crateObject = "DSR_Object_Storage_Large_Preview";
+				
+				condition = "true";
+			};
 			class Pallets {
 				parts[] = {
 					{"DSR_Item_Lumber",10}

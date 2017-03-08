@@ -43,7 +43,7 @@ while{true} do {
 		
 		
 		{
-			_class = _x select 0;
+			_class = toLower(_x select 0);
 			_maxAmount = _x select 1;
 			
 			_itemCount = 0;

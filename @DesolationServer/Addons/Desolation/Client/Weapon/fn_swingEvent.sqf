@@ -37,7 +37,7 @@ player addAction ["",{
 
 ["DSR_Melee_Axe","dsr_AxeSlashGst","DS_fnc_onAxeSwing"] call DS_fnc_registerMeleeAction;
 ["DSR_Melee_Fire_Axe","dsr_AxeSlashGst","DS_fnc_onAxeSwing"] call DS_fnc_registerMeleeAction;
-["DSR_Melee_Katana","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;
+["DSR_Melee_Katana","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing",1,1] call DS_fnc_registerMeleeAction;
 //todo
 ["DSR_Melee_Bat","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;
 ["DSR_Melee_Fishingrod","dsr_KatanaSlashGst","DS_fnc_onKatanaSwing"] call DS_fnc_registerMeleeAction;
