@@ -40,7 +40,7 @@ if(_priority > 10000) then {
 			_object setObjectTextureGlobal _x;
 		} forEach _textures;
 		
-		if(count(_hitpoints >= 3)) then {
+		if(count(_hitpoints) >= 3) then {
 			_names = _hitpoints select 0;
 			_values = _hitpoints select 2;
 			{
