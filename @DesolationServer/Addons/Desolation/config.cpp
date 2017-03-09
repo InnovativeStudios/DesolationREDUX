@@ -243,7 +243,7 @@ class CfgFunctions
 			isserver = 1;
 			class removePartReq {};
 			class repairPartReq {};
-			class refeulReq {};
+			class refuelReq {};
 		};
 		class Server_Database {
 			file = "Desolation\Server\Database";
