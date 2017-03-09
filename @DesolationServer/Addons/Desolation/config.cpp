@@ -1177,9 +1177,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -1194,10 +1193,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -1205,7 +1205,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -2003,9 +2004,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -2020,10 +2020,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -2031,7 +2032,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -2829,9 +2831,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -2846,10 +2847,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -2857,7 +2859,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -3655,9 +3658,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -3672,10 +3674,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -3683,7 +3686,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -4481,9 +4485,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -4498,10 +4501,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -4509,7 +4513,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -5307,9 +5312,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Grinder",10},
                     {"DSR_Item_Tape_Measure",10},
                     {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",5},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Tarp",5}
+                    {"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tarp",10}
                 };
                 average[] = {
                     {"DSR_Item_Propane_Empty",20},
@@ -5324,10 +5328,11 @@ class CfgItemSpawns {
                 semicommon[] = {
                     {"DSR_Item_Hammer",15},
                     {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",10},
-                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Gascan_Small_Empty",15},
+                    {"DSR_Item_Plastic_Drum",5},
                     {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",15},
+                    {"DSR_Item_Saw",10},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Screw_Driver_Flathead",10},
                     {"DSR_Item_Screw_Driver_Phillips",10}
                 };
@@ -5335,7 +5340,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Tin_Container",20},
                     {"DSR_Item_Bucket_Empty",25},
                     {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",25},
+                    {"DSR_Melee_Axe",15},
+                    {"DSR_Item_Hardware",10},
                     {"DSR_Item_Seedpack",15}
                 };
             };
@@ -5654,6 +5660,20 @@ class CfgItemSpawns {
 			};
 		};
 
+		class Land_dp_smallFactory_F
+		{
+			table = "Industrial";
+			positions[] = {{10.0669, -5.00342, 0.989646}, {10.1559, 2.146, 0.989654}, {0.462799, 3.25684, 2.4038}, {-2.98578, 3.05713, 2.40379}
+			};
+		};
+
+		class Land_i_Shed_Ind_F
+		{
+			table = "Industrial";
+			positions[] = {{14.0747, 6.86572, -1.56921}, {-1.59459, -0.653809, -1.56921}, {-3.98872, 6.8667, -1.56921}, {10.0919, -0.314453, -1.56921}, {-5.87579, -0.795898, -1.56921}, {-5.62433, 1.68408, -1.56921}
+			};
+		};
+
 		class Land_SM_01_shed_F
 		{
 			table = "Industrial";
@@ -5759,6 +5779,12 @@ class CfgItemSpawns {
 			};
 		};
 
+		class Land_SCF_01_storageBin_medium_F
+		{
+			table = "Industrial";
+			positions[] = {{-3.46143, 5.7192, 6.799}, {4.72754, -1.49947, 6.88451}, {-4.22803, -3.10316, 6.85781}};
+		};
+
 		class Land_SCF_01_storageBin_small_F
 		{
 			table = "Industrial";
@@ -5785,6 +5811,12 @@ class CfgItemSpawns {
 			table = "Industrial";
 			positions[] = {{-10.0099, 4.12891, -2.36559}, {4.32355, -0.524414, -2.36164}, {6.4068, 4.54395, -2.36594}, {6.07056, 4.87842, 0.188947}, {7.8252, 1.41455, 0.199012}, {5.80853, -0.0791016, -2.36267}, {-3.52875, 4.18555, -2.36564}
 			};
+		};
+
+		class Land_MilOffices_V1_F
+		{
+			table = "Military";
+			positions[] = {{-16.1816, 10.5855, -2.8682}, {-15.25, 7.0052, -2.8682}, {-14.397, 4.58313, -2.8682}, {-15.9063, 0.529099, -2.8682}, {-16.1011, -1.63214, -2.8682}, {-13.9727, -4.74777, -2.8682}, {-11.3452, -4.54674, -2.8682}, {-9.02881, -4.78514, -2.8682}, {-6.62061, -1.74809, -2.8682}, {-4.65186, -4.65324, -2.8682}, {-2.29053, -2.09383, -2.8682}, {-0.324707, -4.71222, -2.8682}, {0.648926, -1.75002, -2.8682}, {4.48535, 10.3548, -2.8682}, {4.16016, 7.36406, -2.8682}, {-0.951172, 10.0732, -2.8682}, {-2.95361, 10.4825, -2.8682}, {-5.6792, 7.17572, -2.8682}, {-10.2358, 10.4713, -2.8682}, {-8.00684, 7.69765, -2.8682}, {15.668, 2.64484, -2.8682}, {15.8232, 10.4867, -2.8682}, {6.89941, 9.9433, -2.8682}, {15.6289, 5.74121, -2.8682}, {8.72412, -1.60283, -2.8682}, {8.59863, -4.65935, -2.8682}};
 		};
 
 		class Land_Barracks_01_dilapidated_F
@@ -5939,6 +5971,12 @@ class CfgItemSpawns {
 			table = "Commercial";
 			positions[] = {{6.9483, -0.910156, -3.38828}, {3.59357, 3.63965, -3.38828}, {-7.33313, -1.19873, -3.38828}, {-2.39691, 1.2168, -3.38828}, {-1.81409, 12.2061, -3.38828}, {-2.21124, -9.90088, -3.38828}, {-7.5498, 1.07813, 0.107927}, {0.997925, 2.77393, 0.107927}, {4.06665, -0.816406, 0.226008}
 			};
+		};
+
+		class Land_Offices_01_V1_F
+		{
+			table = "Commercial";
+			positions[] = {{11.7757, 6.68115, -7.06043}, {9.26523, 1.76611, -7.06043}, {-14.7141, 5.92773, -7.06043}, {0.595245, -5.12402, -7.06043}, {6.3175, -6.09131, -3.16043}, {6.37814, 2.47754, -3.1612}, {5.75436, -6.26221, 0.736337}, {5.70242, 2.3208, 0.755594}, {10.5309, -5.43262, 4.66112}, {10.5088, -1.64355, 4.65775}, {5.68307, 2.51416, 4.65285}, {10.9102, -5.58057, 9.85026}, {10.6314, 5.40381, 9.84746}, {-4.27469, -9.28857, 9.86152}, {-10.3628, -0.207031, 9.86283}, {-10.9413, -5.81445, 9.85157}, {-15.5463, -9.02832, 9.85218}, {-11.9033, 6.12891, 9.8623}};
 		};
 
 		class Land_Supermarket_01_F
