@@ -97,7 +97,7 @@ addMissionEventHandler ["Draw3D",{
 							_dY = (_spos select 1) - (_cpos select 1);
 							_h = sqrt(_dX^2 + _dY^2);
 							
-							_angle = asin(_dY/_h);
+							_angle = abs(asin(_dY/_h));
 							
 							if(_angle <= 45) then {
 								if(_dX <= 0) then {
