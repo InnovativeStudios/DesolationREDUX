@@ -66,8 +66,11 @@ player addEventHandler ["InventoryClosed", {
 		};
 	};
 	
-	if(_container in DS_var_playerBuildables) then {
+	_cType = typeof(_container);
+	
+	if(toLower(_cType) find "_preview2" != -1) then {
 		_data = _container getVariable "SVAR_buildParams";
+		if(isNil {_data}) exitWith {systemchat "DEBUG: not a buildable, exiting"}; //if no build params then wtf happened?
 		_items = _data select 0;
 		_magData = getMagazineCargo _container;
 		_magItems = call compile tolower(str(_magData select 0));

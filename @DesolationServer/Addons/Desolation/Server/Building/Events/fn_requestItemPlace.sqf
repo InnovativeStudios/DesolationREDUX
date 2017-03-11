@@ -14,4 +14,4 @@ DS_var_Buildings pushback _obj;
 DS_var_BuildingUUIDS pushback _oUUID;
 
 
-[_obj,_item] remoteExec ["DS_fnc_registerPlacable",_player];
+[_obj,_item] remoteExec ["DS_fnc_onPlacableLift",_player];

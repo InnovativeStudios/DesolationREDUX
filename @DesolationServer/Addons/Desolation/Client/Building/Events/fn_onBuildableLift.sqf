@@ -8,17 +8,15 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+
+ 
+/// This function is called when the dynamic preview object is being moved 
+  
 params["_crate"];
 
-[_crate] spawn OM_fnc_liftObject;
-waitUntil{!isNull OM_var_lifted};
-waitUntil{isNull OM_var_lifted};
 
-_crate setVectorUp [0,0,1];
-player reveal [_crate, 4];
+//requesting a lift of the static object _crate
+player reveal [_crate, 4]; //make sure we can see the _crate
 
 
-//--- this doesnt work everyt now and then.... we need a 3d action on the buildable to build it i guess?
-
-
-DS_var_playerBuildables pushBack _crate;
+[_crate,player] remoteExec ["DS_fnc_buildableLifted",2]; 

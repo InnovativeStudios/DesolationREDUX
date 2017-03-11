@@ -15,4 +15,5 @@ _posASL = AGLtoASL (_player modelToWorld [0,3,0]);
 _crate = (_entry select 6) createVehicle [0,0,0];
 _crate setPosASL _posASL;
 _crate setVariable ["SVAR_buildParams",_entry,true];
-[_crate] remoteExec ["DS_fnc_registerBuildable",_player];
+
+[_crate] remoteExec ["DS_fnc_onBuildableLift",_player]; // have the player lift the preview object
