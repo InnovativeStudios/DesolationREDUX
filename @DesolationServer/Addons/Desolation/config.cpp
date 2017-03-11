@@ -57,24 +57,6 @@ class CfgPluginKeybinds
 		defaultKeys[] = {{0x24,0}};
 		code = "call DS_fnc_openJournal;";
 	};
-	class Toggle3DAction 
-	{
-		displayName = "Toggle 3D Actions";
-		tooltip = "Toggle 3D actions to be able to easily use any actions in 3D";
-		tag = "DS";
-		variable = "Toggle3DAction";
-		defaultKeys[] = {{0x0F,0}};
-		code = "call DS_fnc_toggleActions;";
-	};
-	class do3DAction
-	{
-		displayName = "Use 3D Action";
-		tooltip = "Allows you to use the highlighted action";
-		tag = "DS";
-		variable = "do3DAction";
-		defaultKeys[] = {{0x39,0}};
-		code = "[] spawn DS_fnc_do3DAction; DS_var_3DActionsEnabled";
-	};
 };
 
 class CfgFunctions
