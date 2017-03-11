@@ -1,7 +1,7 @@
 
 
 
-while{REM_var_Render3DActions} do {
+while{REP_var_Render3DActions} do {
 
 	_3D_ICON_DATA = [];
 	
@@ -21,7 +21,7 @@ while{REM_var_Render3DActions} do {
 					_actionIndex = _forEachIndex;
 					_renderType = _x select 1;
 				};
-			} forEach REM_var_ACTIONS;
+			} forEach REP_var_ACTIONS;
 			
 			if(_actionIndex != -1) then { // if the object we are looking at has 3d actions
 				_iconInfo = [];
@@ -29,13 +29,13 @@ while{REM_var_Render3DActions} do {
 				if(_renderType == 0) then {
 					_selections = selectionNames _cursor;
 					{
-						_3dpartdata = [_x] call REM_fnc_get3DPartName;
+						_3dpartdata = [_x] call REP_fnc_get3DPartName;
 						if((_3dpartdata select 0) != "Error") then {
 							_iconInfo pushback [_x, _cursor modelToWorld (_cursor selectionPosition _x),_3dpartdata,_forEachIndex];
 						};
 					} forEach _selections;
 				} else {
-					_iconInfo pushBack ["no_selection",_cursor modelToWorld [0,0,0],["action"] call REM_fnc_get3DPartName,0];
+					_iconInfo pushBack ["no_selection",_cursor modelToWorld [0,0,0],["action"] call REP_fnc_get3DPartName,0];
 				};
 				
 				_3D_ICON_DATA pushBack _actionIndex;
@@ -45,6 +45,6 @@ while{REM_var_Render3DActions} do {
 		};
 	};
 	
-	REM_var_3DIconData = _3D_ICON_DATA; // update icon data
+	REP_var_3DIconData = _3D_ICON_DATA; // update icon data
 	uiSleep 0.001; // wait 1 frame (this prevents sqf overload)
 };

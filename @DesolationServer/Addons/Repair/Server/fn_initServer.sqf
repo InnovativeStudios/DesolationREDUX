@@ -2,8 +2,8 @@
 
 /// broadcast config data
 
-REM_var_ACTIONS = [];
-REM_var_ICONS = [];
+REP_var_ACTIONS = [];
+REP_var_ICONS = [];
 
 _cfg = configFile >> "Cfg3DActions";
 for "_i" from 0 to count(_cfg)-1 do {
@@ -31,7 +31,7 @@ for "_i" from 0 to count(_cfg)-1 do {
 			};
 		};
 		
-		REM_var_ACTIONS pushBack [_condition,_type,_actionData];
+		REP_var_ACTIONS pushBack [_condition,_type,_actionData];
 	};
 };
 
@@ -44,9 +44,9 @@ for "_i" from 0 to count(_cfg)-1 do {
 		
 		_name = getText(_group >> "name");
 		_icon = getText(_group >> "icon");
-		REM_var_ICONS pushBack [configName _group,_name,_icon];
+		REP_var_ICONS pushBack [configName _group,_name,_icon];
 	};
 };
 
-publicVariable "REM_var_ACTIONS";
-publicVariable "REM_var_ICONS";
+publicVariable "REP_var_ACTIONS";
+publicVariable "REP_var_ICONS";

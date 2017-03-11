@@ -11,23 +11,23 @@
 
 if(toLower(["Enabled","REP"] call BASE_fnc_getCfgValue) == "true") then {
 	
-	if(!REM_var_Render2DActions) then {
+	if(!REP_var_Render2DActions) then {
 	
 		//register current action as the target for 2d actions
 		
-		if(REM_var_Active3DIcon != -1) then {
-			REM_var_2DActionIndex = REM_var_Active3DIcon;
-			REM_var_Render2DActions = true;
+		if(REP_var_Active3DIcon != -1) then {
+			REP_var_2DActionIndex = REP_var_Active3DIcon;
+			REP_var_Render2DActions = true;
 		};
 	
 	} else {
 		
-		_index = REM_var_Selected2DAction - 1;
+		_index = REP_var_Selected2DAction - 1;
 		if(_index >= 0) then {
-			_data = REM_var_Rendered2DActionData select _index;
-			_cursor = REM_var_2DActionParameters select 0;
-			_index = REM_var_2DActionParameters select 1;
-			_selection = REM_var_2DActionParameters select 2;
+			_data = REP_var_Rendered2DActionData select _index;
+			_cursor = REP_var_2DActionParameters select 0;
+			_index = REP_var_2DActionParameters select 1;
+			_selection = REP_var_2DActionParameters select 2;
 			
 			if(call compile (_data select 0)) then {
 				call compile (_data select 1);

@@ -32,17 +32,20 @@ if (count (_menuList) > 0) then {
 
 	_ctrlDisplay drawIcon ['\dsr_ui\Assets\repair\menu.paa', _menuColor, _menuPos, _menuSize, _menuSize, 0, "", 0, 0.01, 'TahomaB', 'Center'];
 	
-	for "_i" from 0 to (_maxMenuItems - 1) do
-	{
+	
+	for "_i" from 0 to (_maxMenuItems - 1) do {
 		_color = [0.5607, 0.7372, 0.5607, 0.5];
-		if !(isNil (_menuList select _i)) {
-			if (_selected == (_i + 1)) {
+		if !(isNil (_menuList select _i)) then {
+			if (_selected == (_i + 1)) then {
 				_color = [0.2, 0.9725, 0.8627, 0.6];
 			};
 		};
-		_assetPath format [ '\dsr_ui\Assets\repair\opt%1.paa', (_i + 1) ];
+		_assetPath = format [ '\dsr_ui\Assets\repair\opt%1.paa', (_i + 1) ];
 		_ctrlDisplay drawIcon [_assetPath, _color, _newPos, _menuSize, _menuSize, 0, '', 0, 0.04, 'TahomaB', 'Center'];
-		
+	};
+	
+	for "_i" from 0 to count(_menuList)-1 do
+	{	
 		_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [1, 1, 1, 1], (_txtPos select _i), _menuSize, _menuSize, 0, (_menuList select _i), 0, 0.1, 'TahomaB', 'Center'];
 	};
 };

@@ -10,5 +10,5 @@ _data = ["Error","#(argb,8,8,3)color(0,0,0,0)"];
 	if(toLower(_selection) find toLower(_cfgName) != -1) exitWith {
 		_data = [_name,_icon];
 	};
-} forEach REM_var_ICONS;
+} forEach REP_var_ICONS;
 _data;

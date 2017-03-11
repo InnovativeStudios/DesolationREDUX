@@ -3,20 +3,20 @@
 /// Define needed variables for the system
 
 //3d stuff
-REM_var_Render3DActions = false;
-REM_var_3DIconData = [];
-REM_var_Active3DIcon = -1;
+REP_var_Render3DActions = false;
+REP_var_3DIconData = [];
+REP_var_Active3DIcon = -1;
 
 //2d stuff
-REM_var_Render2DActions = false;
-REM_var_2DActionIndex = -1;
-REM_var_Selected2DAction = -1;
-REM_var_Rendered2DActionData = [];
-REM_var_2DActionParameters = [];
+REP_var_Render2DActions = false;
+REP_var_2DActionIndex = -1;
+REP_var_Selected2DAction = -1;
+REP_var_Rendered2DActionData = [];
+REP_var_2DActionParameters = [];
 
 // add main draw thread
 addMissionEventHandler ["Draw3D",{
-	if(REM_var_Render3DActions) then {
+	if(REP_var_Render3DActions) then {
 		
 		_active3dIcon = -1;
 		{
@@ -33,7 +33,7 @@ addMissionEventHandler ["Draw3D",{
 				_name = _3dpartdata select 0;
 				_icon = _3dpartdata select 1;
 				
-				REM_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
+				REP_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 				
 				//todo check info
 				/*
@@ -42,10 +42,10 @@ addMissionEventHandler ["Draw3D",{
 					3) is the icon on screen?
 				*/
 				
-				if(!REM_var_Render2DActions || _forEachIndex == REM_var_2DActionIndex) then {
+				if(!REP_var_Render2DActions || _forEachIndex == REP_var_2DActionIndex) then {
 				
 					_onScreen = true;
-					_lookingAt = [_location] call REM_fnc_isPosTarget;
+					_lookingAt = [_location] call REP_fnc_isPosTarget;
 					
 					_spos = worldToScreen _location;
 					
@@ -57,7 +57,7 @@ addMissionEventHandler ["Draw3D",{
 					if(_onScreen) then {
 						
 						_scale = 0.04;
-						if(_lookingAt || (REM_var_Render2DActions &&  _forEachIndex == REM_var_2DActionIndex)) then {
+						if(_lookingAt || (REP_var_Render2DActions &&  _forEachIndex == REP_var_2DActionIndex)) then {
 							_scale = 0.08;
 							_active3dIcon = _forEachIndex;
 						};
@@ -65,14 +65,14 @@ addMissionEventHandler ["Draw3D",{
 						drawIcon3D [_icon, [1,1,1,1], _location, 1, 1, 45, _name, 1, _scale, "TahomaB"];
 					
 					
-						if(REM_var_Render2DActions && _forEachIndex == REM_var_2DActionIndex) then {
+						if(REP_var_Render2DActions && _forEachIndex == REP_var_2DActionIndex) then {
 							
 							
 							// pull all available actions from the group
 							_actionNames = [];
 							_rendered2dactiondata = [];
-							_actionInfo = REM_var_ACTIONS select _actionIndex;
-							_actionList = REM_var_ACTIONS select 2; 
+							_actionInfo = REP_var_ACTIONS select _actionIndex;
+							_actionList = REP_var_ACTIONS select 2; 
 							{
 								_aCondition = _x select 0;
 								_aText = _x select 1;
@@ -85,7 +85,7 @@ addMissionEventHandler ["Draw3D",{
 								if(count(_actionNames) == 4) exitWith {};  // only 4 actions can render
 								
 							} forEach _actionList;
-							REM_var_Rendered2DActionData = _rendered2dactiondata; // update the data we are rendering
+							REP_var_Rendered2DActionData = _rendered2dactiondata; // update the data we are rendering
 							
 							// calculate the selected action
 							
@@ -113,16 +113,16 @@ addMissionEventHandler ["Draw3D",{
 								};
 							};
 							
-							REM_var_Selected2DAction = _submenu;
-							[_location,_actionNames,_submenu] call REM_fnc_display2DMenu;
+							REP_var_Selected2DAction = _submenu;
+							[_location,_actionNames,_submenu] call REP_fnc_display2DMenu;
 						};	
 					};
 				};
 			} forEach _iconInfo;
 		
-		} forEach REM_var_3DIconData;
+		} forEach REP_var_3DIconData;
 		
-		REM_var_Active3DIcon = _active3dIcon;
+		REP_var_Active3DIcon = _active3dIcon;
 		
 		
 	};
