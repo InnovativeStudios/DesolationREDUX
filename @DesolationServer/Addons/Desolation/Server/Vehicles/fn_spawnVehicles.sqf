@@ -97,7 +97,7 @@ for "_i" from 0 to count(_config)-1 do {
 diag_log format["Getting all houses on map (%1)",diag_tickTime];
 
 
-_bikeLimit = call compile (["MaxBikes","DS"] call BASE_fnc_getCfgValue); //--- temp, to be loaded from config (TODO)
+_bikeLimit = call compile (["MaxBikes","DS"] call BASE_fnc_getCfgValue);
 
 //--- get all houses on the map that can spawn vehicles in them
 

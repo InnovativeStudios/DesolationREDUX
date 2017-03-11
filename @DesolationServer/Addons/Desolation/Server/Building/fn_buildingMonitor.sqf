@@ -9,7 +9,6 @@
  * https://www.bistudio.com/monetization/
  */
 
-//TODO: this updates like every 5 minutes or some shit, why is it updating????
 DS_var_finishedBuildings = true;
 DS_var_runBuildingMon = true;
 DS_var_savingBuildings = true;

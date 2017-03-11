@@ -34,7 +34,6 @@ _Config_Options = [];
 } forEach _buildingTypes;
 
 
-// TODO: Parse all lootable buildings
 _all_buildings = [];
 for "_i" from 0 to count(configFile >> "CfgItemSpawns" >> "Buildings")-1 do {
 	_cfg = (configFile >> "CfgItemSpawns" >> "Buildings") select _i;
@@ -54,7 +53,6 @@ while{true} do {
 	_buildingsNotToDespawn = [];
 
 	{
-		//--- TODO: check if they've spawned in
 		if(alive _x && (vehicle _x == _x)/*possibly move this check somewhere else if it causes bugs*/) then {
 			//--- get house im standing on, fixes bug with some houses despawning loot when im in them
 			_houses = lineIntersectsObjs [(AGLtoASL (_x modelToWorld [0,0,0])),(AGLtoASL(_x modelToWorld [0,0,-0.5])),objNull,_x,true];

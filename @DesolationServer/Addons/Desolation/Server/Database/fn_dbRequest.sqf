@@ -334,7 +334,6 @@ switch(_type)do{
 			_repaircargo = 0;
 		};
 		
-		//TODO: use DS_fnc_getLoot to save loot
 		_items = ([_vehicle] call DS_fnc_getLoot);
 		_magazines = [];  //todo
 		_weapons = []; // todo
