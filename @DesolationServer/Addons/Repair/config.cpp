@@ -135,6 +135,13 @@ class Cfg3DActions {
 				
 				action = "[_cursor,_index] call REP_fnc_repairBody;";
 			};
+			class RemoveWheel {
+				condition = "_selection find 'wheel' != -1";
+				text = "Remove Wheel";
+				
+				action = "[_cursor,_index] call REP_fnc_removeWheel;";
+				
+			};
 		
 		};
 	};

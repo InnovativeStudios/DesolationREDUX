@@ -17,7 +17,7 @@ params["_screenPos", "_menuList", "_selected"];
 private ["_ctrlDisplay", "_menuSize", "_txtOffset", "_menuPos", "_txtPos", "_maxMenuItems", "_menuColor", "_assetPath"];
 
 _menuSize = 300;
-_txtOffset = 120;
+_txtOffset = 125;
 _maxMenuItems = 4;
 _ctrlDisplay = ((findDisplay 12) displayCtrl 51);
 _menuPos = _ctrlDisplay ctrlMapScreenToWorld _screenPos;
@@ -43,11 +43,30 @@ for "_i" from 0 to (_maxMenuItems - 1) do {
 	_ctrlDisplay drawIcon [_assetPath, _color, _menuPos, _menuSize, _menuSize, 0, '', 0, 0.04, 'TahomaB', 'Center'];
 };
 
+_menuString = "";
 for "_i" from 0 to count(_menuList)-1 do
-{	
-	_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [1, 1, 1, 1], (_txtPos select _i), _menuSize, _menuSize, 0, (_menuList select _i), 0, 0.1, 'TahomaB', 'Center'];
+{
+	if (_i == 1 || _i == 3) then {
+		_menuWords = (_menuList select _i) splitString " ";
+		_numWords = count _menuWords;
+		if (_numWords == 1) then {
+			_menuString = (_menuList select _i);
+			_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
+		} else {
+			_offset = -1 * (floor(_numWords / 2));
+			for "_j" from 0 to (_numWords - 1) do {
+				_txtPosNew = [((_txtPos select _i) select 0), ((_txtPos select _i) select 1) - (75 * _offset)];
+				_menuString = (_menuWords select _j);
+				_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], _txtPosNew, _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
+				_offset = _offset + 1;
+			};
+		};
+	} else {
+	_menuString = (_menuList select _i);
+	_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
+	};
 };
 
-_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [1, 1, 1, 1], _menuPos, _menuSize, _menuSize, 0, '', 0, 0.1, 'TahomaB', 'Center'];
+_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], _menuPos, _menuSize, _menuSize, 0, '', 0, 0.1, 'TahomaB', 'Center'];
 
 true
