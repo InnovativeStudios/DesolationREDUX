@@ -63,7 +63,7 @@ class CfgFunctions
 			isclient = 1;
 			class toggleActions {};
 			class doSelectedAction {};
-		}
+		};
 		class Client_Actions_Lift {
 			file = "Repair\Client\Actions\Lift";
 			isclient = 1;
