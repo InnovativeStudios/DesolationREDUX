@@ -35,12 +35,6 @@ addMissionEventHandler ["Draw3D",{
 				
 				REP_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 				
-				//todo check info
-				/*
-					1) are we looking at the icon
-					2) are we in the 2d action system?
-					3) is the icon on screen?
-				*/
 				
 				if(!REP_var_Render2DActions || _forEachIndex == REP_var_2DActionIndex) then {
 				
@@ -55,7 +49,7 @@ addMissionEventHandler ["Draw3D",{
 					
 					
 					if(_onScreen) then {
-						_damage = _cursorObject getHitPointDamage _selection
+						_damage = _cursorObject getHitPointDamage _selection;
 						
 						_color = [0,1,0,1];
 						if(!isNil {_damage}) then {
@@ -74,7 +68,6 @@ addMissionEventHandler ["Draw3D",{
 						if(REP_var_Render2DActions && _forEachIndex == REP_var_2DActionIndex) then {
 							
 							
-							// pull all available actions from the group
 							_actionNames = [];
 							_rendered2dactiondata = [];
 							_actionInfo = REP_var_ACTIONS select _actionIndex;
@@ -88,12 +81,11 @@ addMissionEventHandler ["Draw3D",{
 									_actionNames pushback _aText;
 									_rendered2dactiondata pushBack [_aCondition,_aCode];
 								};
-								if(count(_actionNames) == 4) exitWith {};  // only 4 actions can render
+								if(count(_actionNames) == 4) exitWith {};
 								
 							} forEach _actionList;
-							REP_var_Rendered2DActionData = _rendered2dactiondata; // update the data we are rendering
+							REP_var_Rendered2DActionData = _rendered2dactiondata; 
 							
-							// calculate the selected action
 							
 							_cpos = [0.5,0.5];
 							_submenu = 1;
@@ -120,7 +112,7 @@ addMissionEventHandler ["Draw3D",{
 							};
 							
 							REP_var_Selected2DAction = _submenu;
-							[_location,_actionNames,_submenu] call REP_fnc_display2DMenu;
+							[_spos,_actionNames,_submenu] call REP_fnc_display2DMenu;
 						};	
 					};
 				};

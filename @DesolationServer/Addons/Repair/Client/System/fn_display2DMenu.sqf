@@ -13,7 +13,7 @@
 // _menuList = array of available menu actions
 // _selected = number of action selected (if any)
 
-params["_worldPos", "_menuList", "_selected"];
+params["_screenPos", "_menuList", "_selected"];
 private ["_ctrlDisplay", "_menuSize", "_txtOffset", "_menuPos", "_txtPos", "_maxMenuItems", "_menuColor", "_assetPath"];
 
 if (count (_menuList) > 0) then {
@@ -22,12 +22,13 @@ if (count (_menuList) > 0) then {
 	_txtOffset = 120;
 	_maxMenuItems = 4;
 	_ctrlDisplay = ((findDisplay 12) displayCtrl 51);
-	_menuPos = _ctrlDisplay ctrlMapScreenToWorld _worldPos;
-	_txtPosU = _ctrlDisplay ctrlMapScreenToWorld [(_worldPos select 0), (_worldPos select 1) - (_txtOffset*pixelH)];
-	_txtPosR = _ctrlDisplay ctrlMapScreenToWorld [(_worldPos select 0) + (_txtOffset*pixelW), (_worldPos select 1)];
-	_txtPosD = _ctrlDisplay ctrlMapScreenToWorld [(_worldPos select 0), (_worldPos select 1) + (_txtOffset*pixelH)];
-	_txtPosL = _ctrlDisplay ctrlMapScreenToWorld [(_worldPos select 0) - (_txtOffset*pixelW), (_worldPos select 1)];
+	_menuPos = _ctrlDisplay ctrlMapScreenToWorld _screenPos;
+	_txtPosU = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) - (_txtOffset*pixelH)];
+	_txtPosR = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) + (_txtOffset*pixelW), (_screenPos select 1)];
+	_txtPosD = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) + (_txtOffset*pixelH)];
+	_txtPosL = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) - (_txtOffset*pixelW), (_screenPos select 1)];
 	_txtPos = [_txtPosU, _txtPosR, _txtPosD, _txtPosL];
+
 	_menuColor = [0.6627, 0.6627, 0.6627, 0.5];
 
 	_ctrlDisplay drawIcon ['\dsr_ui\Assets\repair\menu.paa', _menuColor, _menuPos, _menuSize, _menuSize, 0, "", 0, 0.01, 'TahomaB', 'Center'];
@@ -41,7 +42,7 @@ if (count (_menuList) > 0) then {
 			};
 		};
 		_assetPath = format [ '\dsr_ui\Assets\repair\opt%1.paa', (_i + 1) ];
-		_ctrlDisplay drawIcon [_assetPath, _color, _newPos, _menuSize, _menuSize, 0, '', 0, 0.04, 'TahomaB', 'Center'];
+		_ctrlDisplay drawIcon [_assetPath, _color, _menuPos, _menuSize, _menuSize, 0, '', 0, 0.04, 'TahomaB', 'Center'];
 	};
 	
 	for "_i" from 0 to count(_menuList)-1 do
