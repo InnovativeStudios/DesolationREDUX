@@ -12,7 +12,7 @@
 // _iconPos = icon world position
 
 params["_iconPos"];
-private["_return", "_camDir", "_diff", "_camPos", "_dirToIcon"];
+private["_camDir", "_diff", "_camPos", "_dirToIcon"];
 
 
 _camDir = [0,0,0];
@@ -25,18 +25,16 @@ _camPos = positionCameraToWorld [0,0,0];
 
 _dirToIcon = _camPos vectorFromTo _iconPos;
 
-_return = false;
-
 
 _diff = _camDir vectorDistance _dirToIcon;
 
-
+//if within range, mark it as selected
 if (_diff < 0.05) then
 {
-	_return = true;
+	_diff = 0;
 };
 
-_return;
+_diff;
 
 
 /*

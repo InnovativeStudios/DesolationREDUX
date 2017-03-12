@@ -11,9 +11,10 @@
 
 if(toLower(["Enabled","REP"] call BASE_fnc_getCfgValue) == "true") then {
 	REP_var_Render3DActions = !REP_var_Render3DActions; // toggle the rendering system
-	
+	REP_var_Render2DActions = false;
 	if(REP_var_Render3DActions) then {
-		 [] spawn REP_fnc_calculationThread; // start 3d icon calculation thread
+		
+		[] spawn REP_fnc_calculationThread; // start 3d icon calculation thread
 	};
 };
 true

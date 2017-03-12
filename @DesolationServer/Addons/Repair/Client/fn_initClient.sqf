@@ -25,7 +25,7 @@ addMissionEventHandler ["Draw3D",{
 			_cursorObject = REP_var_3DIconData select 2;
 			
 			{	
-				_selection = _x select 0;
+				_selection = toLower(_x select 0);
 				_location = _x select 1;
 				_3dpartdata = _x select 2;
 				_selectionIndex = _x select 3;
@@ -39,7 +39,10 @@ addMissionEventHandler ["Draw3D",{
 				if(!REP_var_Render2DActions || _forEachIndex == REP_var_2DActionIndex) then {
 				
 					_onScreen = true;
-					_lookingAt = [_location] call REP_fnc_isPosTarget;
+					
+					_dist = [_location] call REP_fnc_isPosTarget;
+					
+					_lookingAt = (_dist == 0);
 					
 					_spos = worldToScreen _location;
 					
@@ -64,9 +67,12 @@ addMissionEventHandler ["Draw3D",{
 					
 						drawIcon3D [_icon, _color, _location, 1, 1, 45, _name, 1, _scale, "TahomaB"];
 					
-					
+						
 						if(REP_var_Render2DActions && _forEachIndex == REP_var_2DActionIndex) then {
 							
+							if(_dist > 0.5) then {
+								REP_var_Render2DActions = false;
+							};
 							
 							_actionNames = [];
 							_rendered2dactiondata = [];
@@ -76,6 +82,10 @@ addMissionEventHandler ["Draw3D",{
 								_aCondition = _x select 0;
 								_aText = _x select 1;
 								_aCode = _x select 2;
+								
+								systemchat _selection;
+								systemchat _aCondition;
+								systemchat str(call compile _aCondition);
 								
 								if(call compile _aCondition) then {
 									_actionNames pushback _aText;
@@ -99,9 +109,9 @@ addMissionEventHandler ["Draw3D",{
 							
 							if(_angle <= 45) then {
 								if(_dX <= 0) then {
-									_submenu = 4;
-								} else {
 									_submenu = 2;
+								} else {
+									_submenu = 4;
 								};
 							} else {
 								if(_dY <= 0) then {
