@@ -55,12 +55,9 @@ addMissionEventHandler ["Draw3D",{
 					
 					
 					if(_onScreen) then {
-						
-						_color = [1,1,1,1];
 						_scale = 0.04;
 						if(_lookingAt || (REP_var_Render2DActions &&  _forEachIndex == REP_var_2DActionIndex)) then {
 							_scale = 0.08;
-							_color = [0,0,0,1];
 							_active3dIcon = _forEachIndex;
 						};
 					
@@ -74,7 +71,7 @@ addMissionEventHandler ["Draw3D",{
 							_actionNames = [];
 							_rendered2dactiondata = [];
 							_actionInfo = REP_var_ACTIONS select _actionIndex;
-							_actionList = REP_var_ACTIONS select 2; 
+							_actionList = _actionInfo select 2; 
 							{
 								_aCondition = _x select 0;
 								_aText = _x select 1;

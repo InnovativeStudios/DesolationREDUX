@@ -19,26 +19,19 @@ _camDir = [0,0,0];
 _camPos = [0,0,0];
 _dirToIcon = [0,0,0]; 
 
-if(cameraView == "External") then {
-	
-	_camDir = eyeDirection player;
-	_camPos = ASLtoAGL (eyepos player);
-	
-	_dirToIcon = _camPos vectorFromTo _iconPos;
-} else {
-	_camDir = getCameraViewDirection player;
-	_camPos = positionCameraToWorld [0,0,0];
-	
-	_dirToIcon = _camPos vectorFromTo _iconPos;
 
-};
+_camDir = getCameraViewDirection player;
+_camPos = positionCameraToWorld [0,0,0];
+
+_dirToIcon = _camPos vectorFromTo _iconPos;
+
 _return = false;
 
 
-_diff = _camDir vectorDiff  _dirToIcon;
+_diff = _camDir vectorDistance _dirToIcon;
 
 
-if ((abs(_diff select 0) < 0.05) && (abs(_diff select 1) < 0.05) && (abs(_diff select 2) < 1.5)) exitWith
+if (_diff < 0.05) then
 {
 	_return = true;
 };
