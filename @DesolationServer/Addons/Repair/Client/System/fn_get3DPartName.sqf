@@ -7,8 +7,11 @@ _data = ["Error","#(argb,8,8,3)color(0,0,0,0)"];
 	_name = _x select 1;
 	_icon = _x select 2;
 	
-	if(toLower(_selection) find toLower(_cfgName) != -1) exitWith {
-		_data = [_name,_icon];
+	if(tolower(_selection) find "proxy" == -1) then {
+	
+		if(toLower(_selection) find toLower(_cfgName) != -1) exitWith {
+			_data = [_name,_icon];
+		};
 	};
 } forEach REP_var_ICONS;
 _data;

@@ -12,7 +12,41 @@
 // _iconPos = icon world position
 
 params["_iconPos"];
-private["_distance", "_dif0", "_dif1", "_camDir", "_visPos", "_camPos", "_vecFT"];
+private["_return", "_camDir", "_diff", "_camPos", "_dirToIcon"];
+
+
+_camDir = [0,0,0];
+_camPos = [0,0,0];
+_dirToIcon = [0,0,0]; 
+
+if(cameraView == "External") then {
+	
+	_camDir = eyeDirection player;
+	_camPos = ASLtoAGL (eyepos player);
+	
+	_dirToIcon = _camPos vectorFromTo _iconPos;
+} else {
+	_camDir = getCameraViewDirection player;
+	_camPos = positionCameraToWorld [0,0,0];
+	
+	_dirToIcon = _camPos vectorFromTo _iconPos;
+
+};
+_return = false;
+
+
+_diff = _camDir vectorDiff  _dirToIcon;
+
+
+if ((abs(_diff select 0) < 0.05) && (abs(_diff select 1) < 0.05) && (abs(_diff select 2) < 1.5)) exitWith
+{
+	_return = true;
+};
+
+_return;
+
+
+/*
 
 (boundingBoxReal _obj) params ["_dif0","_dif1"];
 _distance = (_dif0 distance _dif1) + 4;

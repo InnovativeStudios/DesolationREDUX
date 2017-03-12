@@ -59,7 +59,7 @@ class CfgFunctions
 			isclient = 1;
 		};
 		class Client_Keybinds {
-			file = "Repair\Client\Actions\Lift";
+			file = "Repair\Client\Keybinds";
 			isclient = 1;
 			class toggleActions {};
 			class doSelectedAction {};
