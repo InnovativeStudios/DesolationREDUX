@@ -9,10 +9,12 @@
  * https://www.bistudio.com/monetization/
  */
 
-if (2 call REP_fnc_doAction) then
-{
-	_this pushBack player;
-	_this remoteExecCall ["REP_fnc_removePartReq", 2];
+if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
+	ACT_var_Render3DActions = !ACT_var_Render3DActions; // toggle the rendering system
+	ACT_var_Render2DActions = false;
+	if(ACT_var_Render3DActions) then {
+		
+		[] spawn ACT_fnc_calculationThread; // start 3d icon calculation thread
+	};
 };
-
 true

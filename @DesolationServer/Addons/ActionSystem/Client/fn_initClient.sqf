@@ -3,26 +3,26 @@
 /// Define needed variables for the system
 
 //3d stuff
-REP_var_Render3DActions = false;
-REP_var_3DIconData = [];
-REP_var_Active3DIcon = -1;
+ACT_var_Render3DActions = false;
+ACT_var_3DIconData = [];
+ACT_var_Active3DIcon = -1;
 
 //2d stuff
-REP_var_Render2DActions = false;
-REP_var_2DActionIndex = -1;
-REP_var_Selected2DAction = -1;
-REP_var_Rendered2DActionData = [];
-REP_var_2DActionParameters = [];
+ACT_var_Render2DActions = false;
+ACT_var_2DActionIndex = -1;
+ACT_var_Selected2DAction = -1;
+ACT_var_Rendered2DActionData = [];
+ACT_var_2DActionParameters = [];
 
 // add main draw thread
 addMissionEventHandler ["Draw3D",{
-	if(REP_var_Render3DActions) then {
+	if(ACT_var_Render3DActions) then {
 		
 		_active3dIcon = -1;
-		if(count(REP_var_3DIconData) > 0) then {
-			_actionIndex = REP_var_3DIconData select 0;
-			_iconInfo = REP_var_3DIconData select 1;
-			_cursorObject = REP_var_3DIconData select 2;
+		if(count(ACT_var_3DIconData) > 0) then {
+			_actionIndex = ACT_var_3DIconData select 0;
+			_iconInfo = ACT_var_3DIconData select 1;
+			_cursorObject = ACT_var_3DIconData select 2;
 			
 			{	
 				_selection = toLower(_x select 0);
@@ -33,21 +33,21 @@ addMissionEventHandler ["Draw3D",{
 				_name = _3dpartdata select 0;
 				_icon = _3dpartdata select 1;
 				
-				if(count(REP_var_2DActionParameters) > 0) then {
-					_oldObj = REP_var_2DActionParameters select 0;
-					if(_cursorObject != _oldObj && REP_var_Render2DActions) then {
-						REP_var_Render2DActions = false;
+				if(count(ACT_var_2DActionParameters) > 0) then {
+					_oldObj = ACT_var_2DActionParameters select 0;
+					if(_cursorObject != _oldObj && ACT_var_Render2DActions) then {
+						ACT_var_Render2DActions = false;
 					};
 				};
 				
-				REP_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
+				ACT_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 				
 				
-				if(!REP_var_Render2DActions || _forEachIndex == REP_var_2DActionIndex) then {
+				if(!ACT_var_Render2DActions || _forEachIndex == ACT_var_2DActionIndex) then {
 				
 					_onScreen = true;
 					
-					_dist = [_location] call REP_fnc_isPosTarget;
+					_dist = [_location] call ACT_fnc_isPosTarget;
 					
 					_lookingAt = (_dist == 0);
 					
@@ -67,7 +67,7 @@ addMissionEventHandler ["Draw3D",{
 						};
 						
 						_scale = 0.04;
-						if(_lookingAt || (REP_var_Render2DActions &&  _forEachIndex == REP_var_2DActionIndex)) then {
+						if(_lookingAt || (ACT_var_Render2DActions &&  _forEachIndex == ACT_var_2DActionIndex)) then {
 							_scale = 0.08;
 							_active3dIcon = _forEachIndex;
 						};
@@ -75,24 +75,24 @@ addMissionEventHandler ["Draw3D",{
 						drawIcon3D [_icon, _color, _location, 1, 1, 45, _name, 1, _scale, "TahomaB"];
 					
 						
-						if(REP_var_Render2DActions && _forEachIndex == REP_var_2DActionIndex) then {
+						if(ACT_var_Render2DActions && _forEachIndex == ACT_var_2DActionIndex) then {
 							
 							if(_dist > 0.5) then {
-								REP_var_Render2DActions = false;
+								ACT_var_Render2DActions = false;
 							};
 							
 							_actionNames = [];
 							_rendered2dactiondata = [];
-							_actionInfo = REP_var_ACTIONS select _actionIndex;
+							_actionInfo = ACT_var_ACTIONS select _actionIndex;
 							_actionList = _actionInfo select 2; 
 							{
 								_aCondition = _x select 0;
 								_aText = _x select 1;
 								_aCode = _x select 2;
 								
-								systemchat _selection;
-								systemchat _aCondition;
-								systemchat str(call compile _aCondition);
+								//systemchat _selection;
+								//systemchat _aCondition;
+								//systemchat str(call compile _aCondition);
 								
 								if(call compile _aCondition) then {
 									_actionNames pushback _aText;
@@ -101,7 +101,7 @@ addMissionEventHandler ["Draw3D",{
 								if(count(_actionNames) == 4) exitWith {};
 								
 							} forEach _actionList;
-							REP_var_Rendered2DActionData = _rendered2dactiondata; 
+							ACT_var_Rendered2DActionData = _rendered2dactiondata; 
 							
 							
 							_cpos = [0.5,0.5];
@@ -128,14 +128,14 @@ addMissionEventHandler ["Draw3D",{
 								};
 							};
 							
-							REP_var_Selected2DAction = _submenu;
-							[_spos,_actionNames,_submenu] call REP_fnc_display2DMenu;
+							ACT_var_Selected2DAction = _submenu;
+							[_spos,_actionNames,_submenu] call ACT_fnc_display2DMenu;
 						};	
 					};
 				};
 			} forEach _iconInfo;
 		};
-		REP_var_Active3DIcon = _active3dIcon;
+		ACT_var_Active3DIcon = _active3dIcon;
 	};
 }];
 

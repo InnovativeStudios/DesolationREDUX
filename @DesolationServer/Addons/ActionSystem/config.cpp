@@ -1,15 +1,15 @@
 class CfgPatches
 {
-	class Repair {};
+	class ActionSystem {};
 };
 
 class Plugins
 {
-	class Repair
+	class ActionSystem
 	{
-		name = "Repair System";
-		desc = "Allows players to repair and remove/replace parts of objects";
-		tag = "REP";
+		name = "Action System";
+		desc = "Allows players to perform various actions to vehicles, objects or other players";
+		tag = "ACT";
 	};
 };
 
@@ -18,35 +18,35 @@ class CfgPluginKeybinds {
 	{
 		displayName = "Toggle 3D Actions";
 		tooltip = "Toggle 3D actions to be able to easily use any actions in 3D";
-		tag = "REP";
+		tag = "ACT";
 		variable = "Toggle3DAction";
 		defaultKeys[] = {{0x0F,0}};
-		code = "call REP_fnc_toggleActions;";
+		code = "call ACT_fnc_toggleActions;";
 	};
 	class do3DAction
 	{
 		displayName = "Use 3D Action";
 		tooltip = "Allows you to use the highlighted action";
-		tag = "REP";
+		tag = "ACT";
 		variable = "do3DAction";
 		defaultKeys[] = {{0x39,0}};
-		code = "call REP_fnc_doSelectedAction";
+		code = "call ACT_fnc_doSelectedAction";
 	};
 };
 
 class CfgFunctions
 {
-	class REP
+	class ACT
 	{
 		// client functions
 		class Client 
 		{
-			file = "Repair\Client";
+			file = "ActionSystem\Client";
 			isclient = 1;
 			class initClient {};
 		};
 		class Client_Actions_Vehicles {
-			file = "Repair\Client\Actions\Vehicles";
+			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
 			class repairBody {};
 			class repairEngine {};
@@ -55,22 +55,22 @@ class CfgFunctions
 			class repairWheel {};
 		};
 		class Client_Actions_Players {
-			file = "Repair\Client\Actions\Players";
+			file = "ActionSystem\Client\Actions\Players";
 			isclient = 1;
 		};
 		class Client_Keybinds {
-			file = "Repair\Client\Keybinds";
+			file = "ActionSystem\Client\Keybinds";
 			isclient = 1;
 			class toggleActions {};
 			class doSelectedAction {};
 		};
 		class Client_Actions_Lift {
-			file = "Repair\Client\Actions\Lift";
+			file = "ActionSystem\Client\Actions\Lift";
 			isclient = 1;
 			class liftObject {};
 		};
 		class Client_System {
-			file = "Repair\Client\System";
+			file = "ActionSystem\Client\System";
 			isclient = 1;
 			class isPosTarget {};
 			class get3DPartName {};
@@ -79,12 +79,12 @@ class CfgFunctions
 		};
 		// server functions
 		class Server {
-			file = "Repair\Server";
+			file = "ActionSystem\Server";
 			isserver = 1;
 			class initServer {};
 		};
 		class Server_Actions {
-			file = "Repair\Server\Actions";
+			file = "ActionSystem\Server\Actions";
 			isserver = 1;
 			class removePartReq {};
 			class repairPartReq {};
@@ -95,7 +95,7 @@ class CfgFunctions
 
 class Cfg3DActions {
 	class Vehicles {
-		condition = "_cursor in vehicles"; //condition  on what cursor object to use these actions for
+		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
 		
 		renderType = 0; //0 = hitpoints / 1 = model center
 		
@@ -108,38 +108,38 @@ class Cfg3DActions {
 				condition = "_selection find 'wheel' != -1";
 				text = "Repair Wheel";
 				
-				action = "[_cursor,_index] call REP_fnc_repairWheel;";
+				action = "[_cursor,_index] call ACT_fnc_repairWheel;";
 				
 			};
 			class RepairGlass {
 				condition = "_selection find 'glass' != -1";
 				text = "Repair Glass";
 				
-				action = "[_cursor,_index] call REP_fnc_repairGlass;";
+				action = "[_cursor,_index] call ACT_fnc_repairGlass;";
 			};
 			class RepairEngine {
 				condition = "_selection find 'engine' != -1";
 				text = "Repair Engine";
 				
-				action = "[_cursor,_index] call REP_fnc_repairEngine;";
+				action = "[_cursor,_index] call ACT_fnc_repairEngine;";
 			};
 			class RepairFueltank {
 				condition = "_selection find 'fuel' != -1";
 				text = "Repair Fuel Tank";
 				
-				action = "[_cursor,_index] call REP_fnc_repairFueltank;";
+				action = "[_cursor,_index] call ACT_fnc_repairFueltank;";
 			};
 			class RepairBody {
 				condition = "_selection find 'body' != -1";
 				text = "Repair Body";
 				
-				action = "[_cursor,_index] call REP_fnc_repairBody;";
+				action = "[_cursor,_index] call ACT_fnc_repairBody;";
 			};
 			class RemoveWheel {
 				condition = "_selection find 'wheel' != -1";
 				text = "Remove Wheel";
 				
-				action = "[_cursor,_index] call REP_fnc_removeWheel;";
+				action = "[_cursor,_index] call ACT_fnc_removeWheel;";
 				
 			};
 		
@@ -156,7 +156,7 @@ class Cfg3DActions {
 				condition = "true";
 				text = "Lift";
 				
-				action = "[_cursor] call REP_fnc_liftObject"; // our custom lift function will redirect the object to the correct lift system (building / item)
+				action = "[_cursor] call ACT_fnc_liftObject"; // our custom lift function will redirect the object to the correct lift system (building / item)
 			};
 		
 		};
@@ -172,19 +172,19 @@ class Cfg3DActions {
 				condition = "true"; //todo cursor is bleeding check
 				text = "Bandage";
 				
-				action = "[_cursor,_index] call REP_fnc_applyBandage;";
+				action = "[_cursor,_index] call ACT_fnc_applyBandage;";
 			};
 			class Bloodbag {
 				condition = "true"; //todo blood value check
 				text = "Give Blood";
 				
-				action = "[_cursor,_index] call REP_fnc_applyBloodbag;";
+				action = "[_cursor,_index] call ACT_fnc_applyBloodbag;";
 			};
 			class Splint {
 				condition = "true"; //todo broken leg check
 				text = "Apply Splint";
 				
-				action = "[_cursor,_index] call REP_fnc_applySplint;";
+				action = "[_cursor,_index] call ACT_fnc_applySplint;";
 			};
 		};
 	};

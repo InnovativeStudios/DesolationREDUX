@@ -1,7 +1,7 @@
 
 
 
-while{REP_var_Render3DActions} do {
+while{ACT_var_Render3DActions} do {
 
 	scopeName "calc_main";
 
@@ -18,14 +18,16 @@ while{REP_var_Render3DActions} do {
 			_renderType = -1;
 			{
 				_condition = _x select 0;
+				systemChat str(_condition);
 				if(call compile _condition) exitWith {
 					_actionIndex = _forEachIndex;
 					_renderType = _x select 1;
 				};
-			} forEach REP_var_ACTIONS;
+			} forEach ACT_var_ACTIONS;
 			
 			if(_actionIndex != -1) then { 
 				_iconInfo = [];
+				systemChat str(_renderType);
 				
 				if(_renderType == 0) then {
 				
@@ -39,13 +41,13 @@ while{REP_var_Render3DActions} do {
 						_pos = _cursor selectionPosition [getText((_hitpoints select _i) >> "name"), "HitPoints"];
 						_position = _cursor modelToWorldVisual _pos;
 						
-						_3dpartdata = [_partName] call REP_fnc_get3DPartName;
+						_3dpartdata = [_partName] call ACT_fnc_get3DPartName;
 						if((_3dpartdata select 0) != "Error") then {
 							_iconInfo pushback [_partName, _position,_3dpartdata,_i];
 						};
 					};
 				} else {
-					_iconInfo pushBack ["no_selection",_cursor modelToWorld [0,0,0],["action"] call REP_fnc_get3DPartName,0];
+					_iconInfo pushBack ["no_selection",_cursor modelToWorld [0,0,0],["action"] call ACT_fnc_get3DPartName,0];
 				};
 				
 				_3D_ICON_DATA pushBack _actionIndex;
@@ -55,6 +57,6 @@ while{REP_var_Render3DActions} do {
 		};
 	};
 	
-	REP_var_3DIconData = _3D_ICON_DATA; 
+	ACT_var_3DIconData = _3D_ICON_DATA; 
 	uiSleep 0.001;
 };

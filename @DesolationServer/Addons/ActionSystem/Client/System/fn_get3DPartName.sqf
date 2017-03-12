@@ -13,5 +13,5 @@ _data = ["Error","#(argb,8,8,3)color(0,0,0,0)"];
 			_data = [_name,_icon];
 		};
 	};
-} forEach REP_var_ICONS;
+} forEach ACT_var_ICONS;
 _data;
