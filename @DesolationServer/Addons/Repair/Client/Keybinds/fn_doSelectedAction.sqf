@@ -23,7 +23,7 @@ if(toLower(["Enabled","REP"] call BASE_fnc_getCfgValue) == "true") then {
 	} else {
 		
 		_index = REP_var_Selected2DAction - 1;
-		if(_index >= 0) then {
+		if(_index >= 0 && _index < count(REP_var_Rendered2DActionData)) then {
 			_data = REP_var_Rendered2DActionData select _index;
 			_cursor = REP_var_2DActionParameters select 0;
 			_index = REP_var_2DActionParameters select 1;

@@ -33,6 +33,13 @@ addMissionEventHandler ["Draw3D",{
 				_name = _3dpartdata select 0;
 				_icon = _3dpartdata select 1;
 				
+				if(count(REP_var_2DActionParameters) > 0) then {
+					_oldObj = REP_var_2DActionParameters select 0;
+					if(_cursorObject != _oldObj && REP_var_Render2DActions) then {
+						REP_var_Render2DActions = false;
+					};
+				};
+				
 				REP_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 				
 				
