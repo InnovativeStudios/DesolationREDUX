@@ -55,6 +55,10 @@ addMissionEventHandler ["Draw3D",{
 					
 					
 					if(_onScreen) then {
+						_damage = _cursorObject getHitPointDamage _selection
+						
+						_color = [_damage min 1,(1-_damage) max 0,0,1];
+						
 						_scale = 0.04;
 						if(_lookingAt || (REP_var_Render2DActions &&  _forEachIndex == REP_var_2DActionIndex)) then {
 							_scale = 0.08;
