@@ -29,6 +29,10 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 			_index = ACT_var_2DActionParameters select 1;
 			_selection = ACT_var_2DActionParameters select 2;
 			
+			//systemChat str(_data);
+			//systemChat str(_index);
+			//systemChat str(_selection);
+			
 			if(call compile (_data select 0)) then {
 				call compile (_data select 1);
 			} else {

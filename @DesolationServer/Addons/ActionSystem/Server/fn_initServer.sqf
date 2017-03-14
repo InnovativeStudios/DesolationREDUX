@@ -25,12 +25,12 @@ for "_i" from 0 to count(_cfg)-1 do {
 				_aCondition = getText(_action >> "condition");
 				_aText = getText(_action >> "text");
 				_aCode = getText(_action >> "action");
+				_aRequired = getArray (_action >> "required");
+				_aReturned = getArray (_action >> "returned");
 				
-				_actionData pushBack [_aCondition,_aText,_aCode];
-				
+				_actionData pushBack [_aCondition,_aText,_aCode,_aRequired,_aReturned];
 			};
 		};
-		
 		ACT_var_ACTIONS pushBack [_condition,_type,_actionData];
 	};
 };

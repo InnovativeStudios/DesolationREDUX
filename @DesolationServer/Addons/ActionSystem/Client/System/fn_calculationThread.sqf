@@ -18,7 +18,6 @@ while{ACT_var_Render3DActions} do {
 			_renderType = -1;
 			{
 				_condition = _x select 0;
-				systemChat str(_condition);
 				if(call compile _condition) exitWith {
 					_actionIndex = _forEachIndex;
 					_renderType = _x select 1;
@@ -27,7 +26,6 @@ while{ACT_var_Render3DActions} do {
 			
 			if(_actionIndex != -1) then { 
 				_iconInfo = [];
-				systemChat str(_renderType);
 				
 				if(_renderType == 0) then {
 				

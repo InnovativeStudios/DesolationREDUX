@@ -53,6 +53,7 @@ class CfgFunctions
 			class repairFueltank {};
 			class repairGlass {};
 			class repairWheel {};
+			class removeWheel {};
 		};
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
@@ -107,40 +108,46 @@ class Cfg3DActions {
 			class RepairWheel {
 				condition = "_selection find 'wheel' != -1";
 				text = "Repair Wheel";
-				
-				action = "[_cursor,_index] call ACT_fnc_repairWheel;";
-				
+				required[] = {};
+				returned[] = {};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairWheel;";
 			};
 			class RepairGlass {
 				condition = "_selection find 'glass' != -1";
 				text = "Repair Glass";
-				
-				action = "[_cursor,_index] call ACT_fnc_repairGlass;";
+				required[] = {};
+				returned[] = {};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairGlass;";
 			};
 			class RepairEngine {
 				condition = "_selection find 'engine' != -1";
 				text = "Repair Engine";
-				
-				action = "[_cursor,_index] call ACT_fnc_repairEngine;";
+				required[] = {};
+				returned[] = {};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairEngine;";
 			};
 			class RepairFueltank {
 				condition = "_selection find 'fuel' != -1";
 				text = "Repair Fuel Tank";
-				
-				action = "[_cursor,_index] call ACT_fnc_repairFueltank;";
+				required[] = {};
+				returned[] = {};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairFueltank;";
 			};
 			class RepairBody {
 				condition = "_selection find 'body' != -1";
 				text = "Repair Body";
-				
-				action = "[_cursor,_index] call ACT_fnc_repairBody;";
+				required[] = {};
+				returned[] = {};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairBody;";
 			};
 			class RemoveWheel {
 				condition = "_selection find 'wheel' != -1";
 				text = "Remove Wheel";
-				
-				action = "[_cursor,_index] call ACT_fnc_removeWheel;";
-				
+				required[] = {};
+				returned[] = {
+					{"dsr_item_tirepart", 1}
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_removeWheel;";
 			};
 		
 		};

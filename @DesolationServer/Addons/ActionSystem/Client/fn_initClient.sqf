@@ -40,8 +40,7 @@ addMissionEventHandler ["Draw3D",{
 					};
 				};
 				
-				ACT_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
-				
+				//ACT_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 				
 				if(!ACT_var_Render2DActions || _forEachIndex == ACT_var_2DActionIndex) then {
 				
@@ -57,7 +56,6 @@ addMissionEventHandler ["Draw3D",{
 						_onScreen = false;
 					};
 					
-					
 					if(_onScreen) then {
 						_damage = _cursorObject getHitPointDamage _selection;
 						
@@ -70,6 +68,7 @@ addMissionEventHandler ["Draw3D",{
 						if(_lookingAt || (ACT_var_Render2DActions &&  _forEachIndex == ACT_var_2DActionIndex)) then {
 							_scale = 0.08;
 							_active3dIcon = _forEachIndex;
+							ACT_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 						};
 					
 						drawIcon3D [_icon, _color, _location, 1, 1, 45, _name, 1, _scale, "TahomaB"];
@@ -89,6 +88,7 @@ addMissionEventHandler ["Draw3D",{
 								_aCondition = _x select 0;
 								_aText = _x select 1;
 								_aCode = _x select 2;
+								_aReturned = _x select 3;
 								
 								//systemchat _selection;
 								//systemchat _aCondition;
@@ -96,7 +96,7 @@ addMissionEventHandler ["Draw3D",{
 								
 								if(call compile _aCondition) then {
 									_actionNames pushback _aText;
-									_rendered2dactiondata pushBack [_aCondition,_aCode];
+									_rendered2dactiondata pushBack [_aCondition,_aCode,_aReturned];
 								};
 								if(count(_actionNames) == 4) exitWith {};
 								
@@ -106,7 +106,6 @@ addMissionEventHandler ["Draw3D",{
 							
 							_cpos = [0.5,0.5];
 							_submenu = 1;
-							
 							
 							_dX = (_spos select 0) - (_cpos select 0);
 							_dY = (_spos select 1) - (_cpos select 1);
