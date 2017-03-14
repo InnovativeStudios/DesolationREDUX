@@ -62,8 +62,8 @@ for "_i" from 0 to count(_menuList)-1 do
 			};
 		};
 	} else {
-	_menuString = (_menuList select _i);
-	_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
+		_menuString = (_menuList select _i);
+		_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
 	};
 };
 
