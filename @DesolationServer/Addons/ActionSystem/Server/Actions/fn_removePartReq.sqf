@@ -19,7 +19,6 @@ _actionInfo = _actionGroup select 2;
 _returned = [];
 
 {
-	diag_log _x;
 	_aCondition = _x select 0;
 	_aText = _x select 1;
 	_aCode = _x select 2;
@@ -34,7 +33,6 @@ _returned = [];
 
 _lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
-_nearLootHolders append (_player nearObjects ["LootWeaponHolder", 5]);
 if ((count _nearLootHolders) != 0) then
 {
 	_distance = 5;
@@ -51,16 +49,19 @@ if ((count _nearLootHolders) != 0) then
 
 if (isNull _lootHolder) then
 {
-	_lootHolder = createVehicle ["LootWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
-	_lootHolder setPosATL (getPosATL _player);
+	systemChat "Create Holder";
+	_lootHolder = createVehicle ["GroundWeaponHolder", player modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
+	_lootHolder setDir floor (random 360);
 };
 
 if (count _returned != 0) then {
 	{
+		systemChat str(_x);
 		_lootHolder addItemCargoGlobal _x;
 	} forEach _returned;
 };
 
+_player reveal _lootHolder;
 [_object, [_hitPoint, 1]] remoteExecCall ["setHitPointDamage", 0];
 
 true

@@ -52,7 +52,7 @@ if(!isNil "RSM_fnc_initRealism") then {
 //--- TODO: move this to its own event
 player addEventHandler ["InventoryClosed", { 
 	params [["_player", objNull],["_container", objNull]];
-	if ((typeOf _container) == "LootWeaponHolder") then
+	if ((typeOf _container) == "GroundWeaponHolder") then
 	{
 		_inv = [];
 		_inv append ((getMagazineCargo _container) select 0);

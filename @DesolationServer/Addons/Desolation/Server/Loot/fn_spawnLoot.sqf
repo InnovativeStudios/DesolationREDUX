@@ -43,7 +43,7 @@ if(_savedLoot isEqualTo []) then {
 		};
 		while{count(_positions) > 0} do {
 			_pos = _positions deleteAt floor(random(count(_positions)));
-			if(count(_pos nearObjects ["LootWeaponHolder",0.2]) == 0) then {
+			if(count(_pos nearObjects ["GroundWeaponHolder",0.2]) == 0) then {
 				if(random(100) < _sChance) then {
 					_spawn_positions pushBack _pos;
 				};
@@ -54,7 +54,7 @@ if(_savedLoot isEqualTo []) then {
 
 		{
 			_pos = ASLtoATL(AGLtoASL(_building modelToWorld _x));
-			_object = "LootWeaponHolder" createVehicle [0,0,0];
+			_object = "GroundWeaponHolder" createVehicle [0,0,0];
 			_object setposATL _pos;
 			_object setDir random(360);
 			
@@ -175,7 +175,7 @@ if(_savedLoot isEqualTo []) then {
 		_pos = _x select 0;
 		_loot = _x select 1;
 
-		_object = "LootWeaponHolder" createVehicle [0,0,0];
+		_object = "GroundWeaponHolder" createVehicle [0,0,0];
 		_object setposATL _pos;
 		_object setDir random(360);
 		_bLootPiles pushBack _object;

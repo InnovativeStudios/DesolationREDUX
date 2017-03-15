@@ -75,7 +75,7 @@ DeleteEmptyHolder =
     if !(isNull _container) then
     {
         // Also secuirty
-        if ((typeOf _container) == "LootWeaponHolder") then
+        if ((typeOf _container) == "GroundWeaponHolder") then
         {
             deleteVehicle _container;
         };

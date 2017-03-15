@@ -85,7 +85,7 @@ if (_dCoef >= 1) then
 			{
 				private _position = ASLtoATL AGLToASL (_tree modelToWorld [0, 0, _i - (_height / 2)]);
 				_position set[2,0];
-				private _lootHolder = createVehicle ["LootWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
+				private _lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
 				_lootHolder setDir _dir;
 				_lootHolder setPosATL _position;
 				_lootHolder addMagazineCargoGlobal ["dsr_item_logs", 1];

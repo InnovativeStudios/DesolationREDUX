@@ -30,10 +30,10 @@ _deleted = [];
 		if ((diag_tickTime - _diedAt) >= 420) then
 		{
 			// Delete the loot the zombie had.
-			_lootWeaponHolder = _x select 2;
-			if !(isNull _lootWeaponHolder) then
+			_groundWeaponHolder = _x select 2;
+			if !(isNull _groundWeaponHolder) then
 			{
-				deleteVehicle _lootWeaponHolder;
+				deleteVehicle _groundWeaponHolder;
 			};
 
 			// Delete the zombie.

@@ -17,7 +17,6 @@ _returned = getArray (_config >> "Actions" >> "Remove" >> "returned");
 
 _lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
-_nearLootHolders append (_player nearObjects ["LootWeaponHolder", 5]);
 if ((count _nearLootHolders) != 0) then
 {
 	_distance = 5;
@@ -34,7 +33,7 @@ if ((count _nearLootHolders) != 0) then
 
 if (isNull _lootHolder) then
 {
-	_lootHolder = createVehicle ["LootWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
+	_lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
 	_lootHolder setPosATL (getPosATL _player);
 };
 

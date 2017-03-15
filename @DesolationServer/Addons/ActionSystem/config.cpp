@@ -145,7 +145,7 @@ class Cfg3DActions {
 				text = "Remove Wheel";
 				required[] = {};
 				returned[] = {
-					{"dsr_item_tirepart", 1}
+					{"dsr_item_tire", 1}
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_removeWheel;";
 			};
