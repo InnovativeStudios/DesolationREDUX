@@ -54,10 +54,16 @@ if(DS_var_Hunger == 100 && DS_var_Thirst == 100 && !DS_var_isBleeding && (DS_var
 
 
 //--- starving effects
+if(DS_var_Hunger <= 0) then {
+	DS_var_Blood = DS_var_Blood - 100;
+};
 if(DS_var_isStarving) then {
 	_maxFatigue = (1 - (DS_var_Hunger / 100)) max _maxFatigue;
 };
 //--- dehydrated effects
+if(DS_var_Thirst <= 0) then {
+	DS_var_Blood = DS_var_Blood - 100;
+};
 if(DS_var_isDehydrating) then {
 	_maxFatigue = (1 - (DS_var_Thirst / 100)) max _maxFatigue;
 };

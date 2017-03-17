@@ -19,7 +19,6 @@ if(_goggles != "") then {
 		uiSleep 2;
 		removeGoggles player;
 		player addGoggles _this;
-		systemchat "GIVEN GOGGLES";
 	};
 };
 //--- fade into the game
