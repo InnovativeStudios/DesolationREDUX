@@ -37,23 +37,6 @@ if (getnumber (configfile >> "CfgFunctions" >> "version") != VERSION) exitwith {
 //--- Fake header
 _fnc_scriptName = if (isnil "_fnc_scriptName") then {"Functions Init"} else {_fnc_scriptName};
 
-
-/******************************************************************************************************
-	DEFINE HEADERS
-
-	Headers are pieces of code inserted on the beginning of every function code before compiling.
-	Using 'BIS_fnc_functionsDebug', you can alter the headers to provide special debug output.
-
-	Modes can be following:
-	0: No Debug - header saves parent script name and current script name into variables
-	1: Save script Map - header additionaly save an array of all parent scripts into variable
-	2: Save and log script map - apart from saving into variable, script map is also logged through debugLog
-
-	Some system function are using simplified header unaffected to current debug mode.
-	These functions has headerType = 1; set in config.
-
-******************************************************************************************************/
-
 private ["_this","_headerNoDebug","_headerSaveScriptMap","_headerLogScriptMap","_headerSystem","_debug","_headerDefault","_fncCompile","_recompile"];
 
 _headerNoDebug = "
@@ -226,8 +209,12 @@ RscDisplayLoading_progressMission = nil;
 private ["_functions_list","_functions_listPreInit","_functions_listPostInit","_functions_listPreStart","_functions_listRecompile","_file","_cfgSettings","_listConfigs","_recompileNames"];
 
 _functions_listPreStart = [];
+
+// DESOLATION: REDUX - Variables for holding streamed functions
 _functions_forclients = call (uinamespace getvariable ["BASE_clientfunctions_list",{[]}]);
 _functions_forserver = call (uinamespace getvariable ["BASE_serverfunctions_list",{[]}]);
+
+
 _functions_list = call (uinamespace getvariable ["bis_functions_list",{[]}]);
 _functions_listPreInit = [call (uinamespace getvariable ["bis_functions_listPreInit",{[]}]),[]];
 _functions_listPostInit = [call (uinamespace getvariable ["bis_functions_listPostInit",{[]}]),[]];
@@ -348,7 +335,9 @@ for "_t" from 0 to (count _listConfigs - 1) do {
 						private ["_categoryName","_itemPathCat"];
 						_categoryName = configname _currentCategory;
 						_itemPathCat = gettext (_currentCategory >> "file");
-
+						
+						
+						// DESOLATION: REDUX - CHANGES
 						_isclient = getNumber(_currentCategory >> "isclient");
 						_isserver = getNumber(_currentCategory >> "isserver");
 						
@@ -419,7 +408,7 @@ for "_t" from 0 to (count _listConfigs - 1) do {
 										if (_pathAccess == 0) then {_functions_list set [count _functions_list,_itemVar];};
 									};
 
-									//--- Add to a list of functions to be streamed to the client
+									//--- DESOLATION: REDUX - Add to a list of functions to be streamed to the client
 									if(_isclient > 0) then {
 										if !(_itemVar in _functions_forclients) then {
 											_functions_forclients set [count(_functions_forclients), _itemVar];
@@ -430,6 +419,7 @@ for "_t" from 0 to (count _listConfigs - 1) do {
 											_functions_forserver set [count(_functions_forserver), _itemVar];
 										};
 									};
+									
 									
 									//--- Add to list of functions executed upon mission start
 									if (_itemPreInit > 0) then {
@@ -574,6 +564,8 @@ if (_recompile == 3) then {
 				_time = diag_ticktime;
 				[_x]call {
 					private ["_recompile","_functions_list","_functions_listPreInit","_functions_listPostInit","_functions_listRecompile","_time"];
+					
+					// CALL PREINIT - Pass in function lists for the PluginManager preInit function
 					["preInit", _functions_forclients,_functions_forserver] call (missionnamespace getvariable (_this select 0))
 				};
 				["%1 (%2 ms)",_x,(diag_ticktime - _time) * 1000] call bis_fnc_logFormat;

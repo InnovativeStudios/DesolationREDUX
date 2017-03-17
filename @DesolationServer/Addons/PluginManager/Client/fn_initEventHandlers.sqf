@@ -10,7 +10,7 @@
  */
 
 /*
-	initializes UI event handlers
+	initializes UI event handlers - used mainly for keybinds
 */
 
 (findDisplay 46) displayAddEventHandler ["KeyDown",{

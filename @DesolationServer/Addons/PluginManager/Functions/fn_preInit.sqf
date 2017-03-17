@@ -8,6 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+ 
+ // this starts the client side of the plugin system
+ 
 params["_check","_functions_forclients"];
 
 diag_log "<PluginManager>: Preinit Called";
@@ -19,18 +22,21 @@ diag_log "<PluginManager>: Preinit Called";
 
 diag_log format["<PluginManager>: Broadcasted %1 functions",count(_functions_forclients)];
 
-//--- compile initialization list of files
+//--- compile initialization list of files |  get PluginList.cfg from DLL
 _request = ["GetInitOrder"] call DB_fnc_buildIORequest;
 diag_log str _request;
 _order = [_request] call DB_fnc_sendRequest;
 
-//--- broadcast config settings 
+
+//--- broadcast config settings | Done in the order defined by PluginList.cfg
 [_order] call BASE_fnc_compileCfg; 
 
 
 
 diag_log format["<PluginManager>: Loading %1 plugins",count(_order)];
 
+
+//reorders the function list so it initializes in the way defined by PluginList.cfg
 _fnclist = [];
 _cfg = configFile >> "Plugins";
 {
@@ -49,5 +55,6 @@ _cfg = configFile >> "Plugins";
 	};
 } forEach _order;
 
+// these variables are later used in the Mission file's code to broadcast the client functions
 BASE_var_INITORDER = _order;
 BASE_var_FUNCTIONLIST = _fnclist;

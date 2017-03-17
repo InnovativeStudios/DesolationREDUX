@@ -11,6 +11,35 @@ class Plugins
 		tag = "DS";
 	};
 };
+
+class CfgPluginEvents {
+	class PlayerEvents {
+		overrides = 1;
+		class Events {
+			class DS_InventoryClosed {
+				type = "InventoryClosed";
+				function = "DS_fnc_InventoryClosed";
+			};
+		};
+	};
+	class MissionEventsServer {
+		overrides = 0;
+		class Events {
+			
+		};
+	};
+	class MissionEventsClient {
+		overrides = 1;
+		class Events {
+			class DS_Draw3D {
+				type = "Draw3D";
+				function = "DS_fnc_Draw3D";
+			};
+		};
+	};
+};
+
+
 /*
 class CfgPluginActions {
 	class RepairCars {
@@ -64,6 +93,15 @@ class CfgFunctions
 	class DS
 	{
 		//--- client functions
+		class Client_PluginEvents {
+			file = "Desolation\Client\PluginEvents";
+			isclient = 1;
+			class Draw3D {};
+			class InventoryClosed {};
+			class InventoryOpened {};
+			class Killed {};
+			class HandleDamage {};
+		};
 		class Client_Weapon {
 			file = "Desolation\Client\Weapon";
 			isclient = 1;
@@ -126,7 +164,6 @@ class CfgFunctions
 		class Client_Events {
 			file = "Desolation\Client\Events";
 			isclient = 1;
-			class initEventHandlers {};
 			class registerPlayer {};
 			class registerNewPlayer {};
 		};

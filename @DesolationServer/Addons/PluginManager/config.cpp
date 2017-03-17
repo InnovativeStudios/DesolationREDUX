@@ -24,6 +24,7 @@ class CfgFunctions {
 	init = "PluginManager\initFunctions.sqf";
 	class BASE 
 	{
+		// PluginManager functions
 		class Functions 
 		{
 			file = "PluginManager\Functions";
@@ -39,6 +40,22 @@ class CfgFunctions {
 			{
 				preInit = 1;
 			};
+		};
+		// Server functions
+		class Server_Events 
+		{
+			isserver = 1;
+			file = "PluginManager\Events";
+			class initMissionEventsServer {};
+			class broadcastEvents {};
+		};
+		// Client functions
+		class Client_Events 
+		{
+			isclient = 1;
+			file = "PluginManager\Events";
+			class initMissionEventsClient {};
+			class initPlayerEvents {};
 		};
 		class Client 
 		{

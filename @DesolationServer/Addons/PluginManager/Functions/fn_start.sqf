@@ -8,6 +8,8 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+ 
+ // this starts the server side of the plugin manager
 
 _this spawn {
 	_server_functions = _this select 2;
@@ -53,4 +55,13 @@ _this spawn {
 	} forEach _fnclist;
 	
 	call BASE_fnc_initActions;
+	
+	diag_log "<PluginManager>: Initializing events...";
+	call BASE_fnc_broadcastEvents;
+	
+	_override = BASE_var_missionEventsServer select 0;
+	if(!_override) then {
+		call BASE_fnc_initMissionEventsServer;
+	};
+	
 };
