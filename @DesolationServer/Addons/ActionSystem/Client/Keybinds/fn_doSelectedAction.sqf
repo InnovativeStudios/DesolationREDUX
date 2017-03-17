@@ -21,8 +21,8 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 		};
 	
 	} else {
-		
 		_index = ACT_var_Selected2DAction - 1;
+		
 		if(_index >= 0 && _index < count(ACT_var_Rendered2DActionData)) then {
 			_data = ACT_var_Rendered2DActionData select _index;
 			_cursor = ACT_var_2DActionParameters select 0;
@@ -39,11 +39,7 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 				systemchat "something failed, cannot execute that action";
 			};
 		};
-		
-		
-		
-		//run code for selected action
-	
+		//run code for selected action	
 	};
 };
 true

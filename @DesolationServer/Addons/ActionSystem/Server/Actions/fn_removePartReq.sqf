@@ -22,14 +22,18 @@ _returned = [];
 	_aCondition = _x select 0;
 	_aText = _x select 1;
 	_aCode = _x select 2;
-	_aRequired = _x select 3;
-	_aReturned = _x select 4;
+	_aParameters = _x select 3;
+	
+	//diag_log format ["<ActionSystem>: (Debug) _aParameters = %1", _aParameters];
 	
 	if (_class == _aText) exitWith {
-		_returned = _aReturned;
+		_returned = _aParameters select 1;
+		diag_log format ["<ActionSystem>: (Debug) _returned = %1", _returned];
 	};
 	
 } forEach _actionInfo;
+
+//diag_log format ["<ActionSystem>: (Debug) Who Am I: %1", _player];
 
 _lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
@@ -49,19 +53,22 @@ if ((count _nearLootHolders) != 0) then
 
 if (isNull _lootHolder) then
 {
-	systemChat "Create Holder";
-	_lootHolder = createVehicle ["GroundWeaponHolder", player modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
+	diag_log "<ActionSystem>: (Debug) Create GroundWeaponHolder";
+	_lootHolder = createVehicle ["GroundWeaponHolder", _player modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
 	_lootHolder setDir floor (random 360);
 };
 
 if (count _returned != 0) then {
 	{
-		systemChat str(_x);
+		diag_log format ["<ActionSystem>: (Debug) Add Item: %1", _x];
 		_lootHolder addItemCargoGlobal _x;
 	} forEach _returned;
 };
 
+diag_log format ["<ActionSystem>: (Debug) Loot Holder: %1", _lootHolder];
+
 _player reveal _lootHolder;
 [_object, [_hitPoint, 1]] remoteExecCall ["setHitPointDamage", 0];
+// TODO set hit point damage to object in database if stored object
 
 true

@@ -1,6 +1,17 @@
-
+/*
+ * Desolation Redux
+ * http://desolationredux.com/
+ * © 2016 Desolation Dev Team
+ * 
+ * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
+ * To view a copy of this license, visit:
+ * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
+ * https://www.bistudio.com/monetization/
+ */
 
 /// broadcast config data
+
+diag_log "<ActionSystem>: Begin Collecting Config Data";
 
 ACT_var_ACTIONS = [];
 ACT_var_ICONS = [];
@@ -25,15 +36,25 @@ for "_i" from 0 to count(_cfg)-1 do {
 				_aCondition = getText(_action >> "condition");
 				_aText = getText(_action >> "text");
 				_aCode = getText(_action >> "action");
-				_aRequired = getArray (_action >> "required");
-				_aReturned = getArray (_action >> "returned");
+				_aParametersClass = _action >> "Parameters";
+				_aParameters = [];
+				_aRequiredItems = [];
+				_aReturnedItems = [];
+				_aRequiredItems = getArray(_aParametersClass >> "requiredItems");
+				_aReturnedItems = getArray(_aParametersClass >> "returnedItems");
 				
-				_actionData pushBack [_aCondition,_aText,_aCode,_aRequired,_aReturned];
+				_aParameters = [_aRequiredItems,_aReturnedItems];
+				
+				//diag_log format ["<ActionSystem>: (Debug) _aParameters = %1", _aParameters];
+										
+				_actionData pushBack [_aCondition,_aText,_aCode,_aParameters];
 			};
 		};
 		ACT_var_ACTIONS pushBack [_condition,_type,_actionData];
 	};
 };
+
+diag_log "<ActionSystem>: Finished Collecting Action Data";
 
 _cfg = configFile >> "Cfg3DIcons";
 for "_i" from 0 to count(_cfg)-1 do {
@@ -47,6 +68,8 @@ for "_i" from 0 to count(_cfg)-1 do {
 		ACT_var_ICONS pushBack [configName _group,_name,_icon];
 	};
 };
+
+diag_log "<ActionSystem>: Finished Collecting Icon Data";
 
 publicVariable "ACT_var_ACTIONS";
 publicVariable "ACT_var_ICONS";

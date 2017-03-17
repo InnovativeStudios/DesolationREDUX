@@ -1,4 +1,13 @@
-
+/*
+ * Desolation Redux
+ * http://desolationredux.com/
+ * © 2016 Desolation Dev Team
+ * 
+ * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
+ * To view a copy of this license, visit:
+ * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
+ * https://www.bistudio.com/monetization/
+ */
 
 /// Define needed variables for the system
 
@@ -137,6 +146,3 @@ addMissionEventHandler ["Draw3D",{
 		ACT_var_Active3DIcon = _active3dIcon;
 	};
 }];
-
-
-
