@@ -20,6 +20,18 @@ class CfgPluginEvents {
 				type = "InventoryClosed";
 				function = "DS_fnc_InventoryClosed";
 			};
+			class DS_InventoryOpened {
+				type = "InventoryOpened";
+				function = "DS_fnc_InventoryOpened";
+			};
+			class DS_HandleDamage {
+				type = "HandleDamage";
+				function = "DS_fnc_HandleDamage";
+			};
+			class DS_Killed {
+				type = "Killed";
+				function = "DS_fnc_Killed";
+			};
 		};
 	};
 	class MissionEventsServer {
@@ -146,6 +158,7 @@ class CfgFunctions
 			file = "Desolation\Client\Building\PreviewHandling";
 			isclient = 1;
 			class liftBuildable {};
+			class registerDropped {};
 		};
 		class Client_Building {
 			file = "Desolation\Client\Building";

@@ -17,7 +17,7 @@ BASE_var_missionEventsServer pushBack (getNumber(_smEvents >> "overrides") == 1)
 
 _config = _plrEvents >> "Events";
 _data = [];
-for "_i" from 0 to count(_server_events)-1 do {
+for "_i" from 0 to count(_config)-1 do {
 	_entry = _config select _i;
 	if(isClass _entry) then {
 		_data pushback [getText(_entry >> "type"),getText(_entry >> "function")];
@@ -28,7 +28,7 @@ BASE_var_playerEvents pushBack _data;
 
 _config = _cmEvents >> "Events";
 _data = [];
-for "_i" from 0 to count(_server_events)-1 do {
+for "_i" from 0 to count(_config)-1 do {
 	_entry = _config select _i;
 	if(isClass _entry) then {
 		_data pushback [getText(_entry >> "type"),getText(_entry >> "function")];
@@ -39,7 +39,7 @@ BASE_var_missionEventsClient pushBack _data;
 
 _config = _smEvents >> "Events";
 _data = [];
-for "_i" from 0 to count(_server_events)-1 do {
+for "_i" from 0 to count(_config)-1 do {
 	_entry = _config select _i;
 	if(isClass _entry) then {
 		_data pushback [getText(_entry >> "type"),getText(_entry >> "function")];

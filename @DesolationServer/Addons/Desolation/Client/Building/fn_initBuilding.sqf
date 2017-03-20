@@ -25,9 +25,7 @@ addMissionEventHandler["Draw3D",{
  
 while{true} do {
 	_crate = cursorTarget;
-	 
-	_cansee = [objNull, "VIEW"] checkVisibility [eyePos player, getPosASL _crate];
-	if !(((player distance _crate) < 10) && (_cansee > 0.7)) then
+	if ((player distance _crate) < 10) then
 	{
 		_data = _crate getVariable ["SVAR_buildParams", [[]]];
 		_requirements = _data select 0;
@@ -39,7 +37,6 @@ while{true} do {
 		 
 		_validIcons = [];
 		_i = 1;
-		
 		
 		{
 			_class = toLower(_x select 0);

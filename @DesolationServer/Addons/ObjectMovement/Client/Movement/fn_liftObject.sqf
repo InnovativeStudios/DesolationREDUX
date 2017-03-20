@@ -19,9 +19,12 @@ _object spawn {
 //store original object mass and set mass to low number to make collisions hurt less :)
 _origMass = getMass _object;
 _object setVariable ["oMass",_origMass];
-_object setMass 5;
+_object setMass 0.1;
 
+_box = boundingBox _object;
+_w = abs(((_box select 1) select 1) - ((_box select 0) select 1));
 
+_object setVariable ["oWidth",_w];
 
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
@@ -43,7 +46,7 @@ if([_object] call OM_fnc_canLift) then {
 		_maxCollisionForce = call compile (["maxForce","OM"] call BASE_fnc_getCfgValue);
 		_rotSpeed = call compile (["rotationSpeed","OM"] call BASE_fnc_getCfgValue);
 		
-		
+		_carryDistance = _carryDistance + (_object getVariable ["oWidth",0]);
 		
 		if(!isNull _object) then {
 			if(OM_var_collisionForce < _maxCollisionForce) then {

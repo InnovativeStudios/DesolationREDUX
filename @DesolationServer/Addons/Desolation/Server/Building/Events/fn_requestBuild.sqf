@@ -10,10 +10,22 @@
  */
 params["_entry","_player"];
 
-_posASL = AGLtoASL (_player modelToWorld [0,3,0]);
+
+
+
 
 _crate = (_entry select 6) createVehicle [0,0,0];
-_crate setPosASL _posASL;
+
+_box = boundingBox _crate;
+_w = abs(((_box select 1) select 1) - ((_box select 0) select 1));
+
+_posATL = ASLtoATL (AGLtoASL (_player modelToWorld [0,3+_w,0]));
+_posATL set[2,0];
+_vectorUp = surfaceNormal _posATL;
+
+_crate setDir getDir _player;
+_crate setVectorUp _vectorUp;
+_crate setPosATL _posATL;
 _crate setVariable ["SVAR_buildParams",_entry,true];
 
 [_crate] remoteExec ["DS_fnc_onBuildableLift",_player]; // have the player lift the preview object
