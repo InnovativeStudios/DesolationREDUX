@@ -16,15 +16,10 @@ _object spawn {
 	player disableCollisionWith _this;
 };
 
-//store original object mass and set mass to low number to make collisions hurt less :)
 _origMass = getMass _object;
 _object setVariable ["oMass",_origMass];
 _object setMass 0.1;
 
-_box = boundingBox _object;
-_w = abs(((_box select 1) select 1) - ((_box select 0) select 1));
-
-_object setVariable ["oWidth",_w];
 
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
@@ -46,11 +41,12 @@ if([_object] call OM_fnc_canLift) then {
 		_maxCollisionForce = call compile (["maxForce","OM"] call BASE_fnc_getCfgValue);
 		_rotSpeed = call compile (["rotationSpeed","OM"] call BASE_fnc_getCfgValue);
 		
-		_carryDistance = _carryDistance + (_object getVariable ["oWidth",0]);
+		_carryDistance = _carryDistance + ((_object getVariable ["oWidth",0])/1.5);
+		_maxDistToObject = _maxDistToObject + (_object getVariable ["oWidth",0]);
 		
 		if(!isNull _object) then {
 			if(OM_var_collisionForce < _maxCollisionForce) then {
-				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;}; //drops object and resets mass
+				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;}; 
 				
 			
 				_playerHeight = (getPosATL player) select 2;
@@ -59,7 +55,7 @@ if([_object] call OM_fnc_canLift) then {
 				
 				_wantedHeight = ((((1 - (_weaponPitch/ -0.985))) * _maxheight)-1) + _playerHeight;
 				
-				if(_wantedHeight < 0) then {_wantedHeight = 0;}; // prevent object from jittering when placing on the ground
+				if(_wantedHeight < 0) then {_wantedHeight = 0;}; 
 				
 				
 				_playerXVelocity = (velocity player) select 0;

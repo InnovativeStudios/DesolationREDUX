@@ -28,4 +28,9 @@ _crate setVectorUp _vectorUp;
 _crate setPosATL _posATL;
 _crate setVariable ["SVAR_buildParams",_entry,true];
 
-[_crate] remoteExec ["DS_fnc_onBuildableLift",_player]; // have the player lift the preview object
+_box = boundingBox _crate;
+_w = abs(((_box select 1) select 1) - ((_box select 0) select 1));
+
+_crate setVariable ["oWidth",_w,true];
+
+[_crate] remoteExec ["DS_fnc_onBuildableLift",_player]; 

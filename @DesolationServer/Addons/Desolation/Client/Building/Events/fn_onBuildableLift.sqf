@@ -15,8 +15,6 @@
 params["_crate"];
 
 
-//requesting a lift of the static object _crate
-player reveal [_crate, 4]; //make sure we can see the _crate
-
+player reveal [_crate, 4];
 
 [_crate,player] remoteExec ["DS_fnc_buildableLifted",2]; 

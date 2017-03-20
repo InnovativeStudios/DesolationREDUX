@@ -8,7 +8,7 @@ _dir = getdir _buildable;
 _pos = getposatl _buildable;
 _vars = [];
 {
-	_vars pushback [_x,_buildable getVariable _x];
+	_vars pushback [_x,_buildable getVariable _x,true];
 } forEach allVariables _buildable;
 
 
