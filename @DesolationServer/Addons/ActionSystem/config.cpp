@@ -84,6 +84,7 @@ class CfgFunctions
 			class get3DPartName {};
 			class calculationThread {};
 			class display2DMenu {};
+			class doAnimation {};
 		};
 		// server functions
 		class Server {
@@ -96,6 +97,7 @@ class CfgFunctions
 			isserver = 1;
 			class removePartReq {};
 			class repairPartReq {};
+			class replacePartReq {};
 			class refuelReq {};
 		};
 	};
@@ -115,31 +117,51 @@ class Cfg3DActions {
 			class RepairWheel {
 				condition = "_selection find 'wheel' != -1";
 				text = "Repair Wheel";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"dsr_item_tire", 1}
+					};
+				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairWheel;";
 			};
 			class RepairGlass {
 				condition = "_selection find 'glass' != -1";
 				text = "Repair Glass";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"dsr_item_glass_part", 1}
+					};
+				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairGlass;";
 			};
 			class RepairEngine {
 				condition = "_selection find 'engine' != -1";
 				text = "Repair Engine";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"dsr_item_engine_block", 1}
+					};
+				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairEngine;";
 			};
 			class RepairFueltank {
 				condition = "_selection find 'fuel' != -1";
 				text = "Repair Fuel Tank";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"dsr_item_gas_tank", 1}
+					};
+				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairFueltank;";
 			};
 			class RepairBody {
 				condition = "_selection find 'body' != -1";
 				text = "Repair Body";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"dsr_item_scrap_metal", 1}
+					};
+				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairBody;";
 			};
 			class RemoveWheel {

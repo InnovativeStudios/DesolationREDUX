@@ -38,7 +38,10 @@ _required = [];
 _haveRequiredItems = true;
 _playerItems = getItemCargo _player;
 
+diag_log format ["player items = %1", _playerItems];
+
 {
+	diag_log format ["looking for %1", _x];
 	if !(_playerItems find _x) exitWith {
 		_haveRequiredItems = false;
 	};
@@ -81,7 +84,8 @@ if ((count _nearLootHolders) != 0) then
 if (_haveRequiredItems) then {
 	[_object, [_hitPoint, 0]] remoteExec ["setHitPointDamage", 0];
 	{
-		player removeItem _x;
+		diag_log format ["removing %1", _x];
+		_player removeItem _x;
 	} forEach (_required select 0);
 };
 

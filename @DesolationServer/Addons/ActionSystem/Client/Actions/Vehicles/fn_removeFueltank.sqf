@@ -12,6 +12,9 @@
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
 params["_cursor","_index","_selection"];
-[_selection, _cursor, _index, player, "Remove Fuel Tank",0] remoteExecCall ["ACT_fnc_removePartReq", 2];
+
+if ([0] call ACT_fnc_doAnimation) then {
+	[_selection, _cursor, _index, player, "Remove Fuel Tank",0] remoteExecCall ["ACT_fnc_removePartReq", 2];
+};
 
 true

@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * ï¿½ 2016 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -34,7 +34,8 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 			//systemChat str(_selection);
 			
 			if(call compile (_data select 0)) then {
-				call compile (_data select 1);
+				ACT_var_Render2DActions = false;
+				[_cursor, _index, _selection] spawn compile ("params[""_cursor"",""_index"",""_selection""];" + (_data select 1));
 			} else {
 				systemchat "something failed, cannot execute that action";
 			};
