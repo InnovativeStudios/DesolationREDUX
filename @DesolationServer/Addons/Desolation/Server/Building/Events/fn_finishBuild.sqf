@@ -14,6 +14,9 @@ _entry = _crate getVariable "SVAR_buildParams";
 _model = _entry select 2;
 diag_log _model;
 
+//TODO: check building has all required items
+//TODO: create groundWeaponHolder containing all remaining items
+
 _pos = getposatl _crate;
 _dir = getdir _crate;
 
