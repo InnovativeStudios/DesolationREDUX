@@ -8,14 +8,53 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+ 
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
 
-params ["_object","_index","_player"];
+params ["_hitPoint","_object","_index","_player","_class","_group"];
 
-_configAry = "true" configClasses (configFile >> "Cfg3DActions");
-_config = _configAry select _index;
-_returned = getArray (_config >> "Actions" >> "Remove" >> "returned");
+_actionGroup = ACT_var_ACTIONS select _group;
+_actionInfo = _actionGroup select 2;
 
-_lootHolder = objNull;
+_required = [];
+_returned = [];
+
+{
+	_aCondition = _x select 0;
+	_aText = _x select 1;
+	_aCode = _x select 2;
+	_aParameters = _x select 3;
+		
+	diag_log format ["<ActionSystem>: (Debug) _aParameters = %1", _aParameters];
+		
+	if (_class == _aText) exitWith {
+		_required = _aParameters select 0;
+		_returned = _aParameters select 1;
+		diag_log format ["<ActionSystem>: (Debug) _required = %1", _required];
+		diag_log format ["<ActionSystem>: (Debug) _returned = %1", _returned];
+	};
+		
+} forEach _actionInfo;
+
+//diag_log format ["<ActionSystem>: (Debug) Who Am I: %1", _player];
+
+_haveRequiredItems = true;
+//_playerItems = (vestitems _player + uniformitems _player + backpackitems _player);
+
+//diag_log format ["player items = %1", _playerItems];
+
+{
+	_item = _x select 0;
+	_count = _x select 1;
+	diag_log format ["looking for %1", _item];
+	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < _count) exitWith {
+		systemchat ("Does not have: " + _item + " @ count: " + str(_count));
+		_haveRequiredItems = false;
+	};
+true
+} count _required;
+
+/*_lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
 if ((count _nearLootHolders) != 0) then
 {
@@ -31,16 +70,42 @@ if ((count _nearLootHolders) != 0) then
 	} count _nearLootHolders;
 };
 
-if (isNull _lootHolder) then
-{
-	_lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
-	_lootHolder setPosATL (getPosATL _player);
+	if (isNull _lootHolder) then
+	{
+		diag_log "<ActionSystem>: (Debug) Create GroundWeaponHolder";
+		_lootHolder = createVehicle ["GroundWeaponHolder", _player modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
+		_lootHolder setDir floor (random 360);
+	};
+
+	if (count _returned != 0) then {
+		{
+			diag_log format ["<ActionSystem>: (Debug) Add Item: %1", _x];
+			_lootHolder addItemCargoGlobal _x;
+		} forEach _returned;
+	};
+
+	diag_log format ["<ActionSystem>: (Debug) Loot Holder: %1", _lootHolder];
+
+	_player reveal _lootHolder;*/
+
+if (_haveRequiredItems) then {
+	[_object, 1] remoteExec ["setFuel", 0];
+	{
+		for "_i" from 1 to (_x select 1) do {
+			diag_log format ["removing %1", (_x select 0)];
+			_player removeItem (_x select 0);
+		};
+		true
+	} count _required;
+	{
+		for "_i" from 1 to (_x select 1) do {
+			diag_log format ["adding %1", (_x select 0)];
+			_player addItem (_x select 0);
+		};
+		true
+	} count _returned;
+} else {
+	systemChat "You don't have the required Items";
 };
-
-{
-	_lootHolder addItemCargoGlobal _x;
-} count _returned;
-
-[_object, 1] remoteExecCall ["setFuel", 0];
 
 true
