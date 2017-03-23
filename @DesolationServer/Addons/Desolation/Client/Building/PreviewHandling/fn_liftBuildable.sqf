@@ -2,6 +2,10 @@
 
 params["_crate"]; // this is the dynamic preview object
 
+
+systemchat "Preview objects are not saved. After restart they will be deleted.";
+systemchat "Press ESCAPE to cancel building.";
+
 player reveal [_crate, 4]; // make sure we can see it
 
 [_crate] spawn OM_fnc_liftObject;
