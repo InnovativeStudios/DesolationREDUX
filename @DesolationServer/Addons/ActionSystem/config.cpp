@@ -61,6 +61,7 @@ class CfgFunctions
 			class replaceFueltank {};
 			class replaceGlass {};
 			class replaceWheel {};
+			class refuelFueltank {};
 		};
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
@@ -119,7 +120,7 @@ class Cfg3DActions {
 				text = "Repair Wheel";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_tire", 1}
+						{"DSR_Item_Tire", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairWheel;";
@@ -129,7 +130,7 @@ class Cfg3DActions {
 				text = "Repair Glass";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_glass_part", 1}
+						{"DSR_Item_Glass_Part", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairGlass;";
@@ -139,7 +140,7 @@ class Cfg3DActions {
 				text = "Repair Engine";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_engine_block", 1}
+						{"DSR_Item_Engine_Block", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairEngine;";
@@ -149,7 +150,7 @@ class Cfg3DActions {
 				text = "Repair Fuel Tank";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_gas_tank", 1}
+						{"DSR_Item_Gas_Tank", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairFueltank;";
@@ -159,7 +160,7 @@ class Cfg3DActions {
 				text = "Repair Body";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_scrap_metal", 1}
+						{"DSR_Item_Scrap_Metal", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairBody;";
@@ -169,7 +170,7 @@ class Cfg3DActions {
 				text = "Remove Wheel";
 				class Parameters {
 					returnedItems[] = {
-						{"dsr_item_tire", 1}
+						{"DSR_Item_Tire", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_removeWheel;";
@@ -179,7 +180,7 @@ class Cfg3DActions {
 				text = "Remove Glass";
 				class Parameters {
 					returnedItems[] = {
-						{"dsr_item_glass_part", 1}
+						{"DSR_Item_Glass_Part", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_removeGlass;";
@@ -189,7 +190,7 @@ class Cfg3DActions {
 				text = "Remove Engine";
 				class Parameters {
 					returnedItems[] = {
-						{"dsr_item_engine_block", 1}
+						{"DSR_Item_Engine_Block", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_removeEngine;";
@@ -199,7 +200,7 @@ class Cfg3DActions {
 				text = "Remove Fuel Tank";
 				class Parameters {
 					returnedItems[] = {
-						{"dsr_item_gas_tank", 1}
+						{"DSR_Item_Gas_Tank", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_removeFueltank;";
@@ -209,7 +210,7 @@ class Cfg3DActions {
 				text = "Replace Wheel";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_tire", 1}
+						{"DSR_Item_Tire", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_replaceWheel;";
@@ -219,7 +220,7 @@ class Cfg3DActions {
 				text = "Replace Glass";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_glass_part", 1}
+						{"DSR_Item_Glass_Part", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_replaceGlass;";
@@ -229,7 +230,7 @@ class Cfg3DActions {
 				text = "Replace Engine";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_engine_block", 1}
+						{"DSR_Item_Engine_Block", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_replaceEngine;";
@@ -239,10 +240,23 @@ class Cfg3DActions {
 				text = "Replace Fuel Tank";
 				class Parameters {
 					requiredItems[] = {
-						{"dsr_item_gas_tank", 1}
+						{"DSR_Item_Gas_Tank", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_replaceFueltank;";
+			};
+			class RefuelFueltank {
+				condition = "_selection find 'fuel' != -1";
+				text = "Refuel Fuel Tank";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Fuelcan_Full", 1}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Fuelcan_Empty", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_refuelFueltank;";
 			};
 		};
 	};

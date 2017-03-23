@@ -14,7 +14,7 @@
 params["_cursor","_index","_selection"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Repair Engine",0] remoteExec ["ACT_fnc_repairPartReq", 2];
+	[_selection, _cursor, _index, player, "Refuel Fuel Tank",0] remoteExec ["ACT_fnc_refuelReq", 2];
 };
 
 true

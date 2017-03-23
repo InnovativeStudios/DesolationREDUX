@@ -14,7 +14,7 @@
 params["_cursor","_index","_selection"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Repair Body",0] remoteExecCall ["ACT_fnc_repairPartReq", 2];
+	[_selection, _cursor, _index, player, "Repair Body",0] remoteExec ["ACT_fnc_repairPartReq", 2];
 };
 
 true

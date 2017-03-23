@@ -36,13 +36,20 @@ _required = [];
 //diag_log format ["<ActionSystem>: (Debug) Who Am I: %1", _player];
 
 _haveRequiredItems = true;
-_playerItems = getItemCargo _player;
+//_playerItems = (vestitems _player + uniformitems _player + backpackitems _player);
+
+//diag_log format ["player items = %1", _playerItems];
 
 {
-	if !(_playerItems find _x) exitWith {
+	_item = _x select 0;
+	_count = _x select 1;
+	diag_log format ["looking for %1", _item];
+	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < _count) exitWith {
+		systemchat ("Does not have: " + _item + " @ count: " + str(_count));
 		_haveRequiredItems = false;
 	};
-} forEach (_required select 0);
+true
+} count _required;
 
 /*_lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
@@ -81,8 +88,14 @@ if ((count _nearLootHolders) != 0) then
 if (_haveRequiredItems) then {
 	[_object, [_hitPoint, 0]] remoteExec ["setHitPointDamage", 0];
 	{
-		player removeItem _x;
-	} forEach (_required select 0);
+		for "_i" from 1 to (_x select 1) do {
+			diag_log format ["removing %1", (_x select 0)];
+			_player removeItem (_x select 0);
+		};
+		true
+	} count _required;
+} else {
+	systemChat "You don't have the required Items";
 };
 
 true
