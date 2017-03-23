@@ -44,12 +44,8 @@ clearMagazineCargoGlobal _crate;
 
 _loot = [_crate] call DS_fnc_getLoot; //TODO save this loot to groundWeaponHolder
 
-
-//[[["DSR_Item_Lumber",23],["DSR_Item_Hardware",4]],"Base Stockade Wall","DSR_Object_Stockade_Wall","Basic stockade wall piece","\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg","true","DSR_Object_Stockade_Wall_Preview2"]
-//
-
-
-
+_holder = "groundWeaponHolder" createVehicle (position _crate);
+[_holder,_loot] call DS_fnc_setLoot;
 
 _pos = getposatl _crate;
 _dir = getdir _crate;
