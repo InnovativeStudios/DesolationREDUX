@@ -11,11 +11,45 @@
 params["_crate"];
 
 _entry = _crate getVariable "SVAR_buildParams";
+_items = _entry select 0;
 _model = _entry select 2;
 diag_log _model;
 
-//TODO: check building has all required items
-//TODO: create groundWeaponHolder containing all remaining items
+_array = [];
+{
+	_mag = _x select 0;
+	_count = _x select 1;
+	for "_i" from 1 to _count do {
+		_array pushback toLower(_mag);
+	};
+} forEach _items;
+_ammo = magazinesAmmoCargo _crate;
+_newammo = [];
+clearMagazineCargoGlobal _crate;
+{
+	_mag = toLower(_x select 0);
+	_count = _x select 1;
+	 
+	_index = _array find _mag;
+	if(_index != -1) then {
+		_array deleteAt _index;
+	} else {
+		_newammo pushback (_x + [1]);
+	};
+	 
+} forEach _ammo;	
+{
+	_crate addMagazineAmmoCargo _x
+} forEach _newammo;
+
+_loot = [_crate] call DS_fnc_getLoot; //TODO save this loot to groundWeaponHolder
+
+
+//[[["DSR_Item_Lumber",23],["DSR_Item_Hardware",4]],"Base Stockade Wall","DSR_Object_Stockade_Wall","Basic stockade wall piece","\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg","true","DSR_Object_Stockade_Wall_Preview2"]
+//
+
+
+
 
 _pos = getposatl _crate;
 _dir = getdir _crate;
