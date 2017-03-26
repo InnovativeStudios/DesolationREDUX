@@ -120,7 +120,11 @@ class Cfg3DActions {
 				text = "Repair Wheel";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Tire", 1}
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Tire", 4}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairWheel;";
@@ -130,7 +134,11 @@ class Cfg3DActions {
 				text = "Repair Glass";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Glass_Part", 1}
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Glass_Part", 4}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairGlass;";
@@ -140,7 +148,11 @@ class Cfg3DActions {
 				text = "Repair Engine";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Engine_Block", 1}
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 10}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairEngine;";
@@ -150,7 +162,11 @@ class Cfg3DActions {
 				text = "Repair Fuel Tank";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Gas_Tank", 1}
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 4}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairFueltank;";
@@ -160,7 +176,11 @@ class Cfg3DActions {
 				text = "Repair Body";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Scrap_Metal", 1}
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 20}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_repairBody;";

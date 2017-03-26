@@ -80,6 +80,7 @@ addMissionEventHandler ["Draw3D",{
 							ACT_var_2DActionParameters = [_cursorObject,_selectionIndex,_selection];
 						};
 					
+						//drawIcon3D [_icon, _color, _location, 1, 1, 45, str(_damage), 1, _scale, "TahomaB"];
 						drawIcon3D [_icon, _color, _location, 1, 1, 45, _name, 1, _scale, "TahomaB"];
 					
 						
