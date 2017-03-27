@@ -19,7 +19,18 @@ addons[]=
 {
 	"A3_Ui_F",
 	"A3_Characters_F",
-	"dsr_apparel"
+	"dsr_weapons",
+	"dsr_actions",
+	"dsr_objects",
+	"sm_zombz",
+	"CAWheeled_2_MMT",
+	"SM_Zombz",
+	"DSR_Zombz_Code",
+	"dsr_apparel",
+	"cup_castructureshouse_housev",
+	"cup_castructuresbarn_w",
+	"cup_castructureshouse_housev2",
+	"cup_farm_cowshed"
 };
 class AddonsMetaData
 {

@@ -1,9 +1,11 @@
 
+
 DSZ_var_zUnits = []; //array containing all spawned zombies
 _config = call DSZ_fnc_readConfig;
 _zData = [_config] call DSZ_fnc_selectLocations;
 [_zData] call DSZ_fnc_publish;
 
+SM_var_finishedZombies = true; //TODO: remove this when implementing this zombie system
 
 [] spawn {
 	while{true} do {
@@ -12,7 +14,7 @@ _zData = [_config] call DSZ_fnc_selectLocations;
 			if(!isNull _x) then {
 				_zed = _x;
 				
-				// handle zombie moaning
+				// handle zombie moaning TODO: doesn't work rofl
 				if !(_zed getVariable ["agroed",false]) then {
 					if(diag_tickTime > ((_zed getVariable ["lastMoan",diag_tickTime - 25]) + 25)) then {
 						if(count(attachedObjects _zed) == 0) then {

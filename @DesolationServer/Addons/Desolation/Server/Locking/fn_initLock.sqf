@@ -11,7 +11,11 @@
 
 DS_var_finishedVehicles = false;
 DS_var_finishedLoot = false;
-SM_var_finishedZombies = (isNil "SM_fnc_initServer"); //if SM_Zombz is removed, then ignore its bootup timer
+
+// if the variable is undefined, define it (This is temporary until the new zombie system is in place)
+if(isNil "SM_var_finishedZombies") then {
+	SM_var_finishedZombies = false;
+};
 _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""];
 diag_log ("SERVER LOCKING > PASSWORD: " + _password);
 _password serverCommand "#lock";
