@@ -6479,187 +6479,359 @@ class CfgVehicleSpawns {
 	class Vehicles {
 		//--- zamaks
 		class C_Truck_02_box_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_SM_01_shelter_wide_F","Land_SCF_01_shed_F","Land_SCF_01_crystallizer_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_SM_01_shelter_wide_F {};
+				class Land_SCF_01_shed_F {};
+				class Land_SCF_01_crystallizer_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+			};
 		};
 		class C_Truck_02_covered_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_SM_01_shelter_wide_F","Land_SM_01_shed_unfinished_F","Land_SM_01_shed_F","Land_SCF_01_shed_F","Land_SCF_01_crystallizer_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F","Land_i_Shed_Ind_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_SM_01_shelter_wide_F {};
+				class Land_SM_01_shed_unfinished_F {};
+				class Land_SM_01_shed_F {};
+				class Land_SCF_01_shed_F {};
+				class Land_SCF_01_crystallizer_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_i_Shed_Ind_F {};
+			};
 		};
 		class C_Truck_02_transport_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_SM_01_shelter_wide_F","Land_SM_01_shed_unfinished_F","Land_SM_01_shed_F","Land_SCF_01_shed_F","Land_SCF_01_crystallizer_F","Land_WarehouseShelter_01_F","Land_Warehouse_02_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F","Land_i_Shed_Ind_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_SM_01_shelter_wide_F {};
+				class Land_SM_01_shed_unfinished_F {};
+				class Land_SM_01_shed_F {};
+				class Land_SCF_01_shed_F {};
+				class Land_SCF_01_crystallizer_F {};
+				class Land_WarehouseShelter_01_F {};
+				class Land_Warehouse_02_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_i_Shed_Ind_F {};
+				
+			};
 		};
 		class C_Truck_02_fuel_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_SM_01_shelter_wide_F","Land_SCF_01_shed_F","Land_SCF_01_crystallizer_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F","Land_i_Shed_Ind_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_SM_01_shelter_wide_F {};
+				class Land_SCF_01_shed_F {};
+				class Land_SCF_01_crystallizer_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_i_Shed_Ind_F {};
+				
+			};
 		};
 		//--- industrial
 		class C_Van_01_box_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_WarehouseShelter_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+			};
 		};
 		class C_Van_01_transport_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_WarehouseShelter_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_WarehouseShelter_01_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_02_roof_F {};
+			};
 		};
 		class C_Van_01_fuel_F {
-			buildings[] = {"Land_SM_01_shelter_narrow_F","Land_FuelStation_02_roof_F","Land_FuelStation_01_roof_F"};
+			class Spawns {
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_01_roof_F {};
+			};
 		};
 
 		//--- military
 		class B_LSV_01_unarmed_F {
-			buildings[] = {"Land_Cargo_Tower_V4_F"};
+			class Spawns {
+				class Land_Cargo_Tower_V4_F {};
+			};
 		};
 
 		//--- civ
-		class C_Offroad_02_unarmed_F { //--- jeep
-			buildings[] = {"Land_Airport_01_terminal_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_02_workshop_F","Land_FuelStation_01_roof_F","Land_FuelStation_01_workshop_F","Land_House_Big_03_F","Land_GarageShelter_01_F"};
+		class C_Offroad_02_unarmed_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
 		};
 		class C_SUV_01_F {
-			buildings[] = {"Land_Airport_01_terminal_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_02_workshop_F","Land_FuelStation_01_roof_F","Land_FuelStation_01_workshop_F","Land_House_Big_03_F","Land_GarageShelter_01_F"};
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
 		};
 		class C_Hatchback_01_F {
-			buildings[] = {"Land_Airport_01_terminal_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_02_workshop_F","Land_FuelStation_01_roof_F","Land_FuelStation_01_workshop_F","Land_House_Big_03_F","Land_GarageShelter_01_F"};
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_SUV {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
 		};
 		class C_Offroad_01_F {
-			buildings[] = {"Land_Airport_01_terminal_F","Land_SM_01_shelter_narrow_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_02_workshop_F","Land_FuelStation_01_roof_F","Land_FuelStation_01_workshop_F","Land_House_Big_03_F","Land_GarageShelter_01_F"};
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
 		};
 		class C_Hatchback_01_sport_F {
-			buildings[] = {"Land_Airport_01_terminal_F","Land_MultistoryBuilding_01_F","Land_FuelStation_02_roof_F","Land_FuelStation_02_workshop_F","Land_FuelStation_01_roof_F","Land_FuelStation_01_workshop_F","Land_House_Big_03_F","Land_GarageShelter_01_F"};
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
 		};
 		//--- quads
 		class C_Quadbike_01_F {
-			buildings[] = {"Land_Shed_07_F"};
+			class Spawns {
+				class Land_Shed_07_F {};
+			};
 		};
 
 		//--- bikes
 		class DSR_Bike_White_F {
-			buildings[] = {"Land_Airport_02_terminal_F","Land_Warehouse_03_F","Land_Shop_City_07_F","Land_Shop_City_05_F","Land_MultistoryBuilding_04_F","Land_Shop_City_06_F","Land_Shop_City_01_F","Land_Shop_City_02_F","Land_Shop_City_03_F","Land_MultistoryBuilding_03_F","Land_Hotel_01_F","Land_Addon_04_F","Land_Addon_03_F","Land_House_Small_04_F","Land_House_Small_05_F","Land_School_01_F","Land_House_Small_06_F"};
+			class Spawns {
+				class Land_Airport_02_terminal_F {};
+				class Land_Warehouse_03_F {};
+				class Land_Shop_City_07_F {};
+				class Land_Shop_City_05_F {};
+				class Land_MultistoryBuilding_04_F {};
+				class Land_Shop_City_06_F {};
+				class Land_Shop_City_01_F {};
+				class Land_Shop_City_02_F {};
+				class Land_Shop_City_03_F {};
+				class Land_MultistoryBuilding_03_F {};
+				class Land_Hotel_01_F {};
+				class Land_Addon_04_F {};
+				class Land_Addon_03_F {};
+				class Land_House_Small_04_F {};
+				class Land_House_Small_05_F {};
+				class Land_School_01_F {};
+				class Land_House_Small_06_F {};
+			};
 		};
 
 		class DSR_Bike_Green_F {
-			buildings[] = {"Land_Airport_02_terminal_F","Land_Warehouse_03_F","Land_Shop_City_07_F","Land_Shop_City_05_F","Land_MultistoryBuilding_04_F","Land_Shop_City_06_F","Land_Shop_City_01_F","Land_Shop_City_02_F","Land_Shop_City_03_F","Land_MultistoryBuilding_03_F","Land_Hotel_01_F","Land_Addon_04_F","Land_Addon_03_F","Land_House_Small_04_F","Land_House_Small_05_F","Land_School_01_F","Land_House_Small_06_F"};
+			class Spawns {
+				class Land_Airport_02_terminal_F {};
+				class Land_Warehouse_03_F {};
+				class Land_Shop_City_07_F {};
+				class Land_Shop_City_05_F {};
+				class Land_MultistoryBuilding_04_F {};
+				class Land_Shop_City_06_F {};
+				class Land_Shop_City_01_F {};
+				class Land_Shop_City_02_F {};
+				class Land_Shop_City_03_F {};
+				class Land_MultistoryBuilding_03_F {};
+				class Land_Hotel_01_F {};
+				class Land_Addon_04_F {};
+				class Land_Addon_03_F {};
+				class Land_House_Small_04_F {};
+				class Land_House_Small_05_F {};
+				class Land_School_01_F {};
+				class Land_House_Small_06_F {};
+			};
 		};
 		//--- plans
 		class C_Plane_Civil_01_F {
-			buildings[] = {"Land_Airport_02_hangar_left_F","Land_Airport_02_hangar_right_F","Land_Airport_01_hangar_F"};
+			class Spawns {
+				class Land_Airport_02_hangar_left_F {};
+				class Land_Airport_02_hangar_right_F {};
+				class Land_Airport_01_hangar_F {};
+			};
 		};
 		class C_Plane_Civil_01_racing_F {
-			buildings[] = {"Land_Airport_02_hangar_left_F","Land_Airport_02_hangar_right_F","Land_Airport_01_hangar_F"};
+			class Spawns {
+				class Land_Airport_02_hangar_left_F {};
+				class Land_Airport_02_hangar_right_F {};
+				class Land_Airport_01_hangar_F {};
+			};
+		};
+		class DSR_AN2_F {
+			class Spawns {
+				class Land_Airport_02_hangar_left_F {};
+				class Land_Airport_02_hangar_right_F {};
+				class Land_Airport_01_hangar_F {};
+			};
 		};
 
 		//--- jelli's
 		class C_Heli_Light_01_civil_F {
-			buildings[] = {};
+			class Spawns {
+				
+			};
 		};
 		class UH1H {
+			class Spawns {
+				
+			};
 			buildings[] = {};
 		};
 		
 		//--- boats
 		class DSR_FishingBoat_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class DSR_Dingy_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class DSR_Raft_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class C_Boat_Civil_01_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class C_Boat_Civil_01_police_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class C_Rubberboat {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class C_Boat_Transport_02_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class C_Scooter_Transport_01_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class O_Lifeboat {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 		class I_Boat_Transport_01_F {
-			buildings[] = {
-				"Land_PierWooden_02_barrel_F",
-				"Land_PierConcrete_01_4m_ladders_F",
-				"Land_PierWooden_01_ladder_F",
-				"Land_PierWooden_02_ladder_F",
-				"Land_PierWooden_02_hut_F",
-				"Land_PierWooden_03_F",
-				"Land_PierWooden_01_dock_F"
+			class Spawns {
+				class Land_PierWooden_02_barrel_F {};
+				class Land_PierConcrete_01_4m_ladders_F {};
+				class Land_PierWooden_01_ladder_F {};
+				class Land_PierWooden_02_ladder_F {};
+				class Land_PierWooden_02_hut_F {};
+				class Land_PierWooden_03_F {};
+				class Land_PierWooden_01_dock_F {};
 			};
 		};
 	};

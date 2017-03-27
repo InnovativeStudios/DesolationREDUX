@@ -78,7 +78,13 @@ _config = configFile >> "CfgVehicleSpawns" >> "Vehicles";
 for "_i" from 0 to count(_config)-1 do {
 	_cfg = _config select _i;
 	if(isClass _cfg) then {
-		_houses = getArray(_cfg >> "buildings");
+		
+		_houses = [];
+		_entry = _cfg >> "Spawns";
+		for "_i" from 0 to count(_entry)-1 do {
+			_houses pushBack configName (_entry select _i);
+		};
+		
 		_type = configName _cfg;
 
 		{
