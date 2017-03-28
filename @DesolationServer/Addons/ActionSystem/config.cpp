@@ -66,6 +66,9 @@ class CfgFunctions
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
 			isclient = 1;
+			class bandage {};
+			class giveBlood {};
+			class applySplint {};
 		};
 		class Client_Keybinds {
 			file = "ActionSystem\Client\Keybinds";
@@ -100,6 +103,7 @@ class CfgFunctions
 			class repairPartReq {};
 			class replacePartReq {};
 			class refuelReq {};
+			class playerAction {};
 		};
 	};
 };
@@ -306,13 +310,13 @@ class Cfg3DActions {
 				condition = "true"; //todo cursor is bleeding check
 				text = "Bandage";
 				class Parameters {};
-				action = "[_cursor,_index] call ACT_fnc_applyBandage;";
+				action = "[_cursor,_index] call ACT_fnc_bandage;";
 			};
 			class Bloodbag {
 				condition = "true"; //todo blood value check
 				text = "Give Blood";
 				class Parameters {};
-				action = "[_cursor,_index] call ACT_fnc_applyBloodbag;";
+				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
 				condition = "true"; //todo broken leg check
