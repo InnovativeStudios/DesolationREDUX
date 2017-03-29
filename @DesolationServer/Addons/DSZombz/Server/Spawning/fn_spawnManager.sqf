@@ -11,7 +11,7 @@ while{true} do {
 			
 			if(local group _x) then {
 				//-- transfer locality to nearest man
-				_nearPlayers = [_pos] call DSZ_fnc_getNearPlayers;
+				_nearPlayers = [getposatl _x] call DSZ_fnc_getNearPlayers;
 				_plr = _nearPlayers select 0;
 				
 				diag_log "DSZOMBZ > TRANSFERING";

@@ -52,4 +52,4 @@ _zombie setVariable ["zInformation",[_agroType,_locationpos,_roamDist],true];
 DSZ_var_spawnedZeds pushback _zombie;
 
 [_owner,_zombie] call DSZ_fnc_toClient;
-[_locationpos,_roamDist,group _zed] call DSZ_fnc_initRoaming;
+[_locationpos,_roamDist,group _zombie] call DSZ_fnc_initRoaming;
