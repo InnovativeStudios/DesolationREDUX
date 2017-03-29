@@ -1,8 +1,8 @@
 params["_zed"];
 
-_zIndex = _zed getVariable ["zIndex",-1];
-
 if(isNull _zed) exitWith {diag_log "DSZOMBZ > Can't despawn unknown zombie!";}; // zombie didnt exist, wtf?
+
+_zIndex = _zed getVariable ["zIndex",-1];
 
 if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 	
