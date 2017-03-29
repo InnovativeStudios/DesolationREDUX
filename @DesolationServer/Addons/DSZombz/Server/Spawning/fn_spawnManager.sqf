@@ -9,6 +9,18 @@ while{true} do {
 		} else {
 			_aliveZombieIndexes pushback _zIndex; // mark that index as a spawned zombie
 			
+			if(local group _x) then {
+				//-- transfer locality to nearest man
+				_nearPlayers = [_pos] call DSZ_fnc_getNearPlayers;
+				_plr = _nearPlayers select 0;
+				
+				diag_log "DSZOMBZ > TRANSFERING";
+				
+				[_plr,_x] call DSZ_fnc_toClient;
+			};
+			
+			
+			
 			// play zombie moan if random time delay is triggered
 			if !(_x getVariable ["agroed",false]) then {
 				if(diag_tickTime > ((_x getVariable ["lastMoan",diag_tickTime - 25]) + (_x getVariable ["moanDelay",25]))) then {
