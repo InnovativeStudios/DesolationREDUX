@@ -1,6 +1,6 @@
 params["_zed"];
 
-_zIndex = _zed getVariable ["zIndex"];
+_zIndex = _zed getVariable ["zIndex",-1];
 
 if(isNull _zed) exitWith {diag_log "DSZOMBZ > Can't despawn unknown zombie!";}; // zombie didnt exist, wtf?
 

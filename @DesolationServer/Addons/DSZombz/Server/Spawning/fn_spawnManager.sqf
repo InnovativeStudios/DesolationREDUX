@@ -33,6 +33,7 @@ while{true} do {
 			
 		};
 	} forEach DSZ_var_spawnedZeds;
+	DSZ_var_spawnedZeds = DSZ_var_spawnedZeds - [objNull];
 	uiSleep 0.25;
 	{
 		if(count(_x) > 0) then { // if count(_x) == 0 then zombie is dead (this is an "isdead" check)
