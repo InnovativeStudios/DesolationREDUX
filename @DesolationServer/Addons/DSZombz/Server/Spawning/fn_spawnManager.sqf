@@ -43,7 +43,7 @@ while{true} do {
 				_nearPlayers = [_pos] call DSZ_fnc_getNearPlayers; // get all near players
 				if(count(_nearPlayers) > 0) then {
 					_player = _nearPlayers select 0;
-					[_player,_zIndex] call DSZ_fnc_spawnZombie; // if there is a near player, spawn zombie
+					[_zIndex,_player] call DSZ_fnc_spawnZombie; // if there is a near player, spawn zombie
 				};
 			};
 		};
