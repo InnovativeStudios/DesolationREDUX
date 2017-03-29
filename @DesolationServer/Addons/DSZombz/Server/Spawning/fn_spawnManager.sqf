@@ -5,7 +5,7 @@ while{true} do {
 	{
 		_zIndex = _x getVariable ["zIndex",-1]; //get zombie index information
 		if !([getposatl _x] call DSZ_fnc_isPlayerNear) then { 
-			[_zIndex] call DSZ_fnc_despawnZombie; // if no player is near, despawn
+			[_x] call DSZ_fnc_despawnZombie; // if no player is near, despawn
 		} else {
 			_aliveZombieIndexes pushback _zIndex; // mark that index as a spawned zombie
 			

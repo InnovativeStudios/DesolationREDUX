@@ -1,19 +1,13 @@
-params["_zIndex"];
+params["_zed"];
 
-_zData = DSZ_var_spawnData select _zIndex;
-_pos = _zData select 1;
-_zed = objNull;
-{
-	if((_x getVariable ["zIndex",-1]) == _zIndex) exitWith {
-		_zed = _x;
-	};
-} forEach DSZ_var_spawnedZeds;
+_zIndex = _zed getVariable ["zIndex"];
 
 if(isNull _zed) exitWith {diag_log "DSZOMBZ > Can't despawn unknown zombie!";}; // zombie didnt exist, wtf?
 
 if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 	
 	// update zombie position in spawnData
+	_zData = DSZ_var_spawnData select _zIndex;
 	_zData set[1,getposatl _zed];
 	DSZ_var_spawnData set[_zIndex,_zData];
 
