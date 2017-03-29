@@ -39,5 +39,5 @@ while{true} do {
 	} count _nearZombies;
 	
 	
-	uiSleep 5;
+	uiSleep 3;
 };

@@ -65,14 +65,7 @@ for "_i" from 1 to _Random_Zombies do {
 
 
 
-_zombieData;
-
-//todo select all locations
-//todo pull .cfg data for spawning
-//todo generate array of all zombie spawn data
-//todo return that array of zombie spawn data
-
-
+DSZ_var_spawnData = _zombieData;
 
 
 
