@@ -781,63 +781,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
 				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -1017,8 +1004,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -1174,18 +1161,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -1212,53 +1197,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -1316,7 +1278,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
@@ -1454,8 +1416,8 @@ class CfgItemSpawns {
                     {"DSR_Hgun_ACPC2",55}
                 };
             };
-            class Magazine {
-                rare[] = {
+			class Magazine {
+				rare[] = {
                     {"100Rnd_580x42_Mag_F",13},
                     {"100Rnd_580x42_Mag_Tracer_F",12},
                     {"5Rnd_127x108_Mag",2},             //12.7 mm 5Rnd Mag
@@ -1559,7 +1521,7 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",13},
                     {"6Rnd_45ACP_Cylinder",9}
                 };
-            };
+			};
             class Food {
                 rare[] = {
                     {"DSR_Item_Beans",20},
@@ -1593,7 +1555,7 @@ class CfgItemSpawns {
                 semirare[] = {
                     {"DSR_Item_Franta",55},
                     {"DSR_Item_Spirit",45}
-                };
+				};
                 average[] = {
                     {"DSR_Item_Rusty_Spirit",100}
                 };
@@ -1608,63 +1570,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
-                };
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
+				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -1844,8 +1793,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -2001,18 +1950,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -2039,53 +1986,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -2143,7 +2067,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
@@ -2281,8 +2205,8 @@ class CfgItemSpawns {
                     {"DSR_Hgun_ACPC2",55}
                 };
             };
-            class Magazine {
-                rare[] = {
+			class Magazine {
+				rare[] = {
                     {"100Rnd_580x42_Mag_F",13},
                     {"100Rnd_580x42_Mag_Tracer_F",12},
                     {"5Rnd_127x108_Mag",2},             //12.7 mm 5Rnd Mag
@@ -2386,7 +2310,7 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",13},
                     {"6Rnd_45ACP_Cylinder",9}
                 };
-            };
+			};
             class Food {
                 rare[] = {
                     {"DSR_Item_Beans",20},
@@ -2420,7 +2344,7 @@ class CfgItemSpawns {
                 semirare[] = {
                     {"DSR_Item_Franta",55},
                     {"DSR_Item_Spirit",45}
-                };
+				};
                 average[] = {
                     {"DSR_Item_Rusty_Spirit",100}
                 };
@@ -2435,63 +2359,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
-                };
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
+				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -2671,8 +2582,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -2828,18 +2739,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -2866,53 +2775,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -2970,7 +2856,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
@@ -3108,8 +2994,8 @@ class CfgItemSpawns {
                     {"DSR_Hgun_ACPC2",55}
                 };
             };
-            class Magazine {
-                rare[] = {
+			class Magazine {
+				rare[] = {
                     {"100Rnd_580x42_Mag_F",13},
                     {"100Rnd_580x42_Mag_Tracer_F",12},
                     {"5Rnd_127x108_Mag",2},             //12.7 mm 5Rnd Mag
@@ -3213,7 +3099,7 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",13},
                     {"6Rnd_45ACP_Cylinder",9}
                 };
-            };
+			};
             class Food {
                 rare[] = {
                     {"DSR_Item_Beans",20},
@@ -3247,7 +3133,7 @@ class CfgItemSpawns {
                 semirare[] = {
                     {"DSR_Item_Franta",55},
                     {"DSR_Item_Spirit",45}
-                };
+				};
                 average[] = {
                     {"DSR_Item_Rusty_Spirit",100}
                 };
@@ -3262,63 +3148,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
-                };
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
+				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -3498,8 +3371,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -3655,18 +3528,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -3693,53 +3564,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -3797,7 +3645,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
@@ -3935,8 +3783,8 @@ class CfgItemSpawns {
                     {"DSR_Hgun_ACPC2",55}
                 };
             };
-            class Magazine {
-                rare[] = {
+			class Magazine {
+				rare[] = {
                     {"100Rnd_580x42_Mag_F",13},
                     {"100Rnd_580x42_Mag_Tracer_F",12},
                     {"5Rnd_127x108_Mag",2},             //12.7 mm 5Rnd Mag
@@ -4040,7 +3888,7 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",13},
                     {"6Rnd_45ACP_Cylinder",9}
                 };
-            };
+			};
             class Food {
                 rare[] = {
                     {"DSR_Item_Beans",20},
@@ -4074,7 +3922,7 @@ class CfgItemSpawns {
                 semirare[] = {
                     {"DSR_Item_Franta",55},
                     {"DSR_Item_Spirit",45}
-                };
+				};
                 average[] = {
                     {"DSR_Item_Rusty_Spirit",100}
                 };
@@ -4089,63 +3937,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
-                };
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
+				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -4325,8 +4160,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -4482,18 +4317,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -4520,53 +4353,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -4624,7 +4434,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
@@ -4762,8 +4572,8 @@ class CfgItemSpawns {
                     {"DSR_Hgun_ACPC2",55}
                 };
             };
-            class Magazine {
-                rare[] = {
+			class Magazine {
+				rare[] = {
                     {"100Rnd_580x42_Mag_F",13},
                     {"100Rnd_580x42_Mag_Tracer_F",12},
                     {"5Rnd_127x108_Mag",2},             //12.7 mm 5Rnd Mag
@@ -4867,7 +4677,7 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",13},
                     {"6Rnd_45ACP_Cylinder",9}
                 };
-            };
+			};
             class Food {
                 rare[] = {
                     {"DSR_Item_Beans",20},
@@ -4901,7 +4711,7 @@ class CfgItemSpawns {
                 semirare[] = {
                     {"DSR_Item_Franta",55},
                     {"DSR_Item_Spirit",45}
-                };
+				};
                 average[] = {
                     {"DSR_Item_Rusty_Spirit",100}
                 };
@@ -4916,63 +4726,50 @@ class CfgItemSpawns {
             };
             class Medical {
                 rare[] = {
-                    {"DSR_Item_Antibiotic",20},
+                    {"DSR_Item_Antibiotic",75},
                     {"DSR_Item_Bloodbag_Full",25},
-                    {"DSR_Item_Defibrillator",10},
-                    {"DSR_Item_Painkillers",45}
                 };
                 semirare[] = {
-                    {"DSR_Item_Painkillers",25},
                     {"DSR_Item_Bloodbag_Empty",35},
-                    {"DSR_Item_Morphine",10},
-                    {"DSR_Item_Syringe",10},
-                    {"DSR_Item_Splint",20}
+                    //{"DSR_Item_Morphine",10},
+                    //{"DSR_Item_Syringe",10},
+                    {"DSR_Item_Splint",65}
                 };
                 average[] = {
-                    {"DSR_Item_Handwarmer",20},
-                    {"DSR_Item_Painkillers",30},
-                    {"DSR_Item_Bandage",40},
-                    {"dsr_item_waterpurificationtablets",10}
+                    //{"DSR_Item_Handwarmer",20},
+					{"DSR_Item_Painkillers",25},
+					{"DSR_Item_Splint",75}
+                    //{"dsr_item_waterpurificationtablets",10}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Bandage",35},
-                    {"DSR_Item_Handwarmer",15},
-                    {"DSR_Item_Vitamins",50}
+                    {"DSR_Item_Bandage",40},
+					{"DSR_Item_Painkillers",60}
+                    //{"DSR_Item_Handwarmer",15},
+                    //{"DSR_Item_Vitamins",50}
                 };
                 common[] = {
-                    {"DSR_Item_Bandage",20},
-                    {"DSR_Item_Disinfectant",25},
-                    {"DSR_Item_Vitamins",40},
-                    {"DSR_Item_Peptobismol",15}
-                };
+                    {"DSR_Item_Bandage",25},
+					{"DSR_Item_Painkillers",75}
+                    //{"DSR_Item_Disinfectant",25},
+                    //{"DSR_Item_Vitamins",40},
+                    //{"DSR_Item_Peptobismol",15}
+				};
             };
             class Junk {
                 rare[] = {
-                    {"DSR_Item_Suitcase",35},
-                    {"DSR_Item_Money",65}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semirare[] = {
-                    {"DSR_Item_File2",40},
-                    {"DSR_Item_Money",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 average[] = {
-                    {"DSR_Item_Photos",65},
-                    {"DSR_Item_File2",35}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Photos",25},
-                    {"DSR_Item_Notepad",5},
-                    {"DSR_Item_Pen_Black",5},
-                    {"DSR_Item_Pen_Red",5},
-                    {"DSR_Item_Crushed_Can",60}
+                    {"DSR_Item_Crushed_Can",100}
                 };
                 common[] = {
-                    {"DSR_Item_Notepad",15},
-                    {"DSR_Item_Pencil_Blue",4},
-                    {"DSR_Item_Pencil_Green",2},
-                    {"DSR_Item_Pencil_Red",2},
-                    {"DSR_Item_Pencil_Yellow",2},
-                    {"DSR_Item_Crushed_Can",75}
+                    {"DSR_Item_Crushed_Can",100}
                 };
             };
             class Backpack {
@@ -5152,8 +4949,8 @@ class CfgItemSpawns {
                     {"V_BandollierB_rgr",1}
                 };
                 common[] = {
-                    {"V_Press_F",1},
-                    {"V_Rangemaster_belt",1}
+                    {"V_Press_F",75},
+                    {"V_Rangemaster_belt",25}
                 };
             };
             class Helmet {
@@ -5309,18 +5106,16 @@ class CfgItemSpawns {
                     {"ItemCompass",40}
                 };
                 average[] = {
-                    {"Binocular",25},
-                    {"ItemMap",30},
+                    {"Binocular",30},
+                    {"ItemMap",25},
                     {"ItemCompass",45}
                 };
                 semicommon[] = {
-                    {"ItemMap",35},
-                    {"ItemWatch",10},
+                    {"ItemMap",45},
                     {"ItemCompass",55}
                 };
                 common[] = {
-                    {"ItemWatch",55},
-                    {"ItemCompass",45}
+                    {"ItemWatch",100}
                 };
             };
             class GeneralItem {
@@ -5347,53 +5142,30 @@ class CfgItemSpawns {
             };
             class Construction {
                 rare[] = {
-                    {"DSR_Item_Butane_Full",25},
-                    {"DSR_Item_Propane_Full",25},
-                    {"DSR_Item_Metal_Wire",15},
-                    {"DSR_Item_Multimeter",15},
-                    {"DSR_Item_Gascan_Large_Full",5},
-                    {"DSR_Item_Electrical_Comp",10},
-                    {"DSR_Item_Toolbox",5}
+                    {"DSR_Item_Gascan_Large_Full",35},
+                    {"DSR_Item_Electrical_Comp",40},
+                    {"DSR_Item_Toolbox",25}
                 };
                 semirare[] = {
-                    {"DSR_Item_Butane_Torch",10},
-                    {"DSR_Item_Butane_Empty",15},
-                    {"DSR_Item_Propane_Cooker",10},
-                    {"DSR_Item_Drill",10},
-                    {"DSR_Item_Grinder",10},
-                    {"DSR_Item_Tape_Measure",10},
-                    {"DSR_Item_Oilcan_Full",15},
-                    {"DSR_Item_Gascan_Small_Full",10},
-                    {"DSR_Item_Tarp",10}
+                    {"DSR_Item_Gascan_Small_Full",65},
+                    {"DSR_Item_Tarp",35}
                 };
                 average[] = {
-                    {"DSR_Item_Propane_Empty",20},
-                    {"DSR_Item_Pliers",20},
-                    {"DSR_Item_Duct_Tape",15},
-                    {"DSR_Item_Saw",15},
-                    {"DSR_Item_Scrap_Metal",10},
-                    {"DSR_Item_Spanner",5},
-                    {"DSR_Item_Gascan_Large_Empty",10},
-                    {"DSR_Item_Bricks",5}
+                    {"DSR_Item_Pliers",25},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Scrap_Metal",35},
+                    {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Hammer",15},
-                    {"DSR_Item_Oilcan_Empty",15},
-                    {"DSR_Item_Gascan_Small_Empty",15},
-                    {"DSR_Item_Plastic_Drum",5},
-                    {"DSR_Item_Nail_File",10},
-                    {"DSR_Item_Saw",10},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Screw_Driver_Flathead",10},
-                    {"DSR_Item_Screw_Driver_Phillips",10}
+                    {"DSR_Item_Gascan_Small_Empty",25},
+                    {"DSR_Item_Plastic_Drum",15},
+                    {"DSR_Item_Saw",25},
+                    {"DSR_Item_Hardware",35}
                 };
                 common[] = {
-                    {"DSR_Item_Tin_Container",20},
-                    {"DSR_Item_Bucket_Empty",25},
-                    {"DSR_Item_Plastic_Jug",15},
-                    {"DSR_Melee_Axe",15},
-                    {"DSR_Item_Hardware",10},
-                    {"DSR_Item_Seedpack",15}
+                    {"DSR_Melee_Axe",30},
+                    {"DSR_Item_Hardware",45},
+                    {"DSR_Item_Seedpack",25}
                 };
             };
             class Book {
@@ -5451,7 +5223,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Tail_Rotor",35}
                 };
                 semirare[] = {
-                    {"DSR_Item_Car_Battery",100}
+                    {"DSR_Item_Engine_Block",100}
                 };
                 average[] = {
                     {"DSR_Item_Gas_Tank",100}
