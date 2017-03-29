@@ -24,27 +24,26 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
-		class Client_Agro
+		class Client_Sensing
 		{
-			file = "DSZombz\Client\Agro";
+			file = "DSZombz\Client\Sensing";
+			isclient = 1;
+			class zombieCanSee {};
+			class zombieCanSmell {};
+		};
+		class Client_Agroing
+		{
+			file = "DSZombz\Client\Agroing";
 			isclient = 1;
 			class agroCheck {};
 			class agroZombie {};
 			class deagroZombie {};
-			class zombieCanSee {};
-			class zombieCanSmell {};
 		};
-		class Client_Damage
+		class Client_Actions
 		{
-			file = "DSZombz\Client\Damage";
+			file = "DSZombz\Client\Actions";
 			isclient = 1;
 			class zombieAttack {};
-		};
-		class Client_Spawning
-		{
-			file = "DSZombz\Client\Spawning";
-			isclient = 1;
-			class simManager {};
 		};
 		// SERVER CODE
 		class Server 
@@ -53,19 +52,18 @@ class CfgFunctions
 			isserver = 1;
 			class initServer {};
 		};
-		class Server_Network
+		class Server_Events 
 		{
-			file = "DSZombz\Server\Network";
+			file = "DSZombz\Server\Events";
 			isserver = 1;
-			class simUpdateRequest {};
+			class killZombie {};
 		};
 		class Server_Spawning
 		{
 			file = "DSZombz\Server\Spawning";
 			isserver = 1;
 			class spawnZombie {};
-			class killZombie {};
-			class initRoaming {};
+			class spawnManager {};
 			class despawnZombie {};
 		};
 		class Server_Locality
@@ -75,14 +73,12 @@ class CfgFunctions
 			class fromClient {};
 			class toClient {};
 		};
-		class Server_Init
+		class Server_Initialization
 		{
-			file = "DSZombz\Server\Init";
+			file = "DSZombz\Server\Initialization";
 			isserver = 1;
-			class spawnZombieFromCfg {};
 			class readConfig {};
 			class selectLocations {};
-			class publish {};
 		};
 		
 		// BOTH CODE
@@ -91,7 +87,9 @@ class CfgFunctions
 			file = "DSZombz\Both";
 			isclient = 1;
 			class getNearMen {};
+			class getNearPlayers {};
 			class isPlayerNear {};
+			class initRoaming {};
 		};
 	};
 };

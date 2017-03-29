@@ -1,10 +1,10 @@
 params["_zed"];
 
-_maxVisionDistance = 100;
-_maxVisibleAngle = 60;
+_maxVisionDistance = 70;
+_maxVisibleAngle = 45;
 
 _return = false;
-
+//TODO: nighttime - reduce vision distance
 if((player distance _zed) <= _maxVisionDistance) then {
 
 	//get vectors

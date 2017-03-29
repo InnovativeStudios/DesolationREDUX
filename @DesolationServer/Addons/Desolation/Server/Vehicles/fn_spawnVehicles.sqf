@@ -79,10 +79,10 @@ for "_i" from 0 to count(_config)-1 do {
 	_cfg = _config select _i;
 	if(isClass _cfg) then {
 		
-		_houses = [];
+		_spawnData = [];
 		_entry = _cfg >> "Spawns";
 		for "_i" from 0 to count(_entry)-1 do {
-			_houses pushBack configName (_entry select _i);
+			_spawnData pushBack configName (_entry select _i);
 		};
 		
 		_type = configName _cfg;
@@ -96,7 +96,7 @@ for "_i" from 0 to count(_config)-1 do {
 				_hData set[2,_vehicles];
 				_data  set[_index,_hData];
 			};
-		} forEach _houses;
+		} forEach _spawnData;
 	};
 };
 
@@ -187,7 +187,7 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 		};
 	};
 } forEach _houses;
-diag_log ("Spawned" + str(count(_tvs)) + " vehicle(s)");
+diag_log ("Spawned " + str(count(_tvs)) + " vehicle(s)");
 uiSleep 3;
 {
 	_x enableSimulationGlobal false;

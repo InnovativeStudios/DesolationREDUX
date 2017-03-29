@@ -1,13 +1,12 @@
-params["_x","_owner"];
+params["_zIndex","_owner"];
 
-_zombieData = bis_functions_mainscope getVariable ["DSZ_var_zData",[]];
+diag_log format["SPAWNING ZOMBIE # %1",_zIndex];
 
-
-_zData = _zombieData select _x;
+_zData = DSZ_var_spawnData select _zIndex;
 
 _class = _zData select 0;
 _pos = _zData select 1;
-_type = _zData select 2;
+_agroType = _zData select 2;
 _locationpos = _zData select 3;
 _roamDist = _zData select 4;
 
@@ -43,14 +42,14 @@ _zombie forceSpeed (_zombie getSpeed "SLOW");
 _zombie addEventHandler ["MPKilled",{
 	params["_zed"];
 	if(isServer) then {
-		_zDataIndex = _zed getVariable ["zDataIndex",-1];
-		[_zed,_zDataIndex] spawn DSZ_fnc_killZombie;
+		_zIndex = _zed getVariable ["zIndex",-1];
+		[_zed,_zIndex] spawn DSZ_fnc_killZombie;
 	};
 }];
 
-_zombie setVariable ["zDataIndex",_x,true];
-_zombie setVariable ["zAgroType",_type,true];
-DSZ_var_zUnits pushback _zombie;
+_zombie setVariable ["zIndex",_zIndex]; //todo: cehck to see if this is used by clients
+_zombie setVariable ["zInformation",[_agroType,_locationpos,_roamDist],true];
+DSZ_var_spawnedZeds pushback _zombie;
 
 [_owner,_zombie] call DSZ_fnc_toClient;
-[_locationpos,_roamDist,_group] call DSZ_fnc_initRoaming;
+[_locationpos,_roamDist,group _zombie] call DSZ_fnc_initRoaming;
