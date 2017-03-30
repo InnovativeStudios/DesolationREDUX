@@ -42,8 +42,10 @@ while{true} do {
 			if !(toUpper(typeof _x) in _ignore) then {  
 				_nid = netid _x;
 				if !(_nid in _toUnlockNIDS) then {
-					_toLock pushBack _x;
-					_toLockNIDS pushBack _nid;
+					if(isTouchingGround _x || ((speed _x) < 0.01)) then {
+						_toLock pushBack _x;
+						_toLockNIDS pushBack _nid;
+					};
 				};
 			};
 		} forEach _inLockRange;
