@@ -43,4 +43,4 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 		//run code for selected action	
 	};
 };
-true
+ACT_var_Render3DActions
