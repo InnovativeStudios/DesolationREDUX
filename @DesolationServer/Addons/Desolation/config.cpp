@@ -6370,7 +6370,7 @@ class CfgVehicleSpawns {
 				class Land_GarageShelter_01_F {};
 			};
 		};
-		class DSR_SUV {
+		class DSR_SUV_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
 				class Land_SM_01_shelter_narrow_F {};

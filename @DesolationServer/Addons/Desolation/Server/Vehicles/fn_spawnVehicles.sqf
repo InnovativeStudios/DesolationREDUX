@@ -148,41 +148,45 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 
 				_posagl = _x modelToWorld _location;
 				_posasl = AGLtoASL _posagl;
-
-				_tv = _v createVehicle _posagl;
 				
-		
-				clearItemCargoGlobal _tv;
-				clearMagazineCargoGlobal _tv;
-				clearWeaponCargoGlobal _tv;
-				clearBackpackCargoGlobal _tv;
-				
-				
-				_hitpoints = (getAllHitPointsDamage _tv) select 0;
-				if(!isNil {_hitpoints}) then {
-					{
-						if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody") then {
-							_value = random(1);
-							_tv setHitPointDamage [_x,_value];
-						};
-						if(_x == "HitBody") then {
-							_value = random(0.4);
-							_tv setHitPointDamage [_x,_value];
-						};
-					} forEach _hitpoints;
+				// prevent vehicles from spawning where a DB vehicle spawned at
+				_nearVehicles = nearestObjects [_posagl,["LandVehicle","Air","Ship"],5];
+				if(count(_nearVehicles) == 0) then {
+					
+					_tv = _v createVehicle _posagl;
+					
+			
+					clearItemCargoGlobal _tv;
+					clearMagazineCargoGlobal _tv;
+					clearWeaponCargoGlobal _tv;
+					clearBackpackCargoGlobal _tv;
+					
+					
+					_hitpoints = (getAllHitPointsDamage _tv) select 0;
+					if(!isNil {_hitpoints}) then {
+						{
+							if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody") then {
+								_value = random(1);
+								_tv setHitPointDamage [_x,_value];
+							};
+							if(_x == "HitBody") then {
+								_value = random(0.4);
+								_tv setHitPointDamage [_x,_value];
+							};
+						} forEach _hitpoints;
+					};
+					_tv setdir _vDir;
+					_tv setposasl _posasl;
+					
+					_tvs pushBack _tv;
+					_numVtoSpawn = _numVtoSpawn - 1;
+					["spawnVehicle","",[_tv]] call DS_fnc_dbRequest;
+					
+					_oUUID = _tv getVariable ["oUUID",""];
+					
+					DS_var_Vehicles pushback _tv;
+					DS_var_VehicleUUIDS pushback _oUUID;
 				};
-				_tv setdir _vDir;
-				_tv setposasl _posasl;
-				
-				_tvs pushBack _tv;
-				_numVtoSpawn = _numVtoSpawn - 1;
-				["spawnVehicle","",[_tv]] call DS_fnc_dbRequest;
-				
-				_oUUID = _tv getVariable ["oUUID",""];
-				
-				DS_var_Vehicles pushback _tv;
-				DS_var_VehicleUUIDS pushback _oUUID;
-				
 			};
 		};
 	};

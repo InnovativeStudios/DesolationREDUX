@@ -2223,7 +2223,7 @@ class CfgVehicleSpawns {
 		};
 
 		//--- civ
-		class DSR_SUV {
+		class DSR_SUV_F {
 			class Spawns {
 				class Land_Benzina_schnell {};
 				class Land_Kasarna_prujezd {};
