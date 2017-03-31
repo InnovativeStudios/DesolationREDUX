@@ -11,10 +11,11 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
-params["_cursor","_index","_selection"];
+params["_cursor","_index"];
 
-if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Bandage",0] remoteExec ["ACT_fnc_playerAction", 2];
+if ([1] call ACT_fnc_doAnimation) then {
+//	[_cursor, _index, player, "Bandage",2] remoteExec ["ACT_fnc_playerAction", 2];
+	["dsr_item_bandage",_cursor] call DS_fnc_usebandage;
 };
 
 true

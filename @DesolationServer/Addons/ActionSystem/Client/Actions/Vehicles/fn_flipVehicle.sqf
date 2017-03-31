@@ -11,11 +11,10 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
-params["_cursor","_index"];
+params["_cursor","_index","_selection"];
 
-if ([1] call ACT_fnc_doAnimation) then {
-//	[_cursor, _index, player, "Give Blood",2] remoteExec ["ACT_fnc_playerAction", 2];
-	["dsr_item_bloodbag_full",_cursor] call DS_fnc_useblood;
+if ([0] call ACT_fnc_doAnimation) then {
+	[_selection, _cursor, _index, player, "Flip Vehicle",0] remoteExec ["ACT_fnc_flipObject", 2];
 };
 
 true

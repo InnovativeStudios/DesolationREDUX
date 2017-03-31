@@ -11,13 +11,12 @@
  
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
 
-params ["_object","_index","_player","_class","_group"];
+params ["_hitPoint","_object","_index","_player","_class","_group"];
 
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
 
 _required = [];
-_returned = [];
 
 {
 	_aCondition = _x select 0;
@@ -30,8 +29,6 @@ _returned = [];
 	if (_class == _aText) exitWith {
 		_required = _aParameters select 0;
 		diag_log format ["<ActionSystem>: (Debug) _required = %1", _required];
-		_returned = _aParameters select 1;
-		diag_log format ["<ActionSystem>: (Debug) _returned = %1", _returned];
 	};
 		
 } forEach _actionInfo;
@@ -88,47 +85,25 @@ if ((count _nearLootHolders) != 0) then
 
 	_player reveal _lootHolder;*/
 	
-_currentDamage = _object getHitPointDamage _player;
+_currentDamage = damage _object;
 diag_log format ["Start part damage = %1 and %2", _currentDamage, _haveRequiredItems];
 
-if (_haveRequiredItems && (_currentDamage > 0)) then {
-	{
-		_requiredItem = _x;
-		_dpp = (1 / (_requiredItem select 1));
-		diag_log format ["Damage Per %1 = %2", _requiredItem select 0, _dpp];
-		if (_dpp < 1) then {	// is it a tool (better check?)
-			for "_i" from 1 to (_requiredItem select 1) do {
-				if (_currentDamage > 0) then { // we need to make repair
-					if ( (_requiredItem select 0) in magazines _player) then { // we have a part to use
-						diag_log format ["Removing %1", (_requiredItem select 0)];
-						_player removeItem (_requiredItem select 0);	// remove part from player
-						_currentDamage = _currentDamage - _dpp;	// calculate new damage
-						diag_log format ["New damage = %1", _currentDamage];
-						if (_currentDamage < 0) exitWith {	// check if fully repaired
-							_currentDamage = 0;
-							diag_log format ["Fully repaired!"];
-							[_object, [_player, 0]] remoteExec ["setHitPointDamage", 0];
-						};
-						[_object, [_player, _currentDamage]] remoteExec ["setHitPointDamage", 0];
-					};
-				};
-			};
-		} else {
-			diag_log format ["Removing Tool %1", _requiredItem select 0];
-			_player removeItem (_requiredItem select 0);	
-		};
-	} foreach _required;
+if (_haveRequiredItems && (_currentDamage < 1)) then {	// don't flip destroyed vehicles
+	diag_log format ["getPosATL = %1", getPosATL _object];
+	diag_log format ["terrain = %1", getTerrainHeightASL (position _object)];
 
-	diag_log format ["End part damage = %1", _currentDamage];
+	_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2) + 0.1];
 
-	{
-		_player addItem (_x select 0);
-		diag_log format ["Adding Tool %1", (_x select 0)];
-	} forEach _returned;
-
+	if(abs(getTerrainHeightASL (position _object)) - ((getPosASL _object) select 2) < 1) then {
+		_object setVectorUp (surfaceNormal [(getPosATL _object) select 0, (getPosATL _object) select 1]);
+		_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, 0];
+	} else {
+		_object setVectorUp [0,0,1];
+		_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2)];
+	};
 } else {
-	diag_log format ["No need to perform this action"];
-	systemChat "No need to perform this action";
+	diag_log format ["Cannot perform this action"];
+	systemChat "Cannot perform this action";
 };
 
 true

@@ -62,6 +62,7 @@ class CfgFunctions
 			class replaceGlass {};
 			class replaceWheel {};
 			class refuelFueltank {};
+			class flipVehicle {};
 		};
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
@@ -104,6 +105,7 @@ class CfgFunctions
 			class replacePartReq {};
 			class refuelReq {};
 			class playerAction {};
+			class flipObject {};
 		};
 	};
 };
@@ -282,6 +284,16 @@ class Cfg3DActions {
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_refuelFueltank;";
 			};
+			class FlipVehicle {
+				condition = "_selection find 'body' != -1";
+				text = "Flip Vehicle";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_flipVehicle;";
+			};
 		};
 	};
 	class Liftables {
@@ -309,19 +321,34 @@ class Cfg3DActions {
 			class Bandage {
 				condition = "true"; //todo cursor is bleeding check
 				text = "Bandage";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Bandage", 4}
+					};
+				};
 				action = "[_cursor,_index] call ACT_fnc_bandage;";
 			};
 			class Bloodbag {
 				condition = "true"; //todo blood value check
 				text = "Give Blood";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Bloodbag_Full", 1}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Bloodbag_Empty", 1}
+					};
+				};
 				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
 				condition = "true"; //todo broken leg check
 				text = "Apply Splint";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Splint", 1}
+					};
+				};
 				action = "[_cursor,_index] call ACT_fnc_applySplint;";
 			};
 		};

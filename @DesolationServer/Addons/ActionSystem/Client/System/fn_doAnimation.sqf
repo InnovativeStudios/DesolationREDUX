@@ -11,7 +11,7 @@
 
 params[["_action",0]];
 
-_actions = ["Acts_CarFixingWheel"];
+_actions = ["Acts_CarFixingWheel","Medical"];
 
 if(!isNil 'act_var_doingAction') then {
 	if(act_var_doingAction) exitWith {systemchat "You are already doing something!";false};
