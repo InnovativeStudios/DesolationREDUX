@@ -9,6 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
+_break = false;
 if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 	
 	if(!ACT_var_Render2DActions) then {
@@ -18,6 +19,7 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 		if(ACT_var_Active3DIcon != -1) then {
 			ACT_var_2DActionIndex = ACT_var_Active3DIcon;
 			ACT_var_Render2DActions = true;
+			_break = true;
 		};
 	
 	} else {
@@ -29,6 +31,7 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 			_index = ACT_var_2DActionParameters select 1;
 			_selection = ACT_var_2DActionParameters select 2;
 			
+			_break = true;
 			//systemChat str(_data);
 			//systemChat str(_index);
 			//systemChat str(_selection);
@@ -43,4 +46,5 @@ if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
 		//run code for selected action	
 	};
 };
-ACT_var_Render3DActions
+
+_break;
