@@ -6622,7 +6622,7 @@ class CfgBuildables {
 					{"DSR_Item_Hardware",5},
 					{"DSR_Item_Logs",15}
 				};
-				name = "Level 1 Player House V1";
+				name = "Lvl 1 House V1";
 				model = "DSR_Object_House_Lv1";
 				crateObject = "DSR_Object_House_Lv1_Preview2";
 				description = "The small shack is small... and a shack... a good starting house for losers.";
@@ -6636,7 +6636,7 @@ class CfgBuildables {
 					{"DSR_Item_Hardware",5},
 					{"DSR_Item_Logs",15}
 				};
-				name = "Level 1 Player House V2";
+				name = "Lvl 1 House V2";
 				model = "DSR_Object_House_Lv1_2";
 				crateObject = "DSR_Object_House_Lv1_2_Preview2";
 				description = "The small shack is small... and a shack... a good starting house for losers.";
@@ -6650,7 +6650,7 @@ class CfgBuildables {
 					{"DSR_Item_Hardware",10},
 					{"DSR_Item_Logs",45}
 				};
-				name = "Level 2 Player House V1";
+				name = "Lvl 2 House V1";
 				model = "DSR_Object_House_Lv2";
 				crateObject = "DSR_Object_House_Lv2_Preview2";
 				description = "Large wood shack.";
@@ -6665,7 +6665,7 @@ class CfgBuildables {
 					{"DSR_Item_Scrap_Metal",2},
 					{"DSR_Item_Logs",85}
 				};
-				name = "Level 3 Player House V1";
+				name = "Lvl 3 House V1";
 				model = "DSR_Object_House_Lv3";
 				crateObject = "DSR_Object_House_Lv3_Preview2";
 				description = "A small Wood Cabin.";
@@ -6684,7 +6684,7 @@ class CfgBuildables {
 					{"DSR_Item_Lumber",23},
 					{"DSR_Item_Hardware",4}
 				};
-				name = "Base Stockade Wall";
+				name = "Stockade Wall";
 				model = "DSR_Object_Stockade_Wall";
 				crateObject = "DSR_Object_Stockade_Wall_Preview2";
 				description = "Basic stockade wall piece";
@@ -6697,7 +6697,7 @@ class CfgBuildables {
 					{"DSR_Item_Hardware",6},
 					{"DSR_Item_Scrap_Metal",1}
 				};
-				name = "Base Stockade Wall w/ Window";
+				name = "Stockade Wall (Window)";
 				model = "DSR_Object_Stockade_Wall_Window";
 				crateObject = "DSR_Object_Stockade_Wall_Window_Preview2";
 				description = "Basic stockade wall piece";
@@ -6709,7 +6709,7 @@ class CfgBuildables {
 					{"DSR_Item_Lumber",45},
 					{"DSR_Item_Hardware",6}
 				};
-				name = "Stockade Wall Rampart Full";
+				name = "Stockade Wall (Ramp)";
 				model = "DSR_Object_Stockade_Rampart";
 				crateObject = "DSR_Object_Stockade_Rampart_Preview2";
 				description = "Stockade Wall with Rampart and Ramp";
@@ -6721,7 +6721,7 @@ class CfgBuildables {
 					{"DSR_Item_Lumber",38},
 					{"DSR_Item_Hardware",5}
 				};
-				name = "Stockade Wall Rampart no ramp";
+				name = "Stockade Wall (Walkway)";
 				model = "DSR_Object_Stockade_Rampart_2";
 				crateObject = "DSR_Object_Stockade_Rampart_2_Preview2";
 				description = "Stockade Wall with Rampart";
@@ -6735,7 +6735,7 @@ class CfgBuildables {
 					{"DSR_Item_Scrap_Metal",2},
 					{"DSR_Item_Logs",2}
 				};
-				name = "Stockade Wall Rampart no ramp";
+				name = "Stockade Gate";
 				model = "DSR_Object_Stockade_Gate";
 				crateObject = "DSR_Object_Stockade_Gate_Preview2";
 				description = "Stockade Wall with Rampart";
@@ -6774,9 +6774,7 @@ class CfgBuildables {
 				model = "DSR_Object_Storage_Small";
 				description = "A small storage container";
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
-				
 				crateObject = "DSR_Object_Storage_Small_Preview2";
-				
 				condition = "true";
 			};
 			class Crate_Large {
@@ -6789,12 +6787,10 @@ class CfgBuildables {
 				model = "DSR_Object_Storage_Large";
 				description = "A large storage container";
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
-				
 				crateObject = "DSR_Object_Storage_Large_Preview2";
-				
 				condition = "true";
 			};
-			class Pallets {
+			/*class Pallets {
 				parts[] = {
 					{"DSR_Item_Lumber",10}
 				};
@@ -6802,11 +6798,9 @@ class CfgBuildables {
 				model = "Land_Pallets_stack_F";
 				description = "A stack of pallets";
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
-				
 				crateObject = "DSR_Object_Storage_Small_Preview2"; //TODO make a preview object for pallets
-				
 				condition = "true";
-			};
+			};*/
 			class Workbench {
 				parts[] = {
 					{"DSR_Item_Lumber",10},
