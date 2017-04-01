@@ -739,8 +739,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -782,7 +782,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -1175,24 +1175,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
@@ -1528,8 +1528,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -1571,7 +1571,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -1964,24 +1964,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
@@ -2317,8 +2317,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -2360,7 +2360,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -2753,24 +2753,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
@@ -3106,8 +3106,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -3149,7 +3149,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -3542,24 +3542,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
@@ -3895,8 +3895,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -3938,7 +3938,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -4331,24 +4331,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
@@ -4684,8 +4684,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Can_Chicken",25},
                     {"DSR_Item_Can_Clams",25},
                     {"DSR_Item_Tuna",25},
-                    {"dsr_item_mre",4},
-                    {"dsr_item_ration",1}
+                    {"DSR_Item_MRE",4},
+                    {"DSR_Item_Ration",1}
                 };
                 semirare[] = {
                     {"DSR_Item_Tuna",50},
@@ -4727,7 +4727,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25}
+                    {"DSR_Item_Bloodbag_Full",25},
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -5120,24 +5120,24 @@ class CfgItemSpawns {
             };
             class GeneralItem {
                 rare[] = {
-                    {"DSR_Item_Sleeping_Bag",75},
+                    {"DSR_Item_Sleeping_Mat_Roll",75},
                     {"DSR_Item_Fishingrod_Broken",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Camping_Chair",100}
                 };
                 average[] = {
-                    {"DSR_Item_Sleeping_Mat",45},
+                    {"DSR_Item_Sleeping_Mat_Roll",45},
                     {"DSR_Item_Matches",40},
                     {"DSR_Item_Watering_Can",15}
                 };
                 semicommon[] = {
                     {"DSR_Item_Pillow",55},
-                    {"DSR_Item_Sleeping_Mat",45}
+                    {"DSR_Item_Sleeping_Mat_Roll",45}
                 };
                 common[] = {
                     {"DSR_Item_Pillow",85},
-                    {"DSR_Item_Can_Opener",15}
+                    {"DSR_Item_Sleeping_Mat_Roll",15}
                 };
             };
             class Construction {
