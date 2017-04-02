@@ -9,5 +9,20 @@
  * https://www.bistudio.com/monetization/
  */
 
+disableserialization;
 0 cutRsc ["background","PLAIN",0];
 createDialog "DS_spawnSelection";
+
+_display = findDisplay 4000;
+
+_northBTN = _display displayCtrl 1600;
+_eastBTN = _display displayCtrl 1602;
+_southBTN = _display displayCtrl 1601;
+
+_northText = ["NorthButton","DS"] call BASE_fnc_getCfgValue;
+_southText = ["SouthButton","DS"] call BASE_fnc_getCfgValue;
+_eastText = ["EastButton","DS"] call BASE_fnc_getCfgValue;
+
+_southBTN ctrlSetText _southText;
+_northBTN ctrlSetText _northText;
+_eastBTN ctrlSetText _eastText;

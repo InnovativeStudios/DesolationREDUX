@@ -27,7 +27,7 @@ _maxY = ((_regionData select 1) select 1);
 scopeName "exitSpawn";
 
 _multiplier = 1;
-if(worldName != "Chernarus") then {//TODO: make spawn position types based on cfg values and not hard-coded
+if !(call compile (["MakeNorthSouth","DS"] call BASE_fnc_getCfgValue)) then {
 	if(_flip) then {_multiplier = -1;};
 };
 0 cutRsc ["background","PLAIN",0];
