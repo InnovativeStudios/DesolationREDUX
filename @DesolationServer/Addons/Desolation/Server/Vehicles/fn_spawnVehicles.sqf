@@ -45,7 +45,9 @@ if(_numVtoSpawn <= 0) exitWith {
 	diag_log "No more vehicles need to be spawned";
 	uiSleep 3;
 	{	
-		_x enableSimulationGlobal false;
+		if(_x getVariable ["isCar",false]) then {
+			_x enableSimulationGlobal false;
+		};
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
 	[] spawn DS_fnc_vehicleMonitor;
@@ -193,8 +195,10 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 } forEach _houses;
 diag_log ("Spawned " + str(count(_tvs)) + " vehicle(s)");
 uiSleep 3;
-{
-	_x enableSimulationGlobal false;
+{	
+	if(_x getVariable ["isCar",false]) then {
+		_x enableSimulationGlobal false;
+	};
 } forEach _tvs;
 diag_log "Done spawning vehicles";
 [] spawn DS_fnc_vehicleMonitor;

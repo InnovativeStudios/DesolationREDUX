@@ -74,7 +74,7 @@ if(_priority > 10000) then {
 		} else {
 			_object setPosASL _position;
 		};
-		
+		_object setVariable ["isCar",true];
 		_object allowDamage true;
 		_returnData = [_object,_priority,_object_uuid];
 	};
