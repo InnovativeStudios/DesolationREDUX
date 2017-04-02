@@ -11,7 +11,7 @@
 
 params[["_action",0]];
 
-_actions = ["Acts_CarFixingWheel","Medical"];
+_actions = ["Acts_CarFixingWheel","Medic"];
 
 if(!isNil 'act_var_doingAction') then {
 	if(act_var_doingAction) exitWith {systemchat "You are already doing something!";false};
@@ -26,7 +26,12 @@ _event = (findDisplay 46) displayAddEventHandler ["KeyDown",{
 	false;
 }];
 _time = diag_tickTime + 15;
-player playMoveNow (_actions select _action);
+if(_action == 1) then {
+	_time = diag_tickTime + 6;
+	player playActionNow (_actions select _action);
+} else {
+	player playMoveNow (_actions select _action);
+};
 waitUntil{diag_tickTime >= _time || act_var_cancelAction};
 [player,"amovpknlmstpsraswrfldnon"] remoteExecCall ["switchMove",-2];
 (findDisplay 46) displayRemoveEventHandler ["KeyDown",_event];
