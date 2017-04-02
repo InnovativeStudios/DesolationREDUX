@@ -30,7 +30,7 @@ if(_damage > 0.1) then {
 			};
 		};
 	} else {
-		_bloodLoss = _damage * 4250;
+		_bloodLoss = _damage * 1000;
 		DS_var_Blood = DS_var_Blood - _bloodLoss;
 	};
 	if(_selectionName == "legs") then {
