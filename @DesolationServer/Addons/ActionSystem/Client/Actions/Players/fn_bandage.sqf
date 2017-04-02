@@ -13,9 +13,6 @@
  
 params["_cursor","_index"];
 
-if ([1] call ACT_fnc_doAnimation) then {
-//	[_cursor, _index, player, "Bandage",2] remoteExec ["ACT_fnc_playerAction", 2];
-	["dsr_item_bandage",_cursor] call DS_fnc_usebandage;
-};
+["dsr_item_bandage",_cursor] call DS_fnc_usebandage;
 
 true

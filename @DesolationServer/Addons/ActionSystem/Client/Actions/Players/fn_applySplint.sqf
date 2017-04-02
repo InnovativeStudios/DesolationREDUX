@@ -13,9 +13,6 @@
  
 params["_cursor","_index"];
 
-if ([1] call ACT_fnc_doAnimation) then {
-//	[_cursor, _index, player, "Apply Splint",2] remoteExec ["ACT_fnc_playerAction", 2];
-	["dsr_item_splint",_cursor] call DS_fnc_usesplint;
-};
+["dsr_item_splint",_cursor] call DS_fnc_usesplint;
 
 true

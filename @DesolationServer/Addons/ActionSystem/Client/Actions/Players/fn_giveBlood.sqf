@@ -13,9 +13,6 @@
  
 params["_cursor","_index"];
 
-if ([1] call ACT_fnc_doAnimation) then {
-//	[_cursor, _index, player, "Give Blood",2] remoteExec ["ACT_fnc_playerAction", 2];
-	["dsr_item_bloodbag_full",_cursor] call DS_fnc_useblood;
-};
+["dsr_item_bloodbag_full",_cursor] call DS_fnc_useblood;
 
 true
