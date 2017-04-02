@@ -32,9 +32,48 @@ else
 	_unit addUniform (_defaultData select 0);
 	_unit addHeadgear (_defaultData select 1);
 	
-	_unit addMagazine "16Rnd_9x21_Mag";
-	_unit addWeapon "dsr_hgun_rook";
-	_unit addMagazine "dsr_item_bandage";
-	_unit unlinkItem "ItemMap";
-	_unit unlinkItem "ItemWatch";
+	
+	_vest = ["Vest","DS"] call BASE_fnc_getCfgValue;
+	if(_vest != "") then {
+		_unit addVest _vest;
+	};
+	
+	_backpack = ["Backpack","DS"] call BASE_fnc_getCfgValue;
+	if(_backpack != "") then {
+		_unit addBackpack _backpack;
+	};
+	
+	_Items = (["Items","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit addItem _x;
+	} forEach _Items;
+	
+	
+	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit addMagazine _x;
+	} forEach _Magazines;
+	
+	_PrimaryWpn = ["PrimaryWpn","DS"] call BASE_fnc_getCfgValue;
+	if(_PrimaryWpn != "") then {
+		_unit addWeapon _PrimaryWpn;
+	};
+	_PrimaryWpnAttachments = (["PrimaryWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit addPrimaryWeaponItem _x;
+	} forEach _PrimaryWpnAttachments;
+	
+	_HandgunWpn = ["HandgunWpn","DS"] call BASE_fnc_getCfgValue;
+	if(_HandgunWpn != "") then {
+		_unit addWeapon _HandgunWpn;
+	};
+	_HandgunWpnAttachments = (["HandgunWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit addHandgunItem _x;
+	} forEach _HandgunWpnAttachments;
+	
+	_RemoveItems = (["RemoveItems","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit unlinkItem _x;
+	} forEach _RemoveItems;
 };
