@@ -266,7 +266,7 @@ class CfgFunctions
 			class createBleedSource {};
 			class initBleedingSystem {};
 			class onHitPartReceived {};
-			class removeBleedSource {};
+			class removeAllBleedSources {};
 			class updateBleedSource {};
 		};
 		class Client_Inventory {
