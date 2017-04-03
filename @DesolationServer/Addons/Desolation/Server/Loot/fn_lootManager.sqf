@@ -53,7 +53,10 @@ while{true} do {
 	_buildingsNotToDespawn = [];
 
 	{
-		if(alive _x && (vehicle _x == _x)/*possibly move this check somewhere else if it causes bugs*/) then {
+		_inVehicle = (vehicle _x != _x);
+	
+	
+		if(alive _x) then {
 			//--- get house im standing on, fixes bug with some houses despawning loot when im in them
 			_houses = lineIntersectsObjs [(AGLtoASL (_x modelToWorld [0,0,0])),(AGLtoASL(_x modelToWorld [0,0,-0.5])),objNull,_x,true];
 			_nearest_building = objNull;
@@ -78,18 +81,20 @@ while{true} do {
 			if !(toLower(typeof(_nearest_building)) in _all_buildings) then {
 				_nearest_building = nearestBuilding _x;
 			};
-
+			
 
 			if(!isNull _nearest_building) then { /// near a building
-			
-				_buildingsNotToDespawn pushBack _nearest_building; /// mark this building as not despawnable
+				
+				if(!_inVehicle) then {
+					_buildingsNotToDespawn pushBack _nearest_building; /// mark this building as not despawnable
+				};
 				if !(_nearest_building in _buildingsToSpawn) then {
 					
 					_nearest_building_type = toLower(typeof _nearest_building);
 
 					_last_nearest = _x getVariable ["LastNearestBuilding",objNull];
-					if(_last_nearest != _nearest_building) then { /// nearest building has changed
-
+					if((_last_nearest != _nearest_building) || _inVehicle) then { /// nearest building has changed OR you are in a vehicle
+					
 						if(!isNull _last_nearest) then {
 							if(_last_nearest getVariable ["SpawnedLoot",false]) then {
 								if !(_last_nearest in _buildingsToDespawn) then {
@@ -97,7 +102,11 @@ while{true} do {
 								};
 							};
 						};
-
+						
+						if(_inVehicle) then {
+							_nearest_building = objNull;
+							_nearest_building_type = "IN_A_VEHICLE";
+						};
 						_x setVariable ["LastNearestBuilding",_nearest_building]; /// update our previous building to this new one
 
 						if(_nearest_building_type in _all_buildings) then { /// if this building can contain loot
