@@ -393,8 +393,8 @@ class CfgHeliCrashes {
 	};
 	class CrashTypes {
 		class Military {
-			HeliClass = "I_Heli_Transport_02_F";
-			WreckClass = "I_Heli_Transport_02_F";
+			HeliClass = "DSR_UH1H_F";
+			WreckClass = "DSR_Object_Wreck3";
 			WreckSmoke = 1; //1 for true 0 for false!
 			SpawnAltitude = 600;
 			//particle effects config (size and origin)
@@ -425,8 +425,8 @@ class CfgHeliCrashes {
 		};
 		
 		class Medical {
-			HeliClass = "I_Heli_Transport_02_F";
-			WreckClass = "I_Heli_Transport_02_F";
+			HeliClass = "DSR_UH1H_F";
+			WreckClass = "DSR_Object_Wreck3";
 			WreckSmoke = 1; //1 for true 0 for false!
 			SpawnAltitude = 600;
 			//particle effects config (size and origin)
