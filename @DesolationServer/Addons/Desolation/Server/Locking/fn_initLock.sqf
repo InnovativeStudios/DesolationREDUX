@@ -16,7 +16,12 @@ DS_var_finishedLoot = false;
 if(isNil "SM_var_finishedZombies") then {
 	SM_var_finishedZombies = false;
 };
+
 _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""];
-diag_log ("SERVER LOCKING > PASSWORD: " + _password);
-_password serverCommand "#lock";
-diag_log "SERVER LOCKING > LOCKED";
+if(!isNil "TM_fnc_lock") then {
+	[_password] call TM_fnc_lock;
+} else {
+	diag_log ("SERVER LOCKING > PASSWORD: " + _password);
+	_password serverCommand "#lock";
+	diag_log "SERVER LOCKING > LOCKED";
+};
