@@ -46,6 +46,8 @@ if(_priority > 10000) then {
 			{
 				_object setHitPointDamage [_x,_values select _forEachIndex];
 			} forEach _names;
+		} else {
+			diag_log ("VEHICLE " + _classname + " DOES NOT HAVE HITPOINTS SAVED IN DB");
 		};
 		if(_player_uuid != "") then {
 			_object setVariable ["owner",_player_uuid];
