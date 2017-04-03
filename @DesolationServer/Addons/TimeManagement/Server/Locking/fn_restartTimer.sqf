@@ -22,10 +22,14 @@ _Notifications = [];
 	_Notifications pushBack (parseNumber _x);
 } forEach _RestartMessageTimers;
 
+if (_Notifications find 0 == -1) then {_Notifications pushBack 0; };
+
 _endTime = diag_tickTime + _time;
 {
 	waitUntil{uiSleep 10;diag_tickTime >= (_endTime-(_x*60))};
-	["SERVER SHUTTING DOWN IN " + str(_x) + " " + (if(_x > 1) then {"MINUTES"} else {"MINUTE"}) + (if(_x < 16) then {", PLEASE LOGOUT"} else {""})] call TM_fnc_notify;
+	if (_x != 0) then {
+		["SERVER SHUTTING DOWN IN " + str(_x) + " " + (if(_x > 1) then {"MINUTES"} else {"MINUTE"}) + (if(_x < 16) then {", PLEASE LOGOUT"} else {""})] call TM_fnc_notify;
+	};
 } forEach _Notifications;
 
 diag_log  "TimeManagement > Locking Server";
