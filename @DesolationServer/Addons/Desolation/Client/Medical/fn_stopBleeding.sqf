@@ -10,6 +10,6 @@
  */
 
 
-[player] remoteExec ["DS_fnc_removeAllBleedSources",0];
+[player] remoteExec ["DS_fnc_removeAllBleedSources",-2];
 player setVariable ["BLEED_SOURCES",[],true]; //JIP bleed source update
 

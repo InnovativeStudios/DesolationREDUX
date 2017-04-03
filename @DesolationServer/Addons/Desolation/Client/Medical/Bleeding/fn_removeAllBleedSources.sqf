@@ -16,13 +16,16 @@ _sources = _unit getVariable ["DS_var_BleedSources",[]];
 _bsourcesinfo = _unit getVariable["DS_var_BleedSourcesInfo",[]];
 
 
-for "_i" from 0 to count(_sources)-1 do {
+for "_i" from 0 to count(_bsourcesinfo)-1 do {
+	_bsourcesinfo deleteAt 0;
+};
+for "_i" from 0 to count(_bleedSourceData)-1 do {
 	deleteVehicle ((_bleedSourceData select 0) select 0);
 	deleteVehicle ((_bleedSourceData select 0) select 1);
-	
 	_bleedsourcedata deleteAt 0;
+};
+for "_i" from 0 to count(_sources)-1 do {
 	_sources deleteAt 0;
-	_bsourcesinfo deleteAt 0;
 };
 
 _unit setVariable ["DS_var_BleedSourceData",[]];
