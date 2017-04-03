@@ -38,19 +38,19 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 	_password spawn {
 		params["_password"];
 		
-		uiSleep (3600*4)-(60*5); // temp removed to test shutdown
+		uiSleep (3600*4)-(60*5); //4 hours - 5 min
 		[
 			[
-				["SERVER SHUTTING DOWN, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
+				["SERVER SHUTTING DOWN IN 5 MINUTES, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
 			], 0, 0, true
 		] remoteExec  ["BIS_fnc_typeText2", -2];
-		uiSleep 60*4;
+		uiSleep 60*4; //4 min (5 till restart)
 		[
 			[
 				["SERVER SHUTTING DOWN NOW, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
 			], 0, 0, true
 		] remoteExec  ["BIS_fnc_typeText2", -2];
-		uiSleep 60;
+		uiSleep 60; //1 min (1 till restart)
 		
 		// prevent new players from connecting
 		diag_log  "Shutdown > Locking Server";
