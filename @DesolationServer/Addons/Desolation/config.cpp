@@ -782,7 +782,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -1571,7 +1571,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -2360,7 +2360,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -3149,7 +3149,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -3938,7 +3938,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
@@ -4727,7 +4727,7 @@ class CfgItemSpawns {
             class Medical {
                 rare[] = {
                     {"DSR_Item_Antibiotic",75},
-                    {"DSR_Item_Bloodbag_Full",25},
+                    {"DSR_Item_Bloodbag_Full",25}
                 };
                 semirare[] = {
                     {"DSR_Item_Bloodbag_Empty",35},
