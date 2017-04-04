@@ -6852,7 +6852,7 @@ class CfgCraftables {
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
-			class Plyewood {
+			class Plywood {
 				input[] = {
 					{"DSR_Item_Lumber",4},
 					{"DSR_Item_Saw",1},
@@ -6863,10 +6863,10 @@ class CfgCraftables {
 					{"DSR_Item_Saw",1},
 					{"DSR_Item_Toolbox",1}
 				};
-				requiredBuildings[] = {"TODO_WORKBENCH_HERE"};
+				requiredBuildings[] = {"DSR_Object_Workbench"};
 				
-				name = "Plyewood";
-				description = "General Purpose Plyewood.";
+				name = "Plywood";
+				description = "General Purpose Plywood.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
@@ -6936,7 +6936,7 @@ class CfgCraftables {
 					{"DSR_Item_Hammer",1},
 					{"DSR_Item_Spanner",1}
 				};
-				requiredBuildings[] = {"TODO_WORKBENCH_HERE","TODO_FIREPLACE_HERE","TODO_ANVIL_HERE"};
+				requiredBuildings[] = {"DSR_Object_Workbench","TODO_FIREPLACE_HERE","TODO_ANVIL_HERE"};
 				
 				name = "Splint";
 				description = "LAST CRAFTABLE ITEM.";

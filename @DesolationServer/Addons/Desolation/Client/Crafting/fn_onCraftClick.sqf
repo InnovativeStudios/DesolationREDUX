@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * ï¿½ 2016 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -21,12 +21,10 @@
 	_groupIndex = missionNamespace getVariable["CURRENT_GROUP_INDEX",0];
 	_currentIndex = missionNamespace getVariable["CURRENT_INDEX",0];
 
-
 	_craftableData = missionNamespace getVariable ["CFG_CRAFTABLE_DATA",[]];
 	_craftableGroups = missionNamespace getVariable ["CFG_CRAFTABLE_GROUPS",[]];
 
 	_craftables = _craftableData select _groupIndex;
-
 
 	_entry = _craftables select _currentIndex;
 	_cInput = _entry select 0;
@@ -36,11 +34,6 @@
 	_cDesc = _entry select 4;
 	_cPreview = _entry select 5;
 	_cCondition = _entry select 5;
-
-
-
-
-
 
 	_hasRequirements = true;
 	{
@@ -55,15 +48,17 @@
 	if(!_hasRequirements) exitWith {systemchat "You do not have the items required to craft this!"};
 
 	_objects = nearestObjects [player, _cRequiredBuildings, 5];
+
 	_bTemp = +_cRequiredBuildings;
 	{
 		if(count(_bTemp) == 0) exitWith {};
-		_class = toLower(typeof _x);
+		_class = typeof _x;
 		if(_class in _bTemp) then {
 			_bTemp = _bTemp - [_class];
 		};
 		true;
 	} count _objects;
+
 	if(count(_bTemp) > 0) exitWith {systemchat "You are not near the buildings required to craft this!"};
 
 	if(!isNil 'ds_var_doingCraft') then {
@@ -86,32 +81,6 @@
 	ds_var_doingCraft = false;
 	if(ds_var_cancelCraft) exitWith {systemchat "DEBUG: canceled crafting";false};
 
-
-
-	_hasRequirements = true;
-	{
-		_item = _x select 0;
-		_count = _x select 1;
-		if( ({tolower(_x) == tolower(_item)} count (magazines player)) < _count) exitWith {
-			_hasRequirements = false;
-		};
-		true
-	} count _cInput;
-	if(!_hasRequirements) exitWith {systemchat "You do not have the items required to craft this!"};
-
-	_objects = nearestObjects [player, _cRequiredBuildings, 5];
-	_bTemp = +_cRequiredBuildings;
-	{
-		if(count(_bTemp) == 0) exitWith {};
-		_class = toLower(typeof _x);
-		if(_class in _bTemp) then {
-			_bTemp = _bTemp - [_class];
-		};
-		true
-	} count _objects;
-	if(count(_bTemp) > 0) exitWith {systemchat "You are not near the buildings required to craft this!"};
-	
-	
 	{
 		for "_i" from 1 to (_x select 1) do {
 			player removeMagazine (_x select 0);
@@ -127,9 +96,3 @@
 	
 	systemchat ("Crafted: " + _cName);
 };
-
-
-
-
-
-
