@@ -723,14 +723,17 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",8},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",9},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
                 };
 			};
             class Food {
@@ -1512,14 +1515,17 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",8},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",9},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
                 };
 			};
             class Food {
@@ -2301,14 +2307,17 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",8},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",9},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
                 };
 			};
             class Food {
@@ -3090,14 +3099,17 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",8},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",9},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
                 };
 			};
             class Food {
@@ -4668,14 +4680,17 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",8},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",9},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
                 };
 			};
             class Food {
