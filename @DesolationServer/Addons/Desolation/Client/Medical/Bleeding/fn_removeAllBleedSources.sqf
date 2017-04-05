@@ -20,9 +20,9 @@ for "_i" from 0 to count(_bsourcesinfo)-1 do {
 	_bsourcesinfo deleteAt 0;
 };
 for "_i" from 0 to count(_bleedSourceData)-1 do {
-	deleteVehicle ((_bleedSourceData select 0) select 0);
-	deleteVehicle ((_bleedSourceData select 0) select 1);
-	_bleedsourcedata deleteAt 0;
+	_info = _bleedsourcedata deleteAt 0;
+	deleteVehicle (_info select 0);
+	deleteVehicle (_info select 1);
 };
 for "_i" from 0 to count(_sources)-1 do {
 	_sources deleteAt 0;
