@@ -14,30 +14,25 @@ private _objects = lineIntersectsWith [eyePos player, AGLToASL (player modelToWo
 	false 
 } count [" t_"," bo_t_"," str_"," Smrk_"," les_"," brg_"];
 
-if (isNull _tree) exitWith {
-	systemchat "No Tree";
-	
+if (isNull _tree) exitWith {	
 	_closest = cursorTarget;
 	if(isNull _closest) exitWith {};
 	if(player distance _closest > 3) exitWith {};
 	
-	systemchat str(_closest);
 	if(alive _closest) then {
 		if(cursorTarget isKindOf "Man") then {
 			if(isPlayer _closest) then {
-				systemchat "Player Hit";
 				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
 				[player,1] remoteExec ["DS_fnc_onMeleeHit",_closest];
 			} else {
-				systemchat "Zombie Hit";
 				_closest setDamage ((damage _closest) + 0.25);
 			};
 		} else {
 			if(cursorTarget in vehicles) then {
-				systemchat "Vehicle Hit";
-			//	(vehicle _closest) setDamage ((damage _closest) + 0.005);
+				//TODO:  vehicle damage (setDamage doesnt work)
+				//	(vehicle _closest) setDamage ((damage _closest) + 0.005);
 			} else {
-				systemchat "Random object hit";
+				//Random object damage
 			};
 		};
 	};
