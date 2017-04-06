@@ -34,16 +34,16 @@ if(_key in (actionKeys "getover")) then {
 								_holding = currentWeapon player;
 
 								if (_holding == "") then {
-									player playAction "dsr_noWeap_Jump";
+									player playActionNow "dsr_noWeap_Jump";
 								} else {
 									if (_holding == (primaryWeapon player)) then {
-										player playAction "dsr_rifle_Jump";
+										player playActionNow "dsr_rifle_Jump";
 									} else {
 										if (_holding == (handGunWeapon player)) then {
-											player playAction "dsr_pistol_Jump";
+											player playActionNow "dsr_pistol_Jump";
 										} else {
 											if (_holding == (secondaryWeapon player)) then {
-												player playAction "dsr_rpg_Jump";
+												player playActionNow "dsr_rpg_Jump";
 											};
 										};
 									};
