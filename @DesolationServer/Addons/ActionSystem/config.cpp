@@ -82,6 +82,13 @@ class CfgFunctions
 			isclient = 1;
 			class liftObject {};
 		};
+		class Client_Actions_Sit {
+			file = "ActionSystem\Client\Actions\Sit";
+			isclient = 1;
+			class canSit {};
+			class sit {};
+			class stand {};
+		};
 		class Client_System {
 			file = "ActionSystem\Client\System";
 			isclient = 1;
@@ -307,7 +314,19 @@ class Cfg3DActions {
 				condition = "true";
 				text = "Lift";
 				class Parameters {};
-				action = "[_cursor] call ACT_fnc_liftObject"; // our custom lift function will redirect the object to the correct lift system (building / item)
+				action = "[_cursor] call ACT_fnc_liftObject;"; // our custom lift function will redirect the object to the correct lift system (building / item)
+			};
+			class Delete {
+				condition = "!(typeof _cursor find 'Preview2' == -1)";
+				text = "Delete";
+				class Parameters {};
+				action = "deleteVehicle _cursor;";
+			};
+			class Sit {
+				condition = "[_cursor] call ACT_fnc_canSit";
+				text = "Sit";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_sit;";
 			};
 		};
 	};	

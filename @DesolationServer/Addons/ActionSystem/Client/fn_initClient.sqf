@@ -99,6 +99,7 @@ addMissionEventHandler ["Draw3D",{
 								_aText = _x select 1;
 								_aCode = _x select 2;
 								_aReturned = _x select 3;
+								_cursor = ACT_var_2DActionParameters select 0;
 								
 								//systemchat _selection;
 								//systemchat _aCondition;
