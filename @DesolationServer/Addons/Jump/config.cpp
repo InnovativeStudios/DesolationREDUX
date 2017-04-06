@@ -22,7 +22,6 @@ class CfgFunctions
 			file = "Jump\Client";
 			isclient = 1;
 			class keyDown {};
-			class onJump {};
 		};
 	};
 };

@@ -30,10 +30,26 @@ if(_key in (actionKeys "getover")) then {
 								_dir = direction player;
 								_speed = 0.4;
 								player setVelocity [(_vel select 0)+(sin _dir*_speed),(_vel select 1)+(cos _dir*_speed),_height];
-								_lastAnim = animationState player;
-								[player] remoteExec ["JMP_fnc_onJump",0];
-								uiSleep 0.73;
-								player switchMove _lastAnim;
+								
+								_holding = currentWeapon player;
+
+								if (_holding == "") then {
+									player playAction "dsr_noWeap_Jump";
+								} else {
+									if (_holding == (primaryWeapon player)) then {
+										player playAction "dsr_rifle_Jump";
+									} else {
+										if (_holding == (handGunWeapon player)) then {
+											player playAction "dsr_pistol_Jump";
+										} else {
+											if (_holding == (secondaryWeapon player)) then {
+												player playAction "dsr_rpg_Jump";
+											};
+										};
+									};
+								};
+
+								uiSleep 1;
 								JMP_var_Jumping = false;
 							};
 						};
