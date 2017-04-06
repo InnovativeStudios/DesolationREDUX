@@ -87,8 +87,9 @@ if ((count _nearLootHolders) != 0) then
 	
 _currentDamage = damage _object;
 diag_log format ["Start part damage = %1 and %2", _currentDamage, _haveRequiredItems];
+_mass = getMass _object;
 
-if (_haveRequiredItems && (_currentDamage < 1)) then {	// don't flip destroyed vehicles
+if ((_haveRequiredItems || (_mass < 400)) && (_currentDamage < 1)) then {	// don't flip destroyed vehicles
 	diag_log format ["getPosATL = %1", getPosATL _object];
 	diag_log format ["terrain = %1", getTerrainHeightASL (position _object)];
 
