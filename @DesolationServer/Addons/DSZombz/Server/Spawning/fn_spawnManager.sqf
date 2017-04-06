@@ -26,11 +26,10 @@ while{true} do {
 				
 				// play zombie moan if random time delay is triggered
 				if !(_x getVariable ["agroed",false]) then {
-					if(diag_tickTime > ((_x getVariable ["lastMoan",diag_tickTime - 25]) + (_x getVariable ["moanDelay",25]))) then {
-						_sound = ceil(random(36));
-						playSound3D ["\dsr_zombz\zombz\data\sounds\idle_" + str(_sound) + ".ogg", _x]; 
-						_x setVariable ["lastMoan",diag_tickTime];
-						_x setVariable ["moanDelay",(10+random(15))];
+					_moanDelay = _x getVariable ["MoanDelay",diag_tickTime + 5 + random(5)];
+					if(diag_tickTime >= _moanDelay) then {
+						[_x,"DSR_Zombz_Idle" + str(ceil(random(36)))] remoteExec ["say3D",0];
+						_x setVariable ["MoanDelay",diag_tickTime + 5 + random(5)];
 					};
 				};
 				
