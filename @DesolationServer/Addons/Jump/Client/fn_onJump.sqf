@@ -13,4 +13,22 @@
 	Jump: on key pressed event
 */
 params["_unit"];
-_unit switchMove "AovrPercMrunSrasWrflDf";
+private["_holding"];
+
+_holding = currentWeapon _unit;
+
+if (_holding == "") then {
+	_unit playAction "dsr_noWeap_Jump";
+} else {
+	if (_holding == (primaryWeapon _unit)) then {
+		_unit playAction "dsr_rifle_Jump";
+	} else {
+		if (_holding == (handGunWeapon _unit)) then {
+			_unit playAction "dsr_pistol_Jump";
+		} else {
+			if (_holding == (secondaryWeapon _unit)) then {
+				_unit playAction "dsr_rpg_Jump";
+			};
+		};
+	};
+};
