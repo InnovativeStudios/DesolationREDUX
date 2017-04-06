@@ -42,6 +42,12 @@ class CfgFunctions {
 			};
 		};
 		// Server functions
+		class Server_Map
+		{
+			isserver = 1;
+			file = "PluginManager\Map";
+			class spawnMapEdits {};
+		};
 		class Server_Events 
 		{
 			isserver = 1;
@@ -72,3 +78,5 @@ class CfgFunctions {
 		};
 	};
 };
+
+class CfgPluginMapEdits {};	

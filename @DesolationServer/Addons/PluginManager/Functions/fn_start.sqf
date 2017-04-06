@@ -43,6 +43,8 @@ _this spawn {
 	
 	[] call BASE_fnc_initKeybinds;
 	
+	BASE_var_MapEditsDone = false;
+	[] spawn BASE_fnc_spawnMapEdits;
 	
 	diag_log "<PluginManager>: Starting plugins...";
 	{	
