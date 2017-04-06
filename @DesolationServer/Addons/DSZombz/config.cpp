@@ -96,7 +96,85 @@ class CfgFunctions
 
 class CfgZombies 
 {
-	class C_man_1 {
+	class DSR_Citizen1 {
 		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
 	}; 
+	class DSR_Citizen2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Citizen3 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Citizen4 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Worker1 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Worker2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Worker3 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Worker4 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Profiteer1 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Profiteer2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Profiteer3 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Profiteer4 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Woodlander1 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Woodlander2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Woodlander3 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Woodlander4 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Functionary1 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Functionary2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Villager1 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Villager2 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Villager3 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	}; 
+	class DSR_Villager4 {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};  
+	class DSR_Priest {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};  
+	class DSR_Policeman {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};  
+	class DSR_Doctor {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};  
+	class DSR_SchoolTeacher {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};  
+	class DSR_Assistant {
+		AgroMode = "PASSIVE"; //agro mode (AGRESSIVE / NORMAL / PASSIVE)
+	};
 };
