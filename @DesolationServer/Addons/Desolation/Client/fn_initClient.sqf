@@ -16,6 +16,13 @@ if(!_enabled) exitWith {diag_log "DESOLATION IS NOT ENABLED, THE PLUGIN WILL NOT
 0 fadeSound 0;
 0 fadeMusic 0;
 
+if(worldName == "Chernarus") then {
+	"ColorCorrections" ppEffectEnable true;
+	"ColorCorrections" ppEffectAdjust [0.85, 0.7, 0.12, [0.4, 0.34, 0.35, -0.4], [1.7, 1.6, 1, 0.99], [-15, 7, 5, 1]];
+	"ColorCorrections" ppEffectCommit 0;
+};
+
+
 call ds_fnc_initHud;
 call ds_fnc_initInvHandler;
 [] spawn DS_fnc_initBuilding;
