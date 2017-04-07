@@ -25,7 +25,7 @@ if(_key in (actionKeys "getover")) then {
 							_found = true;
 							JMP_var_Jumping = true;
 							[] spawn {
-								_height = 4-((load player)); 
+								_height = 3.5-((load player)); 
 								_vel = velocity player;
 								_dir = direction player;
 								_speed = 0.4;
