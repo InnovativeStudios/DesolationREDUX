@@ -3,6 +3,7 @@ while{true} do {
 	_aliveZombieIndexes = [];
 	_zedsToSpawn = [];
 	
+	_lastNum = -1;
 	DSZ_var_spawnedZeds = DSZ_var_spawnedZeds - [objNull];
 	{
 		if(!isNull _x) then {
@@ -13,10 +14,10 @@ while{true} do {
 				};
 			} else {
 				_aliveZombieIndexes pushback _zIndex; // mark that index as a spawned zombie
+				_nearPlayers = [getposatl _x] call DSZ_fnc_getNearPlayers;
 				
 				if(local group _x) then {
 					//-- transfer locality to nearest man
-					_nearPlayers = [getposatl _x] call DSZ_fnc_getNearPlayers;
 					_plr = _nearPlayers select 0;
 					
 					diag_log "DSZOMBZ > TRANSFERING";
@@ -26,10 +27,17 @@ while{true} do {
 				
 				// play zombie moan if random time delay is triggered
 				if !(_x getVariable ["agroed",false]) then {
-					_moanDelay = _x getVariable ["MoanDelay",diag_tickTime + 5 + random(5)];
+					_moanDelay = _x getVariable ["MoanDelay",diag_tickTime + 3];
 					if(diag_tickTime >= _moanDelay) then {
-						[_x,"DSR_Zombz_Idle" + str(ceil(random(36)))] remoteExec ["say3D",0];
-						_x setVariable ["MoanDelay",diag_tickTime + 5 + random(5)];
+						
+						_sNumber = _lastNum;
+						while{_sNumber == _lastNum} do {
+							_sNumber = ceil(random(36));
+						};
+						_lastNum = _sNumber;
+						
+						[_x,"DSR_Zombz_Idle" + str(_sNumber)] remoteExec ["say3D",_nearPlayers];
+						_x setVariable ["MoanDelay",diag_tickTime + (1.5 + random(3.5))];
 					};
 				};
 				

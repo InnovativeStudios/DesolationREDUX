@@ -28,7 +28,7 @@ if(isNull _group) exitWith {
 };
 
 _zombie = _group createUnit [_class, _pos, [], 0, "NONE"];
-
+_zombie enableFatigue false;
 _zombie disableAI "TARGET";
 _zombie disableAI "AUTOTARGET";
 _zombie disableAI "COVER";
@@ -36,7 +36,7 @@ _zombie disableAI "AUTOCOMBAT";
 
 _zombie setBehaviour "CARELESS";
 _zombie forceSpeed (_zombie getSpeed "SLOW");
-
+_zombie setVariable ["MoanDelay",diag_tickTime + (1.5 + random(3.5))];
 
 
 _zombie addEventHandler ["MPKilled",{

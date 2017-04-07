@@ -1,6 +1,7 @@
-
+params["_zed"];
 
 _standardDamage = {
+	params["_damagedBy"];
 	DS_var_blood = DS_var_blood - (1000 + random(1500));
 	
 	if(random(1) <= 0.15) then {
@@ -15,7 +16,7 @@ _standardDamage = {
 };
 
 if(isNil "DSZ_var_zombieAttackOverride") then {
-	call _standardDamage;
+	[_zed] call _standardDamage;
 } else {
-	call (missionNamespace getVariable [DSZ_var_zombieAttackOverride,_standardDamage]);
+	[_zed] call (missionNamespace getVariable [DSZ_var_zombieAttackOverride,_standardDamage]);
 };
