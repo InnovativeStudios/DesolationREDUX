@@ -26,9 +26,17 @@ _event = (findDisplay 46) displayAddEventHandler ["KeyDown",{
 	false;
 }];
 _time = diag_tickTime + 6;
-player playActionNow (_actions select _action);
+if(vehicle player == player) then {
+	player playActionNow (_actions select _action);
+} else {
+	907149 cutText ["Using item...","PLAIN"];
+};
 waitUntil{diag_tickTime >= _time || ds_var_cancelAction};
-[player,"amovpknlmstpsraswrfldnon"] remoteExecCall ["switchMove",-2];
+if(vehicle player == player) then {
+	[player,"amovpknlmstpsraswrfldnon"] remoteExecCall ["switchMove",-2];
+} else {
+	907149 cutText ["","PLAIN"];
+};
 (findDisplay 46) displayRemoveEventHandler ["KeyDown",_event];
 ds_var_doingAction = false;
 if(ds_var_cancelAction) exitWith {false};
