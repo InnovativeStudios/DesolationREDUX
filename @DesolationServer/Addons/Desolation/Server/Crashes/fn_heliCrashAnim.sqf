@@ -32,26 +32,30 @@ _listeners = [];
 _callsignList = ["Charle 1-1","Misfit 1-1","Burglar 1-1","Foxhound 1-1"];
 _callsign = selectRandom _callsignList;
 _gridRef = mapGridPosition getpos _heli;
-[netID _pilot,_callsign,"Mayday Mayday "+ _callsign + " is hit! We have lost engine power and are going down at GRID "+ _gridRef +" Requesting Immediate Assistance! Over"] remoteExec ["DS_fnc_receiveTransmition",_listeners];
+[netID _pilot,_callsign,["Mayday Mayday "+ _callsign + " is hit! We have lost engine power and are going down at GRID "+ _gridRef +" Requesting Immediate Assistance! Over"]] remoteExec ["DS_fnc_receiveTransmition",_listeners];
 
 
 
 uiSleep 3;
-_heli  setHit ["main_rotor_hit", 1];
-_heli  setHit ["engine_hit", 1];
+_heli  setHitPointDamage ["HitHRotor", 1];
+_heli  setHitPointDamage ["HitEngine", 1];
 waitUntil {isTouchingGround _heli};
 _heli setdamage 1;
-_wreckPos = getpos _heli;
-_wreckDir = getDir _heli;
+_wreckPos = getposATL _heli;
+_wreckDir = vectorDir _heli;
 _wreckUp = VectorUp _heli;
 
 uiSleep 0.5;
 deletevehicle _heli;
-_wreck = _heliWreckModel createvehicle _wreckPos;
-_wreck setDir _wreckDir;
+_wreck = createSimpleObject [_heliWreckModel,_wreckPos];
+_wreck enableSimulationGlobal false;
+_wreck setposATL _wreckPos;
+_wreck setVectorDir _wreckDir;
 _wreck setVectorUp _wreckUp;
 
 if (_wreckSmoke > 0) then {
-	[_wreck,7,[0,0,0],true] remoteExec ["DS_fnc_crashSmoke",-2];
+	_smoke = "test_EmptyObjectForSmoke" createVehicle _wreckPos;
+	_smoke enableDynamicSimulation true;
+	_smoke setPosATL _wreckPos;
 };
 _wreckPos

@@ -82,8 +82,8 @@ while{true} do {
 				_nearest_building = nearestBuilding _x;
 			};
 			
-
-			if(!isNull _nearest_building) then { /// near a building
+			
+			if(!isNull _nearest_building && !isObjectHidden _nearest_building) then { /// near a building
 				
 				if(!_inVehicle) then {
 					_buildingsNotToDespawn pushBack _nearest_building; /// mark this building as not despawnable
