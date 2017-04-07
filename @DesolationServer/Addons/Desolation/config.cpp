@@ -907,6 +907,34 @@ class CfgItemSpawns {
                     {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
+					{"tacs_Uniform_Combat_LS_BS_GP_BB",1},
+					{"tacs_Uniform_Combat_LS_BS_GP_TB",1},
+					{"tacs_Uniform_Combat_LS_BS_TP_BB",1},
+					{"tacs_Uniform_Combat_LS_BS_TP_TB",1},
+					{"tacs_Uniform_Combat_LS_GS_BP_BB",1},
+					{"tacs_Uniform_Combat_LS_GS_TP_BB",1},
+					{"tacs_Uniform_Combat_LS_BS_DGP_BB",1},
+					{"tacs_Uniform_Combat_LS_TS_BP_BB",1},
+					{"tacs_Uniform_Combat_LS_TS_GP_BB",1},
+					{"tacs_Uniform_Combat_LS_TS_GP_TB",1},
+					{"tacs_Uniform_Combat_LS_CDBS_GP_TB",1},
+					{"tacs_Uniform_Combat_LS_CLBS_GP_BB",1},
+					{"tacs_Uniform_Combat_LS_CLRS_TP_BB",1},
+					{"tacs_Uniform_Combat_LS_CPS_BP_BB",1},
+					{"tacs_Uniform_Combat_RS_BS_GP_BB",1},
+					{"tacs_Uniform_Combat_RS_BS_GP_TB",1},
+					{"tacs_Uniform_Combat_RS_BS_TP_BB",1},
+					{"tacs_Uniform_Combat_RS_BS_TP_TB",1},
+					{"tacs_Uniform_Combat_RS_GS_BP_BB",1},
+					{"tacs_Uniform_Combat_RS_GS_TP_BB",1},
+					{"tacs_Uniform_Combat_RS_BS_DGP_BB",1},
+					{"tacs_Uniform_Combat_RS_TS_BP_BB",1},
+					{"tacs_Uniform_Combat_RS_TS_GP_BB",1},
+					{"tacs_Uniform_Combat_RS_TS_GP_TB",1},
+					{"tacs_Uniform_Combat_RS_CDBS_GP_TB",1},
+					{"tacs_Uniform_Combat_RS_CLBS_GP_BB",1},
+					{"tacs_Uniform_Combat_RS_CLRS_TP_BB",1},
+					{"tacs_Uniform_Combat_RS_CPS_BP_BB",1},
                     {"U_B_survival_uniform",5},
                     {"U_B_CTRG_2",5},
                     {"U_C_Scientist",10},
@@ -921,6 +949,34 @@ class CfgItemSpawns {
                     {"U_I_pilotCoveralls",12}                //Green
                 };
                 average[] = {
+					{"tacs_Uniform_Garment_LS_BS_BP_BB",1},
+					{"tacs_Uniform_Garment_LS_BS_GP_BB",1},
+					{"tacs_Uniform_Garment_LS_OS_EP_TB",1},
+					{"tacs_Uniform_Garment_LS_GS_GP_BB",1},
+					{"tacs_Uniform_Garment_LS_GS_BP_BB",1},
+					{"tacs_Uniform_Garment_LS_GS_EP_TB",1},
+					{"tacs_Uniform_Garment_LS_ES_EP_TB",1},
+					{"tacs_Uniform_Garment_LS_ES_BP_BB",1},
+					{"tacs_Uniform_Garment_LS_ES_GP_BB",1},
+					{"tacs_Uniform_Garment_LS_TS_TP_TB",1},
+					{"tacs_Uniform_Garment_LS_GS_TP_TB",1},
+					{"tacs_Uniform_Garment_LS_TS_GP_BB",1},
+					{"tacs_Uniform_Garment_LS_OS_TP_TB",1},
+					{"tacs_Uniform_Garment_LS_TS_BP_BB",1},
+					{"tacs_Uniform_Garment_RS_BS_BP_BB",1},
+					{"tacs_Uniform_Garment_RS_BS_GP_BB",1},
+					{"tacs_Uniform_Garment_RS_OS_EP_TB",1},
+					{"tacs_Uniform_Garment_RS_GS_GP_BB",1},
+					{"tacs_Uniform_Garment_RS_GS_BP_BB",1},
+					{"tacs_Uniform_Garment_RS_GS_EP_TB",1},
+					{"tacs_Uniform_Garment_RS_ES_EP_TB",1},
+					{"tacs_Uniform_Garment_RS_ES_BP_BB",1},
+					{"tacs_Uniform_Garment_RS_ES_GP_BB",1},
+					{"tacs_Uniform_Garment_RS_TS_TP_TB",1},
+					{"tacs_Uniform_Garment_RS_GS_TP_TB",1},
+					{"tacs_Uniform_Garment_RS_TS_GP_BB",1},
+					{"tacs_Uniform_Garment_RS_OS_TP_TB",1},
+					{"tacs_Uniform_Garment_RS_TS_BP_BB",1},
                     {"U_Competitor",20},
                     {"U_BG_Guerilla2_1",15},
                     {"U_BG_Guerilla2_2",15},
@@ -967,6 +1023,13 @@ class CfgItemSpawns {
                     {"V_PlateCarrierIA2_dgtl",1},
                     {"V_PlateCarrierIAGL_dgtl",1},
                     {"V_PlateCarrierSpec_rgr",1},
+					{"tacs_Vest_PlateCarrierFull_Black",1},
+					{"tacs_Vest_PlateCarrierFull_Green",1},
+					{"tacs_Vest_PlateCarrier_Black",1},
+					{"tacs_Vest_PlateCarrier_Green",1},
+					{"tacs_Vest_PlateCarrier_Coyote",1},
+					{"tacs_Vest_PlateCarrier_Khaki",1},
+					{"tacs_Vest_PlateCarrier_MARPAT",1},
                     {"V_I_G_resistanceLeader_F",1},
                     {"V_PlateCarrierSpec_BLK",1},
                     {"V_PlateCarrierSpec_mtp",1},
@@ -981,6 +1044,7 @@ class CfgItemSpawns {
                     {"V_RebreatherIR",1}
                 };
                 semirare[] = {
+                    {"tacs_Vest_Tactical_DarkBlack",1},
                     {"V_TacVest_BLK",1},
                     {"V_TacVest_BLK_POLICE",1},
                     {"V_TacVest_brn",1},
@@ -1013,6 +1077,8 @@ class CfgItemSpawns {
             };
             class Helmet {
                 rare[] = {
+                    {"tacs_Helmet_Ballistic_DarkBlack",1},
+                    {"tacs_Helmet_PilotHeli_Tan",1},
                     {"H_HelmetB_Camo",1},
                     {"H_HelmetB_grass",1},
                     {"H_HelmetB_Black",1},
@@ -1069,6 +1135,7 @@ class CfgItemSpawns {
                     {"H_RacingHelmet_1_red_F",1},
                     {"H_RacingHelmet_1_white_F",1},
                     {"H_RacingHelmet_1_yellow_F",1},
+                    {"tacs_Cap_Headphones_BlackLogo",1},
                     {"H_Beret_grn",1},
                     {"H_Beret_BLK",1},
                     {"H_Beret_BLK_POLICE",1},
@@ -1114,6 +1181,8 @@ class CfgItemSpawns {
                     {"H_Cap_BLK_Raven",1},
                     {"H_Cap_brn_SPECOPS",1},
                     {"H_Cap_Khaki_specops_UK",1},
+                    {"tacs_Cap_Earpiece_BlackLogo",1},
+                    {"tacs_Cap_Earpiece_TanLogo",1},
                     {"H_Cap_headphones",1},
                     {"H_Cap_press",1},
                     {"H_Cap_marshal",1},
@@ -1678,6 +1747,7 @@ class CfgItemSpawns {
             class Uniform {
                 rare[] = {
                     {"U_B_CombatUniform_mcam_tshirt",5},
+                    {"U_B_CombatUniform_mcam_tshirt",5},
                     {"U_B_CombatUniform_mcam",5},
                     {"U_I_CombatUniform",5},                //Green or Independant
                     {"U_O_CombatUniform_ocamo",5},          //Hex
@@ -1699,6 +1769,7 @@ class CfgItemSpawns {
                     {"U_O_OfficerUniform_ocamo",5}
                 };
                 semirare[] = {
+                    {"tacs_Suit_VIP",5},
                     {"U_B_survival_uniform",5},
                     {"U_B_CTRG_2",5},
                     {"U_C_Scientist",10},
@@ -1713,6 +1784,26 @@ class CfgItemSpawns {
                     {"U_I_pilotCoveralls",12}                //Green
                 };
                 average[] = {
+					{"tacs_Uniform_Polo_TP_LS_TP_TB",1},
+					{"tacs_Uniform_Polo_TP_TS_GP_BB",1},
+					{"tacs_Uniform_Polo_TP_BS_TP_TB",1},
+					{"tacs_Uniform_Polo_TP_BS_LP_BB",1},
+					{"tacs_Uniform_Polo_TP_LS_GP_BB",1},
+					{"tacs_Uniform_Polo_TP_OS_TP_BB",1},
+					{"tacs_Uniform_Polo_TP_OS_LP_BB",1},
+					{"tacs_Uniform_Polo_TP_GS_TP_TB",1},
+					{"tacs_Uniform_Polo_TP_WS_TP_TB",1},
+					{"tacs_Uniform_Polo_TP_WS_LP_BB",1},
+					{"tacs_Uniform_Polo_TP_WS_GP_BB",1},
+					{"tacs_Uniform_Polo_CP_LS_TP_OB",1},
+					{"tacs_Uniform_Polo_CP_RS_LP_BB",1},
+					{"tacs_Uniform_Polo_CP_BS_TP_BB",1},
+					{"tacs_Uniform_TShirt_JP_GS_LP_BB",1},
+					{"tacs_Uniform_TShirt_JP_GS_TP_BB",1},
+					{"tacs_Uniform_TShirt_JP_BS_LP_BB",1},
+					{"tacs_Uniform_TShirt_JP_BS_TP_BB",1},
+					{"tacs_Uniform_TShirt_JP_LS_LP_BB",1},
+					{"tacs_Uniform_TShirt_JP_WS_LP_BB",1},
                     {"U_Competitor",20},
                     {"U_BG_Guerilla2_1",15},
                     {"U_BG_Guerilla2_2",15},
@@ -1880,6 +1971,14 @@ class CfgItemSpawns {
                     {"H_MilCap_dgtl",1}
                 };
                 semicommon[] = {
+					{"tacs_Cap_BlackLogo",1},
+					{"tacs_Cap_TanLogo",1},
+					{"tacs_Cap_Backwards_BlackLogo",1},
+					{"tacs_Cap_Backwards_TanLogo",1},
+					{"tacs_Hat_Boonie_RangerGreen",1},
+					{"tacs_Hat_Boonie_DesertMARPAT",1},
+					{"tacs_Hat_Boonie_Woodland",1},
+					{"tacs_Hat_Boonie_UCP",1},
                     {"H_Booniehat_dirty",1},
                     {"H_Booniehat_khk_hs",1},
                     {"H_Booniehat_grn",1},
