@@ -25,8 +25,14 @@ if(_damage > 0.1) then {
 				_bloodLoss = _damage * 825;
 				DS_var_Blood = DS_var_Blood - _bloodLoss;
 			} else {
-				_bloodLoss = _damage * 8250;
-				DS_var_Blood = DS_var_Blood - _bloodLoss;
+				_fallSpeed = (velocity _unit) select 2;
+				if(_fallSpeed < -2) then {
+					_bloodLoss = _damage * 750;
+					DS_var_Blood = DS_var_Blood - _bloodLoss;
+				} else {
+					_bloodLoss = _damage * 8250;
+					DS_var_Blood = DS_var_Blood - _bloodLoss;
+				};
 			};
 		};
 	} else {
@@ -35,15 +41,18 @@ if(_damage > 0.1) then {
 	};
 	if(_selectionName == "legs") then {
 		if(!isNil {_damage}) then {
-			if(_damage > 0.5) then {
-				[] spawn {
-					player setHitPointDamage ["HitLegs",1];
+			if(_damage > 0.3) then {
+				[_unit] spawn {
+					params["_unit"];
+					_unit setHitPointDamage ["HitLegs",1];
 				};
 			};
 		};
 	};
 	if(_selectionName == "head") then {
-		[floor(5 + random(5))] spawn ds_fnc_knockOut;
+		if(lifeState _unit != "INCAPACITATED") then {
+			[floor(5 + random(5))] spawn ds_fnc_knockOut;
+		};
 	};
 };
 ((_damage >= 1) && _allowArmaDamage && _allowDamage);
