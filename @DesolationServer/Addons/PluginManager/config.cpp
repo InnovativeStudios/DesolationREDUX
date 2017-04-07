@@ -80,3 +80,4 @@ class CfgFunctions {
 };
 
 class CfgPluginMapEdits {};	
+class CfgPluginReplacements {};

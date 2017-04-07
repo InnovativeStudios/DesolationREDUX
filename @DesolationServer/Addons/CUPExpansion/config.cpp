@@ -14,6 +14,7 @@ class Plugins
 		tag = "CUPE";
 	};
 };
+
 class CfgItemSpawns {
 	class Buildings {
 		class Land_Mil_ControlTower {
