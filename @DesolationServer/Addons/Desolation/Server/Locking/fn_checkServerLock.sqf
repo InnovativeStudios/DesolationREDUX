@@ -9,6 +9,11 @@
  * https://www.bistudio.com/monetization/
  */
 
+if(DS_var_unlocked) exitWith {}; // already unlocked, dont start threads again
+
+if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+	DS_var_unlocked = true;
+};
  
  _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""];
  if(!isNil "TM_fnc_checkLock") then {

@@ -11,6 +11,7 @@
 
 DS_var_finishedVehicles = false;
 DS_var_finishedLoot = false;
+DS_var_unlocked = false;
 
 // if the variable is undefined, define it (This is temporary until the new zombie system is in place)
 if(isNil "SM_var_finishedZombies") then {
