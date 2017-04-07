@@ -34,12 +34,15 @@ for "_i" from 1 to _numberOfCrashes do
 	
 	diag_log "<HELI CRASHES>: Spawning heli crash.";
 
-	_heli = _heliType createVehicle [0,0,0];
-
+	_heli = _heliType createVehicle [0,0,500];
+	_heli setVariable ["sim_manager_ignore",true];
+	
 	createVehicleCrew _heli;
 	_heli engineOn true;
-	(group _heli) move _crashPos;
+	
 	_heli setPosATL _spawnPos;
+	(group _heli) move _crashPos;
+	
 	(group _heli) setSpeedMode "full";
 	while { (_timeout - diag_tickTime) >= 0} do
 	{

@@ -40,11 +40,13 @@ while{true} do {
 		} forEach _inUnlockRange;
 		{
 			if !(toUpper(typeof _x) in _ignore) then {  
-				_nid = netid _x;
-				if !(_nid in _toUnlockNIDS) then {
-					if(isTouchingGround _x || ((speed _x) < 0.01)) then {
-						_toLock pushBack _x;
-						_toLockNIDS pushBack _nid;
+				if !(_x getVariable ["sim_manager_ignore",false]) then {
+					_nid = netid _x;
+					if !(_nid in _toUnlockNIDS) then {
+						if(isTouchingGround _x || ((speed _x) < 0.01)) then {
+							_toLock pushBack _x;
+							_toLockNIDS pushBack _nid;
+						};
 					};
 				};
 			};
