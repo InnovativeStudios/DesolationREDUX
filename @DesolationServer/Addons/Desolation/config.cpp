@@ -7038,27 +7038,22 @@ class CfgCraftables {
 		};
 	};
 	class Medical {
-		condition = "false"; 
+		condition = "true"; 
 		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 		name = "Medical"; 
 		class Craftables {
 			class Splint {
 				input[] = {
-					{"dsr_item_weapons_parts",1},
-					{"DSR_Item_Hardware",2},
-					{"DSR_Item_Scrap_Metal",2},
-					{"DSR_Item_Hammer",1},
-					{"DSR_Item_Spanner",1}
+					{"dsr_item_Lumber",1},
+					{"DSR_Item_Bandage",2}
 				};
 				output[] = {
-					{"dsr_smg_sten",1},
-					{"DSR_Item_Hammer",1},
-					{"DSR_Item_Spanner",1}
+					{"DSR_Item_Splint",1}
 				};
-				requiredBuildings[] = {"DSR_Object_Workbench","TODO_FIREPLACE_HERE","TODO_ANVIL_HERE"};
+				requiredBuildings[] = {};
 				
 				name = "Splint";
-				description = "LAST CRAFTABLE ITEM.";
+				description = "Fixes broken legs.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
