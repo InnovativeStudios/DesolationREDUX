@@ -13,5 +13,3 @@ _index = (DSZ_var_spawnedZeds find _zed);
 if(_index > -1) then {
 	DSZ_var_spawnedZeds deleteAt _index;
 };
-_group = group _zed;
-deleteGroup _group;
