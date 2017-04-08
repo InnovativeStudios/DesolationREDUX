@@ -61,7 +61,7 @@ while{true} do {
 	} forEach DSZ_var_spawnData;
 	uiSleep 0.25;
 	{
-		if(local _x && ({alive _x} count(units _x)) == 0) then {
+		if(local _x && ({((diag_tickTime-2) >= (_x getVariable ["diedAt",diag_tickTime-3])} count(units _x)) == 0) then {
 			deleteGroup _x;
 		};
 	} forEach allGroups;
