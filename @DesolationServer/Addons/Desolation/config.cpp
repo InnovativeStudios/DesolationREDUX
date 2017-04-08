@@ -51,42 +51,6 @@ class CfgPluginEvents {
 	};
 };
 
-
-/*
-class CfgPluginActions {
-	class RepairCars {
-		class Actions {
-			class RepairEngine {
-				text = "Repair Engine";
-				action = "systemchat 'repairing engine'; [] spawn DS_fnc_repairEngine;";
-				condition = "call DS_fnc_CheckEngine";
-			};
-			class RepairBody {
-				text = "Repair Body";
-				action = "systemchat 'repairing body'; [] spawn DS_fnc_repairBody;";
-				condition = "call DS_fnc_CheckBody";
-			};
-			class RepairFueltank {
-				text = "Repair Fuel Tank";
-				action = "systemchat 'repairing fuel tank'; [] spawn DS_fnc_repairFuelTank;";
-				condition = "call DS_fnc_CheckFueltank";
-			};
-			class RepairGlass {
-				text = "Repair Glass";
-				action = "systemchat 'repairing glass'; [] spawn DS_fnc_repairGlass;";
-				condition = "call DS_fnc_CheckGlass";
-			};
-			class RepairWheels {
-				text = "Repair Wheel";
-				action = "systemchat 'repairing wheels'; [] spawn DS_fnc_repairWheels;";
-				condition = "call DS_fnc_CheckWheels";
-			};
-		};
-		condition = "_cursor isKindOf 'LandVehicle' && player distance _cursor < 5";
-		text = "Repair Vehicle";
-	};
-};
-*/
 class CfgPluginKeybinds 
 {
 	class OpenJournalIndex 
@@ -412,7 +376,7 @@ class CfgHeliCrashes {
 				maxLootpiles = 10;//not implemented yet
 				weapons[] = {
 					"DSR_Srifle_EBR",
-					"DSR_Srifle_M4A3"
+					"DSR_arifle_M4A3"
 				};
 				magazines[] = {
 					"20Rnd_762x51_Mag",
