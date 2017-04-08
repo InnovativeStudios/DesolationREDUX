@@ -46,6 +46,7 @@ _heli setdamage 1;
 _wreckPos = getposATL _heli;
 _wreckDir = vectorDir _heli;
 _wreckUp = VectorUp _heli;
+_wreckPos set [2,0];
 
 uiSleep 0.5;
 deletevehicle _heli;
