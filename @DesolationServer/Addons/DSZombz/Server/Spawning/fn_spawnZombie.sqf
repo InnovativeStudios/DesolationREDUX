@@ -36,7 +36,7 @@ _zombie disableAI "AUTOCOMBAT";
 
 _zombie setBehaviour "CARELESS";
 _zombie forceSpeed (_zombie getSpeed "SLOW");
-_zombie setVariable ["MoanDelay",diag_tickTime + (1.5 + random(3.5))];
+_zombie setVariable ["MoanDelay",diag_tickTime + (3 + random(3))];
 
 
 _zombie addMPEventHandler ["MPKilled",{

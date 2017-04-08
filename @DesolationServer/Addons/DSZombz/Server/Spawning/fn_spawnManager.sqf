@@ -37,7 +37,7 @@ while{true} do {
 						_lastNum = _sNumber;
 						
 						[_x,"DSR_Zombz_Idle" + str(_sNumber)] remoteExec ["say3D",_nearPlayers];
-						_x setVariable ["MoanDelay",diag_tickTime + (1.5 + random(3.5))];
+						_x setVariable ["MoanDelay",diag_tickTime + (3 + random(3))];
 					};
 				};
 				
