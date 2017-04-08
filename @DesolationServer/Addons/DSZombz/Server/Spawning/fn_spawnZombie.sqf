@@ -34,7 +34,8 @@ _zombie disableAI "AUTOTARGET";
 _zombie disableAI "COVER";
 _zombie disableAI "AUTOCOMBAT";
 
-_zombie setBehaviour "CARELESS";
+_group setBehaviour "CARELESS";
+_group setCombatMode "BLUE";
 _zombie forceSpeed (_zombie getSpeed "SLOW");
 _zombie setVariable ["MoanDelay",diag_tickTime + (3 + random(3))];
 

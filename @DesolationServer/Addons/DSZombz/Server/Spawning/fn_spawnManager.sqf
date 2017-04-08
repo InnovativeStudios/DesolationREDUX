@@ -61,7 +61,7 @@ while{true} do {
 	} forEach DSZ_var_spawnData;
 	uiSleep 0.25;
 	{
-		if({((diag_tickTime-2) >= (_x getVariable ["diedAt",diag_tickTime-3])} count(units _x)) == 0) then {
+		if(({((diag_tickTime-3) >= (_x getVariable ["diedAt",diag_tickTime-4]))} count(units _x)) == 0) then {
 			if(!local _x) then {
 				_x setGroupOwner clientOwner;
 			};
