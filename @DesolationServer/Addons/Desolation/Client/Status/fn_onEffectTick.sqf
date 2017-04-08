@@ -30,7 +30,7 @@ if(DS_var_Blood <= 0) then {
 		} else {
 			if(_bloodPercent < 80) then {
 				if(random(100) < 10) then {
-					systemchat "Debug: I feel weak";
+					// feels week
 				};
 			};
 		};
