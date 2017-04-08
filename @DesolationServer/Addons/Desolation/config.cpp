@@ -380,6 +380,10 @@ class CfgHeliCrashes {
 				};
 				magazines[] = {
 					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"30Rnd_556x45_Stanag",
+					"30Rnd_556x45_Stanag",
 					"30Rnd_556x45_Stanag"
 				};
 				items[] = {

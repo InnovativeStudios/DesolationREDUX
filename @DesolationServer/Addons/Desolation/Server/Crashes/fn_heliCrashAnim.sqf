@@ -41,7 +41,7 @@ uiSleep 3;
 _heli  setHitPointDamage ["HitHRotor", 1];
 _heli  setHitPointDamage ["HitEngine", 1];
 waitUntil {isTouchingGround _heli};
-deletevehicle _smoke;
+deletevehicle _smoke;//TODO: sometimes smoke isnt deleted?
 _heli setdamage 1;
 _wreckPos = getposATL _heli;
 _wreckDir = vectorDir _heli;

@@ -41,7 +41,7 @@ if (count _weaponLoot > 0) then {
 //place mags in crate
 if (count _magazineLoot > 0) then {
 	{
-		_lootcrate addMagazineCargoGlobal [_x, 3];
+		_lootcrate addMagazineCargoGlobal [_x, 1];
 	}foreach _magazineLoot;
 };
 

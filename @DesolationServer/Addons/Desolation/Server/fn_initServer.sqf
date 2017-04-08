@@ -60,7 +60,7 @@ waitUntil{BASE_var_MapEditsDone}; // wait for map to finish loading
 		{ 
 			if ((count units _x) == 0) then 
 			{
-				deleteGroup _x;
+				_x remoteExecCall ["deleteGroup",groupOwner _x]; //delete group where it is local
 			};
 		} forEach allGroups;
 		uiSleep 20;
