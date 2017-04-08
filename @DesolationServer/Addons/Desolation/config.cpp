@@ -333,6 +333,7 @@ class CfgFunctions
 		class Server_Building {
 			file = "Desolation\Server\Building";
 			isserver = 1;
+			class requestOwned {};
 			class buildingMonitor {};
 			class initBuildingSys {};
 		};
@@ -6730,7 +6731,7 @@ class CfgVehicleSpawns {
 class CfgBuildables {
     class Type1Houses {
 		condition = "true"; //--- a check to see if the person has knowledge to build this type
-		preview = "\SM_Zombz\Survivors_icon.paa"; //--- preview icon for index
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; //--- preview icon for index
 		name = "Type 1 Houses"; //--- name of this buidlable group
 		class Buildables {
 			class HouseLvl1 {
@@ -6794,7 +6795,7 @@ class CfgBuildables {
 	};
 	class Stockade {
 		condition = "true"; 
-		preview = "\SM_Zombz\Survivors_icon.paa";  
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";  
 		name = "Stockade Items";  
 		class Buildables {
 			class StockadeWall {
@@ -6878,7 +6879,7 @@ class CfgBuildables {
 	};
 	class Misc {
 		condition = "true"; 
-		preview = "\SM_Zombz\Survivors_icon.paa";  
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";  
 		name = "Miscellaneous";  
 		class Buildables {
 			
@@ -6951,7 +6952,7 @@ class CfgBuildables {
 class CfgCraftables {
 	class Materials {
 		condition = "true"; 
-		preview = "\SM_Zombz\Survivors_icon.paa"; 
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
 		name = "Materials"; 
 		class Craftables {
 			class Lumber {
@@ -6992,7 +6993,7 @@ class CfgCraftables {
 	};
 	class Tools {
 		condition = "true"; 
-		preview = "\SM_Zombz\Survivors_icon.paa"; 
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
 		name = "Tools"; 
 		class Craftables {
 			class FishingRod {
@@ -7014,7 +7015,7 @@ class CfgCraftables {
 	};
 	class Food {
 		condition = "true"; 
-		preview = "\SM_Zombz\Survivors_icon.paa";
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 		name = "Food"; 
 		class Craftables {
 			
@@ -7022,7 +7023,7 @@ class CfgCraftables {
 	};
 	class Gear {
 		condition = "false";
-		preview = "\SM_Zombz\Survivors_icon.paa"; 
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
 		name = "Gear";
 		class Craftables {
 			
@@ -7030,7 +7031,7 @@ class CfgCraftables {
 	};
 	class Weapons {
 		condition = "false"; 
-		preview = "\SM_Zombz\Survivors_icon.paa";
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 		name = "Weapons"; 
 		class Craftables {
 			
@@ -7038,7 +7039,7 @@ class CfgCraftables {
 	};
 	class Medical {
 		condition = "false"; 
-		preview = "\SM_Zombz\Survivors_icon.paa";
+		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 		name = "Medical"; 
 		class Craftables {
 			class Splint {

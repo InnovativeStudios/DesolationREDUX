@@ -1,5 +1,7 @@
 
-params["_buildings",[]];
+params[["_buildings",[]]];
 {
-	_x setVariable["bis_disabled_Door_1",0]; 
+	for "_i" from 1 to 5 do {
+		_x setVariable["bis_disabled_Door_" + str(_i),0]; // enable door access
+	};
 } forEach _buildings;

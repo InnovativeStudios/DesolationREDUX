@@ -22,7 +22,7 @@ if(_goggles != "") then {
 	};
 };
 
-[player] remoteExec ["DS_fnc_requestOwned",-2];
+[player] remoteExec ["DS_fnc_requestOwned",2];
 
 //--- fade into the game
 1 fadeSound 2;
