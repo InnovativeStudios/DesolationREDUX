@@ -139,7 +139,7 @@ if(_savedLoot isEqualTo []) then {
 				} forEach _itemArray;
 				// TODO: fix this shit code
 				if(isClass (configFile >> "CfgWeapons" >> _item)) then {
-					if((toLower(_item) find "item" == 0) || (toLower(_item) find "h_" == 0) || (toLower(_item) find "u_" == 0) || (toLower(_item) find "v_" == 0) || (toLower(_item) find "minedetector" == 0) || (toLower(_item) find "binocular" == 0) || (toLower(_item) find "rangefinder" == 0) || (toLower(_item) find "NVGoggles" == 0) || (toLower(_item) find "laserdesignator" == 0) || (toLower(_item) find "firstaidkit" == 0) || (toLower(_item) find "medkit" == 0) || (toLower(_item) find "toolkit" == 0) || (toLower(_item) find "muzzle_" == 0) || (toLower(_item) find "optic_" == 0) || (toLower(_item) find "acc_" == 0) || (toLower(_item) find "bipod_" == 0)) then {
+					if((toLower(_item) find "tacs_" == 0) || (toLower(_item) find "item" == 0) || (toLower(_item) find "h_" == 0) || (toLower(_item) find "u_" == 0) || (toLower(_item) find "v_" == 0) || (toLower(_item) find "minedetector" == 0) || (toLower(_item) find "binocular" == 0) || (toLower(_item) find "rangefinder" == 0) || (toLower(_item) find "NVGoggles" == 0) || (toLower(_item) find "laserdesignator" == 0) || (toLower(_item) find "firstaidkit" == 0) || (toLower(_item) find "medkit" == 0) || (toLower(_item) find "toolkit" == 0) || (toLower(_item) find "muzzle_" == 0) || (toLower(_item) find "optic_" == 0) || (toLower(_item) find "acc_" == 0) || (toLower(_item) find "bipod_" == 0)) then {
 						_object addItemCargoGlobal [_item,1];
 					} else {
 						if(toLower(_type) in ["handgun","weapon"]) then {
