@@ -26,6 +26,11 @@ _backpackLoot = getArray (configFile >> "CfgHeliCrashes" >> "CrashTypes">> _cras
 _lootCratePos = _heliCrashPos findEmptyPosition [1, 30, "Box_NATO_Wps_F"];
 _lootcrate = "Box_NATO_Wps_F" createVehicle _lootCratePos;
 
+clearItemCargoGlobal _lootcrate; 
+clearWeaponCargoGlobal _lootcrate; 
+clearMagazineCargoGlobal _lootcrate; 
+clearBackpackCargoGlobal _lootcrate; 
+
 //place weapons in crate
 if !(count _weaponLoot > 0) then {
 	{

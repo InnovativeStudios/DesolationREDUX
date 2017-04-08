@@ -411,15 +411,20 @@ class CfgHeliCrashes {
 			class loot {
 				maxLootpiles = 10;//not implemented yet
 				weapons[] = {
-					"DSR_Srifle_EBR"
+					"DSR_Srifle_EBR",
+					"DSR_Srifle_M4A3"
 				};
 				magazines[] = {
-				
+					"20Rnd_762x51_Mag",
+					"30Rnd_556x45_Stanag"
 				};
 				items[] = {
-					"FirstAidKit"
+					"tacs_Uniform_Garment_LS_BS_BP_BB",
+					"tacs_Vest_PlateCarrierFull_Black",
+					"tacs_Helmet_Ballistic_DarkBlack"
 				};
 				backpacks[] = {
+					"tacs_Backpack_Carryall_DarkBlack"
 				};
 			};
 		};
@@ -446,15 +451,17 @@ class CfgHeliCrashes {
 
 				};
 				magazines[] = {
-					"DSR_Item_Antibiotic",
+					"DSR_Item_Bloodbag_Full",
+					"DSR_Item_Bloodbag_Full",
 					"DSR_Item_Bloodbag_Full",
 					"DSR_Item_Bandage",
-					"DSR_Item_Defibrillator",
-					"DSR_Item_Disinfectant",
-					"DSR_Item_Painkillers"
+					"DSR_Item_Bandage",
+					"DSR_Item_Bandage",
+					"DSR_Item_Bandage",
+					"DSR_Item_Bandage",
+					"DSR_Item_Bandage"
 				};
 				items[] = {
-					"FirstAidKit"
 				};
 				backpacks[] = {
 				};
