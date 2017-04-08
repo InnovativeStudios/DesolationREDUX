@@ -39,9 +39,9 @@ _zombie forceSpeed (_zombie getSpeed "SLOW");
 _zombie setVariable ["MoanDelay",diag_tickTime + (1.5 + random(3.5))];
 
 
-_zombie addEventHandler ["MPKilled",{
+_zombie addEventHandler ["Killed",{ //addMPEventHandler MPKilled if this doesnt work
 	params["_zed"];
-	if(isServer) then {
+	if(isServer) then { //TODO if KIlled event works, remove this if
 		_zIndex = _zed getVariable ["zIndex",-1];
 		[_zed,_zIndex] spawn DSZ_fnc_killZombie;
 	};

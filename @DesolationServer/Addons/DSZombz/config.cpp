@@ -12,7 +12,17 @@ class Plugins
 		tag = "DSZ";
 	};
 };
-
+class CfgPluginEvents {
+	class PlayerEvents {
+		overrides = 0;
+		class Events {
+			class DSZ_Fired {
+				type = "Fired";
+				function = "DSZ_fnc_onWeaponFired";
+			};
+		};
+	};
+};
 class CfgFunctions
 {
 	class DSZ
@@ -24,11 +34,18 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
+		class Client_Events
+		{
+			file = "DSZombz\Client\Events";
+			isclient = 1;
+			class onWeaponFired {};
+		};
 		class Client_Sensing
 		{
 			file = "DSZombz\Client\Sensing";
 			isclient = 1;
 			class zombieCanSee {};
+			class zombieCanHear {};
 			class zombieCanSmell {};
 		};
 		class Client_Agroing

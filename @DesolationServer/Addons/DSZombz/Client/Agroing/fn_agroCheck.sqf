@@ -1,34 +1,22 @@
 DSZ_allow_Agro = true;
 
 
-_maxVisionDistance = 100;
-
-_maxVisibleAngle = 60;
-
-_smellDistance = 10;
-
-
-
 
 while{true} do {
-
-	_maxDistance = _maxVisionDistance max _smellDistance;
-
-
-	_nearZombies = (vehicle player) nearEntities ["Man",_maxDistance];
-
+	_nearZombies = (vehicle player) nearEntities ["DSR_Civilian_Base",120];
 	{
 		if(!isPlayer _x && alive _x) then {
 			if(!(_x getVariable ["agroed",false])) then {
 				
 				if([_x] call DSZ_fnc_zombieCanSmell) then {
-					// smell agro
 					[_x] call DSZ_fnc_agroZombie;
-				
 				} else {
 					if([_x] call DSZ_fnc_zombieCanSee) then {
-						// visible agro
 						[_x] call DSZ_fnc_agroZombie;
+					} else {
+						if([_x] call DSZ_fnc_zombieCanHear) then {
+							[_x] call DSZ_fnc_agroZombie;
+						};
 					};
 				};
 			};
@@ -37,5 +25,5 @@ while{true} do {
 	} count _nearZombies;
 	
 	
-	uiSleep 0.5;
+	uiSleep 0.25;
 };
