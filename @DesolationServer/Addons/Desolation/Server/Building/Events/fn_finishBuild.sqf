@@ -10,6 +10,8 @@
  */
 params["_crate"];
 
+_owner = _crate getVariable ["oOWNER",""];
+
 _entry = _crate getVariable "SVAR_buildParams";
 _items = _entry select 0;
 _model = _entry select 2;
@@ -58,8 +60,21 @@ _obj setdir _dir;
 _obj setposatl _pos;
 _crate setVectorUp [0,0,1];
 
+_obj setVariable ["oOWNER",_owner,true];
+_obj setVariable["bis_disabled_Door_1",1,true];
+
 ["spawnBuilding","",[_obj]] call DS_fnc_dbRequest;
 _oUUID = _obj getVariable ["oUUID",""];
+scopeName "exitCheck";
+{
+	_uuid = _x getVariable ["pUUID",""];
+	if(_uuid != "") then {
+		if(_uuid == _oUUID) then {
+			[[_obj]] remoteExec ["DS_fnc_registerOwner",_x];
+			breakTo "exitCheck"; // exit forEach loop, we found the owner
+		};
+	};
+} forEach allPlayers;
 
 DS_var_Buildings pushback _obj;
 DS_var_BuildingUUIDS pushback _oUUID;

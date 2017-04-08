@@ -16,6 +16,8 @@ params["_entry","_player"];
 
 _crate = (_entry select 6) createVehicle [0,0,0];
 
+_crate setVariable ["oOWNER",_player getVariable ["pUUID",""],true];
+
 _box = boundingBox _crate;
 _w = abs(((_box select 1) select 1) - ((_box select 0) select 1));
 

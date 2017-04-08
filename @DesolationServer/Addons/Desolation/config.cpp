@@ -128,6 +128,7 @@ class CfgFunctions
 			file = "Desolation\Client\Building";
 			isclient = 1;
 			class initBuilding {};
+			class registerOwner {};
 		};
 		class Client_Spawning {
 			file = "Desolation\Client\Spawning";

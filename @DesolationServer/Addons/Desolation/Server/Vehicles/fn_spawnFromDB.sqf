@@ -86,6 +86,7 @@ if(_priority > 10000) then {
 		_position = [_positionx,_positiony,_positionz];
 		
 		_object = _classname createVehicle _position;
+		_object setVariable["bis_disabled_Door_1",1,true]; // disable door access
 		_object allowDamage false;
 		_object setVariable ["oUUID",_object_uuid];
 		{
@@ -99,7 +100,7 @@ if(_priority > 10000) then {
 		
 		
 		if(_player_uuid != "") then {
-			_object setVariable ["owner",_player_uuid];
+			_object setVariable ["oOWNER",_player_uuid,true];
 			_object setVariable ["friends",_friendslist];
 		};
 		if(_accesscode != "") then {

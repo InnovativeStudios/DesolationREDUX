@@ -433,7 +433,7 @@ switch(_type)do{
 		
 		// owner and unlock code
 		_accesscode = "";
-		_player_uuid = "";
+		_player_uuid = _building getVariable ["oOWNER",""];
 		
 		// damage
 		_damage = damage _building;
@@ -513,7 +513,7 @@ switch(_type)do{
 		
 		// owner and unlock code
 		_accesscode = "";
-		_player_uuid = "";
+		_player_uuid = _building getVariable ["oOWNER",""];
 		
 		// damage
 		_damage = damage _building;
