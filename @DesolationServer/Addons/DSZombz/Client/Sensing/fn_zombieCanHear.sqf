@@ -6,7 +6,6 @@ _weaponSoundDistance = 100;
 
 _chance = 0;
 
-//ignore transitions
 _animState = animationState player;
 _parts = _animState splitString "_";
 _animState = _parts select 0;
@@ -17,23 +16,21 @@ if(count(_animState) >= 19) then {
 	_mode = _animState select [20];
 
 	
-	// stance calculations
 	if(_stance == "perc") then {
-		_chance = _chance + 20;
-	};
-	if(_stance == "pknl") then {
-		_chance = _chance + 15;
-	};
-	if(_stance == "ppne") then {
 		_chance = _chance + 10;
 	};
+	if(_stance == "pknl") then {
+		_chance = _chance + 5;
+	};
+	if(_stance == "ppne") then {
+		_chance = _chance + 0;
+	};
 
-	// move calculations
 	if(_move == "meva") then {
-		_chance = _chance + 60;
+		_chance = _chance + 70;
 	};
 	if(_move == "mrun") then {
-		_chance = _chance + 35;
+		_chance = _chance + 40;
 	};
 	if(_move == "mwlk") then {
 		_chance = _chance + 10;
@@ -42,7 +39,6 @@ if(count(_animState) >= 19) then {
 		_chance = _chance + 0;
 	};
 
-	//mode calculations
 	if(_move == "dnon") then {
 		_chance = _chance + 0;
 	};
