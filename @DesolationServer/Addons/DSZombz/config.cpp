@@ -80,6 +80,7 @@ class CfgFunctions
 			file = "DSZombz\Server\Spawning";
 			isserver = 1;
 			class spawnZombie {};
+			class insertZombie {};
 			class spawnManager {};
 			class despawnZombie {};
 		};
