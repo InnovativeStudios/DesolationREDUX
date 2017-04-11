@@ -29,10 +29,13 @@ addons[]=
 	"A3_Characters_F",
 	"dsr_weapons",
 	"dsr_actions",
+	"dsr_flashlight",
 	"dsr_objects",
-	"dsr_vehicles",
-	"SM_Zombz",
-	"DSR_Zombz_Code"
+	"dsr_ports",
+	"dsr_Vehicles",
+	"dsr_zombz",
+	"DSR_Zombz_Code",
+	"dsr_apparel"
 };
 class AddonsMetaData
 {

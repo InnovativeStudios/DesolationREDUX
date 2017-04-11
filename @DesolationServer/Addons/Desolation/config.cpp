@@ -5375,6 +5375,54 @@ class CfgItemSpawns {
         };
     };
 	class Buildings {
+		class Land_NAV_Lighthouse2 {
+			table = "Military";
+			positions[] = {{-1.11377,-1.48682,2.41768},{-0.117676,0.0644531,-6.7829}
+			};
+		};
+		
+		class Land_NAV_Lighthouse {
+			table = "Military";
+			positions[] = {{-1.18262,-1.47314,2.41768},{-0.0981445,-0.241211,-6.7829}
+			};
+		};
+		
+		class Land_Majak {
+			table = "Military";
+			positions[] = {{-0.233887,1.18701,-8.07446},{1.60449,-0.822754,1.72104}
+			};
+		};
+		
+		class Land_Majak_v_celku {
+			table = "Military";
+			positions[] = {{1.36377,-6.80273,3.72537},{0.00439453,-4.53857,-6.07013}
+			};
+		};
+		
+		class Land_tent_east {
+			table = "Military";
+			positions[] = {{2.38379,-2.12842,-1.75578},{-3.35693,1.79541,-1.75579}
+			};
+		};
+		
+		class CampEast_EP1  {
+			table = "Military";
+			positions[] = {{1.80957,-2.83521,-1.25191},{-1.64502,-2.09741,-1.25194},{-1.77686,2.25,-1.25194}
+			};
+		};
+
+		class Land_Ind_Shed_01_EP1 {
+			table = "Industrial";
+			positions[] = {{-7.79321,4.93457,-3.33529},{7.87134,11.2715,-3.33529},{7.83423,-8.58789,-3.33527},{-7.64038,-8.85791,-3.33529}
+			};
+		};
+		
+		class Land_Ind_Shed_02_EP1 {
+			table = "Industrial";
+			positions[] = {{3.91968,-8.97266,-2.08116},{3.9292,3.23779,-2.08117},{4.4707,12.1157,-2.08114}
+			};
+		};
+
 		class Land_Airport_01_controlTower_F {
 			table = "Military";
 			positions[] = {{-3.00696, 3.91602, 4.21086}, {3.06915, 3.89941, 4.23131}, {0.0256958, -2.06201, 4.21085}, {0.376404, 1.16602, 4.65663}, {-1.27332, 0.373535, 7.91646}
