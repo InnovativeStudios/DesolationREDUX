@@ -16,6 +16,10 @@ class CfgPluginEvents {
 	class PlayerEvents {
 		overrides = 1;
 		class Events {
+			class DS_AnimChanged {
+				type = "AnimChanged";
+				function = "DS_fnc_AnimChanged";
+			};
 			class DS_InventoryClosed {
 				type = "InventoryClosed";
 				function = "DS_fnc_InventoryClosed";
@@ -73,6 +77,7 @@ class CfgFunctions
 			file = "Desolation\Client\PluginEvents";
 			isclient = 1;
 			class Draw3D {};
+			class AnimChanged {};
 			class InventoryClosed {};
 			class InventoryOpened {};
 			class Killed {};

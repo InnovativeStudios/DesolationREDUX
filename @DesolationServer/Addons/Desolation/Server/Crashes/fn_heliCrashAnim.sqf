@@ -56,6 +56,12 @@ _wreck setposATL _wreckPos;
 _wreck setVectorDir _wreckDir;
 _wreck setVectorUp _wreckUp;
 
+for "_i" from 1 to 3 do {
+	_mult = if(random(1) >= 0.5) then {1} else {-1};
+	_zPos = _wreckPos vectorAdd [_mult*random [1,2,3],_mult*random [1,2,3],0];
+	[_zPos,10] call (missionNamespace getVariable ["DS_fnc_spawnZombieFnc",{}]);
+};
+
 diag_log ("CREATED HELI CRASH AT: " + str(_wreckPos));
 
 if (_wreckSmoke > 0) then {

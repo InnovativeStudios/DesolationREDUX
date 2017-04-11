@@ -65,7 +65,16 @@ deleteVehicle _chute;
 [_crate,_cItems] call DS_fnc_addCrateItems;
 
 //--- spawn flares around crate to make it visible at night (we may want to eventually virtualize this whole system)
-_pos = getpos _crate;
+_pos = getposatl _crate;
+_pos set [2,0];
+
+//--- spawn zombies around crate
+for "_i" from 1 to 3 do {
+	_mult = if(random(1) >= 0.5) then {1} else {-1};
+	_zPos = _pos vectorAdd [_mult*random [1,2,3],_mult*random [1,2,3],0];
+	[_zPos,10] call (missionNamespace getVariable ["DS_fnc_spawnZombieFnc",{}]);
+};
+
 _p1 = _pos vectorAdd [0,5,0];
 _p2 = _pos vectorAdd [5,0,0];
 _p3 = _pos vectorAdd [0,-5,0];
