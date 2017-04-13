@@ -24,6 +24,8 @@ if(_goggles != "") then {
 
 [player] remoteExec ["DS_fnc_requestOwned",2];
 
+player addRating 9999999;
+
 //--- fade into the game
 1 fadeSound 2;
 1 fadeMusic 2;

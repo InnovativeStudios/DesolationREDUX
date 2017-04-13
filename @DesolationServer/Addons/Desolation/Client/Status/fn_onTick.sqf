@@ -21,6 +21,11 @@ if(count(_sourcesinfo) > 0) then {
 };
 [_sourcesinfo] call ds_fnc_onBleedTick;
 
+if(rating player < 0) then {
+	player addRating 9999999;
+};
+
+
 call ds_fnc_onInfectionTick;
 call ds_fnc_onHungerTick;
 call ds_fnc_onThirstTick;
