@@ -24,7 +24,7 @@ _Config = _Config_Options select (_buildingTypes find _building_table);
 
 _ConfigEntry = configFile >> "CfgItemSpawns" >> "Loot" >> _building_table;
 
-if(_savedLoot isEqualTo []) then {
+if(_savedLoot isEqualTo ["FRESH LOOT"]) then {
 	// Fresh Spawn
 	_lChance = _Config select 0; // chance for building to spawn loot
 	_sChance = _Config select 1; // chance for pile to spawn loot
