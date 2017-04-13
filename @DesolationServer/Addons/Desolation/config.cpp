@@ -176,6 +176,7 @@ class CfgFunctions
 			isclient = 1;
 			class doAction {};
 			class doActionTarget {};
+			class combineMags {};
 			class useItem {};
 			class useItemTarget {};
 			class drink {};

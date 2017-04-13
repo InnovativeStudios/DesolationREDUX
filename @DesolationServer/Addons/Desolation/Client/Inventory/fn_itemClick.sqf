@@ -45,6 +45,26 @@ _replace = {
 	_nString;
 };
 
+
+_ammoCount = getNumber(configFile >> "CfgMagazines" >> _classname >> "count");
+if(_ammoCount > 1) then {
+	_numMags = ({_x == _classname} count (magazines player));
+	if(_numMags > 1) then {
+		_bY = _buttonY + (0.042*_bIndex);
+		_bH = 0.04;
+		_bW = _BUTTON_W;
+		_bX = _buttonX;
+		_bIndex = _bIndex + 1;
+		_ctrl = _display ctrlCreate ["RscButton",-1];
+		_ctrl ctrlSetPosition [_bX,_bY,_bW,_bH];
+		_ctrl ctrlSetText "Combine Mags";
+		_ctrl buttonSetAction ("[] spawn ds_fnc_closebuttons;_classname = """ + _classname + """; [_classname] call DS_fnc_CombineMags");
+		_ctrl ctrlCommit 0;
+		
+		_buttons pushBack _ctrl;
+	};
+};
+
 if(isClass _actions) then {
 	for "_i" from 0 to count(_actions)-1 do {
 		_action = _actions select _i;
