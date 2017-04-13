@@ -1266,10 +1266,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
@@ -2088,10 +2089,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
@@ -2880,10 +2882,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
@@ -3672,10 +3675,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
@@ -4461,10 +4465,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
@@ -5253,10 +5258,11 @@ class CfgItemSpawns {
                     {"DSR_Item_Gascan_Large_Empty",15}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Gascan_Small_Empty",25},
-                    {"DSR_Item_Plastic_Drum",15},
-                    {"DSR_Item_Saw",25},
-                    {"DSR_Item_Hardware",35}
+                    {"DSR_Item_Gascan_Small_Empty",20},
+                    {"DSR_Item_Plastic_Drum",10},
+                    {"DSR_Item_Saw",20},
+                    {"DSR_Item_Hardware",30},
+					{"DSR_Item_Duct_Tape",20}
                 };
                 common[] = {
                     {"DSR_Melee_Axe",30},
