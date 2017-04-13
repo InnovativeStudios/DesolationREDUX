@@ -43,9 +43,13 @@ if(_priority > 10000) then {
 		if(count(_hitpoints) >= 3) then {
 			_names = _hitpoints select 0;
 			_values = _hitpoints select 2;
-			{
-				_object setHitPointDamage [_x,_values select _forEachIndex];
-			} forEach _names;
+			
+			_maxIt = count(_names) max count(_values);
+			for "_i" from 0 to (_maxIt-1) do {
+				if((_names select _i) != "") then { // some hitpoints dont have names
+					_object setHitPointDamage [_names select _i,_values select _i];
+				};
+			};
 		} else {
 			diag_log ("VEHICLE " + _classname + " DOES NOT HAVE HITPOINTS SAVED IN DB");
 		};
@@ -82,7 +86,7 @@ if(_priority > 10000) then {
 	};
 
 } else {
-		if(_visible == 1) then {
+	if(_visible == 1) then {
 		_position = [_positionx,_positiony,_positionz];
 		
 		_object = _classname createVehicle _position;
