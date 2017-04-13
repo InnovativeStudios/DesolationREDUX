@@ -58,7 +58,9 @@ deleteVehicle _crate;
 _obj = _model createVehicle [0,0,0];
 _obj setdir _dir;
 _obj setposatl _pos;
-_crate setVectorUp [0,0,1];
+_crate setVectorUp (surfaceNormal _pos);
+
+_obj setVariable ["SVAR_Parts",_items];
 
 _obj setVariable ["oOWNER",_owner,true];
 for "_i" from 1 to 5 do {
