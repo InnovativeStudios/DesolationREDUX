@@ -6971,7 +6971,7 @@ class CfgBuildables {
 			};
 			class Camp_Fire {
 				parts[] = {
-					{"DSR_Item_Lumber",2}
+					{"DSR_Item_Logs",2}
 				};
 				name = "Campfire";
 				model = "Land_FirePlace_F";
