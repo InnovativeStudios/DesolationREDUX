@@ -11,8 +11,10 @@
 
 params["_classname"];
 
-if (_classname find "_empty" == -1) exitWith {};
-_data = (toLower(_classname) splitString "_");
+_class = toLower(_classname);
+
+if (_class find "_empty" == -1) exitWith {};
+_data = (toLower(_class) splitString "_");
 _data deleteAt (count(_data)-1);
 _data pushBack "dirty";
 _newItem = _data joinString "_";

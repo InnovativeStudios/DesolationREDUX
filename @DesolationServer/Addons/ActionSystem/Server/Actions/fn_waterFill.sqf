@@ -11,7 +11,7 @@
  
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
 
-params ["_hitPoint","_object","_index","_player","_class","_group"];
+params ["_object","_index","_player","_class","_group"];
 
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
