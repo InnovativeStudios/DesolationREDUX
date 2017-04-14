@@ -7028,7 +7028,7 @@ class CfgBuildables {
 				name = "Storage Shed";
 				model = "DSR_Object_Storage_Shed";
 				crateObject = "DSR_Object_Storageshed_Preview2";
-				description = "A palce to store stuff.";
+				description = "A place to store stuff.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
