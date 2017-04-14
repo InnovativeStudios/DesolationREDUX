@@ -19,7 +19,6 @@ _actionInfo = _actionGroup select 2;
 _required = [];
 _returned = [];
 _can = [];
-_size = 0;
 _canNo = 0;
 
 {
@@ -52,9 +51,8 @@ _tmpCanNo = 0;
 	_litres = _x select 1;
 	diag_log format ["looking for %1", _item];
 	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) > 0 ) exitWith {
-		diag_log format ["Does have: %1 (%2 litres) @ %3", _item, _litres, _tmpCanNo];
+		diag_log format ["Does have: %1 @ %2", _item, _tmpCanNo];
 		_can = _item;
-		_size = _litres;
 		_canNo = _tmpCanNo;
 		_haveRequiredItems = true;
 	};
@@ -97,19 +95,6 @@ if ((count _nearLootHolders) != 0) then
 	_player reveal _lootHolder;*/
 
 if (_haveRequiredItems) then {
-	_currentFuel = fuel _object;
-
-	diag_log format ["current fuel: %1", _currentFuel];
-
-	_newFuel = _currentFuel + (_size / 100);
-
-	diag_log format ["new fuel: %1", _newFuel];
-
-	if (_newFuel > 1) then {
-		_newFuel = 1;
-	};
-
-	[_object, _newFuel] remoteExec ["setFuel", 0];
 
 	diag_log format ["removing %1", _can];
 	_player removeItem _can;

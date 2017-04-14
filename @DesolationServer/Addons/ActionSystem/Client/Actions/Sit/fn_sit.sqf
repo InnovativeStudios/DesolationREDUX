@@ -13,11 +13,13 @@
  
 params["_cursor"];
 
-[player,"Crew"] remoteExecCall ["switchMove",-2];
-player setPos (getPos _cursor);
+player switchMove "Crew";
+player setPosATL (getPosATL _cursor);
 player setDir ((getDir _cursor) - 180);
-//_newPos = getPos player;
-//player setPos [_newPos select 0, _newPos select 1, (_newPos select 2) + 0.5];
+
 stand = player addAction ["Stand Up", "call ACT_fnc_stand"];
+//player attachTo [_cursor,[0.00244141,-0.0419922,-0.416863]];
+//player switchMove "crew";
+//player setDir ((getdir _cursor)-180);
 
 true

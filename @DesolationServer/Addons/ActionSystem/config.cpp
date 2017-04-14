@@ -82,6 +82,12 @@ class CfgFunctions
 			isclient = 1;
 			class liftObject {};
 		};
+		class Client_Actions_NonLift {
+			file = "ActionSystem\Client\Actions\NonLift";
+			isclient = 1;
+			class getWater {};
+			class deconstruct {};
+		};
 		class Client_Actions_Sit {
 			file = "ActionSystem\Client\Actions\Sit";
 			isclient = 1;
@@ -113,6 +119,7 @@ class CfgFunctions
 			class refuelReq {};
 			class playerAction {};
 			class flipObject {};
+			class waterFill {};
 		};
 	};
 };
@@ -283,10 +290,14 @@ class Cfg3DActions {
 				text = "Refuel Fuel Tank";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Fuelcan_Full", 1}
+						{"DSR_Item_Fuelcan_Full", 20},			// 20 litres
+						{"DSR_Item_Gascan_Large_Full", 20},		// 20 litres
+						{"DSR_Item_Gascan_Small_Full", 10}		// 10 litres
 					};
 					returnedItems[] = {
-						{"DSR_Item_Fuelcan_Empty", 1}
+						{"DSR_Item_Fuelcan_Empty", 1},
+						{"DSR_Item_Gascan_Large_Empty", 1},
+						{"DSR_Item_Gascan_Small_Empty", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_refuelFueltank;";
@@ -296,7 +307,7 @@ class Cfg3DActions {
 				text = "Flip Vehicle";
 				class Parameters {
 					requiredItems[] = {
-						{"DSR_Item_Toolbox", 1}
+						{"DSR_Item_Scissor_Jack", 1}
 					};
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_flipVehicle;";
@@ -370,6 +381,40 @@ class Cfg3DActions {
 				};
 				action = "[_cursor,_index] call ACT_fnc_applySplint;";
 			};
+		};
+	};
+	class NonLiftables {
+		condition = "!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1)";
+		
+		renderType = 1;
+	
+		class Actions {
+			
+			class GetWater {
+				condition = "!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1)";
+				text = "Get Water";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Waterbottle_Empty", 1},
+						{"DSR_Item_Canteen_Empty", 1},
+						{"DSR_Item_Watercan_Empty", 1},
+						{"DSR_Item_Bucket_Empty", 1}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Waterbottle_Full", 1},
+						{"DSR_Item_Canteen_Full", 1},
+						{"DSR_Item_Watercan_Full", 1},
+						{"DSR_Item_Bucket_Full", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_getWater;";
+			};
+//			class Deconstruct {
+//				condition = "!(str(_cursor) find 'stockade' == -1";
+//				text = "Deconstruct";
+//				class Parameters {};
+//				action = "[_cursor] call ACT_fnc_deconstruct;";
+//			};
 		};
 	};
 };
