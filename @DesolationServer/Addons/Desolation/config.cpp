@@ -7006,6 +7006,21 @@ class CfgBuildables {
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
 				condition = "true";
 			};
+			class StorageShed {
+				parts[] = {
+					{"DSR_Item_Lumber",50},
+					{"DSR_Item_Plywood",6},
+					{"DSR_Item_Hardware",10},
+					{"DSR_Item_Scrap_Metal",10},
+					{"DSR_Item_Logs",20}
+				};
+				name = "Storage Shed";
+				model = "DSR_Object_Storage_Shed";
+				crateObject = "DSR_Object_Storageshed_Preview2";
+				description = "A palce to store stuff.";
+				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				condition = "true";
+			};
 		};
 	};
 };
