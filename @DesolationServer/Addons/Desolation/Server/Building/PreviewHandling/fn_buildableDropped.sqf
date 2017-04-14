@@ -18,7 +18,7 @@ _newBuildable setDir _dir;
 	_newBuildable setVariable _x;
 } forEach _vars;
 [_newBuildable,_loot] call DS_fnc_setLoot;
-_newBuildable setVectorUp (surfaceNormal _pos);
+_newBuildable setVectorUp [0,0,1];
 
 deleteVehicle _buildable;
 _newBuildable setPosATL _pos;

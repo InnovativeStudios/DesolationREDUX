@@ -20,8 +20,6 @@ _origMass = getMass _object;
 _object setVariable ["oMass",_origMass];
 _object setMass 0.1;
 
-OM_var_rotationOffset = 0;
-
 
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
@@ -46,14 +44,6 @@ if([_object] call OM_fnc_canLift) then {
 		_carryDistance = _carryDistance + ((_object getVariable ["oWidth",0])/1.5);
 		_maxDistToObject = _maxDistToObject + (_object getVariable ["oWidth",0]);
 		
-		if(inputAction "NextAction" > 0) then {
-			OM_var_rotationOffset = OM_var_rotationOffset + 2;
-		};
-		if(inputAction "PrevAction" > 0) then {
-			OM_var_rotationOffset = OM_var_rotationOffset - 2;
-		};
-		
-		
 		if(!isNull _object) then {
 			if(OM_var_collisionForce < _maxCollisionForce) then {
 				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;}; 
@@ -65,7 +55,8 @@ if([_object] call OM_fnc_canLift) then {
 				
 				_wantedHeight = ((((1 - (_weaponPitch/ -0.985))) * _maxheight)-1) + _playerHeight;
 				
-				_vector = [0,0,1];
+				if(_wantedHeight < 0) then {_wantedHeight = 0;}; 
+				
 				
 				_playerXVelocity = (velocity player) select 0;
 				_playerYVelocity = (velocity player) select 1;
@@ -100,25 +91,17 @@ if([_object] call OM_fnc_canLift) then {
 				if(abs (_wantedHeight-_objectHeight) > 0.03) then { 
 					if (_wantedHeight > (_objectHeight)) then {
 						_objectNewVelocityZ  = (_speedUp + _playerZVelocity);
-					} else {
-						if(_objectHeight < 0.1) then {
-							_pos = getposatl _object;
-							_pos set [2,0];
-							_vector = surfaceNormal _pos;
-							_object setposatl _pos;
-						} else {
-							if(_wantedHeight < (_objectHeight)) then {
-								_objectNewVelocityZ = (_speedDown + _playerZVelocity);
-							};
+					} else { 
+						if(_wantedHeight < (_objectHeight)) then {
+							_objectNewVelocityZ = (_speedDown + _playerZVelocity);
 						};
 					};
 				};
-				_object setVectorUp _vector;
-				
+
 				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
 
 
-				_object setDir ((_object getDir player) + OM_var_rotationOffset);
+				_object setDir (_object getDir player);
 
 				 
 				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
