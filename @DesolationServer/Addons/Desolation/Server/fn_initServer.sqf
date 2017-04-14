@@ -54,6 +54,8 @@ waitUntil{BASE_var_MapEditsDone}; // wait for map to finish loading
 //--- start subsystems
 [] spawn DS_fnc_simManager;
 
+DS_var_startTime = diag_tickTime;
+
 //--- TEMP (group system manager)
 [] spawn {
 	while{true} do {

@@ -34,9 +34,16 @@ switch(_type)do{
 		_kickable = _kickableData select 0;
 		_kickReason = _kickableData select 1;
 
+		_open_alpha_test = true;
+		
+		
 		//TODO: move this system? It was removed with Maverick-Apps server administration panel
-		if (_kickable) exitWith {
+		if (_kickable && !_open_alpha_test) exitWith {
 			[_kickReason] remoteExecCall ["DS_fnc_notWhitelisted", _playerObj];
+		};
+		
+		if(_kickable && _open_alpha_test && ((diag_tickTime - (missionNamespace getVariable ["DS_var_startTime",10000])) < 300)) exitWith {
+			["Only closed-alpha testers can join for the first 5 minutes. Please wait your turn."] remoteExecCall ["DS_fnc_notWhitelisted", _playerObj];
 		};
 		
 		_playerObj setVariable ["pUUID",_playeruuid];
