@@ -6969,6 +6969,17 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Large_Preview2";
 				condition = "true";
 			};
+			class Camp_Fire {
+				parts[] = {
+					{"DSR_Item_Lumber",2}
+				};
+				name = "Campfire";
+				model = "Land_FirePlace_F";
+				description = "A Campfire";
+				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				crateObject = "DSR_Object_Storage_Small_Preview2";
+				condition = "true";
+			};
 			/*class Pallets {
 				parts[] = {
 					{"DSR_Item_Lumber",10}
