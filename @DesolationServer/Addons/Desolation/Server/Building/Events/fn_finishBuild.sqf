@@ -60,6 +60,7 @@ _obj setdir _dir;
 _obj setposatl _pos;
 _crate setVectorUp [0,0,1];
 
+_obj setVariable ["SVAR_Parts",_items];
 _obj setVariable ["oOWNER",_owner,true];
 for "_i" from 1 to 5 do {
 	_obj setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
