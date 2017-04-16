@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_friendslist","_positionadvanced","_reservedone","_reservedtwo"];
+params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_positionadvanced","_reservedone","_reservedtwo","_friendslist"];
 
 _returnData = [];
 // todo split this into multiple scripts
