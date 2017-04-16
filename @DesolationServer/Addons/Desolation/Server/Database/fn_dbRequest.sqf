@@ -267,11 +267,11 @@ switch(_type)do{
 		
 		
 		_items = ([_vehicle] call DS_fnc_getLoot);
-		_magazines = [];  //todo
-		_weapons = []; // todo
-		_backpacks = []; // todo
+		_positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];  //todo
+		_reservedone = []; // todo
+		_reservedtwo = []; // todo
 		_magazinesturrent = []; // todo
-		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
+		_variables = [];
 		{
 			if(toLower(_x) find "svar_" == 0) then {
 				_variables pushback [_x,_vehicle getVariable [_x,""]];
@@ -301,9 +301,6 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_FUELCARGO,_fuelcargo],
 			[PROTOCOL_DBCALL_ARGUMENT_REPAIRCARGO,_repaircargo],
 			[PROTOCOL_DBCALL_ARGUMENT_ITEMS,_items],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_magazines],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _weapons],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _backpacks],
 			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINESTURRET, _magazinesturrent],
 			[PROTOCOL_DBCALL_ARGUMENT_VARIABLES, _variables],
 			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE, _animation_sources],
@@ -312,7 +309,10 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, _positionType],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2],
+                        [PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_positionadvanced],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _reservedone],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _reservedtwo]
 		]] call DB_fnc_buildDBRequest;
 		[_request] spawn DB_fnc_sendRequest;
 	};
@@ -342,11 +342,11 @@ switch(_type)do{
 		};
 		
 		_items = ([_vehicle] call DS_fnc_getLoot);
-		_magazines = [];  //todo
-		_weapons = []; // todo
-		_backpacks = []; // todo
+		_positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];  //todo
+		_reservedone = []; // todo
+		_reservedtwo = []; // todo
 		_magazinesturrent = []; // todo
-		_variables = [["DSR_vectorUp",vectorUp _vehicle]];
+		_variables = [];
 		{
 			if(toLower(_x) find "svar_" == 0) then {
 				_variables pushback [_x,_vehicle getVariable [_x,""]];
@@ -374,9 +374,6 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_FUELCARGO,_fuelcargo],
 			[PROTOCOL_DBCALL_ARGUMENT_REPAIRCARGO,_repaircargo],
 			[PROTOCOL_DBCALL_ARGUMENT_ITEMS,_items],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_magazines],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _weapons],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _backpacks],
 			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINESTURRET, _magazinesturrent],
 			[PROTOCOL_DBCALL_ARGUMENT_VARIABLES, _variables],
 			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE, _animation_sources],
@@ -385,7 +382,10 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, _positionType],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2],
+                        [PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_positionadvanced],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _reservedone],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _reservedtwo]
 		]] call DB_fnc_buildDBRequest;
 		[_request] call DB_fnc_sendRequest;
 	};
@@ -429,9 +429,9 @@ switch(_type)do{
 		_fuel = 1;
 		_fuelcargo = 0;
 		_repaircargo = 0;
-		_magazines = []; 
-		_weapons = [];
-		_backpacks = []; 
+		_positionadvanced = [["DSR_vectorUp",vectorUp _building]]; 
+		_reservedone = [];
+		_reservedtwo = []; 
 		_magazinesturrent = []; 
 		_positionType = 1;
 		
@@ -454,7 +454,7 @@ switch(_type)do{
 		
 		// position stuff
 		_direction = getDir _building;
-		_variables = [["DSR_vectorUp",vectorUp _building]];
+		_variables = [];
 		{
 			if(toLower(_x) find "svar_" == 0) then {
 				_variables pushback [_x,_building getVariable [_x,""]];
@@ -480,9 +480,6 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_FUELCARGO,_fuelcargo],
 			[PROTOCOL_DBCALL_ARGUMENT_REPAIRCARGO,_repaircargo],
 			[PROTOCOL_DBCALL_ARGUMENT_ITEMS,_items],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_magazines],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _weapons],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _backpacks],
 			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINESTURRET, _magazinesturrent],
 			[PROTOCOL_DBCALL_ARGUMENT_VARIABLES, _variables],
 			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE, _animation_sources],
@@ -491,7 +488,10 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, _positionType],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2],
+                        [PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED, _positionadvanced],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _reservedone],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _reservedtwo]
 		]] call DB_fnc_buildDBRequest;
 		[_request] call DB_fnc_sendRequest;
 	};
@@ -509,9 +509,9 @@ switch(_type)do{
 		_fuel = 1;
 		_fuelcargo = 0;
 		_repaircargo = 0;
-		_magazines = []; 
-		_weapons = [];
-		_backpacks = []; 
+		_positionadvanced = [["DSR_vectorUp",vectorUp _building]]; 
+		_reservedone = [];
+		_reservedtwo = []; 
 		_magazinesturrent = []; 
 		_positionType = 1;
 		
@@ -534,7 +534,7 @@ switch(_type)do{
 		
 		// position stuff
 		_direction = getDir _building;
-		_variables = [["DSR_vectorUp",vectorUp _building]];
+		_variables = [];
 		{
 			if(toLower(_x) find "svar_" == 0) then {
 				_variables pushback [_x,_building getVariable [_x,""]];
@@ -556,9 +556,6 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_FUELCARGO,_fuelcargo],
 			[PROTOCOL_DBCALL_ARGUMENT_REPAIRCARGO,_repaircargo],
 			[PROTOCOL_DBCALL_ARGUMENT_ITEMS,_items],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_magazines],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _weapons],
-			[PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _backpacks],
 			[PROTOCOL_DBCALL_ARGUMENT_MAGAZINESTURRET, _magazinesturrent],
 			[PROTOCOL_DBCALL_ARGUMENT_VARIABLES, _variables],
 			[PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE, _animation_sources],
@@ -567,7 +564,10 @@ switch(_type)do{
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE, _positionType],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONX, _position select 0],
 			[PROTOCOL_DBCALL_ARGUMENT_POSITIONY, _position select 1],
-			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2]
+			[PROTOCOL_DBCALL_ARGUMENT_POSITIONZ, _position select 2],
+                        [PROTOCOL_DBCALL_ARGUMENT_POSITIONADVANCED,_positionadvanced],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE, _reservedone],
+                        [PROTOCOL_DBCALL_ARGUMENT_RESERVEDTWO, _reservedtwo]
 		]] call DB_fnc_buildDBRequest;
 		[_request] call DB_fnc_sendRequest;
 	};

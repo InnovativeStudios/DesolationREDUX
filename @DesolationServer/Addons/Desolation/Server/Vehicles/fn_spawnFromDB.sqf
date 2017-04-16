@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazines","_weapons","_backpacks","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_friendslist"];
+params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_friendslist","_positionadvanced","_reservedone","_reservedtwo"];
 
 _returnData = [];
 // todo split this into multiple scripts
@@ -67,7 +67,7 @@ if(_priority > 10000) then {
 		
 		[_object,_items] call DS_fnc_setLoot;
 		
-		_object setVectorUp ((_variables deleteAt 0) select 1);
+		_object setVectorUp ((_positionadvanced deleteAt 0) select 1);
 		{
 			_object setVariable _x;
 		} foreach _variables;
@@ -119,7 +119,7 @@ if(_priority > 10000) then {
 		
 		[_object,_items] call DS_fnc_setLoot;
 		
-		_object setVectorUp ((_variables deleteAt 0) select 1);
+		_object setVectorUp ((_positionadvanced deleteAt 0) select 1);
 		{
 			_object setVariable _x;
 		} foreach _variables;
