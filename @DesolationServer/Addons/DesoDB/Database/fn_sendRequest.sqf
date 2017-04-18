@@ -14,7 +14,7 @@
 params["_request",["_isScheduled",true]];
 private["_response","_compiledResponse","_uuid", "_finalResponse","_return","_doswitchloop","_innerdoloop"];
 
-_response = "libredex" callExtension _request;
+_response = ("libredex" callExtension _request) select 0;
 _compiledResponse = call compile _response;
 
 _doswitchloop = true;
@@ -46,7 +46,7 @@ while{_doswitchloop} do {
 
                 _innerdoloop = true;
                 while{_innerdoloop} do {
-                    _response = "libredex" callExtension _request;
+                    _response = ("libredex" callExtension _request) select 0;
 
                     if(_response == PROTOCOL_MESSAGE_NOT_EXISTING) then {
                         uiSleep 0.5;
@@ -74,7 +74,7 @@ while{_doswitchloop} do {
 			diag_log "Receiving multipart message";
             _innerdoloop = true;
             while{_innerdoloop} do {
-                _response = "libredex" callExtension _request;
+                _response = ("libredex" callExtension _request) select 0;
 
                 if(_response != PROTOCOL_MESSAGE_TRANSMIT_FINISHED_MSG) then {
                     _finalResponse = _finalResponse + _response;
