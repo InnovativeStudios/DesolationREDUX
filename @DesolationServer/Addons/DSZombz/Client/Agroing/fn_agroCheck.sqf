@@ -21,8 +21,7 @@ while{true} do {
 				};
 			};
 		};
-		true
-	} count _nearZombies;
+	} forEach _nearZombies;
 	
 	
 	uiSleep 0.25;
