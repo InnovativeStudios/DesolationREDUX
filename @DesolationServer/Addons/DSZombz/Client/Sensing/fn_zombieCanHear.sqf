@@ -4,8 +4,9 @@ private["_maxSoundDistance","_animState","_stance","_move","_mode","_return"];
 _maxSoundDistance = 40;
 _weaponSoundDistance = 100;
 
-_chance = 0;
+_chance = (speed player) / 23;//0;
 
+/*
 _animState = animationState player;
 _parts = _animState splitString "_";
 _animState = _parts select 0;
@@ -52,12 +53,15 @@ if(count(_animState) >= 19) then {
 		_chance = _chance + 20;
 	};
 };
+
+*/
+
+
 _return = false;
 _soundDist = _maxSoundDistance * (_chance/100);
 if((player distance _zed) <= _soundDist) then {
 	_return = true;
 };
-
 
 if (!_return) then {
 	_lastSound = player getVariable ["DSZ_var_lastSound",diag_tickTime - 3];
