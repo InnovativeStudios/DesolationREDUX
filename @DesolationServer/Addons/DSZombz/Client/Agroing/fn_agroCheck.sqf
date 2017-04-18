@@ -3,7 +3,7 @@ DSZ_allow_Agro = true;
 
 
 while{true} do {
-	_nearZombies = (vehicle player) nearEntities ["DSR_Civilian_Base",120];
+	_nearZombies = player nearEntities ["DSR_Civilian_Base",120];
 	{
 		if(!isPlayer _x && alive _x) then {
 			if(!(_x getVariable ["agroed",false])) then {
