@@ -1,5 +1,7 @@
 params["_locationpos","_roamDist","_group"];
 
+if(isNil {_locationpos}) exitWith {};
+if(isNil {_roamDist}) exitWith {};
 
 _waypoint = [];
 for "_i" from 0 to 3 do {

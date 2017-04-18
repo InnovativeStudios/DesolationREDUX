@@ -13,11 +13,26 @@
  
 params["_cursor"];
 
+_oldpos = getposatl player;
+_newpos = getPosATL _cursor;
+
 player switchMove "Crew";
-player setPosATL (getPosATL _cursor);
+player setPosATL _newpos;
 player setDir ((getDir _cursor) - 180);
 
 stand = player addAction ["Stand Up", "call ACT_fnc_stand"];
+
+if(!isNil "GLP_fnc_checkGlitch") then {
+	[_oldpos,_newpos,{
+		params["_oldpos","_nil"];
+		
+		player setposatl _oldpos;
+		call ACT_fnc_stand;
+		
+	}] call GLP_fnc_checkGlitch;
+	
+};
+
 //player attachTo [_cursor,[0.00244141,-0.0419922,-0.416863]];
 //player switchMove "crew";
 //player setDir ((getdir _cursor)-180);
