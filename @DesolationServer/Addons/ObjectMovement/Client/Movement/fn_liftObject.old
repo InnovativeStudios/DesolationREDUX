@@ -69,17 +69,23 @@ if([_object] call OM_fnc_canLift) then {
 				
 				if(abs _shortestAngle > 2) then {
 					if(_shortestAngle > 0) then {
-						_objectXVelocity = _objectXVelocity + 2;
+						_objectXVelocity = _playerXVelocity * _lagComp + (_rotSpeed* -((vectorDir _object)select 1));
+						_objectYVelocity = _playerYVelocity * _lagComp  + (_rotSpeed* ((vectorDir _object)select 0)); 
 					} else {
-						_objectXVelocity = _objectXVelocity - 2;
+						_objectXVelocity = _playerXVelocity * _lagComp + (_rotSpeed*((vectorDir _object)select 1));
+						_objectYVelocity = _playerYVelocity * _lagComp + (_rotSpeed* -((vectorDir _object)select 0));
 					};
 				};
 				if (player distance2d _object > _carryDistance) then {
-					_objectYVelocity = _objectYVelocity + 2;
 					
+					_objectForwardVelocityHolder = [_objectXVelocity,_objectYVelocity,0] vectorAdd [(sin(getDir _object)*_speedPushPull),(cos(getDir _object)*_speedPushPull),0];
+					_objectXVelocity = (_objectForwardVelocityHolder)select 0;
+					_objectYVelocity =  (_objectForwardVelocityHolder)select 1;
 				} else {
 					if (player distance2D _object < _carryDistance - 0.1) then {
-						_objectYVelocity = _objectYVelocity + 2;
+						_objectForwardVelocityHolder = [_objectXVelocity,_objectYVelocity,0] vectorDiff [(sin(getDir _object)*_speedPushPull),(cos(getDir _object)*_speedPushPull),0];
+						_objectXVelocity = (_objectForwardVelocityHolder)select 0;
+						_objectYVelocity =  (_objectForwardVelocityHolder)select 1;
 					};
 				};
 				if(abs (_wantedHeight-_objectHeight) > 0.03) then { 
@@ -91,8 +97,14 @@ if([_object] call OM_fnc_canLift) then {
 						};
 					};
 				};
-				_object setVectorDirAndUp [vectorDir player,[0,0,1]];//TODO use vectorUp for surface snapping
-				_object setVelocityModelSpace [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
+
+				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
+
+
+				_object setDir (_object getDir player);
+
+				 
+				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
 			
 			};
 		};
