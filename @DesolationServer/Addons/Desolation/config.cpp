@@ -6791,7 +6791,7 @@ class CfgVehicleSpawns {
 class CfgBuildables {
     class Type1Houses {
 		condition = "true"; //--- a check to see if the person has knowledge to build this type
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; //--- preview icon for index
+		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa"; //--- preview icon for index
 		name = "Type 1 Houses"; //--- name of this buidlable group
 		class Buildables {
 			class HouseLvl1 {
@@ -6805,7 +6805,7 @@ class CfgBuildables {
 				model = "DSR_Object_House_Lv1";
 				crateObject = "DSR_Object_House_Lv1_Preview2";
 				description = "The small shack is small... and a shack... a good starting house for losers.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa";
 				condition = "true";
 			};
 			class HouseLvl1v2 {
@@ -6819,7 +6819,7 @@ class CfgBuildables {
 				model = "DSR_Object_House_Lv1_2";
 				crateObject = "DSR_Object_House_Lv1_2_Preview2";
 				description = "The small shack is small... and a shack... a good starting house for losers.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_house_lv1_2.paa";
 				condition = "true";
 			};
 			class HouseLvl2 {
@@ -6833,7 +6833,7 @@ class CfgBuildables {
 				model = "DSR_Object_House_Lv2";
 				crateObject = "DSR_Object_House_Lv2_Preview2";
 				description = "Large wood shack.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_house_lv2.paa";
 				condition = "false";
 			};
 			class HouseLvl3 {
@@ -6848,14 +6848,14 @@ class CfgBuildables {
 				model = "DSR_Object_House_Lv3";
 				crateObject = "DSR_Object_House_Lv3_Preview2";
 				description = "A small Wood Cabin.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_house_lv3.paa";
 				condition = "false";
 			};
 		};
 	};
 	class Stockade {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";  
+		preview = "\dsr_ui\Assets\object_previews\preview_stockade_wall.paa";  
 		name = "Stockade Items";  
 		class Buildables {
 			class StockadeWall {
@@ -6867,7 +6867,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Wall";
 				crateObject = "DSR_Object_Stockade_Wall_Preview2";
 				description = "Basic stockade wall piece";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_wall.paa";
 				condition = "true";
 			};
 			class StockadeWallWindow {
@@ -6880,7 +6880,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Wall_Window";
 				crateObject = "DSR_Object_Stockade_Wall_Window_Preview2";
 				description = "Basic stockade wall piece";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_window.paa";
 				condition = "true";
 			};
 			class StockadeRampart {
@@ -6892,7 +6892,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Rampart";
 				crateObject = "DSR_Object_Stockade_Rampart_Preview2";
 				description = "Stockade Wall with Rampart and Ramp";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart.paa";
 				condition = "true";
 			};
 			class StockadeRampart_2 {
@@ -6904,7 +6904,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Rampart_2";
 				crateObject = "DSR_Object_Stockade_Rampart_2_Preview2";
 				description = "Stockade Wall with Rampart";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart_2.paa";
 				condition = "true";
 			};
 			class StockadeGate {
@@ -6918,7 +6918,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Gate";
 				crateObject = "DSR_Object_Stockade_Gate_Preview2";
 				description = "Stockade Wall with Rampart";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_gate.paa";
 				condition = "true";
 			};
 			class StockadeTower {
@@ -6932,7 +6932,7 @@ class CfgBuildables {
 				model = "DSR_Object_Stockade_Tower";
 				crateObject = "DSR_Object_Stockade_Tower_Preview2";
 				description = "Stockade Guard Tower";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_stockade_tower.paa";
 				condition = "true";
 			};
 		};
@@ -6952,7 +6952,7 @@ class CfgBuildables {
 				name = "Small Crate";
 				model = "DSR_Object_Storage_Small";
 				description = "A small storage container";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_storage_small.paa";
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
@@ -6965,7 +6965,7 @@ class CfgBuildables {
 				name = "Large Crate";
 				model = "DSR_Object_Storage_Large";
 				description = "A large storage container";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_storage_large.paa";
 				crateObject = "DSR_Object_Storage_Large_Preview2";
 				condition = "true";
 			};
@@ -7001,7 +7001,7 @@ class CfgBuildables {
 				model = "DSR_Object_Workbench";
 				crateObject = "DSR_Object_Workbench_Preview2";
 				description = "Crafting Workbench";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_workbench.paa";
 				condition = "true";
 			};
 			class WaterCatchment {
@@ -7014,7 +7014,7 @@ class CfgBuildables {
 				model = "DSR_Object_Water_Catchment";
 				crateObject = "DSR_Object_Water_Catchment_Preview2";
 				description = "System for catching rain water";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_water_catch.paa";
 				condition = "true";
 			};
 			class StorageShed {
@@ -7029,7 +7029,7 @@ class CfgBuildables {
 				model = "DSR_Object_Storage_Shed";
 				crateObject = "DSR_Object_Storageshed_Preview2";
 				description = "A place to store stuff.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_storage_shed.paa";
 				condition = "true";
 			};
 		};
