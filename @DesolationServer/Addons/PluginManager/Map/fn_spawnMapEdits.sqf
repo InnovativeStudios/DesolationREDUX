@@ -1,5 +1,8 @@
 
 // Map Edits
+
+BASE_var_cObjectsToRender = [];
+
 _cfg = configFile >> "CfgPluginMapEdits";
 _config = _cfg >> worldName;
 
@@ -35,6 +38,7 @@ if(isClass _config) then {
 				_obj enableDynamicSimulation true;
 			} else {
 				_obj = createSimpleObject [_classname, ATLtoASL _pos];
+				BASE_var_cObjectsToRender pushBack _obj;
 			};
 			_obj setPosATL _pos;
 			_obj setVectorDirAndUp [_vectorDir,_vectorUp];
@@ -83,4 +87,5 @@ _count = count(_houses)-1;
 	diag_log ("Completed " + str(_forEachIndex+1) + " building replacements out of " + str(_count));
 } forEach _houses;
 
+publicVariable "BASE_var_cObjectsToRender";
 BASE_var_MapEditsDone = true;
