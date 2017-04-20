@@ -60,7 +60,15 @@ while{true} do {
 			//--- get house im standing on, fixes bug with some houses despawning loot when im in them
 			_houses = lineIntersectsObjs [(AGLtoASL (_x modelToWorld [0,0,0])),(AGLtoASL(_x modelToWorld [0,0,-0.5])),objNull,_x,true];
 			_nearest_building = objNull;
-			if(count(_houses) > 0) then {
+			
+			
+			{
+				if(toLower(typeof(_x)) in _all_buildings) exitWith {
+					_nearest_building = _x;
+				};
+			} forEach _houses;
+			
+			if(count(_houses) > 0 && isNull _nearest_building) then {
 				_nearest_building = _houses select (count(_houses)-1);
 			};
 			
