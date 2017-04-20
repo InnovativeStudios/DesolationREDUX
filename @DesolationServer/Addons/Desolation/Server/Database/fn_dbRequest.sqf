@@ -250,7 +250,19 @@ switch(_type)do{
 		_locked = 0;
 		_visible = 1;
 		_player_uuid = "";
-		_hitpoints = getAllHitPointsDamage _vehicle;
+		_hitpoints = [];
+		_temp = getAllHitPointsDamage _vehicle;
+		if(count(_temp) > 2) then {
+			{
+				if(_x != "") then {
+					_vArray = _temp select 2;
+					if(count(_vArray) > _forEachIndex) then {
+						_value = (_temp select 2) select _forEachIndex;
+						_hitpoints pushback [_x,_value];
+					};
+				};
+			} forEach (_temp select 0);
+		};
 		_damage = damage _vehicle;
 		_fuel = fuel _vehicle;
 		_fuelcargo = getFuelCargo _vehicle;
@@ -327,7 +339,19 @@ switch(_type)do{
 		_accesscode = "";
 		_locked = 0;
 		_player_uuid = "";
-		_hitpoints = getAllHitPointsDamage _vehicle;
+		_hitpoints = [];
+		_temp = getAllHitPointsDamage _vehicle;
+		if(count(_temp) > 2) then {
+			{
+				if(_x != "") then {
+					_vArray = _temp select 2;
+					if(count(_vArray) > _forEachIndex) then {
+						_value = (_temp select 2) select _forEachIndex;
+						_hitpoints pushback [_x,_value];
+					};
+				};
+			} forEach (_temp select 0);
+		};
 		_damage = damage _vehicle;
 		_fuel = fuel _vehicle;
 		_fuelcargo = getFuelCargo _vehicle;

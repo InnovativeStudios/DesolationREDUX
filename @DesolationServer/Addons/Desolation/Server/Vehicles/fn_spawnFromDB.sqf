@@ -13,7 +13,7 @@ params["_object_uuid","_parent","_classname","_priority","_visible","_accesscode
 
 _returnData = [];
 // todo split this into multiple scripts
-if(_priority > 10000) then {
+if(_priority > 10000) then { // vehicle
 
 
 	if(_visible == 1) then {
@@ -40,19 +40,6 @@ if(_priority > 10000) then {
 			_object setObjectTextureGlobal [_forEachIndex,_x];
 		} forEach _textures;
 		
-		if(count(_hitpoints) >= 3) then {
-			_names = _hitpoints select 0;
-			_values = _hitpoints select 2;
-			
-			_maxIt = count(_names) max count(_values);
-			for "_i" from 0 to (_maxIt-1) do {
-				if((_names select _i) != "") then { // some hitpoints dont have names
-					_object setHitPointDamage [_names select _i,_values select _i];
-				};
-			};
-		} else {
-			diag_log ("VEHICLE " + _classname + " DOES NOT HAVE HITPOINTS SAVED IN DB");
-		};
 		if(_player_uuid != "") then {
 			_object setVariable ["owner",_player_uuid];
 			_object setVariable ["friends",_friendslist];
@@ -82,6 +69,12 @@ if(_priority > 10000) then {
 		};
 		_object setVariable ["isCar",true];
 		_object allowDamage true;
+		
+		{
+			_object setHitPointDamage _x;
+		} forEach _hitpoints;
+		
+		
 		_returnData = [_object,_priority,_object_uuid];
 	};
 
