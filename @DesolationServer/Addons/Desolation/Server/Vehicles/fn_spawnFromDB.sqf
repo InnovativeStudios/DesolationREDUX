@@ -37,7 +37,7 @@ if(_priority > 10000) then {
 		_object setRepairCargo _repaircargo;
 		
 		{
-			_object setObjectTextureGlobal _x;
+			_object setObjectTextureGlobal [_forEachIndex,_x];
 		} forEach _textures;
 		
 		if(count(_hitpoints) >= 3) then {
@@ -101,7 +101,7 @@ if(_priority > 10000) then {
 		
 		
 		{
-			_object setObjectTextureGlobal _x;
+			_object setObjectTextureGlobal [_forEachIndex,_x];
 		} forEach _textures;
 		
 		

@@ -278,7 +278,7 @@ switch(_type)do{
 			};
 		} forEach (allVariables _vehicle);
 		_animation_sources = [];
-		_textures = [];
+		_textures = getObjectTextures _vehicle;
 		_direction = getDir _vehicle;
 		_positionType = 1;
 		_position = getPosATL _vehicle;
@@ -355,7 +355,7 @@ switch(_type)do{
 		
 		
 		_animation_sources = [];
-		_textures = [];
+		_textures = getObjectTextures _vehicle;
 		_direction = getDir _vehicle;
 		_positionType = 1;
 		_position = getPosATL _vehicle;
@@ -450,7 +450,7 @@ switch(_type)do{
 		
 		// animations and textures
 		_animation_sources = [];
-		_textures = [];
+		_textures = getObjectTextures _building;
 		
 		// position stuff
 		_direction = getDir _building;
@@ -530,7 +530,7 @@ switch(_type)do{
 		
 		// animations and textures
 		_animation_sources = [];
-		_textures = [];
+		_textures = getObjectTextures _building;
 		
 		// position stuff
 		_direction = getDir _building;

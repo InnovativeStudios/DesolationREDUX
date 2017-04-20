@@ -163,7 +163,11 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 					
 					_tv = _v createVehicle _posagl;
 					
-			
+					// network sync textures
+					{
+						_tv setObjectTextureGlobal [_forEachIndex,_x];
+					} foreach (getObjectTextures _tv);
+					
 					clearItemCargoGlobal _tv;
 					clearMagazineCargoGlobal _tv;
 					clearWeaponCargoGlobal _tv;
