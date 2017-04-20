@@ -16,9 +16,11 @@ disabledAI = true;
 disableChannels[]={0,2,6};
 corpseManagerMode = 3;
 loadScreen =  "\dsr_ui\Assets\logo.paa";
+
+
 respawnDialog = 0;
-respawn = 3;
-respawnDelay = 3600;
+respawn = 0;
+respawnDelay = 0;
 respawnButton = 0;
 
 class Header
@@ -43,9 +45,9 @@ showHUD[] = {
 	false,	// Vehicle radar [HIDDEN]
 	false,	// Vehicle compass [HIDDEN]
 	false,	// Tank direction indicator
-	true,	// Commanding menu
+	false,	// Commanding menu
 	false,	// Group Bar
-	true	// HUD Weapon Cursors
+	false	// HUD Weapon Cursors
 };
 
 class CfgFunctions
