@@ -13,7 +13,7 @@ params["_initOrder"];
 private["_MasterObject","_cfg","_config","_tag","_cfgName","_data"];
 _MasterObject = bis_functions_mainscope;
 
-_request = ["GetCfgFile",[["configfiles",_initOrder]]] call DB_fnc_buildIORequest;
+_request = ["GetCfgFile",["configfiles",_initOrder]];
 diag_log _request;
 _configEntries = [_request] call DB_fnc_sendRequest;
 

@@ -23,7 +23,7 @@ diag_log "<PluginManager>: Preinit Called";
 diag_log format["<PluginManager>: Broadcasted %1 functions",count(_functions_forclients)];
 
 //--- compile initialization list of files |  get PluginList.cfg from DLL
-_request = ["GetInitOrder"] call DB_fnc_buildIORequest;
+_request = ["GetInitOrder",[]];
 diag_log str _request;
 _order = [_request] call DB_fnc_sendRequest;
 

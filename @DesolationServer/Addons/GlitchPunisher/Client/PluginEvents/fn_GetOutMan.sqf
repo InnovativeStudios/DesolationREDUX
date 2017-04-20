@@ -5,7 +5,7 @@ _oldPos = getposatl _vehicle;
 _newpos = getposatl _unit;
 
 [_oldPos,_newpos,{
-	params["_oldPos","_params"]
+	params["_oldPos","_params"];
 	_position = _params select 0;
 	_vehicle = _params select 1;
 	

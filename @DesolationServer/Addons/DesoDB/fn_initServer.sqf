@@ -20,7 +20,7 @@ if(isNil {_poolSize}) exitWith {diag_log "THREAD POOL SIZE IS NOT SET, THE DATAB
 diag_log ("DesoDB > World UUID: " + _worldUUID);
 diag_log ("DesoDB > Pool Size: " + str(_poolSize));
 
-_request = ["initdb",[["poolsize",_poolSize],["worlduuid",_worldUUID]]] call DB_fnc_buildDLLRequest;
+_request = ["initdb",["poolsize",_poolSize,"worlduuid",_worldUUID]];
 diag_log "DesoDB > Init DB Request";
 diag_log _request;
 [_request] call DB_fnc_sendRequest;
