@@ -183,6 +183,7 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 							};
 						} forEach _hitpoints;
 					};
+					_tv setFuel (floor(random(10)) / 10);
 					_tv setdir _vDir;
 					_tv setposasl _posasl;
 					
