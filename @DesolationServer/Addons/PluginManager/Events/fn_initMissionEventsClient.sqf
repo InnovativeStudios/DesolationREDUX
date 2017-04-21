@@ -6,7 +6,8 @@ _data = BASE_var_missionEventsClient select 1;
 	addMissionEventHandler [(_x select 0),missionNamespace getVariable [(_x select 1),{}]];
 } forEach _data;
 
-// render custom map edits
+// render custom map edits | edit: this will be added once i figure out how to fix performance issues (70fps - 5fps when map open)
+/* 
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
 	{
 		_size = boundingBoxReal _x;
@@ -22,3 +23,4 @@ _data = BASE_var_missionEventsClient select 1;
 		true;
 	} count(BASE_var_cObjectsToRender);
 }];
+*/

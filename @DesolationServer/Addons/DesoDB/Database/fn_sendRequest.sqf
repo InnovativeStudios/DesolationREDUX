@@ -17,9 +17,6 @@ private["_response","_compiledResponse","_uuid", "_finalResponse","_return","_do
 _response = ("libredex" callExtension _request) select 0;
 _compiledResponse = call compile _response;
 
-diag_log "Lego pls";
-diag_log _response;
-
 _doswitchloop = true;
 _return = _response; //fix if result does not contain a msg type header
 // do loop because there seems to be no "fall throu"

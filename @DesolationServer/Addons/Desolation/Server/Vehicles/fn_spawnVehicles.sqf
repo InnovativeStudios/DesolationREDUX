@@ -19,6 +19,7 @@ DS_var_BuildingUUIDS = [];
 _dbSpawnData = ["getObjects"] call DS_fnc_dbRequest;
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
+if !(_dbSpawnData isEqualType []) then {diag_log str(_dbSpawnData); _dbSpawnData = [];};
 
 _tvs = [];
 diag_log "Spawning DB objects";
