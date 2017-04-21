@@ -4,7 +4,7 @@ private["_maxSoundDistance","_animState","_stance","_move","_mode","_return"];
 _maxSoundDistance = 40;
 _weaponSoundDistance = 100;
 
-_chance = (speed player) / 23;//0;
+_chance = abs(speed player) / 23;//0;
 
 /*
 _animState = animationState player;
@@ -53,12 +53,12 @@ if(count(_animState) >= 19) then {
 		_chance = _chance + 20;
 	};
 };
-
+_chance = _chance / 100;
 */
 
 
 _return = false;
-_soundDist = _maxSoundDistance * (_chance/100);
+_soundDist = _maxSoundDistance * _chance;
 if((player distance _zed) <= _soundDist) then {
 	_return = true;
 };
