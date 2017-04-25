@@ -12,10 +12,8 @@
 params["_sourcesinfo"];
 // each bleed source / level increases loss by 5 per second
 
-_iconAnim = 0;
 
 if(count(_sourcesinfo) > 0) then {
-	_iconAnim = 1;
 	
 	_numLevels = 0;
 
@@ -37,9 +35,6 @@ if(DS_var_Blood != 27500) then {
 		DS_var_bEffectSaturation = 1;
 	};
 	
-	if(DS_var_Blood < 25000) then {
-		if(_iconAnim == 0) then {_iconAnim = 2;};
-	};
 	
 	_newSaturation = DS_var_Blood / 27500;
 	if(DS_var_bEffectSaturation != _newSaturation) then {
@@ -54,32 +49,32 @@ if(DS_var_Blood != 27500) then {
 	};
 };
 
-if(_iconAnim == 0) then {
-	//-- hide blood icon
-	_ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (ctrlShown _ctrl) then {
-			_ctrl ctrlShow false;
-		};
-	};
-};
-if(_iconAnim == 1) then {
-	//flash blood icon
-	_ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		_ctrl ctrlShow !(ctrlShown _ctrl);
-	};
-};
-if(_iconAnim == 2) then {
-	//-- show blood icon
-	_ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (!ctrlShown _ctrl) then {
-			_ctrl ctrlShow true;
-		};
-	};
-};
+_ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
 
+_level = (DS_var_Blood / 27500)*100;
+
+_0 = abs(_level - 0);
+_1 = abs(_level - 25);
+_2 = abs(_level - 50);
+_3 = abs(_level - 75);
+_4 = abs(_level - 100);
+
+_min = (((_0 min _1) min _2) min _3) min _4;
+if(_min == _0) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_0.paa";
+};
+if(_min == _1) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_25.paa";
+};
+if(_min == _2) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_50.paa";
+};
+if(_min == _3) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_75.paa";
+};
+if(_min == _4) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_100.paa";
+};
 
 // 5.5L of blood in the body
 // 20% = feels weak (can't run, may stumble)

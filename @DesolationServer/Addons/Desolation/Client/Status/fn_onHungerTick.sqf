@@ -13,11 +13,9 @@ _dHunger = 1/90; //--- (100 total hunger) (2.5 hours till starvation)
 
 DS_var_lastAte = DS_var_lastAte + 1;
 
-_iconAnim = 0;
 
 if(DS_var_lastAte > 5400) then { // 1.5 hour grace
 	DS_var_Hunger = (DS_var_Hunger - _dHunger) max 0;
-	_iconAnim = 1;
 	if(!DS_var_isStarving) then {
 		DS_var_isStarving = true;
 	};
@@ -26,32 +24,30 @@ if(DS_var_lastAte > 5400) then { // 1.5 hour grace
 		DS_var_isStarving = false;
 	};
 };
-if(_iconAnim == 0 && DS_var_Hunger < 100) then {
-	_iconAnim = 2;
-};
 
-if(_iconAnim == 0) then {
-	//-- hide hunger icon
-	_ctrl = uiNamespace getVariable ["HUNGER_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (ctrlShown _ctrl) then {
-			_ctrl ctrlShow false;
-		};
-	};
+_ctrl = uiNamespace getVariable ["HUNGER_ICON",controlNull];
+
+_level = DS_var_Hunger;
+
+_0 = abs(_level - 0);
+_1 = abs(_level - 25);
+_2 = abs(_level - 50);
+_3 = abs(_level - 75);
+_4 = abs(_level - 100);
+
+_min = (((_0 min _1) min _2) min _3) min _4;
+if(_min == _0) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_0.paa";
 };
-if(_iconAnim == 1) then {
-	//flash hunger icon
-	_ctrl = uiNamespace getVariable ["HUNGER_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		_ctrl ctrlShow !(ctrlShown _ctrl);
-	};
+if(_min == _1) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_25.paa";
 };
-if(_iconAnim == 2) then {
-	//-- show hunger icon
-	_ctrl = uiNamespace getVariable ["HUNGER_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (!ctrlShown _ctrl) then {
-			_ctrl ctrlShow true;
-		};
-	};
+if(_min == _2) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_50.paa";
+};
+if(_min == _3) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_75.paa";
+};
+if(_min == _4) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_100.paa";
 };

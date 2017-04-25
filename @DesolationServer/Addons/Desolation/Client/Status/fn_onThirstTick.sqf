@@ -14,11 +14,9 @@ _dThirst = 1/18; //--- (100 total thirst) (30 min till dehyration)
 
 DS_var_lastDrank = DS_var_lastDrank + 1;
 
-_iconAnim = 0;
 
 if(DS_var_lastDrank > 3600) then { // 1 hour grace period
 	DS_var_Thirst = (DS_var_Thirst - _dThirst) max 0;
-	_iconAnim = 1;
 	if(!DS_var_isDehydrating) then {
 		DS_var_isDehydrating = true;
 	};
@@ -27,32 +25,30 @@ if(DS_var_lastDrank > 3600) then { // 1 hour grace period
 		DS_var_isDehydrating = false;
 	};
 };
-if(_iconAnim == 0 && DS_var_Thirst < 100) then {
-	_iconAnim = 2;
-};
 
-if(_iconAnim == 0) then {
-	//-- hide thirst icon
-	_ctrl = uiNamespace getVariable ["THIRST_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (ctrlShown _ctrl) then {
-			_ctrl ctrlShow false;
-		};
-	};
+_ctrl = uiNamespace getVariable ["THIRST_ICON",controlNull];
+
+_level = DS_var_Thirst;
+
+_0 = abs(_level - 0);
+_1 = abs(_level - 25);
+_2 = abs(_level - 50);
+_3 = abs(_level - 75);
+_4 = abs(_level - 100);
+
+_min = (((_0 min _1) min _2) min _3) min _4;
+if(_min == _0) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_0.paa";
 };
-if(_iconAnim == 1) then {
-	//flash thirst icon
-	_ctrl = uiNamespace getVariable ["THIRST_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		_ctrl ctrlShow !(ctrlShown _ctrl);
-	};
+if(_min == _1) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_25.paa";
 };
-if(_iconAnim == 2) then {
-	//-- show thirst icon
-	_ctrl = uiNamespace getVariable ["THIRST_ICON",controlNull];
-	if(!isNull _ctrl) then {
-		if (!ctrlShown _ctrl) then {
-			_ctrl ctrlShow true;
-		};
-	};
+if(_min == _2) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_50.paa";
+};
+if(_min == _3) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_75.paa";
+};
+if(_min == _4) then {
+	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_100.paa";
 };
