@@ -33,7 +33,7 @@ _listeners = [];
 _callsignList = ["Charle 1-1","Misfit 1-1","Burglar 1-1","Foxhound 1-1"];
 _callsign = selectRandom _callsignList;
 _gridRef = mapGridPosition getpos _heli;
-[netID _pilot,_callsign,["Mayday Mayday "+ _callsign + " is hit! We have lost engine power and are going down n GRID "+ _gridRef +" Requesting Immediate Assistance! Over"]] remoteExec ["DS_fnc_receiveTransmition",_listeners];
+[netID _pilot,_callsign,["Mayday Mayday "+ _callsign + " is hit! We have lost engine power and are going down in GRID "+ _gridRef +" Requesting Immediate Assistance! Over"]] remoteExec ["DS_fnc_receiveTransmition",_listeners];
 
 
 
