@@ -10,6 +10,31 @@ if(_damage > 0.1) then {
 	
 	if(!isNull _shooter) then {
 		if(toLower(_projectile) find "b_" == 0) then {
+			
+			// on shot visual effects
+			addCamShake [5, 1, 50];
+			["DynamicBlur", 400, [2]] spawn {
+				params ["_name", "_priority", "_effect", "_handle"];
+				while {
+					_handle = ppEffectCreate [_name, _priority];
+					_handle < 0
+				} do {
+					_priority = _priority + 1;
+				};
+				_handle ppEffectEnable true;
+				_handle ppEffectAdjust _effect;
+				_handle ppEffectCommit 0.1;
+				waitUntil {ppEffectCommitted _handle};
+				
+				_handle ppEffectAdjust [0];
+				_handle ppEffectCommit 0.5;
+				waitUntil {ppEffectCommitted _handle};
+				
+				_handle ppEffectEnable false;
+				ppEffectDestroy _handle;
+			};
+			
+			// bullet damage
 			_allowArmaDamage = false;
 			if !(_shooter in DS_var_damagedBy) then {
 				DS_var_damagedBy pushBack _shooter;
