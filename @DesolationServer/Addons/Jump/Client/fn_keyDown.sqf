@@ -92,13 +92,24 @@ if(_key in (actionKeys "getover")) then {
 						if(_climbDZ > 0) then { 
 							JMP_var_Jumping = true;
 							[] spawn {
-								waitUntil{animationState player == "aovrpercmstpsnonwnondf"};
+								waitUntil{animationState player find "aovrpercmstp" == 0};
+								_wep = currentWeapon player;
+								if(_wep != "") then {
+									player action ["SwitchWeapon",player,player,-1];
+								};
 								[player,"climb_over_tall"] remoteExecCall ["switchMove",0]; 
 								waituntil{animationState player == "climb_over_tall"};
 								waitUntil{animationState player != "climb_over_tall"};
+								if(_wep != "") then {
+									if(_wep == primaryWeapon player) then {
+										player action ["SwitchWeapon",player,player,0];
+									};
+									if(_wep == handGunWeapon player) then {
+										player action ["SwitchWeapon",player,player,6];
+									};
+								};
 								JMP_var_Jumping = false;
 							};
-
 						}; 
 					}; 
 				}; 
