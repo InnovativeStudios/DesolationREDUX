@@ -11,7 +11,6 @@
 
 _maxFatigue = 0;
  
- 
 if(DS_var_Blood <= 0) then {
 	player setDamage 1;
 } else {
@@ -21,9 +20,9 @@ if(DS_var_Blood <= 0) then {
 		diag_log "Error: Blood falling into the negatives";
 	} else {
 		if(_bloodPercent < 65) then {
-			if(random(100) < 5 && (lifeState player != "INCAPACITATED") && ((diag_tickTime - DS_var_lastKnockout) > 5)) then {
+			if(random(100) < 1 && (lifeState player != "INCAPACITATED") && ((diag_tickTime - DS_var_lastKnockout) > 5)) then {
 				_lvl = 65 - _bloodPercent;
-				_timer = ceil(((20 / 15) * _lvl) + random((10 / 15) * _lvl));
+				_timer = 10 + 2*(_lvl);
 				[_timer] spawn ds_fnc_knockOut;					
 			};
 			
@@ -31,6 +30,7 @@ if(DS_var_Blood <= 0) then {
 			if(_bloodPercent < 80) then {
 				if(random(100) < 10) then {
 					// feels week
+					
 				};
 			};
 		};
