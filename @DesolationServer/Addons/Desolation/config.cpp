@@ -574,9 +574,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
@@ -1436,9 +1436,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
@@ -2259,9 +2259,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
@@ -3052,9 +3052,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
@@ -3845,9 +3845,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
@@ -4635,9 +4635,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M4A3",15}
                 };
                 semicommon[] = {
-                    {"DSR_Arifle_Katiba",40},
+                    {"DSR_Arifle_Katiba",30},
                     {"DSR_Arifle_Katiba_C",35},
-                    {"DSR_Arifle_Katiba_GL",25}
+                    {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
                     {"DSR_SMG_01",45},
