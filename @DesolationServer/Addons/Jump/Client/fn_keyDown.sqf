@@ -55,41 +55,37 @@ if(_key in (actionKeys "getover")) then {
 				} else { 
 					if !(missionNamespace getVariable ["JMP_var_Jumping",false]) then { 
 
-						_climbDZ = 0; 
-						_x = (eyepos player) select 0; 
-						_y = (eyepos player) select 1; 
-						_dX = ((vectorDir player) select 0)/2; 
-						_dY = ((vectorDir player) select 1)/2; 
-						_sH = (eyepos player) select 2; 
+						_doClimb = false;
 
-						_p3 = [_x,_y,_sH] vectorAdd ((vectorDir player) vectorMultiply 2); 
-						_p4 = _p3 vectorAdd [0,0,2]; 
+						_eyepos = eyepos player;
+						_direction = vectorDir player;
 
-						_obj2 = lineIntersectsObjs [_p3,_p4,objNull,objNull,false]; 
+						_x = _eyepos select 0; 
+						_y = _eyepos select 1; 
+						_z = _eyepos select 2; 
+
+						_dX = (_direction select 0)/2;  
+						_dY = (_direction select 1)/2; 
+
 
 						for "_i" from 0 to 0.6 step 0.02 do { 
-							_h = _sH + _i; 
-
-							_p1 = [_x,_y,_h]; 
-							_p2 = [_x + _dX,_y + _dY,_h]; 
-
-							_obj1 = lineIntersectsObjs [_p1,_p2,player,objNull,false]; 
-
-
-
-
-							if(count(_obj1) == 0) exitWith { 
-								_climbDZ = _i; 
-								{ 
-									if(_x in _obj2) exitWith { 
-										_climbDZ = -1; 
-									}; 
-								} forEach _obj1; 
-							}; 
-						}; 
-
-
-						if(_climbDZ > 0) then { 
+							_h = _z + _i;
+							_p1 = [_x,_y,_h];
+							_p2 = [_x + _dX,_y + _dY, _h];
+							_forwardCollides = lineIntersectsObjs [_p1,_p2,player,objNull,false]; 
+							if(count(_forwardCollides) == 0) exitWith {
+								systemchat "1";
+								if(_i == 0) exitWith {};
+								_p3 = _p2 vectorAdd [_dX,_dY,0];
+								_p4 = _p3 vectorAdd [0,0,-1*_h];
+								_landCollides = lineIntersectsObjs [_p3,_p4,player,objNull,false]; 
+								if(count(_landCollides) == 0) exitWith {
+									systemchat "2";
+									_doClimb = true;
+								};
+							};
+						};
+						if(_doClimb) then {
 							JMP_var_Jumping = true;
 							[] spawn {
 								waitUntil{animationState player find "aovrpercmstp" == 0};
@@ -110,7 +106,8 @@ if(_key in (actionKeys "getover")) then {
 								};
 								JMP_var_Jumping = false;
 							};
-						}; 
+						};
+					
 					}; 
 				}; 
 			}; 
