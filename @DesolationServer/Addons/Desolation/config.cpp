@@ -559,7 +559,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -579,8 +579,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+					{"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -618,28 +619,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -661,7 +663,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -686,7 +692,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -697,7 +703,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -711,12 +718,13 @@ class CfgItemSpawns {
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",8},
+                    {"11Rnd_45ACP_Mag",5},
                     {"9Rnd_45ACP_Mag",6},
-                    {"6Rnd_45ACP_Cylinder",9},
+                    {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
 					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
@@ -1421,7 +1429,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -1441,8 +1449,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+                    {"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -1480,28 +1489,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -1523,7 +1533,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -1548,7 +1562,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -1559,7 +1573,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -1573,12 +1588,13 @@ class CfgItemSpawns {
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",8},
+                    {"11Rnd_45ACP_Mag",5},
                     {"9Rnd_45ACP_Mag",6},
-                    {"6Rnd_45ACP_Cylinder",9},
+                    {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
 					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
@@ -2244,7 +2260,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -2264,8 +2280,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+                    {"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -2303,28 +2320,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -2346,7 +2364,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -2371,7 +2393,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -2382,7 +2404,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -2396,12 +2419,13 @@ class CfgItemSpawns {
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",8},
+                    {"11Rnd_45ACP_Mag",5},
                     {"9Rnd_45ACP_Mag",6},
-                    {"6Rnd_45ACP_Cylinder",9},
+                    {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
 					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
@@ -3037,7 +3061,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -3057,8 +3081,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+                    {"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -3096,28 +3121,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -3139,7 +3165,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -3164,7 +3194,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -3175,7 +3205,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -3189,12 +3220,13 @@ class CfgItemSpawns {
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",8},
+                    {"11Rnd_45ACP_Mag",5},
                     {"9Rnd_45ACP_Mag",6},
-                    {"6Rnd_45ACP_Cylinder",9},
+                    {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
 					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
@@ -3830,7 +3862,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -3850,8 +3882,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+                    {"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -3889,28 +3922,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -3932,7 +3966,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -3957,7 +3995,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -3968,7 +4006,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -3977,14 +4016,18 @@ class CfgItemSpawns {
                     {"FlareYellow_F",5},
                     {"6Rnd_GreenSignal_F",6},
                     {"6Rnd_RedSignal_F",6},
-                    {"10Rnd_9x21_Mag",13},
+                    {"10Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_Mag",6},
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",15},
-                    {"9Rnd_45ACP_Mag",13},
-                    {"6Rnd_45ACP_Cylinder",9}
+                    {"11Rnd_45ACP_Mag",5},
+                    {"9Rnd_45ACP_Mag",6},
+                    {"6Rnd_45ACP_Cylinder",7},
+					{"Chemlight_red",7},
+					{"Chemlight_green",7},
+					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
@@ -4620,7 +4663,7 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MX_SW",15},
                     {"DSR_Arifle_MX_SW_Black",14},
                     {"DSR_Arifle_MXM",13},
-                    {"DSR_Arifle_MXM_Black",12},
+                    {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_01",5},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
@@ -4640,8 +4683,9 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SMG_01",45},
-                    {"DSR_SMG_02",55}
+                    {"DSR_SGun_M500",25},
+                    {"DSR_SMG_01",35},
+                    {"DSR_SMG_02",40}
                 };
             };
             class Handgun {
@@ -4679,28 +4723,29 @@ class CfgItemSpawns {
                     {"5Rnd_127x108_APDS_Mag",1},        //12.7mm 5Rnd APDS Mag
                     {"10Rnd_127x54_Mag",3},             //12.7mm 10Rnd Mag - ASPR
                     {"7Rnd_408_Mag",6},                 //.408 7Rnd LRR Mag
-                    {"20Rnd_762x51_Mag",10},            //7.62 mm 20Rnd Mag
+                    {"20Rnd_762x51_Mag",8},            //7.62 mm 20Rnd Mag
                     {"10Rnd_338_Mag",6},                //.338 LM 10Rnd Mag
                     {"10Rnd_93x64_DMR_05_Mag",3},       //9.3mm 10Rnd Mag
                     {"10Rnd_50BW_Mag_F",4},             //.50 BW 10Rnd Caseless Mag - Type 115
                     {"130Rnd_338_Mag",4},
-                    {"150Rnd_762x54_Box",8},
+                    {"150Rnd_762x54_Box",7},
                     {"150Rnd_762x54_Box_Tracer",7},
                     {"150Rnd_93x64_Mag",5},
-                    {"1Rnd_HE_Grenade_shell",9},
-                    {"3Rnd_HE_Grenade_shell",7}
+                    {"1Rnd_HE_Grenade_shell",7},
+                    {"3Rnd_HE_Grenade_shell",7},
+					{"762x51mm_Mk316_SB",5}
                 };
                 semirare[] = {
                     {"30Rnd_556x45_Stanag",6},
                     {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Red",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Green",5},
-                    {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
-                    {"30Rnd_65x39_caseless_mag",5},
-                    {"30Rnd_65x39_caseless_green",4},
-                    {"30Rnd_65x39_caseless_mag_Tracer",4},
-                    {"30Rnd_65x39_caseless_green_mag_Tracer",4},
+                    {"30Rnd_556x45_Stanag_red",4},
+                    {"30Rnd_556x45_Stanag_Tracer_Red",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Green",3},
+                    {"30Rnd_556x45_Stanag_Tracer_Yellow",3},
+                    {"30Rnd_65x39_caseless_mag",3},
+                    {"30Rnd_65x39_caseless_green",3},
+                    {"30Rnd_65x39_caseless_mag_Tracer",3},
+                    {"30Rnd_65x39_caseless_green_mag_Tracer",3},
                     {"10Rnd_762x54_Mag",3},                         //7.62 mm 10Rnd Mag - Rahim
                     {"30Rnd_762x39_Mag_F",2},
                     {"30Rnd_762x39_Mag_Green_F",1},
@@ -4722,7 +4767,11 @@ class CfgItemSpawns {
                     {"200Rnd_556x45_Box_F",4},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3}
+                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
+					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
+					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -4747,7 +4796,7 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Green_F",2},
                     {"30Rnd_545x39_Mag_Tracer_F",2},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",2},
-                    {"30Rnd_45ACP_Mag_SMG_01",10},
+                    {"30Rnd_45ACP_Mag_SMG_01",5},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Green",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red",7},
                     {"30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",7},
@@ -4758,7 +4807,8 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
                     {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7}
+                    {"30Rnd_9x21_Green_Mag",7},
+					{"6Rnd_12g_Buck",5}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -4772,12 +4822,13 @@ class CfgItemSpawns {
                     {"16Rnd_9x21_red_Mag",4},
                     {"16Rnd_9x21_green_Mag",4},
                     {"16Rnd_9x21_yellow_Mag",4},
-                    {"11Rnd_45ACP_Mag",8},
+                    {"11Rnd_45ACP_Mag",5},
                     {"9Rnd_45ACP_Mag",6},
-                    {"6Rnd_45ACP_Cylinder",9},
+                    {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
 					{"Chemlight_yellow",7}
+					{"6Rnd_12g_Slug",5}
                 };
 			};
             class Food {
