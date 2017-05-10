@@ -19,7 +19,7 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 		RUN_var_isAutoRun = false;
 		player switchMove "";
 	} else {
-		if (call RUN_fnc_canAutoRun)
+		if (call RUN_fnc_canAutoRun) then {
 			RUN_var_isAutoRun = true;
 			[] spawn {
 				while {RUN_var_isAutoRun} do {
