@@ -47,7 +47,7 @@ showHUD[] = {
 	false,	// Tank direction indicator
 	true,	// Commanding menu
 	false,	// Group Bar
-	false	// HUD Weapon Cursors
+	true	// HUD Weapon Cursors
 };
 
 class CfgFunctions
