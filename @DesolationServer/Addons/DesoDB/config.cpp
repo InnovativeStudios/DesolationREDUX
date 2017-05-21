@@ -42,6 +42,14 @@ class CfgFunctions
 			class getWorldUUID {};
 			class getPoolSize {};
 		};
+		class Serialization
+		{
+			file = "DesoDB\Serialization\Players";
+			isserver = 1;
+			
+			class spawnObject {};
+			class updateObject {};
+		};
 		class Serialization_Players
 		{
 			file = "DesoDB\Serialization\Players";
