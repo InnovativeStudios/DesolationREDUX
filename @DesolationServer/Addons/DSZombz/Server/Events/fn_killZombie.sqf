@@ -11,3 +11,4 @@ if(_index > -1) then {
 	DSZ_var_spawnedZeds deleteAt _index;
 };
 _zed setVariable ["diedAt",diag_tickTime]; //mark zombie for cleanup
+removeUniform _zed;
