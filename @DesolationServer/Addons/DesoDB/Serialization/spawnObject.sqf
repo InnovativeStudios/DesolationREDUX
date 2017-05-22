@@ -1,12 +1,12 @@
 
-params["_object_uuid","_className","_priority","_visible","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturrent","_variables","_animation_sources","_textures","_direction","_positionType","_position","_positionadvanced","_reservedone","_reservedtwo"];
+params["_object_uuid","_className","_priority","_objectType","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturrent","_variables","_animation_sources","_textures","_direction","_positionType","_position","_positionadvanced","_reservedone","_reservedtwo"];
 
 
 _request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,[
 	PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID,_object_uuid,
 	PROTOCOL_DBCALL_ARGUMENT_CLASSNAME,_className,
 	PROTOCOL_DBCALL_ARGUMENT_PRIORITY,_priority,
-	PROTOCOL_DBCALL_ARGUMENT_VISIBLE,_visible,
+	PROTOCOL_DBCALL_ARGUMENT_OBJECTTYPE,_objectType,
 	PROTOCOL_DBCALL_ARGUMENT_ACCESSCODE, _accesscode,
 	PROTOCOL_DBCALL_ARGUMENT_LOCKED,_locked,
 	PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_player_uuid,

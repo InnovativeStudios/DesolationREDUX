@@ -15,13 +15,18 @@
  
  
 params["_vehicle"];
+// vehicles are the object type of 3
+_objectType = 3;
+
+
 _object_uuid = _vehicle getVariable ["oUUID",""];
 _className = typeof _vehicle;
-_priority = 10001;
-_visible = 1;
-_accesscode = "";
-_locked = 0;
-_player_uuid = "";
+_priority = _vehicle getVariable ["DSR_priority",10001];
+
+_accesscode = _vehicle getVariable ["DSR_accesscode",""];
+_locked = locked _vehicle;
+_player_uuid = _vehicle getVariable ["oOWNER",""];
+
 _hitpoints = [];
 _temp = getAllHitPointsDamage _vehicle;
 if(count(_temp) > 2) then {
@@ -49,10 +54,11 @@ if(str(_repaircargo) find "-1" == 0) then {
 };
 
 _items = ([_vehicle] call DS_fnc_getLoot);
-_positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];  //todo
 _reservedone = []; // todo
 _reservedtwo = []; // todo
 _magazinesturrent = []; // todo
+
+// get server owner custom variables
 _variables = [];
 {
 	if(toLower(_x) find "svar_" == 0) then {
@@ -60,18 +66,21 @@ _variables = [];
 	};
 } forEach (allVariables _vehicle);
 
-
+// animations and textures
 _animation_sources = [];
 _textures = getObjectTextures _vehicle;
+
+// position stuff
 _direction = getDir _vehicle;
 _positionType = 1;
 _position = getPosATL _vehicle;
+_positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];
 
 [
 	_object_uuid,
 	_className,
 	_priority,
-	_visible,
+	_objectType,
 	_accesscode,
 	_locked,
 	_player_uuid,
