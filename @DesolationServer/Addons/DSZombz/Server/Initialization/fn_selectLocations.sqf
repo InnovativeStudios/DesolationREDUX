@@ -66,7 +66,7 @@ for "_i" from 1 to _Random_Zombies do {
 
 
 DSZ_var_spawnData = _zombieData;
-
+DSZ_var_doneSpawning = true;
 
 
 
