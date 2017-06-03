@@ -56,7 +56,11 @@ if (_dCoef >= 1) then
 	[_tree, _origMtW, _dCoef] spawn 
 	{
 		params["_tree","_origMtW"];
-
+		
+		//tree chopped callback
+		
+		["DS_var_treeChoppedCallbackFnc",["trees_chopped",[_tree]]] call DS_fnc_handleCallback;
+		
 		uisleep 2;
 
 		private _nMtW = _tree modelToWorld [0,0,1];

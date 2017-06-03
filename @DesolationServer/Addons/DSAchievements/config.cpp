@@ -59,7 +59,7 @@ class CfgFunctions
 	};
 };
 
-//all tasks. this is used as a base class 
+//all tasks. this can be used as a base class 
 class All_Tasks {
 	player_kills = 0;
 	zombie_kills = 0;

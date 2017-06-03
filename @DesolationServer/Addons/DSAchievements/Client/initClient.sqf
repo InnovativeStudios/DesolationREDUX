@@ -9,6 +9,5 @@ DSA_var_callBackTypes = [];
 waitUntil{!isNil "ACH_DATA"};
 
 
-////////
-// TODO: hook into desolation callback functions for tasks
-////////
+// register callbacks
+DS_var_treeChoppedCallbackFnc = "DSA_fnc_handleCallback";

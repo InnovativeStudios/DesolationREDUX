@@ -160,6 +160,7 @@ class CfgFunctions
 			class calcGrayscale {};
 			class getCfgValue {};
 			class shuffleArray {};
+			class handleCallback {};
 			class genRandMapPos {};
 		};
 		class Client_Actions_System {
