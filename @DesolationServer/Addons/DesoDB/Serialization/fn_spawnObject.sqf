@@ -1,3 +1,4 @@
+#include "\DesoDB\constants.hpp" 
 
 params["_object_uuid","_className","_priority","_objectType","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturrent","_variables","_animation_sources","_textures","_direction","_positionType","_position","_positionadvanced","_reservedone","_reservedtwo"];
 
