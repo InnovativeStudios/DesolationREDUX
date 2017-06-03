@@ -724,7 +724,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};
@@ -1594,7 +1594,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};
@@ -2425,7 +2425,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};
@@ -3226,7 +3226,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};
@@ -4027,7 +4027,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};
@@ -4828,7 +4828,7 @@ class CfgItemSpawns {
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
 					{"Chemlight_green",7},
-					{"Chemlight_yellow",7}
+					{"Chemlight_yellow",7},
 					{"6Rnd_12g_Slug",5}
                 };
 			};

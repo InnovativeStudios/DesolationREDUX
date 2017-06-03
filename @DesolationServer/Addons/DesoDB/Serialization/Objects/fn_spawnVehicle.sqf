@@ -80,11 +80,11 @@ _positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];
 // support to add objects that already have an uuid - in case i fuck up again (Legodev)
 _objectUUID = _vehicle getVariable ["oUUID",""];
 
-if (_objectUUID == "") {
+if (_objectUUID == "") then {
 	_request = [PROTOCOL_DBCALL_FUNCTION_RETURN_UUID,[]];
 	_objectUUID = [_request] call DB_fnc_sendRequest;
 	_vehicle setVariable ["oUUID",_objectUUID];
-}
+};
 
 [
 	_objectUUID,
@@ -106,9 +106,7 @@ if (_objectUUID == "") {
 	_textures,
 	_direction,
 	_positionType,
-	_position select 0,
-	_position select 1,
-	_position select 2,
+	_position,
 	_positionadvanced,
 	_reservedone,
 	_reservedtwo

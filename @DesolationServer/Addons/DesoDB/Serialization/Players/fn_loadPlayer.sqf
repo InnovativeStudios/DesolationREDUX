@@ -26,7 +26,7 @@ _response = [_request] call DB_fnc_sendRequest;
 
 
 _playeruuid = _response select 0;
-_dpvaruuid = _response select 1;
+_dpvaruuid = _response select 1; // what is this? its for persistant variables. whats it used for? i do not know.
 _friendlist = _response select 2;
 _kickableData = _response select 3;
 _kickable = _kickableData select 0;
@@ -46,6 +46,6 @@ if(_kickable && _open_alpha_test && ((diag_tickTime - (missionNamespace getVaria
 _playerObj setVariable ["pUUID",_playeruuid];
 
 _request = [PROTOCOL_DBCALL_FUNCTION_LOAD_CHAR,[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid]];
-_response = [_request] call DB_fnc_sendRequest
+_response = [_request] call DB_fnc_sendRequest;
 
 _response;

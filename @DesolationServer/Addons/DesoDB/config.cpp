@@ -44,7 +44,7 @@ class CfgFunctions
 		};
 		class Serialization
 		{
-			file = "DesoDB\Serialization\Players";
+			file = "DesoDB\Serialization";
 			isserver = 1;
 			
 			class spawnObject {};

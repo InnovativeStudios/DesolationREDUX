@@ -39,15 +39,15 @@ _returnData = [];
  * }
  */
 
-if (_objectType > 1) { // its an building, vehicle or ai - all use createVehicle
+if (_objectType > 1) then { // its an building, vehicle or ai - all use createVehicle
 	_position = [_positionx,_positiony,_positionz];
 	_object = _classname createVehicle _position;
 	
-	if (_objectType == 2) {  // if building
+	if (_objectType == 2) then {  // if building
 		for "_i" from 1 to 5 do {
 			_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
 		};
-	}
+	};
 	
 	clearItemCargoGlobal _object;
 	clearMagazineCargoGlobal _object;
@@ -81,7 +81,7 @@ if (_objectType > 1) { // its an building, vehicle or ai - all use createVehicle
 	
 	if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
 		_object setVariable ["DSR_priority", _priority];
-	}
+	};
 	
 	
 	[_object,_items] call DS_fnc_setLoot;
@@ -118,7 +118,7 @@ if (_objectType > 1) { // its an building, vehicle or ai - all use createVehicle
 	
 	if(_objectType == 4) then { // ai
 		diag_log("sorry ai is not supported");
-	}
+	};
 
 	_returnData = [_object,_objectType,_object_uuid];
 };
