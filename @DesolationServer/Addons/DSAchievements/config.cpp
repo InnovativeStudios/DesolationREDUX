@@ -46,6 +46,7 @@ class CfgFunctions
 		{
 			file = "DSAchievements\Client\Tasks";
 			isclient = 1;
+			class IncrementTask {};
 			class playerKilled {};
 			class treeChopped {};
 			class zombieKilled {};

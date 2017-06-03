@@ -9,6 +9,5 @@ _points = _achData select 3;
 
 player setVariable ["PVAR_DSA_Ach_" + _name,true,true];
 
-[[_title,_description + " +" + str(_points) + " Pts."]] call DS_fnc_showNotification;
-
-//TODO: add points to progression ????
+[[_title,_description + " +" + str(_points) + " Pts."]] call DSA_fnc_showNotification;
+systemchat ("Achievement Completed: " + _title);

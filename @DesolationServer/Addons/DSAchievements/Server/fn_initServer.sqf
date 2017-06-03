@@ -24,4 +24,4 @@ for "_i" from 0 to count(_cfg)-1 do {
 	};
 };
 
-publicVariable ACH_DATA;
+publicVariable "ACH_DATA";
