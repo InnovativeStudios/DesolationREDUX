@@ -50,6 +50,12 @@ class CfgFunctions
 			class treeChopped {};
 			class zombieKilled {};
 		};
+		
+		class Server {
+			file = "DSAchievements\Server";
+			isserver = 1;
+			class initServer {};
+		};
 	};
 };
 

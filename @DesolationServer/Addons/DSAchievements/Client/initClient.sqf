@@ -6,14 +6,7 @@ DSA_var_callBackTypes = [];
 ["trees_chopped","DSA_fnc_treeChopped"] call DSA_fnc_registerCallbackType; 
 
 
-////////
-// TODO: receive achievement data from server
-////////
-
-
-////////
-// TODO: wait for client to load and check his achievement data (maybe an "onPlayerSpawnSuccess" event?)
-////////
+waitUntil{!isNil "ACH_DATA"};
 
 
 ////////
