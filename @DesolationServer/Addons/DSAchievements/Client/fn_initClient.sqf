@@ -1,11 +1,19 @@
 
 
 DSA_var_callBackTypes = [];
-["player_kills","DSA_fnc_playerKilled"] call DSA_fnc_registerCallbackType; 
-["zombie_kills","DSA_fnc_zombieKilled"] call DSA_fnc_registerCallbackType; 
-["trees_chopped","DSA_fnc_treeChopped"] call DSA_fnc_registerCallbackType; 
-
-
+["items_crafted","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["objects_built","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["mags_combined","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["num_drinks","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["num_eats","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["fires_lit","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["bandage_self","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["bandage_others","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["bloodbag_others","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["bloodbag_self","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["splint_self","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["splint_others","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
+["trees_chopped","DSA_fnc_defaultTaskHandler"] call DSA_fnc_registerCallbackType; 
 waitUntil{!isNil "ACH_DATA"};
 
 

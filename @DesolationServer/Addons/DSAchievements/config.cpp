@@ -47,9 +47,7 @@ class CfgFunctions
 			file = "DSAchievements\Client\Tasks";
 			isclient = 1;
 			class IncrementTask {};
-			class playerKilled {};
-			class treeChopped {};
-			class zombieKilled {};
+			class defaultTaskHandler {};
 		};
 		
 		class Server {
@@ -62,13 +60,23 @@ class CfgFunctions
 
 //all tasks. this can be used as a base class 
 class All_Tasks {
-	player_kills = 0;
-	zombie_kills = 0;
 	trees_chopped = 0;
+	objects_built = 0;
+	items_crafted = 0;
+	mags_combined = 0;
+	num_drinks = 0;
+	num_eats = 0;
+	fires_lit = 0;
+	bandage_self = 0;
+	bandage_others = 0;
+	bloodbag_others = 0;
+	bloodbag_self = 0;
+	splint_self = 0;
+	splint_others = 0;
 };
 
 // server sided config
-class CfgAchievements {
+class CfgDSRAchievements {
 	class TreeChop1 {
 		title = "Chop 10 trees";
 		description = "I chopped a tree!";
@@ -112,6 +120,63 @@ class CfgAchievements {
 		
 		class Tasks : All_Tasks {
 			trees_chopped = 1000;
+		};
+	};
+	
+	class BandageOthers1 {
+		title = "Bandage 5 other players";
+		description = "First Aid Badge.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			bandage_others = 5;
+		};
+	};
+	class BandageOthers2 {
+		title = "Bandage 20 other players";
+		description = "Advanced First Aid Badge.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			bandage_others = 20;
+		};
+	};
+	class BloodbagOthers1 {
+		title = "Bloodbag 1 other player";
+		description = "Lifesaver.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			bloodbag_others = 1;
+		};
+	};
+	class BloodbagOthers2 {
+		title = "Bloodbag 10 other players";
+		description = "Mr Red Cross.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			bloodbag_others = 10;
+		};
+	};
+	
+	class CraftAny1 {
+		title = "Craft something";
+		description = "Well look at you.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			items_crafted = 1;
+		};
+	};
+	
+	class BuildAny1 {
+		title = "Build something";
+		description = "A regular работник.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			objects_built = 1;
 		};
 	};
 };

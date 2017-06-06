@@ -1,6 +1,6 @@
 
 
-_cfg = configFile >> "CfgAchievements";
+_cfg = configFile >> "CfgDSRAchievements";
 ACH_DATA = [];
 for "_i" from 0 to count(_cfg)-1 do {
 	_entry = _cfg select _i;
