@@ -61,9 +61,11 @@
 
 	if(count(_bTemp) > 0) exitWith {systemchat "You are not near the buildings required to craft this!"};
 
-	if(!isNil 'ds_var_doingCraft') then {
-		if(ds_var_doingCraft) exitWith {systemchat "You are already crafting something!";false};
+	if(isNil 'ds_var_doingCraft') then {
+		ds_var_doingCraft = false;
 	};
+	if(ds_var_doingCraft) exitWith {systemchat "You are already crafting something!";false};
+	
 	ds_var_cancelCraft = false;
 	ds_var_doingCraft = true;
 	_event = (findDisplay 46) displayAddEventHandler ["KeyDown",{
@@ -94,5 +96,6 @@
 		true
 	} count _cOutput;
 	
+	["DS_var_craftDoneCallbackFnc",["items_crafted",[_cName]]] call DS_fnc_handleCallback;
 	systemchat ("Crafted: " + _cName);
 };

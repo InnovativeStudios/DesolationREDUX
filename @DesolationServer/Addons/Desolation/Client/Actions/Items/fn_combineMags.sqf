@@ -28,3 +28,5 @@ for "_i" from 1 to _numMags do {
 	};
 	_totalAmmo = _totalAmmo - _ammoCount;
 };
+
+["DS_var_magsCombinedCallbackFnc",["mags_combined",[_classname]]] call DS_fnc_handleCallback;

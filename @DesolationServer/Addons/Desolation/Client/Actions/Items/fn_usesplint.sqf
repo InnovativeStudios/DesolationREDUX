@@ -16,6 +16,7 @@ if(_target isEqualType "") then {
 	_success = {
 		player setHitPointDamage ["HitLegs",0];
 		systemchat "I have applied the splint";
+		["DS_var_selfSplintCallbackFnc",["splint_self",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
 		private["_type"];
@@ -35,6 +36,7 @@ if(_target isEqualType "") then {
 		{
 			player setHitPointDamage ["HitLegs",0];
 		} remoteExecCall ["call",_target];
+		["DS_var_otherSplintCallbackFnc",["splint_others",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
 		private["_type"];

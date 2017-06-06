@@ -23,6 +23,7 @@ if((_classname find '_full' != 0) || (_classname find '_dirty' != 0)) then {
 
 _success = {
 	[20] call DS_fnc_onDrink;
+	["DS_var_drinkDoneCallbackFnc",["num_drinks",[]]] call DS_fnc_handleCallback;
 };
 _failure = {
 	private["_type"];

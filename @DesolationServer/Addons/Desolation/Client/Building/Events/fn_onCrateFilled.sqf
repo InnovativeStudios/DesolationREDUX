@@ -10,4 +10,5 @@
  */
 params["_crate"];
 
+["DS_var_constructionDoneCallbackFnc",["objects_built",[_crate]]] call DS_fnc_handleCallback;
 [_crate] remoteExec ["DS_fnc_finishBuild",2];

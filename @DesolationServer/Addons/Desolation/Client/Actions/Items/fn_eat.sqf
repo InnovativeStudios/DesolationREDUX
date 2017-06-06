@@ -12,6 +12,7 @@
 params["_classname"];
 _success = {
 	[20] call DS_fnc_onEat;
+	["DS_var_eatDoneCallbackFnc",["num_eats",[]]] call DS_fnc_handleCallback;
 };
 _failure = {
 	private["_type"];

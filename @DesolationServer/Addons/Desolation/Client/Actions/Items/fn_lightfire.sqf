@@ -11,6 +11,7 @@
 
 _success = {
 	Systemchat "TODO: Action";
+	["DS_var_firesLitCallbackFnc",["fires_lit",[]]] call DS_fnc_handleCallback;
 };
 _failure = {
 	private["_type"];
