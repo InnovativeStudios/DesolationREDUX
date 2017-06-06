@@ -69,13 +69,49 @@ class All_Tasks {
 
 // server sided config
 class CfgAchievements {
-	class TreeChopper {
-		title = "Tree Chopper!";
-		description = "Chop down 10 trees.";
+	class TreeChop1 {
+		title = "Chop 10 trees";
+		description = "I chopped a tree!";
 		points = 10;
 		
 		class Tasks : All_Tasks {
 			trees_chopped = 10;
+		};
+	};
+	class TreeChop2 {
+		title = "Chop 50 trees";
+		description = "Lumberjack!";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			trees_chopped = 50;
+		};
+	};
+	class TreeChop3 {
+		title = "Chop 100 trees";
+		description = "Soo many trees.";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			trees_chopped = 100;
+		};
+	};
+	class TreeChop4 {
+		title = "Chop 500 trees";
+		description = "Master of the forest!";
+		points = 50;
+		
+		class Tasks : All_Tasks {
+			trees_chopped = 500;
+		};
+	};
+	class TreeChop5 {
+		title = "Chop 1000 trees";
+		description = "Fern Gulley asshole.";
+		points = 100;
+		
+		class Tasks : All_Tasks {
+			trees_chopped = 1000;
 		};
 	};
 };
