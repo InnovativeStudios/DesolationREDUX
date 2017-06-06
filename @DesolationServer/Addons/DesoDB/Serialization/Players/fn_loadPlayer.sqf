@@ -45,7 +45,6 @@ if(_kickable && _open_alpha_test && ((diag_tickTime - (missionNamespace getVaria
 
 
 // persistant variables
-if(_dpvaruuid isEqualType []) exitWith {diag_log "PERSISTANT VARIABLES RETURNS ARRAY";};
 if(_dpvaruuid == "") then {
 	
 	//loadAvChars
