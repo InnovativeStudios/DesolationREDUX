@@ -73,6 +73,11 @@ class CfgFunctions
 	class DS
 	{
 		//--- client functions
+		class Client_Progression {
+			file = "Desolation\Client\Progression";
+			isclient = 1;
+			class addPoints {};
+		};
 		class Client_PluginEvents {
 			file = "Desolation\Client\PluginEvents";
 			isclient = 1;
