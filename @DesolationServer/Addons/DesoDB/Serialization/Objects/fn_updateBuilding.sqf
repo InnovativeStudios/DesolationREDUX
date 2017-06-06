@@ -87,9 +87,7 @@ _positionadvanced = [["DSR_vectorUp",vectorUp _building]]; // TODO: add high pre
 	_textures,
 	_direction,
 	_positionType,
-	_position select 0,
-	_position select 1,
-	_position select 2,
+	_position,
 	_positionadvanced,
 	_reservedone,
 	_reservedtwo
