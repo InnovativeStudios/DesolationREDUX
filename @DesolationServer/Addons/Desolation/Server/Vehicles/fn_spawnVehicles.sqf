@@ -180,7 +180,7 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 					_hitpoints = (getAllHitPointsDamage _tv) select 0;
 					if(!isNil {_hitpoints}) then {
 						{
-							if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody") then {
+							if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody" && (tolower(_x) find "hit" == 0)) then {
 								_value = random(1);
 								_tv setHitPointDamage [_x,_value];
 							};
