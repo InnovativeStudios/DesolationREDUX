@@ -13,15 +13,27 @@ _totalAmmo = 0;
 } forEach (magazinesAmmo player);
 
 
+_magMass = getNumber(configFile >> "CfgMagazines" >> _classname >> "mass");
+
 
 _numMags = ceil(_totalAmmo/_ammoCount);
 for "_i" from 1 to _numMags do {
 	_container = uniformContainer player;
-	_container addMagazineAmmoCargo [_classname,1,_ammoCount min _totalAmmo];
-	if(({_x == _classname} count(magazines player)) != _i) then {
-		_container = vestContainer player;
+	_totalMass = getContainerMaxLoad (uniform player);
+	_usedMass = (loadUniform player)*_totalMass;
+	_remainingMass = _totalMass - _usedMass;
+	
+	if(_remainingMass > _magMass) then {
 		_container addMagazineAmmoCargo [_classname,1,_ammoCount min _totalAmmo];
-		if(({_x == _classname} count(magazines player)) != _i) then {
+	} else {
+		_container = vestContainer player;
+		_totalMass = getContainerMaxLoad (vest player);
+		_usedMass = (loadVest player)*_totalMass;
+		_remainingMass = _totalMass - _usedMass;
+		
+		if(_remainingMass > _magMass) then {
+			_container addMagazineAmmoCargo [_classname,1,_ammoCount min _totalAmmo];
+		} else {
 			_container = backpackContainer player;
 			_container addMagazineAmmoCargo [_classname,1,_ammoCount min _totalAmmo];
 		};
