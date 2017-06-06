@@ -11,3 +11,4 @@ player setVariable ["PVAR_DSA_Ach_" + _name,true,true];
 
 [[_title,_description + " +" + str(_points) + " Pts."]] call DSA_fnc_showNotification;
 systemchat ("Achievement Completed: " + _title);
+[_points] call DS_fnc_addPoints;
