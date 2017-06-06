@@ -26,7 +26,7 @@ _response = [_request] call DB_fnc_sendRequest;
 
 
 _playeruuid = _response select 0;
-_dpvaruuid = _response select 1; // what is this? its for persistant variables. whats it used for? i do not know.
+_dpvaruuid = _response select 1;
 _friendlist = _response select 2;
 _kickableData = _response select 3;
 _kickable = _kickableData select 0;
@@ -42,6 +42,32 @@ if (_kickable && !_open_alpha_test) exitWith {
 if(_kickable && _open_alpha_test && ((diag_tickTime - (missionNamespace getVariable ["DS_var_startTime",10000])) < 300)) exitWith {
 	["Only closed-alpha testers can join for the first 5 minutes. Please wait your turn."] remoteExecCall ["DS_fnc_notWhitelisted", _playerObj];
 };
+
+
+// persistant variables
+if(_dpvaruuid isEqualType []) exitWith {diag_log "PERSISTANT VARIABLES RETURNS ARRAY";};
+if(_dpvaruuid == "") then {
+	
+	//loadAvChars
+	
+	_dataInArray = false; // psuedo
+	
+	if(_dataInArray) then {
+		//display info to player and wait for answer (link characters?)
+		
+		_answer = "dpvar";
+		if(_answer == "dpvar") then {
+			// linkChars
+		} else {
+			// jump to standard createChar
+		};
+	} else {
+		// jump to standard createChar
+	};
+} else {
+
+};
+
 
 _playerObj setVariable ["pUUID",_playeruuid];
 
