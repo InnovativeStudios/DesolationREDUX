@@ -17,8 +17,8 @@ call ds_fnc_closebuttons;
 _display = findDisplay 602;
 if(isNull _display) exitWith {systemchat "ERROR: displayNull";};
 
-_buttonY = safeZoneY + (safeZoneH/2) - (385*pixelH);
-_buttonX = safeZoneX + (safeZoneW/2) + (395*pixelW);
+_buttonY = safeZoneY + (safeZoneH/2) - (385*pixelH*pixelGridBase/18);
+_buttonX = safeZoneX + (safeZoneW/2) + (395*pixelW*pixelGridBase/18);
 
 _ctrl = _params select 0;
 _item = _params select 1;
