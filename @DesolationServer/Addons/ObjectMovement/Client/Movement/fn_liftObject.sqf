@@ -32,17 +32,16 @@ if([_object] call OM_fnc_canLift) then {
 		
 		_maxheight = call compile (["maxHeight","OM"] call BASE_fnc_getCfgValue); 
 		_carryDistance = call compile (["carryDistance","OM"] call BASE_fnc_getCfgValue); 
-		_speedUp = call compile (["liftSpeed","OM"] call BASE_fnc_getCfgValue);
-		_speedDown = -1*(call compile (["liftSpeed","OM"] call BASE_fnc_getCfgValue));
+		_speedUpDown = call compile (["liftSpeed","OM"] call BASE_fnc_getCfgValue);
 		_lagComp = call compile (["lagComp","OM"] call BASE_fnc_getCfgValue);
 		_maxDistToObject = call compile (["maxDistance","OM"] call BASE_fnc_getCfgValue);
-		_objectNewVelocityZ = 0.168;
+		_gravityCounter = 0.125;//DO NOT TOUCH THIS OR A KITTEN DROWNS!
 		_speedPushPull = call compile (["moveSpeed","OM"] call BASE_fnc_getCfgValue);
 		_maxCollisionForce = call compile (["maxForce","OM"] call BASE_fnc_getCfgValue);
 		_rotSpeed = call compile (["rotationSpeed","OM"] call BASE_fnc_getCfgValue);
 		
-		_carryDistance = _carryDistance + ((_object getVariable ["oWidth",0])/1.5);
-		_maxDistToObject = _maxDistToObject + (_object getVariable ["oWidth",0]);
+		_carryDistance = _carryDistance + sizeOf _object;
+		_maxDistToObject = _maxDistToObject + sizeOf _object;
 		
 		if(!isNull _object) then {
 			if(OM_var_collisionForce < _maxCollisionForce) then {
@@ -57,56 +56,53 @@ if([_object] call OM_fnc_canLift) then {
 				
 				if(_wantedHeight < 0) then {_wantedHeight = 0;}; 
 				
-				
-				_playerXVelocity = (velocity player) select 0;
-				_playerYVelocity = (velocity player) select 1;
-				_playerZVelocity = (velocity player) select 2;
-				
-				_objectXVelocity = _playerXVelocity *_lagComp;
-				_objectYVelocity = _playerYVelocity *_lagComp;
+				_objectXVelocity = 0;
+				_objectYVelocity = 0;
+				_objectZVelocity = 0;
 				_relativeDir = (player getDir _object);
 				_shortestAngle = ((((getDir player - _relativeDir) % 360) + 540) % 360) - 180;
 				
+				
+				
+				//rotation control
 				if(abs _shortestAngle > 2) then {
 					if(_shortestAngle > 0) then {
-						_objectXVelocity = _playerXVelocity * _lagComp + (_rotSpeed* -((vectorDir _object)select 1));
-						_objectYVelocity = _playerYVelocity * _lagComp  + (_rotSpeed* ((vectorDir _object)select 0)); 
+						_objectXVelocity = - _rotSpeed;
 					} else {
-						_objectXVelocity = _playerXVelocity * _lagComp + (_rotSpeed*((vectorDir _object)select 1));
-						_objectYVelocity = _playerYVelocity * _lagComp + (_rotSpeed* -((vectorDir _object)select 0));
+						_objectXVelocity = _rotSpeed;
 					};
 				};
+				
+				
+				
+				//distance control
 				if (player distance2d _object > _carryDistance) then {
-					
-					_objectForwardVelocityHolder = [_objectXVelocity,_objectYVelocity,0] vectorAdd [(sin(getDir _object)*_speedPushPull),(cos(getDir _object)*_speedPushPull),0];
-					_objectXVelocity = (_objectForwardVelocityHolder)select 0;
-					_objectYVelocity =  (_objectForwardVelocityHolder)select 1;
+					_objectYVelocity = _speedPushPull;
 				} else {
-					if (player distance2D _object < _carryDistance - 0.1) then {
-						_objectForwardVelocityHolder = [_objectXVelocity,_objectYVelocity,0] vectorDiff [(sin(getDir _object)*_speedPushPull),(cos(getDir _object)*_speedPushPull),0];
-						_objectXVelocity = (_objectForwardVelocityHolder)select 0;
-						_objectYVelocity =  (_objectForwardVelocityHolder)select 1;
-					};
+						if (player distance2d _object < (_carryDistance - 0.1 )) then {
+						_objectYVelocity = -_speedPushPull;
+						};
 				};
-				if(abs (_wantedHeight-_objectHeight) > 0.03) then { 
+				
+				
+				//height control
+				if(abs (_wantedHeight-_objectHeight) > 0.1) then { 
 					if (_wantedHeight > (_objectHeight)) then {
-						_objectNewVelocityZ  = (_speedUp + _playerZVelocity);
+						_objectZVelocity  = _speedUpDown + _gravityCounter;
 					} else { 
-						if(_wantedHeight < (_objectHeight)) then {
-							_objectNewVelocityZ = (_speedDown + _playerZVelocity);
+						if(_wantedHeight < (_objectHeight - 0.1)) then {
+						_objectZVelocity = -_speedUpDown;
 						};
 					};
 				};
-
-				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
-
-
+				
+				
+				_object setVelocity (velocity player);
 				_object setDir (_object getDir player);
-
-				 
-				_object setVelocity [_objectXVelocity,_objectYVelocity, _objectNewVelocityZ];
+				_object setVelocityModelspace ((velocityModelspace _object) VectorAdd [_objectXVelocity*_lagComp,_objectYVelocity*_lagComp, (_objectZVelocity+_gravityCounter)*_lagComp]);
 			
 			};
+		};
 		};
 	}];
 };
