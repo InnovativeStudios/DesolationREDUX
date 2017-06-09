@@ -75,7 +75,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 		_object setVariable ["aCode",_accesscode];
 	};
 	
-	if(_locked == 1) then {
+	if(_locked == 2) then {
 		_object setVariable ["locked",true];
 	};
 	
