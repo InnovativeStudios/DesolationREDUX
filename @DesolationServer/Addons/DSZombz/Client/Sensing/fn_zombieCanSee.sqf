@@ -4,7 +4,14 @@ _maxVisionDistance = 70;
 _maxVisibleAngle = 45;
 
 _return = false;
-//TODO: nighttime - reduce vision distance
+
+if(sunOrMoon == 0) then {
+	_maxVisibleAngle = 15;
+	_maxVisionDistance = 30;
+};
+
+//TODO: is under light (lamp for example)
+
 if((player distance _zed) <= _maxVisionDistance) then {
 
 	//get vectors
