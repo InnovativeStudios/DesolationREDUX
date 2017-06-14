@@ -411,6 +411,53 @@ class CfgHeliCrashes {
 			};
 		};
 		
+		class Ammo {
+			HeliClass = "DSR_UH1H_F";
+			WreckClass = "DSR_Object_Wreck3";
+			WreckSmoke = 1; //1 for true 0 for false!
+			SpawnAltitude = 600;
+			//particle effects config (size and origin)
+			SmokePos[] = {0,0,0};
+			SmokeSize = 7;
+			Locations[] =
+			{
+				{2794.793,6132.3345},
+				{12407.456,3987.5303},
+				{11379.448,11809.968},
+				{10190.923,2723.2224}
+			};
+			
+			class loot {
+				maxLootpiles = 10;//not implemented yet
+				weapons[] = {
+
+				};
+				magazines[] = {
+					"9Rnd_45ACP_Mag",
+					"9Rnd_45ACP_Mag",
+					"16Rnd_9x21_Mag",
+					"16Rnd_9x21_Mag",
+					"30Rnd_762x39_mag",
+					"30Rnd_556x45_Stanag",
+					"10rnd_22lr_26grn",
+					"762x51mm_Mk316_SB",
+					"30Rnd_762x51_M80A1_Mag",
+					"30Rnd_762x35mm_300_ACC_FMJ_mag",
+					"6Rnd_12g_Slug",
+					"32Rnd_9x19mm_Mag",
+					"10Rnd_762x54_Mag",
+					"30Rnd_45ACP_Mag_SMG_01",
+					"30Rnd_65x39_caseless_green",
+					"30Rnd_9x21_Mag_SMG_02",
+					"30Rnd_65x39_caseless_mag"
+				};
+				items[] = {
+				};
+				backpacks[] = {
+				};
+			};
+		};
+		
 		class Medical {
 			HeliClass = "DSR_UH1H_F";
 			WreckClass = "DSR_Object_Wreck3";
@@ -467,6 +514,37 @@ class CfgAirdropSpawns {
 		};
 		items[] = {
 			"FirstAidKit"
+		};
+		backpacks[] = {
+			
+		};
+	};
+	class AmmoDrop {
+		name = "Ammunition Drop";
+		weapons[] = {
+			
+		};
+		magazines[] = {
+			"9Rnd_45ACP_Mag",
+			"9Rnd_45ACP_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"30Rnd_762x39_mag",
+			"30Rnd_556x45_Stanag",
+			"10rnd_22lr_26grn",
+			"762x51mm_Mk316_SB",
+			"30Rnd_762x51_M80A1_Mag",
+			"30Rnd_762x35mm_300_ACC_FMJ_mag",
+			"6Rnd_12g_Slug",
+			"32Rnd_9x19mm_Mag",
+			"10Rnd_762x54_Mag",
+			"30Rnd_45ACP_Mag_SMG_01",
+			"30Rnd_65x39_caseless_green",
+			"30Rnd_9x21_Mag_SMG_02",
+			"30Rnd_65x39_caseless_mag"
+		};
+		items[] = {
+			
 		};
 		backpacks[] = {
 			
@@ -6419,6 +6497,22 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {0.802014,180.148,275.272};
 		};
+		class Land_HelipadCircle_F {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class Land_HelipadCivil_F {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class Land_HelipadRescue_F {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class Land_HelipadSquare_F {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
 		class Land_Airport_01_hangar_F {
 			locations[] = {{8.36755,7.4707,-2.70845},{-7.8866,6.66309,-2.70776}
 			};
@@ -6724,12 +6818,32 @@ class CfgVehicleSpawns {
 				
 			};
 		};
-		class UH1H {
+		class DSR_UH1H_F {
 			class Spawns {
-				
+				class Land_HelipadCircle_F { };
+				class Land_HelipadCivil_F { };
+				class Land_HelipadRescue_F { };
+				class Land_HelipadSquare_F { };
 			};
-			buildings[] = {};
 		};
+		class DSR_UH1H_camo_F {
+			class Spawns {
+				class Land_HelipadCircle_F { };
+				class Land_HelipadCivil_F { };
+				class Land_HelipadRescue_F { };
+				class Land_HelipadSquare_F { };
+			};
+		};
+		class DSR_UH1H_tka_F {
+			class Spawns {
+				class Land_HelipadCircle_F { };
+				class Land_HelipadCivil_F { };
+				class Land_HelipadRescue_F { };
+				class Land_HelipadSquare_F { };
+			};
+		};
+		
+		
 		
 		//--- boats
 		class DSR_FishingBoat_F {
