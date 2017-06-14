@@ -64,28 +64,29 @@ for "_i" from 0 to count(_cfg)-1 do {
 		_replaceClasses pushBack toLower(getText(_entry >> "replace"));
 	};
 };
-_houses = nearestObjects[[worldSize/2,worldSize/2,0],_findClasses,worldSize,false,true];
-_count = count(_houses)-1;
-{
-	_type = toLower(typeof(_x));
-	_index = _findClasses find _type;
-	_replace = _replaceClasses select _index;
-	
-	_x enableSimulationGlobal false;
-	_x hideObjectGlobal true;
-	_x allowDamage false;
-	
-	_pos = getPosATL _x;
-	_vectorDir = vectorDir _x;
-	_vectorUp = vectorUp _x;
-	
-	_obj = _replace createVehicle _pos;
-	_obj enableDynamicSimulation true;
-	_obj setPosATL _pos;
-	_obj setVectorDirAndUp [_vectorDir,_vectorUp];
-	_obj enableSimulationGlobal false;
-	diag_log ("Completed " + str(_forEachIndex+1) + " building replacements out of " + str(_count));
-} forEach _houses;
-
+if(count(_findClasses) > 0) then {
+	_houses = nearestObjects[[worldSize/2,worldSize/2,0],_findClasses,worldSize,false,true];
+	_count = count(_houses)-1;
+	{
+		_type = toLower(typeof(_x));
+		_index = _findClasses find _type;
+		_replace = _replaceClasses select _index;
+		
+		_x enableSimulationGlobal false;
+		_x hideObjectGlobal true;
+		_x allowDamage false;
+		
+		_pos = getPosATL _x;
+		_vectorDir = vectorDir _x;
+		_vectorUp = vectorUp _x;
+		
+		_obj = _replace createVehicle _pos;
+		_obj enableDynamicSimulation true;
+		_obj setPosATL _pos;
+		_obj setVectorDirAndUp [_vectorDir,_vectorUp];
+		_obj enableSimulationGlobal false;
+		diag_log ("Completed " + str(_forEachIndex+1) + " building replacements out of " + str(_count));
+	} forEach _houses;
+};
 publicVariable "BASE_var_cObjectsToRender";
 BASE_var_MapEditsDone = true;
