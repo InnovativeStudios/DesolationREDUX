@@ -2120,7 +2120,28 @@ class CfgVehicleSpawns {
 		class WarfareBAirport {locations[] = {{-0.204224,-0.669434,-5.91507}};directions[] = {182.505};};
 		class Land_Mil_hangar_EP1 {locations[] = {{0.543823,-0.458984,-5.42382}};directions[] = {182.505};};
 
-
+		class Land_A_Hospital {locations[] = {{4.33032,-4.32495,3.2904}};directions[] = {98.3031};};
+		
+		class HeliH {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class HeliHCivil {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class Heli_H_Civil {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class Heli_H_Rescue {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
+		class HeliHRescue {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
 
 		//water
 		class Land_Nav_Boathouse {locations[] = {{2.77588,1.64014,2.87225},{-2.92737,-1.27783,2.87226}};directions[] = {183.33,183.33};};
@@ -2383,9 +2404,32 @@ class CfgVehicleSpawns {
 				
 			};
 		};
-		class UH1H {
+		class DSR_UH1H_F {
 			class Spawns {
-				
+				class HeliH { };
+				class HeliHCivil { };
+				class Heli_H_Civil { };
+				class Heli_H_Rescue { };
+				class HeliHRescue { };
+				class Land_A_Hospital { };
+			};
+		};
+		class DSR_UH1H_camo_F {
+			class Spawns {
+				class HeliH { };
+				class HeliHCivil { };
+				class Heli_H_Civil { };
+				class Heli_H_Rescue { };
+				class HeliHRescue { };
+			};
+		};
+		class DSR_UH1H_tka_F {
+			class Spawns {
+				class HeliH { };
+				class HeliHCivil { };
+				class Heli_H_Civil { };
+				class Heli_H_Rescue { };
+				class HeliHRescue { };
 			};
 		};
 		
