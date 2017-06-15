@@ -35,74 +35,84 @@ if([_object] call OM_fnc_canLift) then {
 		_speedUpDown = call compile (["liftSpeed","OM"] call BASE_fnc_getCfgValue);
 		_lagComp = call compile (["lagComp","OM"] call BASE_fnc_getCfgValue);
 		_maxDistToObject = call compile (["maxDistance","OM"] call BASE_fnc_getCfgValue);
-		_gravityCounter = 0.125;//DO NOT TOUCH THIS OR A KITTEN DROWNS!
+		_gravityCounter = 0.125;
 		_speedPushPull = call compile (["moveSpeed","OM"] call BASE_fnc_getCfgValue);
 		_maxCollisionForce = call compile (["maxForce","OM"] call BASE_fnc_getCfgValue);
 		_rotSpeed = call compile (["rotationSpeed","OM"] call BASE_fnc_getCfgValue);
 		
-		_carryDistance = _carryDistance + sizeOf _object;
-		_maxDistToObject = _maxDistToObject + sizeOf _object;
+		_carryDistance = _carryDistance + sizeOf typeof _object;
+		_maxDistToObject = _maxDistToObject + sizeOf typeof _object;
+		
+		
+		
 		
 		if(!isNull _object) then {
-			if(OM_var_collisionForce < _maxCollisionForce) then {
-				if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;}; 
-				
+			_ins = lineIntersectsSurfaces [AGLToASL positionCameraToWorld [0,0,0], AGLToASL positionCameraToWorld [0,0,_carryDistance], player, _object];
 			
-				_playerHeight = (getPosATL player) select 2;
-				_objectHeight = (getPosATL _object) select 2;
-				_weaponPitch = (getCameraViewDirection player) select 2;
+			if(count(_ins) == 0) then {
+		
+				if(OM_var_collisionForce < _maxCollisionForce) then {
+					if (((player distance2d _object) > _maxDistToObject) || !(alive player)) exitWith {call OM_fnc_dropObject;}; 
+					
 				
-				_wantedHeight = ((((1 - (_weaponPitch/ -0.985))) * _maxheight)-1) + _playerHeight;
-				
-				if(_wantedHeight < 0) then {_wantedHeight = 0;}; 
-				
-				_objectXVelocity = 0;
-				_objectYVelocity = 0;
-				_objectZVelocity = 0;
-				_relativeDir = (player getDir _object);
-				_shortestAngle = ((((getDir player - _relativeDir) % 360) + 540) % 360) - 180;
-				
-				
-				
-				//rotation control
-				if(abs _shortestAngle > 2) then {
-					if(_shortestAngle > 0) then {
-						_objectXVelocity = - _rotSpeed;
+					_playerHeight = (getPosATL player) select 2;
+					_objectHeight = (getPosATL _object) select 2;
+					_weaponPitch = (getCameraViewDirection player) select 2;
+					
+					_wantedHeight = ((((1 - (_weaponPitch/ -0.985))) * _maxheight)-1) + _playerHeight;
+					
+					if(_wantedHeight < 0) then {_wantedHeight = 0;}; 
+					
+					_objectXVelocity = 0;
+					_objectYVelocity = 0;
+					_objectZVelocity = 0;
+					_relativeDir = (player getDir _object);
+					_shortestAngle = ((((getDir player - _relativeDir) % 360) + 540) % 360) - 180;
+					
+					
+					
+					comment "//rotation control";
+					if(abs _shortestAngle > 2) then {
+						if(_shortestAngle > 0) then {
+							_objectXVelocity = - _rotSpeed;
+						} else {
+							_objectXVelocity = _rotSpeed;
+						};
+					};
+					
+					
+					
+					comment "//distance control";
+					if (player distance2d _object > _carryDistance) then {
+						_objectYVelocity = _speedPushPull;
 					} else {
-						_objectXVelocity = _rotSpeed;
+							if (player distance2d _object < (_carryDistance - 0.1 )) then {
+							_objectYVelocity = -_speedPushPull;
+							};
 					};
-				};
-				
-				
-				
-				//distance control
-				if (player distance2d _object > _carryDistance) then {
-					_objectYVelocity = _speedPushPull;
-				} else {
-						if (player distance2d _object < (_carryDistance - 0.1 )) then {
-						_objectYVelocity = -_speedPushPull;
-						};
-				};
-				
-				
-				//height control
-				if(abs (_wantedHeight-_objectHeight) > 0.1) then { 
-					if (_wantedHeight > (_objectHeight)) then {
-						_objectZVelocity  = _speedUpDown + _gravityCounter;
-					} else { 
-						if(_wantedHeight < (_objectHeight - 0.1)) then {
-						_objectZVelocity = -_speedUpDown;
+					
+					
+					comment "//height control";
+					if(abs (_wantedHeight-_objectHeight) > 0.1) then { 
+						if (_wantedHeight > (_objectHeight)) then {
+							_objectZVelocity  = _speedUpDown + _gravityCounter;
+						} else { 
+							if(_wantedHeight < (_objectHeight - 0.1)) then {
+							_objectZVelocity = -_speedUpDown;
+							};
 						};
 					};
+					
+					_object setVelocity (velocity player);
+					_object setDir (_object getDir player);
+					_object setVelocityModelspace ((velocityModelspace _object) VectorAdd [_objectXVelocity*_lagComp,_objectYVelocity*_lagComp, (_objectZVelocity+_gravityCounter)*_lagComp]);
+					
 				};
-				
-				
-				_object setVelocity (velocity player);
-				_object setDir (_object getDir player);
-				_object setVelocityModelspace ((velocityModelspace _object) VectorAdd [_objectXVelocity*_lagComp,_objectYVelocity*_lagComp, (_objectZVelocity+_gravityCounter)*_lagComp]);
-			
+			} else {
+				_object setPosASL (_ins select 0 select 0); 
+				_object setDir getdir player;
+				_object setVectorUp (_ins select 0 select 1);
 			};
-		};
 		};
 	}];
 };
