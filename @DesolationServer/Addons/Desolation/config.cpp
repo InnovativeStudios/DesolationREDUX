@@ -6497,6 +6497,10 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {0.802014,180.148,275.272};
 		};
+		class Land_HelipadEmpty_F {
+			locations[] = {{0,0,0}};
+			directions[] = {0};
+		};
 		class Land_HelipadCircle_F {
 			locations[] = {{0,0,0}};
 			directions[] = {0};
@@ -6824,6 +6828,7 @@ class CfgVehicleSpawns {
 				class Land_HelipadCivil_F { };
 				class Land_HelipadRescue_F { };
 				class Land_HelipadSquare_F { };
+				class Land_HelipadEmpty_F { };
 			};
 		};
 		class DSR_UH1H_camo_F {
@@ -6832,6 +6837,7 @@ class CfgVehicleSpawns {
 				class Land_HelipadCivil_F { };
 				class Land_HelipadRescue_F { };
 				class Land_HelipadSquare_F { };
+				class Land_HelipadEmpty_F { };
 			};
 		};
 		class DSR_UH1H_tka_F {
@@ -6840,6 +6846,7 @@ class CfgVehicleSpawns {
 				class Land_HelipadCivil_F { };
 				class Land_HelipadRescue_F { };
 				class Land_HelipadSquare_F { };
+				class Land_HelipadEmpty_F { };
 			};
 		};
 		
