@@ -23,8 +23,8 @@ _event = (findDisplay 46) displayAddEventHandler ["KeyDown",{
 
 waitUntil{isNull OM_var_lifted};
 
-(findDisplay 46) displayRemoveEventHandler ["KeyDown",_event];
-
 if(isNull _crate) exitWith {};
 
 [_crate] remoteExec ["DS_fnc_buildableDropped",2];
+
+(findDisplay 46) displayRemoveEventHandler ["KeyDown",_event];

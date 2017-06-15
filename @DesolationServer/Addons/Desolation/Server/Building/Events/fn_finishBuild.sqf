@@ -44,13 +44,14 @@ clearMagazineCargoGlobal _crate;
 	_crate addMagazineAmmoCargo _x
 } forEach _newammo;
 
-_loot = [_crate] call DS_fnc_getLoot; //TODO save this loot to groundWeaponHolder
+_loot = [_crate] call DS_fnc_getLoot;
 
 _holder = "groundWeaponHolder" createVehicle (position _crate);
 [_holder,_loot] call DS_fnc_setLoot;
 
 _pos = getposatl _crate;
 _dir = getdir _crate;
+_vectorUp = vectorUp _crate;
 
 deleteVehicle _crate;
 
@@ -58,12 +59,12 @@ deleteVehicle _crate;
 _obj = _model createVehicle [0,0,0];
 _obj setdir _dir;
 _obj setposatl _pos;
-_crate setVectorUp [0,0,1];
+_obj setVectorUp _vectorUp;
 
 _obj setVariable ["SVAR_Parts",_items];
 _obj setVariable ["oOWNER",_owner,true];
 for "_i" from 1 to 5 do {
-	_obj setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
+	_obj setVariable["bis_disabled_Door_" + str(_i),1,true];
 };
 
 scopeName "exitCheck";
@@ -72,7 +73,7 @@ scopeName "exitCheck";
 	if(_uuid != "") then {
 		if(_uuid == _owner) then {
 			[[_obj]] remoteExec ["DS_fnc_registerOwner",_x];
-			breakTo "exitCheck"; // exit forEach loop, we found the owner
+			breakTo "exitCheck";
 		};
 	};
 } forEach allPlayers;
