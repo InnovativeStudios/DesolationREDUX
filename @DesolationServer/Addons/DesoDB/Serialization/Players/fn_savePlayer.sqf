@@ -22,8 +22,7 @@ if(_playeruuid == "" || _charuuid == "") exitWith {diag_log "INTERNAL ERROR | FA
 _posATL = getPosATL _playerObj;
 _loadout = getUnitLoadout _playerObj;
 _vars = allVariables _playerObj;
-_textures = []; //--- fix for escape sequence error
-
+_textures = getObjectTextures _playerObj;
 _nonpersvars = [];
 _persvars = [];
 {

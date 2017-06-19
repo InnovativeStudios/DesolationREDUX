@@ -21,7 +21,7 @@ if(_playeruuid == "") exitWith {diag_log "INTERNAL ERROR | FATAL > PlayerUUID no
 _posATL = getPosATL _playerObj;
 _loadout = getUnitLoadout _playerObj;
 _vars = allVariables _playerObj;
-_textures = []; //getObjectTextures _playerObj; // escape sequence error (maybe replace \ with \\)
+_textures = [];
 
 _nonpersvars = [];
 _persvars = [];
@@ -81,7 +81,7 @@ _playerObj setVariable ["cUUID",_response];
 _request = [PROTOCOL_DBCALL_FUNCTION_LOAD_CHAR,[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid]];
 _data = [_request] call DB_fnc_sendRequest;
 
-
+_data deleteAt 0;
 _anim = _data deleteAt 0;
 _dir = _data deleteAt 0;
 _data deleteAt 0;
@@ -109,13 +109,12 @@ _handgun = _data deleteAt 0;
 _tools = _data deleteAt 0;
 _currentWeapon = _data deleteAt 0;
 
-// load variables
 {
 	_playerObj setVariable [_x select 0,_x select 1,true];
 	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
 } forEach _nonpersvars;
 {
 	_playerObj setVariable [_x select 0,_x select 1,true];
-	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
+	diag_log ("SETTING PERSISTANT VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
 } forEach _persvars;
 
