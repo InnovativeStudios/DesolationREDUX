@@ -38,9 +38,9 @@ setWind [random(15),random(15)];
 forceWeatherChange;
 /// end of server values
 
-_startingFogHeight = random(200);
-_startingFog = (random 0.1) max 0.005;
-_startingFogDensity = (random 0.04) max 0.005;  
+_endingFogHeight = random(200);
+_endingFog = (random 0.1) max 0.005;
+_endingFogDensity = (random 0.04) max 0.005;  
 
 
 _endingOverCast = random(1) max 0.1;
