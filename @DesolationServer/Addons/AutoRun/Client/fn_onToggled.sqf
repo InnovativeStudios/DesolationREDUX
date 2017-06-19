@@ -24,7 +24,7 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 			[] spawn {
 				while {RUN_var_isAutoRun} do {
 					player playAction "FastF";
-					sleep 0.5;//Needs to be called every 0.6 but do 0.5 to be safe...
+					sleep 0.5;
 				};
 			};
 		};

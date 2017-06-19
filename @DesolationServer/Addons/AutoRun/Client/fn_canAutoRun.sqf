@@ -8,7 +8,7 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-
+private["_canAutoRun"];
 if ((vehicle player) isEqualTo player && underwater player && ((getPosASL player) select 2) < 0.1 && (stance player) isEqualTo "UNDEFINED") then {
 	_canAutoRun = false;
 } else {
