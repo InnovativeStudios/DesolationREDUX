@@ -10,14 +10,51 @@
  */
 
 /*
-	Spooky Weather Init
+	Weather Init
 */
-_fogValue = parseNumber (["FogValue","SW"] call BASE_fnc_getCfgValue);
-_overcastValue = parseNumber (["OvercastValue","SW"] call BASE_fnc_getCfgValue);
+
+/// start of server values
+_startingFogHeight = random(80);
+_startingFog = (random 0.1) max 0.005;
+_startingFogDensity = (random 0.04) max 0.005;  
+
+_startingOverCast = random(1) max 0.1;
+_startingRain = random(1) max 0.1;
+_startingWindStrength = random(1);
+_startingWindForce = random(1);
+_startingWindDir = random(360);
+_startingWindGusts = random(1);
 
 
-0 setFog _fogValue;
-0 setOvercast _overcastValue;
+0 setFog [_startingFog,_startingFogDensity,_startingFogHeight];
+0 setOvercast _startingOverCast;
+0 setRain _startingRain;
+setWind [random(15),random(15)];
+0 setWindStr _startingWindStrength;
+0 setWindDir _startingWindDir;
+0 setWindForce _startingWindForce;	
+0 setGusts _startingWindGusts;
+
 forceWeatherChange;
-999999 setFog (_fogValue - (_fogValue/2) + random(_fogValue)); // 0.05 - 0.025 + random(0.05) (or 0.05 +- 0.025)
-999999 setOvercast (_overcastValue - (_overcastValue/2) + random(_overcastValue)); // 0.05 - 0.025 + random(0.05) (or 0.05 +- 0.025)
+/// end of server values
+
+_startingFogHeight = random(200);
+_startingFog = (random 0.1) max 0.005;
+_startingFogDensity = (random 0.04) max 0.005;  
+
+
+_endingOverCast = random(1) max 0.1;
+_endingRain = random(1) max 0.1;
+_endingWindStrength = random(1);
+_endingWindForce = random(1);
+_endingWindDir = random(360);
+_endingWindGusts = random(1);
+
+14400 setOvercast _endingOverCast;
+14400 setRain _endingRain;
+14400 setWindStr _endingWindStrength;
+14400 setWindDir _endingWindDir;
+14400 setWindForce _endingWindForce;	
+14400 setGusts _endingWindGusts;
+14400 setFog [_endingFog,_endingFogDensity,_endingFogHeight];
+
