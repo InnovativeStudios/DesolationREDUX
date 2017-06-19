@@ -32,6 +32,19 @@ if(isClass _config) then {
 					_isSimple = false;
 				};
 			};
+			_data = getArray(configFile >> "cfgVehicles" >> _classname >> "ladders");
+			if(count(_data) > 0) then {
+				_isSimple = false;
+			};
+			if(_classname isKindOf "House") then {
+				_isSimple = false;
+			};
+			if(_classname isKindOf "Strategic") then {
+				_isSimple = false;
+			};
+			if(_classname isKindOf "HeliH") then {
+				_isSimple = false;
+			};
 			
 			if(!_isSimple) then {
 				_obj = _classname createVehicle _pos;
