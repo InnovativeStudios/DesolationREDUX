@@ -1,8 +1,8 @@
 params["_zed"];
 private["_maxSoundDistance","_animState","_stance","_move","_mode","_return"];
 
-_maxSoundDistance = 40;
-_weaponSoundDistance = 100;
+_maxSoundDistance = 20;
+_weaponSoundDistance = 80;
 
 _chance = abs(speed player) / 23;
 
