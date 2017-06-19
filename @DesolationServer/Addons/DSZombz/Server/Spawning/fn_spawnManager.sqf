@@ -20,7 +20,6 @@ while{true} do {
 					//-- transfer locality to nearest man
 					_plr = _nearPlayers select 0;
 					
-					diag_log "DSZOMBZ > TRANSFERING";
 					
 					[_plr,_x] call DSZ_fnc_toClient;
 				};

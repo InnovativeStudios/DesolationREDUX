@@ -94,7 +94,7 @@ DeleteEmptyHolder =
 		_threads = Diag_activeScripts;
 		NUM_THREADS = (_threads select 0) + (_threads select 1) - 1;
 		
-		if(NUM_THREADS > 13 && diag_fps < 40) then {
+		if(NUM_THREADS > 15 && diag_fps < 40) then {
 			diag_log ("ERROR: CANT KEEP UP! To many threads running on the server - " + str(NUM_THREADS) + " - FPS: " + str(diag_fps));
 		};
 		if(diag_fps < 15) then {

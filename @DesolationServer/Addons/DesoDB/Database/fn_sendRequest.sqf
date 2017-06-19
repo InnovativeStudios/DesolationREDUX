@@ -71,7 +71,6 @@ while{_doswitchloop} do {
             
             _request = [PROTOCOL_LIBARY_FUNCTION_RECEIVE_MESSAGE, ["msguuid", _uuid]];
 			
-			diag_log "Receiving multipart message";
             _innerdoloop = true;
             while{_innerdoloop} do {
                 _response = ("libredex" callExtension _request) select 0;
@@ -84,7 +83,6 @@ while{_doswitchloop} do {
             };
             
             _compiledResponse = call compile _finalResponse;
-            diag_log "Message received";
             _doswitchloop = true;
         };
 

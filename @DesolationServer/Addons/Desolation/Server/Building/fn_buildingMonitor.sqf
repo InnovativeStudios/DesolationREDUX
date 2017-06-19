@@ -17,7 +17,6 @@ call DS_fnc_checkServerLock;
 while{true} do {
 	_time = diag_tickTime + (60*30);
 	waitUntil{diag_tickTime >= _time || !DS_var_runBuildingMon};
-	diag_log  "Building Monitor> Updating Database";
 	_newArray1 = [];
 	_newArray2 = [];
 	{
@@ -42,7 +41,6 @@ while{true} do {
 			_newArray2 pushBack _uuid;
 		};
 	} forEach (DS_var_Buildings);
-	diag_log  "Building Monitor> Done";
 	
 	DS_var_Buildings = _newArray1;
 	DS_var_BuildingUUIDS = _newArray2;

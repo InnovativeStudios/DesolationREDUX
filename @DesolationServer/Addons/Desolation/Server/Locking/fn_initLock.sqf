@@ -22,7 +22,6 @@ _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""]
 if(!isNil "TM_fnc_lock") then {
 	[_password] call TM_fnc_lock;
 } else {
-	diag_log ("SERVER LOCKING > PASSWORD: " + _password);
 	_password serverCommand "#lock";
 	diag_log "SERVER LOCKING > LOCKED";
 };

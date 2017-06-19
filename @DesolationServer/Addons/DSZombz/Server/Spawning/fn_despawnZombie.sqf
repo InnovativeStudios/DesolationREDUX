@@ -15,7 +15,6 @@ if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 	if(!local (group _zed)) then {[_zed] call DSZ_fnc_fromClient;};
 	
 	
-	diag_log format["DSZOMBZ > DESPAWNING ZOMBIE # %1",_zIndex];
 	_group = group _zed;
 	deleteGroup _group;
 	deleteVehicle _zed;
@@ -24,7 +23,6 @@ if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 	_near = [getpos _zed] call DSZ_fnc_getNearPlayers;
 	if(count(_near) > 0) then {
 		// transfer zombie locality to new near player
-		diag_log format["DSZOMBZ > NOT DELETING, TRANSFERING ZED # %1",_zIndex];
 		_plr = _near select 0;
 		[_plr,_zed] call DSZ_fnc_toClient;
 	} else {

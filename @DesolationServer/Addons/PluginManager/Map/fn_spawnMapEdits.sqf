@@ -44,7 +44,7 @@ if(isClass _config) then {
 			_obj setVectorDirAndUp [_vectorDir,_vectorUp];
 			_obj enableSimulationGlobal false;
 			
-			diag_log ("Spawned " + str(_i+1) + " map edits out of " + str(_count));
+			//diag_log ("Spawned " + str(_i+1) + " map edits out of " + str(_count));
 		};
 	};
 
@@ -85,7 +85,7 @@ if(count(_findClasses) > 0) then {
 		_obj setPosATL _pos;
 		_obj setVectorDirAndUp [_vectorDir,_vectorUp];
 		_obj enableSimulationGlobal false;
-		diag_log ("Completed " + str(_forEachIndex+1) + " building replacements out of " + str(_count));
+		//diag_log ("Completed " + str(_forEachIndex+1) + " building replacements out of " + str(_count));
 	} forEach _houses;
 };
 publicVariable "BASE_var_cObjectsToRender";

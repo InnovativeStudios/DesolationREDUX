@@ -15,7 +15,6 @@ _owner = _crate getVariable ["oOWNER",""];
 _entry = _crate getVariable "SVAR_buildParams";
 _items = _entry select 0;
 _model = _entry select 2;
-diag_log _model;
 
 _array = [];
 {

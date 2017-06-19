@@ -1,7 +1,5 @@
 params["_zIndex","_owner"];
 
-diag_log format["SPAWNING ZOMBIE # %1",_zIndex];
-
 _zData = DSZ_var_spawnData select _zIndex;
 
 _class = _zData select 0;

@@ -19,7 +19,6 @@ while{true} do {
 	waitUntil{diag_tickTime >= _time || !DS_var_runVehicleMon};
 	
 	
-	diag_log  "Vehicle Monitor> Updating Database";
 	_newArray1 = [];
 	_newArray2 = [];
 	{
@@ -43,7 +42,6 @@ while{true} do {
 			_newArray2 pushBack _uuid;
 		};
 	} forEach (DS_var_Vehicles);
-	diag_log  "Vehicle Monitor> Done";
 	DS_var_Vehicles = _newArray1;
 	DS_var_VehicleUUIDS = _newArray2;
 	
