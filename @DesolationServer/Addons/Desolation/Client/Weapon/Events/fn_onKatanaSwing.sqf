@@ -8,7 +8,7 @@ if(alive _closest) then {
 			if(_closest == player) exitWith {};
 			[player,2] remoteExec ["DS_fnc_onMeleeHit",_closest];
 		} else {
-			_closest setDamage ((damage _closest) + 0.25);
+			_closest setDamage 1;
 		};
 	} else {
 		if(cursorTarget in vehicles) then {

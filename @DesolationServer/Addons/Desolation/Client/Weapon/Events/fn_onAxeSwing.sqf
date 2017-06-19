@@ -25,7 +25,7 @@ if (isNull _tree) exitWith {
 				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
 				[player,1] remoteExec ["DS_fnc_onMeleeHit",_closest];
 			} else {
-				_closest setDamage ((damage _closest) + 0.25);
+				_closest setDamage 1;
 			};
 		} else {
 			if(cursorTarget in vehicles) then {
