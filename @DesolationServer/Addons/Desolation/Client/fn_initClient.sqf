@@ -22,7 +22,6 @@ if(worldName == "Chernarus") then {
 	"ColorCorrections" ppEffectCommit 0;
 };
 
-
 call ds_fnc_initHud;
 call ds_fnc_initInvHandler;
 [] spawn DS_fnc_initBuilding;

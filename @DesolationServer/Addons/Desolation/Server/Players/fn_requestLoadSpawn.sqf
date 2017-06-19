@@ -49,6 +49,10 @@ _unit hideObjectGlobal true;
 	_unit setVariable [_x select 0,_x select 1,true];
 	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
 } forEach _nonpersvars;
+{
+	_unit setVariable [_x select 0,_x select 1,true];
+	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
+} forEach _persvars;
 
 
 _unit setVariable ["pUUID",_client getVariable "pUUID"];
