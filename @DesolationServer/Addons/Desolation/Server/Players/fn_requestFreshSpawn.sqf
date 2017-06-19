@@ -83,4 +83,4 @@ waitUntil{getPlayerUID _unit == _uid && (tolower(goggles _unit) == tolower(_defa
 deleteVehicle _client;
 //--- add default values to non-presistant vars here
 NULL_CALLBACK = compileFinal "";
-["createPlayer","NULL_CALLBACK",[_unit]] call DS_fnc_dbRequest; //--- send request to database
+["createPlayer","NULL_CALLBACK",[_unit]] call DS_fnc_dbRequest; //--- create fresh player in DB

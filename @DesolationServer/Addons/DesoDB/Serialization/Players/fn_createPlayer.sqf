@@ -72,5 +72,50 @@ _request = [PROTOCOL_DBCALL_FUNCTION_CREATE_CHAR,[
 	PROTOCOL_DBCALL_ARGUMENT_TOOLS, [_loadout select 8,_loadout select 9],
 	PROTOCOL_DBCALL_ARGUMENT_CURRENTWEAPON, currentWeapon _playerObj
 ]];
+
 _response = [_request] call DB_fnc_sendRequest;
+
+
 _playerObj setVariable ["cUUID",_response];
+
+_request = [PROTOCOL_DBCALL_FUNCTION_LOAD_CHAR,[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid]];
+_data = [_request] call DB_fnc_sendRequest;
+
+
+_anim = _data deleteAt 0;
+_dir = _data deleteAt 0;
+_data deleteAt 0;
+_x = _data deleteAt 0;
+_y = _data deleteAt 0;
+_z = _data deleteAt 0;
+_class = _data deleteAt 0;
+_hitpoints = _data deleteAt 0;
+
+_nonpersvars = _data deleteAt 0;
+_persvars = _data deleteAt 0;
+
+_textures = _data deleteAt 0;
+_invuniform = _data deleteAt 0;
+_invvest = _data deleteAt 0;
+_invbackpack = _data deleteAt 0;
+_uniform = _data deleteAt 0;
+_vest = _data deleteAt 0;
+_backpack = _data deleteAt 0;
+_headgear = _data deleteAt 0;
+_goggles = _data deleteAt 0;
+_primary = _data deleteAt 0;
+_secondary = _data deleteAt 0;
+_handgun = _data deleteAt 0;
+_tools = _data deleteAt 0;
+_currentWeapon = _data deleteAt 0;
+
+// load variables
+{
+	_playerObj setVariable [_x select 0,_x select 1,true];
+	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
+} forEach _nonpersvars;
+{
+	_playerObj setVariable [_x select 0,_x select 1,true];
+	diag_log ("SETTING VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
+} forEach _persvars;
+
