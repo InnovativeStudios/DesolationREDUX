@@ -626,7 +626,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -635,7 +635,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -645,9 +646,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -667,7 +669,7 @@ class CfgItemSpawns {
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -742,16 +744,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -759,8 +763,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -769,8 +773,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -786,9 +791,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -806,10 +811,10 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
-                };
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
+                }; 
 			};
             class Food {
                 rare[] = {
@@ -1496,7 +1501,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -1505,7 +1510,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -1515,9 +1521,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -1533,11 +1540,11 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SGun_M500",25},
+					{"DSR_SGun_M500",25},
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -1612,16 +1619,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -1629,8 +1638,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -1639,8 +1648,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -1656,9 +1666,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -1676,9 +1686,9 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
                 };
 			};
             class Food {
@@ -2327,7 +2337,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -2336,7 +2346,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -2346,9 +2357,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -2364,11 +2376,11 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SGun_M500",25},
+					{"DSR_SGun_M500",25},
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -2443,16 +2455,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -2460,8 +2474,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -2470,8 +2484,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -2487,9 +2502,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -2507,9 +2522,9 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
                 };
 			};
             class Food {
@@ -3128,7 +3143,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -3137,7 +3152,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -3147,9 +3163,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -3165,11 +3182,11 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SGun_M500",25},
+					{"DSR_SGun_M500",25},
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -3244,16 +3261,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -3261,8 +3280,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -3271,8 +3290,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -3288,9 +3308,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -3308,9 +3328,9 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
                 };
 			};
             class Food {
@@ -3929,7 +3949,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -3938,7 +3958,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -3948,9 +3969,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -3966,11 +3988,11 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SGun_M500",25},
+					{"DSR_SGun_M500",25},
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -4045,16 +4067,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -4062,8 +4086,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -4072,8 +4096,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -4089,9 +4114,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -4109,9 +4134,9 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
                 };
 			};
             class Food {
@@ -4730,7 +4755,7 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Hex",5},            //Cyrus
                     {"DSR_Srifle_DMR_05_Tan",5},            //Cyrus
-                    {"DSR_Srifle_EBR",7.99},
+                    {"DSR_Srifle_EBR",3.99},
                     {"DSR_SMG_MP40",0.01},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
@@ -4739,7 +4764,8 @@ class CfgItemSpawns {
                     {"DSR_MMG_01_Tan",2},                   //Navid
                     {"DSR_MMG_02_Camo",4},                  //SPMG
                     {"DSR_MMG_02_Black",4},                 //SPMG
-                    {"DSR_MMG_02_Sand",4}                   //SPMG
+                    {"DSR_MMG_02_Sand",4},                 	//SPMG
+					{"DSR_sv98",4}							//SV-98
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL",17},
@@ -4749,9 +4775,10 @@ class CfgItemSpawns {
                     {"DSR_Arifle_MXM",13},
                     {"DSR_Arifle_M4_300",12},
                     {"DSR_LMG_Mk200",6},
-                    {"DSR_Srifle_DMR_01",5},                 //Rahim
+                    {"DSR_Srifle_DMR_01",2},                 //Rahim
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
-                    {"DSR_Srifle_DMR_06_Olive",1}            //Mk14
+                    {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
+					{"DSR_Arifle_FnFal",3}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC",20},
@@ -4767,11 +4794,11 @@ class CfgItemSpawns {
                     {"DSR_Arifle_M16A2",35}
                 };
                 common[] = {
-                    {"DSR_SGun_M500",25},
+					{"DSR_SGun_M500",25},
                     {"DSR_SMG_01",35},
                     {"DSR_SMG_02",40}
                 };
-            };
+            }; 
             class Handgun {
                 rare[] = {
                     {"DSR_Hgun_PDW2000",1},
@@ -4846,16 +4873,18 @@ class CfgItemSpawns {
                     {"200Rnd_65x39_Belt_Tracer_Yellow",2},
                     {"150Rnd_762x54_Box",3},
                     {"150Rnd_762x54_Box_Tracer",2},
-                    {"150Rnd_556x45_Drum_Mag_F",3},
+                    {"150Rnd_556x45_Drum_Mag_F",2},
                     {"150Rnd_556x45_Drum_Mag_Tracer_F",1},
-                    {"200Rnd_556x45_Box_F",4},
+                    {"200Rnd_556x45_Box_F",2},
                     {"200Rnd_556x45_Box_Red_F",3},
                     {"200Rnd_556x45_Box_Tracer_F",3},
-                    {"200Rnd_556x45_Box_Tracer_Red_F",3},
+                    {"200Rnd_556x45_Box_Tracer_Red_F",2},
 					{"30Rnd_762x35mm_300_ACC_FMJ_mag",3},
 					{"30Rnd_762x35mm_300_ACC_FMJ_Tracer",3},
-					{"30Rnd_762x35mm_300_ACC_OT_mag",3},
-					{"30Rnd_762x35mm_300_ACC_OT_Tracer",3}
+					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
+					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
+					{"32Rnd_9x19mm_Mag",3},
+					{"30Rnd_762x51_M80A1_Mag",3}					
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
@@ -4863,8 +4892,8 @@ class CfgItemSpawns {
                     {"30Rnd_545x39_Mag_Tracer_F",11},
                     {"30Rnd_545x39_Mag_Tracer_Green_F",10},
                     {"30Rnd_556x45_Stanag",6},
-                    {"30Rnd_556x45_Stanag_green",5},
-                    {"30Rnd_556x45_Stanag_red",5},
+                    {"30Rnd_556x45_Stanag_green",4},
+                    {"30Rnd_556x45_Stanag_red",4},
                     {"30Rnd_556x45_Stanag_Tracer_Red",5},
                     {"30Rnd_556x45_Stanag_Tracer_Green",5},
                     {"30Rnd_556x45_Stanag_Tracer_Yellow",5},
@@ -4873,8 +4902,9 @@ class CfgItemSpawns {
                     {"30Rnd_65x39_caseless_green",3},
                     {"30Rnd_65x39_caseless_mag_Tracer",3},
                     {"30Rnd_65x39_caseless_green_mag_Tracer",3},
-                    {"20Rnd_650x39_Cased_Mag_F",5}
-                };
+                    {"20Rnd_650x39_Cased_Mag_F",5},
+					{"30Rnd_762x51_M80A1_Mag_Tracer",2}
+                }; 
                 semicommon[] = {
                     {"30Rnd_545x39_Mag_F",3},
                     {"30Rnd_545x39_Mag_Green_F",2},
@@ -4890,9 +4920,9 @@ class CfgItemSpawns {
                     {"30Rnd_9x21_Mag_SMG_02_Tracer_Green",7},
                     {"30Rnd_9x21_Mag",9},
                     {"30Rnd_9x21_Red_Mag",7},
-                    {"30Rnd_9x21_Yellow_Mag",7},
-                    {"30Rnd_9x21_Green_Mag",7},
-					{"6Rnd_12g_Buck",5}
+                    {"30Rnd_9x21_Yellow_Mag",5},
+                    {"30Rnd_9x21_Green_Mag",5},
+					{"6Rnd_12g_Buck",9}
                 };
                 common[] = {
                     {"FlareWhite_F",5},
@@ -4910,9 +4940,9 @@ class CfgItemSpawns {
                     {"9Rnd_45ACP_Mag",6},
                     {"6Rnd_45ACP_Cylinder",7},
 					{"Chemlight_red",7},
-					{"Chemlight_green",7},
-					{"Chemlight_yellow",7},
-					{"6Rnd_12g_Slug",5}
+					{"Chemlight_green",5},
+					{"Chemlight_yellow",5},
+					{"6Rnd_12g_Slug",9}
                 };
 			};
             class Food {
