@@ -178,15 +178,19 @@ diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
 					
 					
 					_hitpoints = (getAllHitPointsDamage _tv) select 0;
+					_hitpoint2 = (getAllHitPointsDamage _tv) select 1;
 					if(!isNil {_hitpoints}) then {
 						{
-							if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody" && (tolower(_x) find "hit" == 0)) then {
-								_value = random(1);
-								_tv setHitPointDamage [_x,_value];
-							};
-							if(_x == "HitBody") then {
-								_value = random(0.4);
-								_tv setHitPointDamage [_x,_value];
+							_selection = _hitpoint2 select _forEachIndex;
+							if(tolower(_selection) find "proxy" == -1) then {
+								if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody") then {
+									_value = random(1);
+									_tv setHitPointDamage [_x,_value];
+								};
+								if(_x == "HitBody") then {
+									_value = random(0.4);
+									_tv setHitPointDamage [_x,_value];
+								};
 							};
 						} forEach _hitpoints;
 					};
