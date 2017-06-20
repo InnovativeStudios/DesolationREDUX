@@ -6668,6 +6668,66 @@ class CfgVehicleSpawns {
 		};
 
 		//--- civ
+		class DSR_Hatchback_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_Hatchback_Black_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_Hatchback_Blue_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_Hatchback_Green_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_Hatchback_Silver_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
 		class C_Offroad_02_unarmed_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
