@@ -433,22 +433,26 @@ class CfgHeliCrashes {
 
 				};
 				magazines[] = {
-					"9Rnd_45ACP_Mag",
-					"9Rnd_45ACP_Mag",
-					"16Rnd_9x21_Mag",
-					"16Rnd_9x21_Mag",
+					"30Rnd_762x39_mag",
+					"30Rnd_762x39_mag",
 					"30Rnd_762x39_mag",
 					"30Rnd_556x45_Stanag",
-					"10rnd_22lr_26grn",
+					"30Rnd_556x45_Stanag",
+					"30Rnd_556x45_Stanag",
+					"762x51mm_Mk316_SB",
+					"762x51mm_Mk316_SB",
 					"762x51mm_Mk316_SB",
 					"30Rnd_762x51_M80A1_Mag",
+					"30Rnd_762x51_M80A1_Mag",
+					"30Rnd_762x51_M80A1_Mag",
 					"30Rnd_762x35mm_300_ACC_FMJ_mag",
-					"6Rnd_12g_Slug",
-					"32Rnd_9x19mm_Mag",
+					"30Rnd_762x35mm_300_ACC_FMJ_mag",
+					"30Rnd_762x35mm_300_ACC_FMJ_mag",
+					"20Rnd_762x51_Mag",
 					"10Rnd_762x54_Mag",
-					"30Rnd_45ACP_Mag_SMG_01",
-					"30Rnd_65x39_caseless_green",
-					"30Rnd_9x21_Mag_SMG_02",
+					"10Rnd_762x54_Mag",
+					"30Rnd_65x39_caseless_mag"
+					"30Rnd_65x39_caseless_mag"
 					"30Rnd_65x39_caseless_mag"
 				};
 				items[] = {
