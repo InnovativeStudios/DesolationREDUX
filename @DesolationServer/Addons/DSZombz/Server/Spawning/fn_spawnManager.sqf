@@ -26,7 +26,7 @@ while{true} do {
 				
 				// play zombie moan if random time delay is triggered
 				if !(_x getVariable ["agroed",false]) then {
-					_moanDelay = _x getVariable ["MoanDelay",diag_tickTime + 3];
+					_moanDelay = _x getVariable ["MoanDelay",diag_tickTime + (5 + random(5))];
 					if(diag_tickTime >= _moanDelay) then {
 						
 						_sNumber = _lastNum;
@@ -36,7 +36,7 @@ while{true} do {
 						_lastNum = _sNumber;
 						
 						[_x,"DSR_Zombz_Idle" + str(_sNumber)] remoteExec ["say3D",_nearPlayers];
-						_x setVariable ["MoanDelay",diag_tickTime + (3 + random(3))];
+						_x setVariable ["MoanDelay",diag_tickTime + (5 + random(5))];
 					};
 				};
 				
