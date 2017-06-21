@@ -2,6 +2,8 @@ params["_zIndex","_owner"];
 
 _zData = DSZ_var_spawnData select _zIndex;
 
+if(count(_zData) == 0) exitWith {diag_log "DSZOMBZ > Error: Attempted to spawn dead zombie";}; 
+
 _class = _zData select 0;
 _pos = _zData select 1;
 _agroType = _zData select 2;
