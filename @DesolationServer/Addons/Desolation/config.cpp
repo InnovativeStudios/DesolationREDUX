@@ -451,8 +451,8 @@ class CfgHeliCrashes {
 					"20Rnd_762x51_Mag",
 					"10Rnd_762x54_Mag",
 					"10Rnd_762x54_Mag",
-					"30Rnd_65x39_caseless_mag"
-					"30Rnd_65x39_caseless_mag"
+					"30Rnd_65x39_caseless_mag",
+					"30Rnd_65x39_caseless_mag",
 					"30Rnd_65x39_caseless_mag"
 				};
 				items[] = {
