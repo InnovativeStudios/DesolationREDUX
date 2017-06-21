@@ -18,25 +18,26 @@ corpseManagerMode = 3;
 loadScreen =  "\dsr_ui\Assets\logo.paa";
 
 
+
+
 respawnDialog = 0;
-respawn = 0;
-respawnDelay = 0;
+respawn = 3;
+respawnDelay = 18000;
 respawnButton = 0;
 
 class Header
 {
-	gameType = Survive;
+	gameType = Sandbox;
 	minPlayers = 1;
 	maxPlayers = 120;
 };
 
-minPlayerDistance = 100;
 wreckLimit = 3000;
-wreckRemovalMinTime = 120;
-wreckRemovalMaxTime = 18000;
-corpseLimit = 2000;
-corpseRemovalMinTime = 360;
-corpseRemovalMaxTime = 18000;
+wreckRemovalMinTime = 5000;
+wreckRemovalMaxTime = 5000;
+corpseLimit = 1000;
+corpseRemovalMinTime = 20;
+corpseRemovalMaxTime = 25;
 debriefing = 0;
 
 
