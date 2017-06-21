@@ -23,24 +23,24 @@ class CfgPluginKeybinds {
 		code = "call VE_fnc_Voice1;";
 	};
 	class Voice2 {
-		displayName = "Voice: TODO";
-		tooltip = "The player says 'Sector is clear!'";
+		displayName = "Voice: Laugh";
+		tooltip = "The player says 'Ha Ha ha ha'";
 		tag = "VE";
 		variable = "Voice2";
 		defaultKeys[] = {{0x3C,0}};
 		code = "call VE_fnc_Voice2;";
 	};
 	class Voice3 {
-		displayName = "Voice: TODO";
-		tooltip = "The player says 'Sector is clear!'";
+		displayName = "Voice: Don't Move";
+		tooltip = "The player says 'Don't Move!'";
 		tag = "VE";
 		variable = "Voice3";
 		defaultKeys[] = {{0x3D,0}};
 		code = "call VE_fnc_Voice3;";
 	};
 	class Voice4 {
-		displayName = "Voice: TODO";
-		tooltip = "The player says 'Sector is clear!'";
+		displayName = "Voice: Drop Your Weapon";
+		tooltip = "The player says 'Drop your weapon'";
 		tag = "VE";
 		variable = "Voice4";
 		defaultKeys[] = {{0x3E,0}};
@@ -121,6 +121,18 @@ class CfgFunctions
 			file = "VoiceEffects\Client";
 			isclient = 1;
 			class Voice1 {};
+			class Voice2 {};
+			class Voice3 {};
+			class Voice4 {};
+			class Voice5 {};
+			class Voice6 {};
+			class Voice7 {};
+			class Voice8 {};
+			class Voice9 {};
+			class Voice10 {};
+			class Voice11 {};
+			class Voice12 {};
+			class getPitch {};
 		};
 	};
 };
