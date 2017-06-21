@@ -1,3 +1,4 @@
+private["_value"];
 _value = player getVariable ["SVAR_VoiceEffects_Pitch",-1];
 if(_value < 0) then {
 	_value = random(2);
