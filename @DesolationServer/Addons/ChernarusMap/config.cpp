@@ -15,6 +15,15 @@ class Plugins
 	};
 };
 
+class CfgPluginMapEditsConfig {
+	// list of objects that should be spawned dynamically (overrides default functionality)
+	class dynamicObjects {
+		class Camp_EP1 {};
+		class CampEast_EP1 {};
+		class Land_tent_east {};
+		
+	};
+};
 
 class CfgPluginMapEdits {
 	class Chernarus {
