@@ -78,6 +78,8 @@ class CfgFunctions {
 		};
 	};
 };
-
+class CfgPluginMapEditsConfig {
+	class dynamicObjects {};
+};
 class CfgPluginMapEdits {};	
 class CfgPluginReplacements {};

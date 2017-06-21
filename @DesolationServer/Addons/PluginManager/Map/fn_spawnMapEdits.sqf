@@ -2,6 +2,14 @@
 // Map Edits
 
 BASE_var_cObjectsToRender = [];
+_override_dynamic = [];
+_cfg = configFile >> "CfgPluginMapEditsConfig" >> "dynamicObjects";
+for "_i" from 0 to count(_cfg)-1 do {
+	_override_dynamic pushBack toLower(configName (_cfg select _i));
+};
+
+
+
 
 _cfg = configFile >> "CfgPluginMapEdits";
 _config = _cfg >> worldName;
@@ -36,13 +44,7 @@ if(isClass _config) then {
 			if(count(_data) > 0) then {
 				_isSimple = false;
 			};
-			if(_classname isKindOf "House") then {
-				_isSimple = false;
-			};
-			if(_classname isKindOf "Strategic") then {
-				_isSimple = false;
-			};
-			if(_classname isKindOf "HeliH") then {
+			if(toLower(_classname) in _override_dynamic) then {
 				_isSimple = false;
 			};
 			
