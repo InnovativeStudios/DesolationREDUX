@@ -41,9 +41,12 @@ if(_damage > 0.1) then {
 				
 				_bloodLoss = _damage * 27500;
 				if(_selectionName != "head") then {
-					_bloodLoss = _bloodLoss / 1.5;
+					_bloodLoss = _bloodLoss / 1.25;
 				};
 				DS_var_Blood = DS_var_Blood - _bloodLoss;
+				if(_bloodLoss > 10000 || DS_var_Blood < 4000) then {
+					[floor(5 + random(10))] spawn ds_fnc_knockOut;
+				};
 			};
 		} else {
 			if(_shooter isKindOf "LandVehicle") then {
@@ -55,7 +58,7 @@ if(_damage > 0.1) then {
 					_bloodLoss = _damage * 750;
 					DS_var_Blood = DS_var_Blood - _bloodLoss;
 				} else {
-					_bloodLoss = _damage * 8250;
+					_bloodLoss = _damage * 4500;
 					DS_var_Blood = DS_var_Blood - _bloodLoss;
 				};
 			};
@@ -76,7 +79,7 @@ if(_damage > 0.1) then {
 	};
 	if(_selectionName == "head") then {
 		if(lifeState _unit != "INCAPACITATED") then {
-			[floor(5 + random(5))] spawn ds_fnc_knockOut;
+			[floor(5 + random(15))] spawn ds_fnc_knockOut;
 		};
 	};
 };
