@@ -45,6 +45,7 @@ if(_target isEqualType "") then {
 		};
 	};
 	
+	playSound3D["a3\sounds_f\characters\human-sfx\01_medikit1.wss",player];
 	[_classname /*"dsr_item_bandage"*/,_target,true,_success,_failure] call DS_fnc_useItemTarget;
 
 };

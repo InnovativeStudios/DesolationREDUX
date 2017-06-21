@@ -15,7 +15,7 @@ private _objects = lineIntersectsWith [eyePos player, AGLToASL (player modelToWo
 } count [" t_"," bo_t_"," str_"," Smrk_"," les_"," brg_"];
 
 if (isNull _tree) exitWith {	
-	_closest = cursorTarget;
+	_closest = cursorTarget; //TODO: replace this with a more accurate check
 	if(isNull _closest) exitWith {};
 	if(player distance _closest > 3) exitWith {};
 	
@@ -24,8 +24,10 @@ if (isNull _tree) exitWith {
 			if(isPlayer _closest) then {
 				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
 				[player,1] remoteExec ["DS_fnc_onMeleeHit",_closest];
+				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest];
 			} else {
 				_closest setDamage 1;
+				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest];
 			};
 		} else {
 			if(cursorTarget in vehicles) then {

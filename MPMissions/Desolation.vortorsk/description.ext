@@ -30,12 +30,13 @@ class Header
 	maxPlayers = 120;
 };
 
+minPlayerDistance = 100;
 wreckLimit = 3000;
-wreckRemovalMinTime = 5000;
-wreckRemovalMaxTime = 5000;
-corpseLimit = 1000;
-corpseRemovalMinTime = 20;
-corpseRemovalMaxTime = 25;
+wreckRemovalMinTime = 120;
+wreckRemovalMaxTime = 18000;
+corpseLimit = 2000;
+corpseRemovalMinTime = 360;
+corpseRemovalMaxTime = 18000;
 debriefing = 0;
 
 
