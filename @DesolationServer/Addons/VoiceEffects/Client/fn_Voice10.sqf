@@ -9,5 +9,9 @@
  * https://www.bistudio.com/monetization/
  */
 
-[player,["DSR_Voice_SectorIsClear",100,call VE_fnc_getPitch]] remoteExec ["say3D",allPlayers];
+ if(random(1) < 0.5) then {
+	[player,["DSR_Voice_Laugh",100,call VE_fnc_getPitch]] remoteExec ["say3D",allPlayers];
+} else {
+	[player,["DSR_Voice_Laugh2",100,call VE_fnc_getPitch]] remoteExec ["say3D",allPlayers];
+};
 false;

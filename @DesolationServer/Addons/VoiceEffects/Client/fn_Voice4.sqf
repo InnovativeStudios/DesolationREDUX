@@ -9,5 +9,5 @@
  * https://www.bistudio.com/monetization/
  */
 
-[player,["DSR_Voice_DropYourWeapon",100,call VE_fnc_getPitch]] remoteExec ["say3D",allPlayers];
+[player,["DSR_Voice_Friendly",100,call VE_fnc_getPitch]] remoteExec ["say3D",allPlayers];
 false;
