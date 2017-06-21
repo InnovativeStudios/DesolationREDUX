@@ -623,12 +623,11 @@ class CfgItemSpawns {
                     {"DSR_Srifle_DMR_04",4},                //ASP-1 Kir
                     {"DSR_Srifle_DMR_05_BLK",5},            //Cyrus
                     {"DSR_Srifle_EBR",3.99},
-                    {"DSR_SMG_MP40",0.01},
+                    {"DSR_SMG_MP40",0.1},
                     {"DSR_Srifle_LRR",2},
                     {"DSR_Srifle_LRR_Camo",2},
                     {"DSR_LMG_Zafir",7},
-                    {"DSR_MMG_02_Camo",4},                  //SPMG
-					{"DSR_sv98",4}							//SV-98
+                    {"DSR_MMG_02_Camo",4}                 //SPMG
                 };
                 semirare[] = {
                     {"DSR_Arifle_MX_GL_Black",16},
@@ -637,7 +636,8 @@ class CfgItemSpawns {
                     {"DSR_LMG_Mk200",6},
                     {"DSR_Srifle_DMR_06_Camo",1},            //Mk14
                     {"DSR_Srifle_DMR_06_Olive",1},            //Mk14
-					{"DSR_Arifle_FnFal",3}
+					{"DSR_Arifle_FnFal",3},
+					{"DSR_sv98",4}
                 };
                 average[] = {
                     {"DSR_Arifle_MXC_Black",15},
@@ -726,7 +726,8 @@ class CfgItemSpawns {
 					{"30Rnd_762x35mm_300_ACC_OT_mag",2},
 					{"30Rnd_762x35mm_300_ACC_OT_Tracer",2},
 					{"32Rnd_9x19mm_Mag",3},
-					{"30Rnd_762x51_M80A1_Mag",3}					
+					{"30Rnd_762x51_M80A1_Mag",3},
+					{"10Rnd_762x54_Mag",3}
                 };
                 average[] = {
                     {"30Rnd_545x39_Mag_F",12},
