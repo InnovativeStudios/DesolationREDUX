@@ -72,13 +72,13 @@ if(_key in (actionKeys "getover")) then {
 							_h = _z + _i;
 							_p1 = [_x,_y,_h];
 							_p2 = [_x + _dX,_y + _dY, _h];
-							_forwardCollides = lineIntersectsObjs [_p1,_p2,player,objNull,false]; 
-							if(count(_forwardCollides) == 0) exitWith {
+							_forwardCollides = lineIntersectsSurfaces [_p1,_p2,player,objNull,false]; 
+							if(({_x select 2 != objNull}count(_forwardCollides)) == 0) exitWith {
 								if(_i == 0) exitWith {};
 								_p3 = _p2 vectorAdd [_dX,_dY,0];
 								_p4 = _p3 vectorAdd [0,0,-1*_h];
-								_landCollides = lineIntersectsObjs [_p3,_p4,player,objNull,false]; 
-								if(count(_landCollides) == 0) exitWith {
+								_landCollides = lineIntersectsSurfaces [_p3,_p4,player,objNull,false]; 
+								if(({_x select 2 != objNull}count(_landCollides)) == 0) exitWith {
 									_doClimb = true;
 								};
 							};
