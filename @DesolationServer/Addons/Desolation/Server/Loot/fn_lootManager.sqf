@@ -46,8 +46,11 @@ DS_var_finishedLoot = true;
 call DS_fnc_checkServerLock;
 diag_log "<Loot Manager>: Loot Manager Running!";
 
-while{true} do {
 
+[[_buildingTypes,_MinPiles,_DoRespawn,_RespawnTimeS,_Config_Options,_all_buildings],{
+	private["_buildingTypes","_MinPiles","_DoRespawn","_RespawnTimeS","_Config_Options","_lChance","_sChance","_tChance","_gChance","_data","_all_buildings","_cfg","_name","_buildingsToSpawn","_buildingsToDespawn","_buildingsNotToDespawn","_houses","_nearest_building","_nearest_building_type","_last_nearest","_hasVar","_isSpawned","_savedLoot","_spawnTime","_doFreshSpawn","_x"];
+	params["_buildingTypes","_MinPiles","_DoRespawn","_RespawnTimeS","_Config_Options","_all_buildings"];
+	
 	_buildingsToSpawn = [];
 	_buildingsToDespawn = [];
 	_buildingsNotToDespawn = [];
@@ -169,5 +172,5 @@ while{true} do {
 			_x setVariable ["IsSpawnedLoot",false];
 		};
 	} forEach _buildingsToDespawn;
-
-};
+	
+},false,1,0] DS_fnc_registerTickFunc;
