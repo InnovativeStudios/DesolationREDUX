@@ -29,6 +29,11 @@ call DS_fnc_initLock; // lock the server
 
 waitUntil{BASE_var_MapEditsDone}; // wait for map to finish loading
 
+if(!isNil "DS_fnc_initServerTick") then {
+	diag_log "Desolation > Starting server tick manager";
+	[] spawn DS_fnc_initServerTick; // Start server tick manager (from client files)
+};
+
 // start vehicle & object spawns
 [] spawn DS_fnc_spawnVehicles;
 

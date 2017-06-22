@@ -10,11 +10,6 @@
  */
  
  // this starts the server side of the plugin manager
-
-if(!isNil "DS_fnc_initServerTick") then {
-	[] spawn DS_fnc_initServerTick; // Start server tick manager (from client files)
-};
-
 _this spawn {
 	_server_functions = _this select 2;
 	
