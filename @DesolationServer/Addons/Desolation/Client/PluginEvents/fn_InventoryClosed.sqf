@@ -11,7 +11,6 @@ if ((typeOf _container) == "GroundWeaponHolder") then
 	if ((count _inv) == 0) then
 	{
 		[(netId _container), (netId _player)] remoteExecCall ["DeleteEmptyHolder", 2];
-		//systemChat "deleted";
 	};
 };
 
