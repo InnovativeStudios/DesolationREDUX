@@ -39,33 +39,27 @@ _unit allowDamage true;
 
 // Temp workaround for shotguns until config is fixed
 _unit addEventHandler ["Fired",{
-    params["_unit","_weapon","_muzzle","_mod","_ammo","_magazine","_projectile"];
-    
+   params["_unit","_weapon","_muzzle","_mod","_ammo","_magazine","_projectile"];
     if(!isNull _projectile) then {
         if(_ammo == "12Guage_Buck" && _weapon == "dsr_sgun_m500") then {
             _velocity = velocity _projectile;
             
-			_magnatude = vectorMagnitude _velocity;
-			_velocityNormal = vectorNormalized  _velocity;
-			
-		
-			_dir = asin(_velocityNormal select 0);
-			if(_dir < 0) then {
-				_dir = 360 + _dir;
-			};	
-			
-			
+            _magnatude = vectorMagnitude _velocity;
+            _velocityNormal = vectorNormalized  _velocity;
+            
+            _dir = acos(_velocityNormal select 1);
+            
+            
             for "_i" from 1 to 9 do {
-				_bDir = _dir + (random(5)*(if(random(1) < 0.5) then {-1} else {1}));
-			
-                _dX = sin(_bDir);
-                _dY = cos(_bDir);
-                _dZ = (_velocityNormal select 2) + (random(0.0871557*2)-0.0871557);
+            
+                _dX = (_velocityNormal select 0) + (random(0.0871557*2)-0.0871557); 
+                _dY = (_velocityNormal select 1) + (random(0.0871557*2)-0.0871557); 
+                _dZ = (_velocityNormal select 2) + (random(0.0871557*2)-0.0871557); 
                 
                 
-				_bVel = (vectorNormalized [_dX,_dY,_dZ]) vectorMultiply _magnatude;
-				
-                _bullet = "12Guage_Buck" createVehicle [0,0,1000];
+                _bVel = (vectorNormalized [_dX,_dY,_dZ]) vectorMultiply _magnatude;
+                
+                _bullet = "12Guage_Slug" createVehicle [0,0,1000];
                 _bullet setShotParents [vehicle _unit,_unit];
                 _bullet setVelocity _bVel;
                 _bullet setposatl getposatl _projectile;
