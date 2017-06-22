@@ -23,7 +23,7 @@
 	_cItems = call DS_fnc_genCrateItems;
 	diag_log ("AIRDROPS > Dropping crate @ " + str(_location));
 	diag_log ("AIRDROPS > Crate Loot: " + str(_cItems));
-	[_location,_cItems] call DS_fnc_DoDrop;
+	[_location,_cItems] spawn DS_fnc_DoDrop;
 },false,2700,2700] call DS_fnc_registerTickFunc;
 
  
