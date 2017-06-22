@@ -165,8 +165,8 @@ while{true} do {
 	} forEach _buildingsToSpawn;
 	{
 		if !(_x in _buildingsNotToDespawn) then {
+			[_x] call DS_fnc_despawnLoot;
 			_x setVariable ["IsSpawnedLoot",false];
-			[_x] remoteExecCall ["DS_fnc_despawnLoot",2];
 		};
 	} forEach _buildingsToDespawn;
 
