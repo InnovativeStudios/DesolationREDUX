@@ -8,10 +8,10 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-private["_location","_x","_y","_height","_cItems"];
-
-diag_log "AIRDROPS > Initialized";
-while{true} do {
+ 
+// Register loop code in tick manager
+[[],{
+	private["_location","_x","_y","_height","_cItems"];
 	_location = [0,0];
 	while{true} do {
 		_x = random(worldSize);
@@ -22,8 +22,9 @@ while{true} do {
 		uiSleep 0.001;
 	};
 	_cItems = call DS_fnc_genCrateItems;
-	uiSleep 2700;
 	diag_log ("AIRDROPS > Dropping crate @ " + str(_location));
 	diag_log ("AIRDROPS > Crate Loot: " + str(_cItems));
 	[_location,_cItems] call DS_fnc_DoDrop;
-};
+},false,2700,2700] DS_fnc_registerTickFunc;
+
+ 
