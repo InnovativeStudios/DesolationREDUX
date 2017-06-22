@@ -26,6 +26,7 @@ addMissionEventHandler ["HandleDisconnect", DS_fnc_handleDisconnect];
 civilian setFriend [sideEnemy, 1];
 
 call DS_fnc_initLock; // lock the server
+
 waitUntil{BASE_var_MapEditsDone}; // wait for map to finish loading
 
 // start vehicle & object spawns

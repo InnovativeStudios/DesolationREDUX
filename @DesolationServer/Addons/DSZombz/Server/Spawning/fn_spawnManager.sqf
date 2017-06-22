@@ -58,4 +58,4 @@
 			};
 		};
 	} forEach DSZ_var_spawnData;
-},false,1,0] DS_fnc_registerTickFunc;
+},false,1,0] call DS_fnc_registerTickFunc;

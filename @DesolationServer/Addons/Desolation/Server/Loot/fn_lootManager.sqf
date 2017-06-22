@@ -173,4 +173,4 @@ diag_log "<Loot Manager>: Loot Manager Running!";
 		};
 	} forEach _buildingsToDespawn;
 	
-},false,1,0] DS_fnc_registerTickFunc;
+},false,1,0] call DS_fnc_registerTickFunc;
