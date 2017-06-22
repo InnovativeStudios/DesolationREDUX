@@ -1,6 +1,7 @@
 
 
 [[],{
+//while{true} do {
 	_aliveZombieIndexes = [];
 	_zedsToSpawn = [];
 	
@@ -44,6 +45,7 @@
 			};
 		};
 	} forEach DSZ_var_spawnedZeds;
+//	uiSleep 0.5;
 	{
 		if(count(_x) > 0) then { // if count(_x) == 0 then zombie is dead (this is an "isdead" check)
 			_pos = _x select 1;
@@ -57,5 +59,9 @@
 				};
 			};
 		};
+//		uiSleep 0.001;
 	} forEach DSZ_var_spawnData;
+	DSZ_var_spawnData = DSZ_var_spawnData - [[]]; // remove dead zombies
+	//uiSleep 0.5;
+//};
 },false,1,0] call DS_fnc_registerTickFunc;
