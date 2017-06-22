@@ -26,22 +26,21 @@ addMissionEventHandler ["HandleDisconnect", DS_fnc_handleDisconnect];
 civilian setFriend [sideEnemy, 1];
 
 call DS_fnc_initLock; // lock the server
-
 waitUntil{BASE_var_MapEditsDone}; // wait for map to finish loading
 
 // start vehicle & object spawns
 [] spawn DS_fnc_spawnVehicles;
 
 // start helicrash spawns
-[] call DS_fnc_initHeliCrashes;
+call DS_fnc_initHeliCrashes;
 [] spawn DS_fnc_spawnCrashes;
 
 // start item spawns
 [] spawn DS_fnc_lootManager;
 
 // start the building & crafting systems
-[] spawn DS_fnc_initBuildingSys;
-[] spawn DS_fnc_initCraftingSys;
+call DS_fnc_initBuildingSys;
+call DS_fnc_initCraftingSys;
 
 
 
@@ -94,12 +93,14 @@ DeleteEmptyHolder =
 		_threads = Diag_activeScripts;
 		NUM_THREADS = (_threads select 0) + (_threads select 1) - 1;
 		
-		if(NUM_THREADS > 15 && diag_fps < 40) then {
-			diag_log ("ERROR: CANT KEEP UP! To many threads running on the server - " + str(NUM_THREADS) + " - FPS: " + str(diag_fps));
-		};
 		if(diag_fps < 15) then {
 			diag_log ("ERROR: CANT KEEP UP! Thread Count: " + str(Diag_activeScripts) + " - FPS: " + str(diag_fps));
+		} else {
+			if(NUM_THREADS > 15 && diag_fps < 40) then {
+				diag_log ("ERROR: CANT KEEP UP! To many threads running on the server - " + str(NUM_THREADS) + " - FPS: " + str(diag_fps));
+			};
 		};
-		uiSleep 0.5;
+		
+		uiSleep 1;
 	};
 };
