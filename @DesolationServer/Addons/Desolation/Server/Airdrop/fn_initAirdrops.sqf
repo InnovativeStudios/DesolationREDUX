@@ -19,7 +19,6 @@
 		_location = [_x,_y];
 		_height = getTerrainHeightASL _location;
 		if(_height > 5) exitWith {};
-		uiSleep 0.001;
 	};
 	_cItems = call DS_fnc_genCrateItems;
 	diag_log ("AIRDROPS > Dropping crate @ " + str(_location));
