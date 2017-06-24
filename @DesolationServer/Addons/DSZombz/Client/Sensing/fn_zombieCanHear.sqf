@@ -13,6 +13,15 @@ if(_friction == 0) then {
 _multiplier = _friction - 1;
 _maxSoundDistance = _maxSoundDistance * _multiplier;
 
+_houses = lineIntersectsSurfaces [getPosWorld player,getPosWorld player vectorAdd [0, 0, 50],player, objNull, true, 1, "GEOM", "NONE"];
+if(count(_houses) > 0) then {
+	_house = (_houses select 0) select 3;
+	if (_house isKindOf "House") then {
+		_maxSoundDistance = _maxSoundDistance / 3; // inside house, make it quieter
+	};
+};
+
+
 _return = false;
 _soundDist = _maxSoundDistance * _chance;
 if((player distance _zed) <= _soundDist) then {
