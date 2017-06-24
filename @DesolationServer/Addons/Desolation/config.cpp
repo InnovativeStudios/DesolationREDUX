@@ -6595,6 +6595,26 @@ class CfgVehicleSpawns {
 		};
 
 		//--- civ
+		class DSR_Hilux_Open_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
+		class DSR_Hilux_Covered_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
 		class DSR_Hatchback_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
@@ -6692,6 +6712,84 @@ class CfgVehicleSpawns {
 			};
 		};
 		class DSR_SUV_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_SUV_BlueWhite_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_SUV_Camo_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class 	DSR_SUV_Green_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_SUV_Orange_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class 	DSR_SUV_Pink_F {
+			class Spawns {
+				class Land_Airport_01_terminal_F {};
+				class Land_SM_01_shelter_narrow_F {};
+				class Land_MultistoryBuilding_01_F {};
+				class Land_FuelStation_02_roof_F {};
+				class Land_FuelStation_02_workshop_F {};
+				class Land_FuelStation_01_roof_F {};
+				class Land_FuelStation_01_workshop_F {};
+				class Land_House_Big_03_F {};
+				class Land_GarageShelter_01_F {};
+			};
+		};
+		class DSR_SUV_Red_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
 				class Land_SM_01_shelter_narrow_F {};

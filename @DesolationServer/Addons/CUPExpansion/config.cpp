@@ -2258,7 +2258,176 @@ class CfgVehicleSpawns {
 				class Land_Barn_W_01_dam {};
 			};
 		};
+		class DSR_SUV_BlueWhite_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_SUV_Camo_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class 	DSR_SUV_Green_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_SUV_Orange_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class 	DSR_SUV_Pink_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_SUV_Red_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hilux_Open_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hilux_Covered_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
 		class C_Offroad_02_unarmed_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hatchback_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hatchback_Black_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hatchback_Blue_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hatchback_Green_F {
+			class Spawns {
+				class Land_Benzina_schnell {};
+				class Land_Kasarna_prujezd {};
+				class Land_HouseBlock_A1_1 {};
+				class Land_HouseBlock_A1 {};
+				class Land_HouseBlock_A3 {};
+				class Land_HouseBlock_B6 {};
+				class Land_Barn_W_01 {};
+				class Land_Barn_W_02 {};
+				class Land_Barn_W_01_dam {};
+			};
+		};
+		class DSR_Hatchback_Silver_F {
 			class Spawns {
 				class Land_Benzina_schnell {};
 				class Land_Kasarna_prujezd {};
