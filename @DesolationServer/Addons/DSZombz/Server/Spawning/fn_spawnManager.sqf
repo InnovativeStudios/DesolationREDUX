@@ -61,7 +61,7 @@ while{true} do {
 		};
 		uiSleep 0.001;
 	} forEach DSZ_var_spawnData;
-	DSZ_var_spawnData = DSZ_var_spawnData - [[]]; // remove dead zombies
+	// SZ_var_spawnData = DSZ_var_spawnData - [[]]; // this causes zombies to spawn without the ability to agro ?
 	uiSleep 0.5;
 };
 //},false,1,0] call DS_fnc_registerTickFunc;
