@@ -21,12 +21,6 @@ _txtOffset = 150;
 _maxMenuItems = 4;
 _ctrlDisplay = ((findDisplay 12) displayCtrl 51);
 _menuPos = _ctrlDisplay ctrlMapScreenToWorld _screenPos;
-_txtPosU = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) - (_txtOffset*pixelH*(pixelGridBase/18))];
-_txtPosR = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) + (_txtOffset*pixelW*(pixelGridBase/18)), (_screenPos select 1)];
-_txtPosD = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) + (_txtOffset*pixelH*(pixelGridBase/18))];
-_txtPosL = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) - (_txtOffset*pixelW*(pixelGridBase/18)), (_screenPos select 1)];
-_txtPos = [_txtPosU, _txtPosR, _txtPosD, _txtPosL];
-
 _newTextPos = [
 	[
 		(_screenPos select 0) - (70*pixelW*(pixelGridBase/18)), 
