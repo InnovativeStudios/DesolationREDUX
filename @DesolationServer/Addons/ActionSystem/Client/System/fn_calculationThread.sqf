@@ -35,6 +35,8 @@ while{ACT_var_Render3DActions} do {
 			if(_actionIndex != -1) then { 
 				_iconInfo = [];
 				
+				_existingPositions = [];
+				
 				if(_renderType == 0) then {
 				
 					_hitpoints = "true" configClasses (configFile >> "CfgVehicles" >> typeOf _cursor >> "Hitpoints");
@@ -45,11 +47,28 @@ while{ACT_var_Render3DActions} do {
 					for "_i" from 0 to count(_hitpoints)-1 do {
 						_partName = configName (_hitpoints select _i);
 						_pos = _cursor selectionPosition [getText((_hitpoints select _i) >> "name"), "HitPoints"];
+						if(_pos isEqualTo [0,0,0]) then {
+							_buttomPos = _cursor worldToModel (ASLtoAGL getPosASL _cursor);
+							_renderCenter = _buttomPos vectorAdd ([0,0,(((boundingBox _cursor) select 1) select 2)/2]);
+							_pos = _renderCenter;
+						};
 						_position = _cursor modelToWorldVisual _pos;
+						
+						
 						
 						_3dpartdata = [_partName] call ACT_fnc_get3DPartName;
 						if((_3dpartdata select 0) != "Error") then {
+						
+							//prevent multiple icons at same position;
+							while{_position in _existingPositions} do {
+								_position set[2,(_position select 2) + 0.4];
+							};
+						
+						
 							_iconInfo pushback [_partName, _position,_3dpartdata,_i];
+							
+							_existingPositions pushBack _position;
+							
 						};
 					};
 				} else {
