@@ -17,15 +17,44 @@ params["_screenPos", "_menuList", "_selected"];
 private ["_ctrlDisplay", "_menuSize", "_txtOffset", "_menuPos", "_txtPos", "_maxMenuItems", "_menuColor", "_assetPath"];
 
 _menuSize = 300;
-_txtOffset = 125;
+_txtOffset = 150;
 _maxMenuItems = 4;
 _ctrlDisplay = ((findDisplay 12) displayCtrl 51);
 _menuPos = _ctrlDisplay ctrlMapScreenToWorld _screenPos;
-_txtPosU = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) - (_txtOffset*pixelH)];
-_txtPosR = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) + (_txtOffset*pixelW), (_screenPos select 1)];
-_txtPosD = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) + (_txtOffset*pixelH)];
-_txtPosL = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) - (_txtOffset*pixelW), (_screenPos select 1)];
+_txtPosU = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) - (_txtOffset*pixelH*(pixelGridBase/18))];
+_txtPosR = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) + (_txtOffset*pixelW*(pixelGridBase/18)), (_screenPos select 1)];
+_txtPosD = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0), (_screenPos select 1) + (_txtOffset*pixelH*(pixelGridBase/18))];
+_txtPosL = _ctrlDisplay ctrlMapScreenToWorld [(_screenPos select 0) - (_txtOffset*pixelW*(pixelGridBase/18)), (_screenPos select 1)];
 _txtPos = [_txtPosU, _txtPosR, _txtPosD, _txtPosL];
+
+_newTextPos = [
+	[
+		(_screenPos select 0) - (70*pixelW*(pixelGridBase/18)), 
+		(_screenPos select 1) - (165*pixelH*(pixelGridBase/18)),
+		150*pixelW*(pixelGridBase/18),
+		100*pixelH*(pixelGridBase/18)
+	],
+	[
+		(_screenPos select 0) + (90*pixelW*(pixelGridBase/18)), 
+		(_screenPos select 1) - (40*pixelH*(pixelGridBase/18)),
+		100*pixelW*(pixelGridBase/18),
+		150*pixelH*(pixelGridBase/18)
+	],
+	[
+		(_screenPos select 0) - (70*pixelW*(pixelGridBase/18)), 
+		(_screenPos select 1) + (115*pixelH*(pixelGridBase/18)),
+		150*pixelW*(pixelGridBase/18),
+		100*pixelH*(pixelGridBase/18)
+	],
+	[
+		(_screenPos select 0) - (185*pixelW*(pixelGridBase/18)), 
+		(_screenPos select 1) - (40*pixelH*(pixelGridBase/18)),
+		100*pixelW*(pixelGridBase/18),
+		150*pixelH*(pixelGridBase/18)
+	]
+];
+
+
 
 _menuColor = [0.6627, 0.6627, 0.6627, 1];
 
@@ -43,30 +72,26 @@ for "_i" from 0 to (_maxMenuItems - 1) do {
 	_ctrlDisplay drawIcon [_assetPath, _color, _menuPos, _menuSize, _menuSize, 0, '', 0, 0.04, 'TahomaB', 'Center'];
 };
 
-_menuString = "";
-for "_i" from 0 to count(_menuList)-1 do
-{
-	if (_i == 1 || _i == 3) then {
-		_menuWords = (_menuList select _i) splitString " ";
-		_numWords = count _menuWords;
-		if (_numWords == 1) then {
-			_menuString = (_menuList select _i);
-			_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
-		} else {
-			_offset = -1 * (floor(_numWords / 2));
-			for "_j" from 0 to (_numWords - 1) do {
-				_txtPosNew = [((_txtPos select _i) select 0), ((_txtPos select _i) select 1) - (75 * _offset)];
-				_menuString = (_menuWords select _j);
-				_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], _txtPosNew, _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
-				_offset = _offset + 1;
-			};
-		};
-	} else {
-		_menuString = (_menuList select _i);
-		_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], (_txtPos select _i), _menuSize, _menuSize, 0, str(parseText _menuString), 0, 0.1, 'TahomaB', 'Center'];
-	};
+
+_renderText = {
+	disableserialization;
+	params["_text","_pos","_layer"];
+	private["_display","_control"];
+	 _layer cutrsc["rscDynamicText", "plain"];
+	
+    _display = uinamespace getvariable "BIS_dynamicText";
+    _control = _display displayctrl 9999;
+    _control ctrlsetposition _pos;
+	_control ctrlsetstructuredtext parseText ("<t shadow='0' align='center' size='0.7' color='#000000'>" + _text + "</t>");
+	_control ctrlcommit 0;
 };
 
-_ctrlDisplay drawIcon ['#(argb,8,8,3)color(0,0,0,0)', [0, 0, 0, 1], _menuPos, _menuSize, _menuSize, 0, '', 0, 0.1, 'TahomaB', 'Center'];
+_layers = [];
+for "_i" from 0 to count(_menuList)-1 do
+{
+	_menuString = (_menuList select _i);
+	_layers pushBack (7000+_i);
+	[_menuString,_newTextPos select _i,7000+_i] call _renderText;
+};
 
-true
+_layers;

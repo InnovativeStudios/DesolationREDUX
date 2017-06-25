@@ -22,9 +22,15 @@ ACT_var_2DActionIndex = -1;
 ACT_var_Selected2DAction = -1;
 ACT_var_Rendered2DActionData = [];
 ACT_var_2DActionParameters = [];
+ACT_var_2DActionLayers = [];
 
 // add main draw thread
 addMissionEventHandler ["Draw3D",{
+	{
+		_x cutText ["","plain"];
+	} forEach ACT_var_2DActionLayers;
+	ACT_var_2DActionLayers = [];
+
 	if(ACT_var_Render3DActions) then {
 		
 		_active3dIcon = -1;
@@ -139,8 +145,8 @@ addMissionEventHandler ["Draw3D",{
 							};
 							
 							ACT_var_Selected2DAction = _submenu;
-							[_spos,_actionNames,_submenu] call ACT_fnc_display2DMenu;
-						};	
+							ACT_var_2DActionLayers = ([_spos,_actionNames,_submenu] call ACT_fnc_display2DMenu);
+						};
 					};
 				};
 			} forEach _iconInfo;
