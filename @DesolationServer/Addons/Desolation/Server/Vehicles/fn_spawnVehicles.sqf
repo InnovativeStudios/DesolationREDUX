@@ -129,7 +129,7 @@ diag_log format["Got all houses (%1)",diag_tickTime];
 
 
 diag_log format["Spawning vehicles @ %1 houses",count(_houses)];
-
+diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 {
 	if !(_x getVariable ["SpawnedV",false]) then {
 		_x setVariable ["SpawnedV",true];
