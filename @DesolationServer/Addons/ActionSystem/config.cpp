@@ -48,6 +48,16 @@ class CfgFunctions
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
+			class removeHRotor {};
+			class removeVRotor {};
+			class replaceVRotor {};
+			class replaceHRotor {};
+			class repairAvionics {};
+			class repairElevator {};
+			class repairRotor {};
+			class repairVRotor {};
+			class repairHRotor {};
+			class repairHull {};
 			class repairBody {};
 			class repairEngine {};
 			class repairFueltank {};
@@ -132,9 +142,135 @@ class Cfg3DActions {
 		
 		class Actions {
 			
-			// all possible actions for all icons
+			// heli & planes
+			class RepairHull {
+				condition = "_selection find 'hull' != -1";
+				text = "Repair Hull";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 20}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairHull;";
+			};
+			class RepairHRotor {
+				condition = "_selection find 'hrotor' != -1";
+				text = "Repair Rotor";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 15}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairHRotor;";
+			};
+			class RepairVRotor {
+				condition = "_selection find 'vrotor' != -1";
+				text = "Repair Tail";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 10}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairVRotor;";
+			};
+			class RepairRotor {
+				condition = "(_selection find 'rotor' != -1) && (_selection find 'vrotor' == -1) && (_selection find 'hrotor' == -1)";
+				text = "Repair Propeller";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Scrap_Metal", 15}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairRotor;";
+			};
+			class RepairAvionics {
+				condition = "_selection find 'avionics' != -1";
+				text = "Repair Avionics";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Electrical_Comp", 5}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairAvionics;";
+			};
+			class RepairElevators {
+				condition = "_selection find 'elevator' != -1";
+				text = "Repair Elevator";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1},
+						{"DSR_Item_Electrical_Comp", 1},
+						{"DSR_Item_Scrap_Metal", 5}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_repairElevator;";
+			};
+			class ReplaceHRotor {
+				condition = "_selection find 'hrotor' != -1";
+				text = "Replace Rotor";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Main_Rotor", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_replaceHRotor;";
+			};
+			class ReplaceVRotor {
+				condition = "_selection find 'vrotor' != -1";
+				text = "Replace Tail";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Tail_Rotor", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_replaceVRotor;";
+			};
+			class RemoveVRotor {
+				condition = "_selection find 'vrotor' != -1";
+				text = "Remove Tail";
+				class Parameters {
+					returnedItems[] = {
+						{"DSR_Item_Tail_Rotor", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_removeVRotor;";	
+			};
+			class RemoveHRotor {
+				condition = "_selection find 'hrotor' != -1";
+				text = "Remove Rotor";
+				class Parameters {
+					returnedItems[] = {
+						{"DSR_Item_Main_Rotor", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_removeHRotor;";	
+			};
 			
-			//todo add more for helicopters and planes
+			
+			//vehicles
 			class RepairWheel {
 				condition = "_selection find 'wheel' != -1";
 				text = "Repair Wheel";
@@ -480,17 +616,26 @@ class Cfg3DIcons {
 		name = "Stabilizer";
 		icon = "\dsr_ui\Assets\actions\stabilizer.paa";
 	};
+	class tail { //idk?
+		name = "Tail";
+		icon = "\dsr_ui\Assets\actions\tail.paa";
+	};
+	class vrotor { //heli tail rotor
+		name = "Tail Rotor";
+		icon = "\dsr_ui\Assets\actions\tail.paa";
+	};
+	class hrotor { //heli main rotor
+		name = "Main Rotor";
+		icon = "\dsr_ui\Assets\actions\stabilizer.paa";
+	};
 	class rotor {
 		name = "Rotor";
 		icon = "\dsr_ui\Assets\actions\stabilizer.paa";
 	};
+
 	class track {
 		name = "Track";
 		icon = "\dsr_ui\Assets\actions\track.paa";
-	};
-	class tail {
-		name = "Tail";
-		icon = "\dsr_ui\Assets\actions\tail.paa";
 	};
 	class port {
 		name = "Port";

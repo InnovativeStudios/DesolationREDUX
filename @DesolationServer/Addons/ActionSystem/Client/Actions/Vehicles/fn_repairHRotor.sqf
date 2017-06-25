@@ -8,17 +8,13 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
- 
-params["_selection"];
 
-_data = ["Error","#(argb,8,8,3)color(0,0,0,0)"];
-{
-	_cfgName = _x select 0;
-	_name = _x select 1;
-	_icon = _x select 2;
-	
-	if((tolower(_selection) find "proxy" == -1) && (toLower(_selection) find toLower(_cfgName) != -1)) exitWith {
-		_data = [_name,_icon];
-	};
-} forEach ACT_var_ICONS;
-_data;
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
+ 
+params["_cursor","_index","_selection"];
+
+if ([0] call ACT_fnc_doAnimation) then {
+	[_selection, _cursor, _index, player, "Repair Rotor",0] remoteExec ["ACT_fnc_repairPartReq", 2];
+};
+
+true

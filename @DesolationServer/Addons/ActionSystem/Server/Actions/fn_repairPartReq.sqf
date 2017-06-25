@@ -48,7 +48,7 @@ _haveRequiredItems = true;
 	_count = _x select 1;
 	diag_log format ["looking for %1", _item];
 	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < 1) exitWith {
-		systemchat ("Does not have: " + _item);
+		[("Does not have: " + _item)] remoteExec ["systemChat",_player]; //notify player of missing items
 		_haveRequiredItems = false;
 	};
 true
