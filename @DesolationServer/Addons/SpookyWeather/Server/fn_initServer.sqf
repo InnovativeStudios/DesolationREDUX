@@ -16,7 +16,7 @@
 /// start of server values
 _startingFogHeight = random(80);
 _startingFog = (random 0.1) max 0.005;
-_startingFogDensity = (random 0.04) max 0.005;  
+_startingFogDensity = (random 0.01) max 0.005;  
 
 _startingOverCast = random(1) max 0.1;
 _startingRain = random(1) max 0.1;
@@ -40,7 +40,7 @@ forceWeatherChange;
 
 _endingFogHeight = random(200);
 _endingFog = (random 0.1) max 0.005;
-_endingFogDensity = (random 0.04) max 0.005;  
+_endingFogDensity = (random 0.01) max 0.005;  
 
 
 _endingOverCast = random(1) max 0.1;
