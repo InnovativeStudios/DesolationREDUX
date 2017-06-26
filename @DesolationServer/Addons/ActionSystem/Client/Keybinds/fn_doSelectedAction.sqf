@@ -10,7 +10,7 @@
  */
 
 _break = false;
-if(toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") then {
+if((toLower(["Enabled","ACT"] call BASE_fnc_getCfgValue) == "true") && ACT_var_Render3DActions) then {
 	
 	if(!ACT_var_Render2DActions) then {
 	
