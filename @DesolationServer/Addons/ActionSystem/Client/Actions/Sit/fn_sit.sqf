@@ -13,7 +13,7 @@
  
 params["_cursor"];
 
-_oldpos = getposatl player;
+_oldpos = ASLtoATL eyepos player;
 _newpos = getPosATL _cursor;
 
 player switchMove "Crew";
@@ -29,7 +29,7 @@ if(!isNil "GLP_fnc_checkGlitch") then {
 		player setposatl _oldpos;
 		call ACT_fnc_stand;
 		
-	}] call GLP_fnc_checkGlitch;
+	},[_cursor,player]] call GLP_fnc_checkGlitch;
 	
 };
 
