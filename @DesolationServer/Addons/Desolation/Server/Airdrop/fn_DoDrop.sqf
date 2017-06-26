@@ -52,8 +52,10 @@ if !(_send isEqualTo []) then {
 
 _group move _location;
 waitUntil{(_plane distance2D _location) < 500};
-["DropTheLoad","MUSIC"] call DS_fnc_playOverRadio;
-waitUntil{(_plane distance2D _location) < 100}; //--- sometimes the plane misses this distance ???
+
+// ["DropTheLoad","MUSIC"] call DS_fnc_playOverRadio; // wait until new audio effects are done
+
+waitUntil{(_plane distance2D _location) < 150}; //--- sometimes the plane misses this distance ???
 _pos = getposATL _plane;
 _pos = _pos vectorAdd [0,0,-10];
 
