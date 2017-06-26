@@ -27,8 +27,4 @@ _objectBetween = lineIntersectsObjs [ATLtoASL _p1,ATLtoASL _p2,_whitelist select
 		[_oldPos,_overrideparam] call _override;
 		systemchat "<AntiGlitch> Wall Glitch Detected";
 	};
-	if(_x isKindOf "Building") exitWith {
-		[_oldPos,_overrideparam] call _override;
-		systemchat "<AntiGlitch> Wall Glitch Detected";
-	};
 } forEach _objectBetween;

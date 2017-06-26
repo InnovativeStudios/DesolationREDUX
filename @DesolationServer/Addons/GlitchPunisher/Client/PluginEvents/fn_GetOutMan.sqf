@@ -3,10 +3,10 @@
 _this spawn {
 	params["_unit","_position","_vehicle","_turret"];
 	
-	waitUntil{vehicle _unit != _unit};
+	waitUntil{vehicle _unit != _vehicle};
 	
 	_oldPos = getposatl _vehicle;
-	_newpos = ASLtoATL eyepos _unit;
+	_newpos = getposatl _unit;
 
 	[_oldPos,_newpos,{
 		params["_oldPos","_params"];

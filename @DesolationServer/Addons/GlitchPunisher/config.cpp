@@ -20,6 +20,10 @@ class CfgPluginEvents {
 				type = "GetOutMan";
 				function = "GLP_fnc_GetOutMan";
 			};
+			class GLP_AnimChanged {
+				type = "AnimChanged";
+				function = "GLP_fnc_AnimChanged";
+			};
 		};
 	};
 };
@@ -40,6 +44,7 @@ class CfgFunctions
 			file = "GlitchPunisher\Client\PluginEvents";
 			isclient = 1;
 			class GetOutMan {};
+			class AnimChanged {};
 		};
 	};
 };
