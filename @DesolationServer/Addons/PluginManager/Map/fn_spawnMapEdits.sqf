@@ -47,6 +47,9 @@ if(isClass _config) then {
 			if(toLower(_classname) in _override_dynamic) then {
 				_isSimple = false;
 			};
+			if(_classname isKindOf "HeliH") then {
+				_isSimple = false;
+			};
 			
 			if(!_isSimple) then {
 				_obj = _classname createVehicle _pos;
