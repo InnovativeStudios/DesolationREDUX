@@ -83,7 +83,7 @@ class CfgDSRAchievements {
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 10;
+			trees_chopped = 50;
 		};
 	};
 	class TreeChop2 {
@@ -92,7 +92,7 @@ class CfgDSRAchievements {
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 50;
+			trees_chopped = 100;
 		};
 	};
 	class TreeChop3 {
@@ -101,7 +101,7 @@ class CfgDSRAchievements {
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 100;
+			trees_chopped = 500;
 		};
 	};
 	class TreeChop4 {
@@ -110,7 +110,7 @@ class CfgDSRAchievements {
 		points = 50;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 500;
+			trees_chopped = 1000;
 		};
 	};
 	class TreeChop5 {
@@ -119,14 +119,14 @@ class CfgDSRAchievements {
 		points = 100;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 1000;
+			trees_chopped = 5000;
 		};
 	};
 	
 	class BandageOthers1 {
 		title = "Bandage 5 other players";
 		description = "First Aid Badge.";
-		points = 10;
+		points = 20;
 		
 		class Tasks : All_Tasks {
 			bandage_others = 5;
@@ -135,7 +135,7 @@ class CfgDSRAchievements {
 	class BandageOthers2 {
 		title = "Bandage 20 other players";
 		description = "Advanced First Aid Badge.";
-		points = 10;
+		points = 100;
 		
 		class Tasks : All_Tasks {
 			bandage_others = 20;
@@ -153,7 +153,7 @@ class CfgDSRAchievements {
 	class BloodbagOthers2 {
 		title = "Bloodbag 10 other players";
 		description = "Mr Red Cross.";
-		points = 10;
+		points = 200;
 		
 		class Tasks : All_Tasks {
 			bloodbag_others = 10;
