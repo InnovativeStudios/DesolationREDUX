@@ -6,6 +6,8 @@ if(_anim find "ladder" != -1) then {
 	if(_action in ["ssw","swm","bsw"]) then {
 		player setAnimSpeedCoef 2; //swim speed boost
 	} else {
-		player setAnimSpeedCoef 1;
+		_currentLevel = player getVariable ["PVAR_DS_Progression_Stamina_Level",0];
+		_adder = (_currentLevel min 4)*0.0125;
+		player setAnimSpeedCoef (1+_adder);
 	};
 };

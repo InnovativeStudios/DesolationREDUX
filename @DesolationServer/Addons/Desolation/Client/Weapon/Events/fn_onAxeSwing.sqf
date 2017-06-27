@@ -42,7 +42,12 @@ if (isNull _tree) exitWith {
 
 (boundingBoxReal _tree) params ["_min","_max"];
 private _height = abs((_max select 2) - (_min select 2));
-private _dCoef = (damage _tree) + (1 / (floor _height));
+
+_currentLevel = player getVariable ["PVAR_DS_Progression_Resource_Level",0];
+
+private _dCoef = (damage _tree) + ((1+_currentLevel) / (floor _height));
+
+
 
 private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _tree], 0];
 missionNamespace setVariable [format["CurrentSwing_%1", _tree], (_currentSwing + 1)];

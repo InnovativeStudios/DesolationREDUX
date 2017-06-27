@@ -10,4 +10,10 @@
  */
 
 params["_bloodChange"];
+
+_currentLevel = player getVariable ["PVAR_DS_Progression_Medical_Level",0];
+if(_currentLevel >= 1) then {
+	_bloodChange = _bloodChange + 2500;
+};
+
 DS_var_Blood = (DS_var_Blood + _bloodChange) min 27500;

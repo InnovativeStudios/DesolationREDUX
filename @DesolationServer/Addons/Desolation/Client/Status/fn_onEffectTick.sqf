@@ -39,8 +39,19 @@ if(DS_var_Blood <= 0) then {
 
 //--- regen blood
 if(DS_var_Hunger == 100 && DS_var_Thirst == 100 && !DS_var_isBleeding && (DS_var_Blood != 27500) && DS_var_InfectionDOT == 0) then {
+	_currentLevel = player getVariable ["PVAR_DS_Progression_Medical_Level",0];
+	
+	
 	_regenStationary = 1375/36;
 	_regenMoving = 725 / 144;
+	
+	if(_currentLevel >= 2) then {
+		_regenMoving = _regenMoving * 1.5;
+	};
+	if(_currentLevel >= 3) then {
+		_regenStationary = _regenStationary * 1.5;
+	};
+	
 	_regen = _regenMoving;
 	if((vehicle player) != player) then {
 		_regen = _regenStationary;
