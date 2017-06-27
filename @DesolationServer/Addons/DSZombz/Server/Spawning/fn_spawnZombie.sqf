@@ -41,7 +41,12 @@ _zombie setVariable ["MoanDelay",diag_tickTime + (3 + random(3))];
 
 
 _zombie addMPEventHandler ["MPKilled",{
-	params["_zed"];
+	params["_zed","_killer"];
+	if(local _killer) then {
+		if(!isNil "DS_fnc_addPoints") then {
+			[1] call DS_fnc_addPoints;
+		};
+	};
 	if(isServer) then {
 		_zIndex = _zed getVariable ["zIndex",-1];
 		[_zed,_zIndex] spawn DSZ_fnc_killZombie;
