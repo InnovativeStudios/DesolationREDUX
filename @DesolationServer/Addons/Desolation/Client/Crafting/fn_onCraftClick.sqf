@@ -95,7 +95,7 @@
 		};
 		true
 	} count _cOutput;
-	
+	[1] call DS_fnc_addPoints;
 	["DS_var_craftDoneCallbackFnc",["items_crafted",[_cName]]] call DS_fnc_handleCallback;
 	systemchat ("Crafted: " + _cName);
 };

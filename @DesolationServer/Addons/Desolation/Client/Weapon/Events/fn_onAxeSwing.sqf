@@ -64,8 +64,9 @@ if (_dCoef >= 1) then
 	{
 		params["_tree","_origMtW"];
 		
+		//add a point
+		[1] call DS_fnc_addPoints;
 		//tree chopped callback
-		
 		["DS_var_treeChoppedCallbackFnc",["trees_chopped",[_tree]]] call DS_fnc_handleCallback;
 		
 		uisleep 2;

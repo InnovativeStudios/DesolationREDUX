@@ -15,6 +15,7 @@ params["_classname",["_target",""]];
 if(_target isEqualType "") then {
 
 	_success = {
+		[1] call DS_fnc_addPoints;
 		call DS_fnc_stopBleeding;
 		["DS_var_selfBandagedCallbackFnc",["bandage_self",[]]] call DS_fnc_handleCallback;
 	};
@@ -34,6 +35,7 @@ if(_target isEqualType "") then {
 	
 	_success = {
 		params["_target"];
+		[1] call DS_fnc_addPoints;
 		[] remoteExecCall ["DS_fnc_stopBleeding",_target];
 		["DS_var_otherBandagedCallbackFnc",["bandage_others",[]]] call DS_fnc_handleCallback;
 	};

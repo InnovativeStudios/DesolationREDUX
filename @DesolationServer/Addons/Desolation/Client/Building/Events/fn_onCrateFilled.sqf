@@ -9,6 +9,6 @@
  * https://www.bistudio.com/monetization/
  */
 params["_crate"];
-
+[1] call DS_fnc_addPoints;
 ["DS_var_constructionDoneCallbackFnc",["objects_built",[_crate]]] call DS_fnc_handleCallback;
 [_crate] remoteExec ["DS_fnc_finishBuild",2];

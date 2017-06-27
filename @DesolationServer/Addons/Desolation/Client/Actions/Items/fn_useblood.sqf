@@ -14,6 +14,7 @@ if(_target isEqualType "") then {
 
 	_success = {
 		[15000] call DS_fnc_onBloodReceive;
+		[1] call DS_fnc_addPoints;
 		["DS_var_selfBloodbagCallbackFnc",["bloodbag_self",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
@@ -32,6 +33,7 @@ if(_target isEqualType "") then {
 	
 	_success = {
 		params["_target"];
+		[1] call DS_fnc_addPoints;
 		[15000] remoteExecCall ["DS_fnc_onBloodReceive",_target];
 		["DS_var_otherBloodbagCallbackFnc",["bloodbag_others",[]]] call DS_fnc_handleCallback;
 	};
