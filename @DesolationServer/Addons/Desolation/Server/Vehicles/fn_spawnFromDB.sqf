@@ -86,17 +86,22 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	
 	[_object,_items] call DS_fnc_setLoot;
 	
-	_object setVectorUp ((_positionadvanced deleteAt 0) select 1);
-	{
-		_object setVariable _x;
-	} foreach _variables;
 	
-	_object setDir _direction;
+	
+	
 	if(_positiontype == 1) then {
 		_object setPosATL _position;
 	} else {
 		_object setPosASL _position;
 	};
+	_object setDir _direction;
+	
+	{
+		_object setVariable _x;
+	} foreach _variables;
+	
+	
+	_object setVectorUp ((_positionadvanced deleteAt 0) select 1);
 	
 	_object allowDamage true;
 
