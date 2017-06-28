@@ -6605,6 +6605,56 @@ class CfgVehicleSpawns {
 			class Land_House_Big_03_F {};
 			class Land_GarageShelter_01_F {};
 		};
+		class DSR_Hilux_Open_4_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
+		class DSR_Hilux_Open_3A_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
+		class DSR_Hilux_Open_3_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
+		class DSR_Hilux_Open_2_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
+		class DSR_Hilux_Open_1_F {
+			class Land_Airport_01_terminal_F {};
+			class Land_MultistoryBuilding_01_F {};
+			class Land_FuelStation_02_roof_F {};
+			class Land_FuelStation_02_workshop_F {};
+			class Land_FuelStation_01_roof_F {};
+			class Land_FuelStation_01_workshop_F {};
+			class Land_House_Big_03_F {};
+			class Land_GarageShelter_01_F {};
+		};
 		class DSR_Hilux_Covered_F {
 			class Land_Airport_01_terminal_F {};
 			class Land_MultistoryBuilding_01_F {};
@@ -6688,18 +6738,6 @@ class CfgVehicleSpawns {
 			};
 		};
 		class C_SUV_01_F {
-			class Spawns {
-				class Land_Airport_01_terminal_F {};
-				class Land_MultistoryBuilding_01_F {};
-				class Land_FuelStation_02_roof_F {};
-				class Land_FuelStation_02_workshop_F {};
-				class Land_FuelStation_01_roof_F {};
-				class Land_FuelStation_01_workshop_F {};
-				class Land_House_Big_03_F {};
-				class Land_GarageShelter_01_F {};
-			};
-		};
-		class C_Hatchback_01_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
 				class Land_MultistoryBuilding_01_F {};
@@ -6806,18 +6844,6 @@ class CfgVehicleSpawns {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
 				class Land_SM_01_shelter_narrow_F {};
-				class Land_MultistoryBuilding_01_F {};
-				class Land_FuelStation_02_roof_F {};
-				class Land_FuelStation_02_workshop_F {};
-				class Land_FuelStation_01_roof_F {};
-				class Land_FuelStation_01_workshop_F {};
-				class Land_House_Big_03_F {};
-				class Land_GarageShelter_01_F {};
-			};
-		};
-		class C_Hatchback_01_sport_F {
-			class Spawns {
-				class Land_Airport_01_terminal_F {};
 				class Land_MultistoryBuilding_01_F {};
 				class Land_FuelStation_02_roof_F {};
 				class Land_FuelStation_02_workshop_F {};
