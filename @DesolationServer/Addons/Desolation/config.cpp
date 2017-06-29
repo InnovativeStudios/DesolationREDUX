@@ -12,6 +12,28 @@ class Plugins
 	};
 };
 
+
+class CfgPluginActions {
+	class Padlocks {
+		text = "Unlock";
+		Condition = "([_cursor] call DS_fnc_isUnlockable) || ([_cursor] call DS_fnc_isBuildingOwner)";
+		
+		class Actions {
+			class Unlock {
+				text = "Unlock";
+				condition = "(_cursor getVariable ['bis_disabled_Door_1',1]) != 0";
+				action = "createDialog 'DS_Padlock';";
+				
+			};
+			class ChangeLock {
+				text = "Reset lock";
+				condition = "[_cursor] call DS_fnc_isBuildingOwner";
+				action = "createDialog 'DS_Padlock'; call DS_fnc_initLockReset;";
+			};
+		};
+	};
+};
+
 class CfgPluginEvents {
 	class PlayerEvents {
 		overrides = 1;
@@ -138,6 +160,19 @@ class CfgFunctions
 			isclient = 1;
 			class initBuilding {};
 			class registerOwner {};
+		};
+		class Client_Building_Locking {
+			file = "Desolation\Client\Building\Locking";
+			isclient = 1;
+			class initLockReset {};
+			class lockReset {};
+			class unlock {};
+		};
+		class Client_Building_Locking_Checks {
+			file = "Desolation\Client\Building\Locking\Checks";
+			isclient = 1;
+			class isBuildingOwner {};
+			class isUnlockable {};
 		};
 		class Client_Spawning {
 			file = "Desolation\Client\Spawning";

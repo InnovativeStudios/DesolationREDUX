@@ -68,7 +68,7 @@ if(_dpvaruuid == "") then {
 };
 
 
-_playerObj setVariable ["pUUID",_playeruuid];
+_playerObj setVariable ["pUUID",_playeruuid,true];
 
 _request = [PROTOCOL_DBCALL_FUNCTION_LOAD_CHAR,[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid]];
 _response = [_request] call DB_fnc_sendRequest;
