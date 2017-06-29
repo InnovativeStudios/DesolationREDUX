@@ -72,7 +72,6 @@ class CfgFunctions
 {
 	class DS
 	{
-		//--- client functions
 		class Client_Progression {
 			file = "Desolation\Client\Progression";
 			isclient = 1;
@@ -255,7 +254,6 @@ class CfgFunctions
 			class itemClick {};
 			class setupInvEvents {};
 		};
-		//--- server functions
 		class Server_Actions_Vehicle {
 			file = "Desolation\Server\actions\repair";
 			isserver = 1;
@@ -373,9 +371,8 @@ class CfgHeliCrashes {
 		class Military {
 			HeliClass = "DSR_UH1H_F";
 			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
+			WreckSmoke = 1;
 			SpawnAltitude = 600;
-			//particle effects config (size and origin)
 			SmokePos[] = {0,0,0};
 			SmokeSize = 7;
 			Locations[] =
@@ -387,7 +384,7 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
+				maxLootpiles = 10;
 				weapons[] = {
 					"DSR_Arifle_M4_300",
 					"DSR_Srifle_DMR_02_Camo"
@@ -412,9 +409,8 @@ class CfgHeliCrashes {
 		class Military2 {
 			HeliClass = "DSR_UH1H_F";
 			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
+			WreckSmoke = 1; 
 			SpawnAltitude = 600;
-			//particle effects config (size and origin)
 			SmokePos[] = {0,0,0};
 			SmokeSize = 7;
 			Locations[] =
@@ -426,7 +422,7 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
+				maxLootpiles = 10;
 				weapons[] = {
 					"DSR_Srifle_EBR",
 					"DSR_arifle_M4A3"
@@ -452,9 +448,8 @@ class CfgHeliCrashes {
 		class Military3 {
 			HeliClass = "DSR_UH1H_F";
 			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
+			WreckSmoke = 1;
 			SpawnAltitude = 600;
-			//particle effects config (size and origin)
 			SmokePos[] = {0,0,0};
 			SmokeSize = 7;
 			Locations[] =
@@ -466,7 +461,7 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
+				maxLootpiles = 10;
 				weapons[] = {
 					"DSR_Srifle_EBR",
 					"DSR_arifle_M4A3"
@@ -492,9 +487,7 @@ class CfgHeliCrashes {
 		class Military4 {
 			HeliClass = "DSR_UH1H_F";
 			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
 			SpawnAltitude = 600;
-			//particle effects config (size and origin)
 			SmokePos[] = {0,0,0};
 			SmokeSize = 7;
 			Locations[] =
@@ -506,7 +499,7 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
+				maxLootpiles = 10;
 				weapons[] = {
 					"DSR_Srifle_EBR",
 					"DSR_arifle_M4A3"
@@ -570,8 +563,8 @@ class CfgHeliCrashes {
 					"20Rnd_762x51_Mag",
 					"10Rnd_762x54_Mag",
 					"10Rnd_762x54_Mag",
-					"30Rnd_65x39_caseless_mag"
-					"30Rnd_65x39_caseless_mag"
+					"30Rnd_65x39_caseless_mag",
+					"30Rnd_65x39_caseless_mag",
 					"30Rnd_65x39_caseless_mag"
 				};
 				items[] = {
@@ -9680,55 +9673,49 @@ class CfgItemSpawns {
         };
         class Mechanical {
             class Weapon {
-				class Weapon {
-				//god tier navid spmg m320 fully auto 50rnd I0UHNFFJIBOOOOOOM BOOM BOOM NO SKILL RETARD
-                rare[] = {
-                    {"DSR_LMG_Mk200",6},           
-                    {"DSR_Srifle_GM6",6},           
-                    {"DSR_Srifle_LRR",6},
-                    {"DSR_Srifle_DMR_02",6},
+				rare[] = {
+					{"DSR_LMG_Mk200",6},           
+					{"DSR_Srifle_GM6",6},           
+					{"DSR_Srifle_LRR",6},
+					{"DSR_Srifle_DMR_02",6},
 					{"DSR_Srifle_DMR_05_BLK",6},
 					{"DSR_Arifle_FnFal",20},
 					{"DSR_Arifle_M4_300",20}, 
 					{"DSR_Srifle_DMR_03",10},           
-                    {"DSR_Srifle_DMR_03_Khaki",10},
+					{"DSR_Srifle_DMR_03_Khaki",10},
 					{"DSR_Srifle_EBR",10}
-                };
-				//sniper rifle / high end
-                semirare[] = {
-                    {"DSR_Srifle_DMR_02_Camo",15},           
-                    {"DSR_Srifle_DMR_03",5},           
-                    {"DSR_Srifle_DMR_03_Khaki",5},
-                    {"DSR_Arifle_FnFal",15},
+				};
+				semirare[] = {
+					{"DSR_Srifle_DMR_02_Camo",15},           
+					{"DSR_Srifle_DMR_03",5},           
+					{"DSR_Srifle_DMR_03_Khaki",5},
+					{"DSR_Arifle_FnFal",15},
 					{"DSR_Arifle_M4_300",15},   
 					{"DSR_Arifle_AK12",10},             
-                    {"DSR_Srifle_EBR",10},           
-                    {"DSR_Arifle_SPAR_03_BLK",10},
+					{"DSR_Srifle_EBR",10},           
+					{"DSR_Arifle_SPAR_03_BLK",10},
 					{"DSR_sv98",15}
-                };
-				//assault rifle
-                average[] = {
-					         
-                    {"DSR_Arifle_AKM",5},
-                    {"DSR_Arifle_AKS",10},  
-                    {"DSR_Arifle_M16A2",50},		//because ben will q.q
-                    {"DSR_Arifle_CZ805_A2",15},
-                    {"DSR_Arifle_M4A3",15},           
-                    {"DSR_Arifle_MX_Black",5}
-                };
-				//smg
-                semicommon[] = {
+				};
+				average[] = {
+							 
+					{"DSR_Arifle_AKM",5},
+					{"DSR_Arifle_AKS",10},  
+					{"DSR_Arifle_M16A2",50},	
+					{"DSR_Arifle_CZ805_A2",15},
+					{"DSR_Arifle_M4A3",15},           
+					{"DSR_Arifle_MX_Black",5}
+				};
+				semicommon[] = {
 					{"DSR_SMG_01",30},           
-                    {"DSR_SMG_02",30},           
-                    {"DSR_SMG_MP40",10},
-                    {"DSR_hgun_PDW2000",30}
-                };
-				//shotgun
-                common[] = {
+					{"DSR_SMG_02",30},           
+					{"DSR_SMG_MP40",10},
+					{"DSR_hgun_PDW2000",30}
+				};
+				common[] = {
 					{"DSR_SGun_M500",75},
 					{"DSR_Melee_Axe",25}
-                    
-                };
+					
+				};
             }; 
             class Handgun {
                 rare[] = {
@@ -12332,7 +12319,6 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {74.936};
 		};
-		//--- todo: test (removed from list)
 		class Land_Shed_06_F {
 			locations[] = {{2.33594,-1.5708,-1.215},{0.574951,3.30811,-1.215}
 			};
@@ -12368,7 +12354,6 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {178.493};
 		};
-		//--- todo: test removed
 		class Land_MetalShelter_02_F {
 			locations[] = {{-3.0094,6.31982,-2.53849},{-7.5896,4.13184,-2.58269}
 			};
@@ -12379,7 +12364,6 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {269.099,91.9652};
 		};
-		//--- TODO: test removed
 		class Land_MetalShelter_01_F {
 			locations[] = {{4.56799,-5.29004,-1.56836},{4.73572,-2.22607,-1.56836},{4.77979,1.12451,-1.56836},{4.92883,4.04102,-1.56836}
 			};
@@ -12410,7 +12394,6 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {105.568,110.874,109.866,113.647};
 		};
-		//--- todo: test fix
 		class Land_WoodenShelter_01_F {
 			locations[] = {{-0.422852,0.0537109,-1.11249}
 			};
@@ -12562,7 +12545,6 @@ class CfgVehicleSpawns {
 			};
 			directions[] = {322.913};
 		};
-		// for boats
 		class Land_PierWooden_02_barrel_F {
 			locations[] = {
 				{0.31543,1.93018,21.1919}
@@ -12577,7 +12559,6 @@ class CfgVehicleSpawns {
 		};
 	};
 	class Vehicles {
-		//--- zamaks
 		class C_Truck_02_box_F {
 			class Spawns {
 				class Land_SM_01_shelter_narrow_F {};
@@ -12629,7 +12610,6 @@ class CfgVehicleSpawns {
 				
 			};
 		};
-		//--- industrial
 		class C_Van_01_box_F {
 			class Spawns {
 				class Land_SM_01_shelter_narrow_F {};
@@ -12653,15 +12633,11 @@ class CfgVehicleSpawns {
 				class Land_FuelStation_01_roof_F {};
 			};
 		};
-
-		//--- military
 		class B_LSV_01_unarmed_F {
 			class Spawns {
 				class Land_Cargo_Tower_V4_F {};
 			};
 		};
-
-		//--- civ
 		class DSR_Hatchback_F {
 			class Spawns {
 				class Land_Airport_01_terminal_F {};
@@ -12796,14 +12772,11 @@ class CfgVehicleSpawns {
 				class Land_GarageShelter_01_F {};
 			};
 		};
-		//--- quads
 		class C_Quadbike_01_F {
 			class Spawns {
 				class Land_Shed_07_F {};
 			};
 		};
-
-		//--- bikes
 		class DSR_Bike_White_F {
 			class Spawns {
 				class Land_Airport_02_terminal_F {};
@@ -12847,7 +12820,6 @@ class CfgVehicleSpawns {
 				class Land_House_Small_06_F {};
 			};
 		};
-		//--- plans
 		class C_Plane_Civil_01_F {
 			class Spawns {
 				class Land_Airport_02_hangar_left_F {};
@@ -12869,8 +12841,6 @@ class CfgVehicleSpawns {
 				class Land_Airport_01_hangar_F {};
 			};
 		};
-
-		//--- jelli's
 		class C_Heli_Light_01_civil_F {
 			class Spawns {
 				
@@ -12903,10 +12873,6 @@ class CfgVehicleSpawns {
 				class Land_HelipadEmpty_F { };
 			};
 		};
-		
-		
-		
-		//--- boats
 		class DSR_FishingBoat_F {
 			class Spawns {
 				class Land_PierWooden_02_barrel_F {};
@@ -13022,9 +12988,9 @@ class CfgVehicleSpawns {
 
 class CfgBuildables {
     class Type1Houses {
-		condition = "true"; //--- a check to see if the person has knowledge to build this type
-		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa"; //--- preview icon for index
-		name = "Type 1 Houses"; //--- name of this buidlable group
+		condition = "true"; 
+		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa"; 
+		name = "Type 1 Houses"; 
 		class Buildables {
 			class HouseLvl1 {
 				parts[] = {
@@ -13231,17 +13197,6 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
-			/*class Pallets {
-				parts[] = {
-					{"DSR_Item_Lumber",10}
-				};
-				name = "Pallet";
-				model = "Land_Pallets_stack_F";
-				description = "A stack of pallets";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
-				crateObject = "DSR_Object_Storage_Small_Preview2"; //TODO make a preview object for pallets
-				condition = "true";
-			};*/
 			class Workbench {
 				parts[] = {
 					{"DSR_Item_Lumber",10},
@@ -13621,4 +13576,3 @@ class CfgCraftables {
 		};
 	};
 };
-
