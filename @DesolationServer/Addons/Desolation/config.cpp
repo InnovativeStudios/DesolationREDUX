@@ -13001,7 +13001,7 @@ class CfgBuildables {
 					{"DSR_Item_Logs",4}
 				};
 				name = "Campfire";
-				model = "DSR_Object_Campfire";
+				model = "Land_FirePlace_F";
 				description = "A Simple Campfire";
 				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
 				crateObject = "DSR_Object_Storage_Small_Preview2";
