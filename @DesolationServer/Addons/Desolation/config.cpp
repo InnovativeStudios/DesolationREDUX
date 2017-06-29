@@ -13252,6 +13252,21 @@ class CfgCraftables {
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
 			};
+			class Bandage {
+				input[] = {
+					{"DSR_Item_Fabric_Scraps",2},
+					{"DSR_Item_Duct_Tape",1}
+				};
+				output[] = {
+					{"DSR_Item_Makeshift_Bandage",1}
+				};
+				requiredBuildings[] = {};
+				
+				name = "Makeshift Bandage";
+				description = "Stops bleeding wounds.";
+				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				condition = "true";
+			};
 		};
 	};
 };
