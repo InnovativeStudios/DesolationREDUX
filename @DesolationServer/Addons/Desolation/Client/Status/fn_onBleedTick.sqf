@@ -12,6 +12,7 @@
 params["_sourcesinfo"];
 // each bleed source / level increases loss by 5 per second
 
+_bleeding = false;
 
 if(count(_sourcesinfo) > 0) then {
 	
@@ -24,6 +25,7 @@ if(count(_sourcesinfo) > 0) then {
 
 	_tickLoss = (_numLevels^2) * 5;
 	DS_var_Blood = DS_var_Blood - _tickLoss;
+	_bleeding = true;
 };
 
 if(DS_var_Blood != 27500) then {
@@ -52,28 +54,27 @@ if(DS_var_Blood != 27500) then {
 _ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
 
 _level = (DS_var_Blood / 27500)*100;
+_path = if(_bleeding) then {"DECREASING"} else {"STATIC"};
+if(_path == "STATIC") then {
+	if(DS_var_Hunger == 100 && DS_var_Thirst == 100 && !DS_var_isBleeding && (DS_var_Blood != 27500) && DS_var_InfectionDOT == 0) then {
+		_path = "INCREASING";
+	};
+};
+
 
 _0 = abs(_level - 0);
-_1 = abs(_level - 25);
-_2 = abs(_level - 50);
-_3 = abs(_level - 75);
-_4 = abs(_level - 100);
+_1 = abs(_level - 50);
+_2 = abs(_level - 100);
 
-_min = (((_0 min _1) min _2) min _3) min _4;
+_min = ((_0 min _1) min _2);
 if(_min == _0) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_0.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\0.paa");
 };
 if(_min == _1) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_25.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\50.paa");
 };
 if(_min == _2) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_50.paa";
-};
-if(_min == _3) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_75.paa";
-};
-if(_min == _4) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\blood_100.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\100.paa");
 };
 
 // 5.5L of blood in the body

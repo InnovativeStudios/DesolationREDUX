@@ -29,25 +29,19 @@ _ctrl = uiNamespace getVariable ["HUNGER_ICON",controlNull];
 
 _level = DS_var_Hunger;
 
-_0 = abs(_level - 0);
-_1 = abs(_level - 25);
-_2 = abs(_level - 50);
-_3 = abs(_level - 75);
-_4 = abs(_level - 100);
+_path = if(DS_var_isStarving) then {"DECREASING"} else {"STATIC"};
 
-_min = (((_0 min _1) min _2) min _3) min _4;
+_0 = abs(_level - 0);
+_1 = abs(_level - 50);
+_2 = abs(_level - 100);
+
+_min = ((_0 min _1) min _2);
 if(_min == _0) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_0.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\HUNGER\0.paa");
 };
 if(_min == _1) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_25.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\HUNGER\50.paa");
 };
 if(_min == _2) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_50.paa";
-};
-if(_min == _3) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_75.paa";
-};
-if(_min == _4) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\hunger_100.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\HUNGER\100.paa");
 };

@@ -30,25 +30,19 @@ _ctrl = uiNamespace getVariable ["THIRST_ICON",controlNull];
 
 _level = DS_var_Thirst;
 
-_0 = abs(_level - 0);
-_1 = abs(_level - 25);
-_2 = abs(_level - 50);
-_3 = abs(_level - 75);
-_4 = abs(_level - 100);
+_path = if(DS_var_isDehydrating) then {"DECREASING"} else {"STATIC"};
 
-_min = (((_0 min _1) min _2) min _3) min _4;
+_0 = abs(_level - 0);
+_1 = abs(_level - 50);
+_2 = abs(_level - 100);
+
+_min = ((_0 min _1) min _2);
 if(_min == _0) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_0.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\THIRST\0.paa");
 };
 if(_min == _1) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_25.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\THIRST\50.paa");
 };
 if(_min == _2) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_50.paa";
-};
-if(_min == _3) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_75.paa";
-};
-if(_min == _4) then {
-	_ctrl ctrlSetText "dsr_ui\Assets\hud\thirst_100.paa";
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\THIRST\100.paa");
 };
