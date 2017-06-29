@@ -3,3 +3,4 @@ _display = findDisplay 4003;
 
 _ctrl = _display displayCtrl 2400;
 _ctrl buttonSetAction "call DS_fnc_lockReset";
+_ctrl ctrlSetText "Reset";

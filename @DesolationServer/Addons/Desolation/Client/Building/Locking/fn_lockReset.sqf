@@ -27,3 +27,5 @@ for "_i" from 1 to 5 do {
 };
 
 systemchat "Lock Changed!";
+
+closeDialog 0;

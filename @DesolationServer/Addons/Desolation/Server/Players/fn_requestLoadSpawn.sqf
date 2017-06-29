@@ -53,7 +53,7 @@ _unit hideObjectGlobal true;
 } forEach _persvars;
 
 
-_unit setVariable ["pUUID",_client getVariable "pUUID"];
+_unit setVariable ["pUUID",_client getVariable "pUUID",true];
 _unit setVariable ["cUUID",_client getVariable "cUUID"];
 
 _unit setDir _dir;

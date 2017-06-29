@@ -21,4 +21,9 @@ if(isNull _door) then {
 _unlock = _door getVariable ["SVAR_UnlockCode",[10,10,10,10,10]];
 if(_code isEqualTo _unlock) then {
 	[[_door]] call DS_fnc_registerOwner;
+	Systemchat "Unlocked";
+} else {
+	Systemchat "Wrong Code";
 };
+
+closeDialog 0;

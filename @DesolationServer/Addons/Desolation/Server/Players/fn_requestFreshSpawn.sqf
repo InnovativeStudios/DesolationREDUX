@@ -29,7 +29,7 @@ _unit = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NON
 _unit allowDamage false;
 _unit hideObjectGlobal true;
 
-_unit setVariable ["pUUID",_client getVariable "pUUID"];
+_unit setVariable ["pUUID",_client getVariable "pUUID",true];
 
 _unit addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
 [_unit,[],_defaultData] call DS_fnc_setupLoadout;
