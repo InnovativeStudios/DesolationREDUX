@@ -16,7 +16,7 @@ if(_target isEqualType "") then {
 	_success = {
 		player setHitPointDamage ["HitLegs",0];
 		[1] call DS_fnc_addPoints;
-		systemchat "I have applied the splint";
+		systemchat "My legs feel better";
 		["DS_var_selfSplintCallbackFnc",["splint_self",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
