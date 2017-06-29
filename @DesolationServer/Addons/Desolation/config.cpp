@@ -2133,7 +2133,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -2146,7 +2147,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -2159,7 +2161,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -2172,7 +2175,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -2185,7 +2189,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -3807,7 +3812,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -3820,7 +3826,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -3833,7 +3840,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -3846,7 +3854,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -3859,7 +3868,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -5629,7 +5639,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -5642,7 +5653,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -5655,7 +5667,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -5668,7 +5681,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -5681,7 +5695,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -7451,7 +7466,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -7464,7 +7480,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -7477,7 +7494,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -7490,7 +7508,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -7503,7 +7522,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -9273,7 +9293,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -9286,7 +9307,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -9299,7 +9321,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -9312,7 +9335,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -9325,7 +9349,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -11090,7 +11115,8 @@ class CfgItemSpawns {
             };
             class Book {
                 rare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},  
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -11103,7 +11129,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -11116,7 +11143,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -11129,7 +11157,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
@@ -11142,7 +11171,8 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
-                    {"DSR_Item_Crushed_Can",20},           
+                    {"DSR_Item_Crushed_Can",5},
+					{"DSR_Item_Fabric_Scraps",3},           
                     {"DSR_Item_Can_Opener",1},           
                     {"DSR_Item_Matches",1},
 					{"DSR_Item_Tarp",1}, 
