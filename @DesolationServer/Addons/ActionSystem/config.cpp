@@ -277,7 +277,7 @@ class Cfg3DActions {
 				class Parameters {
 					requiredItems[] = {
 						{"DSR_Item_Toolbox", 1},
-						{"DSR_Item_Tire", 4}
+						{"DSR_Item_Tire_RepairKit", 4}
 					};
 					returnedItems[] = {
 						{"DSR_Item_Toolbox", 1}
