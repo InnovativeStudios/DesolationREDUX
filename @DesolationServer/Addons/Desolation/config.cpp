@@ -901,8 +901,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -914,6 +915,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -925,6 +927,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -936,6 +939,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -947,6 +951,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -2421,8 +2426,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -2434,6 +2440,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -2445,6 +2452,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -2456,6 +2464,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -2467,6 +2476,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -4108,8 +4118,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -4121,6 +4132,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -4132,6 +4144,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -4143,6 +4156,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -4154,6 +4168,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -5935,8 +5950,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -5948,6 +5964,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -5959,6 +5976,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -5970,6 +5988,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -5981,6 +6000,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -7762,8 +7782,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -7775,6 +7796,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -7786,6 +7808,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -7797,6 +7820,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -7808,6 +7832,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -9584,8 +9609,9 @@ class CfgItemSpawns {
             }; 
             class Handgun {
                 rare[] = {
-					{"DSR_hgun_M9_F",1},
+					{"DSR_hgun_M9_F",1},	
 					{"DSR_hgun_G17_F",1}, 
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -9597,6 +9623,7 @@ class CfgItemSpawns {
                 semirare[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -9608,6 +9635,7 @@ class CfgItemSpawns {
                 average[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -9619,6 +9647,7 @@ class CfgItemSpawns {
                 semicommon[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
@@ -9630,6 +9659,7 @@ class CfgItemSpawns {
                 common[] = {
 					{"DSR_hgun_M9_F",1},
 					{"DSR_hgun_G17_F",1},
+					{"DSR_hgun_makarov_F",1}, 
                     {"DSR_hgun_ACPC2",1},           
                     {"DSR_hgun_P07",1},           
                     {"DSR_hgun_Pistol_Heavy_01",1},
