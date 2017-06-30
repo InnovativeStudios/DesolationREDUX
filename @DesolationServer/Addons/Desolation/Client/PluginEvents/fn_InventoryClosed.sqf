@@ -1,5 +1,7 @@
 params [["_player", objNull],["_container", objNull]];
 
+[player,["BagClose",50]] remoteExec ["say3D",allPlayers];
+
 //--- used for container cleanup
 if ((typeOf _container) == "GroundWeaponHolder") then
 {

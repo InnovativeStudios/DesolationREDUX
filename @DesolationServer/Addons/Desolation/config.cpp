@@ -38,6 +38,14 @@ class CfgPluginEvents {
 	class PlayerEvents {
 		overrides = 1;
 		class Events {
+			class DS_InvTake {
+				type = "Take";
+				function = "DS_fnc_InvTake";
+			};
+			class DS_InvPut {
+				type = "Put";
+				function = "DS_fnc_InvPut";
+			};
 			class DS_AnimChanged {
 				type = "AnimChanged";
 				function = "DS_fnc_AnimChanged";
@@ -103,6 +111,8 @@ class CfgFunctions
 			file = "Desolation\Client\PluginEvents";
 			isclient = 1;
 			class Draw3D {};
+			class InvTake {};
+			class InvPut {};
 			class AnimChanged {};
 			class InventoryClosed {};
 			class InventoryOpened {};

@@ -1,6 +1,7 @@
 params["_player","_container"];
 _override = false;
 
+[player,["BagOpen",50]] remoteExec ["say3D",allPlayers];
 
 if(_container isKindOf "DSR_Civilian_Base") then {
 	_box = "GroundWeaponHolder" createVehicle [0,0,0];
