@@ -1,5 +1,5 @@
 
-
+/*
 _text = "";
 _text = _text + "<t size='1.4' align='center' color='#FFFFFF'>Desolation <t color='#FF3333'>Redux</t></t><br/><t size='1.1' align='center'>Debug</t><br/><br/>";
 _text = _text + "<t color='#FFFF55' align='left' size='0.9'>Damage:</t><t align='right' size='0.9'>" + str(damage player) + "</t><br/>";
@@ -12,3 +12,4 @@ _text = _text + "<t color='#FF55FF' align='left' size='0.9'>Scripts:</t><t align
 
 
 hintSilent parseText (_text);
+*/
