@@ -63,17 +63,25 @@ if(_path == "STATIC") then {
 
 
 _0 = abs(_level - 0);
-_1 = abs(_level - 50);
-_2 = abs(_level - 100);
+_1 = abs(_level - 25);
+_2 = abs(_level - 50);
+_3 = abs(_level - 75);
+_4 = abs(_level - 100);
 
-_min = ((_0 min _1) min _2);
+_min = (((_0 min _1) min _2) min _3) min _4;
 if(_min == _0) then {
 	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\0.paa");
 };
 if(_min == _1) then {
-	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\50.paa");
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\25.paa");
 };
 if(_min == _2) then {
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\50.paa");
+};
+if(_min == _3) then {
+	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\75.paa");
+};
+if(_min == _4) then {
 	_ctrl ctrlSetText ("dsr_ui\Assets\hud\" +_path + "\BLOOD\100.paa");
 };
 
