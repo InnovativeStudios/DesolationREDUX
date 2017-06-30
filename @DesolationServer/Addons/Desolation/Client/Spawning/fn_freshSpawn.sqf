@@ -19,9 +19,9 @@ _northBTN = _display displayCtrl 1600;
 _eastBTN = _display displayCtrl 1602;
 _southBTN = _display displayCtrl 1601;
 
-_northText = ["NorthButton","DS"] call BASE_fnc_getCfgValue;
-_southText = ["SouthButton","DS"] call BASE_fnc_getCfgValue;
-_eastText = ["EastButton","DS"] call BASE_fnc_getCfgValue;
+_northText = ["Zone1Button","DS"] call BASE_fnc_getCfgValue;
+_southText = ["Zone2Button","DS"] call BASE_fnc_getCfgValue;
+_eastText = ["Zone3Button","DS"] call BASE_fnc_getCfgValue;
 
 _southBTN ctrlSetText _southText;
 _northBTN ctrlSetText _northText;
