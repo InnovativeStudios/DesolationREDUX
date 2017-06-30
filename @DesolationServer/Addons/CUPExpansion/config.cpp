@@ -2,6 +2,7 @@ class CfgPatches
 {
 	class CUPExpansion {
 		requiredAddons[] = {"Desolation"};
+		units[] = {};
 	};
 };
 

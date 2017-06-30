@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class AltisExpansion {};
+	class AltisExpansion {units[] = {};};
 };
 class Plugins
 {

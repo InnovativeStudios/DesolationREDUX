@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class Realism {};
+	class Realism {units[] = {};};
 };
 
 class Plugins

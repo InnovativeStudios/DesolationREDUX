@@ -2,6 +2,7 @@ class CfgPatches
 {
 	class ChernarusMap {
 		requiredAddons[] = {"Desolation"};
+		units[] = {};
 	};
 };
 

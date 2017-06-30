@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class EarPlugs {};
+	class EarPlugs {units[] = {};};
 };
 
 class Plugins

@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class DSAchievements {};
+	class DSAchievements {units[] = {};};
 };
 
 class Plugins

@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class ObjectMovement {};
+	class ObjectMovement {units[] = {};};
 };
 
 class Plugins

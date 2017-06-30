@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class ActionSystem {};
+	class ActionSystem {units[] = {};};
 };
 
 class Plugins

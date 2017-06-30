@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class SpookyWeather {};
+	class SpookyWeather {units[] = {};};
 };
 
 class Plugins

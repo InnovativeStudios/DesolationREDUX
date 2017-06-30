@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class Holster {};
+	class Holster {units[] = {};};
 };
 
 class Plugins

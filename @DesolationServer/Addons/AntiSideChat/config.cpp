@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class AntiSideChat {};
+	class AntiSideChat {units[] = {};};
 };
 class Plugins
 {

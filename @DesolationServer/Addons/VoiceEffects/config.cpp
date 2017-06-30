@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class VoiceEffects {};
+	class VoiceEffects {units[] = {};};
 };
 
 class Plugins

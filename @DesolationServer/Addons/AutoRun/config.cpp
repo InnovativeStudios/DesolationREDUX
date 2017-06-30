@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class AutoRun {};
+	class AutoRun {units[] = {};};
 };
 class Plugins
 {

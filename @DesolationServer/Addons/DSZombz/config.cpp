@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class DSZombz {};
+	class DSZombz {units[] = {};};
 };
 
 class Plugins

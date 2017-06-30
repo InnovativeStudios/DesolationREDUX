@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class DSQuests {};
+	class DSQuests {units[] = {};};
 };
 
 class Plugins

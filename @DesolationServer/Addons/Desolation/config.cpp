@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class Desolation {};
+	class Desolation {units[] = {};};
 };
 class Plugins
 {

@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class GlitchPunisher {};
+	class GlitchPunisher {units[] = {};};
 };
 
 class Plugins

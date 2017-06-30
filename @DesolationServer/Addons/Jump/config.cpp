@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class Jump {};
+	class Jump {units[] = {};};
 };
 
 class Plugins

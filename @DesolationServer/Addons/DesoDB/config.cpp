@@ -2,7 +2,8 @@
 
 class CfgPatches
 {
-	class DesoDB {};
+	class DesoDB {units[] = {};};
+	
 };
 
 class Plugins

@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class TimeManagement {};
+	class TimeManagement {units[] = {};};
 };
 
 class Plugins

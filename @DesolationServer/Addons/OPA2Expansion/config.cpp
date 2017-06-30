@@ -2,6 +2,7 @@ class CfgPatches
 {
 	class OPA2Expansion {
 		requiredAddons[] = {"Desolation"};
+		units[] = {};
 	};
 };
 
