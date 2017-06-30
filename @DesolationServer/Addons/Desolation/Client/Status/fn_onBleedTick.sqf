@@ -56,7 +56,7 @@ _ctrl = uiNamespace getVariable ["BLOOD_ICON",controlNull];
 _level = (DS_var_Blood / 27500)*100;
 _path = if(_bleeding) then {"DECREASING"} else {"STATIC"};
 if(_path == "STATIC") then {
-	if(DS_var_Hunger == 100 && DS_var_Thirst == 100 && !DS_var_isBleeding && (DS_var_Blood != 27500) && DS_var_InfectionDOT == 0) then {
+	if(DS_var_Hunger > 75 && DS_var_Thirst > 75 && !DS_var_isBleeding && (DS_var_Blood != 27500) && DS_var_InfectionDOT == 0) then {
 		_path = "INCREASING";
 	};
 };
