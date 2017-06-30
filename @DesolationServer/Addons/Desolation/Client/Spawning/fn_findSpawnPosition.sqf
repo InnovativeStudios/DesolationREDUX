@@ -23,7 +23,7 @@ _blacklist = [];
 _spawnZoneSize = (_markerSize select 1);
 if ((_markerSize select 0) > (_markerSize select 1)) then{_spawnZoneSize = (_markerSize select 0);};
 
-_spawnPos = [_markerPos, 0, _markerSize, _ClosestObject, 1, _maxIncl, _spawnType, _blacklist, [0,0,0]] call BIS_fnc_findSafePos;
+_spawnPos = [_markerPos, 0, _spawnZoneSize, _ClosestObject, 0, _maxIncl, _spawnType, _blacklist, [0,0,0]] call BIS_fnc_findSafePos;
 
 
 
