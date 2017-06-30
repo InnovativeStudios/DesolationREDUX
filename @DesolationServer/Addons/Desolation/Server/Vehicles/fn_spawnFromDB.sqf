@@ -39,6 +39,8 @@ _returnData = [];
  * }
  */
 
+if(_objectType == 4) exitWith {[];}; // TEMP: fix retard update in database to remove broken vehicles
+ 
 if (_objectType > 1) then { // its an building, vehicle or ai - all use createVehicle
 	_position = [_positionx,_positiony,_positionz];
 	_object = _classname createVehicle _position;
