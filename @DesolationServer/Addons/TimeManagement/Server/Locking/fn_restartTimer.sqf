@@ -28,7 +28,7 @@ _endTime = diag_tickTime + _time;
 {
 	waitUntil{uiSleep 10;diag_tickTime >= (_endTime-(_x*60))};
 	if (_x != 0) then {
-		["SERVER SHUTTING DOWN IN " + str(_x) + " " + (if(_x > 1) then {"MINUTES"} else {"MINUTE"}) + (if(_x < 16) then {", PLEASE LOGOUT"} else {""})] call TM_fnc_notify;
+		["SERVER RESTARTING IN " + str(_x) + " " + (if(_x > 1) then {"MINUTES"} else {"MINUTE"}) + (if(_x < 16) then {", PLEASE LOGOUT"} else {""})] call TM_fnc_notify;
 	};
 } forEach _Notifications;
 
