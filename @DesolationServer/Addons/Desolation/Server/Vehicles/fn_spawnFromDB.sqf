@@ -40,6 +40,7 @@ _returnData = [];
  */
 
 if(_objectType == 4) exitWith {[];}; // TEMP: fix retard update in database to remove broken vehicles
+if(_classname == "") exitWith  {[];}; // TEMP: fix for retard objects being registered wrong
  
 if (_objectType > 1) then { // its an building, vehicle or ai - all use createVehicle
 	_position = [_positionx,_positiony,_positionz];
@@ -89,21 +90,36 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	[_object,_items] call DS_fnc_setLoot;
 	
 	
+	_hpVectorUp = call compile ((_positionadvanced deleteAt 0) select 1);
+	_hpVectorDir = [];
+	_hpPosition = [];
 	
-	
-	if(_positiontype == 1) then {
-		_object setPosATL _position;
-	} else {
-		_object setPosASL _position;
+	if(count(_positionadvanced) == 3) then {
+		_hpVectorDir = call compile ((_positionadvanced deleteAt 0) select 1);
+		_hpPosition = call compile ((_positionadvanced deleteAt 0) select 1);
 	};
-	_object setDir _direction;
+	
+	if(count(_positionadvanced) == 3) then {
+		_object setPosATL _hpPosition;
+	} else {
+		if(_positiontype == 1) then {
+			_object setPosATL _position;
+		} else {
+			_object setPosASL _position;
+		};
+	};
+	
 	
 	{
 		_object setVariable _x;
 	} foreach _variables;
 	
-	
-	_object setVectorUp ((_positionadvanced deleteAt 0) select 1);
+	if(count(_positionadvanced) == 3) then {
+		_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
+	} else {
+		_object setDir _direction;
+		_object setVectorUp _hpVectorUp;
+	};
 	
 	_object allowDamage true;
 
