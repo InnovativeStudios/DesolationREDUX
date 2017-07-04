@@ -12735,7 +12735,11 @@ class CfgVehicleSpawns {
 		};
 		class C_Heli_Light_01_civil_F {
 			class Spawns {
-				
+				class Land_HelipadCircle_F { };
+				class Land_HelipadCivil_F { };
+				class Land_HelipadRescue_F { };
+				class Land_HelipadSquare_F { };
+				class Land_HelipadEmpty_F { };
 			};
 		};
 		class DSR_UH1H_F {

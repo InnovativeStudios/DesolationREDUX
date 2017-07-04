@@ -2610,7 +2610,12 @@ class CfgVehicleSpawns {
 		//--- jelli's
 		class C_Heli_Light_01_civil_F {
 			class Spawns {
-				
+				class HeliH { };
+				class HeliHCivil { };
+				class Heli_H_Civil { };
+				class Heli_H_Rescue { };
+				class HeliHRescue { };
+				class Land_A_Hospital { };
 			};
 		};
 		class DSR_UH1H_F {
