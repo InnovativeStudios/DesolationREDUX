@@ -38,5 +38,11 @@ class CfgFunctions
 			isserver = 1;
 			class initTime {};
 		};
+		class Server_GetMoonDate
+		{
+			file = "TimeManagement\Server\Time";
+			isserver = 1;
+			class getMoonPhaseDate{};
+		};
 	};
 };
