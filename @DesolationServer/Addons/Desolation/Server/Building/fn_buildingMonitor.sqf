@@ -30,8 +30,8 @@ while{true} do {
 		};
 		
 		if (isNull _x || !(alive _x) || _cleanup) then {
+			["destroyBuilding","",[_uuid,objNull]] call DS_fnc_dbRequest;
 			if(!isNull _x) then {
-				["destroyBuilding","",[_uuid,objNull]] call DS_fnc_dbRequest;
 				detach _x;
 				deleteVehicle _x;
 			};
