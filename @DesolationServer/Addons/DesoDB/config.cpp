@@ -42,6 +42,7 @@ class CfgFunctions
 			isserver = 1;
 			class getWorldUUID {};
 			class getPoolSize {};
+			class hpFloatArray {};
 		};
 		class Serialization
 		{

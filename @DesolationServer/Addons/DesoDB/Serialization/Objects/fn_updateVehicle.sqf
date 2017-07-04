@@ -74,7 +74,12 @@ _textures = getObjectTextures _vehicle;
 _direction = getDir _vehicle;
 _positionType = 1;
 _position = getPosATL _vehicle;
-_positionadvanced = [["DSR_vectorUp",vectorUp _vehicle]];
+_positionadvanced = [
+	["DSR_vectorUp",(vectorUp _building) call DB_fnc_hpFloatArray], //high precision vectorup
+	["DSR_vectorDir",(vectorDir _building) call DB_fnc_hpFloatArray], //high precision vectordir
+	["DSR_position",(getPosATL _building) call DB_fnc_hpFloatArray] //high precision position
+]; 
+
 
 [
 	_object_uuid,

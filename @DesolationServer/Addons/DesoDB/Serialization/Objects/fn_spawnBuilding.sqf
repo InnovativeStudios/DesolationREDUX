@@ -60,7 +60,12 @@ _textures = getObjectTextures _building;
 _direction = getDir _building;
 _positionType = 1;
 _position = getPosATL _building;
-_positionadvanced = [["DSR_vectorUp",vectorUp _building]]; // TODO: add high precision position
+_positionadvanced = [
+	["DSR_vectorUp",(vectorUp _building) call DB_fnc_hpFloatArray], //high precision vectorup
+	["DSR_vectorDir",(vectorDir _building) call DB_fnc_hpFloatArray], //high precision vectordir
+	["DSR_position",(getPosATL _building) call DB_fnc_hpFloatArray] //high precision position
+]; 
+
 
 // support to add objects that already have an uuid - in case i fuck up again (Legodev)
 _objectUUID = _building getVariable ["oUUID",""];
