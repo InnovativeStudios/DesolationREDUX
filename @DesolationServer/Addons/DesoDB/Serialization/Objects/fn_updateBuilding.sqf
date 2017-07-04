@@ -71,7 +71,9 @@ _positionadvanced = [
 
 
 
-[
+// only send request if it is needed
+_oldData = _building getVariable ["DBVar_AllData",[]];
+_newData = [
 	_object_uuid,
 	_className,
 	_priority,
@@ -95,4 +97,11 @@ _positionadvanced = [
 	_positionadvanced,
 	_reservedone,
 	_reservedtwo
-] call DB_fnc_updateObject;
+];
+if !(_oldData isEqualTo _newData) then {
+	_newData call DB_fnc_updateObject;
+};
+_building setVariable ["DBVar_AllData",_newData];
+
+
+
