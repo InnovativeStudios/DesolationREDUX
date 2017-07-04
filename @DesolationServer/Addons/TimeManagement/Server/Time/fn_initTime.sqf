@@ -16,12 +16,6 @@ _dayMult = parseNumber (["DayMultiplier","TM"] call BASE_fnc_getCfgValue);
 _dayStart = parseNumber (["DayTimeStart","TM"] call BASE_fnc_getCfgValue);
 _nightMult = parseNumber (["NightMultiplier","TM"] call BASE_fnc_getCfgValue);
 _nightStart = parseNumber (["NightTimeStart","TM"] call BASE_fnc_getCfgValue); 
-
-_fullMoon = ["fullmoon","TM"] call BASE_fnc_getCfgValue;
-_clearClouds = ["clearClouds","TM"] call BASE_fnc_getCfgValue;
-_maxOvercast = parseNumber(["maxOvercast","TM"] call BASE_fnc_getCfgValue);
-_maxLuminosity = parseNumber(["maxPhase","TM"] call BASE_fnc_getCfgValue);
-_minLuminosity = parseNumber(["minPhase","TM"] call BASE_fnc_getCfgValue);
  
 if(_StartTime > 23) then {
 	diag_log "TimeManagement > ERROR: StartTime > 23, Defaulting to 12";
@@ -43,16 +37,10 @@ if((_StartTime - _TimeSpread) < 0) then {
 };
 
 _startHour = floor random [_StartTime - _TimeSpread, _StartTime, _StartTime + _TimeSpread];
+
 diag_log format ["TimeManagement > INFO: Start Hour = %1", _startHour];
 
-_date = [2017,6,6,_startHour,0];
-
-
-_date = [_date,_fullMoon,_clearClouds,_maxOvercast,_minLuminosity,_maxLuminosity] call TM_fnc_getMoonPhaseDate;
-
-
-setDate _date;
-
+setDate [2017,6,6,_startHour,0];
 
 diag_log format ["TimeManagement > INFO: Date = %1", date];
 
