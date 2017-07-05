@@ -75,9 +75,9 @@ _direction = getDir _vehicle;
 _positionType = 1;
 _position = getPosATL _vehicle;
 _positionadvanced = [
-	["DSR_vectorUp",(vectorUp _building) call DB_fnc_hpFloatArray], //high precision vectorup
-	["DSR_vectorDir",(vectorDir _building) call DB_fnc_hpFloatArray], //high precision vectordir
-	["DSR_position",(getPosATL _building) call DB_fnc_hpFloatArray] //high precision position
+	["DSR_vectorUp",str(vectorUp _vehicle)], //high precision vectorup
+	["DSR_vectorDir",str(vectorDir _vehicle)], //high precision vectordir
+	["DSR_position",(getPosATL _vehicle) call DB_fnc_hpFloatArray] //high precision position
 ]; 
 
 

@@ -23,7 +23,6 @@ while{true} do {
 		_uuid = DS_var_BuildingUUIDS select _forEachIndex;
 		
 		_cleanup = false;
-		_cleanup = false;
 		_pos = getPosASL _x;
 		if((_pos select 2) < 0) then {
 			_cleanup = true;

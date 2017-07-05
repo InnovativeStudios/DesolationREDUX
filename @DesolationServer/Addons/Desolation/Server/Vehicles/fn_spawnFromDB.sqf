@@ -89,37 +89,21 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	
 	[_object,_items] call DS_fnc_setLoot;
 	
-	
-	_hpVectorUp = call compile ((_positionadvanced deleteAt 0) select 1);
-	_hpVectorDir = [];
-	_hpPosition = [];
-	
-	if(count(_positionadvanced) == 3) then {
-		_hpVectorDir = call compile ((_positionadvanced deleteAt 0) select 1);
-		_hpPosition = call compile ((_positionadvanced deleteAt 0) select 1);
-	};
-	
-	if(count(_positionadvanced) == 3) then {
-		_object setPosATL _hpPosition;
-	} else {
-		if(_positiontype == 1) then {
-			_object setPosATL _position;
-		} else {
-			_object setPosASL _position;
-		};
-	};
-	
-	
 	{
-		_object setVariable _x;
+		_object setVariable [_x select 0,_x select 1,true];
 	} foreach _variables;
 	
-	if(count(_positionadvanced) == 3) then {
-		_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
-	} else {
-		_object setDir _direction;
-		_object setVectorUp _hpVectorUp;
-	};
+	
+	_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
+	_hpVectorDir = call compile ((_positionadvanced select 1) select 1);
+	_hpPosition = call compile ((_positionadvanced select 2) select 1);
+	
+	_object setPosATL _hpPosition;
+	
+
+	
+	_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
+	
 	
 	_object allowDamage true;
 
