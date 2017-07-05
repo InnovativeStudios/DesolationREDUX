@@ -19,7 +19,6 @@ _wreckSmoke = _this select 4;
 
 _heli  setHitPointDamage ["HitVRotor", 1];
 _smoke = "test_EmptyObjectForSmoke" createVehicle (getposatl _heli);
-_smoke enableDynamicSimulation true;
 _smoke attachTo [_heli,_smokeModelPos];
 
 
@@ -41,7 +40,9 @@ uiSleep 3;
 _heli  setHitPointDamage ["HitHRotor", 1];
 _heli  setHitPointDamage ["HitEngine", 1];
 waitUntil {isTouchingGround _heli};
-deletevehicle _smoke;//TODO: sometimes smoke isnt deleted?
+
+deletevehicle _smoke;
+
 _heli setdamage 1;
 _wreckPos = getposATL _heli;
 _wreckDir = vectorDir _heli;
@@ -66,7 +67,7 @@ diag_log ("CREATED HELI CRASH AT: " + str(_wreckPos));
 
 if (_wreckSmoke > 0) then {
 	_smoke = "test_EmptyObjectForSmoke" createVehicle _wreckPos;
-	_smoke enableDynamicSimulation true;
+//	_smoke enableDynamicSimulation true; //TODO: increase simulation distance on this
 	_smoke setPosATL _wreckPos;
 };
 _wreckPos
