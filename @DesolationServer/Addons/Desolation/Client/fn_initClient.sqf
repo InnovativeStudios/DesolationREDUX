@@ -9,6 +9,8 @@
  * https://www.bistudio.com/monetization/
  */
 
+if(isServer) exitWith {diag_log "FATAL ERROR: CLIENT CODE STARTING ON SERVER";};
+ 
 _enabled = call compile (["Enabled","DS"] call BASE_fnc_getCfgValue);
 if(!_enabled) exitWith {diag_log "DESOLATION IS NOT ENABLED, THE PLUGIN WILL NOT RUN";};
 
