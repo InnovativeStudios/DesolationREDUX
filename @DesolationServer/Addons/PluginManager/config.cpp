@@ -84,6 +84,7 @@ class CfgFunctions
 			isserver = 1;
 			file = "PluginManager\Functions\lib";
 			//inventory functions
+			class attachToHand {};
 			class getAllCargo {};
 			class getAllCargoBase {};
 			class getItemCargo {};
