@@ -15,6 +15,8 @@ if !([getpos _zed] call DSZ_fnc_isPlayerNear) then {
 	if(!local (group _zed)) then {[_zed] call DSZ_fnc_fromClient;};
 	
 	
+	[_zIndex,(_zData select 1)] call DSZ_fnc_createHolder;
+	
 	_group = group _zed;
 	deleteGroup _group;
 	deleteVehicle _zed;

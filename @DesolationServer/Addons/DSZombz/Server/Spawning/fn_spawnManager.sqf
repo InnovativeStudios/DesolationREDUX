@@ -46,22 +46,17 @@ while{true} do {
 		};
 	} forEach DSZ_var_spawnedZeds;
 	uiSleep 0.5;
+	
 	{
-		if(count(_x) > 0) then { // if count(_x) == 0 then zombie is dead (this is an "isdead" check)
-			_pos = _x select 1;
-			_zIndex = _forEachIndex;
-			
-			if !(_zIndex in _aliveZombieIndexes) then { // if this zombie is not already spawned
-				_nearPlayers = [_pos] call DSZ_fnc_getNearPlayers; // get all near players
-				if(count(_nearPlayers) > 0) then {
-					_player = _nearPlayers select 0;
-					[_zIndex,_player] call DSZ_fnc_spawnZombie; // if there is a near player, spawn zombie
-				};
-			};
+		_player = _x;	
+		if(alive _player) then {
+			_nearAI = _player nearObjects ["Sign_Sphere10Cm_F",250];
+			{
+				_zedHolder = _x;
+				[_zedHolder,_player] call DSZ_fnc_spawnZombie;
+			} forEach _nearAI;
 		};
-		uiSleep 0.001;
-	} forEach DSZ_var_spawnData;
-	// SZ_var_spawnData = DSZ_var_spawnData - [[]]; // this causes zombies to spawn without the ability to agro ?
+	} forEach allPlayers;
 	uiSleep 0.5;
 };
 //},false,1,0] call DS_fnc_registerTickFunc;

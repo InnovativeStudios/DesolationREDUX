@@ -1,4 +1,8 @@
-params["_zIndex","_owner"];
+params["_zHolder","_owner"];
+
+_zIndex = _zHolder getVariable ["zIndex",-1];
+if((_zIndex < 0) || (_zIndex >= count(DSZ_var_spawnData))) exitWith {};
+deleteVehicle _zHolder;
 
 _zData = DSZ_var_spawnData select _zIndex;
 
@@ -33,6 +37,13 @@ _zombie disableAI "TARGET";
 _zombie disableAI "AUTOTARGET";
 _zombie disableAI "COVER";
 _zombie disableAI "AUTOCOMBAT";
+
+_face = face _zombie;
+if(_face find "DSR" != 0) then {
+	_num = ceil(random(22));
+	_face = ("DSR_Zombie_" + (if(_num < 10) then {"0"} else {""}) + str(_num));
+};
+[_zombie, _face] remoteExec ["setFace", 0, _zombie];
 
 _group setBehaviour "CARELESS";
 _group setCombatMode "BLUE";

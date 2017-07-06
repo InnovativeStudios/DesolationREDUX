@@ -82,6 +82,7 @@ class CfgFunctions
 			class spawnZombie {};
 			class insertZombie {};
 			class spawnManager {};
+			class createHolder {};
 			class despawnZombie {};
 		};
 		class Server_Locality
