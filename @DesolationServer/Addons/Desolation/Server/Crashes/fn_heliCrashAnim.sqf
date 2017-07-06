@@ -67,7 +67,7 @@ diag_log ("CREATED HELI CRASH AT: " + str(_wreckPos));
 
 if (_wreckSmoke > 0) then {
 	_smoke = "test_EmptyObjectForSmoke" createVehicle _wreckPos;
-//	_smoke enableDynamicSimulation true; //TODO: increase simulation distance on this
+//	_smoke enableDynamicSimulation true; //TODO: increase simulation distance on this and renable
 	_smoke setPosATL _wreckPos;
 };
 _wreckPos
