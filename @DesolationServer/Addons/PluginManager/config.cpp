@@ -20,14 +20,15 @@ class Plugins
 	};
 };
 
-class CfgFunctions {
+class CfgFunctions 
+{
 	init = "PluginManager\initFunctions.sqf";
 	class BASE 
 	{
 		// PluginManager functions
 		class Functions 
 		{
-			file = "PluginManager\Functions";
+			file = "PluginManager\Functions\core";
 			class preInit 
 			{
 				preInit = 1;
@@ -76,9 +77,33 @@ class CfgFunctions {
 			class initKeybindUI {};
 			class startActionManager {};
 		};
+		//function library for plugin makers to use, Documentation found inside functions/wiki
+		class Lib
+		{
+			isclient = 1;
+			isserver = 1;
+			file = "PluginManager\Functions\lib";
+			//inventory functions
+			class getAllCargo {};
+			class getAllCargoBase {};
+			class getItemCargo {};
+			class getMagCargo {};
+			class getWepCargoBase {};
+			class getUnitLoadout {};
+			class setAllCargo {};
+			class setAllCargoBase {};
+			class setItemCargo {};
+			class setItemCargoLocal {};
+			class setMagCargo{};
+			class setWepCargo {};
+			class setWepCargoBase {};
+			class setUnitLoadout {};
+			class addWepAttachCargo {};
+		};
 	};
 };
-class CfgPluginMapEditsConfig {
+class CfgPluginMapEditsConfig 
+{
 	class dynamicObjects {};
 };
 class CfgPluginMapEdits {};	
