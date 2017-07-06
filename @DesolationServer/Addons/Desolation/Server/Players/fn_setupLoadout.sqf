@@ -22,6 +22,11 @@ if !(_equipmentArray isEqualTo []) then
 	removeAllAssignedItems _unit;
 	
 	_unit setUnitLoadout _equipmentArray;
+	_dataHas = getUnitLoadout _unit;
+	if !(_dataHas isEqualTo _equipmentArray) then {
+		diag_log "FATAL ERROR: SET UNIT LOADOUT FAILED";
+		_unit setUnitLoadout _equipmentArray;
+	};
 }
 else
 {
