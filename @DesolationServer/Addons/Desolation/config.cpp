@@ -128,11 +128,7 @@ class CfgFunctions
 		class Client_Weapon_Events {
 			file = "Desolation\Client\Weapon\Events";
 			isclient = 1;
-			class onAxeSwing {};
-			class onBatSwing {};
-			class onKatanaSwing {};
-			class onPickaxeSwing {};
-			class onFishingrodSwing {};
+			class onSwing {};
 		};
 		class Client_Weapon_Network {
 			file = "Desolation\Client\Weapon\Network";
