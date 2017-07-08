@@ -18,7 +18,7 @@ while{true} do {
 				_aliveZombieIndexes pushback _zIndex; // mark that index as a spawned zombie
 				_nearPlayers = [getposatl _x] call DSZ_fnc_getNearPlayers;
 				
-				if(local group _x) then {
+				if(local group _x && count(_nearPlayers) > 0) then {
 					//-- transfer locality to nearest man
 					_plr = _nearPlayers select 0;
 					
@@ -53,7 +53,9 @@ while{true} do {
 			_nearAI = _player nearObjects ["Sign_Sphere10Cm_F",250];
 			{
 				_zedHolder = _x;
-				[_zedHolder,_player] call DSZ_fnc_spawnZombie;
+				if !(_zedHolder getVariable["isSpawned",false]) then {
+					[_zedHolder,_player] call DSZ_fnc_spawnZombie;
+				};
 			} forEach _nearAI;
 		};
 	} forEach allPlayers;

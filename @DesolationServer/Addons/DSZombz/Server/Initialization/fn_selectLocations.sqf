@@ -52,7 +52,9 @@ DSZ_var_spawnData = _zombieData;
 
 //create holder objects
 {
-	[_forEachIndex,(_x select 1)] call DSZ_fnc_createHolder;
+	_holder = [_forEachIndex,(_x select 1)] call DSZ_fnc_createHolder;
+	_newArray = _x pushBack _holder;
+	DSZ_var_spawnData set[_forEachIndex,_newArray];
 } forEach DSZ_var_spawnData;
 
 DSZ_var_doneSpawning = true;

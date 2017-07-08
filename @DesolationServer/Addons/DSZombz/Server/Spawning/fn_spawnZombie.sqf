@@ -2,7 +2,7 @@ params["_zHolder","_owner"];
 
 _zIndex = _zHolder getVariable ["zIndex",-1];
 if((_zIndex < 0) || (_zIndex >= count(DSZ_var_spawnData))) exitWith {};
-deleteVehicle _zHolder;
+_zHolder setVariable ["isSpawned",true];
 
 _zData = DSZ_var_spawnData select _zIndex;
 
