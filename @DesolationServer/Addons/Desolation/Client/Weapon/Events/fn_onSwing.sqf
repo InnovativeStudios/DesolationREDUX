@@ -28,11 +28,11 @@ if(_canHitTrees) then {
 	} count [" t_"," bo_t_"," str_"," Smrk_"," les_"," brg_"];
 };
 if(_canHitRocks) then {
-	//TODO: rock check?
+
 };
 
 if(isNull _tree && isNull _rocks) then {
-	_closest = cursorTarget; //TODO: replace this with a more accurate check
+	_closest = cursorTarget; 
 	if(isNull _closest) exitWith {};
 	if(player distance _closest > 3) exitWith {};
 	
@@ -48,17 +48,15 @@ if(isNull _tree && isNull _rocks) then {
 			};
 		} else {
 			if(cursorTarget in vehicles) then {
-				//TODO:  vehicle damage (setDamage doesnt work)
-				//	_vehicleDamage
+			
 			} else {
-				//Random object damage
+			
 			};
 		};
 	};
 };
 if(!isNull _tree) then {
 	
-	//this code is disgusting
 	(boundingBoxReal _tree) params ["_min","_max"];
 	
 	_height = abs((_max select 2) - (_min select 2));
@@ -79,9 +77,7 @@ if(!isNull _tree) then {
 		{
 			params["_tree","_origMtW"];
 			
-			//add a point
 			[1] call DS_fnc_addPoints;
-			//tree chopped callback
 			["DS_var_treeChoppedCallbackFnc",["trees_chopped",[_tree]]] call DS_fnc_handleCallback;
 			
 			uisleep 2;
@@ -117,7 +113,7 @@ if(!isNull _tree) then {
 	};		
 };
 if(!isNull _rocks) then {
-	//collect rocks?
+
 };
 
 uiSleep _delay2;
