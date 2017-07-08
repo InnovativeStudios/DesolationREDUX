@@ -13,11 +13,12 @@
 params["_marker","_spawnType"];
 private["_markerPos","_markerSize","_spawnPos","_ClosestObject","_blacklist"];
 
+
 _spawnPos = [];
 _markerPos = getmarkerPos _marker;
 _markerSize = getmarkerSize _marker;
 _maxIncl = 0;//maximum gradient for to spawn
-_ClosestObject = 1; //closest object to position
+_ClosestObject = 5; //closest object to position
 _blacklist = [];
 
 _spawnZoneSize = (_markerSize select 1);

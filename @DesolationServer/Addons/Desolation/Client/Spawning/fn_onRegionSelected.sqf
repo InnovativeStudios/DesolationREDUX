@@ -13,14 +13,53 @@
 params["_regionNum"];
 
 0 cutRsc ["background","PLAIN",0];
+_SpawnMode = -1;
 
 _region = switch(_regionNum) do {
-	case 0: {["Zone1Marker","DS"] call BASE_fnc_getCfgValue;};
-	case 1: {["Zone2Marker","DS"] call BASE_fnc_getCfgValue;};
-	case 2: {["Zone3Marker","DS"] call BASE_fnc_getCfgValue;};
+	case 0: 
+		{
+			["Zone1Marker","DS"] call BASE_fnc_getCfgValue;
+			_SpawnModeCFG = {["Zone1ShoreMode","DS"] call BASE_fnc_getCfgValue;};
+			switch (toLower _SpawnModeCFG) do 
+			{
+				case "true":{_SpawnMode = 1;};
+				case "false":{_SpawnMode = 0;};
+				default {diag_log "Desolation > ERROR: Zone 1 Spawntype not set, Defaulting to false";_SpawnMode = 0;};
+			};
+		};
+		
+	case 1: 
+		{
+		["Zone2Marker","DS"] call BASE_fnc_getCfgValue;
+		_SpawnModeCFG = {["Zone2ShoreMode","DS"] call BASE_fnc_getCfgValue;};
+			switch (toLower _SpawnModeCFG) do 
+			{
+				case "true":{_SpawnMode = 1;};
+				case "false":{_SpawnMode = 0;};
+				default {diag_log "Desolation > ERROR: Zone 2 Spawntype not set, Defaulting to false";_SpawnMode = 0;};
+			};
+		};
+		
+	case 2: 
+		{
+		["Zone3Marker","DS"] call BASE_fnc_getCfgValue;
+		_SpawnModeCFG = {["Zone3ShoreMode","DS"] call BASE_fnc_getCfgValue;};
+			switch (toLower _SpawnModeCFG) do 
+			{
+				case "true":{_SpawnMode = 1;};
+				case "false":{_SpawnMode = 0;};
+				default {diag_log "Desolation > ERROR: Zone 3 Spawntype not set, Defaulting to false";_SpawnMode = 0;};
+			};
+		};
 };
 
-_spawnPos = [_region,1] call DS_fnc_findSpawnPosition;
+if (_SpawnMode == -1) then 
+{
+diag_log "Desolation > ERROR: ZoneShoreModes not defined in CFG! Defaulting to false";
+_SpawnMode = 0;
+};
+
+_spawnPos = [_region,_SpawnMode] call DS_fnc_findSpawnPosition;
 player setVariable ["ReadyToSpawn",true,true];
 [player,_spawnPos] remoteExec ["DS_fnc_requestFreshSpawn",2];
 0 cutRsc ["background","PLAIN",0];
