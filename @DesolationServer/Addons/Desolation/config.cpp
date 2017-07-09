@@ -428,23 +428,24 @@ class CfgHeliCrashes {
 			class loot {
 				maxLootpiles = 10;
 				weapons[] = {
-					"DSR_Arifle_M4_300",
-					"DSR_Srifle_DMR_02_Camo"
+					"DSR_SGun_M500",
+					"DSR_arifle_FNFAL_F"
 				};
 				magazines[] = {
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
-					"20Rnd_762x51_Mag",
-					"20Rnd_762x51_Mag"
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck",
+					"DSR_Item_MRE"
 				};
 				items[] = {
-					"tacs_Uniform_Garment_LS_BS_BP_BB",
-					"tacs_Vest_PlateCarrierFull_Black",
-					"tacs_Helmet_Ballistic_DarkBlack"
+					"U_I_G_Story_Protagonist_F",
+					"V_PlateCarrier_Kerry",
+					"H_Shemag_olive"
 				};
 				backpacks[] = {
-					"tacs_Backpack_Carryall_DarkBlack"
+					"DSR_Coyote_Backpack"
 				};
 			};
 		};
@@ -466,24 +467,27 @@ class CfgHeliCrashes {
 			class loot {
 				maxLootpiles = 10;
 				weapons[] = {
-					"DSR_Srifle_EBR",
-					"DSR_arifle_M4A3"
+					"DSR_arifle_SCARH_F",
+					"DSR_srifle_CZ750_F"
 				};
 				magazines[] = {
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag"
+					"7Rnd_308win_mag",
+					"7Rnd_308win_mag",
+					"7Rnd_308win_mag",
+					"DSR_Item_Bloodbag_Full",
+					"DSR_Item_Bandage",
+					"DSR_Item_MRE"
 				};
 				items[] = {
-					"tacs_Uniform_Garment_LS_BS_BP_BB",
-					"tacs_Vest_PlateCarrierFull_Black",
-					"tacs_Helmet_Ballistic_DarkBlack"
+					"tacs_Uniform_Combat_LS_BS_TP_TB",
+					"V_PlateCarrier2_blk",
+					"H_HelmetSpecB_snakeskin"
 				};
 				backpacks[] = {
-					"tacs_Backpack_Carryall_DarkBlack"
+					"DSR_Carryall_HunterF"
 				};
 			};
 		};
@@ -505,21 +509,21 @@ class CfgHeliCrashes {
 			class loot {
 				maxLootpiles = 10;
 				weapons[] = {
-					"DSR_Srifle_EBR",
-					"DSR_arifle_M4A3"
+					"DSR_Srifle_LRR"
 				};
 				magazines[] = {
-					"20Rnd_762x51_Mag",
-					"20Rnd_762x51_Mag",
-					"20Rnd_762x51_Mag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag"
+					"7Rnd_408_Mag",
+					"7Rnd_408_Mag",
+					"7Rnd_408_Mag",
+					"ItemMap",
+					"DSR_Item_Bloodbag_Full",
+					"DSR_Item_Bandage",
+					"DSR_Item_MRE"
 				};
 				items[] = {
-					"tacs_Uniform_Garment_LS_BS_BP_BB",
-					"tacs_Vest_PlateCarrierFull_Black",
-					"tacs_Helmet_Ballistic_DarkBlack"
+					"tacs_Uniform_Combat_LS_BS_TP_TB",
+					"tacs_Vest_PlateCarrierFull_Green",
+					"H_HelmetSpecB_snakeskin"
 				};
 				backpacks[] = {
 					"tacs_Backpack_Carryall_DarkBlack"
@@ -543,8 +547,8 @@ class CfgHeliCrashes {
 			class loot {
 				maxLootpiles = 10;
 				weapons[] = {
-					"DSR_Srifle_EBR",
-					"DSR_arifle_M4A3"
+					"DSR_arifle_FNFAL_F",
+					"DSR_Arifle_CZ805_A2"
 				};
 				magazines[] = {
 					"20Rnd_762x51_Mag",
@@ -552,69 +556,20 @@ class CfgHeliCrashes {
 					"20Rnd_762x51_Mag",
 					"30Rnd_556x45_Stanag",
 					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag"
+					"30Rnd_556x45_Stanag",
+					"DSR_Item_MRE"
 				};
 				items[] = {
-					"tacs_Uniform_Garment_LS_BS_BP_BB",
-					"tacs_Vest_PlateCarrierFull_Black",
-					"tacs_Helmet_Ballistic_DarkBlack"
+					"U_B_survival_uniform",
+					"tacs_Vest_PlateCarrier_MARPAT",
+					"H_Cap_tan_specops_US"
 				};
 				backpacks[] = {
-					"tacs_Backpack_Carryall_DarkBlack"
+					"DSR_Largegunbag"
 				};
 			};
 		};
 		
-		class Ammo {
-			HeliClass = "DSR_UH1H_F";
-			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
-			SpawnAltitude = 600;
-			//particle effects config (size and origin)
-			SmokePos[] = {0,0,0};
-			SmokeSize = 7;
-			Locations[] =
-			{
-				{2794.793,6132.3345},
-				{12407.456,3987.5303},
-				{11379.448,11809.968},
-				{10190.923,2723.2224}
-			};
-			
-			class loot {
-				maxLootpiles = 10;//not implemented yet
-				weapons[] = {
-
-				};
-				magazines[] = {
-					"30Rnd_762x39_mag",
-					"30Rnd_762x39_mag",
-					"30Rnd_762x39_mag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"762x51mm_Mk316_SB",
-					"762x51mm_Mk316_SB",
-					"762x51mm_Mk316_SB",
-					"30Rnd_762x51_M80A1_Mag",
-					"30Rnd_762x51_M80A1_Mag",
-					"30Rnd_762x51_M80A1_Mag",
-					"30Rnd_762x35mm_300_ACC_FMJ_mag",
-					"30Rnd_762x35mm_300_ACC_FMJ_mag",
-					"30Rnd_762x35mm_300_ACC_FMJ_mag",
-					"20Rnd_762x51_Mag",
-					"10Rnd_762x54_Mag",
-					"10Rnd_762x54_Mag",
-					"30Rnd_65x39_caseless_mag",
-					"30Rnd_65x39_caseless_mag",
-					"30Rnd_65x39_caseless_mag"
-				};
-				items[] = {
-				};
-				backpacks[] = {
-				};
-			};
-		};
 		
 		class Medical {
 			HeliClass = "DSR_UH1H_F";
@@ -640,13 +595,15 @@ class CfgHeliCrashes {
 				magazines[] = {
 					"DSR_Item_Bloodbag_Full",
 					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
+					"DSR_Item_Morphine",
+					"DSR_Item_Morphine",
+					"DSR_Item_Morphine",
 					"DSR_Item_Bandage",
 					"DSR_Item_Bandage",
 					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage"
+					"DSR_Item_Painkillers",
+					"DSR_Item_Painkillers",
+					"DSR_Item_Painkillers"
 				};
 				items[] = {
 				};
@@ -679,50 +636,14 @@ class CfgHeliCrashes {
 					"DSR_Item_Bloodbag_Full",
 					"DSR_Item_Bloodbag_Full",
 					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage"
-				};
-				items[] = {
-				};
-				backpacks[] = {
-				};
-			};
-		};
-		class Medical3 {
-			HeliClass = "DSR_UH1H_F";
-			WreckClass = "DSR_Object_Wreck4";
-			WreckSmoke = 1; //1 for true 0 for false!
-			SpawnAltitude = 600;
-			//particle effects config (size and origin)
-			SmokePos[] = {0,0,0};
-			SmokeSize = 7;
-			Locations[] =
-			{
-				{2794.793,6132.3345},
-				{12407.456,3987.5303},
-				{11379.448,11809.968},
-				{10190.923,2723.2224}
-			};
-			
-			class loot {
-				maxLootpiles = 10;//not implemented yet
-				weapons[] = {
-
-				};
-				magazines[] = {
 					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
+					"DSR_Item_Morphine",
+					"DSR_Item_Morphine",
 					"DSR_Item_Bandage",
 					"DSR_Item_Bandage",
 					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage"
+					"DSR_Item_Painkillers",
+					"DSR_Item_Painkillers"
 				};
 				items[] = {
 				};
@@ -741,9 +662,13 @@ class CfgAirdropSpawns {
 		magazines[] = {
 			"DSR_Item_Antibiotic",
 			"DSR_Item_Bloodbag_Full",
+			"DSR_Item_Bloodbag_Full",
+			"DSR_Item_Bloodbag_Full",
 			"DSR_Item_Bandage",
-			"DSR_Item_Defibrillator",
+			"DSR_Item_Bandage",
+			"DSR_Item_Bandage",
 			"DSR_Item_Disinfectant",
+			"DSR_Item_Painkillers",
 			"DSR_Item_Painkillers"
 		};
 		items[] = {
@@ -759,23 +684,24 @@ class CfgAirdropSpawns {
 			
 		};
 		magazines[] = {
-			"9Rnd_45ACP_Mag",
-			"9Rnd_45ACP_Mag",
-			"16Rnd_9x21_Mag",
-			"16Rnd_9x21_Mag",
-			"30Rnd_762x39_mag",
-			"30Rnd_556x45_Stanag",
-			"10rnd_22lr_26grn",
-			"762x51mm_Mk316_SB",
-			"30Rnd_762x51_M80A1_Mag",
-			"30Rnd_762x35mm_300_ACC_FMJ_mag",
-			"6Rnd_12g_Slug",
-			"32Rnd_9x19mm_Mag",
+			"7Rnd_308win_mag",
+			"7Rnd_308win_mag",
 			"10Rnd_762x54_Mag",
-			"30Rnd_45ACP_Mag_SMG_01",
-			"30Rnd_65x39_caseless_green",
-			"30Rnd_9x21_Mag_SMG_02",
-			"30Rnd_65x39_caseless_mag"
+			"6Rnd_12g_Buck",
+			"6Rnd_44_Mag",
+			"6Rnd_44_Mag",
+			"30Rnd_545x39_Mag_F",
+			"30Rnd_545x39_Mag_F",
+			"30Rnd_545x39_Mag_F",
+			"30Rnd_762x39_Mag_F",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_Stanag",
+			"32Rnd_9x19mm_Mag",
+			"30Rnd_9x21_Mag",
+			"30Rnd_9x21_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag"
 		};
 		items[] = {
 			
@@ -790,25 +716,43 @@ class CfgAirdropSpawns {
 			
 		};
 		magazines[] = {
-			"DSR_Item_Logs",
-			"DSR_Item_Portable_Generator",
-			"DSR_Item_Camping_Light",
-			"DSR_Item_Camping_Chair",
-			"DSR_Item_Sleeping_Mat",
-			"DSR_Item_Duct_Tape",
-			"DSR_Item_Matches",
-			"DSR_Item_Metal_Wire",
-			"DSR_Item_Grinder",
-			"DSR_Item_Hammer",
+			"DSR_Melee_Axe",
+			"DSR_Melee_Axe",
+			"DSR_Melee_Pickaxe",
+			"DSR_Item_Bricks",
+			"DSR_Item_Bricks",
+			"DSR_Item_Toolbox",
 			"DSR_Item_Saw",
-			"DSR_Item_Sleeping_Bag",
-			"DSR_Item_Pillow"
+			"DSR_Item_Hardware",
+			"DSR_Item_Hardware",
+			"DSR_Item_Hardware",
+			"DSR_Item_Hardware",
+			"DSR_Item_Hardware",
+			"DSR_Item_Hardware",
+			"DSR_Item_Scrap_Metal",
+			"DSR_Item_Scrap_Metal",
+			"DSR_Item_Scrap_Metal",
+			"DSR_Item_Scrap_Metal",
+			"DSR_Item_Padlock",
+			"DSR_Item_Tarp",
+			"DSR_Item_Tarp",
+			"DSR_Item_Duct_Tape",
+			"DSR_Item_Fabric_Scraps",
+			"DSR_Item_Fabric_Scraps",
+			"DSR_Item_Electrical_Comp",
+			"DSR_Item_Engine_Block",
+			"DSR_Item_Tire_RepairKit",
+			"DSR_Item_Tire_RepairKit",
+			"DSR_Item_Gascan_Small_Full",
+			"DSR_Item_Wrench",
+			"DSR_Item_Glass_Part",
+			"DSR_Item_Glass_Part"
 		};
 		items[] = {
 			
 		};
 		backpacks[] = {
-			"B_Kitbag_mcamo"
+			"DSR_Carryall_HKitty"
 		};
 	};
 	class FoodDrop {
@@ -848,10 +792,9 @@ class CfgItemSpawns {
             class Weapon {
 				//god tier navid spmg m320 fully auto 50rnd I0UHNFFJIBOOOOOOM BOOM BOOM NO SKILL RETARD
                 rare[] = {
-                    {"DSR_LMG_Mk200",6},           
-                    {"DSR_Srifle_GM6",6},           
+                    {"DSR_LMG_Mk200",6},            
                     {"DSR_Srifle_LRR",6},
-                    {"DSR_srifle_CZ750_F",6},
+                    {"DSR_srifle_CZ750_F",12},
 					{"DSR_srifle_SV98",6},
 					{"DSR_arifle_FNFAL_F",20},
 					{"DSR_Arifle_M4_300",20}, 
@@ -876,9 +819,9 @@ class CfgItemSpawns {
                     {"DSR_arifle_AKM_F",10},	
                     {"DSR_arifle_ak74_F",10},
 					{"DSR_srifle_MK12_F",10},
-					{"DSR_arifle_SCAR_F",10},
+					{"DSR_arifle_SCAR_F",15},
 					{"DSR_arifle_SCARH_F",5},
-                    {"DSR_Arifle_M16A2",40},		//because ben will q.q
+                    {"DSR_Arifle_M16A2",35},		//because ben will q.q
                     {"DSR_Arifle_CZ805_A2",5},
                     {"DSR_Arifle_M4A3",10}
                 };
@@ -959,11 +902,8 @@ class CfgItemSpawns {
             };
 			class Magazine {
 				rare[] = {
-                    {"200Rnd_65x39_cased_Box",1},           
-                    {"5Rnd_127x108_Mag",1},           
-                    {"7Rnd_408_Mag",1},
-                    {"10rnd_338_Mag",1},
-					{"10Rnd_93x64_DMR_05_Mag",1},           
+                    {"200Rnd_65x39_cased_Box",1},       
+                    {"7Rnd_408_Mag",1},          
                     {"30Rnd_762x51_M80A1_Mag",1},           
                     {"30Rnd_762x35mm_300_ACC_FMJ_mag",1},
                     {"20Rnd_762x51_Mag",1},
@@ -971,7 +911,8 @@ class CfgItemSpawns {
                     {"10Rnd_762x54_Mag",1},           
                     {"30Rnd_545x39_Mag_F",1},
                     {"30Rnd_556x45_Stanag",1},
-					{"30Rnd_65x39_caseless_mag",1},           
+					{"30Rnd_65x39_caseless_mag",1},
+					{"7Rnd_308win_mag",1},   					
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
                     {"30rnd_9x21_Mag_SMG_02",1},
                     {"30Rnd_9x21_Mag",1},
@@ -993,7 +934,8 @@ class CfgItemSpawns {
                     {"10Rnd_762x54_Mag",1},           
                     {"30Rnd_545x39_Mag_F",1},
                     {"30Rnd_556x45_Stanag",1},
-					{"30Rnd_65x39_caseless_mag",1},           
+					{"30Rnd_65x39_caseless_mag",1},  
+					{"7Rnd_308win_mag",1},   
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
                     {"30rnd_9x21_Mag_SMG_02",1},
                     {"30Rnd_9x21_Mag",1},
@@ -1010,7 +952,8 @@ class CfgItemSpawns {
                 average[] = {
                     {"30Rnd_545x39_Mag_F",1},
                     {"30Rnd_556x45_Stanag",1},
-					{"30Rnd_65x39_caseless_mag",1},           
+					{"30Rnd_65x39_caseless_mag",1},
+					{"7Rnd_308win_mag",1},   					
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
                     {"30rnd_9x21_Mag_SMG_02",1},
                     {"30Rnd_9x21_Mag",1},
@@ -1029,6 +972,7 @@ class CfgItemSpawns {
                     {"30Rnd_556x45_Stanag",1},
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
                     {"30rnd_9x21_Mag_SMG_02",1},
+					{"7Rnd_308win_mag",1},   
                     {"30Rnd_9x21_Mag",1},
 					{"32Rnd_9x19mm_Mag",1},           
                     {"16Rnd_9x21_Mag",1},           
@@ -1044,7 +988,8 @@ class CfgItemSpawns {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
                     {"30rnd_9x21_Mag_SMG_02",1},
                     {"30Rnd_9x21_Mag",1},
-					{"32Rnd_9x19mm_Mag",1},           
+					{"32Rnd_9x19mm_Mag",1},
+					{"7Rnd_308win_mag",1},   
                     {"16Rnd_9x21_Mag",1},           
                     {"6Rnd_12g_Slug",1},
                     {"6Rnd_12g_Buck",1},
@@ -1192,7 +1137,7 @@ class CfgItemSpawns {
                     {"DSR_Item_Bandage",1},
                     {"DSR_Item_Bloodbag_Empty",1},
 					{"DSR_Item_Bloodbag_Full",1},           
-                   {"DSR_Item_Disinfectant",1},
+                    {"DSR_Item_Disinfectant",1},
                     {"DSR_Item_Handwarmer",1},
 					{"DSR_Item_Painkillers",1},           
                     {"DSR_Item_Vitamins",1},           
@@ -2298,73 +2243,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -2393,7 +2339,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
@@ -2431,6 +2381,8 @@ class CfgItemSpawns {
         class Civilian {
             class Weapon {
                 rare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -2444,6 +2396,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semirare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -2457,6 +2411,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 average[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -2470,6 +2426,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semicommon[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -2483,6 +2441,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 common[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -2571,7 +2531,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 semirare[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -2585,7 +2547,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}				
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 average[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -2599,7 +2563,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
                 semicommon[] = {
 					{"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -2613,7 +2579,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 common[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -2627,7 +2595,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
 			};
             class Food {
@@ -3449,16 +3419,16 @@ class CfgItemSpawns {
             };
             class Vest {
                 rare[] = {
-                    {"V_Rangemaster_Belt",1},           
-                    {"V_BandollierB_khk",1},
-                    {"V_BandollierB_cbr",1},
-					{"V_BandollierB_rgr",1},           
-                    {"V_BandollierB_blk",1},           
-                    {"V_BandollierB_oli",1},
-                    {"V_Chestrig_khk",1},
-					{"V_Chestrig_rgr",1},           
-                    {"V_Chestrig_blk",1},           
-                    {"V_Chestrig_oli",1},
+                    {"V_Rangemaster_Belt",2},           
+                    {"V_BandollierB_khk",2},
+                    {"V_BandollierB_cbr",2},
+					{"V_BandollierB_rgr",2},           
+                    {"V_BandollierB_blk",2},           
+                    {"V_BandollierB_oli",2},
+                    {"V_Chestrig_khk",2},
+					{"V_Chestrig_rgr",2},           
+                    {"V_Chestrig_blk",2},           
+                    {"V_Chestrig_oli",2},
                     {"V_TacVest_khk",1},
 					{"V_TacVest_oli",1},           
                     {"V_TacVest_blk",1},
@@ -4058,73 +4028,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -4153,7 +4124,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
@@ -4190,7 +4165,9 @@ class CfgItemSpawns {
         };
         class Industrial {
             class Weapon {
-				rare[] = {
+                rare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -4204,6 +4181,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semirare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -4217,6 +4196,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 average[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -4230,6 +4211,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semicommon[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -4243,6 +4226,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 common[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -4331,7 +4316,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 semirare[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -4345,7 +4332,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}				
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 average[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -4359,7 +4348,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
                 semicommon[] = {
 					{"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -4373,7 +4364,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 common[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -4387,7 +4380,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
 			};
             class Food {
@@ -5238,16 +5233,16 @@ class CfgItemSpawns {
             };
             class Vest {
                 rare[] = {
-                    {"V_Rangemaster_Belt",1},           
-                    {"V_BandollierB_khk",1},
-                    {"V_BandollierB_cbr",1},
-					{"V_BandollierB_rgr",1},           
-                    {"V_BandollierB_blk",1},           
-                    {"V_BandollierB_oli",1},
-                    {"V_Chestrig_khk",1},
-					{"V_Chestrig_rgr",1},           
-                    {"V_Chestrig_blk",1},           
-                    {"V_Chestrig_oli",1},
+                    {"V_Rangemaster_Belt",2},           
+                    {"V_BandollierB_khk",2},
+                    {"V_BandollierB_cbr",2},
+					{"V_BandollierB_rgr",2},           
+                    {"V_BandollierB_blk",2},           
+                    {"V_BandollierB_oli",2},
+                    {"V_Chestrig_khk",2},
+					{"V_Chestrig_rgr",2},           
+                    {"V_Chestrig_blk",2},           
+                    {"V_Chestrig_oli",2},
                     {"V_TacVest_khk",1},
 					{"V_TacVest_oli",1},           
                     {"V_TacVest_blk",1},
@@ -5932,73 +5927,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -6027,7 +6023,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
@@ -6064,7 +6064,9 @@ class CfgItemSpawns {
         };
         class Commercial {
             class Weapon {
-				rare[] = {
+                rare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -6078,6 +6080,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semirare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -6091,6 +6095,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 average[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -6104,6 +6110,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semicommon[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -6117,6 +6125,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 common[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -6205,7 +6215,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 semirare[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -6219,7 +6231,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}				
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 average[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -6233,7 +6247,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
                 semicommon[] = {
 					{"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -6247,7 +6263,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 common[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -6261,7 +6279,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
 			};
             class Food {
@@ -7112,16 +7132,16 @@ class CfgItemSpawns {
             };
             class Vest {
                 rare[] = {
-                    {"V_Rangemaster_Belt",1},           
-                    {"V_BandollierB_khk",1},
-                    {"V_BandollierB_cbr",1},
-					{"V_BandollierB_rgr",1},           
-                    {"V_BandollierB_blk",1},           
-                    {"V_BandollierB_oli",1},
-                    {"V_Chestrig_khk",1},
-					{"V_Chestrig_rgr",1},           
-                    {"V_Chestrig_blk",1},           
-                    {"V_Chestrig_oli",1},
+                    {"V_Rangemaster_Belt",2},           
+                    {"V_BandollierB_khk",2},
+                    {"V_BandollierB_cbr",2},
+					{"V_BandollierB_rgr",2},           
+                    {"V_BandollierB_blk",2},           
+                    {"V_BandollierB_oli",2},
+                    {"V_Chestrig_khk",2},
+					{"V_Chestrig_rgr",2},           
+                    {"V_Chestrig_blk",2},           
+                    {"V_Chestrig_oli",2},
                     {"V_TacVest_khk",1},
 					{"V_TacVest_oli",1},           
                     {"V_TacVest_blk",1},
@@ -7806,73 +7826,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -7901,7 +7922,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
@@ -7938,7 +7963,9 @@ class CfgItemSpawns {
         };
         class Medical {
             class Weapon {
-				rare[] = {
+                rare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -7952,6 +7979,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semirare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -7965,6 +7994,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 average[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -7978,6 +8009,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semicommon[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -7991,6 +8024,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 common[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -8079,7 +8114,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 semirare[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -8093,7 +8130,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}				
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 average[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -8107,7 +8146,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
                 semicommon[] = {
 					{"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -8121,7 +8162,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 common[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -8135,7 +8178,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
 			};
             class Food {
@@ -8986,16 +9031,16 @@ class CfgItemSpawns {
             };
             class Vest {
                 rare[] = {
-                    {"V_Rangemaster_Belt",1},           
-                    {"V_BandollierB_khk",1},
-                    {"V_BandollierB_cbr",1},
-					{"V_BandollierB_rgr",1},           
-                    {"V_BandollierB_blk",1},           
-                    {"V_BandollierB_oli",1},
-                    {"V_Chestrig_khk",1},
-					{"V_Chestrig_rgr",1},           
-                    {"V_Chestrig_blk",1},           
-                    {"V_Chestrig_oli",1},
+                    {"V_Rangemaster_Belt",2},           
+                    {"V_BandollierB_khk",2},
+                    {"V_BandollierB_cbr",2},
+					{"V_BandollierB_rgr",2},           
+                    {"V_BandollierB_blk",2},           
+                    {"V_BandollierB_oli",2},
+                    {"V_Chestrig_khk",2},
+					{"V_Chestrig_rgr",2},           
+                    {"V_Chestrig_blk",2},           
+                    {"V_Chestrig_oli",2},
                     {"V_TacVest_khk",1},
 					{"V_TacVest_oli",1},           
                     {"V_TacVest_blk",1},
@@ -9680,73 +9725,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -9775,7 +9821,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
@@ -9813,6 +9863,8 @@ class CfgItemSpawns {
         class Mechanical {
             class Weapon {
                 rare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -9826,6 +9878,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semirare[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
                     {"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -9839,6 +9893,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 average[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -9852,6 +9908,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 semicommon[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -9865,6 +9923,8 @@ class CfgItemSpawns {
 					{"DSR_Melee_Bat_Norm",1}
                 };
                 common[] = {
+					{"DSR_srifle_CZ550_F",1},
+					{"DSR_srifle_ENFIELD_F",1},  
 					{"DSR_SMG_01",1},           
                     {"DSR_SMG_02",1},           
                     {"DSR_SMG_MP40",1},
@@ -9953,7 +10013,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 semirare[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -9967,7 +10029,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}				
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 average[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -9981,7 +10045,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
                 semicommon[] = {
 					{"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -9995,7 +10061,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 };
                 common[] = {
                     {"30Rnd_45ACP_Mag_SMG_01",1},           
@@ -10009,7 +10077,9 @@ class CfgItemSpawns {
                     {"11Rnd_45ACP_Mag",1},           
                     {"6Rnd_45ACP_Cylinder",1},
                     {"10Rnd_9x21_Mag",1},
-					{"6Rnd_44_Mag",1}
+					{"6Rnd_44_Mag",1},
+					{"10Rnd_243win_mag",1},
+					{"10Rnd_303_Mag",1}
                 }; 
 			};
             class Food {
@@ -10860,16 +10930,16 @@ class CfgItemSpawns {
             };
             class Vest {
                 rare[] = {
-                    {"V_Rangemaster_Belt",1},           
-                    {"V_BandollierB_khk",1},
-                    {"V_BandollierB_cbr",1},
-					{"V_BandollierB_rgr",1},           
-                    {"V_BandollierB_blk",1},           
-                    {"V_BandollierB_oli",1},
-                    {"V_Chestrig_khk",1},
-					{"V_Chestrig_rgr",1},           
-                    {"V_Chestrig_blk",1},           
-                    {"V_Chestrig_oli",1},
+                    {"V_Rangemaster_Belt",2},           
+                    {"V_BandollierB_khk",2},
+                    {"V_BandollierB_cbr",2},
+					{"V_BandollierB_rgr",2},           
+                    {"V_BandollierB_blk",2},           
+                    {"V_BandollierB_oli",2},
+                    {"V_Chestrig_khk",2},
+					{"V_Chestrig_rgr",2},           
+                    {"V_Chestrig_blk",2},           
+                    {"V_Chestrig_oli",2},
                     {"V_TacVest_khk",1},
 					{"V_TacVest_oli",1},           
                     {"V_TacVest_blk",1},
@@ -11469,73 +11539,74 @@ class CfgItemSpawns {
             };
             class CarPart {
                 rare[] = {
-                    {"DSR_Item_Engine_Block",1},           	
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semirare[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 average[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Large_Full",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 semicommon[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-					{"DSR_Item_Gascan_Small_Full",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
                 common[] = {
-                    {"DSR_Item_Engine_Block",1},           
-                    {"DSR_Item_Gas_Tank",1},           
-                    {"DSR_Item_Glass_Part",1},
-                    {"DSR_Item_Tire",1},
-					{"DSR_Item_Main_Rotor",1},           
-                    {"DSR_Item_Tail_Rotor",1},           
-                    {"DSR_Item_Toolbox",1},
-                    {"DSR_Item_Wrench",1},
-					{"DSR_Item_Tire_RepairKit",1},
-					{"DSR_Item_Car_Battery",1},
-					{"DSR_Item_Crushed_Can",3}
+                    {"DSR_Item_Engine_Block",10},           	
+                    {"DSR_Item_Gas_Tank",5},           
+                    {"DSR_Item_Glass_Part",10},
+					{"DSR_Item_Gascan_Large_Full",5},
+					{"DSR_Item_Gascan_Small_Full",10},
+                    {"DSR_Item_Tire",15},
+					{"DSR_Item_Main_Rotor",5},           
+                    {"DSR_Item_Tail_Rotor",5},           
+                    {"DSR_Item_Toolbox",10},
+                    {"DSR_Item_Wrench",5},
+					{"DSR_Item_Tire_RepairKit",15},
+					{"DSR_Item_Car_Battery",5}
                 };
             };
             class Attachment {
@@ -11564,7 +11635,11 @@ class CfgItemSpawns {
                     {"optic_KHS_old",1},
 					{"optic_KHS_blk",1},            
                     {"muzzle_snds_ACP",1},           
-                    {"muzzle_snds_L",1}
+                    {"muzzle_snds_L",1},
+					{"DSR_optic_PSO",1},
+					{"DSR_optic_PSO3",1},
+					{"DSR_optic_Kobra_red",1},
+					{"DSR_optic_Kobra_green",1}
                 };
                 average[] = {
                     {"optic_aco",1},          
