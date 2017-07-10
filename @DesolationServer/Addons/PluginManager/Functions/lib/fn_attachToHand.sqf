@@ -1,14 +1,18 @@
-params["_classname"];
+params["_classname",["_hand","right"]];
 
 _obj = _classname createVehicle [0,0,0];
-_obj attachTo [player,[-0.05,0,0],"righthandmiddle1"];
 
-// Update thread (this keeps the item tilted) (perhaps move to an onEachFrame/Draw3D thread)
-[_obj] spawn {
-	params["_obj"];
+_shift = 0.05;
+if(_hand == "right") then {_shift = -0.05;};
+
+_obj attachTo [player,[_shift,0,0],(_hand + "handmiddle1")];
+
+
+[_obj,_hand] spawn {
+	params["_obj","_hand"];
 	while{!isNull _obj} do {
-		_upperarm = player selectionPosition "rightforearm";
-		_lowerarm = player selectionPosition "rightforearmroll";
+		_upperarm = player selectionPosition (_hand + "forearm");
+		_lowerarm = player selectionPosition (_hand + "forearmroll");
 
 		_vectorFromUpToLower = vectorNormalized(_lowerarm vectorDiff _upperarm);
 		
