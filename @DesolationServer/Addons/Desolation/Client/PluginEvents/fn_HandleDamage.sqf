@@ -41,7 +41,7 @@ if(_damage > 0.1) then {
 				
 				_bloodLoss = _damage * 27500;
 				if(_selectionName != "head") then {
-					_bloodLoss = _bloodLoss / 1.25;
+					_bloodLoss = _bloodLoss / 1.1; //reduced from 1.25 (25% reduction from base arma damage) 
 				};
 				DS_var_Blood = DS_var_Blood - _bloodLoss;
 				if(_bloodLoss > 10000 || DS_var_Blood < 4000) then {
