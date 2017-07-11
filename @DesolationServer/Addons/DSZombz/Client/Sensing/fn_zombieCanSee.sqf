@@ -10,6 +10,21 @@ if(sunOrMoon == 0) then {
 	_maxVisionDistance = 30;
 };
 
+
+_isWearingGhillie = false;
+_isLayingDown = false;
+_surfaceIsGrass = false;
+
+// if wearing ghillie and in correct position, reduce vision by 3x (both distance and angle)
+if(_isWearingGhillie && _isLayingDown && _surfaceIsGrass) then {
+	_maxVisibleAngle = _maxVisibleAngle / 3;
+	_maxVisionDistance = _maxVisionDistance / 3;
+};
+
+
+
+
+
 //TODO: is under light (lamp for example)
 
 if((player distance _zed) <= _maxVisionDistance) then {
