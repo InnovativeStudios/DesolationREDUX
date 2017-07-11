@@ -96,12 +96,28 @@ class CfgPluginKeybinds
 		defaultKeys[] = {{0x24,0}};
 		code = "call DS_fnc_openJournal;";
 	};
+	class ToggleLight 
+	{
+		displayName = "Toggle Light";
+		tooltip = "Turn camping light in hands on/off";
+		tag = "DS";
+		variable = "ToggleLight";
+		defaultKeys[] = {{0x26,0}};
+		code = "call DS_fnc_toggleLight;";
+	};
 };
 
 class CfgFunctions
 {
 	class DS
 	{
+		class Client_Hands {
+			file = "Desolation\Client\Hands";
+			isclient = 1;
+			class initHoldables {};
+			class toggleLight {};
+			class takeIntoHands {};
+		};
 		class Client_Progression {
 			file = "Desolation\Client\Progression";
 			isclient = 1;
