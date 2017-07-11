@@ -13,6 +13,9 @@ _found = false;
 if(toLower(["Enabled","HOL"] call BASE_fnc_getCfgValue) == "true") then {
 	if(vehicle player == player && alive player) then {
 		player action ["SwitchWeapon",player,player,-1];
+		if(!isNull DS_var_ItemInHands) then {
+			deleteVehicle DS_var_ItemInHands; //remove holdable from hand
+		};
 		_found = true;
 	};
 };
