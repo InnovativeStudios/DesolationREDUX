@@ -19,8 +19,8 @@ if(!_enabled) exitWith {diag_log "DESOLATION IS NOT ENABLED, THE PLUGIN WILL NOT
 0 fadeMusic 0;
 
 if(worldName == "Chernarus") then {
-	"ColorCorrections" ppEffectEnable true;
-	"ColorCorrections" ppEffectAdjust [0.85, 0.7, 0.12, [0.4, 0.34, 0.35, -0.4], [1.7, 1.6, 1, 0.99], [-15, 7, 5, 1]];
+	"ColorCorrections" ppEffectEnable true; 
+	"ColorCorrections" ppEffectAdjust [0.95, 0.8, -0.001, [-0.5, -0.5, -0.5, 0], [0.15, 0.15, 0.15, 0.89], [-0.4, 0.1, 0.5, -0.5]]; 
 	"ColorCorrections" ppEffectCommit 0;
 };
 
