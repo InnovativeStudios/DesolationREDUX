@@ -41,10 +41,10 @@ if(isNull _tree && isNull _rocks) then {
 			if(isPlayer _closest) then {
 				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
 				[player,_playerDamageType] remoteExec ["DS_fnc_onMeleeHit",_closest];
-				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest];
+				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest,false,getPosASL _closest,1,1,50];
 			} else {
 				_closest setDamage _zombieDamage;
-				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest];
+				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest,false,getPosASL _closest,1,1,50];
 			};
 		} else {
 			if(cursorTarget in vehicles) then {
