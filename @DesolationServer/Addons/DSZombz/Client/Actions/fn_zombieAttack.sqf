@@ -17,7 +17,7 @@ _standardDamage = {
 };
 
 if(isNil "DSZ_var_zombieAttackOverride") then {
-	playSound3D ["a3\sounds_f\characters\human-sfx\P01\Low_hit_" + str(ceil(random(6))) + ".wss",player];
+	playSound3D ["a3\sounds_f\characters\human-sfx\P01\Low_hit_" + str(ceil(random(6))) + ".wss",player,false,getPosASL player,1,1,50];
 	[_zed] call _standardDamage;
 } else {
 	[_zed] call (missionNamespace getVariable [DSZ_var_zombieAttackOverride,_standardDamage]);
