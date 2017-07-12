@@ -2,6 +2,37 @@
 params["_config"];
 
 
+
+
+_DSZ_fnc_FindSafePos = {
+	params["_posATL","_radius","_onFailATL"];
+	
+	_x = _posATL select 0;
+	_y = _posATL select 1;
+	
+	_newPos = [0,0];
+	_found = false;
+	for "_i" from 1 to 3000 do {
+		_nX = _x + (_radius - (random (_radius * 2)));
+		_nY = _y + (_radius - (random (_radius * 2)));
+		
+		_newPos = [_nX,_nY,0];
+		_result = _newPos isFlatEmpty [1];
+		if(count(_result) > 0) exitWith {
+			_newPos pushBack 0;
+			_found = true;
+		};
+	};
+	
+	if(!_found) then {
+		diag_log "DSZombz: (FATAL ERROR) Failed to find a valid spawn location for zombie, default used";
+		_newPos = _onFailATL;
+	};
+	_newPos;
+};
+
+
+
 _Random_Zombies = call compile (["Random_Zombies","DSZ"] call BASE_fnc_getCfgValue);
 
 
@@ -15,19 +46,25 @@ _zombieData = [];
 	
 	{
 		_position = locationPosition _x;
-		_roads = _position nearRoads _SpawnRadius;
-		_posOnFail = _position;
-		for "_i" from 1 to _NumZombies do {
-			if(count(_roads) > 0) then {
-				_road = selectRandom _roads;
-				_posOnFail = getPosATL _road;
-			};
-			
-			_zedPosition = [_position, 0, _SpawnRadius, 3, 0, 0, 0, [], [_posOnFail,[0,0,0]]] call BIS_fnc_findSafePos;
-			_zedPosition pushBack 0;
-			
-			_zType = selectRandom _config;
-			_zombieData pushback [_zType select 0,_zedPosition,_zType select 1,_position,_SpawnRadius];
+		if !(_position isEqualTo []) then {
+			if !(_position isEqualto [0,0,0]) then {
+				_roads = _position nearRoads _SpawnRadius;
+				_posOnFail = _position;
+				
+				for "_i" from 1 to _NumZombies do {
+					if(count(_roads) > 0) then {
+						_road = selectRandom _roads;
+						_posOnFail = getPosATL _road;
+					};
+					
+					
+					_zedPosition = [_position,_SpawnRadius,_posOnFail] call _DSZ_fnc_FindSafePos;
+					_zedPosition pushBack 0;
+					
+					_zType = selectRandom _config;
+					_zombieData pushback [_zType select 0,_zedPosition,_zType select 1,_position,_SpawnRadius];
+				};
+			};	
 		};
 		true
 	} count _allLocations;
