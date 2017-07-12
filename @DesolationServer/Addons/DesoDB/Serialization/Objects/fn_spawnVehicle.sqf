@@ -75,11 +75,7 @@ _textures = getObjectTextures _vehicle;
 _direction = getDir _vehicle;
 _positionType = 1;
 _position = getPosATL _vehicle;
-_positionadvanced = [
-	["DSR_vectorUp",str(vectorUp _vehicle)], //high precision vectorup
-	["DSR_vectorDir",str(vectorDir _vehicle)], //high precision vectordir
-	["DSR_position",(getPosATL _vehicle) call DB_fnc_hpFloatArray] //high precision position
-]; 
+_positionadvanced = [["DSR_vectorUp",str(vectorUp _vehicle)]]; 
 
 // support to add objects that already have an uuid - in case i fuck up again (Legodev)
 _objectUUID = _vehicle getVariable ["oUUID",""];
