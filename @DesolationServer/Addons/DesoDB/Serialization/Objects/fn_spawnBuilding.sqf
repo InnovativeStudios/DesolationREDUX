@@ -66,7 +66,6 @@ _positionadvanced = [
 	["DSR_position",(getPosATL _building) call DB_fnc_hpFloatArray] //high precision position
 ]; 
 
-
 // support to add objects that already have an uuid - in case i fuck up again (Legodev)
 _objectUUID = _building getVariable ["oUUID",""];
 

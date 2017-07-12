@@ -74,12 +74,9 @@ _textures = getObjectTextures _vehicle;
 _direction = getDir _vehicle;
 _positionType = 1;
 _position = getPosATL _vehicle;
-_positionadvanced = [
-	["DSR_vectorUp",str(vectorUp _vehicle)], //high precision vectorup
-	["DSR_vectorDir",str(vectorDir _vehicle)], //high precision vectordir
-	["DSR_position",(getPosATL _vehicle) call DB_fnc_hpFloatArray] //high precision position
-]; 
-
+// to be used after all databases got fixed, so in the update after the next update
+//_positionadvanced = _vehicle getVariable ["DSR_positionAdvanced",[["DSR_vectorUp",str(vectorUp _vehicle)]]];
+_positionadvanced = [["DSR_vectorUp",str(vectorUp _vehicle)]];
 
 [
 	_object_uuid,

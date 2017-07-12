@@ -94,17 +94,36 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	} foreach _variables;
 	
 	
-	_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
-	_hpVectorDir = call compile ((_positionadvanced select 1) select 1);
-	_hpPosition = call compile ((_positionadvanced select 2) select 1);
 	
-	_object setPosATL _hpPosition;
-	
+	_object setDir _direction;
+	if(_positiontype == 1) then {
+		_object setPosATL _position;
+	} else {
+		_object setPosASL _position;
+	};
+/* why was there an call compile in front of these selects ? */    
+	_amountOfPositionInformation = count _positionadvanced;
+	if (_amountOfPositionInformation > 0) then {
+		_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
+		
+		if (_amountOfPositionInformation > 2) then {
+			_hpVectorDir = call compile ((_positionadvanced select 1) select 1);
+			_hpPosition = call compile ((_positionadvanced select 2) select 1);
 
-	
-	_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
-	
-	
+			_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
+
+			if(_positiontype == 1) then {
+				_object setPosATL _hpPosition;
+			} else {
+				_object setPosASL _hpPosition;
+			};
+
+			_object setVariable ["DSR_positionAdvanced",_positionadvanced];
+		} else {
+			_object setVectorUp (_hpVectorUp);
+		};
+	};
+
 	_object allowDamage true;
 
 	if(_objectType == 3) then { // vehicle
