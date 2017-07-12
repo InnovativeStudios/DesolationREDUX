@@ -51,14 +51,11 @@ _textures = getObjectTextures _building;
 _direction = getDir _building;
 _positionType = 1;
 _position = getPosATL _building;
-_positionadvanced = [
+_positionadvanced = _object getVariable ["DSR_positionAdvanced",[
 	["DSR_vectorUp",str(vectorUp _building)], //high precision vectorup
 	["DSR_vectorDir",str(vectorDir _building)], //high precision vectordir
 	["DSR_position",(getPosATL _building) call DB_fnc_hpFloatArray] //high precision position
-]; 
-
-
-
+]];
 
 // update request limiter so next update cylce things like position and vector are not modified
 _newData = [
