@@ -104,11 +104,11 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 /* why was there an call compile in front of these selects ? */    
 	_amountOfPositionInformation = count _positionadvanced;
 	if (_amountOfPositionInformation > 0) then {
-		_hpVectorUp = (_positionadvanced select 0) select 1;
+		_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
 		
 		if (_amountOfPositionInformation > 2) then {
-			_hpVectorDir = (_positionadvanced select 1) select 1;
-			_hpPosition = (_positionadvanced select 2) select 1;
+			_hpVectorDir = call compile ((_positionadvanced select 1) select 1);
+			_hpPosition = call compile ((_positionadvanced select 2) select 1);
 
 			_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
 
@@ -118,11 +118,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 				_object setPosASL _hpPosition;
 			};
 
-			_positionadvanced = _object setVariable ["DSR_positionAdvanced",[
-											["DSR_vectorUp", _hpVectorUp], //high precision vectorup
-											["DSR_vectorDir", _hpVectorDir], //high precision vectordir
-											["DSR_position", _hpPosition] //high precision position
-										]]; 
+			_object setVariable ["DSR_positionAdvanced",_positionadvanced];
 		} else {
 			_object setVectorUp (_hpVectorUp);
 		};
