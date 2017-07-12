@@ -111,6 +111,18 @@ class CfgFunctions
 {
 	class DS
 	{
+		class Client_Electric_Batteries {
+			file = "Desolation\Client\Electric\Batteries";
+			isclient = 1;
+			class isBatteryInUse {};
+			class usePowerCell {};
+		};
+		class Client_Electric_NVGoggles {
+			file = "Desolation\Client\Electric\NVGoggles";
+			isclient = 1;
+			class initNVGs {};
+			class canPowerNVG {};
+		};
 		class Client_Hands {
 			file = "Desolation\Client\Hands";
 			isclient = 1;

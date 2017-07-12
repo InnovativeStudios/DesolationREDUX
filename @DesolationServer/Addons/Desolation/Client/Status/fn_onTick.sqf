@@ -25,13 +25,16 @@ if(rating player < 0) then {
 	player addRating 9999999;
 };
 
-
 call ds_fnc_onInfectionTick;
 call ds_fnc_onHungerTick;
 call ds_fnc_onThirstTick;
 call ds_fnc_onEffectTick;
 call ds_fnc_onUpdateTick;
 
+
+if(call DS_fnc_isBatteryInUse) then {
+	call DS_fnc_usePowerCell;
+};
 
 if((DS_var_LastVitaminTime + (15*60)) < diag_tickTime) then {
 	player enableFatigue false;

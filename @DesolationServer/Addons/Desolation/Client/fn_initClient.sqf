@@ -28,6 +28,7 @@ call ds_fnc_initHud;
 call ds_fnc_initInvHandler;
 call ds_fnc_initHoldables;
 [] spawn DS_fnc_initBuilding;
+[] spawn DS_fnc_initNVGs;
 
 //asks the server to spawn us
 
