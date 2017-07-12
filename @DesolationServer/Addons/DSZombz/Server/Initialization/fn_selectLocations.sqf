@@ -19,7 +19,6 @@ _DSZ_fnc_FindSafePos = {
 		_newPos = [_nX,_nY,0];
 		_result = _newPos isFlatEmpty [1];
 		if(count(_result) > 0) exitWith {
-			_newPos pushBack 0;
 			_found = true;
 		};
 	};
@@ -59,7 +58,6 @@ _zombieData = [];
 					
 					
 					_zedPosition = [_position,_SpawnRadius,_posOnFail] call _DSZ_fnc_FindSafePos;
-					_zedPosition pushBack 0;
 					
 					_zType = selectRandom _config;
 					_zombieData pushback [_zType select 0,_zedPosition,_zType select 1,_position,_SpawnRadius];
