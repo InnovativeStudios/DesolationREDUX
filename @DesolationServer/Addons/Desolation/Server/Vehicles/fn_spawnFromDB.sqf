@@ -101,14 +101,14 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	} else {
 		_object setPosASL _position;
 	};
-    
+/* why was there an call compile in front of these selects ? */    
 	_amountOfPositionInformation = count _positionadvanced;
 	if (_amountOfPositionInformation > 0) then {
-		_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
+		_hpVectorUp = (_positionadvanced select 0) select 1;
 		
 		if (_amountOfPositionInformation > 2) then {
-			_hpVectorDir = call compile ((_positionadvanced select 1) select 1);
-			_hpPosition = call compile ((_positionadvanced select 2) select 1);
+			_hpVectorDir = (_positionadvanced select 1) select 1;
+			_hpPosition = (_positionadvanced select 2) select 1;
 
 			_object setVectorDirAndUp [_hpVectorDir,_hpVectorUp];
 
