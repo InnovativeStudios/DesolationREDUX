@@ -46,7 +46,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	_position = [_positionx,_positiony,_positionz];
 	_object = _classname createVehicle _position;
 	
-	if (_objectType == 2) then {  // if building
+	if (_objectType == 2) then {  // if building	
 		for "_i" from 1 to 5 do {
 			_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
 		};
@@ -129,5 +129,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 
 	_returnData = [_object,_objectType,_object_uuid];
 };
-
+if (_objectType == 2) then {
+	[_object] call DS_fnc_fixBuildingShift;
+};
 _returnData;

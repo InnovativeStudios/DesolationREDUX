@@ -389,6 +389,7 @@ class CfgFunctions
 			isserver = 1;
 			class spawnVehicles {};
 			class spawnFromDB {};
+			class fixBuildingShift {};
 			class vehicleMonitor {};
 			class simManager {};
 		};
