@@ -10,6 +10,7 @@ for "_i" from 0 to count(_cfg)-1 do {
 
 
 //load map locations
+BASE_var_Locations = [];
 _cfg = configFile >> "CfgPluginLocations";
 for "_i" from 0 to count(_cfg)-1 do {
 	_entry = _cfg select _i;
@@ -20,13 +21,13 @@ for "_i" from 0 to count(_cfg)-1 do {
 		_size = getArray(_entry >> "size");
 		
 		// may have to remoteExec this for JIP clients
-		_location = createLocation [ _type , _pos, _size select 0, _size select 1];
-		_location setText _name;
 		
+		_info = [_type, _name, _pos, _size];
+		_info call BASE_fnc_createLocation;
+		BASE_var_Locations pushBack _info;
 	};
 };
-
-
+publicVariable "BASE_var_Locations";
 
 
 _cfg = configFile >> "CfgPluginMapEdits";
