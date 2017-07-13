@@ -35,19 +35,21 @@ _DSZ_fnc_FindSafePos = {
 _Random_Zombies = call compile (["Random_Zombies","DSZ"] call BASE_fnc_getCfgValue);
 
 
-_locations = ["Airport","NameMarine","NameCityCapital","NameCity","NameVillage","NameLocal"];
+_locations = ["Airport","NameCityCapital","NameCity","NameVillage","NameLocal"]; //,"NameMarine" removed because it was spawning zombies on beaches
 _zombieData = [];
 
 {
 	_allLocations = nearestLocations [[worldSize/2,worldSize/2,0], [_x], worldSize];
 	_NumZombies = call compile (["Zombies_" + _x,"DSZ"] call BASE_fnc_getCfgValue);
-	_SpawnRadius = call compile (["Radius_" + _x,"DSZ"] call BASE_fnc_getCfgValue);
+	//_SpawnRadius = call compile (["Radius_" + _x,"DSZ"] call BASE_fnc_getCfgValue); // spawn radius no longer used, location size determines it
 	
 	{
 		_position = locationPosition _x;
+		_size = ((size _x select 0) max (size _x select 1))*2; //multiply by 2 to solve small location sizes
+		
 		if !(_position isEqualTo []) then {
 			if !(_position isEqualto [0,0,0]) then {
-				_roads = _position nearRoads _SpawnRadius;
+				_roads = _position nearRoads _size;
 				_posOnFail = _position;
 				
 				for "_i" from 1 to _NumZombies do {
@@ -57,10 +59,10 @@ _zombieData = [];
 					};
 					
 					
-					_zedPosition = [_position,_SpawnRadius,_posOnFail] call _DSZ_fnc_FindSafePos;
+					_zedPosition = [_position,_size,_posOnFail] call _DSZ_fnc_FindSafePos;
 					
 					_zType = selectRandom _config;
-					_zombieData pushback [_zType select 0,_zedPosition,_zType select 1,_position,_SpawnRadius];
+					_zombieData pushback [_zType select 0,_zedPosition,_zType select 1,_position,_size];
 				};
 			};	
 		};
