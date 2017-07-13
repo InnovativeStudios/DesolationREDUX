@@ -9,6 +9,24 @@ for "_i" from 0 to count(_cfg)-1 do {
 };
 
 
+//load map locations
+_cfg = configFile >> "CfgPluginLocations";
+for "_i" from 0 to count(_cfg)-1 do {
+	_entry = _cfg select _i;
+	if(isClass _entry) then {
+		_type = getText(_entry >> "type");
+		_name = getText(_entry >> "text");
+		_pos = getArray(_entry >> "location");
+		_size = getArray(_entry >> "size");
+		
+		// may have to remoteExec this for JIP clients
+		_location = createLocation [ _type , _pos, _size select 0, _size select 1];
+		_location setText _name;
+		
+	};
+};
+
+
 
 
 _cfg = configFile >> "CfgPluginMapEdits";
