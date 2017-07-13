@@ -128,7 +128,7 @@ class CfgFunctions
 			isclient = 1;
 			class initHoldables {};
 			class toggleLight {};
-			class takeIntoHands {};
+			class takeIntoHand {};
 		};
 		class Client_Progression {
 			file = "Desolation\Client\Progression";
