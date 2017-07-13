@@ -24,6 +24,11 @@ if(worldName == "Chernarus") then {
 	"ColorCorrections" ppEffectCommit 0;
 };
 
+{
+	_x call BASE_fnc_createLocation;
+} forEach BASE_var_Locations;
+
+
 call ds_fnc_initHud;
 call ds_fnc_initInvHandler;
 call ds_fnc_initHoldables;
