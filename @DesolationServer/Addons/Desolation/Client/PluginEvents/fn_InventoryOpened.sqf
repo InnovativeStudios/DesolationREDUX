@@ -19,6 +19,8 @@ if(_container isKindOf "DSR_Civilian_Base") then {
 		};
 	} forEach (itemCargo _container);
 };
+
+DS_var_OpenedContainer = _container;
 DS_var_InvOpen = true;
 [] spawn ds_fnc_setupInvEvents;
 _override;
