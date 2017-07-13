@@ -45,7 +45,7 @@ _zombieData = [];
 	
 	{
 		_position = locationPosition _x;
-		_size = ((size _x select 0) max (size _x select 1))*2; //multiply by 2 to solve small location sizes
+		_size = ((size _x select 0) max (size _x select 1))*1.5; //multiply by 1.5 to solve small location sizes
 		
 		if !(_position isEqualTo []) then {
 			if !(_position isEqualto [0,0,0]) then {
