@@ -30,9 +30,6 @@ _newAmmo = 0;
 
 _ammoToAdd = _totalAmmo - _newAmmo - 1;
 
-systemchat format["%1 - %2 - %3",_totalAmmo,_newAmmo,_ammoToAdd];
-
-
 if(_ammoToAdd <= 0) exitWith {};
 
 _ammoCount = getNumber(configFile >> "CfgMagazines" >> _classname >> "count");
