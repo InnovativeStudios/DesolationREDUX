@@ -26,6 +26,16 @@ class CfgPluginMapEditsConfig {
 	};
 };
 
+class CfgPluginLocations {
+	class NameVillage127273200100100 {
+		type = "NameVillage";
+		text = "Myshkino Tents";
+		location[] = {1272.27,7319.53,0};
+		size[] = {100,100};
+	};
+};
+
+
 class CfgPluginMapEdits {
 	class Chernarus {
 		class Land_HBarrierTower_F_122071860110 {
