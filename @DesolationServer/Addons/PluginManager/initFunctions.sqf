@@ -100,7 +100,7 @@ _fncCompile = {
 	_fncVar = _this select 0;
 	_fncMeta = _this select 1;
 	_fncHeader = _this select 2;
-	_fncFinal = false; //_this select 3; TODO: uncomment this
+	_fncFinal = _this select 3;
 
 	_fncPath = _fncMeta select 0;
 	_fncExt = _fncMeta select 1;

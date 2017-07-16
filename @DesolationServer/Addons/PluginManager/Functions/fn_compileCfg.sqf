@@ -26,7 +26,7 @@ _cfg = configFile >> "Plugins";
 	
 	diag_log format["<PluginManager>: Broadcasting %1 config entry(s) for %2",count(_data),_cfgName];
 	{
-		_x set[0,(_x select 0) + "_" + _tag];
+		_x set[0,(_x select 0) + "_" + _tag]; //[key,value] => [key_tag,value]
 		_x pushBack true;
 		_MasterObject setVariable _x;
 	} forEach _data;
