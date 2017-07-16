@@ -42,6 +42,8 @@ _returnData = [];
 if(_objectType == 4) exitWith {[];}; // TEMP: fix retard update in database to remove broken vehicles
 if(_classname == "") exitWith  {[];}; // TEMP: fix for retard objects being registered wrong
  
+ _object = objNull;
+ 
 if (_objectType > 1) then { // its an building, vehicle or ai - all use createVehicle
 	_position = [_positionx,_positiony,_positionz];
 	_object = _classname createVehicle _position;
@@ -148,7 +150,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 
 	_returnData = [_object,_objectType,_object_uuid];
 };
-if (_objectType == 2) then {
+if (_objectType == 2 && !isNull _object) then {
 	[_object] call DS_fnc_fixBuildingShift;
 };
 _returnData;

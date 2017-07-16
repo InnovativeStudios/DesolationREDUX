@@ -12,6 +12,8 @@
 params["_container"];
 private["_data","_iContainData","_insideContainers","_loot"];
 
+if(isNull _container) exitWith {[[],[],[],[],[]]};
+
 _data = [];
 
 //--- Recursively get all data from inside containers

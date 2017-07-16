@@ -176,10 +176,10 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					clearWeaponCargoGlobal _tv;
 					clearBackpackCargoGlobal _tv;
 					
-					
-					_hitpoints = (getAllHitPointsDamage _tv) select 0;
-					_hitpoint2 = (getAllHitPointsDamage _tv) select 1;
-					if(!isNil {_hitpoints}) then {
+					_pointdata = getAllHitPointsDamage _tv;
+					if(count(_pointdata) > 1) then {
+						_hitpoints = (getAllHitPointsDamage _tv) select 0;
+						_hitpoint2 = (getAllHitPointsDamage _tv) select 1;
 						{
 							_selection = _hitpoint2 select _forEachIndex;
 							if(tolower(_selection) find "proxy" == -1) then {
