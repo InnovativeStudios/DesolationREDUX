@@ -9,11 +9,27 @@ _standardDamage = {
 		_selections = ["spine3","leftforearm","rightforearm","lefthand","righthand","leftupleg","rightupleg","leftleg","rightleg","leftfoot","rightfoot","head","pelvis"];
 		[_damagedBy,selectRandom _selections] call DS_fnc_onHitPartReceived;
 	};
-	/*
-	if(random(1) <= 0.01) then {
-		SM_infectionDot = SM_infectionDot + 0.01;
+	addCamShake [5, 1, 50];
+	["DynamicBlur", 400, [2]] spawn {
+		params ["_name", "_priority", "_effect", "_handle"];
+		while {
+			_handle = ppEffectCreate [_name, _priority];
+			_handle < 0
+		} do {
+			_priority = _priority + 1;
+		};
+		_handle ppEffectEnable true;
+		_handle ppEffectAdjust _effect;
+		_handle ppEffectCommit 0.1;
+		waitUntil {ppEffectCommitted _handle};
+		
+		_handle ppEffectAdjust [0];
+		_handle ppEffectCommit 0.5;
+		waitUntil {ppEffectCommitted _handle};
+		
+		_handle ppEffectEnable false;
+		ppEffectDestroy _handle;
 	};
-	*/
 };
 
 if(isNil "DSZ_var_zombieAttackOverride") then {
