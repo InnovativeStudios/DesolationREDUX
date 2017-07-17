@@ -17,4 +17,4 @@ while{(count (waypoints _group)) > 0} do {
 };
 
 _zed disableCollisionWith player;
-[_zed,player] execFSM "DSR_Zombz_Code\fsm\dszBrain.fsm";
+_zed doFSM ["DSR_Zombz_Code\fsm\dszBrain.fsm",[0,0,0],player];
