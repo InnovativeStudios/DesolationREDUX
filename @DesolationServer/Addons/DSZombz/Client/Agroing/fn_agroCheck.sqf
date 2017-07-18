@@ -3,6 +3,7 @@ DSZ_allow_Agro = true;
 
 
 while{true} do {
+	waitUntil{vehicle player == player}; //dont agro when in vehicle (temp until possible error is resolved)
 	_nearZombies = player nearEntities ["DSR_Civilian_Base",120];
 	{
 		if(!isPlayer _x && alive _x) then {

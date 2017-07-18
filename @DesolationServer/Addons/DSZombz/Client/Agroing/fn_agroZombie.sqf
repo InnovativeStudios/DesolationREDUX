@@ -10,6 +10,19 @@ if(!local group _zed) then {
 
 _zed forceSpeed (_zed getSpeed "FAST");
 
+_animevh = _zed addEventHandler ["AnimChanged",{
+	params["_zed","_anim"];
+	
+	//prevent zombie from ever walking when agroed
+	if(_zed distance player > 2) then {
+		if(_anim == "dsr_Zomb_Walk") then {
+			_zed playMove "dsr_Zomb_Sprint";
+		};
+	};
+	
+}];
+_zed setVariable ["animEVH",_animevh];
+
 _group = group _zed;
 
 while{(count (waypoints _group)) > 0} do {
@@ -17,4 +30,5 @@ while{(count (waypoints _group)) > 0} do {
 };
 
 _zed disableCollisionWith player;
-_zed doFSM ["DSR_Zombz_Code\fsm\dszBrain.fsm",[0,0,0],player];
+
+[_zed,player] execFSM "DSR_Zombz_Code\fsm\dszBrain.fsm";
