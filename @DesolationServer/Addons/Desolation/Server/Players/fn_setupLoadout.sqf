@@ -53,6 +53,11 @@ else
 		_unit addItem _x;
 	} forEach _Items;
 	
+	_linked = (["Linked","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	{
+		_unit linkItem _x;
+	} forEach _Items;
+	
 	
 	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	{
