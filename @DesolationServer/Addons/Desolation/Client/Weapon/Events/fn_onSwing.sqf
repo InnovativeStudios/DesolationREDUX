@@ -1,6 +1,9 @@
 params["_delay1","_functionData","_delay2"];
 uiSleep _delay1; 
 
+scopeName "DoneSwing";
+
+
 _canHitTrees = _functionData select 0;
 _canHitRocks = _functionData select 1;
 _playerDamageType = _functionData select 2;
@@ -33,13 +36,13 @@ if(_canHitRocks) then {
 
 if(isNull _tree && isNull _rocks) then {
 	_closest = cursorTarget; 
-	if(isNull _closest) exitWith {};
-	if(player distance _closest > 3) exitWith {};
+	if(isNull _closest) then {breakTo "DoneSwing";};
+	if(player distance _closest > 3) then {breakTo "DoneSwing";};
 	
 	if(alive _closest) then {
 		if(cursorTarget isKindOf "Man") then {
 			if(isPlayer _closest) then {
-				if(_closest == player) exitWith {systemchat "Devs fucked up. Report this";};
+				if(_closest == player) then {systemchat "Devs fucked up. Report this";breakTo "DoneSwing";};
 				[player,_playerDamageType] remoteExec ["DS_fnc_onMeleeHit",_closest];
 				playSound3D ["a3\sounds_f\arsenal\sfx\bullet_hits\body_0" + str(ceil(random(6))) + ".wss", _closest,false,getPosASL _closest,1,1,50];
 			} else {
@@ -98,7 +101,7 @@ if(!isNull _tree) then {
 				_dir = _origMtW getDir _nMtW;
 
 				private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _tree], 0];
-				if (_currentSwing < 0) exitWith {};
+				if (_currentSwing < 0) then {breakTo "DoneSwing";};
 				for "_i" from 0 to _height step ((_height / _currentSwing) + 0.3) do
 				{
 					private _position = ASLtoATL AGLToASL (_tree modelToWorld [0, 0, _i - (_height / 2)]);
