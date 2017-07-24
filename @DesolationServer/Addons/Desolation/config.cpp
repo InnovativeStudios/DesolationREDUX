@@ -12492,6 +12492,65 @@ class CfgItemSpawns {
 			positions[] = {{-0.0791626, 0.706543, -0.721425}
 			};
 		};
+		class Land_Shed_W4
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{1.73682,3.6377,-1.31815},
+				{-1.80176,2.46289,-1.31815},
+				{-1.05566,-1.75488,-1.31815},
+				{2.06885,-1.13672,-1.31815}
+			};
+		};
+
+		class Land_Shed_W01
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{1.5249,0.228516,-1.34076},
+				{-1.34961,0.0869141,-1.34076}
+			};
+		};
+	
+		class Land_Shed_W02
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{0.447266,2.37109,0.100006},
+				{-1.81152,0.0478516,0.100006}
+			};
+		};
+	
+		class Land_Shed_M01
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{-0.984375,-0.0146484,-1.11377}
+			};
+		};
+	
+		class Land_Shed_M03
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{-0.32959,-0.160156,-0.93576}
+			};
+		};
+	
+		class Land_Shed_W03
+		{
+			table = "Mechanical";
+			positions[] =
+			{
+				{-1.51318,0.166016,-0.782166},
+				{1.52832,1.12695,-0.782166}
+			};
+		};
 	};
 };
 class CfgVehicleSpawns {
