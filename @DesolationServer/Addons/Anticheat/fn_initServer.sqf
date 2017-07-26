@@ -148,15 +148,18 @@ if(["Anticheat"] call LYS_fnc_getCfgValue) then {
 			_thread = [_ban,_kick,_log] spawn {
 				params["_ban","_kick","_log"];
 				
+				//client loadin processing delay
+				waitUntil{(player getVariable ["pUUID",""]) != ""};
+				waitUntil{isDamageAllowed player};
+				uiSleep 10; 
 				
 				["Info","Anticheat Started on " + name player + " | ServerTime: " + str(serverTime)] call _log;
-				
 				
 				while{1==1} do {
 					_recoilValue = (["Recoil","RSM"] call BASE_fnc_getCfgValue);
 					if(!isNil {_recoilValue}) then { 
 						_recoil = call compile _recoilValue;
-						if(unitRecoilCoefficient player != _recoil) then {
+						if(unitRecoilCoefficient player != _recoil && unitRecoilCoefficient player != 1) then {
 							["Unit Recoil Changed! " + str(unitRecoilCoefficient player) + " Should Be " + _recoilValue + " | Recoil Cheat"] call _ban;
 						};
 					};
