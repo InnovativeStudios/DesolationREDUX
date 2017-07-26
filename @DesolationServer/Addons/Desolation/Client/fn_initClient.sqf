@@ -24,6 +24,15 @@ if(worldName == "Chernarus") then {
 	"ColorCorrections" ppEffectCommit 0;
 };
 
+//antiGammaCheat
+DS_AntiGammaFilter = ppEffectCreate ["FilmGrain",2000];
+DS_AntiGammaFilter ppEffectEnable false;
+DS_AntiGammaFilter ppEffectAdjust [0.02,0.75,2.95,1.66,2,true];
+DS_AntiGammaFilter ppEffectCommit 0;
+
+
+
+
 {
 	_x call BASE_fnc_createLocation;
 } forEach BASE_var_Locations;
