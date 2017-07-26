@@ -45,19 +45,21 @@ setDate [2017,6,10,_startHour,0];
 diag_log format ["TimeManagement > INFO: Date = %1", date];
 
 
-//
+/*
+//   This literally runs on the server. Were you high when you wrote this?
+
 _AntiGammaFilter = ppEffectCreate ["FilmGrain",2000];
 _AntiGammaFilter ppEffectEnable false;
 _AntiGammaFilter ppEffectAdjust [0.02,0.75,2.95,1.66,2,true];
 _AntiGammaFilter ppEffectCommit 0;
-
+*/
 
 if(daytime > _nightStart || daytime < _dayStart) then {
 	setTimeMultiplier _nightMult;
-	_AntiGammaFilter ppEffectEnable true;
+//	_AntiGammaFilter ppEffectEnable true;
 } else {
 	setTimeMultiplier _dayMult;
-	_AntiGammaFilter ppEffectEnable false;
+	//_AntiGammaFilter ppEffectEnable false;
 };
 
 while{true} do {
