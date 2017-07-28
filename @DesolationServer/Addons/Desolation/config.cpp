@@ -249,6 +249,7 @@ class CfgFunctions
 			file = "Desolation\Client\Actions\Items";
 			isclient = 1;
 			class doAction {};
+			class convertAssign {};
 			class convertItem {};
 			class doActionTarget {};
 			class combineMags {};

@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_classname",["_removeItem",true],["_oncomplete",{}],["_onfailure",{}],["_replacement",""]];
+params["_classname",["_removeItem",true],["_oncomplete",{}],["_onfailure",{}],["_replacement",""],["_param",""]];
 
 if(({toLower(_x) == toLower(_classname)} count (magazines player)) > 0) then {
 	if([] call ds_fnc_doAction) then {
@@ -19,7 +19,7 @@ if(({toLower(_x) == toLower(_classname)} count (magazines player)) > 0) then {
 				player removeMagazine _classname;
 			};
 			
-			call _oncomplete;
+			_param call _oncomplete;
 			
 			if(_replacement != "") then {
 				player addMagazine _replacement;
