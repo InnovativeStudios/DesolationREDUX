@@ -63,9 +63,7 @@ _request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_CHAR,[
 	PROTOCOL_DBCALL_ARGUMENT_VARIABLES,_nonpersvars,
 	PROTOCOL_DBCALL_ARGUMENT_PERSISTENTVARIABLES,_persvars,
 	PROTOCOL_DBCALL_ARGUMENT_TEXTURES,_textures,
-  PROTOCOL_DBCALL_ARGUMENT_GEAR, [(_loadout select 3) select 1, (_loadout select 4) select 1, (_loadout select 5) select 1, (_loadout select 3) select 0,
-  (_loadout select 4) select 0, (_loadout select 5) select 0, _loadout select 6, _loadout select 7, _loadout select 0, _loadout select 1, _loadout select 2,
-  _loadout select 8,_loadout select 9],
+  PROTOCOL_DBCALL_ARGUMENT_GEAR, _loadout,
 	PROTOCOL_DBCALL_ARGUMENT_CURRENTWEAPON, currentWeapon _playerObj
 ]];
 [_request] call DB_fnc_sendRequest;

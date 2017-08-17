@@ -26,7 +26,7 @@ _classname = _data deleteAt 0;
 _hitpoints = _data deleteAt 0;
 _nonpersvars = _data deleteAt 0;
 _textures = _data deleteAt 0;
-_gear = _data deleteAt 0;
+_loadout = _data deleteAt 0;
 _currentWeapon = _data deleteAt 0;
 _charshareuuid = _data deleteAt 0;
 
@@ -34,22 +34,6 @@ _persvars = _data deleteAt 0;
 _persuuid = _data deleteAt 0;
 
 _objectuuid = _data deleteAt 0;
-
-
-// extract _gear variable
-_invuniform = _gear deleteAt 0;
-_invvest = _gear deleteAt 0;
-_invbackpack = _gear deleteAt 0;
-_uniform = _gear deleteAt 0;
-_vest = _gear deleteAt 0;
-_backpack = _gear deleteAt 0;
-_headgear = _gear deleteAt 0;
-_goggles = _gear deleteAt 0;
-_primary = _gear deleteAt 0;
-_secondary = _gear deleteAt 0;
-_handgun = _gear deleteAt 0;
-_toolsone = _gear deleteAt 0;
-_toolstwo = _gear deleteAt 0;
 
 _unit = (createGroup CIVILIAN) createUnit [_classname, [_positionx,_positiony,_positionz], [],0, "NONE"];
 _unit allowDamage false;
@@ -68,19 +52,6 @@ _unit setVariable ["cUUID",_charuuid];
 
 _unit setDir _dir;
 _unit setPosATL [_positionx,_positiony,_positionz]; 
-
-_loadout = [
-	_primary,
-	_secondary,
-	_handgun,
-	if(_uniform == "") then {[]} else {[_uniform,_invuniform]}, 
-	if(_vest == "") then {[]} else {[_vest,_invvest]}, 
-	if(_backpack == "") then {[]} else {[_backpack,_invbackpack]},
-	_headgear,
-	_goggles,
-	_toolsone,
-	_toolstwo
-];
 
 [_unit,_anim] remoteExecCall ["switchMove",0];
 

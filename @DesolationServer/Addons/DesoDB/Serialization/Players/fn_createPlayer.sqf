@@ -57,9 +57,7 @@ _request = [PROTOCOL_DBCALL_FUNCTION_CREATE_CHAR,[
 	PROTOCOL_DBCALL_ARGUMENT_VARIABLES,_nonpersvars,
 	PROTOCOL_DBCALL_ARGUMENT_PERSISTENTVARIABLES,_persvars,
 	PROTOCOL_DBCALL_ARGUMENT_TEXTURES,_textures,
-  PROTOCOL_DBCALL_ARGUMENT_GEAR, [(_loadout select 3) select 1, (_loadout select 4) select 1, (_loadout select 5) select 1, (_loadout select 3) select 0,
-  (_loadout select 4) select 0, (_loadout select 5) select 0, _loadout select 6, _loadout select 7, _loadout select 0, _loadout select 1, _loadout select 2,
-  _loadout select 8,_loadout select 9],
+  PROTOCOL_DBCALL_ARGUMENT_GEAR, _loadout,
 	PROTOCOL_DBCALL_ARGUMENT_CURRENTWEAPON, currentWeapon _playerObj
 ]];
 
@@ -71,33 +69,26 @@ _playerObj setVariable ["cUUID",_response];
 _request = [PROTOCOL_DBCALL_FUNCTION_LOAD_CHAR,[PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid]];
 _data = [_request] call DB_fnc_sendRequest;
 
-_data deleteAt 0;
 _anim = _data deleteAt 0;
 _dir = _data deleteAt 0;
-_data deleteAt 0;
-_x = _data deleteAt 0;
-_y = _data deleteAt 0;
-_z = _data deleteAt 0;
-_class = _data deleteAt 0;
+_positiontype = _data deleteAt 0;
+_positionx = _data deleteAt 0;
+_positiony = _data deleteAt 0;
+_positionz = _data deleteAt 0;
+_charuuid = _data deleteAt 0;
+
+_classname = _data deleteAt 0;
 _hitpoints = _data deleteAt 0;
-
 _nonpersvars = _data deleteAt 0;
-_persvars = _data deleteAt 0;
-
 _textures = _data deleteAt 0;
-_invuniform = _data deleteAt 0;
-_invvest = _data deleteAt 0;
-_invbackpack = _data deleteAt 0;
-_uniform = _data deleteAt 0;
-_vest = _data deleteAt 0;
-_backpack = _data deleteAt 0;
-_headgear = _data deleteAt 0;
-_goggles = _data deleteAt 0;
-_primary = _data deleteAt 0;
-_secondary = _data deleteAt 0;
-_handgun = _data deleteAt 0;
-_tools = _data deleteAt 0;
+_gear = _data deleteAt 0;
 _currentWeapon = _data deleteAt 0;
+_charshareuuid = _data deleteAt 0;
+
+_persvars = _data deleteAt 0;
+_persuuid = _data deleteAt 0;
+
+_objectuuid = _data deleteAt 0;
 
 {
 	_playerObj setVariable [_x select 0,_x select 1,true];
