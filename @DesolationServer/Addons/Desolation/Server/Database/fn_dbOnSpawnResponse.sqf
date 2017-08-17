@@ -17,7 +17,6 @@ _playerObj = _params select 2;
 
 switch(_type) do {
 	case "load": {
-		_playerObj setVariable ["cUUID",_response deleteAt 0];
 		[_response,_playerObj] call DS_fnc_requestLoadSpawn;
 	};
 	case "fresh": {
