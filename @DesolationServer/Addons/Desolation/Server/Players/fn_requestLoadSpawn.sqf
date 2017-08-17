@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 params["_data","_client"];
-private["_charuuid","_charshareuuid","_persuuid","_objectuuid","_unit","_anim","_dir","_positiontype","_positionx","_positiony","_positionz","_classname","_hitpoints","_nonpersvars","_persvars","_textures","_invuniform","_invvest","_invbackpack","_uniform","_vest","_backpack","_headgear","_goggles","_primary","_secondary","_handgun","_tools","_currentWeapon","_loadout","_name","_damage"];
+private["_charuuid","_charshareuuid","_persuuid","_objectuuid","_unit","_anim","_dir","_positiontype","_positionx","_positiony","_positionz","_classname","_hitpoints","_nonpersvars","_persvars","_textures","_invuniform","_invvest","_invbackpack","_uniform","_vest","_backpack","_headgear","_goggles","_primary","_secondary","_handgun","_toolsone","_toolsone","_currentWeapon","_loadout","_name","_damage"];
 
 _uid = getPlayerUID _client;
 
@@ -48,7 +48,8 @@ _goggles = _gear deleteAt 0;
 _primary = _gear deleteAt 0;
 _secondary = _gear deleteAt 0;
 _handgun = _gear deleteAt 0;
-_tools = _gear deleteAt 0;
+_toolsone = _gear deleteAt 0;
+_toolstwo = _gear deleteAt 0;
 
 _unit = (createGroup CIVILIAN) createUnit [_classname, [_positionx,_positiony,_positionz], [],0, "NONE"];
 _unit allowDamage false;
@@ -77,8 +78,8 @@ _loadout = [
 	if(_backpack == "") then {[]} else {[_backpack,_invbackpack]},
 	_headgear,
 	_goggles,
-	_tools select 0,
-	_tools select 1
+	_toolsone,
+	_toolstwo
 ];
 
 [_unit,_anim] remoteExecCall ["switchMove",0];
