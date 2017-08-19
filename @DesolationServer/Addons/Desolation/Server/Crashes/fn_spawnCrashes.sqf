@@ -35,7 +35,7 @@ for "_i" from 1 to _numberOfCrashes do
 	diag_log "<HELI CRASHES>: Spawning heli crash.";
 
 	_heli = _heliType createVehicle [0,0,500];
-	_heli setVariable ["sim_manager_ignore",true];
+	_heli setVariable ["sim_manager_ignore",true,true];
 	
 	createVehicleCrew _heli;
 	_heli engineOn true;
