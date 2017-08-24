@@ -73,7 +73,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	
 	if(_player_uuid != "") then {
 		_object setVariable ["oOWNER",_player_uuid,true];
-		_object setVariable ["friends",_friendslist];
+		_object setVariable ["clanUUID",_clan_uuid];
 	};
 	
 	if(_accesscode != "") then {
