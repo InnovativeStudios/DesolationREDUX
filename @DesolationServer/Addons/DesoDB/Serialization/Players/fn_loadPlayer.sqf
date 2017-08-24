@@ -27,7 +27,7 @@ _response = [_request] call DB_fnc_sendRequest;
 
 _playeruuid = _response select 0;
 _dpvaruuid = _response select 1;
-_friendlist = _response select 2;
+_mainclanuuid = _response select 2;
 _kickableData = _response select 3;
 _kickable = _kickableData select 0;
 _kickReason = _kickableData select 1;

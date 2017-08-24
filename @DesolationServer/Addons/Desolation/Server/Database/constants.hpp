@@ -1,25 +1,25 @@
 /* constants.hpp
  *
- * Copyright 2016-2017 Desolation Redux
+ * Copyright 2016-2018 Desolation Redux
  *
  * Author: Legodev <legodevgit@mailbox.org>
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Affero General Public License for more details.
  */
 
 #ifndef SOURCE_CONSTANTS_HPP_
 #define SOURCE_CONSTANTS_HPP_
 
+#define DLLVERSIONSTRING "[1,0,1,2]"
 #define CONFIG_FILE_NAME "libredex.cfg"
-#define printf //printf
 
 /*
  * Magic Numbers
@@ -43,6 +43,7 @@
 #define PROTOCOL_LIBARY_FUNCTION_TERMINATE_ALL "termall"
 #define PROTOCOL_LIBARY_FUNCTION_RECEIVE_MESSAGE "rcvmsg"
 #define PROTOCOL_LIBARY_FUNCTION_CHECK_MESSAGE_STATE "chkmsg"
+#define PROTOCOL_LIBARY_FUNCTION_CHECK_VERSION "version"
 
 // File IO Call Functions
 #define PROTOCOL_IOCALL_FUNCTION_READ_FILE "readFile"
@@ -107,7 +108,7 @@
 #define PROTOCOL_DBCALL_ARGUMENT_HEADGEAR "headgear"
 #define PROTOCOL_DBCALL_ARGUMENT_HITPOINTS "hitpoints"
 #define PROTOCOL_DBCALL_ARGUMENT_INVENTORYBACKPACK "inventorybackpack"
-#define PROTOCOL_DBCALL_ARGUMENT_INVENTORYUNIFORM "inventoryuniform"
+#define PROTOCOL_DBCALL_ARGUMENT_GEAR "gear"
 #define PROTOCOL_DBCALL_ARGUMENT_INVENTORYVEST "inventoryvest"
 #define PROTOCOL_DBCALL_ARGUMENT_ITEMS "items"
 #define PROTOCOL_DBCALL_ARGUMENT_LOCKED "locked"
@@ -116,6 +117,7 @@
 #define PROTOCOL_DBCALL_ARGUMENT_NICKNAME "nickname"
 #define PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID "objectuuid"
 #define PROTOCOL_DBCALL_ARGUMENT_PERSISTENTVARIABLES "persistentvariables"
+#define PROTOCOL_DBCALL_ARGUMENT_PERSISTENTVARIABUUID "persistentvariablesuuid"
 #define PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID "playeruuid"
 #define PROTOCOL_DBCALL_ARGUMENT_POSITIONTYPE "positiontype"
 #define PROTOCOL_DBCALL_ARGUMENT_POSITIONX "positionx"
@@ -128,12 +130,12 @@
 #define PROTOCOL_DBCALL_ARGUMENT_STEAMID "steamid"
 #define PROTOCOL_DBCALL_ARGUMENT_TEXTURES "textures"
 #define PROTOCOL_DBCALL_ARGUMENT_TOOLS "tools"
-#define PROTOCOL_DBCALL_ARGUMENT_TYPE "type"
 #define PROTOCOL_DBCALL_ARGUMENT_UNIFORM "uniform"
 #define PROTOCOL_DBCALL_ARGUMENT_VARIABLES "variables"
 #define PROTOCOL_DBCALL_ARGUMENT_VARIABUUID "variabuuid"
+#define PROTOCOL_DBCALL_ARGUMENT_CHARSHAREUUID "charactershareablesuuid"
 #define PROTOCOL_DBCALL_ARGUMENT_VEST "vest"
-#define PROTOCOL_DBCALL_ARGUMENT_OBJECTTYPE "visible"
+#define PROTOCOL_DBCALL_ARGUMENT_OBJECTTYPE "type"
 #define PROTOCOL_DBCALL_ARGUMENT_RESERVEDONE "reservedone"
 #define PROTOCOL_DBCALL_ARGUMENT_WEAPON "weapon"
 #define PROTOCOL_DBCALL_ARGUMENT_WORLDUUID "worlduuid"

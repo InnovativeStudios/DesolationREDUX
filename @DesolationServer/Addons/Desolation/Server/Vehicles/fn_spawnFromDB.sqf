@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_object_uuid","_parent","_classname","_priority","_objectType","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_positionadvanced","_reservedone","_reservedtwo","_friendslist"];
+params["_classname","_priority","_objectType","_accesscode","_locked","_player_uuid","_hitpoints","_damage","_fuel","_fuelcargo","_repaircargo","_items","_magazinesturret","_variables","_animation_sources","_textures","_direction","_positiontype","_positionx","_positiony","_positionz","_positionadvanced","_reservedone","_reservedtwo","_object_uuid","_parent","_clan_uuid"];
 
 _returnData = [];
 
@@ -73,7 +73,7 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 	
 	if(_player_uuid != "") then {
 		_object setVariable ["oOWNER",_player_uuid,true];
-		_object setVariable ["friends",_friendslist];
+		_object setVariable ["clanUUID",_clan_uuid];
 	};
 	
 	if(_accesscode != "") then {
