@@ -13308,7 +13308,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_House_Lv2_Preview2";
 				description = "Large wood shack.";
 				preview = "\dsr_ui\Assets\object_previews\preview_house_lv2.paa";
-				condition = "false";
+				condition = "(player getVariable ['PVAR_DS_Progression_Building_Level',0]) > 0";
 			};
 			class HouseLvl3 {
 				parts[] = {
@@ -13324,7 +13324,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_House_Lv3_Preview2";
 				description = "A small Wood Cabin.";
 				preview = "\dsr_ui\Assets\object_previews\preview_house_lv3.paa";
-				condition = "false";
+				condition = "(player getVariable ['PVAR_DS_Progression_Building_Level',0]) > 1";
 			};
 		};
 	};
