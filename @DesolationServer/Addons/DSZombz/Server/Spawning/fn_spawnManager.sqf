@@ -50,7 +50,7 @@ while{true} do {
 	{
 		_player = _x;	
 		if(alive _player) then {
-			_nearAI = _player nearObjects ["Sign_Sphere10Cm_F",250];
+			_nearAI = _player nearObjects ["DSR_Object_Blank_Cube",250];
 			{
 				_zedHolder = _x;
 				if !(_zedHolder getVariable["isSpawned",false]) then {

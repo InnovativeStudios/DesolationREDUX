@@ -1,5 +1,5 @@
 params["_zIndex","_position"];
-_zholder = "Sign_Sphere10Cm_F" createVehicle [0,0,0];
+_zholder = "DSR_Object_Blank_Cube" createVehicle [0,0,0];
 _zholder enableSimulationGlobal false;
 _zholder hideObjectGlobal true;
 _zholder setVariable ["zIndex",_zIndex];
