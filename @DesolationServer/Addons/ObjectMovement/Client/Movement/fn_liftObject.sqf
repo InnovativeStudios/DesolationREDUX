@@ -24,7 +24,7 @@ _object setMass 0.1;
 if([_object] call OM_fnc_canLift) then {
 	OM_var_lifted = _object;
 	_object addEventHandler ["EpeContact",{
-		OM_var_collisionForce = _this select 4;
+		// OM_var_collisionForce = _this select 4; //remove contact
 	}];
 	
 	OM_var_EachFrameEH = addMissionEventHandler ["EachFrame",{
@@ -86,29 +86,47 @@ if([_object] call OM_fnc_canLift) then {
 					if (player distance2d _object > _carryDistance) then {
 						_objectYVelocity = _speedPushPull;
 					} else {
-							if (player distance2d _object < (_carryDistance - 0.1 )) then {
+						if (player distance2d _object < (_carryDistance - 0.1 )) then {
 							_objectYVelocity = -_speedPushPull;
-							};
+						};
 					};
 					
 					
 					comment "//height control";
 					if(abs (_wantedHeight-_objectHeight) > 0.1) then { 
 						if (_wantedHeight > (_objectHeight)) then {
-							_objectZVelocity  = _speedUpDown + _gravityCounter;
+							_objectZVelocity  = _speedUpDown;
 						} else { 
 							if(_wantedHeight < (_objectHeight - 0.1)) then {
-							_objectZVelocity = -_speedUpDown;
+								_objectZVelocity = -_speedUpDown;
 							};
 						};
 					};
 					
+					
+					//attach change
+					if(_objectZVelocity != 0) then {
+						_vDif = [0,0,_objectZVelocity];
+						_vDif = _vDif vectorMultiply 0.01;
+						systemchat str _vDif;
+						_curAttach = player getVariable ["attachVector",player worldToModel (ASLtoAGL getPosASL _object)];
+						_newAttach = _curAttach vectorAdd _vDif;
+						detach _object;
+						_object attachTo [player, _newAttach];
+						player setVariable ["attachVector",_newAttach];
+					};
+					_object setDir 0;
+					
+					/* // Legacy Code
 					_object setVelocity (velocity player);
-					_object setDir (_object getDir player);
 					_object setVelocityModelspace ((velocityModelspace _object) VectorAdd [_objectXVelocity*_lagComp,_objectYVelocity*_lagComp, (_objectZVelocity+_gravityCounter)*_lagComp]);
+					*/
 					
 				};
 			} else {
+				//intersection snapping
+				detach _object;
+				player setVariable ["attachVector",nil];
 				_object setPosASL (_ins select 0 select 0); 
 				_object setDir getdir player;
 				_object setVectorUp (_ins select 0 select 1);

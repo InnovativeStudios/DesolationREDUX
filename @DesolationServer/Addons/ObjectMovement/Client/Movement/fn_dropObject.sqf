@@ -25,5 +25,6 @@ OM_var_lifted setMass (OM_var_lifted getVariable ["oMass",5]);
 OM_var_lifted setVariable ["DSR_positionAdvanced", nil];
 
 OM_var_lifted = objNull;
+player setVariable ["attachVector",nil];
 
 true;
