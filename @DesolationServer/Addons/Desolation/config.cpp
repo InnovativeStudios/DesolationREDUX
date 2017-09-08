@@ -13640,7 +13640,7 @@ class CfgCraftables {
 		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
 		name = "Tools"; 
 		class Craftables {
-			/*class FishingRod {
+			class FishingRod {
 				input[] = {
 					{"DSR_Item_Fishingrod_Broken",1},
 					{"DSR_Item_Duct_Tape",1}
@@ -13654,7 +13654,7 @@ class CfgCraftables {
 				description = "Great for catching small fishies.";
 				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
 				condition = "true";
-			};*/
+			};
 		};
 	};
 	class Food {
