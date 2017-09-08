@@ -14,7 +14,7 @@
 params["_cursor"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_cursor, player, "Get Water",3] remoteExec ["ACT_fnc_itemFill", 2];
+	[_cursor, player, "Get Fuel",3] remoteExec ["ACT_fnc_itemFill", 2];
 };
 
 true

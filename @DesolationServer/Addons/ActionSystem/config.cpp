@@ -95,6 +95,7 @@ class CfgFunctions
 		class Client_Actions_NonLift {
 			file = "ActionSystem\Client\Actions\NonLift";
 			isclient = 1;
+			class getFuel {};
 			class getWater {};
 			class deconstruct {};
 		};
@@ -520,7 +521,7 @@ class Cfg3DActions {
 		};
 	};
 	class NonLiftables {
-		condition = "!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1)";
+		condition = "player == vehicle player";
 		
 		renderType = 1;
 	
@@ -544,6 +545,23 @@ class Cfg3DActions {
 					};
 				};
 				action = "[_cursor] call ACT_fnc_getWater;";
+			};
+			class GetFuel {
+				condition = "!(str(_cursor) find 'fuel' == -1) && !(str(_cursor) find 'station' == -1) && !(str(_cursor) find 'feed' == -1)";
+				text = "Get Fuel";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Fuelcan_Empty", 1},
+						{"DSR_Item_Gascan_Large_Empty", 1},
+						{"DSR_Item_Gascan_Small_Empty", 1}
+					};
+					returnedItems[] = {
+						{"DSR_Item_Fuelcan_Full", 20},			// 20 litres
+						{"DSR_Item_Gascan_Large_Full", 20},		// 20 litres
+						{"DSR_Item_Gascan_Small_Full", 10}		// 10 litres
+					};
+				};
+				action = "[_cursor] call ACT_fnc_getFuel;";
 			};
 //			class Deconstruct {
 //				condition = "!(str(_cursor) find 'stockade' == -1";
