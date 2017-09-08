@@ -1,4 +1,4 @@
-params["_delay1","_functionData","_delay2"];
+params["_delay1","_functionData","_delay2","_weaponClass"];
 uiSleep _delay1; 
 
 scopeName "DoneSwing";
@@ -118,6 +118,16 @@ if(!isNull _tree) then {
 if(!isNull _rocks) then {
 
 };
+if(_weaponClass == "DSR_Melee_Fishingrod") then {
+	
+	//TODO: Make player fish xd
+	
+	// check if surface infront of player is water
+	// if server is water then random chance to pull out a fish from water
+	
+};
+
+
 
 uiSleep _delay2;
 DSR_isSwinging = false; 

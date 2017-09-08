@@ -23,7 +23,7 @@ player addAction ["",{
 	if(!DSR_isSwinging) then { 
 		DSR_isSwinging = true; 
 		player playActionNow _animation; 
-		[_delay1,_functionData,_delay2] spawn DS_fnc_onSwing;
+		[_delay1,_functionData,_delay2,_weapon] spawn DS_fnc_onSwing;
 	};
 	
 }, "", -100, false, true, "DefaultAction", "currentWeapon player in DSR_swingWeapons"];
@@ -40,7 +40,7 @@ player addAction ["",{
 ["DSR_Melee_Pickaxe","dsr_PickaxeSlashGst",[false,true,1,1,1],1.5,1.25] call DS_fnc_registerMeleeAction;
 
 
-
+["DSR_Melee_Fishingrod","dsr_Fishing_Idle",[false,false,1,1,1],2,2] call DS_fnc_registerMeleeAction;
 
 /*
 	_canHitTrees = _functionData select 0;
