@@ -27,6 +27,7 @@ _hitpoints = _data deleteAt 0;
 _nonpersvars = _data deleteAt 0;
 _textures = _data deleteAt 0;
 _loadout = _data deleteAt 0;
+_goggles = _loadout select 7;
 _currentWeapon = _data deleteAt 0;
 _charshareuuid = _data deleteAt 0;
 
