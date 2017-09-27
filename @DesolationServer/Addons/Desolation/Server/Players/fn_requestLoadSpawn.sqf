@@ -41,10 +41,10 @@ _unit allowDamage false;
 _unit hideObjectGlobal true;
 
 {
-	_unit setVariable [_positionx select 0,_positionx select 1,true];
+	_unit setVariable [_x select 0,_x select 1,true];
 } forEach _nonpersvars;
 {
-	_unit setVariable [_positionx select 0,_positionx select 1,true];
+	_unit setVariable [_x select 0,_x select 1,true];
 } forEach _persvars;
 
 
@@ -57,7 +57,7 @@ _unit setPosATL [_positionx,_positiony,_positionz];
 [_unit,_anim] remoteExecCall ["switchMove",0];
 
 {
-	_name = _positionx;
+	_name = _x;
 	_damage = (_hitpoints select 2) select _forEachIndex;
 	_unit setHitPointDamage [_name,_damage];
 } forEach (_hitpoints select 0);
@@ -66,7 +66,7 @@ _unit addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
 [_unit,_loadout,[]] call DS_fnc_setupLoadout;
 
 {
-	_unit setObjectTextureGlobal [_forEachIndex,_positionx];
+	_unit setObjectTextureGlobal [_forEachIndex,_x];
 } forEach _textures;
 
 _unit hideObjectGlobal false;
