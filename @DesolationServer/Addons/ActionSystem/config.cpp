@@ -130,7 +130,7 @@ class CfgFunctions
 			class refuelReq {};
 			class playerAction {};
 			class flipObject {};
-			class waterFill {};
+			class itemFill {};
 		};
 	};
 };
