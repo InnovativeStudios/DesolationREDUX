@@ -26,8 +26,8 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 					player playAction "FastF";
 					sleep 0.5;
 					_interuptAutoRun = (inputAction "LeanLeft")+(inputAction "LeanRight")+(inputAction "MoveLeft")+(inputAction "MoveRight")+(inputAction "Stand")+(inputAction "Crouch")+(inputAction "Prone")+(inputAction "Salute")+(inputAction "SitDown")+(inputAction "MoveUp")+(inputAction "MoveDown")+(inputAction "AdjustUp")+(inputAction "AdjustDown")+(inputAction "AdjustRight")+(inputAction "AdjustLeft")+(inputAction "TactTemp")+(inputAction "TactToggle")+(inputAction "TactShort");
-					if (_interuptAutoRun > 0) exitWith {RUN_var_isAutoRun = false;};
-					 };
+					if (_interuptAutoRun > 0 || !call RUN_fnc_canAutoRun) exitWith {RUN_var_isAutoRun = false;};
+				};
 			};
 		};
 	};
