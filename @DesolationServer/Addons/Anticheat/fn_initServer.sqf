@@ -482,6 +482,12 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 		_godmode = {
 			params["_toggle"];
 			player allowDamage !_toggle;
+			while{God_Mode_Toggle} do {
+				player setDamage 0;
+				DS_var_Blood = 27500;
+				call DS_fnc_stopBleeding;
+				UiSleep 0.1;
+			};
 		};
 		_norecoil = {
 			params["_toggle"];
