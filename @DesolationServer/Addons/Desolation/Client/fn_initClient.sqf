@@ -31,7 +31,9 @@ DS_AntiGammaFilter ppEffectAdjust [0.02,0.75,2.95,1.66,2,true];
 DS_AntiGammaFilter ppEffectCommit 0;
 
 
-
+//	Disable automatic refueling from gas pumps
+_mapCenter = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+{_x setFuelCargo 0;} foreach (nearestTerrainObjects [_mapCenter, ["FUELSTATION"], 35000]);
 
 {
 	_x call BASE_fnc_createLocation;
