@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 private["_canAutoRun"];
-if ((vehicle player) == player && !underwater player && !surfaceIsWater (getPos player) && (stance player) != "PRONE" && ((player getHitPointDamage 'HitLegs') <= 0)) then {
+if ((vehicle player) == player && !underwater player && !surfaceIsWater (getPos player) && (stance player) == "STAND" && ((player getHitPointDamage 'HitLegs') <= 0)) then {
 	_canAutoRun = true;
 } else {
 	_canAutoRun = false;
