@@ -8,6 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+
+_classname = "dsr_item_vitamins";
+_animation = "Medic";
 _success = {
 	call DS_fnc_onVitamin;
 };
@@ -19,4 +22,4 @@ _failure = {
 	};
 };
 
-["dsr_item_vitamins",true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;

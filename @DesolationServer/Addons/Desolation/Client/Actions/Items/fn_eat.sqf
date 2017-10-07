@@ -10,6 +10,7 @@
  */
 
 params["_classname"];
+_animation = "Medic";
 _success = {
 	[1] call DS_fnc_addPoints;
 	[20] call DS_fnc_onEat;
@@ -22,5 +23,5 @@ _failure = {
 		systemchat _type;
 	};
 };
-[_classname,true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
 

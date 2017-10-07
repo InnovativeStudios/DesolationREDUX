@@ -10,7 +10,7 @@
  */
 params["_classname",["_target",objNull]];
 if(isNull _target) exitWith {};
-
+_animation = "Medic";
 _success = {
 	params["_target"];
 	_state = lifeState _target;
@@ -27,4 +27,4 @@ _failure = {
 		systemchat _type;
 	};
 };
-[_classname,_target,false,_success,_failure] call DS_fnc_useItemTarget;
+[_classname,_target,_animation,false,_success,_failure] call DS_fnc_useItemTarget;

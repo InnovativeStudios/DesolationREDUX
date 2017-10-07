@@ -12,8 +12,8 @@
  
  
 params["_classname",["_target",""]];
+_animation = "Medic";
 if(_target isEqualType "") then {
-
 	_success = {
 		[1] call DS_fnc_addPoints;
 		call DS_fnc_stopBleeding;
@@ -37,7 +37,7 @@ if(_target isEqualType "") then {
 		params["_target"];
 		[1] call DS_fnc_addPoints;
 		[] remoteExecCall ["DS_fnc_stopBleeding",_target];
-		["DS_var_otherBandagedCallbackFnc",["bandage_others",[]]] call DS_fnc_handleCallback;
+		["DS_var_otherBandagedCallbackFnc",_animation,["bandage_others",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
 		private["_type"];
@@ -48,7 +48,7 @@ if(_target isEqualType "") then {
 	};
 	
 	playSound3D["a3\sounds_f\characters\human-sfx\01_medikit1.wss",player];
-	[_classname /*"dsr_item_bandage"*/,_target,true,_success,_failure] call DS_fnc_useItemTarget;
+	[_classname /*"dsr_item_bandage"*/,_target,_animation,true,_success,_failure] call DS_fnc_useItemTarget;
 
 };
  

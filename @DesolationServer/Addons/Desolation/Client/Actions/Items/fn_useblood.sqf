@@ -10,8 +10,8 @@
  */
 
 params["_classname",["_target",""]];
+_animation = "Medic";
 if(_target isEqualType "") then {
-
 	_success = {
 		[15000] call DS_fnc_onBloodReceive;
 		[1] call DS_fnc_addPoints;
@@ -25,7 +25,7 @@ if(_target isEqualType "") then {
 		};
 	};
 
-	[_classname,true,_success,_failure,"dsr_item_bloodbag_empty"] call DS_fnc_useItem;
+	[_classname,_animation,true,_success,_failure,"dsr_item_bloodbag_empty"] call DS_fnc_useItem;
 	
 } else {
 
@@ -45,7 +45,7 @@ if(_target isEqualType "") then {
 		};
 	};
 	
-	[_classname,_target,true,_success,_failure,"dsr_item_bloodbag_empty"] call DS_fnc_useItemTarget;
+	[_classname,_target,_animation,true,_success,_failure,"dsr_item_bloodbag_empty"] call DS_fnc_useItemTarget;
 
 };
  

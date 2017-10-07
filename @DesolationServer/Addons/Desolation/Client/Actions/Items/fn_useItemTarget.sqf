@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_classname","_target",["_removeItem",true],["_oncomplete",{}],["_onfailure",{}],["_replacement",""]];
+params["_classname","_target",["_animation",""],["_removeItem",true],["_oncomplete",{}],["_onfailure",{}],["_replacement",""]];
 
 if(({toLower(_x) == toLower(_classname)} count (magazines player)) > 0) then {
 	if([0,_target] call ds_fnc_doActionTarget) then {

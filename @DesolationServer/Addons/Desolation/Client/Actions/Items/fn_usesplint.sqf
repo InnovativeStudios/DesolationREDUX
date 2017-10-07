@@ -11,6 +11,8 @@
 
 // Kegan made me syntax
 params["_classname",["_target",""]];
+
+_animation = "Medic";
 if(_target isEqualType "") then {
 
 	_success = {
@@ -26,7 +28,7 @@ if(_target isEqualType "") then {
 			systemchat _type;
 		};
 	};
-	[_classname,true,_success,_failure] call DS_fnc_useItem;
+	[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
 	
 } else {
 
@@ -47,6 +49,6 @@ if(_target isEqualType "") then {
 			systemchat _type;
 		};
 	};
-	[_classname,_target,true,_success,_failure] call DS_fnc_useItemTarget;
+	[_classname,_target,_animation,true,_success,_failure] call DS_fnc_useItemTarget;
 
 };

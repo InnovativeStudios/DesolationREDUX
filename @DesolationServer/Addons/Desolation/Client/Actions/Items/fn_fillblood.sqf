@@ -11,6 +11,7 @@
 
  
 params["_classname",["_target",objNull]];
+_animation = "Medic";
 if(isNull _target) then {
 	_success = {
 		[-15000] call DS_fnc_onBloodReceive;
@@ -23,7 +24,7 @@ if(isNull _target) then {
 		};
 	};
 
-	[_classname,true,_success,_failure,"dsr_item_bloodbag_full"] call DS_fnc_useItem;
+	[_classname,_animation,true,_success,_failure,"dsr_item_bloodbag_full"] call DS_fnc_useItem;
 } else {
 	_success = {
 		params["_target"];
@@ -36,5 +37,5 @@ if(isNull _target) then {
 			systemchat _type;
 		};
 	};
-	[_classname,_target,true,_success,_failure,"dsr_item_bloodbag_full"] call DS_fnc_useItemTarget;
+	[_classname,_target,_animation,true,_success,_failure,"dsr_item_bloodbag_full"] call DS_fnc_useItemTarget;
 };

@@ -10,7 +10,7 @@
  */
 
 params["_classname"];
-
+_animation = "Medic";
 _giveNewItem = false;
 _newItem = "";
 if((_classname find '_full' != 0) || (_classname find '_dirty' != 0)) then {
@@ -33,4 +33,4 @@ _failure = {
 		systemchat _type;
 	};
 };
-[_classname,true,_success,_failure,_newItem] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure,_newItem] call DS_fnc_useItem;

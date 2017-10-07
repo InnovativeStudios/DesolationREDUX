@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-params[["_action",0]];
+params[["_action","Medic"]];
 
 _actions = ["Medic","MedicOther","MedicStart"];
 
@@ -27,7 +27,15 @@ _event = (findDisplay 46) displayAddEventHandler ["KeyDown",{
 }];
 _time = diag_tickTime + 6;
 if(vehicle player == player) then {
-	player playActionNow (_actions select _action);
+	if(_this isEqualType "STRING") then {
+		player playActionNow _action;
+	} else {
+		if(_this isEqualType 0) then {
+			player playActionNow (_actions select _action);
+		} else {
+			player playActionNow (_actions select 0);
+		}
+	}
 } else {
 	907149 cutText ["Using item...","PLAIN"];
 };

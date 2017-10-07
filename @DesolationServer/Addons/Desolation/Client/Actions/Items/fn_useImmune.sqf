@@ -11,6 +11,7 @@
 
 // Kegan made me syntax
 params["_classname"];
+_animation = "Medic";
 _success = {
 	DS_var_Immune = true;
 	DS_var_lastImmune = 0;
@@ -22,4 +23,4 @@ _failure = {
 		systemchat _type;
 	};
 };
-[_classname,true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;

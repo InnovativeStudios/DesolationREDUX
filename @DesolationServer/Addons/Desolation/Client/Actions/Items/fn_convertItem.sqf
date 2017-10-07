@@ -1,4 +1,5 @@
 params["_classname","_newItem",["_tool",""]];
+_animation = "Medic";
 
 if((_tool != "") && (({_x == _tool} count(magazines player)) == 0)) exitWith {
 	systemchat ("Oh No! You need: " + _tool)
@@ -15,4 +16,4 @@ _success = {
 	systemchat "Crafted";
 };
 
-[_classname,true,_success,_failure,_newItem] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure,_newItem] call DS_fnc_useItem;

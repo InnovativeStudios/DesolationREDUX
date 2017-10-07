@@ -9,6 +9,8 @@
  * https://www.bistudio.com/monetization/
  */
 
+_classname = "dsr_item_waterpurificationtablets";
+_animation = "Medic";
 _success = {
 	Systemchat "TODO: Action";
 };
@@ -20,4 +22,4 @@ _failure = {
 	};
 };
 
-["dsr_item_waterpurificationtablets",true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;

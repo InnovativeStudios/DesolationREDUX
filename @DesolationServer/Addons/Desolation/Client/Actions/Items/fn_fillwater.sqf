@@ -12,6 +12,7 @@
 params["_classname"];
 
 _class = toLower(_classname);
+_animation = "Medic";
 
 if (_class find "_empty" == -1) exitWith {};
 _data = (toLower(_class) splitString "_");
@@ -29,4 +30,4 @@ _failure = {
 		systemchat _type;
 	};
 };
-[_classname,true,_success,_failure,_newItem] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure,_newItem] call DS_fnc_useItem;

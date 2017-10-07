@@ -8,6 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
+
+_classname = "dsr_item_antibiotic";
+_animation = "Medic";
 _success = {
 	Systemchat "TODO: Action";
 };
@@ -19,4 +22,4 @@ _failure = {
 	};
 };
 
-["dsr_item_antibiotic",true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
