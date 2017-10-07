@@ -5,9 +5,32 @@ _maxVisibleAngle = 45;
 
 _return = false;
 
+//Check if player is in light. TODO: Optimize
 if(sunOrMoon == 0) then {
 	_maxVisibleAngle = 15;
 	_maxVisionDistance = 30;
+	_lamp = (player nearObjects ["Lamps_base_F", 14]);
+	if!(count _lamp isEqualTo 0) then {	
+		_hitpoints = {(getAllHitPointsDamage _x) select 2} forEach _lamp;
+		if!(_hitpoints - [1] isEqualTo []) then {	
+			_maxVisibleAngle = 30;
+			_maxVisionDistance = 55;
+		};
+	};
+};
+
+_fog = fog;
+_fogAltidude = ((fogParams) select 2);
+if (_fog > 0 && ((getPosASL player) select 2) < _fogAltidude) then {
+	_fog = _fog * 35;
+	_maxVisibleAngle = _maxVisibleAngle - _fog;
+	_maxVisionDistance = _maxVisionDistance - _fog;
+};
+_overcast = overcast;
+if (_overcast > 0) then  {
+	_overcast = _overcast * 8;
+	_maxVisibleAngle = _maxVisibleAngle - _overcast;
+	_maxVisionDistance = _maxVisionDistance - _overcast;
 };
 
 
@@ -23,9 +46,15 @@ if(_isWearingGhillie && _isLayingDown && _surfaceIsGrass) then {
 
 
 
+// Make sure values stay positive
+if (_maxVisibleAngle < 5) exitWith {
+	_maxVisibleAngle = 5;
+};
+if (_maxVisionDistance < 10) exitWith {
+	_maxVisionDistance = 10;
+};
 
 
-//TODO: is under light (lamp for example)
 
 if((player distance _zed) <= _maxVisionDistance) then {
 
