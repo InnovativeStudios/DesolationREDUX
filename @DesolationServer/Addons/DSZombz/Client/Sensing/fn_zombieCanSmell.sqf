@@ -16,7 +16,7 @@ if (_wind > 0) then {
 
 
 // Make sure values stay positive
-if (_smellDistance < 3) exitWith {
+if (_smellDistance < 3) then {
 	_smellDistance = 3;
 };
 
