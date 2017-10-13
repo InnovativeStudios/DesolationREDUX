@@ -47,10 +47,10 @@ if(_isWearingGhillie && _isLayingDown && _surfaceIsGrass) then {
 
 
 // Make sure values stay positive
-if (_maxVisibleAngle < 5) exitWith {
+if (_maxVisibleAngle < 5) then {
 	_maxVisibleAngle = 5;
 };
-if (_maxVisionDistance < 10) exitWith {
+if (_maxVisionDistance < 10) then {
 	_maxVisionDistance = 10;
 };
 
