@@ -13260,7 +13260,7 @@ class CfgVehicleSpawns {
 class CfgBuildables {
     class Type1Houses {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa"; 
+		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa";  
 		name = "Type 1 Houses"; 
 		class Buildables {
 			class HouseLvl1 {
@@ -13330,7 +13330,7 @@ class CfgBuildables {
 	};
 	class Stockade {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\object_previews\preview_stockade_wall.paa";  
+		preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart.paa";  
 		name = "Stockade Items";  
 		class Buildables {
 			class StockadeWall {
@@ -13415,7 +13415,7 @@ class CfgBuildables {
 	};
 	class Misc {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";  
+		preview = "\dsr_ui\Assets\object_previews\preview_water_catch.paa";  
 		name = "Miscellaneous";  
 		class Buildables {
 			
@@ -13452,7 +13452,7 @@ class CfgBuildables {
 				name = "Campfire";
 				model = "Land_FirePlace_F";
 				description = "A Simple Campfire";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_campfire.paa";
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
@@ -13464,7 +13464,7 @@ class CfgBuildables {
 				name = "Campfire w/ Tripod";
 				model = "DSR_Object_Campfire_Tripod";
 				description = "A Survival Campfire";
-				preview = "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Pallets_stack_F.jpg";
+				preview = "\dsr_ui\Assets\object_previews\preview_campfire_tripod.paa";
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
@@ -13545,7 +13545,7 @@ class CfgBuildables {
 				model = "DSR_Object_Woodplot_Small";
 				crateObject = "DSR_Object_Woodplot_Small_Preview";
 				description = "A place to farm, once implemented.";
-				preview = "\dsr_ui\Assets\object_previews\preview_anvil&log.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_farmplot_small.paa";
 				condition = "true";
 			};
 			class Farm2 {
@@ -13558,7 +13558,7 @@ class CfgBuildables {
 				model = "DSR_Object_Woodplot_Med";
 				crateObject = "DSR_Object_Woodplot_Med_Preview";
 				description = "A place to farm, once implemented.";
-				preview = "\dsr_ui\Assets\object_previews\preview_anvil&log.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_farmplot_med.paa";
 				condition = "true";
 			};
 			class Farm3 {
@@ -13571,7 +13571,7 @@ class CfgBuildables {
 				model = "DSR_Object_Woodplot_Large";
 				crateObject = "DSR_Object_Woodplot_Large_Preview";
 				description = "A place to farm, once implemented.";
-				preview = "\dsr_ui\Assets\object_previews\preview_anvil&log.paa";
+				preview = "\dsr_ui\Assets\object_previews\preview_farmplot_large.paa";
 				condition = "true";
 			};
 		};
@@ -13580,7 +13580,7 @@ class CfgBuildables {
 class CfgCraftables {
 	class Materials {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
+		preview = "\dsr_items\icons\dsr_item_hardware.paa";
 		name = "Materials"; 
 		class Craftables {
 			class Lumber {
@@ -13596,7 +13596,7 @@ class CfgCraftables {
 				
 				name = "Lumber";
 				description = "General Purpose Lumber.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_items\icons\dsr_item_lumber.paa";
 				condition = "true";
 			};
 			class Plywood {
@@ -13614,7 +13614,7 @@ class CfgCraftables {
 				
 				name = "Plywood";
 				description = "General Purpose Plywood.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_items\icons\dsr_item_plywood.paa";
 				condition = "true";
 			};
 			class ScrapMetal {
@@ -13630,14 +13630,14 @@ class CfgCraftables {
 				
 				name = "Scrap Metal";
 				description = "General Purpose Scrap Metal.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";		
+				preview = "\dsr_items\icons\dsr_item_scrap_metal.paa";	
 				condition = "true";
 			};
 		};
 	};
 	class Tools {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa"; 
+		preview = "\dsr_items\icons\dsr_item_toolbox.paa";
 		name = "Tools"; 
 		class Craftables {
 			class FishingRod {
@@ -13658,8 +13658,8 @@ class CfgCraftables {
 		};
 	};
 	class Food {
-		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";	
+		condition = "false"; 
+		preview = "\dsr_items\icons\dsr_item_tuna.paa";	
 		name = "Food"; 
 		class Craftables {
 			
@@ -13675,7 +13675,7 @@ class CfgCraftables {
 	};
 	class Weapons {
 		condition = "false"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+		preview = "\dsr_weapons\smg\mp5a5\data\ui\w_hkm5_a5_ca.paa"; 
 		name = "Weapons"; 
 		class Craftables {
 			
@@ -13683,7 +13683,7 @@ class CfgCraftables {
 	};
 	class Medical {
 		condition = "true"; 
-		preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+		preview = "\dsr_items\icons\dsr_item_antibiotics.paa";
 		name = "Medical"; 
 		class Craftables {
 			class Splint {
@@ -13698,7 +13698,7 @@ class CfgCraftables {
 				
 				name = "Splint";
 				description = "Fixes broken legs.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_items\icons\dsr_item_splint.paa";
 				condition = "true";
 			};
 			class Bandage {
@@ -13713,7 +13713,7 @@ class CfgCraftables {
 				
 				name = "Makeshift Bandage";
 				description = "Stops bleeding wounds.";
-				preview = "\dsr_ui\Assets\houseLvl1Preview_ca.paa";
+				preview = "\dsr_items\icons\dsr_item_makeshift_bandage.paa";
 				condition = "true";
 			};
 		};

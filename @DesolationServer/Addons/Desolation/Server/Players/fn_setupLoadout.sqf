@@ -10,6 +10,7 @@
  */
 params["_unit",["_equipmentArray",[]],["_defaultData",[]]];
 
+//TODO: Check if player is ready
 if !(_equipmentArray isEqualTo []) then
 {
 	//--- load the chosen loadout
@@ -21,11 +22,24 @@ if !(_equipmentArray isEqualTo []) then
 	removeAllWeapons _unit:
 	removeAllAssignedItems _unit;
 	
+	sleep 1;
 	_unit setUnitLoadout _equipmentArray;
 	_dataHas = getUnitLoadout _unit;
 	if !(_dataHas isEqualTo _equipmentArray) then {
 		diag_log "FATAL ERROR: SET UNIT LOADOUT FAILED";
-		_unit setUnitLoadout _equipmentArray;
+		_loop = true;
+		_cycles = 3;
+		while {_loop} do {
+			if (_cycles > 0) then {
+				_unit setUnitLoadout _equipmentArray;
+				_cycles = _cycles - 1;
+				sleep 2;
+				if (_dataHas isEqualTo _equipmentArray) exitWith {_loop = false;};
+			} else {
+				_loop = false;
+				//TODO: throw player back to lobby (requires _equipmentArray to work before enabling)!
+			};
+		};
 	};
 }
 else
