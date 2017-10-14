@@ -27,7 +27,7 @@ if(_target isEqualType "") then {
 		};
 	};
 
-	[_classname /*"dsr_item_bandage"*/,true,_success,_failure] call DS_fnc_useItem;
+	[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
 	
 } else {
 
