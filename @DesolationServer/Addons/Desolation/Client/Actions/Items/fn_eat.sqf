@@ -10,7 +10,7 @@
  */
 
 params["_classname"];
-_animation = "Medic";
+_animation = "dsr_Act_eat_food";
 _success = {
 	[1] call DS_fnc_addPoints;
 	[20] call DS_fnc_onEat;

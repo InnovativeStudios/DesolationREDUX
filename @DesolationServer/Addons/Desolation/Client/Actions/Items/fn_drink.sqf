@@ -10,7 +10,7 @@
  */
 
 params["_classname"];
-_animation = "Medic";
+_animation = "dsr_act_drink_water";
 _giveNewItem = false;
 _newItem = "";
 if((_classname find '_full' != 0) || (_classname find '_dirty' != 0)) then {
