@@ -12,7 +12,7 @@
 _classname = "dsr_item_painkillers";
 _animation = "Medic";
 _success = {
-	Systemchat "TODO: Action";
+	resetCamShake;
 };
 _failure = {
 	private["_type"];

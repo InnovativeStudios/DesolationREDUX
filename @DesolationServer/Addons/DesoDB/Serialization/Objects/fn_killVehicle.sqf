@@ -21,13 +21,14 @@ _type = "Unknown";
 _weapon = "";
 _distance = 0;
 
+/*
 if(!isNull _killerObj && isPlayer _killerObj) then {
 	_killerUUID = _killerObj getVariable ["cUUID",""];
 	_weapon = "TODO: get weapon"; 
 	_distance = _killerObj distance _playerObj;
 	_type = "Killed";
 };
-
+*/
 
 _request = [PROTOCOL_DBCALL_FUNCTION_DECLARE_OBJECT_DEATH,[
 	PROTOCOL_DBCALL_ARGUMENT_OBJECTUUID,_object_uuid,
