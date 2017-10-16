@@ -130,8 +130,14 @@ if (_objectType > 1) then { // its an building, vehicle or ai - all use createVe
 
 	if(_objectType == 3) then { // vehicle
 		_object setFuel _fuel;
-		_object setFuelCargo _fuelcargo;
-		_object setRepairCargo _repaircargo;
+		
+		if(_fuelcargo isEqualTo 1.0) then {
+			_object setFuelCargo _fuelcargo;
+		};
+		
+		if(_repaircargo isEqualTo 1.0) then {
+			_object setRepairCargo _repaircargo;
+		};
 		
 		if(_locked == 2) then {
 			_object lock true;
