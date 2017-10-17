@@ -996,6 +996,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					_vehicle = _classname createVehicle [0,0,0];
 					_vehicle setPosATL _position;
 					_vehicle setDir _direction;
+					clearItemCargoGlobal _vehicle;
 				
 					["spawnVehicle","",[_vehicle]] call DS_fnc_dbRequest;
 					
