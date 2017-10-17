@@ -45,6 +45,11 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
+		class Client_Actions_Anima {
+			file = "ActionSystem\Client\Actions\Animal";
+			isclient = 1;
+			class gutAnimal {};
+		};
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
@@ -131,6 +136,7 @@ class CfgFunctions
 			class playerAction {};
 			class flipObject {};
 			class itemFill {};
+			class gutAnimal {};
 		};
 	};
 };
@@ -475,6 +481,24 @@ class Cfg3DActions {
 				text = "Sit";
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_sit;";
+			};
+		};
+	};	
+	class Animal {
+		condition = "player == vehicle player && _cursor iskindof 'Animal_Base_F'";
+		
+		renderType = 1;
+	
+		class Actions {
+			class gutAnimal {
+				condition = "!alive _cursor";
+				text = "gutAnimal";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_knife", 1}
+					};
+				};
+				action = "[_cursor,_index,_selection] call ACT_fnc_gutAnimal;";
 			};
 		};
 	};	
