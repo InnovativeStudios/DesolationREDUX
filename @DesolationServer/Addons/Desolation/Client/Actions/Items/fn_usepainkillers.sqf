@@ -12,6 +12,8 @@
 _classname = "dsr_item_painkillers";
 _animation = "Medic";
 _success = {
+	[1] call DS_fnc_addPoints;
+	systemchat "My pain begins to decrease";
 	resetCamShake;
 };
 _failure = {

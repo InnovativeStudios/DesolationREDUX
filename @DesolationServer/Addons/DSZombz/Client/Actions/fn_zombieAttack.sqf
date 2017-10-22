@@ -10,6 +10,9 @@ _standardDamage = {
 		[_damagedBy,selectRandom _selections] call DS_fnc_onHitPartReceived;
 	};
 	addCamShake [5, 1, 50];
+	if (random(1) <= 0.3) then {
+		addCamShake [0.47, 600, 6.2];
+	};
 	["DynamicBlur", 400, [2]] spawn {
 		params ["_name", "_priority", "_effect", "_handle"];
 		while {

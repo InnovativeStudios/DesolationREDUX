@@ -520,6 +520,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			if(vehicle player != player) then {vehicle player setDamage 0;};
 		};
 		_heal = {
+			resetCamShake;
 			DS_var_Blood = 27500;
 			player setDamage 0;
 			call DS_fnc_stopBleeding;
@@ -840,6 +841,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			_target = call LYS_fnc_getSelectedTarget;
 			if(isNull _target) exitWith {};
 			[_target,{
+				resetCamShake;
 				DS_var_Blood = 27500;
 				player setDamage 0;
 				call DS_fnc_stopBleeding;
@@ -996,6 +998,8 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					_vehicle = _classname createVehicle [0,0,0];
 					_vehicle setPosATL _position;
 					_vehicle setDir _direction;
+					clearWeaponCargoGlobal _vehicle;
+					clearMagazineCargoGlobal _vehicle;
 					clearItemCargoGlobal _vehicle;
 				
 					["spawnVehicle","",[_vehicle]] call DS_fnc_dbRequest;
