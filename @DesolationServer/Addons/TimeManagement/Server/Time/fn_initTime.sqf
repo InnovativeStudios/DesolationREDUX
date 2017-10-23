@@ -47,10 +47,10 @@ diag_log format ["TimeManagement > INFO: Date = %1", date];
 
 if(daytime > _nightStart || daytime < _dayStart) then {
 	setTimeMultiplier _nightMult;
-	[DS_AntiGammaFilter,true] remoteExec ["ppEffectEnable", -2, true];
+	//[DS_AntiGammaFilter,true] remoteExec ["ppEffectEnable", -2, true];
 } else {
 	setTimeMultiplier _dayMult;
-	[DS_AntiGammaFilter,false] remoteExec ["ppEffectEnable", -2, true];
+	//[DS_AntiGammaFilter,false] remoteExec ["ppEffectEnable", -2, true];
 };
 
 while{true} do {
