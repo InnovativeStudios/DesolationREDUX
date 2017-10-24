@@ -459,10 +459,16 @@ class Cfg3DActions {
 		class Actions {
 			
 			class Lift {
-				condition = "true";
+				condition = "(typeof _cursor find 'DSR_Object_Storage_' == -1)";
 				text = "Lift";
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_liftObject;"; // our custom lift function will redirect the object to the correct lift system (building / item)
+			};
+			class LiftCrate {
+				condition = "!(typeof _cursor find 'DSR_Object_Storage_' == -1) && ([_cursor] call DS_fnc_isBuildingOwner)";
+				text = "Lift";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_liftObject;";
 			};
 			class Delete {
 				condition = "!(typeof _cursor find 'Preview2' == -1)";
@@ -521,7 +527,7 @@ class Cfg3DActions {
 		};
 	};
 	class NonLiftables {
-		condition = "player == vehicle player";
+		condition = "player == vehicle player && (!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || (!(str(_cursor) find 'fuel' == -1) && !(str(_cursor) find 'station' == -1) && !(str(_cursor) find 'feed' == -1)))";
 		
 		renderType = 1;
 	
