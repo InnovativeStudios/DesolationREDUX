@@ -527,7 +527,7 @@ class Cfg3DActions {
 		};
 	};
 	class NonLiftables {
-		condition = "player == vehicle player && (!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || (!(str(_cursor) find 'fuel' == -1) && !(str(_cursor) find 'station' == -1) && !(str(_cursor) find 'feed' == -1)))";
+		condition = "player == vehicle player && (!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || !(str(_cursor) find 'feed' == -1) || (!(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1)))";
 		
 		renderType = 1;
 	
@@ -553,7 +553,7 @@ class Cfg3DActions {
 				action = "[_cursor] call ACT_fnc_getWater;";
 			};
 			class GetFuel {
-				condition = "!(str(_cursor) find 'fuel' == -1) && !(str(_cursor) find 'station' == -1) && !(str(_cursor) find 'feed' == -1)";
+				condition = "!(str(_cursor) find 'feed' == -1) || (!(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1))";
 				text = "Get Fuel";
 				class Parameters {
 					requiredItems[] = {
