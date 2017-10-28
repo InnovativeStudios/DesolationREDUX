@@ -26,14 +26,14 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 					_gradient = [getPos player, getDir player] call BIS_fnc_terrainGradAngle;
 					if(_gradient <= 15 && _gradient >= -15) then {
 						player playAction "FastF";
-						sleep 0.537;
+						sleep 0.523;
 					} else {
 						if(_gradient >= 40 || _gradient <= -40) then {
 							player playAction "WalkF";
-							sleep 2.861;
+							sleep 2.847;
 						} else {
 							player playAction "SlowF";
-							sleep 0.804;
+							sleep 0.79;
 						};
 					};
 					_interuptAutoRun = (inputAction "LeanLeft")+(inputAction "LeanRight")+(inputAction "MoveLeft")+(inputAction "MoveRight")+(inputAction "Stand")+(inputAction "Crouch")+(inputAction "Prone")+(inputAction "Salute")+(inputAction "SitDown")+(inputAction "MoveUp")+(inputAction "MoveDown")+(inputAction "AdjustUp")+(inputAction "AdjustDown")+(inputAction "AdjustRight")+(inputAction "AdjustLeft")+(inputAction "TactTemp")+(inputAction "TactToggle")+(inputAction "TactShort");
