@@ -27,8 +27,6 @@ if(count(_sourcesinfo) > 0) then {
 	DS_var_Blood = DS_var_Blood - _tickLoss;
 	_bleeding = true;
 	
-	//Start Pain
-	addCamShake [0.33, 1e10, 6];
 };
 
 if(DS_var_Blood != 27500) then {
