@@ -273,6 +273,8 @@ class CfgFunctions
 			class usesplint {};
 			class useCure {};
 			class useImmune {};
+			class useZiptie {};
+			class openZiptie {};
 		};
 		class Client_Interface {
 			file = "Desolation\Client\Interface";

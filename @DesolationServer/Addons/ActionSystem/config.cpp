@@ -77,6 +77,8 @@ class CfgFunctions
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
 			isclient = 1;
+			class release {};
+			class ziptie {};
 			class bandage {};
 			class giveBlood {};
 			class applySplint {};
@@ -485,12 +487,38 @@ class Cfg3DActions {
 		};
 	};	
 	class Players {
-		condition = "_cursor in allPlayers";
+		condition = "_cursor in allPlayers && player == vehicle player";
 		
 		renderType = 1;
 		
 		class Actions {
 			
+			class Release {
+				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				text = "Open Ziptie";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Knife", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_release;";
+			};
+			class OpenInventory {
+				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0) || (animationState _cursor find 'amovpercmstpssurwnondnon' == 0)"; // check if ziptied or hands up
+				text = "Open Inventory";
+				class Parameters {};
+				action = "player action ['Gear', _cursor];";
+			};
+			class Ziptie {
+				conditions = "(animationState _cursor find 'amovpercmstpssurwnondnon' == 0)";
+				text = "Ziptie";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Ziptie", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_ziptie;";
+			};
 			class Bandage {
 				condition = "true"; //todo cursor is bleeding check
 				text = "Bandage";
@@ -515,7 +543,7 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
-				condition = "true"; //todo broken leg check
+				condition = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' != 0)"; //todo broken leg check (remove splint usage is for more space in menu!)
 				text = "Apply Splint";
 				class Parameters {
 					requiredItems[] = {
