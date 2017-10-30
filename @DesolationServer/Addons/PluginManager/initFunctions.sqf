@@ -125,7 +125,7 @@ _fncCompile = {
 				//--- Full header
 				default {
 					_headerDefault
-				}
+				};
 			};
 			_debugMessage = "Log: [Functions]%1 | %2";
 			if (_fncFinal) then {
@@ -140,7 +140,7 @@ _fncCompile = {
 			compileFinal format ["%1_fsm = _this execfsm '%2'; %1_fsm",_fncVar,_fncPath];
 		};
 
-		default {0}
+		default {0};
 	};
 };
 
