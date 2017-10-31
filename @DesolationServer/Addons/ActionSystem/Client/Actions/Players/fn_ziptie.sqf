@@ -13,6 +13,6 @@
  
 params["_cursor","_index"];
 
-["dsr_item_ziptie",_cursor] call DS_fnc_useZiptie;
+["DSR_Item_Ziptie",_cursor] call DS_fnc_useZiptie;
 
 true

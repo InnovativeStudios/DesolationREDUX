@@ -13,6 +13,6 @@
  
 params["_cursor","_index"];
 
-["dsr_item_knife",_cursor] call DS_fnc_openZiptie;
+["DSR_Item_Knife",_cursor] call DS_fnc_openZiptie;
 
 true

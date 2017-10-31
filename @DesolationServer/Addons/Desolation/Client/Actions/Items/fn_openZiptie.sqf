@@ -15,7 +15,8 @@ _animation = "MedicOther";
 if (_target isEqualType "") then {
 	
 	_success = {
-		
+	
+		player setVariable ["SVAR_DS_var_isZiptied",false,true];
 		player PlayMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out"; // release yourself with a knife in inventory (uses client files)
 		[1] call DS_fnc_addPoints;
 		
@@ -26,7 +27,7 @@ if (_target isEqualType "") then {
 		systemchat _type;
 	};
 
-	[_classname,"",false,_success,_failure] call DS_fnc_useItem; // keep animation as ( "" ) !!!
+	[_classname,"",false,_success,_failure] call DS_fnc_useItem; // keep _animation as ( "" ) !!!
 	
 	
 } else {
@@ -38,6 +39,8 @@ if (_target isEqualType "") then {
 		params["_target"];
 		
 		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", 0]; // playmovenow because others wont work (release from ziptie animation back to normal)
+		_target setVariable ["SVAR_DS_var_isZiptied",false,true];
+		
 	};
 	_failure = {
 		private["_type"];
