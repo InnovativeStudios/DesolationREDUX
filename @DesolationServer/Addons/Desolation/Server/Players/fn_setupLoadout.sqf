@@ -14,12 +14,12 @@ params["_unit",["_equipmentArray",[]],["_defaultData",[]]];
 if !(_equipmentArray isEqualTo []) then
 {
 	//--- load the chosen loadout
-	removeHeadgear _unit:
+	removeHeadgear _unit;
 	removeGoggles _unit;
 	removeVest _unit;
 	removeBackpack _unit;
 	removeUniform _unit;
-	removeAllWeapons _unit:
+	removeAllWeapons _unit;
 	removeAllAssignedItems _unit;
 	
 	sleep 1;
@@ -41,9 +41,7 @@ if !(_equipmentArray isEqualTo []) then
 			};
 		};
 	};
-}
-else
-{
+} else {
 	removeHeadgear _unit;
 	removeUniform _unit;
 	removeGoggles _unit;

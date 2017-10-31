@@ -13,6 +13,7 @@ if(_damage > 0.1) then {
 			
 			// on shot visual effects
 			addCamShake [5, 1, 50];
+			addCamShake [0.45, 500, 6];
 			["DynamicBlur", 400, [2]] spawn {
 				params ["_name", "_priority", "_effect", "_handle"];
 				while {
@@ -50,14 +51,17 @@ if(_damage > 0.1) then {
 			};
 		} else {
 			if(_shooter isKindOf "LandVehicle") then {
+				addCamShake [0.5, 900, 8];
 				_bloodLoss = _damage * 825;
 				DS_var_Blood = DS_var_Blood - _bloodLoss;
 			} else {
 				_fallSpeed = (velocity _unit) select 2;
 				if(_fallSpeed < -2) then {
+					addCamShake [0.3, 300, 5.5];
 					_bloodLoss = _damage * 750;
 					DS_var_Blood = DS_var_Blood - _bloodLoss;
 				} else {
+					addCamShake [0.4, 700, 7];
 					_bloodLoss = _damage * 4500;
 					DS_var_Blood = DS_var_Blood - _bloodLoss;
 				};
@@ -68,6 +72,7 @@ if(_damage > 0.1) then {
 		DS_var_Blood = DS_var_Blood - _bloodLoss;
 	};
 	if(_selectionName == "legs") then {
+		addCamShake [0.4, 500, 6.5];
 		if(!isNil {_damage}) then {
 			if(_damage > 0.3) then {
 				[_unit] spawn {
@@ -78,6 +83,7 @@ if(_damage > 0.1) then {
 		};
 	};
 	if(_selectionName == "head") then {
+		addCamShake [0.5, 1300, 8];
 		if(lifeState _unit != "INCAPACITATED") then {
 			[floor(5 + random(15))] spawn ds_fnc_knockOut;
 		};

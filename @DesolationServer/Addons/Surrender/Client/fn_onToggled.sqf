@@ -8,10 +8,16 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-private["_canAutoRun"];
-if ((vehicle player) == player && !underwater player && !surfaceIsWater (getPos player) && (stance player) == "STAND" && ((player getHitPointDamage 'HitLegs') <= 0) && currentWeapon player == "") then {
-	_canAutoRun = true;
-} else {
-	_canAutoRun = false;
+
+_found = false;
+if(toLower(["Enabled","SUR"] call BASE_fnc_getCfgValue) == "true") then {
+	if(vehicle player == player && alive player) then {
+		if(animationState player == "amovpercmstpssurwnondnon") then {
+			player switchMove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
+		} else {
+			player playAction "Surrender";
+		};
+		_found = true;
+	};
 };
-_canAutoRun
+_found;

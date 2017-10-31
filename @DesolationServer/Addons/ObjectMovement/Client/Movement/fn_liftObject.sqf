@@ -108,7 +108,6 @@ if([_object] call OM_fnc_canLift) then {
 					if(_objectZVelocity != 0) then {
 						_vDif = [0,0,_objectZVelocity];
 						_vDif = _vDif vectorMultiply 0.01;
-						systemchat str _vDif;
 						_curAttach = player getVariable ["attachVector",player worldToModel (ASLtoAGL getPosASL _object)];
 						_newAttach = _curAttach vectorAdd _vDif;
 						detach _object;

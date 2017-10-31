@@ -36,5 +36,11 @@ for "_i" from 1 to _time do {
 DS_var_lastKnockout = diag_tickTime;
 player setUnconscious false;
 if(!alive player) exitWith {};
-player switchMove "unconsciousoutprone";
+
+_isZiptied = player getVariable "SVAR_DS_var_isZiptied";
+if (_isZiptied && !isNil {_isZiptied}) then {
+	player switchMove "Acts_AidlPsitMstpSsurWnonDnon_loop";
+} else {
+	player switchMove "unconsciousoutprone";
+};
 //--- TODO: sync the switchmove

@@ -17,6 +17,7 @@ if(_target isEqualType "") then {
 	_success = {
 		[1] call DS_fnc_addPoints;
 		call DS_fnc_stopBleeding;
+		systemChat "I am no longer bleeding";
 		["DS_var_selfBandagedCallbackFnc",["bandage_self",[]]] call DS_fnc_handleCallback;
 	};
 	_failure = {
@@ -27,7 +28,7 @@ if(_target isEqualType "") then {
 		};
 	};
 
-	[_classname /*"dsr_item_bandage"*/,true,_success,_failure] call DS_fnc_useItem;
+	[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
 	
 } else {
 

@@ -77,6 +77,8 @@ class CfgFunctions
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
 			isclient = 1;
+			class release {};
+			class ziptie {};
 			class bandage {};
 			class giveBlood {};
 			class applySplint {};
@@ -459,10 +461,16 @@ class Cfg3DActions {
 		class Actions {
 			
 			class Lift {
-				condition = "true";
+				condition = "(typeof _cursor find 'DSR_Object_Storage_' == -1)";
 				text = "Lift";
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_liftObject;"; // our custom lift function will redirect the object to the correct lift system (building / item)
+			};
+			class LiftCrate {
+				condition = "!(typeof _cursor find 'DSR_Object_Storage_' == -1) && ([_cursor] call DS_fnc_isBuildingOwner)";
+				text = "Lift";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_liftObject;";
 			};
 			class Delete {
 				condition = "!(typeof _cursor find 'Preview2' == -1)";
@@ -479,12 +487,38 @@ class Cfg3DActions {
 		};
 	};	
 	class Players {
-		condition = "_cursor in allPlayers";
+		condition = "_cursor in allPlayers && player == vehicle player";
 		
 		renderType = 1;
 		
 		class Actions {
 			
+			class Release {
+				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				text = "Open Ziptie";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Knife", 1}
+					};
+				};
+				action = "[_cursor,_index] call ACT_fnc_release;";
+			};
+			class OpenInventory {
+				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				text = "Open Inventory";
+				class Parameters {};
+				action = "player action ['Gear', _cursor];";
+			};
+			class Ziptie {
+				conditions = "(animationState _cursor find 'amovpercmstpssurwnondnon' == 0)"; // you can only add ziptie if play has hands up
+				text = "Ziptie player";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Ziptie", 1}
+					};
+				};
+				action = "[_cursor,_index] call ACT_fnc_ziptie;";
+			};
 			class Bandage {
 				condition = "true"; //todo cursor is bleeding check
 				text = "Bandage";
@@ -509,7 +543,7 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
-				condition = "true"; //todo broken leg check
+				condition = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' != 0)"; //todo broken leg check (remove splint usage is for more space in 3d menu!)
 				text = "Apply Splint";
 				class Parameters {
 					requiredItems[] = {
@@ -521,7 +555,7 @@ class Cfg3DActions {
 		};
 	};
 	class NonLiftables {
-		condition = "player == vehicle player";
+		condition = "player == vehicle player && (!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || !(str(_cursor) find 'feed' == -1) || (!(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1)))";
 		
 		renderType = 1;
 	
@@ -547,7 +581,7 @@ class Cfg3DActions {
 				action = "[_cursor] call ACT_fnc_getWater;";
 			};
 			class GetFuel {
-				condition = "!(str(_cursor) find 'fuel' == -1) && !(str(_cursor) find 'station' == -1) && !(str(_cursor) find 'feed' == -1)";
+				condition = "!(str(_cursor) find 'feed' == -1) || (!(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1))";
 				text = "Get Fuel";
 				class Parameters {
 					requiredItems[] = {

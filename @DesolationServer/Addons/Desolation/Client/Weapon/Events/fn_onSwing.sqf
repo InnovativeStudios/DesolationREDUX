@@ -11,7 +11,9 @@ _vehicleDamage = _functionData select 3;
 _zombieDamage = _functionData select 4;
 
 _tree = objNull;
-_rocks = objNull;
+_rock = objNull;
+
+
 
 if(_canHitTrees) then {
 	_objects = lineIntersectsWith [eyePos player, AGLToASL (player modelToWorld [0, 3, 0]), player, objNull, true]; 
@@ -30,11 +32,29 @@ if(_canHitTrees) then {
 		false 
 	} count [" t_"," bo_t_"," str_"," Smrk_"," les_"," brg_"];
 };
-if(_canHitRocks) then {
 
+if(_canHitRocks) then {
+	_objects = lineIntersectsWith [eyePos player, AGLToASL (player modelToWorld [0, 3, 0]), player, objNull, true]; 
+	{
+		_rockName = _x;
+		{
+			_modelName = toLower (str _x);
+			if ((_modelName find _rockName) != -1) exitWith {
+				_rock = _x;
+				true
+			};
+			false
+		} count _objects;
+		
+		if !(isNull _rock) exitWith {true};
+		false
+	} count ["r2_","r_","bluntstone_","bluntrock_","sharpstone_","sharprock_","cliff_stone_","lavastone_","lavaboulder_","lavastonecluster_","stone4_","rocks_","rockn_"];
 };
 
-if(isNull _tree && isNull _rocks) then {
+
+
+
+if(isNull _tree && isNull _rock) then {
 	_closest = cursorTarget; 
 	if(isNull _closest) then {breakTo "DoneSwing";};
 	if(player distance _closest > 3) then {breakTo "DoneSwing";};
@@ -58,6 +78,10 @@ if(isNull _tree && isNull _rocks) then {
 		};
 	};
 };
+
+
+
+
 if(!isNull _tree) then {
 	
 	(boundingBoxReal _tree) params ["_min","_max"];
@@ -115,9 +139,45 @@ if(!isNull _tree) then {
 		};
 	};		
 };
-if(!isNull _rocks) then {
 
+if(!isNull _rock) then {
+	
+
+	_currentLevel = player getVariable ["PVAR_DS_Progression_Resource_Level",0];
+	_chance = (0.1) + ((_currentLevel) * (0.07));
+	_currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _rock], 0];
+	
+	missionNamespace setVariable [format["CurrentSwing_%1", _rock], (_currentSwing + 1)];
+	
+	
+
+	if (random(1) <= _chance) then
+	{
+		playSound3D ["dsr_music\Effects\rockcrack.ogg", player,false,eyepos player,3,1,35];
+		[_rock] spawn 
+		{
+			params["_rock"];
+			
+			[2] call DS_fnc_addPoints;
+			// ["DS_var_rockMinedCallbackFnc",["rocks_mined",[_rock]]] call DS_fnc_handleCallback;
+			
+			uiSleep 1;
+
+
+			private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _rock], 0];
+			if (_currentSwing < 0) then {breakTo "DoneSwing";};
+			
+			private _position = getPosATL player;
+			private _lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
+			_lootHolder setPosATL _position;
+			_lootHolder addMagazineCargoGlobal ["dsr_item_stones", 1];
+		};
+	} else {
+		_randomSound = selectRandom ["1","2","3","4"];
+		playSound3D ["dsr_music\Effects\pickaxe" +_randomSound + ".ogg", player,false,eyepos player,3,1,25];
+	};
 };
+
 if(_weaponClass == "DSR_Melee_Fishingrod") then {
 	
 	//TODO: Make player fish xd
