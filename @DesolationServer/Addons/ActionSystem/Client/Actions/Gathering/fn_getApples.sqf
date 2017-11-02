@@ -13,7 +13,7 @@
  
 params["_cursor"];
 
-if ([0] call ACT_fnc_doAnimation) then {
+if ([1] call ACT_fnc_doAnimation) then {
 	if (random(1) <= 0.1) then {
 		systemChat "Apples found";
 		[_cursor, player, "Search Apples",3] remoteExec ["ACT_fnc_gather", 2];
