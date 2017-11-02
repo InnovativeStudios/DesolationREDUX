@@ -144,7 +144,7 @@ class CfgFunctions
 
 class Cfg3DActions {
 	class Gathering {
-		condition = "player == vehicle player";
+		condition = "player == vehicle player && !(str(_cursor) find 't_malus1s' == -1)";
 		
 		renderType = 1;
 		
