@@ -45,6 +45,11 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
+		class Client_Actions_Gathering {
+			file = "ActionSystem\Client\Actions\Gathering";
+			isclient = 1;
+			class getApples {};
+		};
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
@@ -138,6 +143,25 @@ class CfgFunctions
 };
 
 class Cfg3DActions {
+	class Gathering {
+		condition = "player == vehicle player";
+		
+		renderType = 1;
+		
+		class Actions {
+			class GatherApple {
+				condition = "!(str(_cursor) find 't_malus1s' == -1)";
+				text = "Find Apples";
+				class Parameters {
+					requiredItems[] = {};
+					returnedItems[] = {
+						{"DSR_Item_redApple",1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_getApples;";
+			};
+		};
+	};
 	class Vehicles {
 		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
 		
