@@ -46,17 +46,28 @@ if !(_equipmentArray isEqualTo []) then
 	removeUniform _unit;
 	removeGoggles _unit;
 	
-	_unit addUniform (_defaultData select 0);
-	_unit addHeadgear (_defaultData select 1);
 	
+	_uniform = (["Uniform","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_uniform = selectRandom _uniform;
+	if!(_uniform isEqualTo []) then {
+		_unit addUniform _uniform;
+	};
 	
-	_vest = ["Vest","DS"] call BASE_fnc_getCfgValue;
-	if(_vest != "") then {
+	_headgear = (["Headgear","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_headgear = selectRandom _headgear;
+	if!(_headgear isEqualTo []) then {
+		_unit addHeadgear _headgear;
+	};
+	
+	_vest = (["Vest","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_vest = selectRandom _vest;
+	if!(_vest isEqualTo []) then {
 		_unit addVest _vest;
 	};
 	
-	_backpack = ["Backpack","DS"] call BASE_fnc_getCfgValue;
-	if(_backpack != "") then {
+	_backpack = (["Backpack","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_backpack = selectRandom _backpack;
+	if!(_backpack isEqualTo []) then {
 		_unit addBackpack _backpack;
 	};
 	
