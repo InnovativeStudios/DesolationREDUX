@@ -13,7 +13,7 @@ _found = false;
 if(toLower(["Enabled","SUR"] call BASE_fnc_getCfgValue) == "true") then {
 	if(vehicle player == player && alive player) then {
 		if(animationState player == "amovpercmstpssurwnondnon") then {
-			[player, "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove",-2];
+			[player, "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"] remoteExecCall ["switchMove",-2];
 		} else {
 			player playAction "Surrender";
 		};
