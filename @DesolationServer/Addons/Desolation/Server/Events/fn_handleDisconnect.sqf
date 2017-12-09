@@ -22,47 +22,50 @@ if(alive _unit) then {
 
 
     if !(isNil {_unit getVariable "DS_var_inCombat"}) then {
-        diag_log format ["Desolation> Player %1 combat logged!", _unitName];
-    
-       //  _unit setVariable ["DS_svar_combatLogged", true, true];
+        diag_log format ["Desolation> PLAYER %1 COMBAT LOGGED!!", _unitName];
+        //_unit setVariable ["SVAR_DS_svar_combatLogged", true, true];
+		
+		{
+			_unitPos = getposATL _unit;
+			_unitLoadout = getunitloadout _unit;
+		
+			_group = createGroup Civilian;
+			_ai = _group createUnit ["C_man_1",_unitPos,[],0,"FORM"];
+			
+			removeFromRemainsCollector [_ai];
+			
+			_ai setBehaviour "CARELESS";
+			_ai disableAI "AUTOTARGET";
+			_ai disableAI "MOVE";
+			_ai setUnitPos "UP";
+			
+			// set ai gear
+			removeGoggles _ai;
+			removeAllWeapons _ai;
+			removeVest _ai;
+			removeUniform _ai;
+			removeHeadgear _ai;
+			removeBackpack _ai;
+			removeAllAssignedItems _ai;
+			removeallitems _ai;
         
-       _unitPos = getposATL _unit;
-       _unitLoadout = getunitloadout _unit;
-       
-       _group = createGroup Civilian;
-       _ai = _group createUnit ["C_man_1",_unitPos,[],0,"FORM"];
-
-
-       removeFromRemainsCollector [_ai];
-       _ai setBehaviour "CARELESS";
-       _ai disableAI "AUTOTARGET";
-       _ai disableAI "MOVE";
-       _ai disableAI "WEAPONAIM";
-       _ai setUnitPos "UP";
-       
-       // set ai gear
-        removeGoggles  _ai;
-        removeAllWeapons _ai;
-        removeVest _ai;
-        removeUniform _ai;
-        removeHeadgear _ai;
-        removeBackpack _ai;
-        removeAllAssignedItems _ai;
-        removeallitems _ai;
+			_ai setUnitLoadout _unitLoadout;
         
-        _ai setUnitLoadout _unitLoadout;
-       
-       // change animation??? (use remote exec)???
-        _ai playMoveNow "ApanPknlMstpSnonWnonDnon_G01";
+			// change animation??? (use remote exec)???
+			_ai playMoveNow "ApanPknlMstpSnonWnonDnon_G01";
 
-       // remove ai after animation stops
-       uisleep 30;
-       if (alive _ai) then {
-            deleteVehicle _ai;
-            deletegroup _group;
-        } else {
-            // kill player / create new profile.
-        };
+			[_ai,_group] spawn {
+				params["_ai","_group"];
+				uiSleep 30;
+				// remove ai after animation stops
+				if (alive _ai) then {
+					deleteVehicle _ai;
+					deletegroup _group;
+				} else {
+					// kill player / create new profile.
+				};
+			};
+        } remoteExecCall ["bis_fnc_call", 0];
     };
     
 	diag_log ("Desolation> Saving Disconnected Player (" + _unitName + ")");
