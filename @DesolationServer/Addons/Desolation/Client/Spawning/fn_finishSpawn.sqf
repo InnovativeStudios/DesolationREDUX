@@ -22,6 +22,7 @@ if(_goggles != "") then {
 	};
 };
 
+player setVariable ["DS_var_isPlaying", true, true];
 [player] remoteExec ["DS_fnc_requestOwned",2];
 
 player addRating 9999999;

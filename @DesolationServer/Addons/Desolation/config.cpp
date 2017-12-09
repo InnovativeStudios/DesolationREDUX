@@ -66,6 +66,10 @@ class CfgPluginEvents {
 				type = "Killed";
 				function = "DS_fnc_Killed";
 			};
+			class DS_FiredNear {
+				type = "FiredNear";
+				function = "DS_fnc_FiredNear";
+			};
 		};
 	};
 	class MissionEventsServer {

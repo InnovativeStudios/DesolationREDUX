@@ -27,9 +27,32 @@ _ctrl ctrlSetText "Suicide";
 [_ctrl] spawn {
 	disableserialization;
 	params["_ctrl"];
-	_ctrl ctrlEnable true;
+	if (!isNil {player getVariable "DS_var_isPlaying"}) then {_ctrl ctrlEnable true;} else {_ctrl ctrlEnable false;};
 };
 _ctrl = _display displayCtrl 1002;
 _ctrl ctrlEnable false;
 _ctrl = _display displayCtrl 1010;
 _ctrl ctrlEnable false;
+
+
+
+// ABORT BUTTON
+_abortBtn = _display displayCtrl 104;
+_abortBtn ctrlEnable false;
+
+[_abortBtn] spawn {
+	disableserialization;
+	params["_abortBtn"];
+	_time = 10;
+	if !(isNil {player getVariable "DS_var_inCombat"}) then {_time = 30;};
+	while {alive player && _time > 0} do {
+		_abortBtn ctrlSetText format ["Please wait: %1", _time];
+		_abortBtn ctrlEnable false;
+		
+		_time = _time - 1;
+		sleep 1;
+	};
+	
+	_abortBtn ctrlEnable true;
+	_abortBtn ctrlSetText "Abort";
+};
