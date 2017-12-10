@@ -23,12 +23,12 @@ if(alive _unit) then {
 
     if !(isNil {_unit getVariable "DS_var_inCombat"}) then {
         diag_log format ["Desolation> PLAYER %1 COMBAT LOGGED!!", _unitName];
-        //_unit setVariable ["SVAR_DS_svar_combatLogged", true, true];
 		
 		[_unit] spawn {
 			params["_unit"];
-			
 			_netId = netId _unit;
+			diag_log format ["%1", _netId]; 
+			
 			_unitPos = getposATL (objectFromNetId _netId);
 			_unitLoadout = getunitloadout (objectFromNetId _netId);
 		
@@ -61,7 +61,7 @@ if(alive _unit) then {
 				deleteVehicle _ai;
 				deletegroup _group;
 			} else {
-				// kill player / create new profile.
+				_unit setVariable ["SVAR_DS_var_isDead", true, true];
 			};
 		};
 	};

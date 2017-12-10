@@ -14,6 +14,11 @@ params["_unit",["_goggles",""]];
 
 selectPlayer _unit;
 
+if !(isNil {player getVariable "svar_ds_var_isDead"}) exitWith {
+	player setDamage 1;
+	hideObject player;
+};
+
 if(_goggles != "") then {
 	_goggles spawn {
 		uiSleep 2;
