@@ -28,6 +28,7 @@ if(alive _unit) then {
 			params["_unit"];
 			_netId = netId _unit;
 			
+			_unitDir = getDir (objectFromNetId _netId);
 			_unitPos = getposATL (objectFromNetId _netId);
 			_unitLoadout = getunitloadout (objectFromNetId _netId);
 		
@@ -36,6 +37,7 @@ if(alive _unit) then {
 			
 			removeFromRemainsCollector [_ai];
 			
+			_ai setDir _unitDir;
 			_ai setBehaviour "CARELESS";
 			_ai disableAI "AUTOTARGET";
 			_ai disableAI "MOVE";
