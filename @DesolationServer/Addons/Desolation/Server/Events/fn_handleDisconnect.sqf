@@ -25,9 +25,12 @@ if(alive _unit) then {
         diag_log format ["Desolation> PLAYER %1 COMBAT LOGGED!!", _unitName];
         //_unit setVariable ["SVAR_DS_svar_combatLogged", true, true];
 		
-		{
-			_unitPos = getposATL _unit;
-			_unitLoadout = getunitloadout _unit;
+		[_unit] spawn {
+			params["_unit"];
+			
+			_netId = netId _unit;
+			_unitPos = getposATL (objectFromNetId _netId);
+			_unitLoadout = getunitloadout (objectFromNetId _netId);
 		
 			_group = createGroup Civilian;
 			_ai = _group createUnit ["C_man_1",_unitPos,[],0,"FORM"];
@@ -51,22 +54,17 @@ if(alive _unit) then {
         
 			_ai setUnitLoadout _unitLoadout;
         
-			// change animation??? (use remote exec)???
-			_ai playMoveNow "ApanPknlMstpSnonWnonDnon_G01";
+			[_ai,"ApanPknlMstpSnonWnonDnon_G01"] remoteExecCall ["switchMove",0];
 
-			[_ai,_group] spawn {
-				params["_ai","_group"];
-				uiSleep 30;
-				// remove ai after animation stops
-				if (alive _ai) then {
-					deleteVehicle _ai;
-					deletegroup _group;
-				} else {
-					// kill player / create new profile.
-				};
+			uiSleep 30;
+			if (alive _ai) then {
+				deleteVehicle _ai;
+				deletegroup _group;
+			} else {
+				// kill player / create new profile.
 			};
-        } remoteExecCall ["bis_fnc_call", 0];
-    };
+		};
+	};
     
 	diag_log ("Desolation> Saving Disconnected Player (" + _unitName + ")");
 

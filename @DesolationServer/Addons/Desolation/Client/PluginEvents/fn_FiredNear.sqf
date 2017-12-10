@@ -6,7 +6,7 @@ if(!alive _unit) exitWith {false};
 [_unit] spawn {
 	params["_unit"];
 	_unit setVariable ["DS_var_inCombat", true, true];
-	sleep 60;
+	uiSleep 60;
 	_unit setVariable ["DS_var_inCombat", nil, true];
 };
 
