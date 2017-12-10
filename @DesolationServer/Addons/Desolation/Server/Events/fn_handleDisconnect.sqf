@@ -27,7 +27,6 @@ if(alive _unit) then {
 		[_unit] spawn {
 			params["_unit"];
 			_netId = netId _unit;
-			diag_log format ["%1", _netId]; 
 			
 			_unitPos = getposATL (objectFromNetId _netId);
 			_unitLoadout = getunitloadout (objectFromNetId _netId);
