@@ -45,11 +45,6 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
-		class Client_Actions_Gathering {
-			file = "ActionSystem\Client\Actions\Gathering";
-			isclient = 1;
-			class getApples {};
-		};
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
@@ -105,6 +100,7 @@ class CfgFunctions
 			class getFuel {};
 			class getWater {};
 			class deconstruct {};
+			class toggleGenerator {};
 		};
 		class Client_Actions_Sit {
 			file = "ActionSystem\Client\Actions\Sit";
@@ -138,30 +134,12 @@ class CfgFunctions
 			class playerAction {};
 			class flipObject {};
 			class itemFill {};
+			class useGenerator {};
 		};
 	};
 };
 
 class Cfg3DActions {
-	class Gathering {
-		condition = "player == vehicle player && !(str(_cursor) find 't_malus1s' == -1)";
-		
-		renderType = 1;
-		
-		class Actions {
-			class GatherApple {
-				condition = "!(str(_cursor) find 't_malus1s' == -1)";
-				text = "Find Apples";
-				class Parameters {
-					requiredItems[] = {};
-					returnedItems[] = {
-						{"DSR_Item_redApple",1}
-					};
-				};
-				action = "[_cursor] call ACT_fnc_getApples;";
-			};
-		};
-	};
 	class Vehicles {
 		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
 		
@@ -525,10 +503,10 @@ class Cfg3DActions {
 						{"DSR_Item_Knife", 1}
 					};
 				};
-				action = "[_cursor,_index] call ACT_fnc_release;";
+				action = "[_cursor] call ACT_fnc_release;";
 			};
 			class OpenInventory {
-				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				conditions = "true";//"(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
 				text = "Open Inventory";
 				class Parameters {};
 				action = "player action ['Gear', _cursor];";
@@ -541,7 +519,7 @@ class Cfg3DActions {
 						{"DSR_Item_Ziptie", 1}
 					};
 				};
-				action = "[_cursor,_index] call ACT_fnc_ziptie;";
+				action = "[_cursor] call ACT_fnc_ziptie;";
 			};
 			class Bandage {
 				condition = "true"; //todo cursor is bleeding check
@@ -620,6 +598,15 @@ class Cfg3DActions {
 					};
 				};
 				action = "[_cursor] call ACT_fnc_getFuel;";
+			};
+			class ToggleGenerator {
+				condition = "!(str(_cursor) find 'portable_generator' == -1)";
+				text = "Toggle Generator";
+				class parameters {
+					requiredItems[] = {};
+					returnedItems[] = {};
+				};
+				action = "[_cursor] call ACT_fnc_toggleGenerator;";
 			};
 //			class Deconstruct {
 //				condition = "!(str(_cursor) find 'stockade' == -1";
