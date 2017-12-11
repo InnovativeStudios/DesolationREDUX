@@ -105,7 +105,6 @@ class CfgFunctions
 			class getFuel {};
 			class getWater {};
 			class deconstruct {};
-			class toggleGenerator {};
 		};
 		class Client_Actions_Sit {
 			file = "ActionSystem\Client\Actions\Sit";
@@ -139,7 +138,6 @@ class CfgFunctions
 			class playerAction {};
 			class flipObject {};
 			class itemFill {};
-			class useGenerator {};
 		};
 	};
 };
@@ -622,15 +620,6 @@ class Cfg3DActions {
 					};
 				};
 				action = "[_cursor] call ACT_fnc_getFuel;";
-			};
-			class ToggleGenerator {
-				condition = "!(str(_cursor) find 'portable_generator' == -1)";
-				text = "Toggle Generator";
-				class parameters {
-					requiredItems[] = {};
-					returnedItems[] = {};
-				};
-				action = "[_cursor] call ACT_fnc_toggleGenerator;";
 			};
 //			class Deconstruct {
 //				condition = "!(str(_cursor) find 'stockade' == -1";
