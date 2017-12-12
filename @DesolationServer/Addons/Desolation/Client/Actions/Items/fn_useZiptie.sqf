@@ -19,9 +19,7 @@ if !(_target isEqualType "") then {
 	_success = {
 		params["_target"];
 		
-		[_target, "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"] remoteExecCall ["switchMove", 0]; // reset animation from "hands up" animation
-		sleep 1.1;
-		[_target, "Acts_AidlPsitMstpSsurWnonDnon_loop"] remoteExecCall ["playMove", 0]; // this code does not work directly from hands up animation!
+		[_target, "Acts_AidlPsitMstpSsurWnonDnon_loop"] remoteExecCall ["switchMove", -2];
 		
 		_target setVariable ["SVAR_DS_var_isZiptied",true,true];
 		

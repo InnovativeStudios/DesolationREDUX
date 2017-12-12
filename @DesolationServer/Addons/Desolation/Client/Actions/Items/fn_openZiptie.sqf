@@ -16,8 +16,8 @@ if (_target isEqualType "") then {
 	
 	_success = {
 	
-		player setVariable ["SVAR_DS_var_isZiptied",false,true];
-		player PlayMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out"; // release yourself with a knife in inventory (uses client files)
+		player setVariable ["SVAR_DS_var_isZiptied",nil,true];
+		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", -2]; // release yourself with a knife in inventory (uses client files)
 		[1] call DS_fnc_addPoints;
 		
 	};
@@ -27,7 +27,7 @@ if (_target isEqualType "") then {
 		systemchat _type;
 	};
 
-	[_classname,"",false,_success,_failure] call DS_fnc_useItem; // keep _animation as ( "" ) !!!
+	[_classname,"",false,_success,_failure] call DS_fnc_useItem;
 	
 	
 } else {
@@ -38,8 +38,8 @@ if (_target isEqualType "") then {
 	_success = {
 		params["_target"];
 		
-		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", 0]; // playmovenow because others wont work (release from ziptie animation back to normal)
-		_target setVariable ["SVAR_DS_var_isZiptied",false,true];
+		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", -2]; // playmovenow because others wont work (release from ziptie animation back to normal)
+		_target setVariable ["SVAR_DS_var_isZiptied",nil,true];
 		
 	};
 	_failure = {
