@@ -13,7 +13,7 @@ params["_playerObj",["_respond",true]];
 [_playerObj] call DB_fnc_savePlayer;
 
 if(_respond) then {
-	"Data saved" remoteExec ["systemChat",_player];
+	"Data saved" remoteExec ["systemChat",_playerObj];
 } else {
-	deleteVehicle _player;
+	deleteVehicle _playerObj;
 };
