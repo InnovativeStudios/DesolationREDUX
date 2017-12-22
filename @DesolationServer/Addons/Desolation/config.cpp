@@ -150,6 +150,7 @@ class CfgFunctions
 			class InventoryOpened {};
 			class Killed {};
 			class HandleDamage {};
+			class FiredNear {};
 		};
 		class Client_Weapon {
 			file = "Desolation\Client\Weapon";

@@ -1,14 +1,13 @@
-params["_unit","_weapon","_muzzle","_mode","_ammo","_magazine","_projectile","_vehicle"];
+params["_player","_unit","_distance","_weapon","_muzzle","_mode","_ammo","_gunner"];
 
+if !(alive _player) exitWith {};
 
-if(!alive _unit) exitWith {false};
-
-[_unit] spawn {
-	params["_unit"];
-	_unit setVariable ["DS_var_inCombat", true, true];
-	uiSleep 60;
-	_unit setVariable ["DS_var_inCombat", nil, true];
+[_player] spawn {
+	params["_player"];
+	_player setVariable ["DS_var_inCombat", true, true];
+	sleep 60;
+	_player setVariable ["DS_var_inCombat", nil, true];
 };
 
 
-// USAGE: if !(isNil {_unit getVariable "DS_var_inCombat"}) then {_inCombat = true;};
+// USAGE: if !(isNil {player getVariable "DS_var_inCombat"}) then {_inCombat = true;};

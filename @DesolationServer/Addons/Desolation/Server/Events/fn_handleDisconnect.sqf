@@ -9,10 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-_unit = _this select 0;
-_unitID = _this select 1;
-_unitUID = _this select 2;
-_unitName = _this select 3;
+params["_unit","_unitID","_unitUID","_unitName"];
 
 _return = false;
 if(alive _unit) then {
@@ -42,6 +39,7 @@ if(alive _unit) then {
 			_ai disableAI "AUTOTARGET";
 			_ai disableAI "MOVE";
 			_ai setUnitPos "UP";
+			_ai setSpeaker "NoVoice";
 			
 			// set ai gear
 			removeGoggles _ai;
@@ -59,21 +57,22 @@ if(alive _unit) then {
 
 			uiSleep 30;
 			if (alive _ai) then {
-				deleteVehicle _ai;
 				deletegroup _group;
+				deleteVehicle _ai;
+				[_unit,false] spawn DS_fnc_requestSave;
 			} else {
-				_unit setVariable ["SVAR_DS_var_isDead", true, true];
+				["killPlayer","NULL_CALLBACK",[_unit,_unit]] spawn DS_fnc_dbRequest;
 			};
 		};
-	};
-    
-	diag_log ("Desolation> Saving Disconnected Player (" + _unitName + ")");
+	} else {
+		diag_log ("Desolation> Saving Disconnected Player (" + _unitName + ")");
 
-	_unit setVariable ["DCed",true];
-	if(alive _unit) then {
-		//--- if the unit DCed while alive, they are logging out, not ded
-		[_unit,false] spawn DS_fnc_requestSave;
+		_unit setVariable ["DCed",true];
+		if(alive _unit) then {
+			//--- if the unit DCed while alive, they are logging out, not ded
+			[_unit,false] spawn DS_fnc_requestSave;
+		};
+		_return = true; //keep the body in game while saving happens
 	};
-	_return = true; //keep the body in game while saving happens
 };
 _return;
