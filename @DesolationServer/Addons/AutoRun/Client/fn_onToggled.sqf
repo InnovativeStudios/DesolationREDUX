@@ -22,6 +22,8 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 		if (call RUN_fnc_canAutoRun) then {
 			RUN_var_isAutoRun = true;
 			[] spawn {
+				RUN_var_3DDrawEvent = addMissionEventHandler ["Draw3D", {commy_lastDrawFrame = diag_frameNo;}];
+				RUN_var_EachFrameEH = addMissionEventHandler ["EachFrame", {commy_lastSimulFrame = diag_frameNo;}];
 				while {RUN_var_isAutoRun} do {
 					_gradient = [getPos player, getDir player] call BIS_fnc_terrainGradAngle;
 					if(_gradient <= 15 && _gradient >= -15) then {
@@ -37,7 +39,11 @@ if(toLower(["Enabled","RUN"] call BASE_fnc_getCfgValue) == "true") then {
 						};
 					};
 					_interuptAutoRun = (inputAction "LeanLeft")+(inputAction "LeanRight")+(inputAction "MoveLeft")+(inputAction "MoveRight")+(inputAction "Stand")+(inputAction "Crouch")+(inputAction "Prone")+(inputAction "Salute")+(inputAction "SitDown")+(inputAction "MoveUp")+(inputAction "MoveDown")+(inputAction "AdjustUp")+(inputAction "AdjustDown")+(inputAction "AdjustRight")+(inputAction "AdjustLeft")+(inputAction "TactTemp")+(inputAction "TactToggle")+(inputAction "TactShort");
-					if (_interuptAutoRun > 0 || !call RUN_fnc_canAutoRun) exitWith {RUN_var_isAutoRun = false;};
+					if (_interuptAutoRun > 0 || !call RUN_fnc_canAutoRun || abs(commy_lastDrawFrame - commy_lastSimulFrame) > 1) exitWith {
+						removeMissionEventHandler ["Draw3D",RUN_var_3DDrawEvent];
+						removeMissionEventHandler ["EachFrame",RUN_var_EachFrameEH];
+						RUN_var_isAutoRun = false;
+					};
 				};
 			};
 		};
