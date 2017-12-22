@@ -829,8 +829,8 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 				} forEach allPlayers;
 				uiSleep 1;
 				diag_log  "Shutdown > Saving Vehicles";
-				DS_var_runVehicleMon = false;
-				waitUntil{!DS_var_savingVehicles};
+				DS_var_runObjectMon = false;
+				waitUntil{!DS_var_savingObjects};
 				diag_log  "Shutdown > Saving buildings";
 				DS_var_runBuildingMon = false;
 				waitUntil{!DS_var_savingBuildings};
@@ -1002,12 +1002,12 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					clearMagazineCargoGlobal _vehicle;
 					clearItemCargoGlobal _vehicle;
 				
-					["spawnVehicle","",[_vehicle]] call DS_fnc_dbRequest;
+					[_vehicle] call DB_fnc_spawnVehicle;
 					
 					_oUUID = _vehicle getVariable ["oUUID",""];
 					
-					DS_var_Vehicles pushback _vehicle;					
-					DS_var_VehicleUUIDS pushback _oUUID;
+					DS_var_Objects pushback _vehicle;					
+					DS_var_ObjectUUIDS pushback _oUUID;
 				
 				},[_classname,_position,_direction]] call LYS_fnc_RunOnServer;				
 			};

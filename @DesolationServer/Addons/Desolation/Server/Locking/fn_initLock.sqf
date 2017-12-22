@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 
-DS_var_finishedVehicles = false;
+DS_var_finishedObjects = false;
 DS_var_finishedLoot = false;
 DS_var_unlocked = false;
 

@@ -13,8 +13,8 @@ params["_password",["_callback",{}]];
 _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""];
 
 // add these toggles so TimeManagement can be used without SM_Zombz or Desolation plugins
-if(isNil "DS_var_finishedVehicles") then {
-	DS_var_finishedVehicles = true;
+if(isNil "DS_var_finishedObjects") then {
+	DS_var_finishedObjects = true;
 };
 if(isNil "DS_var_finishedLoot") then {
 	DS_var_finishedLoot = true;
@@ -23,7 +23,7 @@ if(isNil "SM_var_finishedZombies") then {
 	SM_var_finishedZombies = true;
 };
 _success = false;
-if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then {
 	_password serverCommand "#unlock";
 	diag_log "TimeManagement > Server Unlocked";
 	

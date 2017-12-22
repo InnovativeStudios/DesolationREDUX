@@ -26,6 +26,11 @@ class CfgFunctions
 			isserver = 1;
 			class initServer {};
 		};
+		class Monitor {
+			file = "DesoDB\Monitor";
+			isserver = 1;
+			class objectMonitor {};
+		};
 		class Functions 
 		{
 			file = "DesoDB\Functions";

@@ -9,20 +9,21 @@
  * https://www.bistudio.com/monetization/
  */
 
-DS_var_finishedVehicles = true;
-DS_var_runVehicleMon = true;
-DS_var_savingVehicles = true;
+DS_var_finishedObjects = true;
+DS_var_runObjectMon = true;
+DS_var_savingObjects = true;
+
 call DS_fnc_checkServerLock;
+
 
 while{true} do {
 	_time = diag_tickTime + (60*30);
-	waitUntil{diag_tickTime >= _time || !DS_var_runVehicleMon};
-	
+	waitUntil{diag_tickTime >= _time || !DS_var_runObjectMon};
 	
 	_newArray1 = [];
 	_newArray2 = [];
 	{
-		_uuid = DS_var_VehicleUUIDS select _forEachIndex;
+		_uuid = DS_var_ObjectUUIDS select _forEachIndex;
 		
 		_cleanup = false;
 		_pos = getPosASL _x;
@@ -31,20 +32,20 @@ while{true} do {
 		};
 		
 		if (isNull _x || !(alive _x) || _cleanup) then {
-			["destroyVehicle","",[_uuid,objNull]] call DS_fnc_dbRequest;
+			[_uuid,objNull] call DB_fnc_killObject;
 			if(!isNull _x) then {
 				detach _x;
 				deleteVehicle _x;
 			};
 		} else {
-			["updateVehicle","",[_x]] call DS_fnc_dbRequest;
+			[_x select 0] call DB_fnc_updateObject;
 			_newArray1 pushBack _x;
 			_newArray2 pushBack _uuid;
 		};
-	} forEach (DS_var_Vehicles);
-	DS_var_Vehicles = _newArray1;
-	DS_var_VehicleUUIDS = _newArray2;
+	} forEach (DS_var_Objects);
+	DS_var_Objects = _newArray1;
+	DS_var_ObjectUUIDS = _newArray2;
 	
-	if(!DS_var_runVehicleMon) exitWith {};
+	if(!DS_var_runObjectMon) exitWith {};
 };
-DS_var_savingVehicles = false;
+DS_var_savingObjects = false;

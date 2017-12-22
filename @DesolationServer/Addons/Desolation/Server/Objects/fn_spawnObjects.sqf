@@ -10,11 +10,8 @@
  */
 private["_types","_data","_config","_cfg","_locations","_directions","_type","_houses","_index","_hData","_vehicles","_bikeLimit","_housesOrdered","_houses","_lIndex","_v","_vDir","_posagl","_posasl","_tv","_hitpoints","_value"];
 
-DS_var_Vehicles = [];
-DS_var_VehicleUUIDS = [];
-
-DS_var_Buildings = [];
-DS_var_BuildingUUIDS = [];
+DS_var_Objects = [];
+DS_var_ObjectUUIDS = [];
 
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
@@ -30,16 +27,11 @@ if (isNil "DS_fnc_restoreObjects") then {
 			_object = _data select 0;
 			_tvs pushBack _object;
 			_objectType = _data select 1;
-			_oUUID = _data select 2;
+			_object_uuid = _data select 2;
 			
 			/* TODO: expant this to support all objectTypes */
 			if(_objectType == 3) then {
-				DS_var_Vehicles pushback _object;
-				DS_var_VehicleUUIDS pushback _oUUID;
 				_numVtoSpawn = _numVtoSpawn - 1;
-			} else {
-				DS_var_Buildings pushback _object;
-				DS_var_BuildingUUIDS pushback _oUUID;
 			};
 		};
 	} forEach _dbSpawnObjects;
@@ -54,9 +46,9 @@ if(_numVtoSpawn <= 0) exitWith {
 		};
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
-	[] spawn DS_fnc_vehicleMonitor;
-	[] spawn DS_fnc_buildingMonitor;
+	[] spawn DS_fnc_objectMonitor;
 };
+
 diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
 
 _types = [];
@@ -203,10 +195,10 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					_numVtoSpawn = _numVtoSpawn - 1;
 					["spawnVehicle","",[_tv]] call DS_fnc_dbRequest;
 					
-					_oUUID = _tv getVariable ["oUUID",""];
+					_object_uuid = _tv getVariable ["oUUID",""];
 					
-					DS_var_Vehicles pushback _tv;
-					DS_var_VehicleUUIDS pushback _oUUID;
+					DS_var_Objects pushback _tv;
+					DS_var_ObjectUUIDS pushback _object_uuid;
 				};
 			};
 		};
@@ -220,5 +212,4 @@ uiSleep 3;
 	};
 } forEach _tvs;
 diag_log "Done spawning vehicles";
-[] spawn DS_fnc_vehicleMonitor;
-[] spawn DS_fnc_buildingMonitor;
+[] spawn DS_fnc_objectMonitor;

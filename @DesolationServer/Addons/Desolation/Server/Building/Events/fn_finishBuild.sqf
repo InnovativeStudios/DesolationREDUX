@@ -78,8 +78,8 @@ scopeName "exitCheck";
 } forEach allPlayers;
 
 
-["spawnBuilding","",[_obj]] call DS_fnc_dbRequest;
+[_obj] call DB_fnc_spawnBuilding;
 _oUUID = _obj getVariable ["oUUID",""];
 
-DS_var_Buildings pushback _obj;
-DS_var_BuildingUUIDS pushback _oUUID;
+DS_var_Objects pushback _obj;
+DS_var_ObjectUUIDS pushback _oUUID;

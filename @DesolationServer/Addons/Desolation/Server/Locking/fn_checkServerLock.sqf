@@ -11,7 +11,7 @@
 
 if(DS_var_unlocked) exitWith {}; // already unlocked, dont start threads again
 
-if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then {
 	DS_var_unlocked = true;
 };
  
@@ -20,8 +20,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 	_shutdownFunction = {
 		// save vehicles
 		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-		DS_var_runVehicleMon = false;
-		waitUntil{!DS_var_savingVehicles};
+		DS_var_runObjectMon = false;
+		waitUntil{!DS_var_savingObjects};
 		
 		// save buildings
 		diag_log  "Shutdown > Saving buildings";
@@ -34,7 +34,7 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		bis_functions_mainscope setVariable ["ServerCommandPassword_DS",nil,true]; //--- wipe security vulnerability 
 	};
  } else {
-	if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+	if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then {
 		bis_functions_mainscope setVariable ["ServerCommandPassword_DS",nil,true]; //--- wipe security vulnerability 
 		_password serverCommand "#unlock";
 		diag_log "SERVER LOCKING > UNLOCKED";
@@ -50,8 +50,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 			} forEach allPlayers;
 			uiSleep 10; 
 			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-			DS_var_runVehicleMon = false;
-			waitUntil{!DS_var_savingVehicles};
+			DS_var_runObjectMon = false;
+			waitUntil{!DS_var_savingObjects};
 			diag_log  "Shutdown > Waiting for building monitor to exit";
 			DS_var_runBuildingMon = false;
 			waitUntil{!DS_var_savingBuildings};
@@ -90,8 +90,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 			
 			// save vehicles
 			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-			DS_var_runVehicleMon = false;
-			waitUntil{!DS_var_savingVehicles};
+			DS_var_runObjectMon = false;
+			waitUntil{!DS_var_savingObjects};
 			
 			// save buildings
 			diag_log  "Shutdown > Saving buildings";

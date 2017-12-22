@@ -193,6 +193,8 @@ diag_log "Spawning DB objects";
 				diag_log("sorry ai is not supported");
 			};
 		
+			DS_var_Objects pushback _object;
+			DS_var_ObjectUUIDS pushback _object_uuid;
 			_returnData pushback [_object,_objectType,_object_uuid];
 		};
 	};
