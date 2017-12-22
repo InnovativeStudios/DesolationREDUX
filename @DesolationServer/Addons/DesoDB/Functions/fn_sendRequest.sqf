@@ -55,7 +55,7 @@ while{_doswitchloop} do {
                     	} else {
                     		diag_log "cannot sleep in context of";
                     		diag_log _originalrequest;
-                    	}
+                    	};
                     } else {
                         _innerdoloop = false;
                     };
