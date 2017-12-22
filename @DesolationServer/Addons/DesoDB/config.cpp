@@ -38,7 +38,6 @@ class CfgFunctions
 			class sendRequest {};
 			
 			class getWorldUUID {};
-			class getPoolSize {};
 			class hpFloatArray {};
 
 			class restoreObjects {};

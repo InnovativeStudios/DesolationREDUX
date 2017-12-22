@@ -45,4 +45,4 @@ _objectuuid = _data select 16;
 	diag_log ("SETTING PERSISTANT VARIABLE: " + str(_x select 0) + " VALUE: " + str(_x select 1));
 } forEach _persvars;
 
-/* TODO: if _objectuuid != 0 search vehicle in port character into this vehicle */
+/* TODO: if _objectuuid != 0 search vehicle and port character into this vehicle */

@@ -36,7 +36,7 @@ if (isNil "DS_fnc_restoreObjects") then {
 			};
 		};
 	} forEach _dbSpawnObjects;
-}
+};
 
 if(_numVtoSpawn <= 0) exitWith {
 	diag_log "No more vehicles need to be spawned";
