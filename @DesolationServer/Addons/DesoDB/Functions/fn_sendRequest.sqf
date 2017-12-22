@@ -48,9 +48,7 @@ while{_doswitchloop} do {
                 while{_innerdoloop} do {
                     _response = ("libredex" callExtension _request) select 0;
 
-                    if(_response == PROTOCOL_MESSAGE_NOT_EXISTING) then {
-                        uiSleep 0.5;
-                    } else {
+                    if(_response != PROTOCOL_MESSAGE_NOT_EXISTING) then {
                         _innerdoloop = false;
                     };
                 };
