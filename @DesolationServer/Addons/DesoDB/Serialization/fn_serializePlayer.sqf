@@ -17,8 +17,6 @@
 params["_playerObj"];
 _playeruuid = _playerObj getVariable ["pUUID",""];
 _charuuid = _playerObj getVariable ["cUUID",""];
-if(_playeruuid == "" || _charuuid == "") exitWith {diag_log "INTERNAL ERROR | FATAL > PlayerUUID or CharUUID not on the targeted unit!";};
-
 _posATL = getPosATL _playerObj;
 _loadout = getUnitLoadout _playerObj;
 _vars = allVariables _playerObj;
