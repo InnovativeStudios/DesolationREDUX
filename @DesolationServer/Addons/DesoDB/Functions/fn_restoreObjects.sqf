@@ -22,8 +22,7 @@ if !(_dbSpawnData isEqualType []) then {diag_log str(_dbSpawnData); _dbSpawnData
 diag_log "Spawning DB objects";
 {
 	_data = _x call DB_fnc_spawnFromDB;
-	
-	
+
 	_classname = _x select 0;
 	_priority = _x select 1;
 	_objectType = _x select 2;
@@ -202,6 +201,6 @@ diag_log "Spawning DB objects";
 
 diag_log "DONE";
 
-[] spawn DS_fnc_objectMonitor;
+[] spawn DB_fnc_objectMonitor;
 
 _returnData;

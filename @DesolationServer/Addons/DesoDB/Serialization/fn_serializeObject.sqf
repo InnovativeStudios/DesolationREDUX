@@ -89,8 +89,8 @@ _object_uuid = _object getVariable ["oUUID",""];
 
 if (_object_uuid == "") then {
 	_request = [PROTOCOL_DBCALL_FUNCTION_RETURN_UUID,[]];
-	_objectUUID = [_request] call DB_fnc_sendRequest;
-	_object setVariable ["oUUID",_objectUUID];
+	_object_uuid = [_request] call DB_fnc_sendRequest;
+	_object setVariable ["oUUID",_object_uuid];
 };
 
 [
