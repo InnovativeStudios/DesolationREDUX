@@ -47,7 +47,7 @@ if(_numVtoSpawn <= 0) exitWith {
 		};
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
-	DS_var_restoreObjectInProgress = false
+	DS_var_restoreObjectInProgress = false;
 };
 
 diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
@@ -214,3 +214,5 @@ uiSleep 3;
 } forEach _tvs;
 diag_log "Done spawning vehicles";
 DS_var_restoreObjectInProgress = false;
+DS_var_finishedObjects = true;
+call DS_fnc_checkServerLock;

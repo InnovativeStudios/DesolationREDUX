@@ -9,11 +9,8 @@
  * https://www.bistudio.com/monetization/
  */
 
-DS_var_finishedObjects = true;
 DS_var_runObjectMon = true;
 DS_var_savingObjects = true;
-
-call DS_fnc_checkServerLock;
 
 waitUntil{!DS_var_restoreObjectInProgress};
 
