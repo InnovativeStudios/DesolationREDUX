@@ -14,7 +14,7 @@
 _worldUUID = call DB_fnc_getWorldUUID;
 if(_worldUUID == "") then {
 	diag_log "WARNING: WORLD IDENTIFICATION IS NOT SET, YOU WILL NOT BE ABLE TO RUN MULTIPLE INSTANCES ON THE SAME TABLES!";
-}
+};
 
 _worldUUID = "0";
 
