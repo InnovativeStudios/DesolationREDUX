@@ -18,10 +18,10 @@ _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
 _tvs = [];
 
-if (isNil "DS_fnc_restoreObjects") then {
+if (isNil "DB_fnc_restoreObjects") then {
 	diag_log "Warning: Seems like there is no Databasemodul?!";
 } else {
-	_dbSpawnObjects = call DS_fnc_restoreObjects;
+	_dbSpawnObjects = call DB_fnc_restoreObjects;
 	{
 		_data = _x;
 		if(count(_data) > 0) then {
