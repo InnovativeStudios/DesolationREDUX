@@ -15,7 +15,7 @@
 
 params["_playerObj"];
 
-_playeruuid == "";
+_playeruuid = "";
 _i = 0;
 
 while {(_playeruuid == "") && (_i < 10)} do
