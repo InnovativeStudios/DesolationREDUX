@@ -8,7 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-private["_playerObj","_loadoutData"];
+
+params["_playerObj","_loadoutData"];
+
 _playerObj hideObjectGlobal true;
 _playerObj setVariable ["DDATA",_loadoutData];
 
