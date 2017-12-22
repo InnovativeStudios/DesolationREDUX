@@ -59,6 +59,6 @@ while {(_playeruuid == "") && (_i < 10)} do
 	_i = _i + 1;
 };
 
-if(_playeruuid != "") then {
+if(_playeruuid == "") then {
 	diag_log "INTERNAL ERROR | FATAL > PlayerUUID not on the targeted unit when creating! - was not able to create the players character in the database!";
 };
