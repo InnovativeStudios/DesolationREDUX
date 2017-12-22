@@ -10,9 +10,10 @@
  */
 
 DS_var_runObjectMon = true;
-DS_var_savingObjects = true;
 
 waitUntil{!DS_var_restoreObjectInProgress};
+
+DS_var_savingObjects = true;
 
 while{true} do {
 	_time = diag_tickTime + (60*30);
