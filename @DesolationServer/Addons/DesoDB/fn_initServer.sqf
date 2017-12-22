@@ -12,7 +12,11 @@
 #include "constants.hpp"
 
 _worldUUID = call DB_fnc_getWorldUUID;
-if(_worldUUID == "") exitWith {diag_log "WORLD IDENTIFICATION IS NOT SET, THE DATABASE PLUGIN WILL NOT RUN";};
+if(_worldUUID == "") then {
+	diag_log "WARNING: WORLD IDENTIFICATION IS NOT SET, YOU WILL NOT BE ABLE TO RUN MULTIPLE INSTANCES ON THE SAME TABLES!";
+}
+
+_worldUUID = "0";
 
 diag_log ("DesoDB > World UUID: " + _worldUUID);
 
