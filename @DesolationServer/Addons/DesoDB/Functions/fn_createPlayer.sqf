@@ -56,7 +56,7 @@ while {(_playeruuid == "") && (_i < 10)} do
 			diag_log format ["UUID of Player: %1 did not match the uuid in the object: %2", _playeruuid, _serializedData select 1];
 		}
 	};
-	i = i + 1;
+	_i = _i + 1;
 };
 
 if(_playeruuid != "") then {
