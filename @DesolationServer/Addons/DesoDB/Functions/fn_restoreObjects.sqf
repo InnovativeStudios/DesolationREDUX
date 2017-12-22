@@ -202,4 +202,6 @@ diag_log "Spawning DB objects";
 
 diag_log "DONE";
 
+[] spawn DS_fnc_objectMonitor;
+
 _returnData;

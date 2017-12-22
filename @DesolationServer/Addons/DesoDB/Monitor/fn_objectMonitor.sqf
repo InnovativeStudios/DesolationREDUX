@@ -15,6 +15,7 @@ DS_var_savingObjects = true;
 
 call DS_fnc_checkServerLock;
 
+waitUntil{!DS_var_restoreObjectInProgress};
 
 while{true} do {
 	_time = diag_tickTime + (60*30);

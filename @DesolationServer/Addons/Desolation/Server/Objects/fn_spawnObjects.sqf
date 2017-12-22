@@ -12,6 +12,7 @@ private["_types","_data","_config","_cfg","_locations","_directions","_type","_h
 
 DS_var_Objects = [];
 DS_var_ObjectUUIDS = [];
+DS_var_restoreObjectInProgress = true;
 
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
@@ -46,7 +47,7 @@ if(_numVtoSpawn <= 0) exitWith {
 		};
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
-	[] spawn DS_fnc_objectMonitor;
+	DS_var_restoreObjectInProgress = false
 };
 
 diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
@@ -193,7 +194,7 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					
 					_tvs pushBack _tv;
 					_numVtoSpawn = _numVtoSpawn - 1;
-					["spawnVehicle","",[_tv]] call DS_fnc_dbRequest;
+					[_tv] call DB_fnc_spawnVehicle;
 					
 					_object_uuid = _tv getVariable ["oUUID",""];
 					
@@ -212,4 +213,4 @@ uiSleep 3;
 	};
 } forEach _tvs;
 diag_log "Done spawning vehicles";
-[] spawn DS_fnc_objectMonitor;
+DS_var_restoreObjectInProgress = false;
