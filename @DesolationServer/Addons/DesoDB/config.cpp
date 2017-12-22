@@ -36,6 +36,7 @@ class CfgFunctions
 			class getPoolSize {};
 			class hpFloatArray {};
 
+			class restoreObjects {};
 			class spawnObject {};
 			class updateObject {};
 			class killObject {};

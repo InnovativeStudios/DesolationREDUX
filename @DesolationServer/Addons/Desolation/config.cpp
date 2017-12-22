@@ -388,11 +388,9 @@ class CfgFunctions
 			class heliCrashAnim {};
 		};
 		class Server_Vehicles {
-			file = "Desolation\Server\Vehicles";
+			file = "Desolation\Server\Objects";
 			isserver = 1;
-			class spawnVehicles {};
-			class spawnFromDB {};
-			class fixBuildingShift {};
+			class spawnObjects {};
 			class vehicleMonitor {};
 			class simManager {};
 		};

@@ -16,34 +16,35 @@ DS_var_VehicleUUIDS = [];
 DS_var_Buildings = [];
 DS_var_BuildingUUIDS = [];
 
-_dbSpawnData = ["getObjects"] call DS_fnc_dbRequest;
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
-if !(_dbSpawnData isEqualType []) then {diag_log str(_dbSpawnData); _dbSpawnData = [];};
-
 _tvs = [];
-diag_log "Spawning DB objects";
-{
-	_data = _x call DS_fnc_spawnFromDB;
-	if(count(_data) > 0) then {
-		_object = _data select 0;
-		_tvs pushBack _object;
-		_objectType = _data select 1;
-		_oUUID = _data select 2;
-		
-		
-		/* TODO: expant this to support all objectTypes */
-		if(_objectType == 3) then {
-			DS_var_Vehicles pushback _object;
-			DS_var_VehicleUUIDS pushback _oUUID;
-			_numVtoSpawn = _numVtoSpawn - 1;
-		} else {
-			DS_var_Buildings pushback _object;
-			DS_var_BuildingUUIDS pushback _oUUID;
+
+if (isNil "DS_fnc_restoreObjects") then {
+	diag_log "Warning: Seems like there is no Databasemodul?!";
+} else {
+	_dbSpawnObjects = call DS_fnc_restoreObjects;
+	{
+		_data = _x;
+		if(count(_data) > 0) then {
+			_object = _data select 0;
+			_tvs pushBack _object;
+			_objectType = _data select 1;
+			_oUUID = _data select 2;
+			
+			/* TODO: expant this to support all objectTypes */
+			if(_objectType == 3) then {
+				DS_var_Vehicles pushback _object;
+				DS_var_VehicleUUIDS pushback _oUUID;
+				_numVtoSpawn = _numVtoSpawn - 1;
+			} else {
+				DS_var_Buildings pushback _object;
+				DS_var_BuildingUUIDS pushback _oUUID;
+			};
 		};
-	};
-} forEach _dbSpawnData;
-diag_log "DONE";
+	} forEach _dbSpawnObjects;
+}
+
 if(_numVtoSpawn <= 0) exitWith {
 	diag_log "No more vehicles need to be spawned";
 	uiSleep 3;
