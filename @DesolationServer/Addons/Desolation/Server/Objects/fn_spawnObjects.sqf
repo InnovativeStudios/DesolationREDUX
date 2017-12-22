@@ -106,11 +106,6 @@ for "_i" from 0 to count(_config)-1 do {
 
 _bikeLimit = call compile (["MaxBikes","DS"] call BASE_fnc_getCfgValue);
 
-diag_log format["Nerfing Fuel Stations (%1)",diag_tickTime];
-
-_fuelStations = ([0,0,0] nearObjects worldSize) select { getFuelCargo _x > 0 } ;
-{_x setFuelCargo 0} forEach _fuelStations;
-
 
 diag_log format["Getting all houses on map (%1)",diag_tickTime];
 //--- get all houses on the map that can spawn vehicles in them
