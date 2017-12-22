@@ -11,6 +11,6 @@
 params["_playerObj","_killerObj"];
 
 //--- if they didn't disconnect, they died
-if !(_unit getVariable ["DCed",false]) then {
+if !(_playerObj getVariable ["DCed",false]) then {
 	[_playerObj,_killerObj] call DB_fnc_killPlayer;
 };
