@@ -14,6 +14,7 @@
 params["_request",["_isScheduled",true]];
 private["_response","_compiledResponse","_uuid", "_finalResponse","_return","_doswitchloop","_innerdoloop"];
 
+_originalrequest = _request;
 _response = ("libredex" callExtension _request) select 0;
 _compiledResponse = call compile _response;
 
@@ -48,7 +49,14 @@ while{_doswitchloop} do {
                 while{_innerdoloop} do {
                     _response = ("libredex" callExtension _request) select 0;
 
-                    if(_response != PROTOCOL_MESSAGE_NOT_EXISTING) then {
+                    if(_response == PROTOCOL_MESSAGE_NOT_EXISTING) then {
+                    	if (canSuspend) then {
+                    		uiSleep 0.5;
+                    	} else {
+                    		diag_log "cannot sleep in context of";
+                    		diag_log _originalrequest;
+                    	}
+                    } else {
                         _innerdoloop = false;
                     };
                 };
