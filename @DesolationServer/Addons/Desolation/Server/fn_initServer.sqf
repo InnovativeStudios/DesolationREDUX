@@ -35,7 +35,7 @@ if(!isNil "DS_fnc_initServerTick") then {
 };
 
 // start vehicle & object spawns
-[] spawn DS_fnc_spawnVehicles;
+[] spawn DS_fnc_spawnObjects;
 
 // start helicrash spawns
 call DS_fnc_initHeliCrashes;

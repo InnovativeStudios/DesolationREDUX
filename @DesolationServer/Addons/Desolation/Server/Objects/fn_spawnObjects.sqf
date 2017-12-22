@@ -194,7 +194,7 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					
 					_tvs pushBack _tv;
 					_numVtoSpawn = _numVtoSpawn - 1;
-					[_tv] call DB_fnc_spawnVehicle;
+					[_tv] call DB_fnc_spawnObject;
 					
 					_object_uuid = _tv getVariable ["oUUID",""];
 					
