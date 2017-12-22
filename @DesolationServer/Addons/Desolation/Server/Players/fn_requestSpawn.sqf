@@ -8,11 +8,17 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-private["_playerObj","_dbCallback"];
+private["_playerObj","_loadoutData"];
 //--- player is requesting to spawn in, ask the database how they should do it
 _playerObj = _this select 0;
 _playerObj hideObjectGlobal true;
 _playerObj setVariable ["DDATA",_this select 1];
 
-_dbCallback = "DS_fnc_dbOnSpawnResponse";
-["spawnPlayer",_dbCallback,[_playerObj]] call DS_fnc_dbRequest; //--- send request to database
+_response = [_playerObj] call DB_fnc_loadPlayer;
+_callbackParam = [_response select 0,_response] + [_playerObj]; //--- _playeruuid should be tied to the spawned unit, this is handled in the callback so we need to add it to the _callbackParam
+
+if(_response isEqualTo []) then {
+	["fresh", _callbackParam] call (missionNamespace getVariable ["DS_fnc_dbOnSpawnResponse",{diag_log "<REQUEST ERROR>: callback not defined?";}]);
+} else {
+	["load", _callbackParam] call (missionNamespace getVariable ["DS_fnc_dbOnSpawnResponse",{diag_log "<REQUEST ERROR>: callback not defined?";}]);
+};

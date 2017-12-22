@@ -8,10 +8,9 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-params["_unit","_killer"];
+params["_playerObj","_killerObj"];
 
 //--- if they didn't disconnect, they died
 if !(_unit getVariable ["DCed",false]) then {
-	NULL_CALLBACK = compileFinal "";
-	["killPlayer","NULL_CALLBACK",[_unit,_killer]] spawn DS_fnc_dbRequest; //--- send request to database
+	[_playerObj,_killerObj] call DB_fnc_killPlayer;
 };

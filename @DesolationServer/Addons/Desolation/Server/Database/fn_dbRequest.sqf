@@ -15,42 +15,6 @@ params["_type",["_callback",""],["_callbackParam",[]]];
 
 _return = "";
 switch(_type)do{
-	// Player Databasing
-	
-	//--- called on spawn request
-	case "spawnPlayer":{
-		_playerObj = _callbackParam select 0;
-		
-		_response = [_playerObj] call DB_fnc_loadPlayer;
-		
-		_callbackParam = [_response select 0,_response] + _callbackParam; //--- _playeruuid should be tied to the spawned unit, this is handled in the callback so we need to add it to the _callbackParam
-		
-		if(_response isEqualTo []) then {
-			["fresh", _callbackParam] call (missionNamespace getVariable [_callback,{diag_log "<REQUEST ERROR>: callback not defined?";}]);
-		} else {
-			["load", _callbackParam] call (missionNamespace getVariable [_callback,{diag_log "<REQUEST ERROR>: callback not defined?";}]);
-		};
-	};
-	//--- called on logout or disconnect
-	case "savePlayer": {
-		_playerObj = _callbackParam select 0;
-		
-		[_playerObj] call DB_fnc_savePlayer;
-	};
-	//--- called on death
-	case "killPlayer": {
-		_playerObj = _callbackParam select 0;
-		_killerObj = _callbackParam select 1;
-		
-		[_playerObj,_killerObj] call DB_fnc_killPlayer;
-	};
-	//--- called on fresh spawn finishing
-	case "createPlayer": {
-		_playerObj = _callbackParam select 0;
-		
-		[_playerObj] call DB_fnc_createPlayer;
-	};
-	
 	//--- used for vehicle / object spawning from DB
 	case "getObjects": {
 		_return = call DB_fnc_dumpObjects;

@@ -8,9 +8,10 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-params["_player",["_respond",true]];
-NULL_CALLBACK = compileFinal "";
-["savePlayer","NULL_CALLBACK",[_player]] call DS_fnc_dbRequest;
+params["_playerObj",["_respond",true]];
+
+[_playerObj] call DB_fnc_savePlayer;
+
 if(_respond) then {
 	"Data saved" remoteExec ["systemChat",_player];
 } else {
