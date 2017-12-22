@@ -21,7 +21,7 @@ if !(_dbSpawnData isEqualType []) then {diag_log str(_dbSpawnData); _dbSpawnData
 
 diag_log "Spawning DB objects";
 {
-	_data = _x call DS_fnc_spawnFromDB;
+	_data = _x call DB_fnc_spawnFromDB;
 	
 	
 	_classname = _x select 0;
