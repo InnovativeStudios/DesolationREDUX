@@ -37,7 +37,7 @@ while{true} do {
 				deleteVehicle _x;
 			};
 		} else {
-			[_x select 0] call DB_fnc_updateObject;
+			[_x] call DB_fnc_updateObject;
 			_newArray1 pushBack _x;
 			_newArray2 pushBack _uuid;
 		};
