@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * © 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -10,40 +10,34 @@
  */
 private["_types","_data","_config","_cfg","_locations","_directions","_type","_houses","_index","_hData","_vehicles","_bikeLimit","_housesOrdered","_houses","_lIndex","_v","_vDir","_posagl","_posasl","_tv","_hitpoints","_value"];
 
-DS_var_Vehicles = [];
-DS_var_VehicleUUIDS = [];
+DS_var_Objects = [];
+DS_var_ObjectUUIDS = [];
+DS_var_restoreObjectInProgress = true;
 
-DS_var_Buildings = [];
-DS_var_BuildingUUIDS = [];
-
-_dbSpawnData = ["getObjects"] call DS_fnc_dbRequest;
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
-if !(_dbSpawnData isEqualType []) then {diag_log str(_dbSpawnData); _dbSpawnData = [];};
-
 _tvs = [];
-diag_log "Spawning DB objects";
-{
-	_data = _x call DS_fnc_spawnFromDB;
-	if(count(_data) > 0) then {
-		_object = _data select 0;
-		_tvs pushBack _object;
-		_objectType = _data select 1;
-		_oUUID = _data select 2;
-		
-		
-		/* TODO: expant this to support all objectTypes */
-		if(_objectType == 3) then {
-			DS_var_Vehicles pushback _object;
-			DS_var_VehicleUUIDS pushback _oUUID;
-			_numVtoSpawn = _numVtoSpawn - 1;
-		} else {
-			DS_var_Buildings pushback _object;
-			DS_var_BuildingUUIDS pushback _oUUID;
+
+if (isNil "DB_fnc_restoreObjects") then {
+	diag_log "Warning: Seems like there is no Databasemodul?!";
+} else {
+	_dbSpawnObjects = call DB_fnc_restoreObjects;
+	{
+		_data = _x;
+		if(count(_data) > 0) then {
+			_object = _data select 0;
+			_tvs pushBack _object;
+			_objectType = _data select 1;
+			_object_uuid = _data select 2;
+			
+			/* TODO: expant this to support all objectTypes */
+			if(_objectType == 3) then {
+				_numVtoSpawn = _numVtoSpawn - 1;
+			};
 		};
-	};
-} forEach _dbSpawnData;
-diag_log "DONE";
+	} forEach _dbSpawnObjects;
+};
+
 if(_numVtoSpawn <= 0) exitWith {
 	diag_log "No more vehicles need to be spawned";
 	uiSleep 3;
@@ -53,9 +47,11 @@ if(_numVtoSpawn <= 0) exitWith {
 		};
 	} forEach _tvs;
 	diag_log "Done spawning vehicles";
-	[] spawn DS_fnc_vehicleMonitor;
-	[] spawn DS_fnc_buildingMonitor;
+	DS_var_restoreObjectInProgress = false;
+	DS_var_finishedObjects = true;
+	call DS_fnc_checkServerLock;
 };
+
 diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
 
 _types = [];
@@ -109,11 +105,6 @@ for "_i" from 0 to count(_config)-1 do {
 
 
 _bikeLimit = call compile (["MaxBikes","DS"] call BASE_fnc_getCfgValue);
-
-diag_log format["Nerfing Fuel Stations (%1)",diag_tickTime];
-
-_fuelStations = ([0,0,0] nearObjects worldSize) select { getFuelCargo _x > 0 } ;
-{_x setFuelCargo 0} forEach _fuelStations;
 
 
 diag_log format["Getting all houses on map (%1)",diag_tickTime];
@@ -200,12 +191,12 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					
 					_tvs pushBack _tv;
 					_numVtoSpawn = _numVtoSpawn - 1;
-					["spawnVehicle","",[_tv]] call DS_fnc_dbRequest;
+					[_tv] call DB_fnc_spawnObject;
 					
-					_oUUID = _tv getVariable ["oUUID",""];
+					_object_uuid = _tv getVariable ["oUUID",""];
 					
-					DS_var_Vehicles pushback _tv;
-					DS_var_VehicleUUIDS pushback _oUUID;
+					DS_var_Objects pushback _tv;
+					DS_var_ObjectUUIDS pushback _object_uuid;
 				};
 			};
 		};
@@ -219,5 +210,6 @@ uiSleep 3;
 	};
 } forEach _tvs;
 diag_log "Done spawning vehicles";
-[] spawn DS_fnc_vehicleMonitor;
-[] spawn DS_fnc_buildingMonitor;
+DS_var_restoreObjectInProgress = false;
+DS_var_finishedObjects = true;
+call DS_fnc_checkServerLock;

@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * © 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -26,7 +26,7 @@ _cfg = configFile >> "Plugins";
 	
 	diag_log format["<PluginManager>: Broadcasting %1 config entry(s) for %2",count(_data),_cfgName];
 	{
-		_x set[0,(_x select 0) + "_" + _tag];
+		_x set[0,(_x select 0) + "_" + _tag]; //[key,value] => [key_tag,value]
 		_x pushBack true;
 		_MasterObject setVariable _x;
 	} forEach _data;

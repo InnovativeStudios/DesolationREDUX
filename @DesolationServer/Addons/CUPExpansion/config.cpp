@@ -2121,8 +2121,8 @@ class CfgVehicleSpawns {
 		class WarfareBAirport {locations[] = {{-0.204224,-0.669434,-5.91507}};directions[] = {182.505};};
 		class Land_Mil_hangar_EP1 {locations[] = {{0.543823,-0.458984,-5.42382}};directions[] = {182.505};};
 
-		class Land_A_Hospital {locations[] = {{4.33032,-4.32495,3.2904}};directions[] = {98.3031};};
-		
+		//class Land_A_Hospital {locations[] = {{4.33032,-4.32495,3.2904}};directions[] = {98.3031};};
+		class Land_A_Hospital {locations[] = {{-12.8926,1.15503,3.2904}};directions[] = {127.971};};
 		class HeliH {
 			locations[] = {{0,0,0}};
 			directions[] = {0};

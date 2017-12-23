@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * © 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -12,13 +12,13 @@
 #include "constants.hpp"
 
 _worldUUID = call DB_fnc_getWorldUUID;
-if(_worldUUID == "") exitWith {diag_log "WORLD IDENTIFICATION IS NOT SET, THE DATABASE PLUGIN WILL NOT RUN";};
+if(_worldUUID == "") then {
+	diag_log "WARNING: WORLD IDENTIFICATION IS NOT SET, YOU WILL NOT BE ABLE TO RUN MULTIPLE INSTANCES ON THE SAME DATABASE TABLES!";
+	_worldUUID = "11e7e743268ea08ca7207085c256cbec";
+};
 
-_poolSize = call DB_fnc_getPoolSize;
-if(isNil {_poolSize}) exitWith {diag_log "THREAD POOL SIZE IS NOT SET, THE DATABASE PLUGIN WILL NOT RUN";};
 
 diag_log ("DesoDB > World UUID: " + _worldUUID);
-diag_log ("DesoDB > Pool Size: " + str(_poolSize));
 
-_request = ["initdb",["poolsize",_poolSize,"worlduuid",_worldUUID]];
+_request = ["initdb",["worlduuid",_worldUUID]];
 [_request] call DB_fnc_sendRequest;

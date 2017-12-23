@@ -26,55 +26,37 @@ class CfgFunctions
 			isserver = 1;
 			class initServer {};
 		};
-		class Database 
-		{
-			file = "DesoDB\Database";
+		class Monitor {
+			file = "DesoDB\Monitor";
 			isserver = 1;
-			class sendRequest {};
-			class buildDLLRequest {};
-			class buildDBRequest {};
-			class buildIORequest {};
-			class buildRequest {};
+			class objectMonitor {};
 		};
 		class Functions 
 		{
 			file = "DesoDB\Functions";
 			isserver = 1;
+			class sendRequest {};
+			
 			class getWorldUUID {};
-			class getPoolSize {};
 			class hpFloatArray {};
+
+			class restoreObjects {};
+			class spawnObject {};
+			class updateObject {};
+			class killObject {};
+
+			class createPlayer {};
+			class killPlayer {};
+			class loadPlayer {};
+			class savePlayer {};
 		};
 		class Serialization
 		{
 			file = "DesoDB\Serialization";
 			isserver = 1;
 			
-			class spawnObject {};
-			class updateObject {};
-		};
-		class Serialization_Players
-		{
-			file = "DesoDB\Serialization\Players";
-			isserver = 1;
-			
-			class createPlayer {};
-			class killPlayer {};
-			class loadPlayer {};
-			class savePlayer {};
-		};
-		class Serialization_Objects
-		{
-			file = "DesoDB\Serialization\Objects";
-			isserver = 1;
-			
-			
-			class dumpObjects {};
-			class killVehicle {};
-			class spawnBuilding {};
-			class spawnVehicle {};
-			class updateBuilding {};
-			class updateVehicle {};
-			
+			class serializeObject {};
+			class serializePlayer {};
 		};
 	};
 };

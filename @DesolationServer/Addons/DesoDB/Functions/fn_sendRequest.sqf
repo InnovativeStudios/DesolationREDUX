@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * © 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -14,6 +14,7 @@
 params["_request",["_isScheduled",true]];
 private["_response","_compiledResponse","_uuid", "_finalResponse","_return","_doswitchloop","_innerdoloop"];
 
+_originalrequest = _request;
 _response = ("libredex" callExtension _request) select 0;
 _compiledResponse = call compile _response;
 
@@ -49,7 +50,12 @@ while{_doswitchloop} do {
                     _response = ("libredex" callExtension _request) select 0;
 
                     if(_response == PROTOCOL_MESSAGE_NOT_EXISTING) then {
-                        uiSleep 0.5;
+                    	if (canSuspend) then {
+                    		uiSleep 0.5;
+                    	} else {
+                    		diag_log "cannot sleep in context of";
+                    		diag_log _originalrequest;
+                    	};
                     } else {
                         _innerdoloop = false;
                     };

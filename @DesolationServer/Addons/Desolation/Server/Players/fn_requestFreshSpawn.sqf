@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * © 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 params["_client","_location"];
-private["_brokenLoadout","_defaultData","_hats","_goggles","_uniforms","_uid","_unit"];
+private["_brokenLoadout","_defaultData","_hats","_goggles","_uniforms","_uid","_playerObj"];
 
 _brokenLoadout = ["U_C_DSR_Tester","H_StrawHat","G_Aviator"];
 _defaultData = _client getVariable ["DDATA",_brokenLoadout];
@@ -25,21 +25,21 @@ if !((_defaultData select 2) in _goggles) then {_defaultData = _brokenLoadout;di
 _uid = getplayeruid _client;
 
 if !(_client getVariable ["ReadyToSpawn",false]) exitWith {};
-_unit = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NONE"];
-_unit allowDamage false;
-_unit hideObjectGlobal true;
+_playerObj = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NONE"];
+_playerObj allowDamage false;
+_playerObj hideObjectGlobal true;
 
-_unit setVariable ["pUUID",_client getVariable "pUUID",true];
+_playerObj setVariable ["pUUID",_client getVariable "pUUID",true];
 
-_unit addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
-[_unit,[],_defaultData] call DS_fnc_setupLoadout;
+_playerObj addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
+[_playerObj,[],_defaultData] call DS_fnc_setupLoadout;
 
-_unit hideObjectGlobal false;
-_unit allowDamage true;
+_playerObj hideObjectGlobal false;
+_playerObj allowDamage true;
 
 // Temp workaround for shotguns until config is fixed
-_unit addEventHandler ["Fired",{
-   params["_unit","_weapon","_muzzle","_mod","_ammo","_magazine","_projectile"];
+_playerObj addEventHandler ["Fired",{
+   params["_playerObj","_weapon","_muzzle","_mod","_ammo","_magazine","_projectile"];
     if(!isNull _projectile) then {
         if(_ammo == "12Guage_Buck" && _weapon == "dsr_sgun_m500") then {
             _velocity = velocity _projectile;
@@ -60,7 +60,7 @@ _unit addEventHandler ["Fired",{
                 _bVel = (vectorNormalized [_dX,_dY,_dZ]) vectorMultiply _magnatude;
                 
                 _bullet = "12Guage_Slug" createVehicle [0,0,1000];
-                _bullet setShotParents [vehicle _unit,_unit];
+                _bullet setShotParents [vehicle _playerObj,_playerObj];
                 _bullet setVelocity _bVel;
                 _bullet setposatl getposatl _projectile;
                 
@@ -72,9 +72,9 @@ _unit addEventHandler ["Fired",{
     };
 }];
 
-[_unit,_defaultData select 2] remoteExecCall ["DS_fnc_finishSpawn",_client];
-waitUntil{getPlayerUID _unit == _uid && (tolower(goggles _unit) == tolower(_defaultData select 2))};
+[_playerObj,_defaultData select 2] remoteExecCall ["DS_fnc_finishSpawn",_client];
+waitUntil{getPlayerUID _playerObj == _uid && (tolower(goggles _playerObj) == tolower(_defaultData select 2))};
 deleteVehicle _client;
 //--- add default values to non-presistant vars here
-NULL_CALLBACK = compileFinal "";
-["createPlayer","NULL_CALLBACK",[_unit]] call DS_fnc_dbRequest; //--- create fresh player in DB
+
+[_playerObj] call DB_fnc_createPlayer; //--- create fresh player in DB

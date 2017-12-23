@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * Â© 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -11,7 +11,7 @@
 
 if(DS_var_unlocked) exitWith {}; // already unlocked, dont start threads again
 
-if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then {
 	DS_var_unlocked = true;
 };
  
@@ -20,8 +20,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 	_shutdownFunction = {
 		// save vehicles
 		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-		DS_var_runVehicleMon = false;
-		waitUntil{!DS_var_savingVehicles};
+		DS_var_runObjectMon = false;
+		waitUntil{!DS_var_savingObjects};
 		
 		// save buildings
 		diag_log  "Shutdown > Saving buildings";
@@ -34,7 +34,7 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		bis_functions_mainscope setVariable ["ServerCommandPassword_DS",nil,true]; //--- wipe security vulnerability 
 	};
  } else {
-	if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) then {
+	if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then {
 		bis_functions_mainscope setVariable ["ServerCommandPassword_DS",nil,true]; //--- wipe security vulnerability 
 		_password serverCommand "#unlock";
 		diag_log "SERVER LOCKING > UNLOCKED";
@@ -50,8 +50,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 			} forEach allPlayers;
 			uiSleep 10; 
 			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-			DS_var_runVehicleMon = false;
-			waitUntil{!DS_var_savingVehicles};
+			DS_var_runObjectMon = false;
+			waitUntil{!DS_var_savingObjects};
 			diag_log  "Shutdown > Waiting for building monitor to exit";
 			DS_var_runBuildingMon = false;
 			waitUntil{!DS_var_savingBuildings};
@@ -61,13 +61,13 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 		_password spawn {
 			params["_password"];
 			
-			uiSleep (3600*4)-(60*5); //4 hours - 5 min
+			uiSleep ((3600*4)-(60*5)); //4 hours - 5 min
 			[
 				[
 					["SERVER SHUTTING DOWN IN 5 MINUTES, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
 				], 0, 0, true
 			] remoteExec  ["BIS_fnc_typeText2", -2];
-			uiSleep 60*4; //4 min (5 till restart)
+			uiSleep (60*4); //4 min (5 till restart)
 			[
 				[
 					["SERVER SHUTTING DOWN NOW, LOGOUT","align = 'left' shadow = '1' size = '0.9' font='PuristaBold'"]
@@ -90,8 +90,8 @@ if(DS_var_finishedVehicles && DS_var_finishedLoot && SM_var_finishedZombies) the
 			
 			// save vehicles
 			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
-			DS_var_runVehicleMon = false;
-			waitUntil{!DS_var_savingVehicles};
+			DS_var_runObjectMon = false;
+			waitUntil{!DS_var_savingObjects};
 			
 			// save buildings
 			diag_log  "Shutdown > Saving buildings";

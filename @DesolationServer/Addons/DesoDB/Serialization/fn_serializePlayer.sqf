@@ -1,7 +1,7 @@
 /*
  * Desolation Redux
  * http://desolationredux.com/
- * © 2016 Desolation Dev Team
+ * Â© 2016 - 2018 Desolation Dev Team
  * 
  * This work is licensed under the Arma Public License Share Alike (APL-SA) + Bohemia monetization rights.
  * To view a copy of this license, visit:
@@ -17,8 +17,6 @@
 params["_playerObj"];
 _playeruuid = _playerObj getVariable ["pUUID",""];
 _charuuid = _playerObj getVariable ["cUUID",""];
-if(_playeruuid == "" || _charuuid == "") exitWith {diag_log "INTERNAL ERROR | FATAL > PlayerUUID or CharUUID not on the targeted unit!";};
-
 _posATL = getPosATL _playerObj;
 _loadout = getUnitLoadout _playerObj;
 _vars = allVariables _playerObj;
@@ -50,7 +48,8 @@ if(vehicle _playerObj != _playerObj) then {
 };
 
 
-_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_CHAR,[
+[
+	PROTOCOL_DBCALL_ARGUMENT_PLAYER_UUID,_playeruuid,
 	PROTOCOL_DBCALL_ARGUMENT_CHARUUID,_charuuid,
 	PROTOCOL_DBCALL_ARGUMENT_ANIMATIONSTATE,_anim,
 	PROTOCOL_DBCALL_ARGUMENT_DIRECTION, getdir _playerObj,
@@ -63,7 +62,6 @@ _request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_CHAR,[
 	PROTOCOL_DBCALL_ARGUMENT_VARIABLES,_nonpersvars,
 	PROTOCOL_DBCALL_ARGUMENT_PERSISTENTVARIABLES,_persvars,
 	PROTOCOL_DBCALL_ARGUMENT_TEXTURES,_textures,
-  PROTOCOL_DBCALL_ARGUMENT_GEAR, _loadout,
+  	PROTOCOL_DBCALL_ARGUMENT_GEAR, _loadout,
 	PROTOCOL_DBCALL_ARGUMENT_CURRENTWEAPON, currentWeapon _playerObj
-]];
-[_request] call DB_fnc_sendRequest;
+];

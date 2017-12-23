@@ -18,7 +18,7 @@ _optics = _weaponInfo select 3;
 _mag = _weaponInfo select 4;
 _mag2 = _weaponInfo select 5;
 _under = _weaponInfo select 6;
-_attachments=[_muzzle,_side,_optics,_mag1,_mag2,_under];
+_attachments=[_muzzle,_side,_optics,_mag,_mag2,_under];
 };
 
 

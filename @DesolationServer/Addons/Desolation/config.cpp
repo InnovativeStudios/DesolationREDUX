@@ -337,7 +337,6 @@ class CfgFunctions
 		class Server_Database {
 			file = "Desolation\Server\Database";
 			isserver = 1;
-			class dbRequest {};
 			class dbOnSpawnResponse {};
 		};
 		class Server_Airdrop {
@@ -388,12 +387,9 @@ class CfgFunctions
 			class heliCrashAnim {};
 		};
 		class Server_Vehicles {
-			file = "Desolation\Server\Vehicles";
+			file = "Desolation\Server\Objects";
 			isserver = 1;
-			class spawnVehicles {};
-			class spawnFromDB {};
-			class fixBuildingShift {};
-			class vehicleMonitor {};
+			class spawnObjects {};
 			class simManager {};
 		};
 		class Server_Crafting {
@@ -418,7 +414,6 @@ class CfgFunctions
 			file = "Desolation\Server\Building";
 			isserver = 1;
 			class requestOwned {};
-			class buildingMonitor {};
 			class initBuildingSys {};
 		};
 		class Server_Locking {
