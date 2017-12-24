@@ -9,18 +9,10 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_unit",["_goggles",""]];
+params["_unit"];
 
 
 selectPlayer _unit;
-
-if(_goggles != "") then {
-	_goggles spawn {
-		uiSleep 2;
-		removeGoggles player;
-		player addGoggles _this;
-	};
-};
 
 player setVariable ["DS_var_isPlaying", true, true];
 [player] remoteExec ["DS_fnc_requestOwned",2];

@@ -63,7 +63,7 @@ _unit setPosATL [_positionx,_positiony,_positionz];
 } forEach (_hitpoints select 0);
 
 _unit addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
-[_unit,_loadout,[]] call DS_fnc_setupLoadout;
+[_unit,_loadout] call DS_fnc_setupLoadout;
 
 {
 	_unit setObjectTextureGlobal [_forEachIndex,_x];
@@ -99,10 +99,7 @@ _unit addEventHandler ["Fired",{
                 _bullet setVelocity _bVel;
                 _bullet setposatl getposatl _projectile;
                 
-                
-            };
-            
-            
+            };     
         };
     };
 }];
@@ -110,5 +107,5 @@ _unit addEventHandler ["Fired",{
 
 [_unit,_goggles] remoteExecCall ["DS_fnc_finishSpawn",_client];
 
-waitUntil{getPlayerUID _unit == _uid && (tolower(goggles _unit) == toLower(_goggles))};
+waitUntil{getPlayerUID _unit == _uid};
 deleteVehicle _client;

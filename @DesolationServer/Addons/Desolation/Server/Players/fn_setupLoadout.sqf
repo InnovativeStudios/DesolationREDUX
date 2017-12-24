@@ -8,11 +8,10 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-params["_unit",["_equipmentArray",[]],["_defaultData",[]]];
+params["_unit","_equipmentArray"];
 
-//TODO: Check if player is ready
-if !(_equipmentArray isEqualTo []) then
-{
+if !(_equipmentArray isEqualTo []) then {
+	
 	//--- load the chosen loadout
 	removeHeadgear _unit;
 	removeGoggles _unit;
@@ -26,7 +25,6 @@ if !(_equipmentArray isEqualTo []) then
 	_unit setUnitLoadout _equipmentArray;
 	_dataHas = getUnitLoadout _unit;
 	if !(_dataHas isEqualTo _equipmentArray) then {
-		diag_log "FATAL ERROR: SET UNIT LOADOUT FAILED";
 		_loop = true;
 		_cycles = 3;
 		while {_loop} do {
@@ -42,6 +40,7 @@ if !(_equipmentArray isEqualTo []) then
 		};
 	};
 } else {
+	
 	removeHeadgear _unit;
 	removeGoggles _unit;
 	removeVest _unit;
@@ -61,6 +60,12 @@ if !(_equipmentArray isEqualTo []) then
 	if!(_headgear isEqualTo []) then {
 		_headgear = selectRandom _headgear;
 		_unit addHeadgear _headgear;
+	};
+
+	_goggles = (["Goggles","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	if!(_goggles isEqualTo []) then {
+		_goggles = selectRandom _goggles;
+		_unit addGoggles _goggles;
 	};
 	
 	_vest = (["Vest","DS"] call BASE_fnc_getCfgValue) splitString ",";
