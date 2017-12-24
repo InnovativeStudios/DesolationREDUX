@@ -74,7 +74,7 @@ if(_key in (actionKeys "getover")) then {
 							_p2 = [_x + _dX,_y + _dY, _h];
 							_forwardCollides = lineIntersectsSurfaces [_p1,_p2,player,objNull,false]; 
 							if(({!isNull (_x select 2)}count(_forwardCollides)) == 0) exitWith {
-								if(_i == 0) exitWith {systemchat "No wall";};
+								if(_i == 0) exitWith {};
 								_p3 = _p2 vectorAdd [0,0,-0.5*_h];
 								_landCollides = lineIntersectsSurfaces [_p2,_p3,player,objNull,false]; 
 								if(({!isNull (_x select 2)}count(_landCollides)) == 0) exitWith {

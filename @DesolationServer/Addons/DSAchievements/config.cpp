@@ -60,6 +60,7 @@ class CfgFunctions
 
 //all tasks. this can be used as a base class 
 class All_Tasks {
+	rocks_mined = 0;
 	trees_chopped = 0;
 	objects_built = 0;
 	items_crafted = 0;
@@ -77,13 +78,62 @@ class All_Tasks {
 
 // server sided config
 class CfgDSRAchievements {
+	
+	
+	class RocksMined1 {
+		title = "Mine 10 rocks";
+		description = "I mined a rock!";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			rocks_mined = 10;
+		};
+	};
+	class RocksMined2 {
+		title = "Mine 50 rocks";
+		description = "Miner, not minor jackass!";
+		points = 10;
+		
+		class Tasks : All_Tasks {
+			rocks_mined = 50;
+		};
+	};
+	class RocksMined3 {
+		title = "Mine 100 rocks";
+		description = "I got ROCKS for sale.";
+		points = 20;
+		
+		class Tasks : All_Tasks {
+			rocks_mined = 100;
+		};
+	};
+	class RocksMined4 {
+		title = "Mine 500 rocks";
+		description = "Miner miner 49er!";
+		points = 50;
+		
+		class Tasks : All_Tasks {
+			rocks_mined = 500;
+		};
+	};
+	class RocksMined5 {
+		title = "Mine 1000 rocks";
+		description = "I don't do much else with my life.";
+		points = 100;
+		
+		class Tasks : All_Tasks {
+			rocks_mined = 1000;
+		};
+	};
+	
+	
 	class TreeChop1 {
 		title = "Chop 10 trees";
 		description = "I chopped a tree!";
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 50;
+			trees_chopped = 10;
 		};
 	};
 	class TreeChop2 {
@@ -92,7 +142,7 @@ class CfgDSRAchievements {
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 100;
+			trees_chopped = 50;
 		};
 	};
 	class TreeChop3 {
@@ -101,7 +151,7 @@ class CfgDSRAchievements {
 		points = 10;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 500;
+			trees_chopped = 100;
 		};
 	};
 	class TreeChop4 {
@@ -110,7 +160,7 @@ class CfgDSRAchievements {
 		points = 50;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 1000;
+			trees_chopped = 500;
 		};
 	};
 	class TreeChop5 {
@@ -119,9 +169,10 @@ class CfgDSRAchievements {
 		points = 100;
 		
 		class Tasks : All_Tasks {
-			trees_chopped = 5000;
+			trees_chopped = 1000;
 		};
 	};
+	
 	
 	class BandageOthers1 {
 		title = "Bandage 5 other players";
@@ -160,6 +211,7 @@ class CfgDSRAchievements {
 		};
 	};
 	
+	
 	class CraftAny1 {
 		title = "Craft something";
 		description = "Well look at you.";
@@ -169,6 +221,7 @@ class CfgDSRAchievements {
 			items_crafted = 1;
 		};
 	};
+	
 	
 	class BuildAny1 {
 		title = "Build something";

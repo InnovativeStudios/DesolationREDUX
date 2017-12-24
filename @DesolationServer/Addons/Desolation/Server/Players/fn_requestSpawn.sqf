@@ -9,16 +9,14 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_playerObj","_loadoutData"];
+params["_playerObj"];
 
 _playerObj hideObjectGlobal true;
-_playerObj setVariable ["DDATA",_loadoutData];
 
 _response = [_playerObj] call DB_fnc_loadPlayer;
 _callbackParam = [_response select 0,_response] + [_playerObj]; //--- _playeruuid should be tied to the spawned unit, this is handled in the callback so we need to add it to the _callbackParam
 
-diag_log "requestSpawn.sqf _resonse data:";
-diag_log _response;
+diag_log format ["(requestSpawn.sqf):: _response: %1", _response];
 
 if(_response isEqualTo []) then {
 	["fresh", _callbackParam] call (missionNamespace getVariable ["DS_fnc_dbOnSpawnResponse",{diag_log "<REQUEST ERROR>: callback not defined?";}]);

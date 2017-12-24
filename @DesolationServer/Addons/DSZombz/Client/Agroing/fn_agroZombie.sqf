@@ -8,18 +8,24 @@ if(!local group _zed) then {
 	waitUntil{local group _zed};
 };
 
-_zed forceSpeed (_zed getSpeed "FAST");
+_houses = lineIntersectsSurfaces [getPosWorld _zed,getPosWorld _zed vectorAdd [0, 0, 50],_zed, objNull, true, 1, "GEOM", "NONE"];
+
+if (_houses isEqualTo []) then {
+	_zed forceSpeed (_zed getSpeed "FAST");
+};
 
 _animevh = _zed addEventHandler ["AnimChanged",{
 	params["_zed","_anim"];
 	
+	
 	//prevent zombie from ever walking when agroed
-	if(_zed distance player > 2) then {
-		if(_anim == "dsr_Zomb_Walk") then {
+	
+
+	if (_zed distance player > 2) then {
+		if ((_anim == "dsr_Zomb_Walk") && (_houses isEqualTo [])) then {
 			_zed playMove "dsr_Zomb_Sprint";
 		};
 	};
-	
 }];
 _zed setVariable ["animEVH",_animevh];
 

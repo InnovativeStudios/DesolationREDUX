@@ -158,10 +158,10 @@ if(!isNull _rock) then {
 		{
 			params["_rock"];
 			
-			[2] call DS_fnc_addPoints;
-			// ["DS_var_rockMinedCallbackFnc",["rocks_mined",[_rock]]] call DS_fnc_handleCallback;
+			[1] call DS_fnc_addPoints;
+			["DS_var_rocksMinedCallbackFnc",["rocks_mined",[_rock]]] call DS_fnc_handleCallback;
 			
-			uiSleep 1;
+			uisleep 2;
 
 
 			private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _rock], 0];

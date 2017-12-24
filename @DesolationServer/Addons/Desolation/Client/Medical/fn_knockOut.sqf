@@ -37,8 +37,7 @@ DS_var_lastKnockout = diag_tickTime;
 player setUnconscious false;
 if(!alive player) exitWith {};
 
-_isZiptied = player getVariable "SVAR_DS_var_isZiptied";
-if (_isZiptied && !isNil {_isZiptied}) then {
+if (!isNil {player getVariable "SVAR_DS_var_isZiptied"}) then {
 	player switchMove "Acts_AidlPsitMstpSsurWnonDnon_loop";
 } else {
 	player switchMove "unconsciousoutprone";

@@ -93,6 +93,7 @@ class CfgFunctions
 			file = "ActionSystem\Client\Actions\Lift";
 			isclient = 1;
 			class liftObject {};
+			class toggleGenerator {};
 		};
 		class Client_Actions_NonLift {
 			file = "ActionSystem\Client\Actions\NonLift";
@@ -117,6 +118,13 @@ class CfgFunctions
 			class display2DMenu {};
 			class doAnimation {};
 		};
+		class Client_Actions_Gathering {
+			file = "ActionSystem\Client\Actions\Gathering";
+			isclient = 1;
+			class getApples {};
+		};
+		
+		
 		// server functions
 		class Server {
 			file = "ActionSystem\Server";
@@ -133,11 +141,34 @@ class CfgFunctions
 			class playerAction {};
 			class flipObject {};
 			class itemFill {};
+			class gather {};
+			class useGenerator {};
 		};
 	};
 };
 
 class Cfg3DActions {
+	class Gathering {
+		condition = "!(str(_cursor) find 't_malus1s' == -1) && player == vehicle player";
+		
+		renderType = 1;
+		
+		class Actions {
+			
+			// Apples
+			class GatherApple {
+				condition = "!(str(_cursor) find 't_malus1s' == -1)";
+				text = "Search Apples";
+				class Parameters {
+					requiredItems[] = {};
+					returnedItems[] = {
+						{"DSR_Item_redApple",1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_getApples;";
+			};
+		};
+	};
 	class Vehicles {
 		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
 		
@@ -484,6 +515,12 @@ class Cfg3DActions {
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_sit;";
 			};
+			class ToggleGenerator {
+				condition = "(_cursor isKindOf 'Land_Portable_generator_F')";
+				text = "Toggle ON/OFF";
+				class parameters {};
+				action = "[_cursor] call ACT_fnc_toggleGenerator;";
+			};
 		};
 	};	
 	class Players {
@@ -494,7 +531,7 @@ class Cfg3DActions {
 		class Actions {
 			
 			class Release {
-				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
 				text = "Open Ziptie";
 				class Parameters {
 					requiredItems[] = {
@@ -504,14 +541,14 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_release;";
 			};
 			class OpenInventory {
-				conditions = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' == 0)"; // check if ziptied
+				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
 				text = "Open Inventory";
 				class Parameters {};
-				action = "player action ['Gear', _cursor];";
+				action = "player action ['Gear',_cursor];";
 			};
 			class Ziptie {
-				conditions = "(animationState _cursor find 'amovpercmstpssurwnondnon' == 0)"; // you can only add ziptie if play has hands up
-				text = "Ziptie player";
+				condition = "(animationState _cursor == 'amovpercmstpssurwnondnon')"; // (if player has hands up)
+				text = "Add Ziptie";
 				class Parameters {
 					requiredItems[] = {
 						{"DSR_Item_Ziptie", 1}
@@ -543,7 +580,7 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
-				condition = "(animationState _cursor find 'acts_aidlpsitmstpssurwnondnon_loop' != 0)"; //todo broken leg check (remove splint usage is for more space in 3d menu!)
+				condition = "(animationState _cursor != 'acts_aidlpsitmstpssurwnondnon_loop')"; //todo broken leg check (remove splint usage is for more space in 3d menu!)
 				text = "Apply Splint";
 				class Parameters {
 					requiredItems[] = {

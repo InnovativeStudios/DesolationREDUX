@@ -72,7 +72,19 @@ while{ACT_var_Render3DActions} do {
 						};
 					};
 				} else {
-					_iconInfo pushBack ["no_selection",_cursor modelToWorld [0,0,0],["action"] call ACT_fnc_get3DPartName,0];
+					_iconPos = [0,0,0];
+					if (isPlayer _cursor) then {
+						if (stance _cursor == "STAND") then {
+							_iconPos = [0,0,1.4];
+						} else {
+							if (stance _cursor == "CROUCH") then {
+								_iconPos = [0,0,0.7];
+							} else {
+								_iconPos = [0,0,0.1];
+							};
+						};
+					};
+					_iconInfo pushBack ["no_selection",_cursor modelToWorld _iconPos,["action"] call ACT_fnc_get3DPartName,0];
 				};
 				
 				_3D_ICON_DATA pushBack _actionIndex;

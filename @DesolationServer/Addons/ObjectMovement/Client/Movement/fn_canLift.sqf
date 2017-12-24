@@ -12,4 +12,7 @@
 params["_object"];
 _mass = getMass _object;
 _type = typeof _object;
+
+if ((_type isKindOf "land_portablelight_single_f") || (_type isKindOf "land_portablelight_double_f")) exitwith {true};
+
 (!(_type isKindOf "Static") && !(_type isKindOf "Man") && ((_mass > 0) || !(_type find "Preview2" == -1)) && (_mass <= (call compile (["maxMass","OM"] call BASE_fnc_getCfgValue))));

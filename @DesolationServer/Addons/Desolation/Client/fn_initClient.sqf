@@ -32,8 +32,9 @@ DS_AntiGammaFilter ppEffectCommit 0;
 
 
 //	Disable automatic refueling from gas pumps
+_worldsize = getnumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
 _mapCenter = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
-{_x setFuelCargo 0;} foreach (nearestTerrainObjects [_mapCenter, ["FUELSTATION"], 35000]);
+{_x setFuelCargo 0;} foreach (nearestTerrainObjects [_mapCenter, ["FUELSTATION"], _worldsize]);
 
 {
 	_x call BASE_fnc_createLocation;
@@ -46,20 +47,5 @@ call ds_fnc_initHoldables;
 [] spawn DS_fnc_initBuilding;
 [] spawn DS_fnc_initNVGs;
 
-//asks the server to spawn us
-
-// get client custom loadout data
-_clientLoadoutData = uiNamespace getVariable ["DS_LOADOUTDATA",[]];
-
-if(_clientLoadoutData isEqualTo []) then {	
-	// no loadout data exists in UI (joined from a3launcher?)
-	_clientLoadoutDataProfile = [];
-	_clientLoadoutDataProfile pushBack (profileNamespace getVariable ["DS_Default_Uniform","U_C_Poor_2"]);
-	_clientLoadoutDataProfile pushBack (profileNamespace getVariable ["DS_Default_Headgear","H_StrawHat"]);
-	_clientLoadoutDataProfile pushBack (profileNamespace getVariable ["DS_Default_Goggles","G_Aviator"]);
-	
-	// update UI with profile loadout data
-	uiNamespace setVariable ["DS_LOADOUTDATA",_clientLoadoutDataProfile];
-};
 // request spawn
-[player,uiNamespace getVariable "DS_LOADOUTDATA"] remoteExec ["DS_fnc_requestSpawn", 2];
+[player] remoteExec ["DS_fnc_requestSpawn", 2];
