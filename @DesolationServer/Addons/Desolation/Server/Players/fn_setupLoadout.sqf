@@ -10,17 +10,18 @@
  */
 params["_unit","_equipmentArray"];
 
+uiSleep 5;
+removeHeadgear _unit;
+removeGoggles _unit;
+removeVest _unit;
+removeBackpack _unit;
+removeUniform _unit;
+removeAllWeapons _unit;
+removeAllAssignedItems _unit;
+
 if !(_equipmentArray isEqualTo []) then {
 	
-	//--- load the chosen loadout
-	removeHeadgear _unit;
-	removeGoggles _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeUniform _unit;
-	removeAllWeapons _unit;
-	removeAllAssignedItems _unit;
-	
+	//--- load the chosen loadout	
 	sleep 1;
 	_unit setUnitLoadout _equipmentArray;
 	_dataHas = getUnitLoadout _unit;
@@ -40,16 +41,8 @@ if !(_equipmentArray isEqualTo []) then {
 		};
 	};
 } else {
-	
-	removeHeadgear _unit;
-	removeGoggles _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeUniform _unit;
-	removeAllWeapons _unit;
-	removeAllAssignedItems _unit;
-	
-	
+
+	//--- load fresh loadout
 	_uniform = (["Uniform","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	if!(_uniform isEqualTo []) then {
 		_uniform = selectRandom _uniform;

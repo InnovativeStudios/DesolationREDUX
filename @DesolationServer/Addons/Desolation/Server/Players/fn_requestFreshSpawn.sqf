@@ -13,7 +13,7 @@ private["_uid","_playerObj"];
 
 _uid = getplayeruid _client;
 
-if !(_client getVariable ["ReadyToSpawn",false]) exitWith {[_client, "FAIL"] remoteExec ["endMission", 0];};
+if !(_client getVariable ["ReadyToSpawn",false]) exitWith {};
 
 _playerObj = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NONE"];
 _playerObj allowDamage false;
