@@ -19,7 +19,7 @@ if(alive _unit) then {
 
 
     if !(isNil {_unit getVariable "DS_var_inCombat"}) then {
-        diag_log format ["Desolation> PLAYER %1 COMBAT LOGGED!!", _unitName];
+        diag_log format ["Desolation> Player %1 combat logged!", _unitName];
 		
 		[_unit] spawn {
 			params["_unit"];
@@ -59,19 +59,21 @@ if(alive _unit) then {
 			if (alive _ai) then {
 				deletegroup _group;
 				deleteVehicle _ai;
+
+				_unit setVariable ["DCed",true];
 				[_unit,false] spawn DS_fnc_requestSave;
+
+				_return = true;
 			} else {
-				["killPlayer","NULL_CALLBACK",[_unit,_unit]] spawn DS_fnc_dbRequest;
+				[_unit,_unit] spawn DB_fnc_KillPlayer;
 			};
 		};
 	} else {
 		diag_log ("Desolation> Saving Disconnected Player (" + _unitName + ")");
 
 		_unit setVariable ["DCed",true];
-		if(alive _unit) then {
-			//--- if the unit DCed while alive, they are logging out, not ded
-			[_unit,false] spawn DS_fnc_requestSave;
-		};
+		[_unit,false] spawn DS_fnc_requestSave;
+
 		_return = true; //keep the body in game while saving happens
 	};
 };
