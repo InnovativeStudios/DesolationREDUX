@@ -13,8 +13,6 @@ private["_uid","_playerObj"];
 
 _uid = getplayeruid _client;
 
-if !(_client getVariable ["ReadyToSpawn",false]) exitWith {};
-
 _playerObj = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NONE"];
 _playerObj allowDamage false;
 _playerObj hideObjectGlobal true;
@@ -59,7 +57,7 @@ _playerObj addEventHandler ["Fired",{
     };
 }];
 
-[_playerObj] remoteExecCall ["DS_fnc_finishSpawn",_client];
+[_playerObj] remoteExecCall ["DS_fnc_finishSpawn", _client];
 waitUntil{getPlayerUID _playerObj == _uid};
 deleteVehicle _client;
 //--- add default values to non-presistant vars here

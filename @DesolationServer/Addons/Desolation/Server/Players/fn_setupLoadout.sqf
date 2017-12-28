@@ -10,7 +10,6 @@
  */
 params["_unit","_equipmentArray"];
 
-uiSleep 5;
 removeHeadgear _unit;
 removeGoggles _unit;
 removeVest _unit;
@@ -22,7 +21,7 @@ removeAllAssignedItems _unit;
 if !(_equipmentArray isEqualTo []) then {
 	
 	//--- load the chosen loadout	
-	sleep 1;
+	sleep 2;
 	_unit setUnitLoadout _equipmentArray;
 	_dataHas = getUnitLoadout _unit;
 	if !(_dataHas isEqualTo _equipmentArray) then {
@@ -42,78 +41,92 @@ if !(_equipmentArray isEqualTo []) then {
 	};
 } else {
 
-	//--- load fresh loadout
 	_uniform = (["Uniform","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_uniform isEqualTo []) then {
+	_headgear = (["Headgear","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_goggles = (["Goggles","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_vest = (["Vest","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_backpack = (["Backpack","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_HandgunWpn = (["HandgunWpn","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_PrimaryWpn = (["PrimaryWpn","DS"] call BASE_fnc_getCfgValue) splitString ",";
+
+	_Items = (["Items","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_linked = (["Linked","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_PrimaryWpnAttachments = (["PrimaryWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_HandgunWpnAttachments = (["HandgunWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
+	_RemoveItems = (["RemoveItems","DS"] call BASE_fnc_getCfgValue) splitString ",";
+
+
+	//--- load fresh loadout
+	if !(_uniform isEqualTo []) then {
 		_uniform = selectRandom _uniform;
-		_unit addUniform _uniform;
+		_unit forceAddUniform _uniform;
+		sleep 1;
+		if (uniform _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 	
-	_headgear = (["Headgear","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_headgear isEqualTo []) then {
+	if !(_headgear isEqualTo []) then {
 		_headgear = selectRandom _headgear;
 		_unit addHeadgear _headgear;
+		sleep 1;
+		if (headgear _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 
-	_goggles = (["Goggles","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_goggles isEqualTo []) then {
+	if !(_goggles isEqualTo []) then {
 		_goggles = selectRandom _goggles;
 		_unit addGoggles _goggles;
+		sleep 1;
+		if (goggles _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 	
-	_vest = (["Vest","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_vest isEqualTo []) then {
+	if !(_vest isEqualTo []) then {
 		_vest = selectRandom _vest;
 		_unit addVest _vest;
+		sleep 1;
+		if (vest _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 	
-	_backpack = (["Backpack","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_backpack isEqualTo []) then {
+	if !(_backpack isEqualTo []) then {
 		_backpack = selectRandom _backpack;
 		_unit addBackpack _backpack;
+		sleep 1;
+		if (backpack _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 	
-	_HandgunWpn = (["HandgunWpn","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_HandgunWpn isEqualTo []) then {
+	if !(_HandgunWpn isEqualTo []) then {
 		_HandgunWpn = selectRandom _HandgunWpn;
 		_unit addWeapon _HandgunWpn;
+		sleep 1;
+		if (secondaryweapon _unit == "") then {_unit addWeapon _HandgunWpn;};
+		{
+			_unit addHandgunItem _x;
+		} forEach _HandgunWpnAttachments;
 	};
 	
-	_PrimaryWpn = (["PrimaryWpn","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	if!(_PrimaryWpn isEqualTo []) then {
+	if !(_PrimaryWpn isEqualTo []) then {
 		_PrimaryWpn = selectRandom _PrimaryWpn;
 		_unit addWeapon _PrimaryWpn;
+		sleep 1;
+		if (primaryweapon _unit == "") then {_unit addWeapon _HandgunWpn;};
+		{
+			_unit addPrimaryWeaponItem _x;
+		} forEach _PrimaryWpnAttachments;
 	};
 	
 	
-	
-	
-	_Items = (["Items","DS"] call BASE_fnc_getCfgValue) splitString ",";
+
 	{
 		_unit addItem _x;
 	} forEach _Items;
 	
-	_linked = (["Linked","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	{
 		_unit linkItem _x;
-	} forEach _Items;
+	} forEach _linked;
 	
-	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	{
 		_unit addMagazine _x;
 	} forEach _Magazines;
 	
-	_PrimaryWpnAttachments = (["PrimaryWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	{
-		_unit addPrimaryWeaponItem _x;
-	} forEach _PrimaryWpnAttachments;
-	
-	_HandgunWpnAttachments = (["HandgunWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	{
-		_unit addHandgunItem _x;
-	} forEach _HandgunWpnAttachments;
-	
-	_RemoveItems = (["RemoveItems","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	{
 		_unit unlinkItem _x;
 	} forEach _RemoveItems;
