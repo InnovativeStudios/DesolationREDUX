@@ -9,12 +9,12 @@
  * https://www.bistudio.com/monetization/
  */
 
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
  
-params["_cursor","_index","_selection"];
+params["_cursor"];
 
-if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "gut Animal",0] remoteExec ["ACT_fnc_gutAnimal", 2];
+if ([1] call ACT_fnc_doAnimation) then {
+	[_cursor, player, "Gut", 3] remoteExec ["ACT_fnc_gut", 2];
 };
 
 true

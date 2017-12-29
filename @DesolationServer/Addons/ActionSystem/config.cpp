@@ -45,7 +45,7 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
-		class Client_Actions_Anima {
+		class Client_Actions_Animal {
 			file = "ActionSystem\Client\Actions\Animal";
 			isclient = 1;
 			class gutAnimal {};
@@ -136,7 +136,7 @@ class CfgFunctions
 			class playerAction {};
 			class flipObject {};
 			class itemFill {};
-			class gutAnimal {};
+			class gut {};
 		};
 	};
 };
@@ -490,15 +490,15 @@ class Cfg3DActions {
 		renderType = 1;
 	
 		class Actions {
-			class gutAnimal {
+			class Gut {
 				condition = "!alive _cursor";
-				text = "gutAnimal";
+				text = "Gut";
 				class Parameters {
 					requiredItems[] = {
 						{"DSR_Item_knife", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_gutAnimal;";
+				action = "[_cursor] call ACT_fnc_gutAnimal;";
 			};
 		};
 	};	
