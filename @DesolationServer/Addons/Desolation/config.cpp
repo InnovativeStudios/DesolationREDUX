@@ -1210,6 +1210,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -1278,6 +1281,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},       
                     {"DSR_Item_Camping_Light",1},
                     {"DSR_Item_Labtop",1},
@@ -1345,6 +1351,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -1413,6 +1422,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -1481,6 +1493,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -2804,6 +2819,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -2872,6 +2890,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -2940,6 +2961,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -3008,6 +3032,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -3076,6 +3103,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -4594,6 +4624,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -4662,6 +4695,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -4730,6 +4766,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -4798,6 +4837,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -4866,6 +4908,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -6493,6 +6538,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -6561,6 +6609,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -6629,6 +6680,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -6697,6 +6751,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -6765,6 +6822,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -8392,6 +8452,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -8460,6 +8523,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -8528,6 +8594,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -8596,6 +8665,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -8664,6 +8736,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -10291,6 +10366,9 @@ class CfgItemSpawns {
             };
             class Junk {
                 rare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -10359,6 +10437,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semirare[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -10427,6 +10508,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 average[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -10495,6 +10579,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 semicommon[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
@@ -10563,6 +10650,9 @@ class CfgItemSpawns {
                     {"DSR_Item_Pencil_Yellow",1}
                 };
                 common[] = {
+					{"DSR_Item_Ziptie",1},
+					{"DSR_Item_PortableLight_Double",1},
+					{"DSR_Item_PortableLight_Single",1},
 					{"DSR_Melee_Axe",1},
 					{"DSR_Item_Scrap_Metal",1},        
                     {"DSR_Item_Camping_Light",1},
