@@ -516,6 +516,9 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			params["_toggle"];
 			setTerrainGrid (if(_toggle) then {50} else {25});
 		};
+		_arsenal = {
+			["Open",true] spawn bis_fnc_arsenal;
+		};
 		_repair = {
 			if(vehicle player != player) then {vehicle player setDamage 0;};
 		};
@@ -529,6 +532,8 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			cursorTarget setDamage 0;
 		};
 		_deletecurs = {
+			_uuid = DS_var_ObjectUUIDS select cursorTarget;
+			[_uuid,objNull] call DB_fnc_killObject;
 			deleteVehicle cursorTarget;
 		};
 		_toggle_players = {
@@ -911,6 +916,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			["No Recoil / No Sway",1,_norecoil,"No_Recoil_Toggle"],
 			["Fast Fire",1,_fastfire,"Fast_Fire_Toggle"],
 			["No Grass",1,_nograss,"No_Grass_Toggle"],
+			["Arsenal",2,_arsenal],
 			["Heal",2,_heal],
 			["Repair Cursor",2,_repaircurs],
 			["Delete Cursor",2,_deletecurs],
