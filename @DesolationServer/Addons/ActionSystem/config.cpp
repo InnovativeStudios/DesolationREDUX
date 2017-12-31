@@ -45,6 +45,11 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
+		class Client_Actions_Animal {
+			file = "ActionSystem\Client\Actions\Animal";
+			isclient = 1;
+			class gutAnimal {};
+		};
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
@@ -144,6 +149,7 @@ class CfgFunctions
 			class itemFill {};
 			class gather {};
 			class useGenerator {};
+			class gut {};
 		};
 	};
 };
@@ -521,6 +527,24 @@ class Cfg3DActions {
 				text = "Toggle ON/OFF";
 				class parameters {};
 				action = "[_cursor] call ACT_fnc_toggleGenerator;";
+			};
+		};
+	};	
+	class Animal {
+		condition = "player == vehicle player && _cursor iskindof 'Animal_Base_F'";
+		
+		renderType = 1;
+	
+		class Actions {
+			class Gut {
+				condition = "!alive _cursor";
+				text = "Gut";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_knife", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_gutAnimal;";
 			};
 		};
 	};	
