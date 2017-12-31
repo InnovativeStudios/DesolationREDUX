@@ -134,6 +134,7 @@ class CfgFunctions
 		class Server_Actions {
 			file = "ActionSystem\Server\Actions";
 			isserver = 1;
+			class deconstructObject {};
 			class removePartReq {};
 			class repairPartReq {};
 			class replacePartReq {};
@@ -629,17 +630,17 @@ class Cfg3DActions {
 					returnedItems[] = {
 						{"DSR_Item_Fuelcan_Full", 20},			// 20 litres
 						{"DSR_Item_Gascan_Large_Full", 20},		// 20 litres
-						{"DSR_Item_Gascan_Small_Full", 10}		// 10 litres
+						{"DSR_Item_Gascan_Small_Full", 10}		// 10 liters
 					};
 				};
 				action = "[_cursor] call ACT_fnc_getFuel;";
 			};
-//			class Deconstruct {
-//				condition = "!(str(_cursor) find 'stockade' == -1";
-//				text = "Deconstruct";
-//				class Parameters {};
-//				action = "[_cursor] call ACT_fnc_deconstruct;";
-//			};
+			class Deconstruct {
+				condition = "(str(_cursor) find 'stockade' != -1) && ([_cursor] call DS_fnc_isBuildingOwner)";
+				text = "Deconstruct";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_deconstruct;";
+			};
 		};
 	};
 };

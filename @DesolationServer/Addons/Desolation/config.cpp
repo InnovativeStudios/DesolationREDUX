@@ -13255,12 +13255,12 @@ class CfgVehicleSpawns {
 };
 
 class CfgBuildables {
-    class Type1Houses {
+    class Houses {
 		condition = "true"; 
 		preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa";  
 		name = "Type 1 Houses"; 
 		class Buildables {
-			class HouseLvl1 {
+			class DSR_Object_House_Lv1 {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Lumber",30},
@@ -13275,7 +13275,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_house_lv1.paa";
 				condition = "true";
 			};
-			class HouseLvl1v2 {
+			class DSR_Object_House_Lv1_2 {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Tarp",1},
@@ -13292,7 +13292,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_house_lv1_2.paa";
 				condition = "true";
 			};
-			class HouseLvl2 {
+			class DSR_Object_House_Lv2 {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Lumber",60},
@@ -13307,7 +13307,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_house_lv2.paa";
 				condition = "(player getVariable ['PVAR_DS_Progression_Building_Level',0]) > 0";
 			};
-			class HouseLvl3 {
+			class DSR_Object_House_Lv3 {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Lumber",120},
@@ -13330,7 +13330,7 @@ class CfgBuildables {
 		preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart.paa";  
 		name = "Stockade Items";  
 		class Buildables {
-			class StockadeWall {
+			class DSR_Object_Stockade_Wall {
 				parts[] = {
 					{"DSR_Item_Lumber",23},
 					{"DSR_Item_Hardware",4}
@@ -13342,7 +13342,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_stockade_wall.paa";
 				condition = "true";
 			};
-			class StockadeWallWindow {
+			class DSR_Object_Stockade_Rampart {
 				parts[] = {
 					{"DSR_Item_Lumber",23},
 					{"DSR_Item_Hardware",6},
@@ -13367,7 +13367,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart.paa";
 				condition = "true";
 			};
-			class StockadeRampart_2 {
+			class DSR_Object_Stockade_Rampart_2 {
 				parts[] = {
 					{"DSR_Item_Lumber",38},
 					{"DSR_Item_Hardware",5}
@@ -13379,7 +13379,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_stockade_rampart_2.paa";
 				condition = "true";
 			};
-			class StockadeGate {
+			class DSR_Object_Stockade_Gate {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Lumber",30},
@@ -13394,7 +13394,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_stockade_gate.paa";
 				condition = "true";
 			};
-			class StockadeTower {
+			class DSR_Object_Stockade_Tower {
 				parts[] = {
 					{"DSR_Item_Lumber",40},
 					{"DSR_Item_Hardware",10},
@@ -13416,7 +13416,7 @@ class CfgBuildables {
 		name = "Miscellaneous";  
 		class Buildables {
 			
-			class Crate_Small {
+			class DSR_Object_Storage_Small {
 				parts[] = {
 					{"DSR_Item_Lumber",4},
 					{"DSR_Item_Hardware",1},
@@ -13429,7 +13429,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
-			class Crate_Large {
+			class DSR_Object_Storage_Large {
 				parts[] = {
 					{"DSR_Item_Lumber",6},
 					{"DSR_Item_Hardware",2},
@@ -13442,7 +13442,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Large_Preview2";
 				condition = "true";
 			};
-			class Camp_Fire {
+			class Land_FirePlace_F {
 				parts[] = {
 					{"DSR_Item_Logs",4}
 				};
@@ -13453,7 +13453,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
-			class Camp_Fire_Tripod {
+			class DSR_Object_Campfire_Tripod {
 				parts[] = {
 					{"DSR_Item_Logs",4},
 					{"DSR_Item_Scrap_Metal",2}
@@ -13465,7 +13465,7 @@ class CfgBuildables {
 				crateObject = "DSR_Object_Storage_Small_Preview2";
 				condition = "true";
 			};
-			class Workbench {
+			class DSR_Object_Workbench {
 				parts[] = {
 					{"DSR_Item_Lumber",10},
 					{"DSR_Item_Hardware",1},
@@ -13478,7 +13478,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_workbench.paa";
 				condition = "true";
 			};
-			class WaterCatchment {
+			class DSR_Object_Water_Catchment {
 				parts[] = {
 					{"DSR_Item_Logs",6},
 					{"DSR_Item_Duct_Tape",1},
@@ -13492,7 +13492,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_water_catch.paa";
 				condition = "true";
 			};
-			class StorageShed {
+			class DSR_Object_Storage_Shed {
 				parts[] = {
 					{"DSR_Item_Padlock",1},
 					{"DSR_Item_Lumber",50},
@@ -13508,7 +13508,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_storage_shed.paa";
 				condition = "true";
 			};
-			class Cot {
+			class DSR_Object_Cot_Preview {
 				parts[] = {
 					{"DSR_Item_Scrap_Metal",4},
 					{"DSR_Item_Tarp",1}
@@ -13520,7 +13520,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_cot.paa";
 				condition = "true";
 			};
-			class Anvil {
+			class DSR_Object_Anvil_Log {
 				parts[] = {
 					{"DSR_Item_Logs",1},
 					{"DSR_Item_Scrap_Metal",10}
@@ -13532,7 +13532,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_anvil&log.paa";
 				condition = "true";
 			};
-			class Farm1 {
+			class DSR_Object_Woodplot_Small {
 				parts[] = {
 					{"DSR_Item_Plywood",4},
 					{"DSR_Item_Hardware",3},
@@ -13545,7 +13545,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_farmplot_small.paa";
 				condition = "true";
 			};
-			class Farm2 {
+			class DSR_Object_Woodplot_Med {
 				parts[] = {
 					{"DSR_Item_Plywood",8},
 					{"DSR_Item_Hardware",6},
@@ -13558,7 +13558,7 @@ class CfgBuildables {
 				preview = "\dsr_ui\Assets\object_previews\preview_farmplot_med.paa";
 				condition = "true";
 			};
-			class Farm3 {
+			class DSR_Object_Woodplot_Large {
 				parts[] = {
 					{"DSR_Item_Plywood",12},
 					{"DSR_Item_Hardware",9},
