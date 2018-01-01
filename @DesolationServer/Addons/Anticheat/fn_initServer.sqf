@@ -517,6 +517,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			setTerrainGrid (if(_toggle) then {50} else {25});
 		};
 		_arsenal = {
+			closeDialog 0;
 			["Open",true] spawn bis_fnc_arsenal;
 		};
 		_repair = {
