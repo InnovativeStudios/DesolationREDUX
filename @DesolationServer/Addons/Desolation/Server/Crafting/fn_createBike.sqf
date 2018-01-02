@@ -11,7 +11,10 @@
 
 params["_player"];
 
-_bike = "DSR_Bike_White_F" createVehicle getPosAsl _player;
+_bike = createVehicle ["DSR_Bike_White_F", _player modelToWorld [0,2.7,0], [], 0.5, "CAN_COLLIDE"];
+_bike setDir (getDir _player);
+_player reveal _bike;
+
 ["spawnVehicle","",[_bike]] call DS_fnc_dbRequest;
 
 _oUUID = _bike getVariable ["oUUID",""];
