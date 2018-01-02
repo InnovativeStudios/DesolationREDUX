@@ -179,6 +179,7 @@ class CfgFunctions
 			file = "Desolation\Client\Crafting";
 			isclient = 1;
 			class onCraftClick {};
+			class craftBike {};
 		};
 		class Client_Building_Events {
 			file = "Desolation\Client\Building\Events";
@@ -401,6 +402,7 @@ class CfgFunctions
 			file = "Desolation\Server\Crafting";
 			isserver = 1;
 			class initCraftingSys {};
+			class createBike {};
 		};
 		class Server_Building_Events {
 			file = "Desolation\Server\Building\Events";
