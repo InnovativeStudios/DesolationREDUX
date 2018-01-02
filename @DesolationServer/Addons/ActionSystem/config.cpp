@@ -656,6 +656,16 @@ class Cfg3DActions {
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_deconstruct;";
 			};
+			class DisassembleBike {
+				condition = "(_cursor isKindOf 'DSR_Bike_Green_F') || (_cursor isKindOf 'DSR_Bike_White_F')";
+				text = "Disassemble";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox",1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_DisassembleBike;";
+			};
 		};
 	};
 };
