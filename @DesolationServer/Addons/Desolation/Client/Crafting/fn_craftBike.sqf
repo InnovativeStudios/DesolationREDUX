@@ -9,13 +9,14 @@
  * https://www.bistudio.com/monetization/
  */
 	 
-private _requiredItems = [
+_requiredItems = [
 	["DSR_Item_Bike_Frame",1],
 	["DSR_Item_Bike_Wheel",2],
 	["DSR_Item_Bike_Chain",1]
 ];
 
-if (player == vehicle player) exitWith {systemchat "Can't craft bike while in vehicle!"};
+if (player != vehicle player) exitWith {systemchat "Can't craft bike while in vehicle!"};
+if !(nearestObjects [player, ["LandVehicle","Air","Ship"], 10] isEqualTo []) exitWith {systemchat "There is other vehicle too near!"};
 
 _anim = "Acts_CarFixingWheel";
 if ([_anim] call ds_fnc_doAction) then {
@@ -40,7 +41,7 @@ if ([_anim] call ds_fnc_doAction) then {
 		true
 	} count _requiredItems;
 	
-	[player] remoteExec ["DS_fnc_createBike",2];
+	[player] remoteExec ["DS_fnc_createBike",0];
 	
 	systemchat "Bike Crafted";
 	[1] call DS_fnc_addPoints;
