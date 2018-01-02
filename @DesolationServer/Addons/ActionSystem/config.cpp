@@ -101,6 +101,7 @@ class CfgFunctions
 			class getFuel {};
 			class getWater {};
 			class deconstruct {};
+			class disassembleBike {};
 		};
 		class Client_Actions_Sit {
 			file = "ActionSystem\Client\Actions\Sit";
@@ -146,6 +147,7 @@ class CfgFunctions
 			class gather {};
 			class useGenerator {};
 			class gut {};
+			class disassemble {};
 		};
 	};
 };
@@ -664,7 +666,7 @@ class Cfg3DActions {
 						{"DSR_Item_Toolbox",1}
 					};
 				};
-				action = "[_cursor] call ACT_fnc_DisassembleBike;";
+				action = "[_cursor] call ACT_fnc_disassembleBike;";
 			};
 		};
 	};
