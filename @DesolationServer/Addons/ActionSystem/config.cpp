@@ -665,6 +665,12 @@ class Cfg3DActions {
 					requiredItems[] = {
 						{"DSR_Item_Toolbox",1}
 					};
+					returnedItems[] = {
+					    {"DSR_Item_Toolbox",1},
+					    {"DSR_Item_Bike_Frame",1},
+					    {"DSR_Item_Bike_Wheel",2},
+					    {"DSR_Item_Bike_Chain",1}
+					};
 				};
 				action = "[_cursor] call ACT_fnc_disassembleBike;";
 			};
