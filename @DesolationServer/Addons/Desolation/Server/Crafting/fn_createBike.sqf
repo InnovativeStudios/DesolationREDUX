@@ -15,9 +15,4 @@ _bike = createVehicle ["DSR_Bike_White_F", _player modelToWorld [0,2.7,0], [], 0
 _bike setDir (getDir _player);
 _player reveal _bike;
 
-["spawnVehicle","",[_bike]] call DS_fnc_dbRequest;
-
-_oUUID = _bike getVariable ["oUUID",""];
-
-DS_var_Vehicles pushback _bike;					
-DS_var_VehicleUUIDS pushback _oUUID;
+[_bike] call DB_fnc_spawnObject;

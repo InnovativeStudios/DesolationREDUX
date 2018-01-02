@@ -16,18 +16,19 @@ _requiredItems = [
 ];
 
 if (player != vehicle player) exitWith {systemchat "Can't craft bike while in vehicle!"};
-if !(nearestObjects [player, ["LandVehicle","Air","Ship"], 10] isEqualTo []) exitWith {systemchat "There is other vehicle too near!"};
+if !(nearestObjects [player, ["LandVehicle","Air","Ship"], 12] isEqualTo []) exitWith {systemchat "There is other vehicle too near!"};
 
 _anim = "Acts_CarFixingWheel";
 if ([_anim] call ds_fnc_doAction) then {
 	
-	if !("DSR_Item_Toolbox" in magazines player) exitWith {systemchat "Missing item: Toolbox"};
+	if !("DSR_Item_Toolbox" in magazines player) exitWith {systemchat "Items(s) missing: Toolbox"};
 	_hasRequirements = true;
 	{
 		_item = _x select 0;
 		_itemCount = _x select 1;
 		if( ({tolower(_x) == tolower(_item)} count (magazines player)) < _itemCount) exitWith {
-			systemchat ("Does not have: " + _item + " count: " + str(_itemCount));
+			_displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
+			systemchat ("Item(s) missing: " + _displayName + " count: " + str(_itemCount));
 			_hasRequirements = false;
 		};
 		true
