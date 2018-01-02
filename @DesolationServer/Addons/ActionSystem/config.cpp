@@ -45,11 +45,6 @@ class CfgFunctions
 			isclient = 1;
 			class initClient {};
 		};
-		class Client_Actions_Animal {
-			file = "ActionSystem\Client\Actions\Animal";
-			isclient = 1;
-			class gutAnimal {};
-		};
 		class Client_Actions_Vehicles {
 			file = "ActionSystem\Client\Actions\Vehicles";
 			isclient = 1;
@@ -127,6 +122,7 @@ class CfgFunctions
 			file = "ActionSystem\Client\Actions\Gathering";
 			isclient = 1;
 			class getApples {};
+			class gutAnimal {};
 		};
 		
 		
@@ -155,14 +151,15 @@ class CfgFunctions
 };
 
 class Cfg3DActions {
+	
+	
 	class Gathering {
-		condition = "!(str(_cursor) find 't_malus1s' == -1) && player == vehicle player";
+		condition = "player == vehicle player && ((_cursor isKindOf 'Animal_Base_F') || !(str(_cursor) find 't_malus1s' == -1))";
 		
 		renderType = 1;
 		
 		class Actions {
 			
-			// Apples
 			class GatherApple {
 				condition = "!(str(_cursor) find 't_malus1s' == -1)";
 				text = "Search Apples";
@@ -174,8 +171,20 @@ class Cfg3DActions {
 				};
 				action = "[_cursor] call ACT_fnc_getApples;";
 			};
+			class GatherAnimal {
+				condition = "!alive _cursor";
+				text = "Gut";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_knife", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_gutAnimal;";
+			};
 		};
 	};
+	
+	
 	class Vehicles {
 		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
 		
@@ -529,25 +538,7 @@ class Cfg3DActions {
 				action = "[_cursor] call ACT_fnc_toggleGenerator;";
 			};
 		};
-	};	
-	class Animal {
-		condition = "player == vehicle player && _cursor iskindof 'Animal_Base_F'";
-		
-		renderType = 1;
-	
-		class Actions {
-			class Gut {
-				condition = "!alive _cursor";
-				text = "Gut";
-				class Parameters {
-					requiredItems[] = {
-						{"DSR_Item_knife", 1}
-					};
-				};
-				action = "[_cursor] call ACT_fnc_gutAnimal;";
-			};
-		};
-	};	
+	};
 	class Players {
 		condition = "_cursor in allPlayers && player == vehicle player";
 		
@@ -557,7 +548,7 @@ class Cfg3DActions {
 			
 			class Release {
 				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
-				text = "Open Ziptie";
+				text = "Open Zip tie";
 				class Parameters {
 					requiredItems[] = {
 						{"DSR_Item_Knife", 1}
@@ -573,7 +564,7 @@ class Cfg3DActions {
 			};
 			class Ziptie {
 				condition = "(animationState _cursor == 'amovpercmstpssurwnondnon')"; // (if player has hands up)
-				text = "Add Ziptie";
+				text = "Add Zip tie";
 				class Parameters {
 					requiredItems[] = {
 						{"DSR_Item_Ziptie", 1}
