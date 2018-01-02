@@ -1009,12 +1009,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					clearMagazineCargoGlobal _vehicle;
 					clearItemCargoGlobal _vehicle;
 				
-					[_vehicle] call DB_fnc_spawnVehicle;
-					
-					_oUUID = _vehicle getVariable ["oUUID",""];
-					
-					DS_var_Objects pushback _vehicle;					
-					DS_var_ObjectUUIDS pushback _oUUID;
+					[_vehicle] call DB_fnc_spawnObject;
 				
 				},[_classname,_position,_direction]] call LYS_fnc_RunOnServer;				
 			};
