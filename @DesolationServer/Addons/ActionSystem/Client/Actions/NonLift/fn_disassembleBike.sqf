@@ -15,7 +15,7 @@ params["_cursor"];
 
 if ([0] call ACT_fnc_doAnimation) then {
 
-	[_cursor, "Disassemble",3] remoteExec ["ACT_fnc_Disassemble", 2];
+	[_cursor, player, "Disassemble",3] remoteExec ["ACT_fnc_Disassemble", 2];
 };
 
 true
