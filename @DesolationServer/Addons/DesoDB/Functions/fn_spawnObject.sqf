@@ -22,3 +22,7 @@ if ((_objectType == 2) && (_priority > 10000)) then {
 _serializedData = [_object, _objectType, _priority] call DB_fnc_serializeObject;
 _request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,_serializedData];
 [_request] call DB_fnc_sendRequest;
+
+_object_uuid = _serializedData select 0;
+DS_var_Objects pushback _object;
+DS_var_ObjectUUIDS pushback _object_uuid;
