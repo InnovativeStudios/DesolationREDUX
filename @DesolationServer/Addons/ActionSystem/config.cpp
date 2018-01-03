@@ -141,7 +141,6 @@ class CfgFunctions
 			class repairPartReq {};
 			class replacePartReq {};
 			class refuelReq {};
-			class playerAction {};
 			class flipObject {};
 			class itemFill {};
 			class gather {};
