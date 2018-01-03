@@ -837,12 +837,9 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					_scp serverCommand ("#exec kick " + str(owner(_x)));
 				} forEach allPlayers;
 				uiSleep 1;
-				diag_log  "Shutdown > Saving Vehicles";
+				diag_log  "Shutdown > Saving Objects";
 				DS_var_runObjectMon = false;
 				waitUntil{!DS_var_savingObjects};
-				diag_log  "Shutdown > Saving buildings";
-				DS_var_runBuildingMon = false;
-				waitUntil{!DS_var_savingBuildings};
 				_scp serverCommand "#shutdown";
 			}] call LYS_fnc_RunOnServer;
 		};
