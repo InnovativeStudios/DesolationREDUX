@@ -11,12 +11,10 @@
  
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
 
-params ["_hitPoint","_object","_index","_player","_class","_group"];
+params ["_hitPoint","_object","_player","_class","_group"];
 
 _luckChance = _object getHitPointDamage _hitPoint;
 _luck = random 1;
-
-diag_log format ["chance and luck = %1, %2", _luckChance, _luck];
 
 if (_luck > _luckChance) then {
 
@@ -24,28 +22,22 @@ if (_luck > _luckChance) then {
 	_actionInfo = _actionGroup select 2;
 
 	_returned = [];
-
 	{
 		_aCondition = _x select 0;
 		_aText = _x select 1;
 		_aCode = _x select 2;
 		_aParameters = _x select 3;
 		
-		diag_log format ["<ActionSystem>: (Debug) _aParameters = %1", _aParameters];
-		
 		if (_class == _aText) exitWith {
 			_returned = _aParameters select 1;
-			diag_log format ["<ActionSystem>: (Debug) _returned = %1", _returned];
 		};
 		
 	} forEach _actionInfo;
 
-	//diag_log format ["<ActionSystem>: (Debug) Who Am I: %1", _player];
 
 	_lootHolder = objNull;
 	_nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
-	if ((count _nearLootHolders) != 0) then
-	{
+	if ((count _nearLootHolders) != 0) then {
 		_distance = 5;
 		{
 			_tmpDist = _player distance _x;
@@ -58,25 +50,22 @@ if (_luck > _luckChance) then {
 		} count _nearLootHolders;
 	};
 
-	if (isNull _lootHolder) then
-	{
-		diag_log "<ActionSystem>: (Debug) Create GroundWeaponHolder";
+	if (isNull _lootHolder) then {
 		_lootHolder = createVehicle ["GroundWeaponHolder", _player modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
 		_lootHolder setDir floor (random 360);
 	};
 
 	if (count _returned != 0) then {
 		{
-			diag_log format ["<ActionSystem>: (Debug) Add Item: %1", _x];
 			_lootHolder addItemCargoGlobal _x;
 		} forEach _returned;
 	};
-
-	diag_log format ["<ActionSystem>: (Debug) Loot Holder: %1", _lootHolder];
-
 	_player reveal _lootHolder;
+	
+	[("Part removed succesfully")] remoteExec ["systemChat",_player];
 };
 
 [_object, [_hitPoint, 1]] remoteExec ["setHitPointDamage", 0];
+[("Part broke while trying to remove it")] remoteExec ["systemChat",_player];
 
 true
