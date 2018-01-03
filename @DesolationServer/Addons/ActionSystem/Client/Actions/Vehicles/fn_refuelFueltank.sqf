@@ -9,12 +9,12 @@
  * https://www.bistudio.com/monetization/
  */
 
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
  
 params["_cursor","_index","_selection"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Refuel Fuel Tank",0] remoteExec ["ACT_fnc_refuelReq", 2];
+	[_cursor, player, "Refuel Fuel Tank",0] remoteExec ["ACT_fnc_refuelReq", 2];
 };
 
 true
