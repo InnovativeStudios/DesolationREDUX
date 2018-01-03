@@ -487,7 +487,7 @@ class Cfg3DActions {
 						{"DSR_Item_Gascan_Small_Empty", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_refuelFueltank;";
+				action = "[_cursor] call ACT_fnc_refuelFueltank;";
 			};
 			class FlipVehicle {
 				condition = "_selection find 'body' != -1";
