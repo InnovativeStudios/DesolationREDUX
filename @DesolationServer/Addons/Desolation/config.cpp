@@ -168,13 +168,6 @@ class CfgFunctions
 			isclient = 1;
 			class onMeleeHit {};
 		};
-		class Client_Actions_Vehicle {
-			file = "Desolation\Client\Actions\Repair";
-			isclient = 1;
-			class removePart {};
-			class repairPart {};
-			class refuelVehicle {};
-		};
 		class Client_Crafting {
 			file = "Desolation\Client\Crafting";
 			isclient = 1;
@@ -332,13 +325,6 @@ class CfgFunctions
 			class initInvHandler {};
 			class itemClick {};
 			class setupInvEvents {};
-		};
-		class Server_Actions_Vehicle {
-			file = "Desolation\Server\actions\repair";
-			isserver = 1;
-			class removePartReq {};
-			class repairPartReq {};
-			class refuelReq {};
 		};
 		class Server_Airdrop {
 			file = "Desolation\Server\Airdrop";
