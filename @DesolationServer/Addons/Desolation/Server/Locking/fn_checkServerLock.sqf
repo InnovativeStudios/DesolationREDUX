@@ -22,11 +22,6 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
 		DS_var_runObjectMon = false;
 		waitUntil{!DS_var_savingObjects};
-		
-		// save buildings
-		diag_log  "Shutdown > Saving buildings";
-		DS_var_runBuildingMon = false;
-		waitUntil{!DS_var_savingBuildings};
 	};
  
  
@@ -53,8 +48,6 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 			DS_var_runObjectMon = false;
 			waitUntil{!DS_var_savingObjects};
 			diag_log  "Shutdown > Waiting for building monitor to exit";
-			DS_var_runBuildingMon = false;
-			waitUntil{!DS_var_savingBuildings};
 			diag_log  "Shutdown > Done";
 			_password serverCommand "#shutdown";
 		');
@@ -92,11 +85,6 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
 			DS_var_runObjectMon = false;
 			waitUntil{!DS_var_savingObjects};
-			
-			// save buildings
-			diag_log  "Shutdown > Saving buildings";
-			DS_var_runBuildingMon = false;
-			waitUntil{!DS_var_savingBuildings};
 			
 			
 			diag_log  "Shutdown > Done";
