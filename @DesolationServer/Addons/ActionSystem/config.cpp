@@ -307,7 +307,7 @@ class Cfg3DActions {
 						{"DSR_Item_Tail_Rotor", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeVRotor;";	
+				action = "[_cursor,_selection] call ACT_fnc_removeVRotor;";	
 			};
 			class RemoveHRotor {
 				condition = "_selection find 'hrotor' != -1";
@@ -317,7 +317,7 @@ class Cfg3DActions {
 						{"DSR_Item_Main_Rotor", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeHRotor;";	
+				action = "[_cursor,_selection] call ACT_fnc_removeHRotor;";	
 			};
 			
 			
@@ -400,7 +400,7 @@ class Cfg3DActions {
 						{"DSR_Item_Tire", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeWheel;";
+				action = "[_cursor,_selection] call ACT_fnc_removeWheel;";
 			};
 			class RemoveGlass {
 				condition = "_selection find 'glass' != -1";
@@ -410,7 +410,7 @@ class Cfg3DActions {
 						{"DSR_Item_Glass_Part", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeGlass;";
+				action = "[_cursor,_selection] call ACT_fnc_removeGlass;";
 			};
 			class RemoveEngine {
 				condition = "_selection find 'engine' != -1";
@@ -420,7 +420,7 @@ class Cfg3DActions {
 						{"DSR_Item_Engine_Block", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeEngine;";
+				action = "[_cursor,_selection] call ACT_fnc_removeEngine;";
 			};
 			class RemoveFueltank {
 				condition = "_selection find 'fuel' != -1";
@@ -430,7 +430,7 @@ class Cfg3DActions {
 						{"DSR_Item_Gas_Tank", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_removeFueltank;";
+				action = "[_cursor,_selection] call ACT_fnc_removeFueltank;";
 			};
 			class ReplaceWheel {
 				condition = "_selection find 'wheel' != -1";
