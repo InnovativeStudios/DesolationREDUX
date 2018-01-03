@@ -1,5 +1,4 @@
 
-
 //protect variables
 {
 	if(_x find "_lys" != -1) then {
@@ -483,6 +482,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			params["_toggle"];
 			player allowDamage !_toggle;
 			while{God_Mode_Toggle} do {
+			    resetCamShake;
 				player setDamage 0;
 				DS_var_Blood = 27500;
 				call DS_fnc_stopBleeding;
@@ -533,9 +533,13 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			cursorTarget setDamage 0;
 		};
 		_deletecurs = {
-			_uuid = DS_var_ObjectUUIDS select cursorTarget;
-			[_uuid,objNull] call DB_fnc_killObject;
-			deleteVehicle cursorTarget;
+		    _object = cursorTarget;
+		    [{
+		        params["_object"];
+		        _uuid = _object getVariable ["oUUID",""];
+			    [_uuid,_object] call DB_fnc_killObject;
+		    },[_object]] call LYS_fnc_RunOnServer;
+			deleteVehicle _object;
 		};
 		_toggle_players = {
 			disableserialization;
