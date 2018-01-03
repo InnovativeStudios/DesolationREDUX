@@ -37,8 +37,8 @@ _gridRef = mapGridPosition getpos _heli;
 
 
 uiSleep 3;
-_heli  setHitPointDamage ["HitHRotor", 1];
-_heli  setHitPointDamage ["HitEngine", 1];
+_heli setHitPointDamage ["HitHRotor", 1];
+_heli setHitPointDamage ["HitEngine", 1];
 waitUntil {isTouchingGround _heli};
 
 deletevehicle _smoke;
@@ -49,6 +49,7 @@ _wreckDir = vectorDir _heli;
 _wreckUp = VectorUp _heli;
 _wreckPos set [2,0];
 
+{_heli deleteVehicleCrew _x} forEach crew _heli;
 uiSleep 0.5;
 deletevehicle _heli;
 _wreck = _heliWreckModel createVehicle _wreckPos;

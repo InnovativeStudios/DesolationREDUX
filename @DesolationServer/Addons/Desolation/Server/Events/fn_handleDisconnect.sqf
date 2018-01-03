@@ -65,7 +65,7 @@ if(alive _unit) then {
 
 				_return = true;
 			} else {
-				[_unit,_unit] spawn DB_fnc_KillPlayer;
+				[_unit,objNull] spawn DB_fnc_KillPlayer;
 			};
 		};
 	} else {

@@ -29,10 +29,19 @@ _type = "Unknown";
 _weapon = "";
 _distance = 0;
 
+
 switch(_killType) do {
 	case 1: {
+		_config = "CfgWeapons";
+		_class = currentWeapon _killerObj;	
+		if (vehicle _killerObj != _killerObj) then {
+			_config = "CfgVehicles";
+			_class = typeOf vehicle _killerObj;
+		};
+		_currentWeapon = getText (configfile >> _config >> _class >> "displayName");
+
 		_killerPlayerUUID = _killerObj getVariable ["pUUID",""];
-		_weapon = "TODO: get weapon"; 
+		_weapon = _currentWeapon; 
 		_distance = _killerObj distance _playerObj;
 		_type = "Killed";
 	};
