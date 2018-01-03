@@ -151,25 +151,39 @@ if(!isNull _rock) then {
 	
 	
 
-	if (random(1) <= _chance) then
-	{
+	if (random(1) <= _chance) then {
 		playSound3D ["dsr_music\Effects\rockcrack.ogg", player,false,eyepos player,3,1,35];
 		[_rock] spawn 
 		{
 			params["_rock"];
+			private["_currentSwing","_lootHolder","_nearLootHolders"];
 			
 			[1] call DS_fnc_addPoints;
 			["DS_var_rocksMinedCallbackFnc",["rocks_mined",[_rock]]] call DS_fnc_handleCallback;
-			
-			uisleep 2;
 
 
-			private _currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _rock], 0];
+			_currentSwing = missionNamespace getVariable [format["CurrentSwing_%1", _rock], 0];
 			if (_currentSwing < 0) then {breakTo "DoneSwing";};
 			
-			private _position = getPosATL player;
-			private _lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
-			_lootHolder setPosATL _position;
+			_lootHolder = objNull;
+			_nearLootHolders = player nearObjects ["GroundWeaponHolder", 5];
+			if ((count _nearLootHolders) != 0) then {
+				_distance = 3;
+				{
+					_tmpDist = player distance _x;
+					if (_tmpDist < _distance) then {
+						_lootHolder = _x;
+						_distance = _tmpDist;
+					};
+					true
+				} count _nearLootHolders;
+			};
+
+			if (isNull _lootHolder) then {
+				_lootHolder = createVehicle ["GroundWeaponHolder", getPosATL player, [], 0, "CAN_COLLIDE"];
+				_lootHolder setDir (random 360);
+			};
+
 			_lootHolder addMagazineCargoGlobal ["dsr_item_stones", 1];
 		};
 	} else {
