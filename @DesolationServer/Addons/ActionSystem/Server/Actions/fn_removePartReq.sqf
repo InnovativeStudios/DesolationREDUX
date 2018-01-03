@@ -30,8 +30,7 @@ if (_luck > _luckChance) then {
 		
 		if (_class == _aText) exitWith {
 			_returned = _aParameters select 1;
-		};
-		
+		};	
 	} forEach _actionInfo;
 
 
@@ -62,10 +61,11 @@ if (_luck > _luckChance) then {
 	};
 	_player reveal _lootHolder;
 	
-	[("Part removed succesfully")] remoteExec ["systemChat",_player];
+	[("Part removed successfully")] remoteExec ["systemChat",_player];
+} else {
+	[("Part broke when trying to remove it")] remoteExec ["systemChat",_player];
 };
 
 [_object, [_hitPoint, 1]] remoteExec ["setHitPointDamage", 0];
-[("Part broke while trying to remove it")] remoteExec ["systemChat",_player];
 
 true

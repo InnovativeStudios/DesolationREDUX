@@ -40,12 +40,12 @@ _haveRequiredItems = true;
 	_count = _x select 1;
 
 	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < 1) exitWith {
-		[("Item missing: " + _item)] remoteExec ["systemChat",_player];
+		_displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
+		[("Item(s) missing: " + _displayName + ", count: " + str(_count))] remoteExec ["systemChat",_player];
 		_haveRequiredItems = false;
 	};
 true
 } count _required;
-
 if !(_haveRequiredItems) exitWith {};
 
 

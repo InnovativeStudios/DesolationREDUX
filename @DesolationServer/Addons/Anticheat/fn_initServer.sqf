@@ -481,7 +481,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			params["_toggle"];
 			player allowDamage !_toggle;
 			while{God_Mode_Toggle} do {
-			    resetCamShake;
+				resetCamShake;
 				player setDamage 0;
 				DS_var_Blood = 27500;
 				call DS_fnc_stopBleeding;

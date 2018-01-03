@@ -50,6 +50,6 @@ if !(_haveRequiredItems) exitWith {};
 } count _required;
 
 [_object, [_hitPoint, 0]] remoteExec ["setHitPointDamage", 0];
-[("Part replaced succesfully")] remoteExec ["systemChat",_player];
+[("Part replaced successfully")] remoteExec ["systemChat",_player];
 
 true

@@ -17,7 +17,6 @@ _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
 
 _required = [];
-
 {
 	_aCondition = _x select 0;
 	_aText = _x select 1;
@@ -34,10 +33,9 @@ _haveRequiredItems = true;
 {
 	_item = _x select 0;
 	_count = _x select 1;
-	diag_log format ["looking for %1", _item];
 	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < 1) exitWith {
         _displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
-		[("Item(s) missing: " + _displayName + " count: " + str(_itemCount))] remoteExec ["systemChat",_player];
+		[("Item(s) missing: " + _displayName + ", count: " + str(_count))] remoteExec ["systemChat",_player];
 		_haveRequiredItems = false;
 	};
     true
@@ -48,13 +46,14 @@ _mass = getMass _object;
 if ((_mass < 400) && (alive _object)) then {	// don't flip destroyed vehicles
 	_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2) + 0.1];
 
-	if(abs(getTerrainHeightASL (position _object)) - ((getPosASL _object) select 2) < 1) then {
+	if (abs(getTerrainHeightASL (position _object)) - ((getPosASL _object) select 2) < 1) then {
 		_object setVectorUp (surfaceNormal [(getPosATL _object) select 0, (getPosATL _object) select 1]);
 		_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, 0];
 	} else {
 		_object setVectorUp [0,0,1];
 		_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2)];
 	};
+	[("Object flipped successfully")] remoteExec ["systemChat",_player];
 } else {
 	[("Object is too heavy or its destroyed")] remoteExec ["systemChat",_player];
 };

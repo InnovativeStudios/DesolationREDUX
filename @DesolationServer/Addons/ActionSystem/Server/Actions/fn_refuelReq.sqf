@@ -39,7 +39,7 @@ _tmpCanNo = 0;
 {
 	_item = _x select 0;
 	_litres = _x select 1;
-	if (({tolower(_x) == tolower(_item)} count (magazines _player)) > 0 ) exitWith {
+	if (({tolower(_x) == tolower(_item)} count (magazines _player)) > 0) exitWith {
 		_can = _item;
 		_size = _litres;
 		_canNo = _tmpCanNo;
@@ -48,29 +48,25 @@ _tmpCanNo = 0;
 	_tmpCanNo = _tmpCanNo + 1;
     true
 } count _required;
+if !(_haveRequiredItems) exitWith {[("You don't have the required Items")] remoteExec ["systemChat",_player];};
 
 
-if (_haveRequiredItems) then {
-	_currentFuel = fuel _object;
-	_newFuel = _currentFuel + (_size / 100);
-	
-	if (_newFuel > 1) then {
-		_newFuel = 1;
+_currentFuel = fuel _object;
+_newFuel = _currentFuel + (_size / 100);
+
+if (_newFuel > 1) then {_newFuel = 1;};
+
+[_object, _newFuel] remoteExec ["setFuel", 0];
+[("Refueling complete")] remoteExec ["systemChat",_player];
+
+_player removeItem _can;
+_tmpCanNo = 0;
+{
+	if (_tmpCanNo == _canNo) exitWith {
+		_player addItem (_x select 0);
 	};
-
-	[_object, _newFuel] remoteExec ["setFuel", 0];
-
-	_player removeItem _can;
-	_tmpCanNo = 0;
-	{
-		if (_tmpCanNo == _canNo) exitWith {
-			_player addItem (_x select 0);
-		};
-		_tmpCanNo = _tmpCanNo + 1;
-		true
-	} count _returned;
-} else {
-	[("You don't have the required Items")] remoteExec ["systemChat",_player];
-};
+	_tmpCanNo = _tmpCanNo + 1;
+	true
+} count _returned;
 
 true

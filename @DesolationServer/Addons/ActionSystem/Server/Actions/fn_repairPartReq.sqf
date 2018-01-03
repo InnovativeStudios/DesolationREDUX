@@ -70,6 +70,7 @@ if (_currentDamage > 0) then {
 		_player addItem (_x select 0);
 	} forEach _returned;
 
+	[("Part repaired successfully")] remoteExec ["systemChat",_player];
 } else {
     [("Part is already fully repaired")] remoteExec ["systemChat",_player];
 };

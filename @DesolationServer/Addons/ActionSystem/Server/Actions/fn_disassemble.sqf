@@ -77,8 +77,9 @@ if ((damage _object) < 0.1) then {
 	_uuid = _object getVariable ["oUUID",""];
     [_uuid,objNull] call DB_fnc_killObject;
     deleteVehicle _object;
+	[("Vehicle disassembled successfully")] remoteExec ["systemChat",_player];
 } else {
-    [("Vehicle/Object is too damaged")] remoteExec ["systemChat",_player];
+    [("Vehicle is too damaged")] remoteExec ["systemChat",_player];
 };
 
 true

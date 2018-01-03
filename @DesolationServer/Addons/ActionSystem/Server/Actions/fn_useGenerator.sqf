@@ -15,6 +15,7 @@ params["_object","_player"];
 
 _running = !(isNil {_object getVariable "DS_var_genRunning"});
 if !(_running) then {
+	[("Generator is now running")] remoteExec ["systemChat",_player];
 	[_object] spawn {
 		params["_object"];
 		
@@ -28,6 +29,7 @@ if !(_running) then {
 	};
 } else {
 
+	[("Generator is no longer running")] remoteExec ["systemChat",_player];
 	_object setVariable ["DS_var_genRunning", nil, true];
 	{_x setDamage 0.95} forEach (_object nearObjects ["Lamps_base_F", 16]);
 };

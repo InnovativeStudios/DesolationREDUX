@@ -25,43 +25,30 @@ _returned = [];
 	_aCode = _x select 2;
 	_aParameters = _x select 3;
 		
-	diag_log format ["<ActionSystem>: (Debug) _aParameters = %1", _aParameters];
-		
 	if (_class == _aText) exitWith {
 		_required = _aParameters select 0;
-		diag_log format ["<ActionSystem>: (Debug) _required = %1", _required];
 		_returned = _aParameters select 1;
-		diag_log format ["<ActionSystem>: (Debug) _returned = %1", _returned];
-	};
-		
+	};	
 } forEach _actionInfo;
 
 
 _haveRequiredItems = true;
-
 {
 	_item = _x select 0;
 	_count = _x select 1;
-	diag_log format ["looking for %1", _item];
 	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < 1) exitWith {
-		systemchat ("Does not have: " + _item);
+		_displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
+		[("Item(s) missing: " + _displayName + ", count: " + str(_count))] remoteExec ["systemChat",_player];
 		_haveRequiredItems = false;
 	};
-true
-} count _required;
-
-
-
-if (_haveRequiredItems) then {
-
-	{
-		diag_log format ["adding %1", (_x select 0)];
-		_player addItem (_x select 0);
 	true
-	} count _returned;
-	
-} else {
-	systemChat "You don't have the required Items";
-};
+} count _required;
+if !(_haveRequiredItems) exitWith {};
+
+
+{
+	_player addItem (_x select 0);
+	true
+} count _returned;
 
 true

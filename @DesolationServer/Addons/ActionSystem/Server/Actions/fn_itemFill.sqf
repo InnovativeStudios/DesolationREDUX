@@ -30,8 +30,7 @@ _canNo = 0;
 	if (_class == _aText) exitWith {
 		_required = _aParameters select 0;
 		_returned = _aParameters select 1;
-	};
-		
+	};	
 } forEach _actionInfo;
 
 
@@ -39,7 +38,7 @@ _haveRequiredItems = false;
 _tmpCanNo = 0;
 {
 	_item = _x select 0;
-	if (({tolower(_x) == tolower(_item)} count (magazines _player)) > 0 ) exitWith {
+	if (({tolower(_x) == tolower(_item)} count (magazines _player)) > 0) exitWith {
 		_can = _item;
 		_canNo = _tmpCanNo;
 		_haveRequiredItems = true;
@@ -47,20 +46,18 @@ _tmpCanNo = 0;
 	_tmpCanNo = _tmpCanNo + 1;
     true
 } count _required;
+if !(_haveRequiredItems) exitWith {[("You don't have the required Items")] remoteExec ["systemChat",_player];};
 
-if (_haveRequiredItems) then {
 
-	_player removeItem _can;
-	_tmpCanNo = 0;
-	{
-		if (_tmpCanNo == _canNo) exitWith {
-			_player addItem (_x select 0);
-		};
-		_tmpCanNo = _tmpCanNo + 1;
-		true
-	} count _returned;
-} else {
-	[("You don't have the required Items")] remoteExec ["systemChat",_player];
-};
+_player removeItem _can;
+_tmpCanNo = 0;
+{
+	if (_tmpCanNo == _canNo) exitWith {
+		_player addItem (_x select 0);
+	};
+	_tmpCanNo = _tmpCanNo + 1;
+	true
+} count _returned;
+[("Item filled successfully")] remoteExec ["systemChat",_player];
 
 true
