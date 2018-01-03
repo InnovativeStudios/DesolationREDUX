@@ -18,7 +18,7 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
  _password = bis_functions_mainscope getVariable ["ServerCommandPassword_DS", ""];
  if(!isNil "TM_fnc_checkLock") then {
 	_shutdownFunction = {
-		// save vehicles
+		// save objects
 		diag_log  "Shutdown > Waiting for object monitor to exit";
 		DS_var_runObjectMon = false;
 		waitUntil{!DS_var_savingObjects};
