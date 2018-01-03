@@ -20,8 +20,8 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 	_shutdownFunction = {
 		// save objects
 		diag_log  "Shutdown > Waiting for object monitor to exit";
-		DS_var_runObjectMon = false;
-		waitUntil{!DS_var_savingObjects};
+		DB_var_runObjectMon = false;
+		waitUntil{!DB_var_savingObjects};
 	};
  
  
@@ -45,8 +45,8 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 			} forEach allPlayers;
 			uiSleep 10; 
 			diag_log  "Shutdown > Waiting for object monitor to exit";
-			DS_var_runObjectMon = false;
-			waitUntil{!DS_var_savingObjects};
+			DB_var_runObjectMon = false;
+			waitUntil{!DB_var_savingObjects};
 			diag_log  "Shutdown > Done";
 			_password serverCommand "#shutdown";
 		');
@@ -82,8 +82,8 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 			
 			// save objects
 			diag_log  "Shutdown > Waiting for object monitor to exit";
-			DS_var_runObjectMon = false;
-			waitUntil{!DS_var_savingObjects};
+			DB_var_runObjectMon = false;
+			waitUntil{!DB_var_savingObjects};
 			
 			
 			diag_log  "Shutdown > Done";

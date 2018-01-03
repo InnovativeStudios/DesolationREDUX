@@ -9,15 +9,15 @@
  * https://www.bistudio.com/monetization/
  */
 
-DS_var_runObjectMon = true;
+DB_var_runObjectMon = true;
 
 waitUntil{!DS_var_restoreObjectInProgress};
 
-DS_var_savingObjects = true;
+DB_var_savingObjects = true;
 
 while{true} do {
 	_time = diag_tickTime + (60*30);
-	waitUntil{diag_tickTime >= _time || !DS_var_runObjectMon};
+	waitUntil{diag_tickTime >= _time || !DB_var_runObjectMon};
 	
 	_newArray1 = [];
 	_newArray2 = [];
@@ -45,6 +45,6 @@ while{true} do {
 	DS_var_Objects = _newArray1;
 	DS_var_ObjectUUIDS = _newArray2;
 	
-	if(!DS_var_runObjectMon) exitWith {};
+	if(!DB_var_runObjectMon) exitWith {};
 };
-DS_var_savingObjects = false;
+DB_var_savingObjects = false;

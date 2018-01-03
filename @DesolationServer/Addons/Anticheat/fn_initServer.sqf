@@ -819,12 +819,14 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#lock";
 			}] call LYS_fnc_RunOnServer;
+			systemChat "Server Locked!";
 		};
 		_unlockserv = {
 			[{
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#unlock";
 			}] call LYS_fnc_RunOnServer;
+			systemChat "Server Unlocked!";
 		};
 		_restart = {
 			[{
@@ -838,8 +840,8 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 				} forEach allPlayers;
 				uiSleep 1;
 				diag_log  "Shutdown > Saving Objects";
-				DS_var_runObjectMon = false;
-				waitUntil{!DS_var_savingObjects};
+				DB_var_runObjectMon = false;
+				waitUntil{!DB_var_savingObjects};
 				_scp serverCommand "#shutdown";
 			}] call LYS_fnc_RunOnServer;
 		};
