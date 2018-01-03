@@ -19,7 +19,7 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
  if(!isNil "TM_fnc_checkLock") then {
 	_shutdownFunction = {
 		// save vehicles
-		diag_log  "Shutdown > Waiting for vehicle monitor to exit";
+		diag_log  "Shutdown > Waiting for object monitor to exit";
 		DS_var_runObjectMon = false;
 		waitUntil{!DS_var_savingObjects};
 	};
@@ -44,10 +44,9 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 				_password serverCommand ("#kick " + str(owner _x));
 			} forEach allPlayers;
 			uiSleep 10; 
-			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
+			diag_log  "Shutdown > Waiting for object monitor to exit";
 			DS_var_runObjectMon = false;
 			waitUntil{!DS_var_savingObjects};
-			diag_log  "Shutdown > Waiting for building monitor to exit";
 			diag_log  "Shutdown > Done";
 			_password serverCommand "#shutdown";
 		');
@@ -81,8 +80,8 @@ if(DS_var_finishedObjects && DS_var_finishedLoot && SM_var_finishedZombies) then
 			// wait for all disconnects to process
 			uiSleep 10; 
 			
-			// save vehicles
-			diag_log  "Shutdown > Waiting for vehicle monitor to exit";
+			// save objects
+			diag_log  "Shutdown > Waiting for object monitor to exit";
 			DS_var_runObjectMon = false;
 			waitUntil{!DS_var_savingObjects};
 			
