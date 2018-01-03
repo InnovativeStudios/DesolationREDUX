@@ -498,7 +498,7 @@ class Cfg3DActions {
 						{"DSR_Item_Scissor_Jack", 1}
 					};
 				};
-				action = "[_cursor,_index,_selection] call ACT_fnc_flipVehicle;";
+				action = "[_cursor] call ACT_fnc_flipVehicle;";
 			};
 		};
 	};
