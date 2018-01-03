@@ -340,11 +340,6 @@ class CfgFunctions
 			class repairPartReq {};
 			class refuelReq {};
 		};
-		class Server_Database {
-			file = "Desolation\Server\Database";
-			isserver = 1;
-			class dbOnSpawnResponse {};
-		};
 		class Server_Airdrop {
 			file = "Desolation\Server\Airdrop";
 			isserver = 1;
