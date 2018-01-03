@@ -38,7 +38,7 @@ if ((damage _object) < 0.1) then {
 	    _count = _x select 1;
     	if( ({tolower(_x) == tolower(_item)} count (magazines _player)) < 1) exitWith {
     	    _displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
-    	    [("Item(s) missing: " + _displayName + " count: " + str(_itemCount))] remoteExec ["systemChat",_player];
+    	    [("Item(s) missing: " + _displayName + ", count: " + str(_count))] remoteExec ["systemChat",_player];
 		    _haveRequiredItems = false;
 	    };
         true
