@@ -11,10 +11,10 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
-params["_cursor","_index","_selection"];
+params["_cursor"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Flip Vehicle",0] remoteExec ["ACT_fnc_flipObject", 2];
+	[_cursor, player, "Flip Vehicle", 0] remoteExec ["ACT_fnc_flipObject", 2];
 };
 
 true
