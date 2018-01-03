@@ -14,7 +14,7 @@
 params["_cursor","_index","_selection"];
 
 if ([0] call ACT_fnc_doAnimation) then {
-	[_selection, _cursor, _index, player, "Remove Fuel Tank",0] remoteExec ["ACT_fnc_removePartReq", 2];
+	[_selection, _cursor, player, "Remove Fuel Tank",0] remoteExec ["ACT_fnc_removePartReq", 2];
 };
 
 true
