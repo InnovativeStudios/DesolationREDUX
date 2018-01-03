@@ -1,4 +1,3 @@
-
 //protect variables
 {
 	if(_x find "_lys" != -1) then {
@@ -537,7 +536,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 		    [{
 		        params["_object"];
 		        _uuid = _object getVariable ["oUUID",""];
-			    [_uuid,_object] call DB_fnc_killObject;
+			    [_uuid,objNull] call DB_fnc_killObject;
 		    },[_object]] call LYS_fnc_RunOnServer;
 			deleteVehicle _object;
 		};
