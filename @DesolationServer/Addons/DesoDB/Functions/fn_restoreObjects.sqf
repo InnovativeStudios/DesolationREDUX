@@ -112,12 +112,12 @@ diag_log "Spawning DB objects";
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
 			
-			if(_accesscode != "") then {
-				_object setVariable ["aCode",_accesscode];
+			if!(_accesscode isEqualType "") then {
+				_object setVariable ["SVAR_UnlockCode",_accesscode,true];
 			};
 			
 			if(_locked == 2) then {
-				_object setVariable ["locked",true];
+				_object lock true;
 			};
 			
 			if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
