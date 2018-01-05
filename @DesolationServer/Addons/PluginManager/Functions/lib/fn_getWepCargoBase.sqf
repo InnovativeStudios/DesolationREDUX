@@ -9,9 +9,9 @@ _amounts = _wepsRaw select 1;
 _weps = [];
 _pos = 0;
 {
-_element = [_x,_amounts select _pos];
-_pos = _pos +1;
-_weps pushback _element;
-}foreach _classes;
+	_element = [_x,_amounts select _pos];
+	_pos = _pos +1;
+	_weps pushback _element;
+} foreach _classes;
 
 _weps

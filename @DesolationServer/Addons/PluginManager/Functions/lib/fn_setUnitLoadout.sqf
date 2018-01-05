@@ -18,29 +18,27 @@ if (_headgearClass != "") then {_unit addHeadgear _headgearClass;};
 if (_gogglesClass != "") then {_unit addGoggles _gogglesClass;};
 
 
-if ((count _unitWeapons) > 0) then 
-{
-
+if ((count _unitWeapons) > 0) then {
 	{
 		_x params ["_classname","_muzzle","_side","_optics","_magArr","_bipod"];
+		
 		_attachments = [_muzzle,_side,_optics,_magArr,_bipod];
 		_unit addWeapon _classname;
-		_unit setAmmo [_classname,0];
-			{
-				_attachment = _x; 
-				ScopeName "attachmentLoop";
-				switch (_attachment) do
-				{
-					case "":{breakTo "attachmentLoop";};
-					case []:{breakTo "attachmentLoop";};
-					default {_unit addWeaponItem [_classname,_attachment];};
-				};
-			}foreach _attachments;
-	}foreach _unitWeapons;
+		if !(_magArr isEqualTo []) then {_unit setAmmo [_classname,0];};
+		{
+			_attachment = _x; 
+			ScopeName "attachmentLoop";
+			switch (_attachment) do {
+				case "":{breakTo "attachmentLoop";};
+				case []:{breakTo "attachmentLoop";};
+				default {_unit addWeaponItem [_classname,_attachment];};
+			};
+		} foreach _attachments;
+	} foreach _unitWeapons;
 };
 
 if ((count _assignedItems) > 0) then {
-{_unit linkItem _x}foreach _assignedItems;
+	{_unit linkItem _x} foreach _assignedItems;
 };
 
 [(uniformContainer _unit),_gearUniform] call Base_fnc_setAllCargo;

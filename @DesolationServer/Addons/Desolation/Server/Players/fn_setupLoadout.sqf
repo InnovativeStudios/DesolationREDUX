@@ -8,7 +8,7 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-params["_unit","_equipmentArray"];
+params["_unit",["_equipmentArray",false]];
 
 removeHeadgear _unit;
 removeGoggles _unit;
@@ -18,25 +18,21 @@ removeUniform _unit;
 removeAllWeapons _unit;
 removeAllAssignedItems _unit;
 
-if !(_equipmentArray isEqualTo []) then {
+if !(_equipmentArray isEqualTo false) then {
 	
 	//--- load the chosen loadout	
 	sleep 2;
-	_unit setUnitLoadout _equipmentArray;
-	_dataHas = getUnitLoadout _unit;
-	if !(_dataHas isEqualTo _equipmentArray) then {
-		_loop = true;
+	[_unit,_equipmentArray] call BASE_fnc_setUnitLoadout;
+	_loadout = _unit call BASE_fnc_getUnitLoadout;
+
+	if !(_loadout isEqualTo _equipmentArray) then {
 		_cycles = 3;
-		while {_loop} do {
-			if (_cycles > 0) then {
-				_unit setUnitLoadout _equipmentArray;
-				_cycles = _cycles - 1;
-				sleep 2;
-				if (_dataHas isEqualTo _equipmentArray) exitWith {_loop = false;};
-			} else {
-				_loop = false;
-				//TODO: throw player back to lobby (requires _equipmentArray to work before enabling)!
-			};
+		while {_cycles > 0} do {
+			[_unit,_equipmentArray] call BASE_fnc_setUnitLoadout;
+			sleep 2;
+			if (_loadout isEqualTo _equipmentArray) exitWith {};
+
+			_cycles = _cycles - 1;
 		};
 	};
 } else {

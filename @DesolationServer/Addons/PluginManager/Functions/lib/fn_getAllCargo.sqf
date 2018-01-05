@@ -1,4 +1,9 @@
 
 private ["_cargo"];
-_cargo = [(_this call BASE_fnc_getItemCargo),(_this call BASE_fnc_getMagCargo),(weaponsItemsCargo _this)];
+
+_weapons = (weaponsItemsCargo _this);
+if (isNil "_weapons") then {_weapons = [];};
+
+_cargo = [(_this call BASE_fnc_getItemCargo),(_this call BASE_fnc_getMagCargo),_weapons];
+
 _cargo

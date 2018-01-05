@@ -819,14 +819,14 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#lock";
 			}] call LYS_fnc_RunOnServer;
-			systemChat "Server Locked!";
+			hint "Server Locked!";
 		};
 		_unlockserv = {
 			[{
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#unlock";
 			}] call LYS_fnc_RunOnServer;
-			systemChat "Server Unlocked!";
+			hint "Server Unlocked!";
 		};
 		_restart = {
 			[{

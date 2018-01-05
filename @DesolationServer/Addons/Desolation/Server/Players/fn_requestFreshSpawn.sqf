@@ -20,7 +20,7 @@ _playerObj hideObjectGlobal true;
 _playerObj setVariable ["pUUID",_client getVariable "pUUID",true];
 
 _playerObj addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
-[_playerObj,[]] call DS_fnc_setupLoadout;
+[_playerObj] call DS_fnc_setupLoadout;
 
 _playerObj hideObjectGlobal false;
 _playerObj allowDamage true;
