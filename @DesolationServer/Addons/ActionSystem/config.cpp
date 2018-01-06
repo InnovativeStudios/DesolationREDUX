@@ -303,6 +303,9 @@ class Cfg3DActions {
 				condition = "_selection find 'vrotor' != -1";
 				text = "Remove Tail";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Tail_Rotor", 1}
 					};
@@ -313,6 +316,9 @@ class Cfg3DActions {
 				condition = "_selection find 'hrotor' != -1";
 				text = "Remove Rotor";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Main_Rotor", 1}
 					};
@@ -396,6 +402,9 @@ class Cfg3DActions {
 				condition = "_selection find 'wheel' != -1";
 				text = "Remove Wheel";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Tire", 1}
 					};
@@ -406,6 +415,9 @@ class Cfg3DActions {
 				condition = "_selection find 'glass' != -1";
 				text = "Remove Glass";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Glass_Part", 1}
 					};
@@ -416,6 +428,9 @@ class Cfg3DActions {
 				condition = "_selection find 'engine' != -1";
 				text = "Remove Engine";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Engine_Block", 1}
 					};
@@ -426,6 +441,9 @@ class Cfg3DActions {
 				condition = "_selection find 'fuel' != -1";
 				text = "Remove Fuel Tank";
 				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox", 1}
+					};
 					returnedItems[] = {
 						{"DSR_Item_Gas_Tank", 1}
 					};
