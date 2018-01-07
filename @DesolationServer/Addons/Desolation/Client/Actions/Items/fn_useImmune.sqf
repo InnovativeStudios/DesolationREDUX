@@ -13,6 +13,7 @@
 params["_classname"];
 _animation = "Medic";
 _success = {
+	[1] call DS_fnc_addPoints;
 	DS_var_Immune = true;
 	DS_var_lastImmune = 0;
 };

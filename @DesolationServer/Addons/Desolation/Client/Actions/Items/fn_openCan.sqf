@@ -8,11 +8,19 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-_classname = "dsr_item_handwarmer";
-_animation = "Medic";
+
+params["_classname"];
+
+_animation = "MedicOther";
+
+_class = toLower(_classname);
+_data = (toLower(_class) splitString "_");
+_data pushBack "opened";
+_newItem = _data joinString "_";
+
 _success = {
 	[1] call DS_fnc_addPoints;
-	Systemchat "TODO: Action";
+	systemchat "Can opened";
 };
 _failure = {
 	private["_type"];
@@ -21,5 +29,4 @@ _failure = {
 		systemchat _type;
 	};
 };
-
-[_classname,_animation,true,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,true,_success,_failure,_newItem] call DS_fnc_useItem;

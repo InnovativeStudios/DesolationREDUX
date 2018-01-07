@@ -13,6 +13,7 @@ if(isNull _target) exitWith {};
 _animation = "Medic";
 _success = {
 	params["_target"];
+	[1] call DS_fnc_addPoints;
 	_state = lifeState _target;
 	if(_state == "INCAPACITATED") then {
 		_target setVariable ["DS_var_Defibbed",true,true];

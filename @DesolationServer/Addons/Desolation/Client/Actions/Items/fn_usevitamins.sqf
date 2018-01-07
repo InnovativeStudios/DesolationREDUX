@@ -13,6 +13,7 @@ _classname = "dsr_item_vitamins";
 _animation = "Medic";
 _success = {
 	call DS_fnc_onVitamin;
+	[1] call DS_fnc_addPoints;
 };
 _failure = {
 	private["_type"];

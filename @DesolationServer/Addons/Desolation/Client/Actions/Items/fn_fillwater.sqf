@@ -21,6 +21,7 @@ _data pushBack "dirty";
 _newItem = _data joinString "_";
 
 _success = {
+	[1] call DS_fnc_addPoints;
 	systemchat "Filled with water";
 };
 _failure = {

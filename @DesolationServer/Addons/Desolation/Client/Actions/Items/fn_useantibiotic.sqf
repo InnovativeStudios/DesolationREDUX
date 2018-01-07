@@ -13,6 +13,7 @@ _classname = "dsr_item_antibiotic";
 _animation = "Medic";
 _success = {
 	Systemchat "TODO: Action";
+	[1] call DS_fnc_addPoints;
 };
 _failure = {
 	private["_type"];

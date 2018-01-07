@@ -11,6 +11,7 @@
 _classname = "dsr_item_disinfectant";
 _animation = "Medic";
 _success = {
+	[1] call DS_fnc_addPoints;
 	Systemchat "TODO: Action";
 };
 _failure = {

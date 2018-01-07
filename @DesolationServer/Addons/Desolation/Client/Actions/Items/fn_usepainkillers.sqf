@@ -9,8 +9,8 @@
  * https://www.bistudio.com/monetization/
  */
 
-_classname = "dsr_item_painkillers";
-_animation = "Medic";
+params["_classname"];
+_animation = "dsr_Act_eat_food";
 _success = {
 	[1] call DS_fnc_addPoints;
 	systemchat "My pain begins to decrease";

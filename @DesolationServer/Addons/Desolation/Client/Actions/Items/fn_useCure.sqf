@@ -13,6 +13,7 @@ params["_classname"];
 _animation = "Medic";
 _success = {
 	DS_var_InfectionDOT = 0;
+	[1] call DS_fnc_addPoints;
 };
 _failure = {
 	private["_type"];
