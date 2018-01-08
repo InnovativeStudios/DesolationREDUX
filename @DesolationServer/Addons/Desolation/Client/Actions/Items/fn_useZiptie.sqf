@@ -9,29 +9,27 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_classname",["_target",""]];
-_animation = "PutDown";
+params["_classname","_target"];
+_animation = "Medic";
 
-if !(_target isEqualType "") then {
 	
-	if(isNull _target) exitWith {};
+if(isNull _target) exitWith {};
+
+_success = {
+	params["_target"];
 	
-	_success = {
-		params["_target"];
-		
-		[_target, "Acts_AidlPsitMstpSsurWnonDnon_loop"] remoteExecCall ["switchMove", -2];
-		
-		_target setVariable ["SVAR_DS_var_isZiptied",true,true];
-		
-	};
-	_failure = {
-		private["_type"];
-		_type = _this select 0;
-		systemchat _type;
-	};
+	[_target, "Acts_AidlPsitMstpSsurWnonDnon_loop"] remoteExecCall ["switchMove", -2];
 	
-	[_classname,_target,_animation,true,_success,_failure] call DS_fnc_useItemTarget;
+	_target setVariable ["SVAR_DS_var_isZiptied",true,true];
+		
 };
+_failure = {
+	private["_type"];
+	_type = _this select 0;
+	systemchat _type;
+};
+	
+[_classname,_target,_animation,true,_success,_failure] call DS_fnc_useItemTarget;
  
  
  

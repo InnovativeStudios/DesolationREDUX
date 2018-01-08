@@ -11,8 +11,8 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
-params["_cursor","_index"];
+params["_target"];
 
-["DSR_Item_Knife",_cursor] call DS_fnc_openZiptie;
+["DSR_Item_Knife",_target] call DS_fnc_openZiptie;
 
 true

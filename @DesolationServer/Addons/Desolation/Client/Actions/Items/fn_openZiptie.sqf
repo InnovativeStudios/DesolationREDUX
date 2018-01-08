@@ -9,37 +9,29 @@
  * https://www.bistudio.com/monetization/
  */
 
-params["_classname",["_target",""]];
+params["_classname",["_target",objNull]];
+
 _animation = "MedicOther";
 
-if (_target isEqualType "") then {
-	
-	_success = {
-	
-		player setVariable ["SVAR_DS_var_isZiptied",nil,true];
-		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", -2]; // release yourself with a knife in inventory (uses client files)
-		[1] call DS_fnc_addPoints;
-		
-	};
-	_failure = {
-	private["_type"];
-		_type = _this select 0;
-		systemchat _type;
-	};
 
-	[_classname,"",false,_success,_failure] call DS_fnc_useItem;
+if (isNull _target) then {
+
+	if !(_classname in magazines player) exitWith {systemChat "Item(s) missing: All Purpose Knife";};
 	
+	player playActionNow "Acts_AidlPsitMstpSsurWnonDnon_out";
+	player setVariable ["SVAR_DS_var_isZiptied",nil,true];
+
+	[1] call DS_fnc_addPoints;
 	
 } else {
- 
- 
- 	if(isNull _target) exitWith {};
-	
+
 	_success = {
 		params["_target"];
 		
 		[_target, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExecCall ["PlayMoveNow", -2]; // playmovenow because others wont work (release from ziptie animation back to normal)
 		_target setVariable ["SVAR_DS_var_isZiptied",nil,true];
+		
+		[1] call DS_fnc_addPoints;
 		
 	};
 	_failure = {

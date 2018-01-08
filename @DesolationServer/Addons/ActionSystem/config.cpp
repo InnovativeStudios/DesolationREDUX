@@ -567,13 +567,9 @@ class Cfg3DActions {
 			
 			class Release {
 				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
-				text = "Open Zip tie";
-				class Parameters {
-					requiredItems[] = {
-						{"DSR_Item_Knife", 1}
-					};
-				};
-				action = "[_cursor,_index] call ACT_fnc_release;";
+				text = "Cut Zip Tie";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_release;";
 			};
 			class OpenInventory {
 				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
@@ -583,13 +579,9 @@ class Cfg3DActions {
 			};
 			class Ziptie {
 				condition = "(animationState _cursor == 'amovpercmstpssurwnondnon')"; // (if player has hands up)
-				text = "Add Zip tie";
-				class Parameters {
-					requiredItems[] = {
-						{"DSR_Item_Ziptie", 1}
-					};
-				};
-				action = "[_cursor,_index] call ACT_fnc_ziptie;";
+				text = "Add Zip Tie";
+				class Parameters {};
+				action = "[_cursor] call ACT_fnc_ziptie;";
 			};
 			class Bandage {
 				condition = "true"; //todo cursor is bleeding check
