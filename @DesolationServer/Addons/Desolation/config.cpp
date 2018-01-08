@@ -274,6 +274,7 @@ class CfgFunctions
 			class useImmune {};
 			class useZiptie {};
 			class openZiptie {};
+			class openCan {};
 		};
 		class Client_Interface {
 			file = "Desolation\Client\Interface";
