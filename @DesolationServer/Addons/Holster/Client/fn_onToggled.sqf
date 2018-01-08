@@ -12,6 +12,9 @@
 _found = false;
 if(toLower(["Enabled","HOL"] call BASE_fnc_getCfgValue) == "true") then {
 	if(vehicle player == player && alive player) then {
+		if(((currentWeapon player) find "DSR_Melee_" != -1) && (speed player > 1)) then {
+			player playActionNow "SlowF";
+		};
 		player action ["SwitchWeapon",player,player,-1];
 		if(!isNull DS_var_ItemInHands) then {
 			deleteVehicle DS_var_ItemInHands; //remove holdable from hand
