@@ -37,6 +37,7 @@ _zombie disableAI "TARGET";
 _zombie disableAI "AUTOTARGET";
 _zombie disableAI "COVER";
 _zombie disableAI "AUTOCOMBAT";
+_zombie setSpeaker "NoVoice";
 
 _face = face _zombie;
 if(_face find "DSR" != 0) then {
