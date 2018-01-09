@@ -11,7 +11,7 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
  
-params["_cursor","_index","_selection"];
+params["_cursor","_selection"];
 
 if ([0] call ACT_fnc_doAnimation) then {
 	[_selection, _cursor, player, "Remove Wheel",0] remoteExec ["ACT_fnc_removePartReq", 2];
