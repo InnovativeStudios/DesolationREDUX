@@ -32,15 +32,6 @@ _persvars = [];
 	};
 } forEach _vars;
 
-if((_loadout select 3) isEqualTo []) then {
-	_loadout set[3,["",[]]];
-};
-if((_loadout select 4) isEqualTo []) then {
-	_loadout set[4,["",[]]];
-};
-if((_loadout select 5) isEqualTo []) then {
-	_loadout set[5,["",[]]];
-};
 
 _anim = animationState _playerObj;
 if(vehicle _playerObj != _playerObj) then {
