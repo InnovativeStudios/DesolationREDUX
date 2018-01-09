@@ -11,17 +11,43 @@
 
 // last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
  
-params["_object"];
+params["_object","_player","_class","_group"];
 
 
-_position = getPosATL _object;
-_lootHolder = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
-_lootHolder setPosATL _position;
-diag_log format ["DECONSTRUCT > POSITION: %1",_position];
+// get required items
+_actionGroup = ACT_var_ACTIONS select _group;
+_actionInfo = _actionGroup select 2;
 
-_type = typeof _object;
-diag_log format ["DECONSTRUCT > TYPE: %1",_type];
+_required = [];
+{
+	_aCondition = _x select 0;
+	_aText = _x select 1;
+	_aCode = _x select 2;
+	_aParameters = _x select 3;
 
+	if (_class == _aText) exitWith {
+		_required = _aParameters select 0;
+	};	
+} forEach _actionInfo;
+
+
+// check if player has required items
+_haveRequiredItems = true;
+{
+	_item = _x select 0;
+	_count = _x select 1;
+	if (({tolower(_x) == tolower(_item)} count (magazines _player)) < _count) exitWith {
+		_displayName = getText (configfile >> "CfgMagazines" >> _item >> "displayName");
+		[("Item(s) missing: " + _displayName + ", count: " + str(_count))] remoteExec ["systemChat",_player];
+		_haveRequiredItems = false;
+	};
+  	true
+} count _required;
+if !(_haveRequiredItems) exitWith {};
+
+
+// get object class for config
+_type = typeOf _object;
 _class = "";
 if (_type find "Stockade" != -1) then {
 	_class = "Stockade";
@@ -32,35 +58,58 @@ if (_type find "Stockade" != -1) then {
 		_class = "Misc";
 	};
 };
-diag_log format ["DECONSTRUCT > CLASS: %1",_class];
-
-
-_items = "";
 _items = getArray (configFile >> "CfgBuildables" >> _class >> "Buildables" >> _type >> "parts");
-diag_log format ["DECONSTRUCT > ITEMS: %1",_items];
 
-_item1 = _items select 0;
-_item2 = _items select 1;
 
-_item1 = [_item1 select 0] + [round((_item1 select 1) / 2)];
-_item2 = [_item2 select 0] + [round((_item2 select 1) / 2)];
+//get returned items (divide with 2)
+_returned = [];
+_index = 0;
+for "_i" from 0 to ((count(_items))-1) do {
 
-_returned = [_item1] + [_item2];
-diag_log format ["DECONSTRUCT > RETURNED: %1",_returned];
+	_item = _items select _index;
+	_itemType = _item select 0;
+	_count = _item select 1;
 
-if (count _returned > 0) then {
+	_newCount = round((_count) / 2);
+	_newItem = [_itemType] + [_newCount];
+
+	_returned pushBack _newItem;
+	_index = _index + 1;
+ };
+
+
+// check if loot holder already nearby
+_lootHolder = objNull;
+_nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
+if ((count _nearLootHolders) != 0) then {
+	_distance = 5;
 	{
-		_lootHolder addMagazineCargoGlobal _x;
-	} forEach _returned;
+		_tmpDist = _player distance _x;
+		if (_tmpDist < _distance) then
+		{
+			_lootHolder = _x;
+			_distance = _tmpDist;
+		};
+		true
+	} count _nearLootHolders;
+};
+if (isNull _lootHolder) then {
+	_lootHolder = createVehicle ["GroundWeaponHolder", _player modelToWorld [0,1,0], [], 0.5, "CAN_COLLIDE"];
+	_lootHolder setDir floor (random 360);
 };
 
-_loot = getMagazineCargo _lootHolder;
-diag_log format ["DECONSTRUCT > LOOTHOLDER ITEMS: %1",_loot];
 
-/*
-_uuid = DS_var_ObjectUUIDS select _object;
-[_uuid,objNull] call DB_fnc_killObject;
-*/
+// place items to lootholder
+if (count _returned != 0) then {
+	{
+		_lootHolder addItemCargoGlobal _x;
+	} forEach _returned;
+};
+_player reveal _lootHolder;
+
+
+// delete object
+[_object,objNull] call DB_fnc_killObject;
 deleteVehicle _object;
 
 true

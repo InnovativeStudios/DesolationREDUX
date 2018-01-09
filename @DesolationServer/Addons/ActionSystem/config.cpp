@@ -664,7 +664,11 @@ class Cfg3DActions {
 			class Deconstruct {
 				condition = "(str(_cursor) find 'stockade' != -1) && ([_cursor] call DS_fnc_isBuildingOwner)";
 				text = "Deconstruct";
-				class Parameters {};
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox",1}
+					};
+				};
 				action = "[_cursor] call ACT_fnc_deconstruct;";
 			};
 			class DisassembleBike {
