@@ -95,6 +95,7 @@ DeleteEmptyHolder =
 
 //--- DEBUG (monitor thread counts)
 [] spawn {
+	uiSleep 300;
 	while{true} do {
 		_threads = Diag_activeScripts;
 		NUM_THREADS = (_threads select 0) + (_threads select 1) - 1;
