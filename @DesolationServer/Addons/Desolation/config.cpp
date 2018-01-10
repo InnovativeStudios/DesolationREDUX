@@ -275,6 +275,7 @@ class CfgFunctions
 			class useZiptie {};
 			class openZiptie {};
 			class openCan {};
+			class cutWire {};
 		};
 		class Client_Interface {
 			file = "Desolation\Client\Interface";
