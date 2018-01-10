@@ -11,7 +11,6 @@
 params["_unit",["_equipmentArray",false]];
 
 removeHeadgear _unit;
-removeGoggles _unit;
 removeVest _unit;
 removeBackpack _unit;
 removeUniform _unit;
@@ -39,7 +38,6 @@ if !(_equipmentArray isEqualTo false) then {
 
 	_uniform = (["Uniform","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_headgear = (["Headgear","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	_goggles = (["Goggles","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_vest = (["Vest","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_backpack = (["Backpack","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_HandgunWpn = (["HandgunWpn","DS"] call BASE_fnc_getCfgValue) splitString ",";
@@ -50,7 +48,6 @@ if !(_equipmentArray isEqualTo false) then {
 	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_PrimaryWpnAttachments = (["PrimaryWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_HandgunWpnAttachments = (["HandgunWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	_RemoveItems = (["RemoveItems","DS"] call BASE_fnc_getCfgValue) splitString ",";
 
 
 	//--- load fresh loadout
@@ -66,13 +63,6 @@ if !(_equipmentArray isEqualTo false) then {
 		_unit addHeadgear _headgear;
 		sleep 1;
 		if (headgear _unit == "") then {_unit addWeapon _HandgunWpn;};
-	};
-
-	if !(_goggles isEqualTo []) then {
-		_goggles = selectRandom _goggles;
-		_unit addGoggles _goggles;
-		sleep 1;
-		if (goggles _unit == "") then {_unit addWeapon _HandgunWpn;};
 	};
 	
 	if !(_vest isEqualTo []) then {
@@ -122,8 +112,4 @@ if !(_equipmentArray isEqualTo false) then {
 	{
 		_unit addMagazine _x;
 	} forEach _Magazines;
-	
-	{
-		_unit unlinkItem _x;
-	} forEach _RemoveItems;
 };

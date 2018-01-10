@@ -57,7 +57,12 @@ _playerObj addEventHandler ["Fired",{
     };
 }];
 
-[_playerObj] remoteExecCall ["DS_fnc_finishSpawn", _client];
+_goggles = (["Goggles","DS"] call BASE_fnc_getCfgValue) splitString ",";
+if !(_goggles isEqualTo []) then {
+    _goggles = selectRandom _goggles;
+};
+
+[_playerObj,_goggles] remoteExecCall ["DS_fnc_finishSpawn", _client];
 waitUntil{getPlayerUID _playerObj == _uid};
 deleteVehicle _client;
 //--- add default values to non-presistant vars here
