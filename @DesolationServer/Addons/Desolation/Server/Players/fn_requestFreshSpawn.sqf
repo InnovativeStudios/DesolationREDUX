@@ -40,9 +40,9 @@ _playerObj addEventHandler ["Fired",{
             
             for "_i" from 1 to 9 do {
             
-                _dX = (_velocityNormal select 0) + (random(0.0871557*2)-0.0871557); 
-                _dY = (_velocityNormal select 1) + (random(0.0871557*2)-0.0871557); 
-                _dZ = (_velocityNormal select 2) + (random(0.0871557*2)-0.0871557); 
+                _dX = (_velocityNormal select 0) + (random(0.0335213*2)-0.0335213); 
+                _dY = (_velocityNormal select 1) + (random(0.0335213*2)-0.0335213); 
+                _dZ = (_velocityNormal select 2) + (random(0.0335213*2)-0.0335213); 
                 
                 
                 _bVel = (vectorNormalized [_dX,_dY,_dZ]) vectorMultiply _magnatude;
