@@ -9,7 +9,7 @@
  * https://www.bistudio.com/monetization/
  */
 params["_data","_client"];
-private["_charuuid","_charshareuuid","_persuuid","_objectuuid","_playerObj","_anim","_dir","_positiontype","_positionx","_positiony","_positionz","_classname","_hitpoints","_nonpersvars","_persvars","_textures","_invuniform","_invvest","_invbackpack","_uniform","_vest","_backpack","_headgear","_goggles","_primary","_secondary","_handgun","_toolsone","_toolsone","_currentWeapon","_loadout","_name","_damage"];
+private["_charuuid","_charshareuuid","_persuuid","_objectuuid","_playerObj","_anim","_dir","_positiontype","_positionx","_positiony","_positionz","_classname","_hitpoints","_nonpersvars","_persvars","_textures","_goggles","_currentWeapon","_loadout","_name","_damage"];
 
 _uid = getPlayerUID _client;
 

@@ -22,13 +22,13 @@ if !(_equipmentArray isEqualTo false) then {
 	
 	//--- load the chosen loadout	
 	sleep 2;
-	[_unit,_equipmentArray] call BASE_fnc_setUnitLoadout;
-	_loadout = _unit call BASE_fnc_getUnitLoadout;
+	_unit setUnitLoadout _equipmentArray;
+	_loadout = getunitloadout _unit;
 
 	if !(_loadout isEqualTo _equipmentArray) then {
 		_cycles = 3;
 		while {_cycles > 0} do {
-			[_unit,_equipmentArray] call BASE_fnc_setUnitLoadout;
+			_unit setUnitLoadout _equipmentArray;
 			sleep 2;
 			if (_loadout isEqualTo _equipmentArray) exitWith {};
 
