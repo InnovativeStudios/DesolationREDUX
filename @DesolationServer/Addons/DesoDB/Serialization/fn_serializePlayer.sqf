@@ -18,7 +18,7 @@ params["_playerObj"];
 _playeruuid = _playerObj getVariable ["pUUID",""];
 _charuuid = _playerObj getVariable ["cUUID",""];
 _posATL = getPosATL _playerObj;
-_loadout = getUnitLoadout player;
+_loadout = getUnitLoadout _playerObj;
 _vars = allVariables _playerObj;
 _textures = getObjectTextures _playerObj;
 _nonpersvars = [];
