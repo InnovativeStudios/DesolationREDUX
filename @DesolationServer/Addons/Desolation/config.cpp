@@ -15,19 +15,21 @@ class Plugins
 
 class CfgPluginActions {
 	class Padlocks {
-		text = "Unlock";
-		Condition = "([_cursor] call DS_fnc_isUnlockable) || ([_cursor] call DS_fnc_isBuildingOwner)";
-		
 		class Actions {
+            class Lock {
+                text = "Lock";
+                condition = "[_cursor] call DS_fnc_isLockable;";
+				action = "createDialog 'DS_Padlock'; call DS_fnc_initLock;";
+            };
 			class Unlock {
 				text = "Unlock";
-				condition = "(_cursor getVariable ['bis_disabled_Door_1',1]) != 0";
-				action = "createDialog 'DS_Padlock';";
+				condition = "[_cursor] call DS_fnc_isUnlockable;";
+				action = "createDialog 'DS_Padlock'; call DS_fnc_initUnlock;";
 				
 			};
 			class ChangeLock {
 				text = "Reset lock";
-				condition = "[_cursor] call DS_fnc_isBuildingOwner";
+				condition = "[_cursor] call DS_fnc_isBuildingOwner && [_cursor] call DS_fnc_isLockable;";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initLockReset;";
 			};
 		};
@@ -197,15 +199,19 @@ class CfgFunctions
 		class Client_Building_Locking {
 			file = "Desolation\Client\Building\Locking";
 			isclient = 1;
+            class initLock {};
 			class initLockReset {};
+            class initUnlock {};
+            class lockLock {};
 			class lockReset {};
-			class unlock {};
+			class lockUnlock {};
 		};
 		class Client_Building_Locking_Checks {
 			file = "Desolation\Client\Building\Locking\Checks";
 			isclient = 1;
 			class isBuildingOwner {};
 			class isUnlockable {};
+            class isLockable {};
 		};
 		class Client_Spawning {
 			file = "Desolation\Client\Spawning";

@@ -49,7 +49,6 @@ diag_log "Spawning DB objects";
 	_parent = _x select 25;
 	_clan_uuid = _x select 26;
 
-	_returnData = [];
 	
 	/* _objectType:
 	 * 0 -> Hidden Object
@@ -95,6 +94,7 @@ diag_log "Spawning DB objects";
 			clearWeaponCargoGlobal _object;
 			clearBackpackCargoGlobal _object;
 			
+			_object lock _locked;
 			_object allowDamage false;
 			_object setVariable ["oUUID",_object_uuid];
 			{
@@ -112,12 +112,8 @@ diag_log "Spawning DB objects";
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
 			
-			if!(_accesscode isEqualType "") then {
-				_object setVariable ["SVAR_UnlockCode",_accesscode,true];
-			};
-			
-			if(_locked == 2) then {
-				_object lock true;
+			if!(_accesscode != "") then {
+				_object setVariable ["APMS_UnlockCode",_accesscode,true];
 			};
 			
 			if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
@@ -139,7 +135,7 @@ diag_log "Spawning DB objects";
 			} else {
 				_object setPosASL _position;
 			};
-		/* why was there an call compile in front of these selects ? */    
+
 			_amountOfPositionInformation = count _positionadvanced;
 			if (_amountOfPositionInformation > 0) then {
 				_hpVectorUp = call compile ((_positionadvanced select 0) select 1);
@@ -175,10 +171,7 @@ diag_log "Spawning DB objects";
 					_object setRepairCargo _repaircargo;
 				};
 				
-				if(_locked == 2) then {
-					_object lock true;
-				};
-		
+
 				_object setVariable ["isCar",true];
 				
 				{

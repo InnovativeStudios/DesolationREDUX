@@ -14,16 +14,21 @@ for "_i" from 0 to 4 do {
 };
 
 
-_door = cursorObject;
-if(isNull _door) then {
-	_door = cursorTarget;
+_object = cursorObject;
+if(isNull _object) then {
+	_object = cursorTarget;
 };
-_unlock = _door getVariable ["SVAR_UnlockCode",[10,10,10,10,10]];
+
+_unlock = _object getVariable ["APMS_UnlockCode",""];
 if(_code isEqualTo _unlock) then {
-	[[_door]] call DS_fnc_registerOwner;
+	for "_i" from 1 to 5 do {
+		_object setVariable["bis_disabled_Door_" + str(_i),0,true]; // enable door access
+	};
+
+	_object lock false;
 	Systemchat "Unlocked";
 } else {
-	Systemchat "Wrong Code";
+	Systemchat "Wrong Code!";
 };
 
 closeDialog 0;

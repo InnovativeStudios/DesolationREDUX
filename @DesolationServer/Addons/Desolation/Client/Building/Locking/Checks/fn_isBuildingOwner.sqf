@@ -1,6 +1,6 @@
-params["_door"];
-_owner = _door getVariable ["oOWNER",""];
+params["_object"];
+_owner = _object getVariable ["oOWNER",""];
 if(_owner == "") exitWith {false};
 
-_me = player getVariable ["pUUID",""];
-(_me == _owner);
+_player = player getVariable ["pUUID",""];
+(_player == _owner);
