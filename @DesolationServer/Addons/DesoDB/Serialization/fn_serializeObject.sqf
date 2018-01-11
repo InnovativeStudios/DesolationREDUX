@@ -22,7 +22,7 @@ if ((_objectType == 2) && (_priority > 10000)) then {
 _className = typeof _object;
 
 // owner and unlock code
-_accesscode = _object getVariable ["APMS_UnlockCode",""];
+_accesscode = _object getVariable ["APMS_UnlockCode",[]];
 _locked = locked _object;
 _player_uuid = _object getVariable ["oOWNER",""];
 

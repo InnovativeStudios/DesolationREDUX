@@ -12,7 +12,6 @@ for "_i" from 0 to 4 do {
 		_code pushBack parseNumber(_ctrl lbText _index);
 	};
 };
-_code = str(_code);
 
 
 _object = cursorObject;

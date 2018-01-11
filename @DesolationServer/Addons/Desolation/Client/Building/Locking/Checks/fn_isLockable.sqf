@@ -1,2 +1,2 @@
 params["_object"];
-((count(_object getVariable ["APMS_UnlockCode",""]) != 0) && (locked _object < 2) && (_object getVariable ["bis_disabled_Door_1",0]) != 1);
+((count(_object getVariable ["APMS_UnlockCode",""]) != 0) && (locked _object < 2) && (_object getVariable ["bis_disabled_Door_1",0]) != 1 && (_object getVariable ["oOWNER",""]) != "");

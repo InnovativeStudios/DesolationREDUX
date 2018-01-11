@@ -106,15 +106,14 @@ diag_log "Spawning DB objects";
 				_object setVariable ["oOWNER",_player_uuid,true];
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
-			_accesscode = str(_accesscode);
-			if!(_accesscode != "") then {
-				_object setVariable ["APMS_UnlockCode",_accesscode,true];
-			};
 			
 			if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
 				_object setVariable ["DSR_priority", _priority];
 			};
-			
+
+			if(_accesscode isEqualType []) then {
+            	_object setVariable ["APMS_UnlockCode",_accesscode,true];
+            };
 			
 			[_object,_items] call DS_fnc_setLoot;
 			
