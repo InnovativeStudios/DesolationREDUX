@@ -1,2 +1,2 @@
-params["_cursor"];
-((count(_cursor getVariable ["APMS_UnlockCode",""]) != 0) && (locked _cursor < 2) && (_cursor getVariable ["bis_disabled_Door_1",0]) != 1);
+params["_object"];
+((count(_object getVariable ["APMS_UnlockCode",""]) != 0) && (locked _object < 2) && (_object getVariable ["bis_disabled_Door_1",0]) != 1);
