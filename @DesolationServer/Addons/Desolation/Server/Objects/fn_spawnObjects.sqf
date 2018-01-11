@@ -16,6 +16,15 @@ DS_var_restoreObjectInProgress = true;
 
 _numVtoSpawn = (["NumVehicles"] call DS_fnc_getCfgValue);
 
+_bikeLimit = (["MaxBikes","DS"] call DS_fnc_getCfgValue);
+_heliLimit = (["MaxHelis","DS"] call DS_fnc_getCfgValue);
+_planeLimit = (["MaxPlanes","DS"] call DS_fnc_getCfgValue);
+_carLimit = (["MaxCars","DS"] call DS_fnc_getCfgValue);
+_boatLimit = (["MaxBoats","DS"] call DS_fnc_getCfgValue);
+_maxDamage = ((["MaxDamage","DS"] call DS_fnc_getCfgValue) / 100);
+_midDamage = ((["MidDamage","DS"] call DS_fnc_getCfgValue) / 100);
+_minDamage = ((["MinDamage","DS"] call DS_fnc_getCfgValue) / 100);
+
 _tvs = [];
 
 if (isNil "DB_fnc_restoreObjects") then {
@@ -33,6 +42,12 @@ if (isNil "DB_fnc_restoreObjects") then {
 			/* TODO: expant this to support all objectTypes */
 			if(_objectType == 3) then {
 				_numVtoSpawn = _numVtoSpawn - 1;
+
+				if(_object isKindOf "Bicycle") exitWith {_bikeLimit = _bikeLimit - 1;};
+				if(_object isKindOf "Helicopter") exitWith {_heliLimit = _heliLimit - 1;};
+				if(_object isKindOf "Plane") exitWith {_planeLimit = _planeLimit - 1;};
+				if(_object isKindOf "Car") exitWith {_carLimit = _carLimit - 1;};
+				if(_object isKindOf "Ship") exitWith {_boatLimit = _boatLimit - 1;};
 			};
 		};
 	} forEach _dbSpawnObjects;
@@ -52,7 +67,6 @@ if(_numVtoSpawn <= 0) exitWith {
 	call DS_fnc_checkServerLock;
 };
 
-diag_log ("Spawning " + str(_numVtoSpawn) + " more vehicles.");
 
 _types = [];
 _data = [];
@@ -73,7 +87,13 @@ for "_i" from 0 to count(_config)-1 do {
 };
 diag_log format["found %1 types of houses", count(_types)];
 
+
 diag_log "Scanning for vehicle data";
+
+_heliList = [];
+_planeList = [];
+_carList = [];
+_boatList = [];
 
 _config = configFile >> "CfgVehicleSpawns" >> "Vehicles";
 for "_i" from 0 to count(_config)-1 do {
@@ -95,16 +115,16 @@ for "_i" from 0 to count(_config)-1 do {
 				_vehicles = _hData select 2;
 				_vehicles pushBack _type;
 				_hData set[2,_vehicles];
-				_data  set[_index,_hData];
+				_data set[_index,_hData];
+
+				if (_type isKindOf "Car") exitWith {_carList pushBack _type;};
+				if (_type isKindOf "Ship") exitWith {_boatList pushBack _type;};
+				if (_type isKindOf "Helicopter") exitWith {_heliList pushBack _type;};
+				if (_type isKindOf "Plane") exitWith {_planeList pushBack _type;};
 			};
 		} forEach _spawnData;
 	};
 };
-
-
-
-
-_bikeLimit = call compile (["MaxBikes","DS"] call BASE_fnc_getCfgValue);
 
 
 diag_log format["Getting all houses on map (%1)",diag_tickTime];
@@ -133,15 +153,16 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 			_directions = _hData select 1;
 			_vehicles = _hData select 2;
 
-			if(_bikeLimit == 0) then {_vehicles = _vehicles - ["DSR_Bike_Green_F","DSR_Bike_White_F"];}; //---vehicles is case sensitive
-
+			if(_bikeLimit <= 0) then {_vehicles = _vehicles - ["DSR_Bike_Green_F","DSR_Bike_White_F"];}; //---vehicles is case sensitive
+			if(_heliLimit <= 0) then {_vehicles = _vehicles - _heliList;};
+			if(_planeLimit <= 0) then {_vehicles = _vehicles - _planeList;};
+			if(_carLimit <= 0) then {_vehicles = _vehicles - _carList;};
+			if(_boatLimit <= 0) then {_vehicles = _vehicles - _boatList;};
+			
 			_lIndex = floor(random(count(_locations))); //--- get location index
 
 			_v = _vehicles select floor(random(count(_vehicles))); //--- get vehicle type we are spawning
-			if(!isNil {_v}) then {
-
-				if(toLower(_v) == "dsr_bike_white_f") then {_bikeLimit = _bikeLimit - 1;};
-				if(toLower(_v) == "dsr_bike_green_f") then {_bikeLimit = _bikeLimit - 1;};
+			if(!isNil "_v") then {
 
 				_location = _locations select _lIndex; //--- get offset of the spawn position
 				_direction = _directions select _lIndex; //--- get vehicle direction additive
@@ -169,29 +190,26 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					
 					_pointdata = getAllHitPointsDamage _tv;
 					if(count(_pointdata) > 1) then {
-						_hitpoints = (getAllHitPointsDamage _tv) select 0;
-						_hitpoint2 = (getAllHitPointsDamage _tv) select 1;
+						_hitpoints = _pointdata select 0;
 						{
-							_selection = _hitpoint2 select _forEachIndex;
-							if(tolower(_selection) find "proxy" == -1) then {
-								if(_x != "" && _x != "HitFuel" && _x != "HitFuelTank" && _x != "HitBody") then {
-									_value = random(1);
-									_tv setHitPointDamage [_x,_value];
-								};
-								if(_x == "HitBody") then {
-									_value = random(0.4);
-									_tv setHitPointDamage [_x,_value];
-								};
-							};
+							_value = random [_minDamage,_midDamage,_maxDamage];
+							if (_value < 0 || _value > 1) then {_value = (random [0.3,0.7,1]);};
+							_tv setHitPointDamage [_x, _value];
 						} forEach _hitpoints;
 					};
-					_tv setFuel (floor(random(10)) / 10);
+					_tv setFuel (random [0, 0.2, 0.7]);
 					_tv setdir _vDir;
 					_tv setposasl _posasl;
 					
 					_tvs pushBack _tv;
-					_numVtoSpawn = _numVtoSpawn - 1;
 					[_tv] call DB_fnc_spawnObject;
+
+					_numVtoSpawn = _numVtoSpawn - 1;
+					if(_v isKindOf "Car") exitWith {_carLimit = _carLimit - 1;};
+					if(_v isKindOf "Bicycle") exitWith {_bikeLimit = _bikeLimit - 1;};
+					if(_v isKindOf "Ship") exitWith {_boatLimit = _boatLimit - 1;};
+					if(_v isKindOf "Helicopter") exitWith {_heliLimit = _heliLimit - 1;};
+					if(_v isKindOf "Plane") exitWith {_planeLimit = _planeLimit - 1;};
 				};
 			};
 		};
