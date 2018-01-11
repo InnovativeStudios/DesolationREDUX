@@ -15,21 +15,23 @@ class Plugins
 
 class CfgPluginActions {
 	class Padlocks {
+        text = "Reset Lock";
+        condition = "([_cursor] call DS_fnc_isUnlockable) || ([_cursor] call DS_fnc_isLockable)";
 		class Actions {
             class Lock {
                 text = "Lock";
-                condition = "[_cursor] call DS_fnc_isLockable;";
+                condition = "[_cursor] call DS_fnc_isLockable";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initLock;";
             };
 			class Unlock {
 				text = "Unlock";
-				condition = "[_cursor] call DS_fnc_isUnlockable;";
+				condition = "[_cursor] call DS_fnc_isUnlockable";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initUnlock;";
 				
 			};
 			class ChangeLock {
 				text = "Reset lock";
-				condition = "[_cursor] call DS_fnc_isBuildingOwner && [_cursor] call DS_fnc_isLockable;";
+				condition = "[_cursor] call DS_fnc_isBuildingOwner && (_cursor getVariable ['bis_disabled_Door_1',0]) != 1";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initLockReset;";
 			};
 		};
