@@ -83,12 +83,6 @@ diag_log "Spawning DB objects";
 			_position = [_positionx,_positiony,_positionz];
 			_object = _classname createVehicle _position;
 			
-			if (_objectType == 2) then {  // if building	
-				for "_i" from 1 to 5 do {
-					_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
-				};
-			};
-			
 			clearItemCargoGlobal _object;
 			clearMagazineCargoGlobal _object;
 			clearWeaponCargoGlobal _object;
@@ -97,6 +91,7 @@ diag_log "Spawning DB objects";
 			_object lock _locked;
 			_object allowDamage false;
 			_object setVariable ["oUUID",_object_uuid];
+
 			{
 				//  todo
 			} forEach _animation_sources;
@@ -111,7 +106,7 @@ diag_log "Spawning DB objects";
 				_object setVariable ["oOWNER",_player_uuid,true];
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
-			
+			_accesscode = str(_accesscode);
 			if!(_accesscode != "") then {
 				_object setVariable ["APMS_UnlockCode",_accesscode,true];
 			};
@@ -126,7 +121,6 @@ diag_log "Spawning DB objects";
 			{
 				_object setVariable [_x select 0,_x select 1,true];
 			} foreach _variables;
-			
 			
 			
 			_object setDir _direction;
@@ -159,6 +153,15 @@ diag_log "Spawning DB objects";
 			};
 		
 			_object allowDamage true;
+
+			if(_objectType == 2) then {  // if building	
+
+				if([_object] call DS_fnc_isLockable) then {
+					for "_i" from 1 to 5 do {
+						_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
+					};
+				};
+			};
 		
 			if(_objectType == 3) then { // vehicle
 				_object setFuel _fuel;

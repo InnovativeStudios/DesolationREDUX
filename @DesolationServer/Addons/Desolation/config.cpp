@@ -15,8 +15,10 @@ class Plugins
 
 class CfgPluginActions {
 	class Padlocks {
-        text = "Reset Lock";
-        condition = "([_cursor] call DS_fnc_isUnlockable) || ([_cursor] call DS_fnc_isLockable)";
+        // WHAT IS THIS FOR!!!
+        text = "Unlock";
+        condition = "(_cursor getVariable ['bis_disabled_Door_1',0]) != 1 || (_cursor getVariable ['bis_disabled_Door_1',1]) != 0";
+        
 		class Actions {
             class Lock {
                 text = "Lock";
@@ -418,7 +420,7 @@ class CfgFunctions
 			file = "Desolation\Server\Locking";
 			isserver = 1;
 			class checkServerLock {};
-			class initLock {};
+			class initServerLock {};
 		};
 		class Server {
 			file = "Desolation\Server";
