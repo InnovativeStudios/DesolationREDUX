@@ -74,9 +74,8 @@ if ((damage _object) < 0.1) then {
 	_player reveal _lootHolder;
 	
 	
-	_uuid = _object getVariable ["oUUID",""];
-    [_uuid,objNull] call DB_fnc_killObject;
-    deleteVehicle _object;
+	[_object,objNull] call DB_fnc_killObject;
+	deleteVehicle _object;
 	[("Vehicle disassembled successfully")] remoteExec ["systemChat",_player];
 } else {
     [("Vehicle is too damaged")] remoteExec ["systemChat",_player];

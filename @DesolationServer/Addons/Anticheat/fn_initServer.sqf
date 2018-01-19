@@ -532,13 +532,12 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			cursorTarget setDamage 0;
 		};
 		_deletecurs = {
-		    _object = cursorTarget;
-		    [{
-		        params["_object"];
-		        _uuid = _object getVariable ["oUUID",""];
-			    [_uuid,objNull] call DB_fnc_killObject;
-		    },[_object]] call LYS_fnc_RunOnServer;
-			deleteVehicle _object;
+			_object = cursorTarget;
+			[{
+				params["_object"];
+				[_object,objNull] call DB_fnc_killObject;
+				deleteVehicle _object;
+			},[_object]] call LYS_fnc_RunOnServer;
 		};
 		_toggle_players = {
 			disableserialization;
