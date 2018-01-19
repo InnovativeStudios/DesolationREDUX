@@ -37,8 +37,8 @@ _persuuid = _data deleteAt 0;
 _objectuuid = _data deleteAt 0;
 
 _playerObj = (createGroup CIVILIAN) createUnit [_classname, [_positionx,_positiony,_positionz], [],0, "NONE"];
-_playerObj allowDamage false;
 _playerObj hideObjectGlobal true;
+[_playerObj, false] remoteExec ["allowDamage", -2]; // _playerObj allowDamage false doesent work!
 
 {
 	_playerObj setVariable [_x select 0,_x select 1,true];
@@ -68,9 +68,6 @@ _playerObj addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
 {
 	_playerObj setObjectTextureGlobal [_forEachIndex,_x];
 } forEach _textures;
-
-_playerObj hideObjectGlobal false;
-_playerObj allowDamage true;
 
 // Temp workaround for shotguns until config is fixed
 _playerObj addEventHandler ["Fired",{

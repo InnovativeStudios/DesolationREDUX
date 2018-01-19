@@ -12,6 +12,7 @@
 params["_playerObj"];
 
 _playerObj hideObjectGlobal true;
+_playerObj allowDamage false;
 
 _response = [_playerObj] call DB_fnc_loadPlayer;
 

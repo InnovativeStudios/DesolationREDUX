@@ -14,16 +14,13 @@ private["_uid","_playerObj"];
 _uid = getplayeruid _client;
 
 _playerObj = (createGroup CIVILIAN) createUnit [typeof _client, _location, [],0, "NONE"];
-_playerObj allowDamage false;
 _playerObj hideObjectGlobal true;
+[_playerObj, false] remoteExec ["allowDamage", -2]; // _playerObj allowDamage false doesent work!
 
 _playerObj setVariable ["pUUID",_client getVariable "pUUID",true];
 
 _playerObj addMPEventHandler ["MPKilled", DS_fnc_onPlayerKilled];
 [_playerObj] call DS_fnc_setupLoadout;
-
-_playerObj hideObjectGlobal false;
-_playerObj allowDamage true;
 
 // Temp workaround for shotguns until config is fixed
 _playerObj addEventHandler ["Fired",{
@@ -63,6 +60,7 @@ if !(_goggles isEqualTo []) then {
 };
 
 [_playerObj,_goggles] remoteExecCall ["DS_fnc_finishSpawn", _client];
+
 waitUntil{getPlayerUID _playerObj == _uid};
 deleteVehicle _client;
 //--- add default values to non-presistant vars here

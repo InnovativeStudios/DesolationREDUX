@@ -32,7 +32,7 @@ DS_AntiGammaFilter ppEffectCommit 0;
 
 
 //	Disable automatic refueling from gas pumps
-_worldsize = getnumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
+_worldsize = getnumber(configfile >> "CfgWorlds" >> worldName >> "mapSize");
 _mapCenter = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 {_x setFuelCargo 0;} foreach (nearestTerrainObjects [_mapCenter, ["FUELSTATION"], _worldsize]);
 

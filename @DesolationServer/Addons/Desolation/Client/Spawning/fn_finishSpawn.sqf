@@ -11,7 +11,6 @@
 
 params["_unit","_goggles"];
 
-
 selectPlayer _unit;
 
 if !((_goggles isEqualTo []) || (_goggles isEqualTo "")) then {
@@ -22,18 +21,31 @@ if !((_goggles isEqualTo []) || (_goggles isEqualTo "")) then {
 	};
 };
 
-player setVariable ["DS_var_isPlaying", true, true];
 [player] remoteExec ["DS_fnc_requestOwned",2];
 
 player addRating 9999999;
 
-//--- fade into the game
-1 fadeSound 2;
-1 fadeMusic 2;
-0 cutText ["","BLACK IN",2];
-//--- show region
-[] spawn DS_fnc_showRegionNotification;
-//--- init subsystems
+[] spawn {
+	if !(isTouchingGround player) then {
+		waitUntil {isTouchingGround player};
+
+		uiSleep 3;
+		player playAction "PlayerStand";
+		uiSleep 2;
+	};
+
+	[player, false] remoteExec ["hideObjectGlobal", 2];
+	player allowDamage true;
+
+	//--- fade into the game
+	1 fadeSound 2;
+	1 fadeMusic 2;
+	0 cutText ["","BLACK IN",3];
+	//--- show region
+	[] spawn DS_fnc_showRegionNotification;
+
+	player setVariable ["DS_var_isPlaying", true, true];
+};
 
 //--- setup melee weapons
 call DS_fnc_swingEvent;
@@ -54,5 +66,3 @@ if(!isNil "RSM_fnc_initRealism") then {
 //--- init plugin events
 call BASE_fnc_initPlayerEvents;
 call BASE_fnc_initMissionEventsClient;
-
-
