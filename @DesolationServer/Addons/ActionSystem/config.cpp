@@ -73,6 +73,7 @@ class CfgFunctions
 			class replaceWheel {};
 			class refuelFueltank {};
 			class flipVehicle {};
+			class disassembleBike {};
 		};
 		class Client_Actions_Players {
 			file = "ActionSystem\Client\Actions\Players";
@@ -101,7 +102,6 @@ class CfgFunctions
 			class getFuel {};
 			class getWater {};
 			class deconstruct {};
-			class disassembleBike {};
 		};
 		class Client_Actions_Sit {
 			file = "ActionSystem\Client\Actions\Sit";
@@ -136,7 +136,6 @@ class CfgFunctions
 		class Server_Actions {
 			file = "ActionSystem\Server\Actions";
 			isserver = 1;
-			class deconstructObject {};
 			class removePartReq {};
 			class repairPartReq {};
 			class replacePartReq {};
@@ -152,39 +151,6 @@ class CfgFunctions
 };
 
 class Cfg3DActions {
-	
-	
-	class Gathering {
-		condition = "player == vehicle player && ((_cursor isKindOf 'Animal_Base_F') || !(str(_cursor) find 't_malus1s' == -1))";
-		
-		renderType = 1;
-		
-		class Actions {
-			
-			class GatherApple {
-				condition = "!(str(_cursor) find 't_malus1s' == -1)";
-				text = "Search Apples";
-				class Parameters {
-					requiredItems[] = {};
-					returnedItems[] = {
-						{"DSR_Item_redApple",1}
-					};
-				};
-				action = "[_cursor] call ACT_fnc_getApples;";
-			};
-			class GatherAnimal {
-				condition = "!alive _cursor";
-				text = "Gut";
-				class Parameters {
-					requiredItems[] = {
-						{"DSR_Item_knife", 1}
-					};
-				};
-				action = "[_cursor] call ACT_fnc_gutAnimal;";
-			};
-		};
-	};
-	
 	
 	class Vehicles {
 		condition = "_cursor in vehicles && ((_cursor isKindOf 'landVehicle') || (_cursor isKindOf 'air') || (_cursor isKindOf 'ship'))"; //condition  on what cursor object to use these actions for
@@ -490,6 +456,8 @@ class Cfg3DActions {
 				};
 				action = "[_cursor,_index,_selection] call ACT_fnc_replaceFueltank;";
 			};
+
+			// Other
 			class RefuelFueltank {
 				condition = "_selection find 'fuel' != -1";
 				text = "Refuel Fuel Tank";
@@ -516,6 +484,21 @@ class Cfg3DActions {
 					};
 				};
 				action = "[_cursor] call ACT_fnc_flipVehicle;";
+			};
+			class DisassembleBike {
+				condition = "_selection find 'body' != -1 && ((_cursor isKindOf 'DSR_Bike_Green_F') || (_cursor isKindOf 'DSR_Bike_White_F'))";
+				text = "Disassemble";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_Toolbox",1}
+					};
+					returnedItems[] = {
+					    {"DSR_Item_Bike_Frame",1},
+					    {"DSR_Item_Bike_Wheel",2},
+					    {"DSR_Item_Bike_Chain",1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_disassembleBike;";
 			};
 		};
 	};
@@ -561,30 +544,30 @@ class Cfg3DActions {
 	class Players {
 		condition = "_cursor in allPlayers && player == vehicle player";
 		
-		renderType = 1;
+		renderType = 0;
 		
 		class Actions {
 			
 			class Release {
-				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
+				condition = "(_selection find 'body' != -1) && (animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
 				text = "Cut Zip Tie";
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_release;";
 			};
 			class OpenInventory {
-				condition = "(animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
+				condition = "(_selection find 'body' != -1) && (animationState _cursor == 'acts_aidlpsitmstpssurwnondnon_loop')"; // (if player is ziptied)
 				text = "Open Inventory";
 				class Parameters {};
 				action = "player action ['Gear',_cursor];";
 			};
 			class Ziptie {
-				condition = "(animationState _cursor == 'amovpercmstpssurwnondnon')"; // (if player has hands up)
+				condition = "(_selection find 'body' != -1) && (animationState _cursor == 'amovpercmstpssurwnondnon')"; // (if player has hands up)
 				text = "Add Zip Tie";
 				class Parameters {};
 				action = "[_cursor] call ACT_fnc_ziptie;";
 			};
 			class Bandage {
-				condition = "true"; //todo cursor is bleeding check
+				condition = "(_selection find 'body' != -1)"; //todo cursor is bleeding check
 				text = "Bandage";
 				class Parameters {
 					requiredItems[] = {
@@ -594,7 +577,7 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_bandage;";
 			};
 			class Bloodbag {
-				condition = "true"; //todo blood value check
+				condition = "(_selection find 'body' != -1)"; //todo blood value check
 				text = "Give Blood";
 				class Parameters {
 					requiredItems[] = {
@@ -607,7 +590,7 @@ class Cfg3DActions {
 				action = "[_cursor,_index] call ACT_fnc_giveBlood;";
 			};
 			class Splint {
-				condition = "(animationState _cursor != 'acts_aidlpsitmstpssurwnondnon_loop')"; //todo broken leg check (remove splint usage is for more space in 3d menu!)
+				condition = "(_selection find 'body' != -1) && (animationState _cursor != 'acts_aidlpsitmstpssurwnondnon_loop')"; //todo broken leg check (remove splint usage is for more space in 3d menu!)
 				text = "Apply Splint";
 				class Parameters {
 					requiredItems[] = {
@@ -671,21 +654,35 @@ class Cfg3DActions {
 				};
 				action = "[_cursor] call ACT_fnc_deconstruct;";
 			};
-			class DisassembleBike {
-				condition = "(_cursor isKindOf 'DSR_Bike_Green_F') || (_cursor isKindOf 'DSR_Bike_White_F')";
-				text = "Disassemble";
+		};
+	};
+	class Gathering {
+		condition = "player == vehicle player && ((_cursor isKindOf 'Animal_Base_F') || !(str(_cursor) find 't_malus1s' == -1))";
+		
+		renderType = 1;
+		
+		class Actions {
+			
+			class GatherApple {
+				condition = "!(str(_cursor) find 't_malus1s' == -1)";
+				text = "Search Apples";
 				class Parameters {
-					requiredItems[] = {
-						{"DSR_Item_Toolbox",1}
-					};
+					requiredItems[] = {};
 					returnedItems[] = {
-					    {"DSR_Item_Toolbox",1},
-					    {"DSR_Item_Bike_Frame",1},
-					    {"DSR_Item_Bike_Wheel",2},
-					    {"DSR_Item_Bike_Chain",1}
+						{"DSR_Item_redApple",1}
 					};
 				};
-				action = "[_cursor] call ACT_fnc_disassembleBike;";
+				action = "[_cursor] call ACT_fnc_getApples;";
+			};
+			class GatherAnimal {
+				condition = "!alive _cursor";
+				text = "Gut";
+				class Parameters {
+					requiredItems[] = {
+						{"DSR_Item_knife", 1}
+					};
+				};
+				action = "[_cursor] call ACT_fnc_gutAnimal;";
 			};
 		};
 	};

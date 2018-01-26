@@ -10,7 +10,6 @@
  */
 
 params["_classname"];
-private["_wires"];
 
 _animation = "Medic";
 
@@ -43,4 +42,4 @@ _failure = {
 	};
 };
 
-[_classname,_animation,false,_success,_failure] call DS_fnc_useItem;
+[_classname,_animation,false,_success,_failure] spawn DS_fnc_useItem;

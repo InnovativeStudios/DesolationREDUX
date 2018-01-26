@@ -8,10 +8,8 @@
  * https://www.bistudio.com/community/licenses/arma-public-license-share-alike/
  * https://www.bistudio.com/monetization/
  */
-
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
  
 params["_cursor"];
 
-[_cursor, player, "Toggle ON/OFF",3] remoteExec ["ACT_fnc_useGenerator", 0];
+[_cursor, player] remoteExec ["ACT_fnc_useGenerator", 0];
 true

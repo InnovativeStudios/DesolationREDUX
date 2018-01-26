@@ -9,14 +9,14 @@
  * https://www.bistudio.com/monetization/
  */
 
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables, 4 = Gathering)
  
 params["_cursor"];
 
 if ([1] call ACT_fnc_doAnimation) then {
-	if (random(1) <= 0.1) then {
+	if (random(1) <= 0.2) then {
 		systemChat "Apples found";
-		[_cursor, player, "Search Apples",3] remoteExec ["ACT_fnc_gather", 2];
+		[_cursor, player, "Search Apples",4] remoteExec ["ACT_fnc_gather", 2];
 	} else {
 		systemChat "No apples found";
 	};

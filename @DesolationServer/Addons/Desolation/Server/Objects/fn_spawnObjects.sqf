@@ -192,9 +192,9 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					if(count(_pointdata) > 1) then {
 						_hitpoints = _pointdata select 0;
 						{
-							_value = random [_minDamage,_midDamage,_maxDamage];
-							if (_value < 0 || _value > 1) then {_value = (random [0.3,0.7,1]);};
-							_tv setHitPointDamage [_x, _value];
+							_damage = random [_minDamage,_midDamage,_maxDamage];
+							if (_damage < 0 || _damage > 1) then {_damage = (random [0.3,0.7,1]);};
+							_tv setHitPointDamage [_x, _damage];
 						} forEach _hitpoints;
 					};
 					_tv setFuel (random [0, 0.2, 0.7]);

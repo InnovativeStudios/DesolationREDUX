@@ -13,9 +13,9 @@
 
 params ["_object","_player","_class","_group"];
 
+// Get parameters
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
-
 _required = [];
 {
 	_aCondition = _x select 0;
@@ -29,6 +29,8 @@ _required = [];
 		
 } forEach _actionInfo;
 
+
+// Check required items
 _haveRequiredItems = true;
 {
 	_item = _x select 0;
@@ -41,7 +43,9 @@ _haveRequiredItems = true;
     true
 } count _required;
 if !(_haveRequiredItems) exitwith {};
-	
+
+
+// Flip vehicle
 _mass = getMass _object;
 if ((_mass < 400) && (alive _object)) then {	// don't flip destroyed vehicles
 	_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2) + 0.1];
@@ -53,9 +57,10 @@ if ((_mass < 400) && (alive _object)) then {	// don't flip destroyed vehicles
 		_object setVectorUp [0,0,1];
 		_object setPosATL [(getPosATL _object) select 0, (getPosATL _object) select 1, ((getPosATL _object) select 2)];
 	};
+
 	[("Object flipped successfully")] remoteExec ["systemChat",_player];
 } else {
 	[("Object is too heavy or its destroyed")] remoteExec ["systemChat",_player];
 };
 
-true
+true;

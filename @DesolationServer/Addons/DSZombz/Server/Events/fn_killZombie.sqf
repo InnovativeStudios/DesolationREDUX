@@ -12,6 +12,14 @@ if(_index > -1) then {
 };
 _zed setVariable ["diedAt",diag_tickTime]; //mark zombie for cleanup
 [_zed] spawn {
-	uiSleep 3;
-	removeUniform (_this select 0);
+	params ["_zed"];
+	uiSleep 2;
+	removeUniform _zed;
+	_type = typeOf _zed;
+	diag_log format ["%1",_type];
+
+	_zed addUniform "dsr_player_"+_type;
+	//_items = call copmile (getConfig);
+	_items = "dsr_item_redApple";
+	_zed addItem _items;
 };

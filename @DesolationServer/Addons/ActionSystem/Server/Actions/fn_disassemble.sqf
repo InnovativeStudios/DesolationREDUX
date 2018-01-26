@@ -13,8 +13,9 @@
 
 params ["_object","_player","_class","_group"];
 
-if ((damage _object) < 0.1) then {
+if ((damage _object) == 0) then {
 
+	// get parameters
 	_actionGroup = ACT_var_ACTIONS select _group;
 	_actionInfo = _actionGroup select 2;
 
@@ -32,6 +33,7 @@ if ((damage _object) < 0.1) then {
 	} forEach _actionInfo;
 
 
+	// check if player has required items
     _haveRequiredItems = true;
     {
 	    _item = _x select 0;
@@ -46,6 +48,41 @@ if ((damage _object) < 0.1) then {
     if !(_haveRequiredItems) exitWith {};
 
 
+	// if object is building get returned items
+	if !(_object isKindOf "AllVehicles") then {
+
+		// get object class for config
+		_type = typeOf _object;
+		_class = "";
+		if (_type find "Stockade" != -1) then {
+			_class = "Stockade";
+		} else {
+			if (_type find "House" != -1) then {
+				_class = "Houses";
+			} else {
+				_class = "Misc";
+			};
+		};
+		_items = getArray (configFile >> "CfgBuildables" >> _class >> "Buildables" >> _type >> "parts");
+
+		//get returned items (divide with 2)
+		_index = 0;
+		for "_i" from 0 to ((count(_items))-1) do {
+
+			_item = _items select _index;
+			_itemType = _item select 0;
+			_count = _item select 1;
+
+			_newCount = round((_count) / 2);
+			_newItem = [_itemType] + [_newCount];
+
+			_returned pushBack _newItem;
+			_index = _index + 1;
+ 		};
+	};
+
+
+	// check if loot holder already nearby
 	_lootHolder = objNull;
 	_nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
 	if ((count _nearLootHolders) != 0) then {
@@ -66,6 +103,7 @@ if ((damage _object) < 0.1) then {
 	};
 
 
+	// place items to lootholder
 	if (count _returned != 0) then {
 		{
 			_lootHolder addItemCargoGlobal _x;
@@ -74,11 +112,13 @@ if ((damage _object) < 0.1) then {
 	_player reveal _lootHolder;
 	
 	
+	// delete object
 	[_object,objNull] call DB_fnc_killObject;
 	deleteVehicle _object;
-	[("Vehicle disassembled successfully")] remoteExec ["systemChat",_player];
+	
+	[("Object disassembled successfully")] remoteExec ["systemChat",_player];
 } else {
-    [("Vehicle is too damaged")] remoteExec ["systemChat",_player];
+    [("Object is too damaged")] remoteExec ["systemChat",_player];
 };
 
 true

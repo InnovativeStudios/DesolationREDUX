@@ -9,16 +9,16 @@
  * https://www.bistudio.com/monetization/
  */
  
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players)
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables, 4 = Gathering)
 
-params ["_hitPoint","_object","_index","_player","_class","_group"];
+params ["_object","_player","_class","_group"];
 
+
+// Get parameters
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
-
 _required = [];
 _returned = [];
-
 {
 	_aCondition = _x select 0;
 	_aText = _x select 1;
@@ -32,6 +32,7 @@ _returned = [];
 } forEach _actionInfo;
 
 
+// Check required items
 _haveRequiredItems = true;
 {
 	_item = _x select 0;
@@ -46,9 +47,9 @@ _haveRequiredItems = true;
 if !(_haveRequiredItems) exitWith {};
 
 
+// Add returned items
 {
 	_player addItem (_x select 0);
-	true
-} count _returned;
+} forEach _returned;
 
-true
+true;
