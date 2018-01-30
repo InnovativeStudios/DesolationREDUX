@@ -9,19 +9,15 @@
  * https://www.bistudio.com/monetization/
  */
  
-// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables)
+// last parameter is _group (0 = vehicles, 1 = Liftables, 2 = Players, 3 = Non-Liftables, 4 = Gathering)
 
 params ["_object","_player","_class","_group"];
 
-diag_log "<ActionSystem>: (Debug) started gut animal";
-
+// get parameters
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
-
-
 _required = [];
 _returned = [];
-
 {
 	_aCondition = _x select 0;
 	_aText = _x select 1;
@@ -34,6 +30,7 @@ _returned = [];
 } forEach _actionInfo;
 
 
+// Check for required items
 _haveRequiredItems = true;
 {
 	_item = _x select 0;
@@ -49,20 +46,28 @@ true
 if !(_haveRequiredItems) exitWith {};
 
 
-
+// Get returned items
 _type = typeOf _object;
 if (_type isEqualTo "Rabbit_F") then {
-	_returned = [["DSR_Item_Beef",2], ["DSR_Item_Leather",2]];
+	_returned = [["DSR_Item_Beef",2], ["DSR_Item_Leather",1]];
 } else {
-	if (_type isEqualTo "Cow") then {
-		_returned = [["DSR_Item_Beef",4], ["DSR_Item_Leather",5]];
+	if ((_type isEqualTo "Hen_random_F") || (_type isEqualTo "Cock_random_F") || (_type isEqualTo "Cock_white_F")) then {
+		_returned = [["DSR_Item_Beef",2], ["dsr_item_feathers",5]];
 	} else {
-		_returned = [["DSR_Item_Beef",3], ["DSR_Item_Leather",3]];
+		if (_type isEqualTo "Cow") then {
+			_returned =  [["DSR_Item_Beef",5], ["DSR_Item_Leather",5]];
+		} else {
+			if ((_type isEqualTo "Sheep_random_F") || (_type isEqualTo "Goat_random_F")) then {
+				_returned = [["DSR_Item_Beef",4], ["DSR_Item_Leather",3]];
+			} else {
+				_returned = [["DSR_Item_Beef",3], ["DSR_Item_Leather",3]];
+			};
+		};
 	};
 };
 
 
-
+// Check for nearby loot holders
 _lootHolder = objNull;
 _nearLootHolders = _player nearObjects ["GroundWeaponHolder", 5];
 if ((count _nearLootHolders) != 0) then {
@@ -78,11 +83,14 @@ if ((count _nearLootHolders) != 0) then {
 	} count _nearLootHolders;
 };
 
+// Create new loot holder
 if (isNull _lootHolder) then {
 	_lootHolder = createVehicle ["GroundWeaponHolder", _object modelToWorld [0,0.8,0], [], 0.5, "CAN_COLLIDE"];
 	_lootHolder setDir (random 360);	
 };
 
+
+// Add items to loot holder
 if (count _returned != 0) then {
 	{
 		_lootHolder addItemCargoGlobal _x;
@@ -90,12 +98,6 @@ if (count _returned != 0) then {
 };
 _player reveal _lootHolder;
 
-
-/*
-_blood = createSimpleObject ["a3\characters_f\data\slop_00.p3d", _object modelToWorld [0,0.8,0]]; 
-_blood setDir (random 360); 
-_blood setVectorUp surfaceNormal _blood;
-*/
 
 deleteVehicle _object;
 

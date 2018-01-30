@@ -49,7 +49,7 @@ if !(_haveRequiredItems) exitWith {};
 
 // Add returned items
 {
-	_player addItem (_x select 0);
+	_player addItem _x;
 } forEach _returned;
 
 true;

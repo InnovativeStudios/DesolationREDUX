@@ -14,7 +14,7 @@
 params["_cursor"];
 
 if ([1] call ACT_fnc_doAnimation) then {
-	[_cursor, player, "Gut", 3] remoteExec ["ACT_fnc_gut", 2];
+	[_cursor, player, "Gut", 4] remoteExec ["ACT_fnc_gut", 2];
 };
 
 true

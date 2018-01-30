@@ -13,7 +13,7 @@ params["_classname"];
 
 _animation = "MedicOther";
 
-if !("dsr_item_can_opener" in magazines player) exitWith {systemchat "Item(s) missing: Can Opener";};
+if !("DSR_Item_Can_Opener" in magazines player) exitWith {systemchat "Item(s) missing: Can Opener";};
 
 _class = toLower(_classname);
 _data = (toLower(_class) splitString "_");

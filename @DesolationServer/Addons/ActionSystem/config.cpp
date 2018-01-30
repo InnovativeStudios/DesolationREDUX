@@ -602,7 +602,7 @@ class Cfg3DActions {
 		};
 	};
 	class NonLiftables {
-		condition = "player == vehicle player && (!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || !(str(_cursor) find 'feed' == -1) || (!(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1)))";
+		condition = "(player == vehicle player) && ((!(str(_cursor) find 'water' == -1) || !(str(_cursor) find 'pump' == -1) || !(str(_cursor) find 'feed' == -1) || !(str(_cursor) find 'fuelstation' == -1) && !(str(_cursor) find 'pump' == -1)	) || ((str(_cursor) find 'stockade' != -1) && ([_cursor] call DS_fnc_isBuildingOwner)))";
 		
 		renderType = 1;
 	
@@ -657,7 +657,7 @@ class Cfg3DActions {
 		};
 	};
 	class Gathering {
-		condition = "player == vehicle player && ((_cursor isKindOf 'Animal_Base_F') || !(str(_cursor) find 't_malus1s' == -1))";
+		condition = "player == vehicle player && ((_cursor isKindOf 'Animal_Base_F' && !alive _cursor) || !(str(_cursor) find 't_malus1s' == -1))";
 		
 		renderType = 1;
 		
