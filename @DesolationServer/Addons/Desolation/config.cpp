@@ -15,12 +15,15 @@ class Plugins
 
 class CfgPluginActions {
 	class Padlocks {
-        // WHAT IS THIS FOR!!!
-        text = "Unlock";
-        condition = "(_cursor getVariable ['bis_disabled_Door_1',0]) != 1 || (_cursor getVariable ['bis_disabled_Door_1',1]) != 0";
-        
+        text = "Padlocks";
+        condition = "([_cursor] call DS_fnc_isBuildingOwner && (_cursor getVariable ['bis_disabled_Door_1',0]) != 1) || [_cursor] call DS_fnc_isLockable || [_cursor] call DS_fnc_isUnlockable";
 		class Actions {
-            class Lock {
+            class ResetLock {
+				text = "Reset lock";
+				condition = "[_cursor] call DS_fnc_isBuildingOwner && (_cursor getVariable ['bis_disabled_Door_1',0]) != 1";
+				action = "createDialog 'DS_Padlock'; call DS_fnc_initLockReset;";
+			};
+			class Lock {
                 text = "Lock";
                 condition = "[_cursor] call DS_fnc_isLockable";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initLock;";
@@ -29,12 +32,6 @@ class CfgPluginActions {
 				text = "Unlock";
 				condition = "[_cursor] call DS_fnc_isUnlockable";
 				action = "createDialog 'DS_Padlock'; call DS_fnc_initUnlock;";
-				
-			};
-			class ChangeLock {
-				text = "Reset lock";
-				condition = "[_cursor] call DS_fnc_isBuildingOwner && (_cursor getVariable ['bis_disabled_Door_1',0]) != 1";
-				action = "createDialog 'DS_Padlock'; call DS_fnc_initLockReset;";
 			};
 		};
 	};
