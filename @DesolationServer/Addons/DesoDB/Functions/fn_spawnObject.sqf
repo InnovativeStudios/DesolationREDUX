@@ -13,11 +13,8 @@
 
 params["_object", ["_objectType", 3], ["_priority", 10001]];
 
-// vehicles are the object type of 3 with default spawn priority of 10001
-// buildings are the object type of 2 with default spawn priority of 1001
-if ((_objectType == 2) && (_priority > 10000)) then {
-	_priority = 1001;
-};
+_object setVariable ["DSR_objectType", _objectType];
+_object setVariable ["DSR_priority", _priority];
 
 _serializedData = [_object, _objectType, _priority] call DB_fnc_serializeObject;
 _request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,_serializedData];
