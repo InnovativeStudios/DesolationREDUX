@@ -91,7 +91,12 @@ diag_log "Spawning DB objects";
 			_object lock _locked;
 			_object allowDamage false;
 			_object setVariable ["oUUID",_object_uuid];
-
+			
+			_object setVariable ["DSR_objectType", _objectType];
+			if(_priority > 0) then {
+				_object setVariable ["DSR_priority", _priority];
+			};
+			
 			{
 				//  todo
 			} forEach _animation_sources;
@@ -107,13 +112,10 @@ diag_log "Spawning DB objects";
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
 			
-			if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
-				_object setVariable ["DSR_priority", _priority];
-			};
-
+			
 			if(_accesscode isEqualType []) then {
             	_object setVariable ["APMS_UnlockCode",_accesscode,true];
-            };
+      };
 			
 			[_object,_items] call DS_fnc_setLoot;
 			

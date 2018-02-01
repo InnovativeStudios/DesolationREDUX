@@ -12,8 +12,23 @@
 #include "\DesoDB\constants.hpp" 
   
 params["_object", ["_objectType", 3], ["_priority", 10001]];
+
+if (_objectType < 0) then {
+	_objectType = _object getVariable ["DSR_priority", 3];
+};
+
+if (_priority < 0) then {
+	_priority = _object getVariable ["DSR_priority", 10001];
+};
+
 // vehicles are the object type of 3 with default spawn priority of 10001
+// their priority should never be higher then the priority of buildings
+if ((_objectType == 3) && (_priority < 10000)) then {
+	_priority = 10001;
+};
+
 // buildings are the object type of 2 with default spawn priority of 1001
+// their priority should never be lower then the priority of vehicles
 if ((_objectType == 2) && (_priority > 10000)) then {
 	_priority = 1001;
 };
@@ -77,11 +92,11 @@ _positionType = 1;
 _position = getPosATL _object;
 _positionadvanced = [["DSR_vectorUp",str(vectorUp _object)]]; 
 if (_objectType == 2) then {
-	_positionadvanced = [
+	_positionadvanced = _object getVariable ["DSR_positionAdvanced", [
 		["DSR_vectorUp",str(vectorUp _object)], //high precision vectorup
 		["DSR_vectorDir",str(vectorDir _object)], //high precision vectordir
 		["DSR_position",(getPosATL _object) call DB_fnc_hpFloatArray] //high precision position
-	]; 
+	]]; 
 };
 
 // support to add objects that already have an uuid - in case i fuck up again (Legodev)
