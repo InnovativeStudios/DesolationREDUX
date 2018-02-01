@@ -14,7 +14,7 @@
 params["_object", ["_objectType", 3], ["_priority", 10001]];
 
 if (_objectType < 0) then {
-	_objectType = _object getVariable ["DSR_priority", 3];
+	_objectType = _object getVariable ["DSR_objectType", 3];
 };
 
 if (_priority < 0) then {
