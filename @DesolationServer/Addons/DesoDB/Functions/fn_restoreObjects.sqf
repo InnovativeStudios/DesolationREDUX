@@ -112,10 +112,13 @@ diag_log "Spawning DB objects";
 				_object setVariable ["clanUUID",_clan_uuid];
 			};
 			
-			
-			if(_accesscode isEqualType []) then {
+			if(_priority > 0 && _priority != 1001 && _priority != 10001) then {
+				_object setVariable ["DSR_priority", _priority];
+			};
+
+			if!(_accesscode isEqualTo []) then {
             	_object setVariable ["APMS_UnlockCode",_accesscode,true];
-      };
+    		};
 			
 			[_object,_items] call DS_fnc_setLoot;
 			
@@ -157,10 +160,8 @@ diag_log "Spawning DB objects";
 
 			if(_objectType == 2) then {  // if building	
 
-				if([_object] call DS_fnc_isLockable) then {
-					for "_i" from 1 to 5 do {
-						_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
-					};
+				for "_i" from 1 to 5 do {
+					_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
 				};
 			};
 		
