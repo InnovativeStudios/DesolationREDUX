@@ -61,8 +61,7 @@ if (_useScheduledRestarts >= 1) then
     } forEach _restartTimes;
     _nextRestartHourInMin = if(_last > 0)then{_last * 60}else{24 * 60};
     _minsUntilNextRestart = (_nextRestartHourInMin - _minNow);
-    _secondsUntilNextRestart = (_minsUntilNextRestart*60);
-    _endTime =_secondsUntilNextRestart-(60-_startSecond);
+    _endTime = (_minsUntilNextRestart*60)-_startSecond;
 };
 
 diag_log  format["TimeManagement > INFO: Seconds until shutdown - %1", _endTime];
