@@ -15,7 +15,7 @@ diag_log "TimeManagement > INFO: restartTimer started";
 
 // Uptime based restarts
 _uptime = parseNumber (["Uptime","TM"] call BASE_fnc_getCfgValue);
-_endTime = diag_tickTime + (_uptime*3600);
+_endTime = (_uptime*3600);
 
 _useScheduledRestarts = parseNumber (["UseScheduledRestarts","TM"] call BASE_fnc_getCfgValue);
 _RestartMessageTimers = (["RestartMessageTimers","TM"] call BASE_fnc_getCfgValue) splitString ",";
@@ -32,8 +32,7 @@ if (_useScheduledRestarts >= 1) then
 {
     _restartTimes = (["RestartTimes","TM"] call BASE_fnc_getCfgValue) splitString ",";
 
-    _request = ["getDateTimeArray",[]];
-    _startTime = [_request] call DB_fnc_sendRequest;
+    _startTime = call DB_fnc_getServerTime;
     _startTime params [
         ['_startYear',1],
         ['_startMonth',1],
@@ -62,11 +61,15 @@ if (_useScheduledRestarts >= 1) then
     } forEach _restartTimes;
     _nextRestartHourInMin = if(_last > 0)then{_last * 60}else{24 * 60};
     _minsUntilNextRestart = (_nextRestartHourInMin - _minNow);
-    // Trigger the shut down 1 minute before the alotted time to ensure a save takes place, since most providers "kill" their servers at restart time
     _secondsUntilNextRestart = (_minsUntilNextRestart*60);
-    _endTime =(_secondsUntilNextRestart-60)-(60-_startSecond);
+    _endTime =_secondsUntilNextRestart-(60-_startSecond);
 };
+
 diag_log  format["TimeManagement > INFO: Seconds until shutdown - %1", _endTime];
+
+// Compensate for existing server run-time
+// Then shut down 1 minute before the alotted time to ensure server saves
+_endTime = (_endTime+diag_tickTime)-60;
 
 {
     waitUntil{uiSleep 10;diag_tickTime >= (_endTime-(_x*60))};
