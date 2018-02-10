@@ -14,5 +14,5 @@
 params["_object", ["_objectType", -1], ["_priority", -1]];
 
 _serializedData = [_object, _objectType, _priority] call DB_fnc_serializeObject;
-_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_OBJECT,_serializedData];
+_request = [PROTOCOL_DBCALL_FUNCTION_QUIET_UPDATE_OBJECT,_serializedData];
 [_request] call DB_fnc_sendRequest;

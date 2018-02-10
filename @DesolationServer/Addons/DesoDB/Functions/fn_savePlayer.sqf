@@ -30,5 +30,5 @@ if(_charuuid == "") exitWith {
 };
 
 _serializedData = [_playerObj] call DB_fnc_serializePlayer;
-_request = [PROTOCOL_DBCALL_FUNCTION_UPDATE_CHAR,_serializedData];
+_request = [PROTOCOL_DBCALL_FUNCTION_QUIET_UPDATE_CHAR,_serializedData];
 [_request] call DB_fnc_sendRequest;
