@@ -15,6 +15,13 @@ params["_object", ["_objectType", 3], ["_priority", 10001]];
 
 _object setVariable ["DSR_objectType", _objectType];
 _object setVariable ["DSR_priority", _priority];
+if (_objectType == 2) then {
+	_object setVariable ["DSR_positionAdvanced", [
+							["DSR_vectorUp",str(vectorUp _object)], //high precision vectorup
+							["DSR_vectorDir",str(vectorDir _object)], //high precision vectordir
+							["DSR_position",(getPosATL _object) call DB_fnc_hpFloatArray] //high precision position
+						     ]];
+};
 
 _serializedData = [_object, _objectType, _priority] call DB_fnc_serializeObject;
 _request = [PROTOCOL_DBCALL_FUNCTION_QUIET_CREATE_OBJECT,_serializedData];
