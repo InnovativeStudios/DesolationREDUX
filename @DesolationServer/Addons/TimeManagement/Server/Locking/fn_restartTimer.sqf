@@ -68,7 +68,7 @@ diag_log  format["TimeManagement > INFO: Seconds until shutdown - %1", _endTime]
 
 // Compensate for existing server run-time
 // Then shut down 1 minute before the alotted time to ensure server saves
-_endTime = (_endTime+diag_tickTime)-60;
+_endTime = (_endTime+diag_tickTime)-120;
 
 {
     waitUntil{uiSleep 10;diag_tickTime >= (_endTime-(_x*60))};
@@ -88,6 +88,9 @@ uiSleep 10;
 
 diag_log  "TimeManagement > Processing Callback";
 call _callback;
+
+// Wait until 20s left then trigger shutdown.
+waitUntil{uiSleep 5;diag_tickTime >= (_endTime+100)};
 
 diag_log  "TimeManagement > Shutting Down Server";
 _password serverCommand "#shutdown";
