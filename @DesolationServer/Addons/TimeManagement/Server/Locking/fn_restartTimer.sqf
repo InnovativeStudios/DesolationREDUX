@@ -89,6 +89,9 @@ uiSleep 10;
 diag_log  "TimeManagement > Processing Callback";
 call _callback;
 
+// Shut down LibRedEx
+call DB_fnc_shutdownLibRedex;
+
 // Wait until 20s left then trigger shutdown.
 waitUntil{uiSleep 5;diag_tickTime >= (_endTime+100)};
 

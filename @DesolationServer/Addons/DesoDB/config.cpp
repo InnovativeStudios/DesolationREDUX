@@ -50,6 +50,7 @@ class CfgFunctions
 			class loadPlayer {};
 			class savePlayer {};
 			class getServerTime {};
+			class shutdownLibRedex {};
 		};
 		class Serialization
 		{
