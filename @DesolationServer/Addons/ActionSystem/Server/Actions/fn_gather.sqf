@@ -49,7 +49,10 @@ if !(_haveRequiredItems) exitWith {};
 
 // Add returned items
 {
-	_player addItem _x;
-} forEach _returned;
+	for "_i" from 1 to (_x select 1) do {
+		_player addItem (_x select 0);
+	};
+	true
+} count _returned;
 
 true;

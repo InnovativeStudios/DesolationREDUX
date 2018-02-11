@@ -46,27 +46,13 @@ _haveRequiredItems = true;
 if !(_haveRequiredItems) exitWith {};
 
 
-// get object class for config
-_type = typeOf _object;
-_class = "";
-if (_type find "Stockade" != -1) then {
-	_class = "Stockade";
-} else {
-	if (_type find "House" != -1) then {
-		_class = "Houses";
-	} else {
-		_class = "Misc";
-	};
-};
-_items = getArray (configFile >> "CfgBuildables" >> _class >> "Buildables" >> _type >> "parts");
-
-
 //get returned items (divide with 2)
-_returned = [];
-_index = 0;
-for "_i" from 0 to ((count(_items))-1) do {
+_parts = _object getVariable ["SVAR_Parts",[]];
 
-	_item = _items select _index;
+_returned = [];
+for "_i" from 0 to (count(_parts) - 1) do {
+
+	_item = _parts select _i;
 	_itemType = _item select 0;
 	_count = _item select 1;
 
@@ -74,8 +60,7 @@ for "_i" from 0 to ((count(_items))-1) do {
 	_newItem = [_itemType] + [_newCount];
 
 	_returned pushBack _newItem;
-	_index = _index + 1;
- };
+};
 
 
 // check if loot holder already nearby

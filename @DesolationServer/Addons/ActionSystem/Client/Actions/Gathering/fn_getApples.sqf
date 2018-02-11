@@ -15,7 +15,7 @@ params["_cursor"];
 
 if ([1] call ACT_fnc_doAnimation) then {
 	if (random(1) <= 0.2) then {
-		systemChat "Apples found";
+		systemChat "Apple found";
 		[_cursor, player, "Search Apples",4] remoteExec ["ACT_fnc_gather", 2];
 	} else {
 		systemChat "No apples found";
