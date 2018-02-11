@@ -5,7 +5,7 @@ if !(alive _player) exitWith {};
 [_player] spawn {
 	params["_player"];
 	_player setVariable ["DS_var_inCombat", true, true];
-	sleep 60;
+	sleep 30;
 	_player setVariable ["DS_var_inCombat", nil, true];
 };
 

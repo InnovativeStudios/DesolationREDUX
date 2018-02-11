@@ -53,6 +53,7 @@ _abortBtn ctrlEnable false;
 		sleep 1;
 	};
 	
+	if !(isNil {player getVariable "DS_var_inCombat"}) then {player setVariable ["DS_var_inCombat", nil, true];};
 	_abortBtn ctrlEnable true;
 	_abortBtn ctrlSetText "Abort";
 };
