@@ -154,8 +154,10 @@ diag_log "Spawning DB objects";
 
 			if(_objectType == 2) then {  // if building	
 
-				for "_i" from 1 to 5 do {
-					_object setVariable["bis_disabled_Door_" + str(_i),1,true]; // disable door access
+				if(_locked != 0 && !(_accesscode isEqualTo [])) then {
+					for "_i" from 1 to 5 do {
+						_object setVariable ["bis_disabled_Door_" + str(_i),1,true];
+					};
 				};
 			};
 		

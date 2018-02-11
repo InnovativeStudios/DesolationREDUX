@@ -62,20 +62,6 @@ _obj setVectorUp _vectorUp;
 
 _obj setVariable ["SVAR_Parts",_items];
 _obj setVariable ["oOWNER",_owner,true];
-for "_i" from 1 to 5 do {
-	_obj setVariable["bis_disabled_Door_" + str(_i),1,true];
-};
-
-scopeName "exitCheck";
-{
-	_uuid = _x getVariable ["pUUID",""];
-	if(_uuid != "") then {
-		if(_uuid == _owner) then {
-			[[_obj]] remoteExec ["DS_fnc_registerOwner",_x];
-			breakTo "exitCheck";
-		};
-	};
-} forEach allPlayers;
 
 
 [_obj, 2, 1001] call DB_fnc_spawnObject;
