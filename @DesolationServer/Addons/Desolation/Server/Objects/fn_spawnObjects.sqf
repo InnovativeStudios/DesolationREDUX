@@ -22,8 +22,9 @@ _planeLimit = (["MaxPlanes","DS"] call DS_fnc_getCfgValue);
 _carLimit = (["MaxCars","DS"] call DS_fnc_getCfgValue);
 _boatLimit = (["MaxBoats","DS"] call DS_fnc_getCfgValue);
 _maxDamage = ((["MaxDamage","DS"] call DS_fnc_getCfgValue) / 100);
-_midDamage = ((["MidDamage","DS"] call DS_fnc_getCfgValue) / 100);
 _minDamage = ((["MinDamage","DS"] call DS_fnc_getCfgValue) / 100);
+_maxFuel = ((["MaxFuel","DS"] call DS_fnc_getCfgValue) / 100);
+_minFuel = ((["MinFuel","DS"] call DS_fnc_getCfgValue) / 100);
 
 _tvs = [];
 
@@ -192,12 +193,16 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					if(count(_pointdata) > 1) then {
 						_hitpoints = _pointdata select 0;
 						{
-							_damage = random [_minDamage,_midDamage,_maxDamage];
-							if (_damage < 0 || _damage > 1) then {_damage = (random [0.3,0.7,1]);};
+							_damage = random _maxDamage;
+							if (_damage < _minDamage) then {_damage = _midDamage + (random (_maxDamage - _minDamage));};
 							_tv setHitPointDamage [_x, _damage];
 						} forEach _hitpoints;
 					};
-					_tv setFuel (random [0, 0.2, 0.7]);
+
+					_fuel = random _maxFuel;
+					if (_fuel < _minFuel) then {_fuel = _minFuel + (random (_maxFuel - _minFuel));};
+					_tv setFuel _fuel;
+
 					_tv setdir _vDir;
 					_tv setposasl _posasl;
 					
