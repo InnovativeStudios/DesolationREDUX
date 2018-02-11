@@ -449,27 +449,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;
-				weapons[] = {
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
+				};
+                Headgears[] = {
+
+                };
+
+				Weapons[] = {
 					"DSR_SGun_M500",
-					"DSR_arifle_FNFAL_F"
+					"DSR_arifle_FNFAL_F",
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
 				};
-				magazines[] = {
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"6Rnd_12g_Buck",
-					"6Rnd_12g_Buck",
-					"DSR_Item_MRE"
+					"6Rnd_12g_Buck"
 				};
-				items[] = {
-					"U_I_G_Story_Protagonist_F",
-					"V_PlateCarrier_Kerry",
-					"H_Shemag_olive"
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
-				backpacks[] = {
-					"DSR_Coyote_Backpack"
-				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 		class Military2 {
@@ -488,30 +527,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;
-				weapons[] = {
-					"DSR_arifle_SCARH_F",
-					"DSR_srifle_CZ750_F"
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
 				};
-				magazines[] = {
+                Headgears[] = {
+
+                };
+
+				Weapons[] = {
+					"DSR_SGun_M500",
+					"DSR_arifle_FNFAL_F",
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
+				};
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
-					"7Rnd_308win_mag",
-					"7Rnd_308win_mag",
-					"7Rnd_308win_mag",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bandage",
-					"DSR_Item_MRE"
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck"
 				};
-				items[] = {
-					"tacs_Uniform_Combat_LS_BS_TP_TB",
-					"V_PlateCarrier2_blk",
-					"H_HelmetSpecB_snakeskin"
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
-				backpacks[] = {
-					"DSR_Carryall_HunterF"
-				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 		class Military3 {
@@ -530,27 +605,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;
-				weapons[] = {
-					"DSR_Srifle_LRR"
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
 				};
-				magazines[] = {
-					"7Rnd_408_Mag",
-					"7Rnd_408_Mag",
-					"7Rnd_408_Mag",
-					"ItemMap",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bandage",
-					"DSR_Item_MRE"
+                Headgears[] = {
+
+                };
+
+				Weapons[] = {
+					"DSR_SGun_M500",
+					"DSR_arifle_FNFAL_F",
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
 				};
-				items[] = {
-					"tacs_Uniform_Combat_LS_BS_TP_TB",
-					"tacs_Vest_PlateCarrierFull_Green",
-					"H_HelmetSpecB_snakeskin"
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck"
 				};
-				backpacks[] = {
-					"tacs_Backpack_Carryall_DarkBlack"
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 		class Military4 {
@@ -568,28 +682,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;
-				weapons[] = {
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
+				};
+                Headgears[] = {
+
+                };
+
+				Weapons[] = {
+					"DSR_SGun_M500",
 					"DSR_arifle_FNFAL_F",
-					"DSR_Arifle_CZ805_A2"
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
 				};
-				magazines[] = {
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
 					"20Rnd_762x51_Mag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"30Rnd_556x45_Stanag",
-					"DSR_Item_MRE"
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck"
 				};
-				items[] = {
-					"U_B_survival_uniform",
-					"tacs_Vest_PlateCarrier_MARPAT",
-					"H_Cap_tan_specops_US"
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
-				backpacks[] = {
-					"DSR_Largegunbag"
-				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 		
@@ -611,27 +763,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
-				weapons[] = {
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
+				};
+                Headgears[] = {
 
+                };
+
+				Weapons[] = {
+					"DSR_SGun_M500",
+					"DSR_arifle_FNFAL_F",
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
 				};
-				magazines[] = {
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Morphine",
-					"DSR_Item_Morphine",
-					"DSR_Item_Morphine",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Painkillers",
-					"DSR_Item_Painkillers",
-					"DSR_Item_Painkillers"
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck"
 				};
-				items[] = {
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
-				backpacks[] = {
-				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 		class Medical2 {
@@ -651,27 +842,66 @@ class CfgHeliCrashes {
 			};
 			
 			class loot {
-				maxLootpiles = 10;//not implemented yet
-				weapons[] = {
+				MaxBodies = 5;
+                MinBodies = 3;
+                MaxMagAmountWithWeapon = 3;
+                MinMagAmountWithWeapon = 1;
+                
+                Uniforms[] = {
+                    "U_BG_Guerilla3_1",
+                    "U_OG_Guerilla1_1",
+                    "U_OG_Guerilla2_1",
+                    "U_OG_leader",
+                    "U_C_HunterBody_grn"
+                };
+                Vests[] ={
+                    "V_TacVest_blk",
+                    "V_TacVest_camo",
+                    "V_BandollierB_blk",
+                    "V_Chestrig_rgr",
+                    "V_Chestrig_blk",
+                    "V_HarnessOGL_gry"
+                };
+                Backpacks[] = {
+					"DSR_Coyote_Backpack",
+                    "DSR_Alice_Backpack",
+                    "DSR_Assaultpack_Grey",
+                    "B_AssaultPack_khk",
+                    "DSR_Civil_Assault_Backpack",
+                    "DSR_Rpg_Backpack",
+                    "DSR_Tactical_Blue"
+				};
+                Headgears[] = {
 
+                };
+
+				Weapons[] = {
+					"DSR_SGun_M500",
+					"DSR_arifle_FNFAL_F",
+                    "DSR_srifle_cz550_f",
+                    "DSR_srifle_ENFIELD_F",
+                    "DSR_SMG_MP40",
+                    "SMG_01_F"
 				};
-				magazines[] = {
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Bloodbag_Full",
-					"DSR_Item_Morphine",
-					"DSR_Item_Morphine",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Bandage",
-					"DSR_Item_Painkillers",
-					"DSR_Item_Painkillers"
+                Handguns[] = {
+                    "hgun_pistol_01_f"
+                };
+                
+				Magazines[] = {
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"20Rnd_762x51_Mag",
+					"6Rnd_12g_Buck",
+					"6Rnd_12g_Buck"
 				};
-				items[] = {
+				Items[] = {
+					"DSR_item_Bandage",
+                    "DSR_Item_MRE"
 				};
-				backpacks[] = {
-				};
+                Linkeditems[] = {
+                    "ItemMap",
+                    "ItemGPS"
+                };
 			};
 		};
 	};
@@ -695,7 +925,7 @@ class CfgAirdropSpawns {
 			"DSR_Item_Painkillers"
 		};
 		items[] = {
-			"FirstAidKit"
+            
 		};
 		backpacks[] = {
 			
