@@ -143,12 +143,19 @@ if(_savedLoot isEqualTo ["FRESH LOOT"]) then {
 						_object addItemCargoGlobal [_item,1];
 					} else {
 						if(toLower(_type) in ["handgun","weapon"]) then {
-							_chance = ["ChanceToSpawnWithMag"] call DS_fnc_getCfgValue;
+							_chance = ["ChanceToSpawnWithMag(s)"] call DS_fnc_getCfgValue;
 							if(random(100) < _chance) then {
 								_mags = getArray(configFile >> "CfgWeapons" >> _item >> "Magazines");
 								_mag = _mags select floor(random(count(_mags)));
+
 								_maxAmmo = getNumber(configFile >> "CfgMagazines" >> _mag >> "count");
-								_object addMagazineAmmoCargo [_mag,1,ceil(random(_maxAmmo))];
+								_maxMagCount = ["MaxMagAmount"] call DS_fnc_getCfgValue;
+								_minMagCount = ["MinMagAmount"] call DS_fnc_getCfgValue;
+								_magCount = random _maxMagCount;
+								if (_magCount < _minMagCount) then {_magCount = _minMagCount + (random (_maxMagCount - _minMagCount));};
+								for "_m" from 1 to round(_magCount) do {
+									_object addMagazineAmmoCargo [_mag,1,ceil(random(_maxAmmo))];
+								};
 								_i = _i + 1;
 							};
 						};

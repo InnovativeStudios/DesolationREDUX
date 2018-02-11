@@ -45,7 +45,6 @@ if !(_equipmentArray isEqualTo false) then {
 
 	_Items = (["Items","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_linked = (["Linked","DS"] call BASE_fnc_getCfgValue) splitString ",";
-	_Magazines = (["Magazines","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_PrimaryWpnAttachments = (["PrimaryWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
 	_HandgunWpnAttachments = (["HandgunWpnAttachments","DS"] call BASE_fnc_getCfgValue) splitString ",";
 
@@ -108,8 +107,4 @@ if !(_equipmentArray isEqualTo false) then {
 	{
 		_unit linkItem _x;
 	} forEach _linked;
-	
-	{
-		_unit addMagazine _x;
-	} forEach _Magazines;
 };
