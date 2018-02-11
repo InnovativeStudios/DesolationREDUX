@@ -14,4 +14,3 @@ _owned = [];
 		_owned pushback _x;
 	};
 } forEach DS_var_Objects;
-[_owned] remoteExec ["DS_fnc_registerOwner",_player];
