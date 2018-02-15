@@ -21,10 +21,57 @@ _heliLimit = (["MaxHelis","DS"] call DS_fnc_getCfgValue);
 _planeLimit = (["MaxPlanes","DS"] call DS_fnc_getCfgValue);
 _carLimit = (["MaxCars","DS"] call DS_fnc_getCfgValue);
 _boatLimit = (["MaxBoats","DS"] call DS_fnc_getCfgValue);
-_maxDamage = ((["MaxDamage","DS"] call DS_fnc_getCfgValue) / 100);
-_minDamage = ((["MinDamage","DS"] call DS_fnc_getCfgValue) / 100);
-_maxFuel = ((["MaxFuel","DS"] call DS_fnc_getCfgValue) / 100);
-_minFuel = ((["MinFuel","DS"] call DS_fnc_getCfgValue) / 100);
+_maxDamage = ((["MaxDamage","DS"] call DS_fnc_getCfgValue));
+_midDamage = ((["MidDamage","DS"] call DS_fnc_getCfgValue));
+_minDamage = ((["MinDamage","DS"] call DS_fnc_getCfgValue));
+
+_damageError = false;
+if ((floor _minDamage) <= 1 && (floor _midDamage) <= 1 && (floor _maxDamage)  <= 1) then {
+	diag_log("ERROR: check your Desolation config, the damage value should be in percent meaning in the range of 0 and 90 not between 0.0 and 0.9!");
+	_damageError = true;
+};
+
+if (_minDamage < 0 || _midDamage < 0 || _maxDamage < 0) then {
+	diag_log("ERROR: check your Desolation config, the damage value should not be negative!");
+	_damageError = true;
+};
+
+if (_minDamage > 90 || _midDamage > 90 || _maxDamage > 90) then {
+	diag_log("ERROR: check your Desolation config, the damage value should not be larger then 90 to prevent random explosions!");
+	_damageError = true;
+};
+
+if (_damageError) thene {
+	diag_log("your settings got defaulted to 0, 40, 80");
+	_minDamage = 0;
+	_midDamage = 40;
+	_maxDamage = 80;
+}
+
+_maxFuel = ((["MaxFuel","DS"] call DS_fnc_getCfgValue));
+_minFuel = ((["MinFuel","DS"] call DS_fnc_getCfgValue));
+
+_fuelError = false;
+if ((floor _maxFuel)  <= 1 || _minFuel > 100 || _maxFuel > 100) then {
+	diag_log("ERROR: check your Desolation config, the fuel value should be in percent meaning in the range of 0 and 100 not between 0.0 and 1.0!");
+	_fuelError = true;
+};
+
+if (_minFuel < 0 || _maxFuel < 0) then {
+	diag_log("ERROR: check your Desolation config, the fuel value should not be negative!");
+	_fuelError = true;
+};
+
+if (_maxFuel > _minFuel) then {
+	diag_log("ERROR: check your Desolation config, the fuel minimum value should be smaller then the maximum value!");
+	_fuelError = true;
+};
+
+if (_fuelError) thene {
+	diag_log("your settings got defaulted to 0, 100");
+	_minFuel = 0;
+	_maxFuel = 100;
+}
 
 _tvs = [];
 
@@ -193,15 +240,15 @@ diag_log format["# Helipads: %1",{_x isKindOf "HeliH"} count(_houses)];
 					if(count(_pointdata) > 1) then {
 						_hitpoints = _pointdata select 0;
 						{
-							_damage = random _maxDamage;
-							if (_damage < _minDamage) then {_damage = _midDamage + (random (_maxDamage - _minDamage));};
-							_tv setHitPointDamage [_x, _damage];
+							// no additional check needed since the check is done after reading the value from the config file
+							_damage = random [_minDamage,_midDamage,_maxDamage];
+							// convert percentage to value between 0 and 1
+							_tv setHitPointDamage [_x, _damage/100];
 						} forEach _hitpoints;
 					};
 
-					_fuel = random _maxFuel;
-					if (_fuel < _minFuel) then {_fuel = _minFuel + (random (_maxFuel - _minFuel));};
-					_tv setFuel _fuel;
+					_fuel = _minFuel + (random (_maxFuel - _minFuel));
+					_tv setFuel (_fuel / 100);
 
 					_tv setdir _vDir;
 					_tv setposasl _posasl;
