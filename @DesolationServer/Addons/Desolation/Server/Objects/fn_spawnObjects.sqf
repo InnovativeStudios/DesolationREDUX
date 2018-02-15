@@ -41,12 +41,12 @@ if (_minDamage > 90 || _midDamage > 90 || _maxDamage > 90) then {
 	_damageError = true;
 };
 
-if (_damageError) thene {
+if (_damageError) then {
 	diag_log("your settings got defaulted to 0, 40, 80");
 	_minDamage = 0;
 	_midDamage = 40;
 	_maxDamage = 80;
-}
+};
 
 _maxFuel = ((["MaxFuel","DS"] call DS_fnc_getCfgValue));
 _minFuel = ((["MinFuel","DS"] call DS_fnc_getCfgValue));
@@ -67,11 +67,11 @@ if (_maxFuel > _minFuel) then {
 	_fuelError = true;
 };
 
-if (_fuelError) thene {
+if (_fuelError) then {
 	diag_log("your settings got defaulted to 0, 100");
 	_minFuel = 0;
 	_maxFuel = 100;
-}
+};
 
 _tvs = [];
 
