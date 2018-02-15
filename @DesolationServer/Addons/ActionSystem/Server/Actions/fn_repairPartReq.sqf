@@ -44,7 +44,33 @@ _haveRequiredItems = true;
     true
 } count _required;
 if !(_haveRequiredItems) exitWith {};
+
+_hitPoints = [_hitPoint];
+
+if (toLower(_hitPoint) find 'wheel' != -1) then {
+	// the assumption is that all wheels that are at the same place follow the scheme HitPosXWhell, where X is nothing or a number
+	// to fix all of them we:
+	//// convert the string to an array
+	//// first remove all numbers to get an clean hitpoint
+	//// use arrayIntersect on the array itself to get the correct format
+	//// if the intersect of an hitpoint with the cleaned array is the same is the prepared array its either the hitpoint it self 
+	///// or an hitpoint on the same position then we add it to the hitPoints to modify array
+
+	_hitPoints = [];
+	_split = _hitPoint splitString "";
+	// remove all numbers so that we only have for example HitLFWheel instead of HitLF2Wheel
+	_split = _split - [0,1,2,3,4,5,6,7,8,9];
+	// generate the array the intersect should match
+	_arrayToMatch = _split arrayIntersect _split;
 	
+	{
+		_arrayToCheck = _x splitString "";
+		if ((_split arrayIntersect _arrayToCheck) == _arrayToMatch) then {
+			_hitPoints append [_x];
+		};
+	} foreach (getAllHitPointsDamage _object select 0);
+};
+
 _currentDamage = _object getHitPointDamage _hitPoint;
 
 if (_currentDamage > 0) then {
@@ -55,11 +81,13 @@ if (_currentDamage > 0) then {
 			for "_i" from 1 to (_requiredItem select 1) do {
 				_player removeItem (_requiredItem select 0);	// remove part from player
 				_currentDamage = _currentDamage - _dpp;	// calculate new damage
-				if (_currentDamage < 0) exitWith {	// check if fully repaired
+				if (_currentDamage < 0) then {	// check if fully repaired
 					_currentDamage = 0;
-					[_object, [_hitPoint, 0]] remoteExec ["setHitPointDamage", 0];
 				};
-				[_object, [_hitPoint, _currentDamage]] remoteExec ["setHitPointDamage", 0];
+				{
+					[_object, [_x, _currentDamage]] remoteExec ["setHitPointDamage", 0];
+				} foreach _hitPoints;
+				
 			};
 		} else {
 			_player removeItem (_requiredItem select 0);	
