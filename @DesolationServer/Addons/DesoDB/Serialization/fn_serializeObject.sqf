@@ -56,17 +56,16 @@ if(count(_temp) > 2) then {
 };
 _damage = damage _object;
 _fuel = fuel _object;
+
 _fuelcargo = getFuelCargo _object;
-if(isNil {_fuelcargo}) then {_fuelcargo = 0;};
-if(str(_fuelcargo) find "-1" == 0) then {
+if (isNil "_fuelcargo" || !(_fuelcargo isEqualType 1.0)) then {
 	_fuelcargo = 0;
 };
+
 _repaircargo = getRepairCargo _object;
-if(isNil {_repaircargo}) then {_repaircargo = 0;};
-if(str(_repaircargo) find "-1" == 0) then {
+if (isNil "_repaircargo" || !(_repaircargo isEqualType 1.0)) then {
 	_repaircargo = 0;
 };
-
 
 // container items
 _items = ([_object] call DS_fnc_getLoot); // gets loot contained within object if it is a container
