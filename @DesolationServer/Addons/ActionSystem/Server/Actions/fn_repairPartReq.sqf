@@ -48,24 +48,32 @@ if !(_haveRequiredItems) exitWith {};
 _hitPoints = [_hitPoint];
 
 if (toLower(_hitPoint) find 'wheel' != -1) then {
-	// the assumption is that all wheels that are at the same place follow the scheme HitPosXWhell, where X is nothing or a number
-	// to fix all of them we:
-	//// convert the string to an array
-	//// first remove all numbers to get an clean hitpoint
-	//// use arrayIntersect on the array itself to get the correct format
-	//// if the intersect of an hitpoint with the cleaned array is the same is the prepared array its either the hitpoint it self 
-	///// or an hitpoint on the same position then we add it to the hitPoints to modify array
-
 	_hitPoints = [];
-	_split = _hitPoint splitString "";
-	// remove all numbers so that we only have for example HitLFWheel instead of HitLF2Wheel
-	_split = _split - [0,1,2,3,4,5,6,7,8,9];
-	// generate the array the intersect should match
-	_arrayToMatch = _split arrayIntersect _split;
+	_lowerClassname = toLower(typeof _object);
+	_objectIsTwinSteerVehicles = (_twinSteerVehicles find _lowerClassname != -1);
+	_objectIsTwinAxleVehicles = (_twinAxleVehicles find _lowerClassname != -1);
 	
+	// find the group of the current hitpoint
+	_groupArray = [_hitPoint];
+	_groupType = "";
 	{
-		_arrayToCheck = _x splitString "";
-		if ((_split arrayIntersect _arrayToCheck) == _arrayToMatch) then {
+		_groupTempArray = _x select 0;
+		_groupTempType = _x select 1;
+		if (_groupTempArray find _lowerClassname != -1) {
+			if (_groupTempType == "frontwheel" && !_objectIsTwinSteerVehicles) then {
+				_groupArray = _groupTempArray;
+				_groupType = _groupTempType;
+			};
+			if (_groupTempType == "rearwheel" && !_objectIsTwinAxleVehicles) then {
+				_groupArray = _groupTempArray;
+				_groupType = _groupTempType;
+			};
+		};
+	} foreach _groupedHitpoints;
+	
+	// if there is another hitpoint thats in the group, add it to the _hitPoints array
+	{
+		if (_groupArray find toLower(_x) != -1) then {
 			_hitPoints append [_x];
 		};
 	} foreach (getAllHitPointsDamage _object select 0);
