@@ -58,12 +58,12 @@ _damage = damage _object;
 _fuel = fuel _object;
 
 _fuelcargo = getFuelCargo _object;
-if (isNil "_fuelcargo" || !(_fuelcargo isEqualType 1.0)) then {
+if (isNil "_fuelcargo" || {!(_fuelcargo isEqualType 1.0)}) then {
 	_fuelcargo = 0;
 };
 
 _repaircargo = getRepairCargo _object;
-if (isNil "_repaircargo" || !(_repaircargo isEqualType 1.0)) then {
+if (isNil "_repaircargo" || {!(_repaircargo isEqualType 1.0)}) then {
 	_repaircargo = 0;
 };
 
