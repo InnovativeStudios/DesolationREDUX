@@ -100,7 +100,7 @@ if (toLower(_hitPoint) find 'wheel' != -1) then {
 	{
 		_groupTempArray = _x select 0;
 		_groupTempType = _x select 1;
-		if (_groupTempArray find _lowerClassname != -1) {
+		if (_groupTempArray find _lowerClassname != -1) then {
 			if (_groupTempType == "frontwheel" && !_objectIsTwinSteerVehicles) then {
 				_groupArray = _groupTempArray;
 				_groupType = _groupTempType;

@@ -13,6 +13,10 @@
 
 params ["_hitPoint","_object","_index","_player","_class","_group"];
 
+_groupedHitpoints = (call compile (toLower(["groupedHitpoints","ACT"] call BASE_fnc_getCfgValue)));
+_twinSteerVehicles = (call compile (toLower(["twinSteerVehicles","ACT"] call BASE_fnc_getCfgValue)));
+_twinAxleVehicles = (call compile (toLower(["twinAxleVehicles","ACT"] call BASE_fnc_getCfgValue)));
+
 _actionGroup = ACT_var_ACTIONS select _group;
 _actionInfo = _actionGroup select 2;
 
@@ -59,7 +63,7 @@ if (toLower(_hitPoint) find 'wheel' != -1) then {
 	{
 		_groupTempArray = _x select 0;
 		_groupTempType = _x select 1;
-		if (_groupTempArray find _lowerClassname != -1) {
+		if (_groupTempArray find _lowerClassname != -1) then {
 			if (_groupTempType == "frontwheel" && !_objectIsTwinSteerVehicles) then {
 				_groupArray = _groupTempArray;
 				_groupType = _groupTempType;
