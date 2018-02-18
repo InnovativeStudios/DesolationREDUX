@@ -1,5 +1,3 @@
-
-
 //protect variables
 {
 	if(_x find "_lys" != -1) then {
@@ -56,59 +54,58 @@ _randomkey = call _genString;
 
 
 _requestvar addPublicVariableEventHandler {
-    (_this select 1) params["_key","_uid","_value"];
-    _scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
-    
-    _getownerfromuid = {
-        params["_uid"];
-        _owner = -100;
-        {
-            if(getplayeruid _x == _uid) exitWith {_owner = owner _x;};
-        } forEach allPlayers;
-        _owner;
-    };
-    
-    if(_key == "ban") then {
-        ["Ban | " + _uid + " | " + _value] call LYS_fnc_addToLogs;
-        
-        _scp serverCommand ("#exec ban " + str([_uid] call _getownerfromuid));
-    };
-    if(_key == "log") then {
-        [(_value select 0) + " | " + _uid + " | " + (_value select 1)] call LYS_fnc_addToLogs;
-        
-    };
-    if(_key == "kick") then {
-        ["Kick | " + _uid + " | " + _value] call LYS_fnc_addToLogs;
-        _scp serverCommand ("#exec kick " + str([_uid] call _getownerfromuid));
-    };
-    if(_key == "runfunc") then {
-        if(_uid in (["Admins"] call LYS_fnc_getCfgValue)) then {
-            _params = _value select 0;
-            _funcName = _value select 1;
-            _code = _funcName;
-            if(_funcName isEqualType "") then {
-                _code = missionNamespace getVariable [_funcName,{}];
-            };
-            _params spawn _code;
-        };
-    };
-    if(_key == "runfunctarg") then {
-        if(_uid in (["Admins"] call LYS_fnc_getCfgValue)) then {
-            _target = _value select 0;
-            _params = _value select 1;
-            _code = _value select 2;
-            
-            if(_code isEqualType "") then {
-                _params remoteExec [_code,_target];
-            } else {
-                [_params,_code] remoteExec ["call",_target];
-            };
-        };
-    };
-    missionNamespace setvariable [_this select 0,nil];
-    publicVariable (_this select 0);
+	(_this select 1) params["_key","_uid","_value"];
+	_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
+	
+	_getownerfromuid = {
+		params["_uid"];
+		_owner = -100;
+		{
+			if(getplayeruid _x == _uid) exitWith {_owner = owner _x;};
+		} forEach allPlayers;
+		_owner;
+	};
+	
+	if(_key == "ban") then {
+		["Ban | " + _uid + " | " + _value] call LYS_fnc_addToLogs;
+		
+		_scp serverCommand ("#exec ban " + str([_uid] call _getownerfromuid));
+	};
+	if(_key == "log") then {
+		[(_value select 0) + " | " + _uid + " | " + (_value select 1)] call LYS_fnc_addToLogs;
+		
+	};
+	if(_key == "kick") then {
+		["Kick | " + _uid + " | " + _value] call LYS_fnc_addToLogs;
+		_scp serverCommand ("#exec kick " + str([_uid] call _getownerfromuid));
+	};
+	if(_key == "runfunc") then {
+		if(_uid in (["Admins"] call LYS_fnc_getCfgValue)) then {
+			_params = _value select 0;
+			_funcName = _value select 1;
+			_code = _funcName;
+			if(_funcName isEqualType "") then {
+				_code = missionNamespace getVariable [_funcName,{}];
+			};
+			_params spawn _code;
+		};
+	};
+	if(_key == "runfunctarg") then {
+		if(_uid in (["Admins"] call LYS_fnc_getCfgValue)) then {
+			_target = _value select 0;
+			_params = _value select 1;
+			_code = _value select 2;
+			
+			if(_code isEqualType "") then {
+				_params remoteExec [_code,_target];
+			} else {
+				[_params,_code] remoteExec ["call",_target];
+			};
+		};
+	};
+	missionNamespace setvariable [_this select 0,nil];
+    	publicVariable (_this select 0);
 };
-
 
 uiNamespace setVariable ["RequestVar",_requestvar];
 uiNamespace setVariable ["RandomKey",_randomkey];
@@ -485,6 +482,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			params["_toggle"];
 			player allowDamage !_toggle;
 			while{God_Mode_Toggle} do {
+				resetCamShake;
 				player setDamage 0;
 				DS_var_Blood = 27500;
 				call DS_fnc_stopBleeding;
@@ -518,6 +516,10 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			params["_toggle"];
 			setTerrainGrid (if(_toggle) then {50} else {25});
 		};
+		_arsenal = {
+			closeDialog 0;
+			["Open",true] spawn bis_fnc_arsenal;
+		};
 		_repair = {
 			if(vehicle player != player) then {vehicle player setDamage 0;};
 		};
@@ -531,7 +533,12 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			cursorTarget setDamage 0;
 		};
 		_deletecurs = {
-			deleteVehicle cursorTarget;
+			_object = cursorTarget;
+			[{
+				params["_object"];
+				[_object,objNull] call DB_fnc_killObject;
+				deleteVehicle _object;
+			},[_object]] call LYS_fnc_RunOnServer;
 		};
 		_toggle_players = {
 			disableserialization;
@@ -812,12 +819,14 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#lock";
 			}] call LYS_fnc_RunOnServer;
+			hint "Server Locked!";
 		};
 		_unlockserv = {
 			[{
 				_scp = ["ServerCommandPassword"] call LYS_fnc_getCfgValue;
 				_scp serverCommand "#unlock";
 			}] call LYS_fnc_RunOnServer;
+			hint "Server Unlocked!";
 		};
 		_restart = {
 			[{
@@ -830,12 +839,9 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					_scp serverCommand ("#exec kick " + str(owner(_x)));
 				} forEach allPlayers;
 				uiSleep 1;
-				diag_log  "Shutdown > Saving Vehicles";
-				DS_var_runVehicleMon = false;
-				waitUntil{!DS_var_savingVehicles};
-				diag_log  "Shutdown > Saving buildings";
-				DS_var_runBuildingMon = false;
-				waitUntil{!DS_var_savingBuildings};
+				diag_log  "Shutdown > Saving Objects";
+				DB_var_runObjectMon = false;
+				waitUntil{!DB_var_savingObjects};
 				_scp serverCommand "#shutdown";
 			}] call LYS_fnc_RunOnServer;
 		};
@@ -913,6 +919,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 			["No Recoil / No Sway",1,_norecoil,"No_Recoil_Toggle"],
 			["Fast Fire",1,_fastfire,"Fast_Fire_Toggle"],
 			["No Grass",1,_nograss,"No_Grass_Toggle"],
+			["Arsenal",2,_arsenal],
 			["Heal",2,_heal],
 			["Repair Cursor",2,_repaircurs],
 			["Delete Cursor",2,_deletecurs],
@@ -1004,12 +1011,7 @@ if(["AdminTool"] call LYS_fnc_getCfgValue) then {
 					clearMagazineCargoGlobal _vehicle;
 					clearItemCargoGlobal _vehicle;
 				
-					["spawnVehicle","",[_vehicle]] call DS_fnc_dbRequest;
-					
-					_oUUID = _vehicle getVariable ["oUUID",""];
-					
-					DS_var_Vehicles pushback _vehicle;					
-					DS_var_VehicleUUIDS pushback _oUUID;
+					[_vehicle] call DB_fnc_spawnObject;
 				
 				},[_classname,_position,_direction]] call LYS_fnc_RunOnServer;				
 			};
