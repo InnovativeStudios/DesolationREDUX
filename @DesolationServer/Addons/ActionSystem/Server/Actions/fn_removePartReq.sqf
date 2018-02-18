@@ -121,7 +121,7 @@ if (toLower(_hitPoint) find 'wheel' != -1) then {
 };
 
 {
-	[_object, [_x, 1]] remoteExec ["setHitPointDamage", 1];
+	[_object, [_x, 1]] remoteExec ["setHitPointDamage", 0];
 } foreach _hitPoints;
 
 true
