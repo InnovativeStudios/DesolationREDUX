@@ -95,7 +95,7 @@ if (_currentDamage > 0) then {
 };
 
 {
-	[_object, [_x, 1]] remoteExec ["setHitPointDamage", 0];
+	[_object, [_x, 0]] remoteExec ["setHitPointDamage", 0];
 } foreach _hitPoints;
 
 true
